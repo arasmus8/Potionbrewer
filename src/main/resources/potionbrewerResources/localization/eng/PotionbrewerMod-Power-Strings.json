@@ -1,0 +1,10 @@
+{
+        "potionbrewer:ToxicPower": {
+                "NAME": "Toxic",
+                "DESCRIPTIONS": ["At the beginning of each turn, lose ", " of current health."]
+        },
+        "potionbrewer:RarePower": {
+                "NAME": "Placeholder Power",
+                "DESCRIPTIONS": ["At the start of your turn, TOUCH #b", " enemy." , " enemies."]
+        }
+}

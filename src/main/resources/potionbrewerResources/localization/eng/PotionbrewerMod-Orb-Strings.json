@@ -1,0 +1,206 @@
+{
+  "potionbrewer:Barb": {
+    "NAME": "Barb",
+    "DESCRIPTION": [
+      "Metallic barb harvested from a Spiker."
+    ]
+  },
+  "potionbrewer:Bile": {
+    "NAME": "Bile",
+    "DESCRIPTION": [
+      "Bile harvested from Gremlin Nob."
+    ]
+  },
+  "potionbrewer:Bone": {
+    "NAME": "Bone",
+    "DESCRIPTION": [
+      "Bone harvested from a slaver."
+    ]
+  },
+  "potionbrewer:Clay": {
+    "NAME": "Clay",
+    "DESCRIPTION": [
+      "Clay harvested from a Giant Head."
+    ]
+  },
+  "potionbrewer:Crown": {
+    "NAME": "Crown",
+    "DESCRIPTION": [
+      "The crown of a Champion."
+    ]
+  },
+  "potionbrewer:Ether": {
+    "NAME": "Ether",
+    "DESCRIPTION": [
+      "Magical vapor harvested from a Mystic."
+    ]
+  },
+  "potionbrewer:Eye": {
+    "NAME": "Eye",
+    "DESCRIPTION": [
+      "Eye harvested from a monster."
+    ]
+  },
+  "potionbrewer:Feather": {
+    "NAME": "Feather",
+    "DESCRIPTION": [
+      "Feather harvested from a cultist."
+    ]
+  },
+  "potionbrewer:FeyFire": {
+    "NAME": "Fey Fire",
+    "DESCRIPTION": [
+      "Otherworldly flame collected from a Collector."
+    ]
+  },
+  "potionbrewer:Flame": {
+    "NAME": "Flame",
+    "DESCRIPTION": [
+      "Flaming core of an odd machine."
+    ]
+  },
+  "potionbrewer:Gold": {
+    "NAME": "Gold",
+    "DESCRIPTION": [
+      "Gold harvested from a bandit."
+    ]
+  },
+  "potionbrewer:Grimace": {
+    "NAME": "Grimace",
+    "DESCRIPTION": [
+      "Grimace harvested from a gremlin."
+    ]
+  },
+  "potionbrewer:Hand": {
+    "NAME": "Hand",
+    "DESCRIPTION": [
+      "Dessicated hand harvested from a sneak-thief."
+    ]
+  },
+  "potionbrewer:Horn": {
+    "NAME": "Horn",
+    "DESCRIPTION": [
+      "Crooked horn harvested from a Gremlin Leader."
+    ]
+  },
+  "potionbrewer:Ichor": {
+    "NAME": "Ichor",
+    "DESCRIPTION": [
+      "Ichor harvested from a slime."
+    ]
+  },
+  "potionbrewer:Lightning": {
+    "NAME": "Lightning",
+    "DESCRIPTION": [
+      "Electric charge from a repulsor's power core."
+    ]
+  },
+  "potionbrewer:Mechanism": {
+    "NAME": "Mechanism",
+    "DESCRIPTION": [
+      "The mechanical core of an Automaton."
+    ]
+  },
+  "potionbrewer:Meteorite": {
+    "NAME": "Meteorite",
+    "DESCRIPTION": [
+      "Piece of strange metal from another world."
+    ]
+  },
+  "potionbrewer:Needle": {
+    "NAME": "Needle",
+    "DESCRIPTION": [
+      "Sharp splinter of metal from a ghostly knife."
+    ]
+  },
+  "potionbrewer:Nethershroud": {
+    "NAME": "Nethershroud",
+    "DESCRIPTION": [
+      "The ghostly shroud of the Nemesis."
+    ]
+  },
+  "potionbrewer:PhilosopherShard": {
+    "NAME": "Philosopher's Shard",
+    "DESCRIPTION": [
+      "Shard of the legendary Philosopher's Stone."
+    ]
+  },
+  "potionbrewer:PowerCore": {
+    "NAME": "Power Core",
+    "DESCRIPTION": [
+      "The power core of a guardian mechanism."
+    ]
+  },
+  "potionbrewer:Root": {
+    "NAME": "Root",
+    "DESCRIPTION": [
+      "Root harvested from a carnivorous plant."
+    ]
+  },
+  "potionbrewer:RunicShape": {
+    "NAME": "Runic Shape",
+    "DESCRIPTION": [
+      "Twisted shape with runic writing."
+    ]
+  },
+  "potionbrewer:SerpentSkull": {
+    "NAME": "Serpent Skull",
+    "DESCRIPTION": [
+      "The skull of a giant serpent."
+    ]
+  },
+  "potionbrewer:Silk": {
+    "NAME": "Silk",
+    "DESCRIPTION": [
+      "Silk harvested from a louse."
+    ]
+  },
+  "potionbrewer:Skull": {
+    "NAME": "Skull",
+    "DESCRIPTION": [
+      "Stained skull taken from a slaver."
+    ]
+  },
+  "potionbrewer:Spore": {
+    "NAME": "Spore",
+    "DESCRIPTION": [
+      "A fungal Spore harvested from a parasitic fungus."
+    ]
+  },
+  "potionbrewer:Steel": {
+    "NAME": "Steel",
+    "DESCRIPTION": [
+      "Steel harvested from a machine."
+    ]
+  },
+  "potionbrewer:Sulphur": {
+    "NAME": "Sulphur",
+    "DESCRIPTION": [
+      "Sulphur harvested from a strong man."
+    ]
+  },
+  "potionbrewer:Tentacle": {
+    "NAME": "Tentacle",
+    "DESCRIPTION": [
+      "Severed tentacle of one of the Spire's horrors."
+    ]
+  },
+  "potionbrewer:TinyHat": {
+    "NAME": "Tiny Hat",
+    "DESCRIPTION": [
+      "A stylish hat, taken from a giant slime."
+    ]
+  },
+  "potionbrewer:Tooth": {
+    "NAME": "Tooth",
+    "DESCRIPTION": [
+      "Tooth harvested from a Jaw worm."
+    ]
+  },
+  "potionbrewer:Wax": {
+    "NAME": "Wax",
+    "DESCRIPTION": [
+      "Sealing wax taken from a bandit leader."
+    ]
+  }
+}
