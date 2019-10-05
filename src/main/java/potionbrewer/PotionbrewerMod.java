@@ -392,7 +392,7 @@ public class PotionbrewerMod implements
         PotionTracker.potionsUsedThisCombat.set(p, combat + 1);
 
         Integer turn = PotionTracker.potionsUsedThisTurn.get(p);
-        PotionTracker.potionsUsedThisTurn.set(p, combat + 1);
+        PotionTracker.potionsUsedThisTurn.set(p, turn + 1);
     }
 
     @Override
