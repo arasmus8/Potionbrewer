@@ -32,6 +32,7 @@ public class NoxiousPotion extends AbstractPotion {
         potency = getPotency();
         description = DESCRIPTIONS[0] + potency + DESCRIPTIONS[1];
         isThrown = true;
+        this.targetRequired = true;
         tips.add(new PowerTip(name, description));
     }
     

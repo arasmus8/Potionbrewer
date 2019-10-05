@@ -1,11 +1,18 @@
 {
   "potionbrewer:AcidPotion": {
-    "NAME": "AcidPotion",
+    "NAME": "Acid Potion",
     "DESCRIPTIONS": [ "Remove the target's Block and deal #b", " damage." ]
   },
   "potionbrewer:CleansingPotion": {
-    "NAME": "CleansingPotion",
+    "NAME": "Cleansing Potion",
     "DESCRIPTIONS": [ "Remove #b", " debuffs from yourself." ]
+  },
+  "potionbrewer:ColorlessPotion": {
+    "NAME": "Colorless Potion",
+    "DESCRIPTIONS": [
+      "Add a random colorless card to your hand. It costs 0 this turn.",
+      "Add two random colorless cards to your hand. They cost 0 this turn."
+    ]
   },
   "potionbrewer:DiscountPotion": {
     "NAME": "Discount Potion",
@@ -13,7 +20,7 @@
   },
   "potionbrewer:FreezingPotion": {
     "NAME": "Freezing Potion",
-    "DESCRIPTIONS": [ "Apply Slow to an Enemy." ]
+    "DESCRIPTIONS": [ "Apply #b", " Slow to an Enemy." ]
   },
   "potionbrewer:HastePotion": {
     "NAME": "Haste Potion",
@@ -37,6 +44,6 @@
   },
   "potionbrewer:ToxicPotion": {
     "NAME": "Toxic Potion",
-    "DESCRIPTIONS": [ "Apply #b", " potionbrewer:Toxic to an enemy." ]
+    "DESCRIPTIONS": [ "Apply #b", " Toxic to an enemy." ]
   }
 }

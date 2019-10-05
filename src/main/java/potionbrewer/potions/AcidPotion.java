@@ -31,9 +31,11 @@ public class AcidPotion extends AbstractPotion {
 
     public AcidPotion() {
         super(NAME, POTION_ID, PotionRarity.COMMON, PotionSize.BOLT, PotionColor.POISON);
+        System.out.println("Potion ID: " + POTION_ID);
         potency = getPotency();
         description = DESCRIPTIONS[0] + potency + DESCRIPTIONS[1];
-        isThrown = true;
+        this.isThrown = true;
+        this.targetRequired = true;
         tips.add(new PowerTip(name, description));
     }
     

@@ -254,6 +254,7 @@ public class PotionbrewerMod implements
 
         BaseMod.addPotion(AcidPotion.class, AcidPotion.LIQUID_COLOR, AcidPotion.HYBRID_COLOR, AcidPotion.SPOTS_COLOR, AcidPotion.POTION_ID, Potionbrewer.Enums.POTIONBREWER);
         BaseMod.addPotion(CleansingPotion.class, CleansingPotion.LIQUID_COLOR, CleansingPotion.HYBRID_COLOR, CleansingPotion.SPOTS_COLOR, CleansingPotion.POTION_ID, Potionbrewer.Enums.POTIONBREWER);
+        BaseMod.addPotion(ColorlessPotion.class, ColorlessPotion.LIQUID_COLOR, ColorlessPotion.HYBRID_COLOR, ColorlessPotion.SPOTS_COLOR, ColorlessPotion.POTION_ID, Potionbrewer.Enums.POTIONBREWER);
         BaseMod.addPotion(DiscountPotion.class, DiscountPotion.LIQUID_COLOR, DiscountPotion.HYBRID_COLOR, DiscountPotion.SPOTS_COLOR, DiscountPotion.POTION_ID, Potionbrewer.Enums.POTIONBREWER);
         BaseMod.addPotion(FreezingPotion.class, FreezingPotion.LIQUID_COLOR, FreezingPotion.HYBRID_COLOR, FreezingPotion.SPOTS_COLOR, FreezingPotion.POTION_ID, Potionbrewer.Enums.POTIONBREWER);
         BaseMod.addPotion(HastePotion.class, HastePotion.LIQUID_COLOR, HastePotion.HYBRID_COLOR, HastePotion.SPOTS_COLOR, HastePotion.POTION_ID, Potionbrewer.Enums.POTIONBREWER);

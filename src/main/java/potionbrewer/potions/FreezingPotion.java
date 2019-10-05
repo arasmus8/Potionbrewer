@@ -31,7 +31,8 @@ public class FreezingPotion extends AbstractPotion {
         super(NAME, POTION_ID, PotionRarity.UNCOMMON, PotionSize.FAIRY, PotionColor.POWER);
         potency = getPotency();
         description = DESCRIPTIONS[0];
-        isThrown = true;
+        this.isThrown = true;
+        this.targetRequired = true;
         tips.add(new PowerTip(name, description));
     }
     
@@ -50,9 +51,9 @@ public class FreezingPotion extends AbstractPotion {
     @Override
     public int getPotency(final int potency) {
         if (AbstractDungeon.player == null) {
-            return 0;
+            return 5;
         } else {
-            return AbstractDungeon.player.hasRelic("SacredBark") ? 1 : 0;
+            return AbstractDungeon.player.hasRelic("SacredBark") ? 10 : 5;
         }
     }
 }

@@ -15,14 +15,14 @@ import static potionbrewer.PotionbrewerMod.makeCardPath;
 public class DefaultCommonPower extends AbstractDynamicCard {
     
     public static final String ID = PotionbrewerMod.makeID(DefaultCommonPower.class.getSimpleName());
-    public static final String IMG = makeCardPath("Power.png");
+    public static final String IMG = makeCardPath("Skill.png");
     
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     
     private static final CardRarity RARITY = CardRarity.COMMON;
-    private static final CardTarget TARGET = CardTarget.SELF;
-    private static final CardType TYPE = CardType.POWER;
+    private static final CardTarget TARGET = CardTarget.ENEMY;
+    private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = Potionbrewer.Enums.COLOR_CYAN;
     
     private static final int COST = 1;

@@ -33,6 +33,7 @@ public class MidasPotion extends AbstractPotion {
         potency = getPotency();
         description = DESCRIPTIONS[0] + potency + DESCRIPTIONS[1] + potency + DESCRIPTIONS[2];
         isThrown = true;
+        targetRequired = true;
         tips.add(new PowerTip(name, description));
     }
     

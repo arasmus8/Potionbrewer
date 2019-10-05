@@ -25,16 +25,13 @@ public class CleansingPotion extends AbstractPotion {
 
     public static final Color LIQUID_COLOR = Color.WHITE.cpy();
     public static final Color HYBRID_COLOR = Color.GRAY.cpy();
-    public static final Color SPOTS_COLOR = new Color(255, 255, 255, 0);
+    public static final Color SPOTS_COLOR = Color.CLEAR.cpy();
 
     public CleansingPotion() {
         super(NAME, POTION_ID, PotionRarity.COMMON, PotionSize.S, PotionColor.SMOKE);
+        System.out.println("Potion ID: " + POTION_ID);
         potency = getPotency();
-        if (potency > 1) {
-            description = DESCRIPTIONS[1] + potency + DESCRIPTIONS[2] + DESCRIPTIONS[3];
-        } else {
-            description = DESCRIPTIONS[0] + DESCRIPTIONS[3];
-        }
+        description = DESCRIPTIONS[0] + potency + DESCRIPTIONS[1];
         isThrown = false;
         tips.add(new PowerTip(name, description));
     }

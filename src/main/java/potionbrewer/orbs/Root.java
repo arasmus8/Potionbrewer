@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.potions.DexterityPotion;
 import potionbrewer.PotionbrewerMod;
 
 public class Root extends Reagent {
-    public static final String ORB_ID = PotionbrewerMod.makeID("Ginger");
+    public static final String ORB_ID = PotionbrewerMod.makeID("Root");
     private static final Texture img;
     private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString(ORB_ID);
     public static final String[] DESC = orbString.DESCRIPTION;

@@ -40,7 +40,7 @@ public class Collect extends AbstractDynamicCard {
     private static final int VULNERABLE = 1;
     private static final int UPGRADE_VULNERABLE = 2;
 
-    private static HashMap<String, Reagent> monsterReagents = new HashMap<>();
+    private static HashMap<String, Class> monsterReagents = new HashMap<>();
 
     public Collect() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -50,7 +50,12 @@ public class Collect extends AbstractDynamicCard {
 
     public AbstractOrb getOrbForMonster(AbstractMonster m) {
         if(monsterReagents.containsKey(m.id)) {
-            return monsterReagents.get(m.id);
+            try {
+                Class<Reagent> clz = monsterReagents.get(m.id);
+                return clz.newInstance();
+            } catch (Exception d) {
+                System.out.println("Problem with orb for monster! m=" + m);
+            }
         }
         return ReagentList.randomReagent();
     }
@@ -73,86 +78,86 @@ public class Collect extends AbstractDynamicCard {
 
     static {
         // Exordium
-        monsterReagents.put(AcidSlime_S.ID, new Ichor());
-        monsterReagents.put(AcidSlime_M.ID, new Ichor());
-        monsterReagents.put(AcidSlime_L.ID, new Ichor());
-        monsterReagents.put(SpikeSlime_L.ID, new Ichor());
-        monsterReagents.put(SpikeSlime_M.ID, new Ichor());
-        monsterReagents.put(SpikeSlime_S.ID, new Ichor());
-        monsterReagents.put(ApologySlime.ID, new Ichor());
-        monsterReagents.put(Cultist.ID, new Feather());
-        monsterReagents.put(FungiBeast.ID, new Spore());
-        monsterReagents.put(GremlinFat.ID, new Grimace());
-        monsterReagents.put(GremlinThief.ID, new Grimace());
-        monsterReagents.put(GremlinTsundere.ID, new Grimace());
-        monsterReagents.put(GremlinWarrior.ID, new Grimace());
-        monsterReagents.put(GremlinWizard.ID, new Grimace());
-        monsterReagents.put(JawWorm.ID, new Tooth());
-        monsterReagents.put(Looter.ID, new Gold());
-        monsterReagents.put(LouseDefensive.ID, new Silk());
-        monsterReagents.put(LouseNormal.ID, new Silk());
-        monsterReagents.put(SlaverBlue.ID, new Bone());
-        monsterReagents.put(SlaverRed.ID, new Bone());
+        monsterReagents.put(AcidSlime_S.ID, Ichor.class);
+        monsterReagents.put(AcidSlime_M.ID, Ichor.class);
+        monsterReagents.put(AcidSlime_L.ID, Ichor.class);
+        monsterReagents.put(SpikeSlime_L.ID, Ichor.class);
+        monsterReagents.put(SpikeSlime_M.ID, Ichor.class);
+        monsterReagents.put(SpikeSlime_S.ID, Ichor.class);
+        monsterReagents.put(ApologySlime.ID, Ichor.class);
+        monsterReagents.put(Cultist.ID, Feather.class);
+        monsterReagents.put(FungiBeast.ID, Spore.class);
+        monsterReagents.put(GremlinFat.ID, Grimace.class);
+        monsterReagents.put(GremlinThief.ID, Grimace.class);
+        monsterReagents.put(GremlinTsundere.ID, Grimace.class);
+        monsterReagents.put(GremlinWarrior.ID, Grimace.class);
+        monsterReagents.put(GremlinWizard.ID, Grimace.class);
+        monsterReagents.put(JawWorm.ID, Tooth.class);
+        monsterReagents.put(Looter.ID, Gold.class);
+        monsterReagents.put(LouseDefensive.ID, Silk.class);
+        monsterReagents.put(LouseNormal.ID, Silk.class);
+        monsterReagents.put(SlaverBlue.ID, Bone.class);
+        monsterReagents.put(SlaverRed.ID, Bone.class);
         // elites
-        monsterReagents.put(GremlinNob.ID, new Bile());
-        monsterReagents.put(Lagavulin.ID, new Eye());
-        monsterReagents.put(Sentry.ID, new Steel());
+        monsterReagents.put(GremlinNob.ID, Bile.class);
+        monsterReagents.put(Lagavulin.ID, Eye.class);
+        monsterReagents.put(Sentry.ID, Steel.class);
         // bosses
-        monsterReagents.put(Hexaghost.ID, new RunicShape());
-        monsterReagents.put(SlimeBoss.ID, new TinyHat());
-        monsterReagents.put(TheGuardian.ID, new PowerCore());
+        monsterReagents.put(Hexaghost.ID, RunicShape.class);
+        monsterReagents.put(SlimeBoss.ID, TinyHat.class);
+        monsterReagents.put(TheGuardian.ID, PowerCore.class);
 
         // City
-        monsterReagents.put(BanditBear.ID, new Sulphur());
-        monsterReagents.put(BanditLeader.ID, new Wax());
-        monsterReagents.put(BanditPointy.ID, new Hand());
-        monsterReagents.put(BronzeOrb.ID, new Steel());
-        monsterReagents.put(Byrd.ID, new Feather());
-        monsterReagents.put(Centurion.ID, new Steel());
-        monsterReagents.put(Chosen.ID, new Feather());
-        monsterReagents.put(Healer.ID, new Ether());
-        monsterReagents.put(Mugger.ID, new Gold());
-        monsterReagents.put(ShelledParasite.ID, new Root());
-        monsterReagents.put(SnakePlant.ID, new Root());
-        monsterReagents.put(Snecko.ID, new Eye());
-        monsterReagents.put(SphericGuardian.ID, new Steel());
+        monsterReagents.put(BanditBear.ID, Sulphur.class);
+        monsterReagents.put(BanditLeader.ID, Wax.class);
+        monsterReagents.put(BanditPointy.ID, Hand.class);
+        monsterReagents.put(BronzeOrb.ID, Steel.class);
+        monsterReagents.put(Byrd.ID, Feather.class);
+        monsterReagents.put(Centurion.ID, Steel.class);
+        monsterReagents.put(Chosen.ID, Feather.class);
+        monsterReagents.put(Healer.ID, Ether.class);
+        monsterReagents.put(Mugger.ID, Gold.class);
+        monsterReagents.put(ShelledParasite.ID, Root.class);
+        monsterReagents.put(SnakePlant.ID, Root.class);
+        monsterReagents.put(Snecko.ID, Eye.class);
+        monsterReagents.put(SphericGuardian.ID, Steel.class);
         // elites
-        monsterReagents.put(BookOfStabbing.ID, new Needle());
-        monsterReagents.put(GremlinLeader.ID, new Horn());
-        monsterReagents.put(Taskmaster.ID, new Skull());
+        monsterReagents.put(BookOfStabbing.ID, Needle.class);
+        monsterReagents.put(GremlinLeader.ID, Horn.class);
+        monsterReagents.put(Taskmaster.ID, Skull.class);
         // bosses
-        monsterReagents.put(BronzeAutomaton.ID, new Mechanism());
-        monsterReagents.put(Champ.ID, new Crown());
-        monsterReagents.put(TheCollector.ID, new FeyFire());
-        monsterReagents.put(TorchHead.ID, new FeyFire());
+        monsterReagents.put(BronzeAutomaton.ID, Mechanism.class);
+        monsterReagents.put(Champ.ID, Crown.class);
+        monsterReagents.put(TheCollector.ID, FeyFire.class);
+        monsterReagents.put(TorchHead.ID, FeyFire.class);
 
         // Beyond
-        monsterReagents.put(Darkling.ID, new Ichor());
-        monsterReagents.put(Exploder.ID, new Flame());
-        monsterReagents.put(Maw.ID, new Tooth());
-        monsterReagents.put(OrbWalker.ID, new Flame());
-        monsterReagents.put(Repulsor.ID, new Lightning());
-        monsterReagents.put(Spiker.ID, new Barb());
-        monsterReagents.put(SpireGrowth.ID, new Tentacle());
-        monsterReagents.put(Transient.ID, new Meteorite());
-        monsterReagents.put(WrithingMass.ID, new Root());
+        monsterReagents.put(Darkling.ID, Ichor.class);
+        monsterReagents.put(Exploder.ID, Flame.class);
+        monsterReagents.put(Maw.ID, Tooth.class);
+        monsterReagents.put(OrbWalker.ID, Flame.class);
+        monsterReagents.put(Repulsor.ID, Lightning.class);
+        monsterReagents.put(Spiker.ID, Barb.class);
+        monsterReagents.put(SpireGrowth.ID, Tentacle.class);
+        monsterReagents.put(Transient.ID, Meteorite.class);
+        monsterReagents.put(WrithingMass.ID, Root.class);
         // elites
-        monsterReagents.put(GiantHead.ID, new Clay());
-        monsterReagents.put(Nemesis.ID, new Nethershroud());
-        monsterReagents.put(Reptomancer.ID, new SerpentSkull());
-        monsterReagents.put(SnakeDagger.ID, new Needle());
+        monsterReagents.put(GiantHead.ID, Clay.class);
+        monsterReagents.put(Nemesis.ID, Nethershroud.class);
+        monsterReagents.put(Reptomancer.ID, SerpentSkull.class);
+        monsterReagents.put(SnakeDagger.ID, Needle.class);
         // bosses
-        monsterReagents.put(AwakenedOne.ID, new Feather());
-        monsterReagents.put(Deca.ID, new Mechanism());
-        monsterReagents.put(Donu.ID, new RunicShape());
-        monsterReagents.put(TimeEater.ID, new Tentacle());
+        monsterReagents.put(AwakenedOne.ID, Feather.class);
+        monsterReagents.put(Deca.ID, Mechanism.class);
+        monsterReagents.put(Donu.ID, RunicShape.class);
+        monsterReagents.put(TimeEater.ID, Tentacle.class);
 
         // Ending
-        monsterReagents.put(Eyes.ID, new Eye());
+        monsterReagents.put(Eyes.ID, Eye.class);
         // elites
-        monsterReagents.put(SpireShield.ID, new Tentacle());
-        monsterReagents.put(SpireSpear.ID, new Tentacle());
+        monsterReagents.put(SpireShield.ID, Tentacle.class);
+        monsterReagents.put(SpireSpear.ID, Tentacle.class);
         // boss
-        monsterReagents.put(CorruptHeart.ID, new PhilosopherShard());
+        monsterReagents.put(CorruptHeart.ID, PhilosopherShard.class);
     }
 }

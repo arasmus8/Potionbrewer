@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.localization.PotionStrings;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import potionbrewer.PotionbrewerMod;
 
 public class HastePotion extends AbstractPotion {
@@ -37,10 +38,9 @@ public class HastePotion extends AbstractPotion {
     @Override
     public void use(AbstractCreature target) {
         AbstractPlayer p = AbstractDungeon.player;
-        AbstractCreature m = target;
-        if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && p != null && m != null) {
+        if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && p != null) {
             this.addToBot(new DiscardAtEndOfTurnAction());
-            this.addToBot(new GainEnergyAction(p.energy.energyMaster - p.energy.energy));
+            this.addToBot(new GainEnergyAction(p.energy.energyMaster - EnergyPanel.totalCount));
             this.addToBot(new DrawCardAction(p, potency));
         }
     }

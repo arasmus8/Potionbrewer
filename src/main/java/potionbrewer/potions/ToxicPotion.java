@@ -31,8 +31,9 @@ public class ToxicPotion extends AbstractPotion {
     public ToxicPotion() {
         super(NAME, POTION_ID, PotionRarity.COMMON, PotionSize.SPHERE, PotionColor.ANCIENT);
         potency = getPotency();
-        description = DESCRIPTIONS[0] + potency + DESCRIPTIONS[1] + potency + DESCRIPTIONS[2];
+        description = DESCRIPTIONS[0] + potency + DESCRIPTIONS[1];
         isThrown = true;
+        this.targetRequired = true;
         tips.add(new PowerTip(name, description));
     }
     
