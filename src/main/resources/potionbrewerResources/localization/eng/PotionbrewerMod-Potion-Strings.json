@@ -45,5 +45,9 @@
   "potionbrewer:ToxicPotion": {
     "NAME": "Toxic Potion",
     "DESCRIPTIONS": [ "Apply #b", " Toxic to an enemy." ]
+  },
+  "potionbrewer:FireTonic": {
+    "NAME": "Fire Tonic",
+    "DESCRIPTIONS": [ "Deal #b", " Damage to an enemy." ]
   }
 }

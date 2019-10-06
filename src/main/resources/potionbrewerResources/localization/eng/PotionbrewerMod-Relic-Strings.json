@@ -1,9 +1,9 @@
 {
-  "potionbrewer:PlaceholderRelic": {
-    "NAME": "Placeholder Energy Relic",
-    "FLAVOR": "The snake is a friend.",
+  "potionbrewer:PotionKit": {
+    "NAME": "Potion Kit",
+    "FLAVOR": "The essential tools of the Potion Brewer's trade.",
     "DESCRIPTIONS": [
-      "Gain #b1 [E] ."
+      "Add an additional Potion slot. Each battle brew a tonic."
     ]
   },
   "potionbrewer:PlaceholderRelic2": {

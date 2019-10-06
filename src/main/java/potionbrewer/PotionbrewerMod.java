@@ -32,7 +32,7 @@ import potionbrewer.patches.PotionTracker;
 import potionbrewer.potions.*;
 import potionbrewer.relics.BottledPlaceholderRelic;
 import potionbrewer.relics.DefaultClickableRelic;
-import potionbrewer.relics.PlaceholderRelic;
+import potionbrewer.relics.PotionKit;
 import potionbrewer.relics.PlaceholderRelic2;
 import potionbrewer.util.IDCheckDontTouchPls;
 import potionbrewer.util.TextureLoader;
@@ -272,7 +272,7 @@ public class PotionbrewerMod implements
         logger.info("Adding relics");
         
         
-        BaseMod.addRelicToCustomPool(new PlaceholderRelic(), Potionbrewer.Enums.COLOR_CYAN);
+        BaseMod.addRelicToCustomPool(new PotionKit(), Potionbrewer.Enums.COLOR_CYAN);
         BaseMod.addRelicToCustomPool(new BottledPlaceholderRelic(), Potionbrewer.Enums.COLOR_CYAN);
         BaseMod.addRelicToCustomPool(new DefaultClickableRelic(), Potionbrewer.Enums.COLOR_CYAN);
         

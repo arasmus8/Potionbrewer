@@ -25,7 +25,7 @@ import potionbrewer.PotionbrewerMod;
 import potionbrewer.cards.*;
 import potionbrewer.patches.PotionTracker;
 import potionbrewer.relics.DefaultClickableRelic;
-import potionbrewer.relics.PlaceholderRelic;
+import potionbrewer.relics.PotionKit;
 import potionbrewer.relics.PlaceholderRelic2;
 
 import java.util.ArrayList;
@@ -132,11 +132,9 @@ public class Potionbrewer extends CustomPlayer {
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
         
-        retVal.add(PlaceholderRelic.ID);
-        retVal.add(PlaceholderRelic2.ID);
-        retVal.add(DefaultClickableRelic.ID);
-        
-        UnlockTracker.markRelicAsSeen(PlaceholderRelic.ID);
+        retVal.add(PotionKit.ID);
+
+        UnlockTracker.markRelicAsSeen(PotionKit.ID);
         UnlockTracker.markRelicAsSeen(PlaceholderRelic2.ID);
         UnlockTracker.markRelicAsSeen(DefaultClickableRelic.ID);
         

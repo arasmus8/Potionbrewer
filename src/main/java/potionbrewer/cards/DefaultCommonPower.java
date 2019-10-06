@@ -36,8 +36,7 @@ public class DefaultCommonPower extends AbstractDynamicCard {
     
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
-                new ToxicPower(p, p, magicNumber), magicNumber));
+        this.addToBot(new ApplyPowerAction(m, p, new ToxicPower(m, p, magicNumber), magicNumber));
     }
     
     @Override

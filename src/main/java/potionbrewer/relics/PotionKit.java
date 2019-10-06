@@ -2,37 +2,39 @@ package potionbrewer.relics;
 
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.actions.common.ObtainPotionAction;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.potions.PotionSlot;
 import potionbrewer.PotionbrewerMod;
+import potionbrewer.potions.tonics.FireTonic;
 import potionbrewer.util.TextureLoader;
 
 import static potionbrewer.PotionbrewerMod.makeRelicOutlinePath;
 import static potionbrewer.PotionbrewerMod.makeRelicPath;
 
-public class PlaceholderRelic extends CustomRelic {
+public class PotionKit extends CustomRelic {
     
-    public static final String ID = PotionbrewerMod.makeID("PlaceholderRelic");
+    public static final String ID = PotionbrewerMod.makeID(PotionKit.class.getSimpleName());
     
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("placeholder_relic.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic.png"));
     
-    public PlaceholderRelic() {
-        super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.MAGICAL);
+    public PotionKit() {
+        super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.CLINK);
     }
     
     @Override
     public void atBattleStartPreDraw() {
         flash();
+        this.addToBot(new ObtainPotionAction(new FireTonic()));
     }
     
     @Override
     public void onEquip() {
-        AbstractDungeon.player.energy.energyMaster += 1;
-    }
-    
-    @Override
-    public void onUnequip() {
-        AbstractDungeon.player.energy.energyMaster -= 1;
+        AbstractPlayer p = AbstractDungeon.player;
+        p.potionSlots += 1;
+        AbstractDungeon.player.potions.add(new PotionSlot(AbstractDungeon.player.potionSlots - 1));
     }
     
     @Override

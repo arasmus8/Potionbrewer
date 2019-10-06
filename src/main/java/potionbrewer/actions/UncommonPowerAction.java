@@ -14,6 +14,7 @@ public class UncommonPowerAction extends AbstractGameAction {
     private boolean freeToPlayOnce;
     private int magicNumber;
     private AbstractPlayer p;
+    private AbstractMonster m;
     private int energyOnUse;
     private boolean upgraded;
     
@@ -23,6 +24,7 @@ public class UncommonPowerAction extends AbstractGameAction {
                                final int energyOnUse) {
         this.freeToPlayOnce = false;
         this.p = p;
+        this.m = m;
         this.magicNumber = magicNumber;
         this.freeToPlayOnce = freeToPlayOnce;
         actionType = ActionType.SPECIAL;
@@ -45,10 +47,8 @@ public class UncommonPowerAction extends AbstractGameAction {
         }
         if (effect > 0) {
             for (int i = 0; i < effect; ++i) {
-                
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
-                        new ToxicPower(p, p, magicNumber), magicNumber,
-                        AttackEffect.BLUNT_LIGHT));
+
+                this.addToBot(new ApplyPowerAction(m, p, new ToxicPower(m, p, magicNumber), magicNumber, AttackEffect.POISON));
             }
             if (!freeToPlayOnce) {
                 p.energy.use(EnergyPanel.totalCount);
