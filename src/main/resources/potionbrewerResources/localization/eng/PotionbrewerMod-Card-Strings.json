@@ -9,7 +9,7 @@
   },
   "potionbrewer:DefaultCommonPower": {
     "NAME": "Hold Place",
-    "DESCRIPTION": "Apply !M! thedefault:Toxic.",
+    "DESCRIPTION": "Apply !M! potionbrewer:Toxic.",
     "UPGRADE_DESCRIPTION": "Gain !M! potionbrewer:Toxic."
   },
   "potionbrewer:DefaultUncommonAttack": {

@@ -27,12 +27,16 @@ public class SplittingPotion extends AbstractPotion {
 
     public SplittingPotion() {
         super(NAME, POTION_ID, PotionRarity.UNCOMMON, PotionSize.S, PotionColor.ANCIENT);
-        potency = getPotency();
-        description = DESCRIPTIONS[0] + potency + DESCRIPTIONS[1];
         isThrown = false;
-        tips.add(new PowerTip(name, description));
     }
 
+    @Override
+    public void initializeData() {
+        potency = getPotency();
+        description = DESCRIPTIONS[0] + potency + DESCRIPTIONS[1];
+        tips.clear();
+        tips.add(new PowerTip(name, description));
+    }
 
     @Override
     public void use(AbstractCreature target) {

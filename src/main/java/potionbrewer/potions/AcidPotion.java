@@ -29,13 +29,18 @@ public class AcidPotion extends AbstractPotion {
 
     public AcidPotion() {
         super(NAME, POTION_ID, PotionRarity.COMMON, PotionSize.BOLT, PotionColor.POISON);
-        potency = getPotency();
-        description = DESCRIPTIONS[0] + potency + DESCRIPTIONS[1];
         this.isThrown = true;
         this.targetRequired = true;
+    }
+
+    @Override
+    public void initializeData() {
+        potency = getPotency();
+        description = DESCRIPTIONS[0] + potency + DESCRIPTIONS[1];
+        tips.clear();
         tips.add(new PowerTip(name, description));
     }
-    
+
     @Override
     public void use(AbstractCreature target) {
         AbstractPlayer p = AbstractDungeon.player;

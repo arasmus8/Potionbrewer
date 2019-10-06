@@ -258,6 +258,7 @@ public class PotionbrewerMod implements
         BaseMod.addPotion(DiscountPotion.class, DiscountPotion.LIQUID_COLOR, DiscountPotion.HYBRID_COLOR, DiscountPotion.SPOTS_COLOR, DiscountPotion.POTION_ID, Potionbrewer.Enums.POTIONBREWER);
         BaseMod.addPotion(FreezingPotion.class, FreezingPotion.LIQUID_COLOR, FreezingPotion.HYBRID_COLOR, FreezingPotion.SPOTS_COLOR, FreezingPotion.POTION_ID, Potionbrewer.Enums.POTIONBREWER);
         BaseMod.addPotion(HastePotion.class, HastePotion.LIQUID_COLOR, HastePotion.HYBRID_COLOR, HastePotion.SPOTS_COLOR, HastePotion.POTION_ID, Potionbrewer.Enums.POTIONBREWER);
+        BaseMod.addPotion(InfectionPotion.class, InfectionPotion.LIQUID_COLOR, InfectionPotion.HYBRID_COLOR, InfectionPotion.SPOTS_COLOR, InfectionPotion.POTION_ID, Potionbrewer.Enums.POTIONBREWER);
         BaseMod.addPotion(MidasPotion.class, MidasPotion.LIQUID_COLOR, MidasPotion.HYBRID_COLOR, MidasPotion.SPOTS_COLOR, MidasPotion.POTION_ID, Potionbrewer.Enums.POTIONBREWER);
         BaseMod.addPotion(NoxiousPotion.class, NoxiousPotion.LIQUID_COLOR, NoxiousPotion.HYBRID_COLOR, NoxiousPotion.SPOTS_COLOR, NoxiousPotion.POTION_ID, Potionbrewer.Enums.POTIONBREWER);
         BaseMod.addPotion(QuicksilverPotion.class, QuicksilverPotion.LIQUID_COLOR, QuicksilverPotion.HYBRID_COLOR, QuicksilverPotion.SPOTS_COLOR, QuicksilverPotion.POTION_ID, Potionbrewer.Enums.POTIONBREWER);

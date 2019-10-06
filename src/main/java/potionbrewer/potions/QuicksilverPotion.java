@@ -26,17 +26,22 @@ public class QuicksilverPotion extends AbstractPotion {
     public static final Color SPOTS_COLOR = Color.LIGHT_GRAY;
 
     public QuicksilverPotion() {
-        super(NAME, POTION_ID, PotionRarity.RARE, PotionSize.FAIRY, PotionColor.SMOKE);
+        super(NAME, POTION_ID, PotionRarity.RARE, PotionSize.BOTTLE, PotionColor.SMOKE);
+        isThrown = false;
+    }
+
+    @Override
+    public void initializeData() {
         potency = getPotency();
         if (potency > 1) {
             description = DESCRIPTIONS[0] + DESCRIPTIONS[2] + potency + DESCRIPTIONS[3] + DESCRIPTIONS[4];
         } else {
             description = DESCRIPTIONS[0] + DESCRIPTIONS[1] + DESCRIPTIONS[4];
         }
-        isThrown = false;
+        tips.clear();
         tips.add(new PowerTip(name, description));
     }
-    
+
     @Override
     public void use(AbstractCreature target) {
         AbstractPlayer p = AbstractDungeon.player;

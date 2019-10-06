@@ -1,10 +1,25 @@
 {
-        "potionbrewer:ToxicPower": {
-                "NAME": "Toxic",
-                "DESCRIPTIONS": ["At the beginning of each turn, lose ", " of current health."]
-        },
-        "potionbrewer:RarePower": {
-                "NAME": "Placeholder Power",
-                "DESCRIPTIONS": ["At the start of your turn, TOUCH #b", " enemy." , " enemies."]
-        }
+  "potionbrewer:DiseasePower": {
+    "NAME": "Disease",
+    "DESCRIPTIONS": [
+      "Damage is reduced by half. At the end of turn, deal #b",
+      " Damage and apply #b",
+      " Infection to all enemies."
+    ]
+  },
+  "potionbrewer:InfectionPower": {
+    "NAME": "Infection",
+    "DESCRIPTIONS": [
+      "Doubles each turn. When Infection reaches #b",
+      " applies #b1 Disease, and is reduced by #b"
+    ]
+  },
+  "potionbrewer:ToxicPower": {
+    "NAME": "Toxic",
+    "DESCRIPTIONS": ["At the beginning of each turn, lose ", " of current health."]
+  },
+  "potionbrewer:RarePower": {
+    "NAME": "Placeholder Power",
+    "DESCRIPTIONS": ["At the start of your turn, TOUCH #b", " enemy." , " enemies."]
+  }
 }

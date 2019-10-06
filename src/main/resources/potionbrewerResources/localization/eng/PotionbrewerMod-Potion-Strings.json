@@ -26,6 +26,10 @@
     "NAME": "Haste Potion",
     "DESCRIPTIONS": [ "Discard your hand, refill your energy, draw #b", " cards." ]
   },
+  "potionbrewer:InfectionPotion": {
+    "NAME": "Infection Potion",
+    "DESCRIPTIONS": [ "Apply #b", " Infection."]
+  },
   "potionbrewer:MidasPotion": {
     "NAME": "Midas Potion",
     "DESCRIPTIONS": [ "Deal #b", " Damage, if the enemy is defeated, gain #b", " gold." ]
@@ -46,8 +50,40 @@
     "NAME": "Toxic Potion",
     "DESCRIPTIONS": [ "Apply #b", " Toxic to an enemy." ]
   },
+  "potionbrewer:BlockTonic": {
+    "NAME": "Block Tonic",
+    "DESCRIPTIONS": [ "Gain #b", " Block." ]
+  },
+  "potionbrewer:EnergyTonic": {
+    "NAME": "Energy Tonic",
+    "DESCRIPTIONS": [ "Gain #b", " [E]." ]
+  },
+  "potionbrewer:ExplosiveTonic": {
+    "NAME": "Explosive Tonic",
+    "DESCRIPTIONS": [ "Deal #b", " Damage to all enemies." ]
+  },
+  "potionbrewer:FearTonic": {
+    "NAME": "Fear Tonic",
+    "DESCRIPTIONS": [ "Apply #b", " Vulnerable to an enemy." ]
+  },
   "potionbrewer:FireTonic": {
     "NAME": "Fire Tonic",
     "DESCRIPTIONS": [ "Deal #b", " Damage to an enemy." ]
+  },
+  "potionbrewer:FlexTonic": {
+    "NAME": "Flex Tonic",
+    "DESCRIPTIONS": [ "Gain #b", " Strength until the end of this turn." ]
+  },
+  "potionbrewer:SpeedTonic": {
+    "NAME": "Speed Tonic",
+    "DESCRIPTIONS": [ "Gain #b", " Dexterity until the end of this turn." ]
+  },
+  "potionbrewer:SwiftTonic": {
+    "NAME": "Swift Tonic",
+    "DESCRIPTIONS": [ "Draw #b", " card.", " cards." ]
+  },
+  "potionbrewer:WeakTonic": {
+    "NAME": "Weak Tonic",
+    "DESCRIPTIONS": [ "Apply #b", " Weak to an enemy." ]
   }
 }

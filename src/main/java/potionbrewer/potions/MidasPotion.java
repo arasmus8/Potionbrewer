@@ -27,13 +27,18 @@ public class MidasPotion extends AbstractPotion {
 
     public MidasPotion() {
         super(NAME, POTION_ID, PotionRarity.UNCOMMON, PotionSize.SPHERE, PotionColor.POISON);
-        potency = getPotency();
-        description = DESCRIPTIONS[0] + potency + DESCRIPTIONS[1] + potency + DESCRIPTIONS[2];
         isThrown = true;
         targetRequired = true;
+    }
+
+    @Override
+    public void initializeData() {
+        potency = getPotency();
+        description = DESCRIPTIONS[0] + potency + DESCRIPTIONS[1] + potency + DESCRIPTIONS[2];
+        tips.clear();
         tips.add(new PowerTip(name, description));
     }
-    
+
     @Override
     public void use(AbstractCreature target) {
         AbstractPlayer p = AbstractDungeon.player;

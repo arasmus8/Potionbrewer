@@ -27,13 +27,18 @@ public class ToxicPotion extends AbstractPotion {
 
     public ToxicPotion() {
         super(NAME, POTION_ID, PotionRarity.COMMON, PotionSize.SPHERE, PotionColor.ANCIENT);
-        potency = getPotency();
-        description = DESCRIPTIONS[0] + potency + DESCRIPTIONS[1];
         isThrown = true;
         this.targetRequired = true;
+    }
+
+    @Override
+    public void initializeData() {
+        potency = getPotency();
+        description = DESCRIPTIONS[0] + potency + DESCRIPTIONS[1];
+        tips.clear();
         tips.add(new PowerTip(name, description));
     }
-    
+
     @Override
     public void use(AbstractCreature target) {
         AbstractPlayer p = AbstractDungeon.player;

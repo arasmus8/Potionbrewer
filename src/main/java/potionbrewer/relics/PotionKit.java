@@ -5,9 +5,11 @@ import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ObtainPotionAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.potions.PotionSlot;
 import potionbrewer.PotionbrewerMod;
 import potionbrewer.potions.tonics.FireTonic;
+import potionbrewer.potions.tonics.TonicLibrary;
 import potionbrewer.util.TextureLoader;
 
 import static potionbrewer.PotionbrewerMod.makeRelicOutlinePath;
@@ -27,7 +29,8 @@ public class PotionKit extends CustomRelic {
     @Override
     public void atBattleStartPreDraw() {
         flash();
-        this.addToBot(new ObtainPotionAction(new FireTonic()));
+        AbstractPotion p = TonicLibrary.getRandomTonic();
+        this.addToBot(new ObtainPotionAction(p));
     }
     
     @Override

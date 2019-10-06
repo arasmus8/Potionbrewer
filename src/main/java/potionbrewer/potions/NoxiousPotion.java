@@ -27,17 +27,21 @@ public class NoxiousPotion extends AbstractPotion {
 
     public NoxiousPotion() {
         super(NAME, POTION_ID, PotionRarity.COMMON, PotionSize.H, PotionColor.POISON);
-        potency = getPotency();
-        description = DESCRIPTIONS[0] + potency + DESCRIPTIONS[1];
         isThrown = true;
         this.targetRequired = true;
+    }
+
+    @Override
+    public void initializeData() {
+        potency = getPotency();
+        description = DESCRIPTIONS[0] + potency + DESCRIPTIONS[1];
+        tips.clear();
         tips.add(new PowerTip(name, description));
     }
-    
+
     @Override
-    public void use(AbstractCreature target) {
+    public void use(AbstractCreature m) {
         AbstractPlayer p = AbstractDungeon.player;
-        AbstractCreature m = target;
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && p != null && m != null) {
             this.addToBot(new ApplyPowerAction(m, p, new ChokePower(m, potency), potency));
         }

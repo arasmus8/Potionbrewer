@@ -27,13 +27,18 @@ public class FreezingPotion extends AbstractPotion {
 
     public FreezingPotion() {
         super(NAME, POTION_ID, PotionRarity.UNCOMMON, PotionSize.FAIRY, PotionColor.POWER);
-        potency = getPotency();
-        description = DESCRIPTIONS[0];
         this.isThrown = true;
         this.targetRequired = true;
+    }
+
+    @Override
+    public void initializeData() {
+        potency = getPotency();
+        description = DESCRIPTIONS[0] + potency + DESCRIPTIONS[1];
+        tips.clear();
         tips.add(new PowerTip(name, description));
     }
-    
+
     @Override
     public void use(AbstractCreature target) {
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {

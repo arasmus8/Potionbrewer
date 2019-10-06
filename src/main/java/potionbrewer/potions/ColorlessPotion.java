@@ -25,16 +25,22 @@ public class ColorlessPotion extends AbstractPotion {
 
     public ColorlessPotion() {
         super(NAME, POTION_ID, PotionRarity.UNCOMMON, PotionSize.CARD, PotionColor.SKILL);
+        isThrown = false;
+    }
+
+    @Override
+    public void initializeData() {
         potency = getPotency();
         if(potency == 1) {
             description = DESCRIPTIONS[0];
         } else {
             description = DESCRIPTIONS[1];
         }
-        isThrown = false;
+        tips.clear();
         tips.add(new PowerTip(name, description));
+
     }
-    
+
     @Override
     public void use(AbstractCreature target) {
         AbstractCard c = AbstractDungeon.returnTrulyRandomColorlessCardInCombat(AbstractDungeon.cardRandomRng).makeCopy();

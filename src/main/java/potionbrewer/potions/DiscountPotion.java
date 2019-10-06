@@ -25,17 +25,23 @@ public class DiscountPotion extends AbstractPotion {
     public static final Color SPOTS_COLOR = Color.CLEAR;
 
     public DiscountPotion() {
-        super(NAME, POTION_ID, PotionRarity.UNCOMMON, PotionSize.SPHERE, PotionColor.SMOKE);
+        super(NAME, POTION_ID, PotionRarity.COMMON, PotionSize.SPHERE, PotionColor.SMOKE);
+        isThrown = false;
+    }
+
+    @Override
+    public void initializeData() {
         potency = getPotency();
         if (potency > 1) {
             description = DESCRIPTIONS[1] + potency + DESCRIPTIONS[2] + DESCRIPTIONS[3];
         } else {
             description = DESCRIPTIONS[0] + DESCRIPTIONS[3];
         }
-        isThrown = false;
+        tips.clear();
         tips.add(new PowerTip(name, description));
+
     }
-    
+
     @Override
     public void use(AbstractCreature target) {
         AbstractPlayer p = AbstractDungeon.player;

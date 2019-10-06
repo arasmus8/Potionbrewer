@@ -29,9 +29,14 @@ public class HastePotion extends AbstractPotion {
 
     public HastePotion() {
         super(NAME, POTION_ID, PotionRarity.RARE, PotionSize.BOLT, PotionColor.FIRE);
+        isThrown = false;
+    }
+
+    @Override
+    public void initializeData() {
         potency = getPotency();
         description = DESCRIPTIONS[0] + potency + DESCRIPTIONS[1];
-        isThrown = false;
+        tips.clear();
         tips.add(new PowerTip(name, description));
     }
     
