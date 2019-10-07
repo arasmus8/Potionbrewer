@@ -18,6 +18,13 @@
     "NAME": "Discount Potion",
     "DESCRIPTIONS": [ "A random card", "#b", " random cards", " in your hand cost 0 this combat." ]
   },
+  "potionbrewer:EndurancePotion": {
+    "NAME": "Endurance Potion",
+    "DESCRIPTIONS": [
+      "Gain #b",
+      " Temporary HP"
+    ]
+  },
   "potionbrewer:FreezingPotion": {
     "NAME": "Freezing Potion",
     "DESCRIPTIONS": [ "Apply #b", " Slow to an Enemy." ]
@@ -28,7 +35,10 @@
   },
   "potionbrewer:InfectionPotion": {
     "NAME": "Infection Potion",
-    "DESCRIPTIONS": [ "Apply #b", " Infection."]
+    "DESCRIPTIONS": [
+      "Apply #b",
+      " potionbrewer:Infection."
+    ]
   },
   "potionbrewer:MidasPotion": {
     "NAME": "Midas Potion",

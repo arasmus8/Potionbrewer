@@ -32,8 +32,8 @@ import potionbrewer.patches.PotionTracker;
 import potionbrewer.potions.*;
 import potionbrewer.relics.BottledPlaceholderRelic;
 import potionbrewer.relics.DefaultClickableRelic;
-import potionbrewer.relics.PotionKit;
 import potionbrewer.relics.PlaceholderRelic2;
+import potionbrewer.relics.PotionKit;
 import potionbrewer.util.IDCheckDontTouchPls;
 import potionbrewer.util.TextureLoader;
 import potionbrewer.variables.DefaultCustomVariable;
@@ -256,6 +256,7 @@ public class PotionbrewerMod implements
         BaseMod.addPotion(CleansingPotion.class, CleansingPotion.LIQUID_COLOR, CleansingPotion.HYBRID_COLOR, CleansingPotion.SPOTS_COLOR, CleansingPotion.POTION_ID, Potionbrewer.Enums.POTIONBREWER);
         BaseMod.addPotion(ColorlessPotion.class, ColorlessPotion.LIQUID_COLOR, ColorlessPotion.HYBRID_COLOR, ColorlessPotion.SPOTS_COLOR, ColorlessPotion.POTION_ID, Potionbrewer.Enums.POTIONBREWER);
         BaseMod.addPotion(DiscountPotion.class, DiscountPotion.LIQUID_COLOR, DiscountPotion.HYBRID_COLOR, DiscountPotion.SPOTS_COLOR, DiscountPotion.POTION_ID, Potionbrewer.Enums.POTIONBREWER);
+        BaseMod.addPotion(EndurancePotion.class, EndurancePotion.LIQUID_COLOR, EndurancePotion.HYBRID_COLOR, EndurancePotion.SPOTS_COLOR, EndurancePotion.POTION_ID, Potionbrewer.Enums.POTIONBREWER);
         BaseMod.addPotion(FreezingPotion.class, FreezingPotion.LIQUID_COLOR, FreezingPotion.HYBRID_COLOR, FreezingPotion.SPOTS_COLOR, FreezingPotion.POTION_ID, Potionbrewer.Enums.POTIONBREWER);
         BaseMod.addPotion(HastePotion.class, HastePotion.LIQUID_COLOR, HastePotion.HYBRID_COLOR, HastePotion.SPOTS_COLOR, HastePotion.POTION_ID, Potionbrewer.Enums.POTIONBREWER);
         BaseMod.addPotion(InfectionPotion.class, InfectionPotion.LIQUID_COLOR, InfectionPotion.HYBRID_COLOR, InfectionPotion.SPOTS_COLOR, InfectionPotion.POTION_ID, Potionbrewer.Enums.POTIONBREWER);
