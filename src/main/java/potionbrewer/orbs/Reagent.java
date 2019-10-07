@@ -23,6 +23,11 @@ public abstract class Reagent extends AbstractOrb {
     private static final float ORB_WAVY_DIST = 0.04f;
     private static final float PI_4 = 12.566371f;
 
+    @Override
+    public String toString() {
+        return this.ID;
+    }
+
     public Reagent(String id, Texture img, String name) {
         this.ID = id;
         this.name = name;

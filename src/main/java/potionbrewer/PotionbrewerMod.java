@@ -13,6 +13,7 @@ import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -20,16 +21,21 @@ import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import potionbrewer.cards.*;
+import potionbrewer.characters.Invalid;
 import potionbrewer.characters.Potionbrewer;
 import potionbrewer.events.IdentityCrisisEvent;
+import potionbrewer.orbs.Reagent;
+import potionbrewer.orbs.ReagentList;
 import potionbrewer.patches.PotionTracker;
 import potionbrewer.potions.*;
+import potionbrewer.potions.tonics.TonicLibrary;
 import potionbrewer.relics.BottledPlaceholderRelic;
 import potionbrewer.relics.DefaultClickableRelic;
 import potionbrewer.relics.PlaceholderRelic2;
@@ -42,7 +48,9 @@ import potionbrewer.variables.DefaultSecondMagicNumber;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.Properties;
+import java.util.stream.Collectors;
 
 @SpireInitializer
 public class PotionbrewerMod implements
@@ -52,14 +60,19 @@ public class PotionbrewerMod implements
         EditKeywordsSubscriber,
         EditCharactersSubscriber,
         OnStartBattleSubscriber,
+        PostBattleSubscriber,
         PostInitializeSubscriber,
-        PostPotionUseSubscriber {
-    
+        PostPotionUseSubscriber,
+        StartActSubscriber,
+        StartGameSubscriber {
+
     public static final Logger logger = LogManager.getLogger(PotionbrewerMod.class.getName());
     private static String modID;
-    
-    public static Properties theDefaultDefaultSettings = new Properties();
+
+    public static Properties potionbrewerSettings = new Properties();
     public static final String ENABLE_PLACEHOLDER_SETTINGS = "enablePlaceholder";
+    public static final String REAGENTS = "reagentList";
+    private static final String DELIM = ", ";
     public static boolean enablePlaceholder = true;
     
     private static final String MODNAME = "Potionbrewer";
@@ -114,10 +127,14 @@ public class PotionbrewerMod implements
     public static String makeEventPath(String resourcePath) {
         return getModID() + "Resources/images/events/" + resourcePath;
     }
+
+    public ArrayList<Reagent> reagents;
     
     public PotionbrewerMod() {
         logger.info("Subscribe to BaseMod hooks");
-        
+
+        reagents = new ArrayList<>();
+
         BaseMod.subscribe(this);
         
         
@@ -138,11 +155,11 @@ public class PotionbrewerMod implements
         
         
         logger.info("Adding mod settings");
-        
-        
-        theDefaultDefaultSettings.setProperty(ENABLE_PLACEHOLDER_SETTINGS, "FALSE");
+
+
+        potionbrewerSettings.setProperty(ENABLE_PLACEHOLDER_SETTINGS, "FALSE");
         try {
-            SpireConfig config = new SpireConfig("PotionbrewerMod", "theDefaultConfig", theDefaultDefaultSettings);
+            SpireConfig config = new SpireConfig("PotionbrewerMod", "potionbrewerConfig", potionbrewerSettings);
             
             config.load();
             enablePlaceholder = config.getBool(ENABLE_PLACEHOLDER_SETTINGS);
@@ -228,8 +245,8 @@ public class PotionbrewerMod implements
                     
                     enablePlaceholder = button.enabled;
                     try {
-                        
-                        SpireConfig config = new SpireConfig("defaultMod", "theDefaultConfig", theDefaultDefaultSettings);
+
+                        SpireConfig config = new SpireConfig("PotionbrewerMod", "potionbrewerConfig", potionbrewerSettings);
                         config.setBool(ENABLE_PLACEHOLDER_SETTINGS, enablePlaceholder);
                         config.save();
                     } catch (Exception e) {
@@ -252,19 +269,20 @@ public class PotionbrewerMod implements
         logger.info("Beginning to edit potions");
 
 
-        BaseMod.addPotion(AcidPotion.class, AcidPotion.LIQUID_COLOR, AcidPotion.HYBRID_COLOR, AcidPotion.SPOTS_COLOR, AcidPotion.POTION_ID, Potionbrewer.Enums.POTIONBREWER);
-        BaseMod.addPotion(CleansingPotion.class, CleansingPotion.LIQUID_COLOR, CleansingPotion.HYBRID_COLOR, CleansingPotion.SPOTS_COLOR, CleansingPotion.POTION_ID, Potionbrewer.Enums.POTIONBREWER);
-        BaseMod.addPotion(ColorlessPotion.class, ColorlessPotion.LIQUID_COLOR, ColorlessPotion.HYBRID_COLOR, ColorlessPotion.SPOTS_COLOR, ColorlessPotion.POTION_ID, Potionbrewer.Enums.POTIONBREWER);
-        BaseMod.addPotion(DiscountPotion.class, DiscountPotion.LIQUID_COLOR, DiscountPotion.HYBRID_COLOR, DiscountPotion.SPOTS_COLOR, DiscountPotion.POTION_ID, Potionbrewer.Enums.POTIONBREWER);
-        BaseMod.addPotion(EndurancePotion.class, EndurancePotion.LIQUID_COLOR, EndurancePotion.HYBRID_COLOR, EndurancePotion.SPOTS_COLOR, EndurancePotion.POTION_ID, Potionbrewer.Enums.POTIONBREWER);
-        BaseMod.addPotion(FreezingPotion.class, FreezingPotion.LIQUID_COLOR, FreezingPotion.HYBRID_COLOR, FreezingPotion.SPOTS_COLOR, FreezingPotion.POTION_ID, Potionbrewer.Enums.POTIONBREWER);
-        BaseMod.addPotion(HastePotion.class, HastePotion.LIQUID_COLOR, HastePotion.HYBRID_COLOR, HastePotion.SPOTS_COLOR, HastePotion.POTION_ID, Potionbrewer.Enums.POTIONBREWER);
-        BaseMod.addPotion(InfectionPotion.class, InfectionPotion.LIQUID_COLOR, InfectionPotion.HYBRID_COLOR, InfectionPotion.SPOTS_COLOR, InfectionPotion.POTION_ID, Potionbrewer.Enums.POTIONBREWER);
-        BaseMod.addPotion(MidasPotion.class, MidasPotion.LIQUID_COLOR, MidasPotion.HYBRID_COLOR, MidasPotion.SPOTS_COLOR, MidasPotion.POTION_ID, Potionbrewer.Enums.POTIONBREWER);
-        BaseMod.addPotion(NoxiousPotion.class, NoxiousPotion.LIQUID_COLOR, NoxiousPotion.HYBRID_COLOR, NoxiousPotion.SPOTS_COLOR, NoxiousPotion.POTION_ID, Potionbrewer.Enums.POTIONBREWER);
-        BaseMod.addPotion(QuicksilverPotion.class, QuicksilverPotion.LIQUID_COLOR, QuicksilverPotion.HYBRID_COLOR, QuicksilverPotion.SPOTS_COLOR, QuicksilverPotion.POTION_ID, Potionbrewer.Enums.POTIONBREWER);
-        BaseMod.addPotion(SplittingPotion.class, SplittingPotion.LIQUID_COLOR, SplittingPotion.HYBRID_COLOR, SplittingPotion.SPOTS_COLOR, SplittingPotion.POTION_ID, Potionbrewer.Enums.POTIONBREWER);
-        BaseMod.addPotion(ToxicPotion.class, ToxicPotion.LIQUID_COLOR, ToxicPotion.HYBRID_COLOR, ToxicPotion.SPOTS_COLOR, ToxicPotion.POTION_ID, Potionbrewer.Enums.POTIONBREWER);
+        BaseMod.addPotion(AcidPotion.class, AcidPotion.LIQUID_COLOR, AcidPotion.HYBRID_COLOR, AcidPotion.SPOTS_COLOR, AcidPotion.POTION_ID, null);
+        BaseMod.addPotion(CleansingPotion.class, CleansingPotion.LIQUID_COLOR, CleansingPotion.HYBRID_COLOR, CleansingPotion.SPOTS_COLOR, CleansingPotion.POTION_ID, null);
+        BaseMod.addPotion(ColorlessPotion.class, ColorlessPotion.LIQUID_COLOR, ColorlessPotion.HYBRID_COLOR, ColorlessPotion.SPOTS_COLOR, ColorlessPotion.POTION_ID, null);
+        BaseMod.addPotion(DiscountPotion.class, DiscountPotion.LIQUID_COLOR, DiscountPotion.HYBRID_COLOR, DiscountPotion.SPOTS_COLOR, DiscountPotion.POTION_ID, null);
+        BaseMod.addPotion(EndurancePotion.class, EndurancePotion.LIQUID_COLOR, EndurancePotion.HYBRID_COLOR, EndurancePotion.SPOTS_COLOR, EndurancePotion.POTION_ID, null);
+        BaseMod.addPotion(FreezingPotion.class, FreezingPotion.LIQUID_COLOR, FreezingPotion.HYBRID_COLOR, FreezingPotion.SPOTS_COLOR, FreezingPotion.POTION_ID, null);
+        BaseMod.addPotion(HastePotion.class, HastePotion.LIQUID_COLOR, HastePotion.HYBRID_COLOR, HastePotion.SPOTS_COLOR, HastePotion.POTION_ID, null);
+        BaseMod.addPotion(InfectionPotion.class, InfectionPotion.LIQUID_COLOR, InfectionPotion.HYBRID_COLOR, InfectionPotion.SPOTS_COLOR, InfectionPotion.POTION_ID, null);
+        BaseMod.addPotion(MidasPotion.class, MidasPotion.LIQUID_COLOR, MidasPotion.HYBRID_COLOR, MidasPotion.SPOTS_COLOR, MidasPotion.POTION_ID, null);
+        BaseMod.addPotion(NoxiousPotion.class, NoxiousPotion.LIQUID_COLOR, NoxiousPotion.HYBRID_COLOR, NoxiousPotion.SPOTS_COLOR, NoxiousPotion.POTION_ID, null);
+        BaseMod.addPotion(QuicksilverPotion.class, QuicksilverPotion.LIQUID_COLOR, QuicksilverPotion.HYBRID_COLOR, QuicksilverPotion.SPOTS_COLOR, QuicksilverPotion.POTION_ID, null);
+        BaseMod.addPotion(SplittingPotion.class, SplittingPotion.LIQUID_COLOR, SplittingPotion.HYBRID_COLOR, SplittingPotion.SPOTS_COLOR, SplittingPotion.POTION_ID, null);
+        BaseMod.addPotion(ToxicPotion.class, ToxicPotion.LIQUID_COLOR, ToxicPotion.HYBRID_COLOR, ToxicPotion.SPOTS_COLOR, ToxicPotion.POTION_ID, null);
+        TonicLibrary.tonicList.forEach((k, v) -> BaseMod.addPotion(v, null, null, null, k, Invalid.Enums.INVALID_PLAYER_CLASS));
 
         logger.info("Done editing potions");
     }
@@ -384,10 +402,35 @@ public class PotionbrewerMod implements
     }
 
     @Override
+    public void receiveStartGame() {
+        reagents.clear();
+        potionbrewerSettings.remove(REAGENTS);
+        try {
+            SpireConfig config = new SpireConfig("PotionbrewerMod", "potionbrewerConfig", potionbrewerSettings);
+
+            config.load();
+            String reagentStr = config.getString(REAGENTS);
+            for (String r : reagentStr.split(DELIM)) {
+                AbstractOrb o = ReagentList.fromId(r);
+                reagents.add((Reagent) o);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void receiveStartAct() {
+        if (AbstractDungeon.floorNum == 0) {
+            reagents.clear();
+        }
+    }
+
+    @Override
     public void receivePostPotionUse(AbstractPotion abstractPotion) {
         AbstractPlayer p = AbstractDungeon.player;
         if (p == null) {
-           return;
+            return;
         }
 
         Integer combat = PotionTracker.potionsUsedThisCombat.get(p);
@@ -404,8 +447,34 @@ public class PotionbrewerMod implements
             return;
         }
 
+        for (Reagent r : reagents) {
+            AbstractDungeon.actionManager.addToBottom(new ChannelAction(r));
+        }
+
+        reagents.clear();
+
         PotionTracker.potionsUsedThisCombat.set(p, 0);
         PotionTracker.potionsUsedThisTurn.set(p, 0);
+    }
+
+    @Override
+    public void receivePostBattle(AbstractRoom abstractRoom) {
+        AbstractPlayer p = AbstractDungeon.player;
+        for (AbstractOrb orb : p.orbs) {
+            if (orb instanceof Reagent) {
+                reagents.add((Reagent) orb);
+            }
+        }
+        String listString = reagents.stream().map(Object::toString)
+                .collect(Collectors.joining(DELIM));
+        potionbrewerSettings.setProperty(REAGENTS, listString);
+        try {
+            SpireConfig config = new SpireConfig("PotionbrewerMod", "potionbrewerConfig", potionbrewerSettings);
+            config.setString(REAGENTS, listString);
+            config.save();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public static String makeID(String idText) {
