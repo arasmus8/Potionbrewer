@@ -4,24 +4,37 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.vfx.combat.DarkOrbActivateEffect;
 import com.megacrit.cardcrawl.vfx.combat.DarkOrbPassiveEffect;
-import com.megacrit.cardcrawl.vfx.combat.OrbFlareEffect;
 
 public abstract class Reagent extends AbstractOrb {
-    
+    public boolean exhaust = false;
+    public boolean catalyze = false;
+    public boolean aoeDamage = false;
+    public boolean multiDamage = false;
+    public int damageTimes = 0;
+    public boolean damages = false;
+    public boolean blocks = false;
+    public int blockTimes = 0;
+    public boolean targeted = true;
+
     private float vfxTimer = 1.0f;
     private float vfxIntervalMin = 0.1f;
     private float vfxIntervalMax = 0.4f;
     private static final float ORB_WAVY_DIST = 0.04f;
     private static final float PI_4 = 12.566371f;
+
+    protected void addToBot(AbstractGameAction action) {
+        AbstractDungeon.actionManager.addToBottom(action);
+    }
 
     @Override
     public String toString() {
@@ -52,10 +65,6 @@ public abstract class Reagent extends AbstractOrb {
     
     @Override
     public void onStartOfTurn() {
-        AbstractDungeon.actionManager.addToBottom(
-                new VFXAction(new OrbFlareEffect(this, OrbFlareEffect.OrbFlareColor.FROST), 0.1f));
-        AbstractDungeon.actionManager.addToBottom(
-                new DrawCardAction(AbstractDungeon.player, passiveAmount));
     }
     
     @Override
@@ -94,4 +103,11 @@ public abstract class Reagent extends AbstractOrb {
     public abstract Texture getTexture();
 
     public abstract AbstractPotion getPotion();
+
+    public void doActions(AbstractPlayer p, AbstractMonster m) {
+    }
+
+    public String getCardDescription() {
+        return "";
+    }
 }

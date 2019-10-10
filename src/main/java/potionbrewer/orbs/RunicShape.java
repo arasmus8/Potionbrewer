@@ -8,9 +8,6 @@ import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.potions.SpeedPotion;
 import potionbrewer.PotionbrewerMod;
-import potionbrewer.util.TextureLoader;
-
-import static potionbrewer.PotionbrewerMod.makeOrbPath;
 
 public class RunicShape extends Reagent {
     public static final String ORB_ID = PotionbrewerMod.makeID("RunicShape");
@@ -20,6 +17,8 @@ public class RunicShape extends Reagent {
 
     public RunicShape() {
         super(ORB_ID, img, orbString.NAME);
+        blockTimes = 2;
+        targeted = false;
     }
 
     @Override
@@ -41,6 +40,11 @@ public class RunicShape extends Reagent {
     @Override
     public AbstractPotion getPotion() {
         return new SpeedPotion();
+    }
+
+    @Override
+    public String getCardDescription() {
+        return DESC[1];
     }
 
     static {

@@ -1,16 +1,17 @@
 package potionbrewer.orbs;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.OrbStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.potions.SmokeBomb;
 import potionbrewer.PotionbrewerMod;
-import potionbrewer.util.TextureLoader;
-
-import static potionbrewer.PotionbrewerMod.makeOrbPath;
+import potionbrewer.patches.PotionTracker;
 
 public class Ichor extends Reagent {
     public static final String ORB_ID = PotionbrewerMod.makeID("Ichor");
@@ -20,6 +21,9 @@ public class Ichor extends Reagent {
 
     public Ichor() {
         super(ORB_ID, img, orbString.NAME);
+        catalyze = true;
+        blocks = true;
+        targeted = false;
     }
 
     @Override
@@ -41,6 +45,18 @@ public class Ichor extends Reagent {
     @Override
     public AbstractPotion getPotion() {
         return new SmokeBomb();
+    }
+
+    @Override
+    public void doActions(AbstractPlayer p, AbstractMonster m) {
+        if (PotionTracker.potionsUsedThisTurn.get(p) > 0) {
+            this.addToBot(new GainBlockAction(p, 10));
+        }
+    }
+
+    @Override
+    public String getCardDescription() {
+        return DESC[1];
     }
 
     static {

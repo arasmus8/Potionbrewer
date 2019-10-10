@@ -2,121 +2,141 @@
   "potionbrewer:Barb": {
     "NAME": "Barb",
     "DESCRIPTION": [
-      "Metallic barb harvested from a Spiker."
+      "Metallic barb harvested from a Spiker.",
+      "Gain 3 Block. Deal 4 Damage."
     ]
   },
   "potionbrewer:Bile": {
     "NAME": "Bile",
     "DESCRIPTION": [
-      "Bile harvested from Gremlin Nob."
+      "Bile harvested from Gremlin Nob.",
+      "Gain 1 Temporary Strength whenever you play a Skill."
     ]
   },
   "potionbrewer:Bone": {
     "NAME": "Bone",
     "DESCRIPTION": [
-      "Bone harvested from a slaver."
+      "Bone harvested from a slaver.",
+      "Apply 1 Weak."
     ]
   },
   "potionbrewer:Clay": {
     "NAME": "Clay",
     "DESCRIPTION": [
-      "Clay harvested from a Giant Head."
+      "Clay harvested from a Giant Head.",
+      "Deal 30 damage in 2 turns."
     ]
   },
   "potionbrewer:Crown": {
     "NAME": "Crown",
     "DESCRIPTION": [
-      "The crown of a Champion."
+      "The crown of a Champion.",
+      "Block 6 damage each turn."
     ]
   },
   "potionbrewer:Ether": {
     "NAME": "Ether",
     "DESCRIPTION": [
-      "Magical vapor harvested from a Mystic."
+      "Magical vapor harvested from a Mystic.",
+      "Gain 1 [E]."
     ]
   },
   "potionbrewer:Eye": {
     "NAME": "Eye",
     "DESCRIPTION": [
-      "Eye harvested from a monster."
+      "Eye harvested from a monster.",
+      "potionbrewer:Catalyze: Play a random card."
     ]
   },
   "potionbrewer:Feather": {
     "NAME": "Feather",
     "DESCRIPTION": [
-      "Feather harvested from a cultist."
+      "Feather harvested from a cultist.",
+      "Gain 1 Strength."
     ]
   },
   "potionbrewer:FeyFire": {
     "NAME": "Fey Fire",
     "DESCRIPTION": [
-      "Otherworldly flame collected from a Collector."
+      "Otherworldly flame collected from a Collector.",
+      "Apply 3 Weak and Vulnerable."
     ]
   },
   "potionbrewer:Flame": {
     "NAME": "Flame",
     "DESCRIPTION": [
-      "Flaming core of an odd machine."
+      "Flaming core of an odd machine.",
+      "Deals 3xTurn Number (!potionbrewer:TURN_NUMBER!) damage."
     ]
   },
   "potionbrewer:Gold": {
     "NAME": "Gold",
     "DESCRIPTION": [
-      "Gold harvested from a bandit."
+      "Gold harvested from a bandit.",
+      "Steal 10 Gold."
     ]
   },
   "potionbrewer:Grimace": {
     "NAME": "Grimace",
     "DESCRIPTION": [
-      "Grimace harvested from a gremlin."
+      "Grimace harvested from a gremlin.",
+      "Gain 3 Strength this turn."
     ]
   },
   "potionbrewer:Hand": {
     "NAME": "Hand",
     "DESCRIPTION": [
-      "Dessicated hand harvested from a sneak-thief."
+      "Dessicated hand harvested from a sneak-thief.",
+      "Damage is dealt 2 times."
     ]
   },
   "potionbrewer:Horn": {
     "NAME": "Horn",
     "DESCRIPTION": [
-      "Crooked horn harvested from a Gremlin Leader."
+      "Crooked horn harvested from a Gremlin Leader.",
+      "potionbrewer:Catalyze: Gain 3 Strength."
     ]
   },
   "potionbrewer:Ichor": {
     "NAME": "Ichor",
     "DESCRIPTION": [
-      "Ichor harvested from a slime."
+      "Ichor harvested from a slime.",
+      "potionbrewer:Catalyze: Gain 10 Block."
     ]
   },
   "potionbrewer:Lightning": {
     "NAME": "Lightning",
     "DESCRIPTION": [
-      "Electric charge from a repulsor's power core."
+      "Electric charge from a repulsor's power core.",
+      "Targets all enemies."
     ]
   },
   "potionbrewer:Mechanism": {
     "NAME": "Mechanism",
     "DESCRIPTION": [
-      "The mechanical core of an Automaton."
+      "The mechanical core of an Automaton.",
+      "Deal 30 damage. Place a Void on top of your draw pile."
     ]
   },
   "potionbrewer:Meteorite": {
     "NAME": "Meteorite",
     "DESCRIPTION": [
-      "Piece of strange metal from another world."
+      "Piece of strange metal from another world.",
+      "potionbrewer:Catalyze: Deal 15 damage."
     ]
   },
   "potionbrewer:Needle": {
     "NAME": "Needle",
     "DESCRIPTION": [
-      "Sharp splinter of metal from a ghostly knife."
+      "Sharp splinter of metal from a ghostly knife.",
+      "Damage is dealt !potionbrewer:TURN_NUMBER! times."
     ]
   },
   "potionbrewer:Nethershroud": {
     "NAME": "Nethershroud",
     "DESCRIPTION": [
-      "The ghostly shroud of the Nemesis."
+      "The ghostly shroud of the Nemesis.",
+      "Become Intangible."
     ]
   },
   "potionbrewer:PhilosopherShard": {
@@ -128,79 +148,92 @@
   "potionbrewer:PowerCore": {
     "NAME": "Power Core",
     "DESCRIPTION": [
-      "The power core of a guardian mechanism."
+      "The power core of a guardian mechanism.",
+      "potionbrewer:Catalyze: Gain 12 block."
     ]
   },
   "potionbrewer:Root": {
     "NAME": "Root",
     "DESCRIPTION": [
-      "Root harvested from a carnivorous plant."
+      "Root harvested from a carnivorous plant.",
+      "Gain 1 Temporary Dexterity each time you play a card."
     ]
   },
   "potionbrewer:RunicShape": {
     "NAME": "Runic Shape",
     "DESCRIPTION": [
-      "Twisted shape with runic writing."
+      "Twisted shape with runic writing.",
+      "Block is gained 2 times."
     ]
   },
   "potionbrewer:SerpentSkull": {
     "NAME": "Serpent Skull",
     "DESCRIPTION": [
-      "The skull of a giant serpent."
+      "The skull of a giant serpent.",
+      "Deal 12 damage."
     ]
   },
   "potionbrewer:Silk": {
     "NAME": "Silk",
     "DESCRIPTION": [
-      "Silk harvested from a louse."
+      "Silk harvested from a louse.",
+      "potionbrewer:Catalyze: Gain 10 Block."
     ]
   },
   "potionbrewer:Skull": {
     "NAME": "Skull",
     "DESCRIPTION": [
-      "Stained skull taken from a slaver."
+      "Stained skull taken from a slaver.",
+      "Shuffle a ? into your draw pile."
     ]
   },
   "potionbrewer:Spore": {
     "NAME": "Spore",
     "DESCRIPTION": [
-      "A fungal Spore harvested from a parasitic fungus."
+      "A fungal Spore harvested from a parasitic fungus.",
+      "Apply 1 Vulnerable."
     ]
   },
   "potionbrewer:Steel": {
     "NAME": "Steel",
     "DESCRIPTION": [
-      "Steel harvested from a machine."
+      "Steel harvested from a machine.",
+      "Gain 8 Block."
     ]
   },
   "potionbrewer:Sulphur": {
     "NAME": "Sulphur",
     "DESCRIPTION": [
-      "Sulphur harvested from a strong man."
+      "Sulphur harvested from a strong man.",
+      "Gain 8 Block. Deal 8 Damage."
     ]
   },
   "potionbrewer:Tentacle": {
     "NAME": "Tentacle",
     "DESCRIPTION": [
-      "Severed tentacle of one of the Spire's horrors."
+      "Severed tentacle of one of the Spire's horrors.",
+      "Deal 5 damage every turn."
     ]
   },
   "potionbrewer:TinyHat": {
     "NAME": "Tiny Hat",
     "DESCRIPTION": [
-      "A stylish hat, taken from a giant slime."
+      "A stylish hat, taken from a giant slime.",
+      "potionbrewer:Catalyze: Deal 18 Damage."
     ]
   },
   "potionbrewer:Tooth": {
     "NAME": "Tooth",
     "DESCRIPTION": [
-      "Tooth harvested from a Jaw worm."
+      "Tooth harvested from a Jaw worm.",
+      "Deal 5 Damage."
     ]
   },
   "potionbrewer:Wax": {
     "NAME": "Wax",
     "DESCRIPTION": [
-      "Sealing wax taken from a bandit leader."
+      "Sealing wax taken from a bandit leader.",
+      "Deal 5 Damage. Apply 1 Weak."
     ]
   }
 }

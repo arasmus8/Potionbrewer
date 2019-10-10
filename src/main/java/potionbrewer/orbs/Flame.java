@@ -1,16 +1,19 @@
 package potionbrewer.orbs;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.OrbStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.potions.FirePotion;
 import potionbrewer.PotionbrewerMod;
-import potionbrewer.util.TextureLoader;
-
-import static potionbrewer.PotionbrewerMod.makeOrbPath;
 
 public class Flame extends Reagent {
     public static final String ORB_ID = PotionbrewerMod.makeID("Flame");
@@ -20,6 +23,7 @@ public class Flame extends Reagent {
 
     public Flame() {
         super(ORB_ID, img, orbString.NAME);
+        damages = true;
     }
 
     @Override
@@ -41,6 +45,21 @@ public class Flame extends Reagent {
     @Override
     public AbstractPotion getPotion() {
         return new FirePotion();
+    }
+
+    @Override
+    public void doActions(AbstractPlayer p, AbstractMonster m) {
+        int damage = PotionbrewerMod.turnNumber * 3;
+        if (m == null) {
+            this.addToBot(new DamageAllEnemiesAction(p, DamageInfo.createDamageMatrix(damage), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE));
+        } else {
+            this.addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.FIRE));
+        }
+    }
+
+    @Override
+    public String getCardDescription() {
+        return DESC[1];
     }
 
     static {

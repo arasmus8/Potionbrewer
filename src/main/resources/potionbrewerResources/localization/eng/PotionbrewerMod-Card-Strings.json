@@ -49,5 +49,53 @@
   "potionbrewer:Collect": {
     "NAME": "Collect",
     "DESCRIPTION": "Collect a potionbrewer:Reagent from an enemy. Apply !M! Vulnerable. Exhaust."
+  },
+  "potionbrewer:Prototype": {
+    "NAME": "Prototype Potion",
+    "DESCRIPTION": "Has various effects based on the Reagents collected."
+  },
+  "potionbrewer:ChooseBone": {
+    "NAME": "Bone",
+    "DESCRIPTION": "Collect a Bone Reagent."
+  },
+  "potionbrewer:ChooseEther": {
+    "NAME": "Ether",
+    "DESCRIPTION": "Collect an Ether Reagent."
+  },
+  "potionbrewer:ChooseFeather": {
+    "NAME": "Feather",
+    "DESCRIPTION": "Collect a Feather Reagent."
+  },
+  "potionbrewer:ChooseFlame": {
+    "NAME": "Flame",
+    "DESCRIPTION": "Collect a Flame Reagent."
+  },
+  "potionbrewer:ChooseGrimace": {
+    "NAME": "Grimace",
+    "DESCRIPTION": "Collect a Grimace Reagent."
+  },
+  "potionbrewer:ChooseIchor": {
+    "NAME": "Ichor",
+    "DESCRIPTION": "Collect an Ichor Reagent."
+  },
+  "potionbrewer:ChooseLightning": {
+    "NAME": "Lightning",
+    "DESCRIPTION": "Collect a Lightning Reagent."
+  },
+  "potionbrewer:ChooseSilk": {
+    "NAME": "Silk",
+    "DESCRIPTION": "Collect a Silk Reagent."
+  },
+  "potionbrewer:ChooseSpore": {
+    "NAME": "Spore",
+    "DESCRIPTION": "Collect a Spore Reagent."
+  },
+  "potionbrewer:ChooseSteel": {
+    "NAME": "Steel",
+    "DESCRIPTION": "Collect a Steel Reagent."
+  },
+  "potionbrewer:ChooseTooth": {
+    "NAME": "Tooth",
+    "DESCRIPTION": "Collect a Tooth Reagent."
   }
 }

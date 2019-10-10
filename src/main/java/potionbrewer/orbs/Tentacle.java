@@ -1,15 +1,18 @@
 package potionbrewer.orbs;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.OrbStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
+import com.megacrit.cardcrawl.powers.ConstrictedPower;
 import potionbrewer.PotionbrewerMod;
-import potionbrewer.util.TextureLoader;
-
-import static potionbrewer.PotionbrewerMod.makeOrbPath;
+import potionbrewer.potions.InfectionPotion;
 
 public class Tentacle extends Reagent {
     public static final String ORB_ID = PotionbrewerMod.makeID("Tentacle");
@@ -39,7 +42,23 @@ public class Tentacle extends Reagent {
 
     @Override
     public AbstractPotion getPotion() {
-        return null; // TODO: infection potion
+        return new InfectionPotion();
+    }
+
+    @Override
+    public void doActions(AbstractPlayer p, AbstractMonster m) {
+        if (m == null) {
+            for (AbstractMonster mm : AbstractDungeon.getMonsters().monsters) {
+                this.addToBot(new ApplyPowerAction(mm, p, new ConstrictedPower(mm, p, 5)));
+            }
+        } else {
+            this.addToBot(new ApplyPowerAction(m, p, new ConstrictedPower(m, p, 5)));
+        }
+    }
+
+    @Override
+    public String getCardDescription() {
+        return DESC[1];
     }
 
     static {

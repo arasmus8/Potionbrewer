@@ -8,9 +8,6 @@ import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.potions.BloodPotion;
 import potionbrewer.PotionbrewerMod;
-import potionbrewer.util.TextureLoader;
-
-import static potionbrewer.PotionbrewerMod.makeOrbPath;
 
 public class Hand extends Reagent {
     public static final String ORB_ID = PotionbrewerMod.makeID("Hand");
@@ -20,6 +17,8 @@ public class Hand extends Reagent {
 
     public Hand() {
         super(ORB_ID, img, orbString.NAME);
+        multiDamage = true;
+        damageTimes = 2;
     }
 
     @Override
@@ -41,6 +40,11 @@ public class Hand extends Reagent {
     @Override
     public AbstractPotion getPotion() {
         return new BloodPotion();
+    }
+
+    @Override
+    public String getCardDescription() {
+        return DESC[1];
     }
 
     static {

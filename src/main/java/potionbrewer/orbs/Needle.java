@@ -8,9 +8,6 @@ import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.potions.SwiftPotion;
 import potionbrewer.PotionbrewerMod;
-import potionbrewer.util.TextureLoader;
-
-import static potionbrewer.PotionbrewerMod.makeOrbPath;
 
 public class Needle extends Reagent {
     public static final String ORB_ID = PotionbrewerMod.makeID("Needle");
@@ -20,6 +17,9 @@ public class Needle extends Reagent {
 
     public Needle() {
         super(ORB_ID, img, orbString.NAME);
+        multiDamage = true;
+        damageTimes = -1; // Turn # times
+        exhaust = true;
     }
 
     @Override
@@ -41,6 +41,11 @@ public class Needle extends Reagent {
     @Override
     public AbstractPotion getPotion() {
         return new SwiftPotion();
+    }
+
+    @Override
+    public String getCardDescription() {
+        return DESC[1];
     }
 
     static {

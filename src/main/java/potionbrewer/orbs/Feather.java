@@ -1,12 +1,16 @@
 package potionbrewer.orbs;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.OrbStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.potions.GamblersBrew;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import potionbrewer.PotionbrewerMod;
 import potionbrewer.util.TextureLoader;
 
@@ -21,6 +25,8 @@ public class Feather extends Reagent {
 
     public Feather() {
         super(ORB_ID, img, orbString.NAME);
+        exhaust = true;
+        targeted = false;
     }
 
     @Override
@@ -42,6 +48,16 @@ public class Feather extends Reagent {
     @Override
     public AbstractPotion getPotion() {
         return new GamblersBrew();
+    }
+
+    @Override
+    public void doActions(AbstractPlayer p, AbstractMonster m) {
+        this.addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, 1), 1));
+    }
+
+    @Override
+    public String getCardDescription() {
+        return DESC[1];
     }
 
     static {

@@ -1,13 +1,14 @@
 package potionbrewer.patches.toncis;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.megacrit.cardcrawl.helpers.PotionHelper;
 import com.megacrit.cardcrawl.potions.FirePotion;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import potionbrewer.potions.tonics.TonicLibrary;
 
 @SpirePatch(
-        cls = "com.megacrit.cardcrawl.helpers.PotionHelper",
+        clz = PotionHelper.class,
         method = "getPotion"
 )
 public class PotionHelperGetPotion {

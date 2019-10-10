@@ -1,16 +1,17 @@
 package potionbrewer.orbs;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.OrbStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.potions.LiquidBronze;
 import potionbrewer.PotionbrewerMod;
-import potionbrewer.util.TextureLoader;
-
-import static potionbrewer.PotionbrewerMod.makeOrbPath;
+import potionbrewer.patches.PotionTracker;
 
 public class PowerCore extends Reagent {
     public static final String ORB_ID = PotionbrewerMod.makeID("PowerCore");
@@ -20,6 +21,9 @@ public class PowerCore extends Reagent {
 
     public PowerCore() {
         super(ORB_ID, img, orbString.NAME);
+        blocks = true;
+        catalyze = true;
+        targeted = false;
     }
 
     @Override
@@ -41,6 +45,18 @@ public class PowerCore extends Reagent {
     @Override
     public AbstractPotion getPotion() {
         return new LiquidBronze();
+    }
+
+    @Override
+    public void doActions(AbstractPlayer p, AbstractMonster m) {
+        if (PotionTracker.potionsUsedThisTurn.get(p) > 0) {
+            this.addToBot(new GainBlockAction(p, 12));
+        }
+    }
+
+    @Override
+    public String getCardDescription() {
+        return DESC[1];
     }
 
     static {

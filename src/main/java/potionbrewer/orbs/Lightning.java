@@ -8,9 +8,6 @@ import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.potions.ExplosivePotion;
 import potionbrewer.PotionbrewerMod;
-import potionbrewer.util.TextureLoader;
-
-import static potionbrewer.PotionbrewerMod.makeOrbPath;
 
 public class Lightning extends Reagent {
     public static final String ORB_ID = PotionbrewerMod.makeID("Lightning");
@@ -20,6 +17,7 @@ public class Lightning extends Reagent {
 
     public Lightning() {
         super(ORB_ID, img, orbString.NAME);
+        aoeDamage = true;
     }
 
     @Override
@@ -41,6 +39,11 @@ public class Lightning extends Reagent {
     @Override
     public AbstractPotion getPotion() {
         return new ExplosivePotion();
+    }
+
+    @Override
+    public String getCardDescription() {
+        return DESC[1];
     }
 
     static {

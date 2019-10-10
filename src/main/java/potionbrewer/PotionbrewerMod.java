@@ -44,6 +44,7 @@ import potionbrewer.util.IDCheckDontTouchPls;
 import potionbrewer.util.TextureLoader;
 import potionbrewer.variables.DefaultCustomVariable;
 import potionbrewer.variables.DefaultSecondMagicNumber;
+import potionbrewer.variables.TurnNumber;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -128,7 +129,8 @@ public class PotionbrewerMod implements
         return getModID() + "Resources/images/events/" + resourcePath;
     }
 
-    public ArrayList<Reagent> reagents;
+    public static ArrayList<Reagent> reagents;
+    public static int turnNumber = 1;
     
     public PotionbrewerMod() {
         logger.info("Subscribe to BaseMod hooks");
@@ -309,16 +311,19 @@ public class PotionbrewerMod implements
         logger.info("Adding variables");
         
         pathCheck();
-        
-        logger.info("Add variabls");
+
+        logger.info("Add variables");
         
         BaseMod.addDynamicVariable(new DefaultCustomVariable());
         BaseMod.addDynamicVariable(new DefaultSecondMagicNumber());
-        
+        BaseMod.addDynamicVariable(new TurnNumber());
+
         logger.info("Adding cards");
         
         
         BaseMod.addCard(new Collect());
+        BaseMod.addCard(new Prototype());
+
         BaseMod.addCard(new DefaultSecondMagicNumberSkill());
         BaseMod.addCard(new DefaultCommonAttack());
         BaseMod.addCard(new DefaultAttackWithVariable());
@@ -335,6 +340,8 @@ public class PotionbrewerMod implements
         
         
         UnlockTracker.unlockCard(Collect.ID);
+        UnlockTracker.unlockCard(Prototype.ID);
+
         UnlockTracker.unlockCard(DefaultSecondMagicNumberSkill.ID);
         UnlockTracker.unlockCard(DefaultCommonAttack.ID);
         UnlockTracker.unlockCard(DefaultAttackWithVariable.ID);
@@ -352,7 +359,6 @@ public class PotionbrewerMod implements
     
     @Override
     public void receiveEditStrings() {
-        logger.info("You seeing this?");
         logger.info("Beginning to edit strings for mod with ID: " + getModID());
         
         
@@ -455,6 +461,8 @@ public class PotionbrewerMod implements
 
         PotionTracker.potionsUsedThisCombat.set(p, 0);
         PotionTracker.potionsUsedThisTurn.set(p, 0);
+
+        turnNumber = 0;
     }
 
     @Override

@@ -1,6 +1,15 @@
 [
   {
     "NAMES": [
+      "Catalyze",
+      "catalyze",
+      "Catalyze:",
+      "catalyze:"
+    ],
+    "DESCRIPTION": "An additional effect that is triggered if you've played a potion this turn."
+  },
+  {
+    "NAMES": [
       "Disease",
       "disease"
     ],

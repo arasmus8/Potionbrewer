@@ -1,16 +1,20 @@
 package potionbrewer.orbs;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.OrbStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.potions.PowerPotion;
 import potionbrewer.PotionbrewerMod;
-import potionbrewer.util.TextureLoader;
-
-import static potionbrewer.PotionbrewerMod.makeOrbPath;
+import potionbrewer.patches.PotionTracker;
 
 public class Meteorite extends Reagent {
     public static final String ORB_ID = PotionbrewerMod.makeID("Meteorite");
@@ -20,6 +24,7 @@ public class Meteorite extends Reagent {
 
     public Meteorite() {
         super(ORB_ID, img, orbString.NAME);
+        damages = true;
     }
 
     @Override
@@ -41,6 +46,22 @@ public class Meteorite extends Reagent {
     @Override
     public AbstractPotion getPotion() {
         return new PowerPotion();
+    }
+
+    @Override
+    public void doActions(AbstractPlayer p, AbstractMonster m) {
+        if (PotionTracker.potionsUsedThisTurn.get(p) > 0) {
+            if (m == null) {
+                this.addToBot(new DamageAllEnemiesAction(p, DamageInfo.createDamageMatrix(15), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SMASH));
+            } else {
+                this.addToBot(new DamageAction(m, new DamageInfo(p, 15, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SMASH));
+            }
+        }
+    }
+
+    @Override
+    public String getCardDescription() {
+        return DESC[1];
     }
 
     static {

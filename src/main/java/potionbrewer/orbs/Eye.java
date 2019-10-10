@@ -1,16 +1,17 @@
 package potionbrewer.orbs;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.OrbStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.potions.SneckoOil;
 import potionbrewer.PotionbrewerMod;
-import potionbrewer.util.TextureLoader;
-
-import static potionbrewer.PotionbrewerMod.makeOrbPath;
+import potionbrewer.actions.PlayRandomCardAction;
+import potionbrewer.patches.PotionTracker;
 
 public class Eye extends Reagent {
     public static final String ORB_ID = PotionbrewerMod.makeID("Eye");
@@ -20,6 +21,8 @@ public class Eye extends Reagent {
 
     public Eye() {
         super(ORB_ID, img, orbString.NAME);
+        catalyze = true;
+        targeted = false;
     }
 
     @Override
@@ -41,6 +44,18 @@ public class Eye extends Reagent {
     @Override
     public AbstractPotion getPotion() {
         return new SneckoOil();
+    }
+
+    @Override
+    public void doActions(AbstractPlayer p, AbstractMonster m) {
+        if (PotionTracker.potionsUsedThisTurn.get(p) > 0) {
+            this.addToBot(new PlayRandomCardAction(p.hand));
+        }
+    }
+
+    @Override
+    public String getCardDescription() {
+        return DESC[1];
     }
 
     static {

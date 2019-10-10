@@ -1,16 +1,18 @@
 package potionbrewer.orbs;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.OrbStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.potions.StrengthPotion;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import potionbrewer.PotionbrewerMod;
-import potionbrewer.util.TextureLoader;
-
-import static potionbrewer.PotionbrewerMod.makeOrbPath;
+import potionbrewer.patches.PotionTracker;
 
 public class Horn extends Reagent {
     public static final String ORB_ID = PotionbrewerMod.makeID("Horn");
@@ -20,6 +22,8 @@ public class Horn extends Reagent {
 
     public Horn() {
         super(ORB_ID, img, orbString.NAME);
+        catalyze = true;
+        targeted = false;
     }
 
     @Override
@@ -41,6 +45,18 @@ public class Horn extends Reagent {
     @Override
     public AbstractPotion getPotion() {
         return new StrengthPotion();
+    }
+
+    @Override
+    public void doActions(AbstractPlayer p, AbstractMonster m) {
+        if (PotionTracker.potionsUsedThisTurn.get(p) > 0) {
+            this.addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, 3), 3));
+        }
+    }
+
+    @Override
+    public String getCardDescription() {
+        return DESC[1];
     }
 
     static {

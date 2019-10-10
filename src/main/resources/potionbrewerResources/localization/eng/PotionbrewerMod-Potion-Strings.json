@@ -37,7 +37,7 @@
     "NAME": "Infection Potion",
     "DESCRIPTIONS": [
       "Apply #b",
-      " potionbrewer:Infection."
+      " Infection."
     ]
   },
   "potionbrewer:MidasPotion": {
@@ -66,7 +66,10 @@
   },
   "potionbrewer:EnergyTonic": {
     "NAME": "Energy Tonic",
-    "DESCRIPTIONS": [ "Gain #b", " [E]." ]
+    "DESCRIPTIONS": [
+      "Gain #b",
+      " energy."
+    ]
   },
   "potionbrewer:ExplosiveTonic": {
     "NAME": "Explosive Tonic",

@@ -1,16 +1,17 @@
 package potionbrewer.orbs;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.OrbStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
+import com.megacrit.cardcrawl.powers.TheBombPower;
 import potionbrewer.PotionbrewerMod;
 import potionbrewer.potions.FreezingPotion;
-import potionbrewer.util.TextureLoader;
-
-import static potionbrewer.PotionbrewerMod.makeOrbPath;
 
 public class Clay extends Reagent {
     public static final String ORB_ID = PotionbrewerMod.makeID("Clay");
@@ -20,6 +21,7 @@ public class Clay extends Reagent {
 
     public Clay() {
         super(ORB_ID, img, orbString.NAME);
+        targeted = false;
     }
 
     @Override
@@ -41,6 +43,16 @@ public class Clay extends Reagent {
     @Override
     public AbstractPotion getPotion() {
         return new FreezingPotion();
+    }
+
+    @Override
+    public void doActions(AbstractPlayer p, AbstractMonster m) {
+        this.addToBot(new ApplyPowerAction(p, p, new TheBombPower(p, 2, 30), 2));
+    }
+
+    @Override
+    public String getCardDescription() {
+        return DESC[1];
     }
 
     static {

@@ -1,16 +1,16 @@
 package potionbrewer.orbs;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.OrbStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.potions.EnergyPotion;
 import potionbrewer.PotionbrewerMod;
-import potionbrewer.util.TextureLoader;
-
-import static potionbrewer.PotionbrewerMod.makeOrbPath;
 
 public class Ether extends Reagent {
     public static final String ORB_ID = PotionbrewerMod.makeID("Ether");
@@ -20,6 +20,8 @@ public class Ether extends Reagent {
 
     public Ether() {
         super(ORB_ID, img, orbString.NAME);
+        exhaust = true;
+        targeted = false;
     }
 
     @Override
@@ -41,6 +43,16 @@ public class Ether extends Reagent {
     @Override
     public AbstractPotion getPotion() {
         return new EnergyPotion();
+    }
+
+    @Override
+    public void doActions(AbstractPlayer p, AbstractMonster m) {
+        this.addToBot(new GainEnergyAction(1));
+    }
+
+    @Override
+    public String getCardDescription() {
+        return DESC[1];
     }
 
     static {

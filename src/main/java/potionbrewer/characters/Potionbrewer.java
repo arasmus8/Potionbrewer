@@ -25,8 +25,8 @@ import potionbrewer.PotionbrewerMod;
 import potionbrewer.cards.*;
 import potionbrewer.patches.PotionTracker;
 import potionbrewer.relics.DefaultClickableRelic;
-import potionbrewer.relics.PotionKit;
 import potionbrewer.relics.PlaceholderRelic2;
+import potionbrewer.relics.PotionKit;
 
 import java.util.ArrayList;
 
@@ -225,5 +225,6 @@ public class Potionbrewer extends CustomPlayer {
     public void applyStartOfTurnPostDrawPowers() {
         super.applyStartOfTurnPostDrawPowers();
         PotionTracker.potionsUsedThisTurn.set(this, 0);
+        PotionbrewerMod.turnNumber += 1;
     }
 }

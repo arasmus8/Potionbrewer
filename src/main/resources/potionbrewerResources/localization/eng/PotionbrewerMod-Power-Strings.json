@@ -1,4 +1,11 @@
 {
+  "theForsaken:BilePower": {
+    "NAME": "Bile",
+    "DESCRIPTIONS": [
+      "Gain #b",
+      " Strength until the end of this turn each time you play a Skill."
+    ]
+  },
   "potionbrewer:DiseasePower": {
     "NAME": "Disease",
     "DESCRIPTIONS": [
@@ -12,6 +19,13 @@
     "DESCRIPTIONS": [
       "Doubles each turn. When Infection reaches #b",
       " applies #b1 Disease, and is reduced by #b"
+    ]
+  },
+  "potionbrewer:RootPower": {
+    "NAME": "Root",
+    "DESCRIPTIONS": [
+      "Gain #b",
+      " Dexterity until the end of this turn each time you play a card."
     ]
   },
   "potionbrewer:ToxicPower": {

@@ -1,15 +1,19 @@
 package potionbrewer.orbs;
 
 import com.badlogic.gdx.math.MathUtils;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
+import potionbrewer.cards.option.*;
 
-import java.util.HashMap;
+import java.util.*;
+import java.util.stream.IntStream;
 
 public class ReagentList {
     private static HashMap<String, Class> reagentsById;
 
     static {
         reagentsById = new HashMap<>();
+        reagentsById.put("", null);
         reagentsById.put(Barb.ORB_ID, Barb.class);
         reagentsById.put(Bile.ORB_ID, Bile.class);
         reagentsById.put(Bone.ORB_ID, Bone.class);
@@ -46,29 +50,66 @@ public class ReagentList {
         reagentsById.put(Wax.ORB_ID, Wax.class);
     }
 
-    public static AbstractOrb randomReagent() {
-        int roll = MathUtils.random(0, 99);
-        if(roll < 20) {
-            return new Ichor();
-        } else if(roll < 40) {
-            return new Feather();
-        } else if(roll < 49) {
-            return new Silk();
-        } else if(roll < 58) {
-            return new Tooth();
-        } else if(roll < 67) {
-            return new Bone();
-        } else if(roll < 76) {
-            return new Grimace();
-        } else if(roll < 85) {
-            return new Spore();
-        } else if(roll < 90) {
-            return new Steel();
-        } else if(roll < 95) {
-            return new Ether();
-        } else {
-            return new Flame();
+    private static Reagent byIndex(int index) {
+        Set<String> keys = reagentsById.keySet();
+        keys.remove(PhilosopherShard.ORB_ID);
+        String[] list = keys.toArray(new String[0]);
+        Arrays.sort(list);
+        try {
+            return (Reagent) reagentsById.get(list[index]).newInstance();
+        } catch (Exception err) {
+            err.printStackTrace();
+            return null;
         }
+    }
+
+    public static Reagent firstReagent(int misc) {
+        if (misc == 0) {
+            return null;
+        }
+        int idx = misc % 100;
+        return byIndex(idx);
+    }
+
+    public static Reagent secondReagent(int misc) {
+        if (misc == 0) {
+            return null;
+        }
+        int idx = misc / 100 % 100;
+        return byIndex(idx);
+    }
+
+    public static Reagent thirdReagent(int misc) {
+        if (misc == 0) {
+            return null;
+        }
+        int idx = misc / 10000 % 100;
+        return byIndex(idx);
+    }
+
+    private static int indexFromReagent(Reagent o) {
+        Set<String> keys = reagentsById.keySet();
+        keys.remove(PhilosopherShard.ORB_ID);
+        String[] list = keys.toArray(new String[0]);
+        Arrays.sort(list);
+        String id = o.ID;
+        int len = list.length;
+        return IntStream.range(0, len)
+                .filter(i -> id.equals(list[i]))
+                .findFirst() // first occurence
+                .orElse(-1); // No element found
+    }
+
+    public static int buildMisc(Reagent first, Reagent second, Reagent third) {
+        int f = indexFromReagent(first);
+        int s = indexFromReagent(second);
+        int t = indexFromReagent(third);
+
+        if (f == -1 || s == -1 || t == -1) {
+            throw new IllegalThreadStateException("Invalid orb!");
+        }
+
+        return t * 10000 + s * 100 + f;
     }
 
     public static AbstractOrb fromId(String Id) {
@@ -81,5 +122,56 @@ public class ReagentList {
             }
         }
         return new Ichor();
+    }
+
+    private static RandomEntry randomEntry() {
+        ArrayList<RandomEntry> list = new ArrayList<>();
+        list.add(new RandomEntry(9, new ChooseBone(), new Bone()));
+        list.add(new RandomEntry(5, new ChooseEther(), new Ether()));
+        list.add(new RandomEntry(15, new ChooseFeather(), new Feather()));
+        list.add(new RandomEntry(5, new ChooseFlame(), new Flame()));
+        list.add(new RandomEntry(9, new ChooseGrimace(), new Grimace()));
+        list.add(new RandomEntry(20, new ChooseIchor(), new Ichor()));
+        list.add(new RandomEntry(5, new ChooseLightning(), new Lightning()));
+        list.add(new RandomEntry(9, new ChooseSilk(), new Silk()));
+        list.add(new RandomEntry(9, new ChooseSpore(), new Spore()));
+        list.add(new RandomEntry(5, new ChooseSteel(), new Steel()));
+        list.add(new RandomEntry(9, new ChooseTooth(), new Tooth()));
+        list.sort(new SortScoreDescending());
+        int total = list.stream().mapToInt(e -> e.chance).reduce(0, Integer::sum);
+        int roll = MathUtils.random(0, total);
+        int index = 0, chanceSum = 0;
+        while (chanceSum < roll) {
+            chanceSum += list.get(index).chance;
+            index += 1;
+        }
+        return list.get(index);
+    }
+
+    public static AbstractOrb randomReagent() {
+        return randomEntry().reagent;
+    }
+
+    public static AbstractCard randomChoice() {
+        return randomEntry().optionCard;
+    }
+
+    private static class RandomEntry {
+        protected int chance;
+        protected AbstractCard optionCard;
+        protected Reagent reagent;
+
+        public RandomEntry(int chance, AbstractCard optionCard, Reagent reagent) {
+            this.chance = chance;
+            this.optionCard = optionCard;
+            this.reagent = reagent;
+        }
+    }
+
+    private static class SortScoreDescending implements Comparator<RandomEntry> {
+        @Override
+        public int compare(RandomEntry o1, RandomEntry o2) {
+            return o2.chance - o1.chance;
+        }
     }
 }
