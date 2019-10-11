@@ -9,7 +9,10 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.beyond.*;
 import com.megacrit.cardcrawl.monsters.city.*;
-import com.megacrit.cardcrawl.monsters.ending.*;
+import com.megacrit.cardcrawl.monsters.ending.CorruptHeart;
+import com.megacrit.cardcrawl.monsters.ending.Eyes;
+import com.megacrit.cardcrawl.monsters.ending.SpireShield;
+import com.megacrit.cardcrawl.monsters.ending.SpireSpear;
 import com.megacrit.cardcrawl.monsters.exordium.*;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
@@ -25,8 +28,8 @@ public class Collect extends AbstractDynamicCard {
     
     public static final String ID = PotionbrewerMod.makeID(Collect.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    
-    public static final String IMG = makeCardPath("Skill.png");
+
+    public static final String IMG = makeCardPath("ReagentCard.png");
     
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
@@ -40,7 +43,7 @@ public class Collect extends AbstractDynamicCard {
     private static final int VULNERABLE = 1;
     private static final int UPGRADE_VULNERABLE = 2;
 
-    private static HashMap<String, Class> monsterReagents = new HashMap<>();
+    private static final HashMap<String, Class<? extends Reagent>> monsterReagents = new HashMap<>();
 
     public Collect() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -51,7 +54,7 @@ public class Collect extends AbstractDynamicCard {
     public AbstractOrb getOrbForMonster(AbstractMonster m) {
         if(monsterReagents.containsKey(m.id)) {
             try {
-                Class<Reagent> clz = monsterReagents.get(m.id);
+                Class<? extends Reagent> clz = monsterReagents.get(m.id);
                 return clz.newInstance();
             } catch (Exception d) {
                 System.out.println("Problem with orb for monster! m=" + m);

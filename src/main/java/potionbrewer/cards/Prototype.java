@@ -158,10 +158,13 @@ public class Prototype extends CustomCard {
         if (a == null || b == null || c == null) {
             return;
         }
-        int damageTimes = 1;
+        int damageTimes = 0;
         damageTimes += calcDamageTimes(a);
         damageTimes += calcDamageTimes(b);
         damageTimes += calcDamageTimes(c);
+        if (damageTimes == 0) {
+            damageTimes = 1;
+        }
         boolean aoeDamage = a.aoeDamage || b.aoeDamage || c.aoeDamage;
         int blockTimes = calcBlockTimes(a, b, c);
         performActions(a, p, m, damageTimes, blockTimes, aoeDamage);

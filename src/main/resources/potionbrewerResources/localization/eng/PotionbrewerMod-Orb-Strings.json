@@ -66,7 +66,7 @@
     "NAME": "Flame",
     "DESCRIPTION": [
       "Flaming core of an odd machine.",
-      "Deals 3xTurn Number (!potionbrewer:TURN_NUMBER!) damage."
+      "Deals 3xTurn Number ( !potionbrewer:TURN_NUMBER! ) damage."
     ]
   },
   "potionbrewer:Gold": {

@@ -1,5 +1,6 @@
 [
   {
+    "PROPER_NAME": "Catalyze",
     "NAMES": [
       "Catalyze",
       "catalyze",
@@ -23,6 +24,19 @@
     "DESCRIPTION": "Doubles each turn. Applies Disease when infection is 10 or higher and is reduced by 10."
   },
   {
+    "PROPER_NAME": "Reagent",
+    "NAMES": [
+      "Reagent",
+      "reagent",
+      "Reagents",
+      "Reagent:",
+      "Reagent.",
+      "Reagent,"
+    ],
+    "DESCRIPTION": "A potent ingredient collected from one of the Spire's monsters. Can be brewed into a potion, or 3 can be combined into a unique card."
+  },
+  {
+    "PROPER_NAME": "Toxic",
     "NAMES": [
       "Toxic",
       "toxic"

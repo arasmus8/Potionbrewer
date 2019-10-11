@@ -139,11 +139,11 @@ public class ReagentList {
         list.add(new RandomEntry(9, new ChooseTooth(), new Tooth()));
         list.sort(new SortScoreDescending());
         int total = list.stream().mapToInt(e -> e.chance).reduce(0, Integer::sum);
-        int roll = MathUtils.random(0, total);
-        int index = 0, chanceSum = 0;
+        int roll = MathUtils.random(1, total);
+        int index = -1, chanceSum = 0;
         while (chanceSum < roll) {
-            chanceSum += list.get(index).chance;
             index += 1;
+            chanceSum += list.get(index).chance;
         }
         return list.get(index);
     }

@@ -54,7 +54,7 @@ public class Grimace extends Reagent {
 
     @Override
     public String getCardDescription() {
-        return super.getCardDescription();
+        return DESC[1];
     }
 
     static {

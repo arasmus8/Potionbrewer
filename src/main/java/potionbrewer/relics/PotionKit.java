@@ -2,13 +2,14 @@ package potionbrewer.relics;
 
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.common.ObtainPotionAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.potions.PotionSlot;
 import potionbrewer.PotionbrewerMod;
-import potionbrewer.potions.tonics.FireTonic;
+import potionbrewer.cards.ReagentCard;
 import potionbrewer.potions.tonics.TonicLibrary;
 import potionbrewer.util.TextureLoader;
 
@@ -31,6 +32,7 @@ public class PotionKit extends CustomRelic {
         flash();
         AbstractPotion p = TonicLibrary.getRandomTonic();
         this.addToBot(new ObtainPotionAction(p));
+        this.addToBot(new MakeTempCardInHandAction(new ReagentCard()));
     }
     
     @Override

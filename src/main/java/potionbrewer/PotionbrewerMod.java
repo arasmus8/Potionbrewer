@@ -25,8 +25,6 @@ import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import potionbrewer.cards.*;
 import potionbrewer.characters.Invalid;
 import potionbrewer.characters.Potionbrewer;
@@ -51,6 +49,7 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Properties;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 @SpireInitializer
@@ -67,9 +66,9 @@ public class PotionbrewerMod implements
         StartActSubscriber,
         StartGameSubscriber {
 
-    public static final Logger logger = LogManager.getLogger(PotionbrewerMod.class.getName());
     private static String modID;
 
+    private static final Logger logger = Logger.getLogger(PotionbrewerMod.class.getName());
     public static Properties potionbrewerSettings = new Properties();
     public static final String ENABLE_PLACEHOLDER_SETTINGS = "enablePlaceholder";
     public static final String REAGENTS = "reagentList";
@@ -323,6 +322,7 @@ public class PotionbrewerMod implements
         
         BaseMod.addCard(new Collect());
         BaseMod.addCard(new Prototype());
+        BaseMod.addCard(new ReagentCard());
 
         BaseMod.addCard(new DefaultSecondMagicNumberSkill());
         BaseMod.addCard(new DefaultCommonAttack());
@@ -341,6 +341,7 @@ public class PotionbrewerMod implements
         
         UnlockTracker.unlockCard(Collect.ID);
         UnlockTracker.unlockCard(Prototype.ID);
+        UnlockTracker.unlockCard(ReagentCard.ID);
 
         UnlockTracker.unlockCard(DefaultSecondMagicNumberSkill.ID);
         UnlockTracker.unlockCard(DefaultCommonAttack.ID);
@@ -453,6 +454,17 @@ public class PotionbrewerMod implements
             return;
         }
 
+        String listString = reagents.stream().map(Object::toString)
+                .collect(Collectors.joining(DELIM));
+        potionbrewerSettings.setProperty(REAGENTS, listString);
+        try {
+            SpireConfig config = new SpireConfig("PotionbrewerMod", "potionbrewerConfig", potionbrewerSettings);
+            config.setString(REAGENTS, listString);
+            config.save();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         for (Reagent r : reagents) {
             AbstractDungeon.actionManager.addToBottom(new ChannelAction(r));
         }
@@ -462,7 +474,7 @@ public class PotionbrewerMod implements
         PotionTracker.potionsUsedThisCombat.set(p, 0);
         PotionTracker.potionsUsedThisTurn.set(p, 0);
 
-        turnNumber = 0;
+        turnNumber = 1;
     }
 
     @Override

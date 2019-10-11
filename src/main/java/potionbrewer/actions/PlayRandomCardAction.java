@@ -13,7 +13,9 @@ public class PlayRandomCardAction extends AbstractGameAction {
 
     public PlayRandomCardAction(CardGroup group) {
         duration = Settings.ACTION_DUR_XFAST;
-        card = group.getRandomCard(true);
+        CardGroup filtered = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+        group.group.stream().filter(c -> !c.freeToPlayOnce).forEach(filtered::addToTop);
+        card = filtered.getRandomCard(true);
     }
 
     @Override

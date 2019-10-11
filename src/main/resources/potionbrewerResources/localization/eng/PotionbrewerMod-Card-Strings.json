@@ -54,6 +54,10 @@
     "NAME": "Prototype Potion",
     "DESCRIPTION": "Has various effects based on the Reagents collected."
   },
+  "potionbrewer:ReagentCard": {
+    "NAME": "Reagent",
+    "DESCRIPTION": "Choose 1 of 3 random potionbrewer:Reagents to collect."
+  },
   "potionbrewer:ChooseBone": {
     "NAME": "Bone",
     "DESCRIPTION": "Collect a Bone Reagent."

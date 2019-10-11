@@ -19,22 +19,23 @@ import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import potionbrewer.PotionbrewerMod;
-import potionbrewer.cards.*;
+import potionbrewer.cards.Collect;
+import potionbrewer.cards.DefaultCommonAttack;
+import potionbrewer.cards.DefaultCommonSkill;
 import potionbrewer.patches.PotionTracker;
 import potionbrewer.relics.DefaultClickableRelic;
 import potionbrewer.relics.PlaceholderRelic2;
 import potionbrewer.relics.PotionKit;
 
 import java.util.ArrayList;
+import java.util.logging.Logger;
 
 import static potionbrewer.PotionbrewerMod.*;
 import static potionbrewer.characters.Potionbrewer.Enums.COLOR_CYAN;
 
 public class Potionbrewer extends CustomPlayer {
-    public static final Logger logger = LogManager.getLogger(PotionbrewerMod.class.getName());
+    private static final Logger logger = Logger.getLogger(PotionbrewerMod.class.getName());
     
     public static class Enums {
         @SpireEnum
@@ -50,7 +51,7 @@ public class Potionbrewer extends CustomPlayer {
     public static final int STARTING_HP = 75;
     public static final int MAX_HP = 75;
     public static final int STARTING_GOLD = 99;
-    public static final int CARD_DRAW = 9;
+    public static final int CARD_DRAW = 5;
     public static final int ORB_SLOTS = 3;
     
     private static final String ID = makeID("Potionbrewer");
@@ -112,19 +113,13 @@ public class Potionbrewer extends CustomPlayer {
         logger.info("Begin loading starter Deck Strings");
         
         retVal.add(DefaultCommonAttack.ID);
-        retVal.add(DefaultUncommonAttack.ID);
-        retVal.add(DefaultRareAttack.ID);
-        
+        retVal.add(DefaultCommonAttack.ID);
+        retVal.add(DefaultCommonAttack.ID);
+        retVal.add(DefaultCommonAttack.ID);
         retVal.add(DefaultCommonSkill.ID);
-        retVal.add(DefaultUncommonSkill.ID);
-        retVal.add(DefaultRareSkill.ID);
-        
-        retVal.add(DefaultCommonPower.ID);
-        retVal.add(DefaultUncommonPower.ID);
-        retVal.add(DefaultRarePower.ID);
-        
-        retVal.add(DefaultAttackWithVariable.ID);
-        retVal.add(DefaultSecondMagicNumberSkill.ID);
+        retVal.add(DefaultCommonSkill.ID);
+        retVal.add(DefaultCommonSkill.ID);
+        retVal.add(DefaultCommonSkill.ID);
         retVal.add(Collect.ID);
         return retVal;
     }
