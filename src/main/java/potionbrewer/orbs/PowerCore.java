@@ -48,10 +48,8 @@ public class PowerCore extends Reagent {
     }
 
     @Override
-    public void doActions(AbstractPlayer p, AbstractMonster m) {
-        if (PotionTracker.potionsUsedThisTurn.get(p) > 0) {
-            this.addToBot(new GainBlockAction(p, 12));
-        }
+    public void doBlock(AbstractPlayer p, int amount) {
+            this.addToBot(new GainBlockAction(p, amount));
     }
 
     @Override

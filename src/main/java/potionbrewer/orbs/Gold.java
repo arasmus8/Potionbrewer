@@ -46,19 +46,10 @@ public class Gold extends Reagent {
     }
 
     @Override
-    public void doActions(AbstractPlayer p, AbstractMonster m) {
-        if (m == null) {
-            for (AbstractMonster mm : AbstractDungeon.getMonsters().monsters) {
-                AbstractDungeon.player.gainGold(10);
-                for (int i = 0; i < 10; ++i) {// 39
-                    AbstractDungeon.effectList.add(new GainPennyEffect(mm, mm.hb.cX, mm.hb.cY, p.hb.cX, p.hb.cY, true));
-                }
-            }
-        } else {
-            AbstractDungeon.player.gainGold(10);
-            for (int i = 0; i < 10; ++i) {// 39
-                AbstractDungeon.effectList.add(new GainPennyEffect(m, m.hb.cX, m.hb.cY, p.hb.cX, p.hb.cY, true));
-            }
+    public void doEffects(AbstractPlayer p, AbstractMonster m) {
+        AbstractDungeon.player.gainGold(10);
+        for (int i = 0; i < 10; ++i) {// 39
+            AbstractDungeon.effectList.add(new GainPennyEffect(m, m.hb.cX, m.hb.cY, p.hb.cX, p.hb.cY, true));
         }
     }
 

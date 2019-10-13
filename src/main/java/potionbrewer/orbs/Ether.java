@@ -46,7 +46,7 @@ public class Ether extends Reagent {
     }
 
     @Override
-    public void doActions(AbstractPlayer p, AbstractMonster m) {
+    public void doEffects(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new GainEnergyAction(1));
     }
 

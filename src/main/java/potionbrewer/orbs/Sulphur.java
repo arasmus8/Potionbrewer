@@ -25,7 +25,9 @@ public class Sulphur extends Reagent {
     public Sulphur() {
         super(ORB_ID, img, orbString.NAME);
         blocks = true;
+        block = 8;
         damages = true;
+        damage = 8;
     }
 
     @Override
@@ -50,13 +52,18 @@ public class Sulphur extends Reagent {
     }
 
     @Override
-    public void doActions(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new GainBlockAction(p, 8));
-        if (m == null) {
-            this.addToBot(new DamageAllEnemiesAction(p, DamageInfo.createDamageMatrix(8), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-        } else {
-            this.addToBot(new DamageAction(m, new DamageInfo(p, 8, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-        }
+    public void doAoeDamage(AbstractPlayer p, int amount) {
+        this.addToBot(new DamageAllEnemiesAction(p, DamageInfo.createDamageMatrix(amount), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+    }
+
+    @Override
+    public void doDamage(AbstractPlayer p, AbstractMonster m, DamageInfo info) {
+        this.addToBot(new DamageAction(m, info, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+    }
+
+    @Override
+    public void doBlock(AbstractPlayer p, int amount) {
+        this.addToBot(new GainBlockAction(p, amount));
     }
 
     @Override

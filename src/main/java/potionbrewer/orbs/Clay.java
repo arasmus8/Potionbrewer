@@ -46,7 +46,7 @@ public class Clay extends Reagent {
     }
 
     @Override
-    public void doActions(AbstractPlayer p, AbstractMonster m) {
+    public void doEffects(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new ApplyPowerAction(p, p, new TheBombPower(p, 2, 30), 2));
     }
 

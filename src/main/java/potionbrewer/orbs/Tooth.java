@@ -24,6 +24,7 @@ public class Tooth extends Reagent {
     public Tooth() {
         super(ORB_ID, img, orbString.NAME);
         damages = true;
+        damage = 5;
     }
 
     @Override
@@ -48,12 +49,13 @@ public class Tooth extends Reagent {
     }
 
     @Override
-    public void doActions(AbstractPlayer p, AbstractMonster m) {
-        if (m == null) {
-            this.addToBot(new DamageAllEnemiesAction(p, DamageInfo.createDamageMatrix(5), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SMASH));
-        } else {
-            this.addToBot(new DamageAction(m, new DamageInfo(p, 5, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SMASH));
-        }
+    public void doAoeDamage(AbstractPlayer p, int amount) {
+        this.addToBot(new DamageAllEnemiesAction(p, DamageInfo.createDamageMatrix(amount), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+    }
+
+    @Override
+    public void doDamage(AbstractPlayer p, AbstractMonster m, DamageInfo info) {
+        this.addToBot(new DamageAction(m, info, AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
     }
 
     @Override

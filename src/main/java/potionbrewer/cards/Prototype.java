@@ -1,8 +1,11 @@
 package potionbrewer.cards;
 
 import basemod.abstracts.CustomCard;
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Vector2;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
@@ -10,7 +13,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import potionbrewer.PotionbrewerMod;
+import potionbrewer.actions.PrototypeAction;
 import potionbrewer.characters.Potionbrewer;
+import potionbrewer.orbs.Eye;
 import potionbrewer.orbs.Reagent;
 import potionbrewer.orbs.ReagentList;
 import potionbrewer.patches.PotionTracker;
@@ -39,6 +44,7 @@ public class Prototype extends CustomCard {
     private static final int UPGRADED_COST = 0;
 
     // /STAT DECLARATION/
+
     private static String buildDescription(Reagent a, Reagent b, Reagent c) {
         if (a == null || b == null || c == null) {
             return CARD_STRINGS.DESCRIPTION;
@@ -96,25 +102,41 @@ public class Prototype extends CustomCard {
         }
     }
 
-    private void renderReagent(SpriteBatch sb, Texture img, float offsetX, float offsetY) {
-        float drawX = this.current_x - 70.0F;
-        float drawY = this.current_y - 30.0F;
-        float scale = 0.8F;
-        sb.draw(img, drawX + offsetX, drawY + 72.0F + offsetY, 64.0F, 64.0F, 128.0F, 128.0F, this.drawScale * Settings.scale * scale, this.drawScale * Settings.scale * scale, this.angle, 0, 0, 128, 128, false, false);
+    private void renderHelper(SpriteBatch sb, Texture img, float drawX, float drawY) {
+        Vector2 vec = new Vector2(drawX, drawY);
+        vec.scl(this.drawScale * Settings.scale);
+        vec.rotate(this.angle);
+        float x = this.current_x + vec.x;
+        float y = this.current_y + vec.y;
+        float scale = this.drawScale * 0.5F;
+        sb.draw(img, x - 64.0F, y - 64.0F, 64.0F, 64.0F, 128.0F, 128.0F, scale, scale, 0.0F, 0, 0, 128, 128, false, false);
     }
 
     public void renderPortrait(SpriteBatch sb) {
+        /*
+        Reagent r = new Eye();
+        renderHelper(sb, r.getTexture(), 0.0F, 86.0F);
+        */
         Reagent a = ReagentList.firstReagent(misc);
         if (a != null) {
-            renderReagent(sb, a.getTexture(), 0, -80);
+            // first is at 150deg
+            renderHelper(sb, a.getTexture(), -71.96F, 116.0F);
+        } else {
+            renderHelper(sb, Reagent.getDefaultTexture(), -71.96F, 116.0F);
         }
         Reagent b = ReagentList.secondReagent(misc);
         if (b != null) {
-            renderReagent(sb, b.getTexture(), -50, -20);
+            // second is at 60deg
+            renderHelper(sb, b.getTexture(), 80.0F, 116.0F);
+        } else {
+            renderHelper(sb, Reagent.getDefaultTexture(), 80.0F, 116.0F);
         }
         Reagent c = ReagentList.thirdReagent(misc);
         if (c != null) {
-            renderReagent(sb, c.getTexture(), 50, -20);
+            // third is at 270deg
+            renderHelper(sb, c.getTexture(), 0.0F, 26.0F);
+        } else {
+            renderHelper(sb, Reagent.getDefaultTexture(),0.0F, 26.0F);
         }
     }
 
@@ -135,18 +157,14 @@ public class Prototype extends CustomCard {
         return 1;
     }
 
-    private void performActions(Reagent r, AbstractPlayer p, AbstractMonster m, int damageTimes, int blockTimes, boolean aoeDamage) {
-        if (r.damages) {
-            for (int i = 0; i < damageTimes; i++) {
-                r.doActions(p, aoeDamage ? null : m);
-            }
-        } else if (r.blocks) {
-            for (int i = 0; i < blockTimes; i++) {
-                r.doActions(p, m);
-            }
-        } else {
-            r.doActions(p, aoeDamage ? null : m);
-        }
+    public void applyPowersDynamic(int damage) {
+        this.baseDamage = damage;
+        this.applyPowers();
+    }
+
+    public void applyPowersToBlockDynamic(int block) {
+        this.baseBlock = block;
+        this.applyPowersToBlock();
     }
 
     // Actions the card should do.
@@ -167,9 +185,9 @@ public class Prototype extends CustomCard {
         }
         boolean aoeDamage = a.aoeDamage || b.aoeDamage || c.aoeDamage;
         int blockTimes = calcBlockTimes(a, b, c);
-        performActions(a, p, m, damageTimes, blockTimes, aoeDamage);
-        performActions(b, p, m, damageTimes, blockTimes, aoeDamage);
-        performActions(c, p, m, damageTimes, blockTimes, aoeDamage);
+        this.addToBot(new PrototypeAction(this, a, p, m, damageTimes, blockTimes, aoeDamage));
+        this.addToBot(new PrototypeAction(this, b, p, m, damageTimes, blockTimes, aoeDamage));
+        this.addToBot(new PrototypeAction(this, c, p, m, damageTimes, blockTimes, aoeDamage));
     }
 
     @Override
@@ -178,7 +196,7 @@ public class Prototype extends CustomCard {
         if (misc > 0) {
             Reagent a = ReagentList.firstReagent(misc);
             Reagent b = ReagentList.secondReagent(misc);
-            Reagent c = ReagentList.secondReagent(misc);
+            Reagent c = ReagentList.thirdReagent(misc);
             if (a != null && b != null && c != null && (a.catalyze || b.catalyze || c.catalyze)) {
                 catalyze = true;
             }

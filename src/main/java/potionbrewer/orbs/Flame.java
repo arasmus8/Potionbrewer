@@ -24,6 +24,7 @@ public class Flame extends Reagent {
     public Flame() {
         super(ORB_ID, img, orbString.NAME);
         damages = true;
+        damage = PotionbrewerMod.turnNumber * 3;
     }
 
     @Override
@@ -48,13 +49,13 @@ public class Flame extends Reagent {
     }
 
     @Override
-    public void doActions(AbstractPlayer p, AbstractMonster m) {
-        int damage = PotionbrewerMod.turnNumber * 3;
-        if (m == null) {
-            this.addToBot(new DamageAllEnemiesAction(p, DamageInfo.createDamageMatrix(damage), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE));
-        } else {
-            this.addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.FIRE));
-        }
+    public void doDamage(AbstractPlayer p, AbstractMonster m, DamageInfo info) {
+        this.addToBot(new DamageAction(m, info, AbstractGameAction.AttackEffect.FIRE));
+    }
+
+    @Override
+    public void doAoeDamage(AbstractPlayer p, int damage) {
+        this.addToBot(new DamageAllEnemiesAction(p, DamageInfo.createDamageMatrix(damage), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE));
     }
 
     @Override

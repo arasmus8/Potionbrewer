@@ -21,6 +21,7 @@ public class Steel extends Reagent {
     public Steel() {
         super(ORB_ID, img, orbString.NAME);
         blocks = true;
+        block = 8;
         targeted = false;
     }
 
@@ -46,8 +47,8 @@ public class Steel extends Reagent {
     }
 
     @Override
-    public void doActions(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new GainBlockAction(p, 8));
+    public void doBlock(AbstractPlayer p, int amount) {
+        this.addToBot(new GainBlockAction(p, amount));
     }
 
     @Override

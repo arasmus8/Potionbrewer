@@ -14,6 +14,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -29,8 +30,7 @@ import potionbrewer.cards.*;
 import potionbrewer.characters.Invalid;
 import potionbrewer.characters.Potionbrewer;
 import potionbrewer.events.IdentityCrisisEvent;
-import potionbrewer.orbs.Reagent;
-import potionbrewer.orbs.ReagentList;
+import potionbrewer.orbs.*;
 import potionbrewer.patches.PotionTracker;
 import potionbrewer.potions.*;
 import potionbrewer.potions.tonics.TonicLibrary;
@@ -430,6 +430,9 @@ public class PotionbrewerMod implements
     public void receiveStartAct() {
         if (AbstractDungeon.floorNum == 0) {
             reagents.clear();
+            AbstractDungeon.player.masterDeck.addToBottom(new Prototype(new Eye(), new Eye(), new Eye()));
+            AbstractDungeon.player.masterDeck.addToBottom(new Prototype(new Barb(), new Hand(), new Meteorite()));
+            AbstractDungeon.player.masterDeck.addToBottom(new Prototype(new Tooth(), new Silk(), new RunicShape()));
         }
     }
 
@@ -445,6 +448,10 @@ public class PotionbrewerMod implements
 
         Integer turn = PotionTracker.potionsUsedThisTurn.get(p);
         PotionTracker.potionsUsedThisTurn.set(p, turn + 1);
+
+        for(AbstractCard c : p.hand.group) {
+            c.triggerOnGlowCheck();
+        }
     }
 
     @Override

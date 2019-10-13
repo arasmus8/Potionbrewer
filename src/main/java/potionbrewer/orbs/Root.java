@@ -47,7 +47,7 @@ public class Root extends Reagent {
     }
 
     @Override
-    public void doActions(AbstractPlayer p, AbstractMonster m) {
+    public void doEffects(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new ApplyPowerAction(p, p, new RootPower(p, 1), 1));
     }
 

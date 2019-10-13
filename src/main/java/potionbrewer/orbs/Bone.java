@@ -46,14 +46,8 @@ public class Bone extends Reagent {
     }
 
     @Override
-    public void doActions(AbstractPlayer p, AbstractMonster m) {
-        if (m == null) {
-            for (AbstractMonster mm : AbstractDungeon.getMonsters().monsters) {
-                this.addToBot(new ApplyPowerAction(mm, p, new WeakPower(mm, 1, false), 1));
-            }
-        } else {
-            this.addToBot(new ApplyPowerAction(m, p, new WeakPower(m, 1, false), 1));
-        }
+    public void doEffects(AbstractPlayer p, AbstractMonster m) {
+        this.addToBot(new ApplyPowerAction(m, p, new WeakPower(m, 1, false), 1));
     }
 
     @Override

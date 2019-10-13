@@ -3,7 +3,7 @@
     "NAME": "Barb",
     "DESCRIPTION": [
       "Metallic barb harvested from a Spiker.",
-      "Gain 3 Block. Deal 4 Damage."
+      "Gain 5 Block. Deal 5 Damage."
     ]
   },
   "potionbrewer:Bile": {
@@ -122,7 +122,7 @@
     "NAME": "Meteorite",
     "DESCRIPTION": [
       "Piece of strange metal from another world.",
-      "potionbrewer:Catalyze: Deal 15 damage."
+      "potionbrewer:Catalyze: Deal 25 damage."
     ]
   },
   "potionbrewer:Needle": {
@@ -170,14 +170,14 @@
     "NAME": "Serpent Skull",
     "DESCRIPTION": [
       "The skull of a giant serpent.",
-      "Deal 12 damage."
+      "Deal 15 damage."
     ]
   },
   "potionbrewer:Silk": {
     "NAME": "Silk",
     "DESCRIPTION": [
       "Silk harvested from a louse.",
-      "potionbrewer:Catalyze: Gain 10 Block."
+      "Gain 5 Block."
     ]
   },
   "potionbrewer:Skull": {

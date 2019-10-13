@@ -47,16 +47,9 @@ public class FeyFire extends Reagent {
     }
 
     @Override
-    public void doActions(AbstractPlayer p, AbstractMonster m) {
-        if (m == null) {
-            for (AbstractMonster mm : AbstractDungeon.getMonsters().monsters) {
-                this.addToBot(new ApplyPowerAction(mm, p, new WeakPower(mm, 3, false), 3));
-                this.addToBot(new ApplyPowerAction(mm, p, new VulnerablePower(mm, 3, false), 3));
-            }
-        } else {
-            this.addToBot(new ApplyPowerAction(m, p, new WeakPower(m, 3, false), 3));
-            this.addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, 3, false), 3));
-        }
+    public void doEffects(AbstractPlayer p, AbstractMonster m) {
+        this.addToBot(new ApplyPowerAction(m, p, new WeakPower(m, 3, false), 3));
+        this.addToTop(new ApplyPowerAction(m, p, new VulnerablePower(m, 3, false), 3));
     }
 
     @Override

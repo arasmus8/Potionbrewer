@@ -24,7 +24,9 @@ public class Meteorite extends Reagent {
 
     public Meteorite() {
         super(ORB_ID, img, orbString.NAME);
+        catalyze = true;
         damages = true;
+        damage = 25;
     }
 
     @Override
@@ -49,14 +51,13 @@ public class Meteorite extends Reagent {
     }
 
     @Override
-    public void doActions(AbstractPlayer p, AbstractMonster m) {
-        if (PotionTracker.potionsUsedThisTurn.get(p) > 0) {
-            if (m == null) {
-                this.addToBot(new DamageAllEnemiesAction(p, DamageInfo.createDamageMatrix(15), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SMASH));
-            } else {
-                this.addToBot(new DamageAction(m, new DamageInfo(p, 15, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SMASH));
-            }
-        }
+    public void doAoeDamage(AbstractPlayer p, int amount) {
+        this.addToBot(new DamageAllEnemiesAction(p, DamageInfo.createDamageMatrix(amount), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SMASH));
+    }
+
+    @Override
+    public void doDamage(AbstractPlayer p, AbstractMonster m, DamageInfo info) {
+        this.addToBot(new DamageAction(m, info, AbstractGameAction.AttackEffect.SMASH));
     }
 
     @Override

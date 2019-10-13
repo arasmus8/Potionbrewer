@@ -46,7 +46,7 @@ public class Bile extends Reagent {
     }
 
     @Override
-    public void doActions(AbstractPlayer p, AbstractMonster m) {
+    public void doEffects(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new ApplyPowerAction(p, p, new BilePower(p, 1), 1));
     }
 

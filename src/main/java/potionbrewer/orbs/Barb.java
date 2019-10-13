@@ -26,6 +26,8 @@ public class Barb extends Reagent {
         super(ORB_ID, img, orbString.NAME);
         damages = true;
         blocks = true;
+        damage = 5;
+        block = 5;
     }
 
     @Override
@@ -50,15 +52,18 @@ public class Barb extends Reagent {
     }
 
     @Override
-    public void doActions(AbstractPlayer p, AbstractMonster m) {
-        int BLOCK_AMT = 3;
-        this.addToBot(new GainBlockAction(p, BLOCK_AMT));
-        int DMG_AMT = 4;
-        if (m == null) {
-            this.addToBot(new DamageAllEnemiesAction(p, DamageInfo.createDamageMatrix(DMG_AMT), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE));
-        } else {
-            this.addToBot(new DamageAction(m, new DamageInfo(p, DMG_AMT, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.FIRE));
-        }
+    public void doAoeDamage(AbstractPlayer p, int amount) {
+        this.addToBot(new DamageAllEnemiesAction(p, DamageInfo.createDamageMatrix(amount), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+    }
+
+    @Override
+    public void doDamage(AbstractPlayer p, AbstractMonster m, DamageInfo info) {
+        this.addToBot(new DamageAction(m, info, AbstractGameAction.AttackEffect.FIRE));
+    }
+
+    @Override
+    public void doBlock(AbstractPlayer p, int amount) {
+        this.addToBot(new GainBlockAction(p, amount));
     }
 
     @Override

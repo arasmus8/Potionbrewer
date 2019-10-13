@@ -23,6 +23,7 @@ public class Ichor extends Reagent {
         super(ORB_ID, img, orbString.NAME);
         catalyze = true;
         blocks = true;
+        block = 10;
         targeted = false;
     }
 
@@ -48,10 +49,8 @@ public class Ichor extends Reagent {
     }
 
     @Override
-    public void doActions(AbstractPlayer p, AbstractMonster m) {
-        if (PotionTracker.potionsUsedThisTurn.get(p) > 0) {
-            this.addToBot(new GainBlockAction(p, 10));
-        }
+    public void doBlock(AbstractPlayer p, int block) {
+        this.addToBot(new GainBlockAction(p, block));
     }
 
     @Override

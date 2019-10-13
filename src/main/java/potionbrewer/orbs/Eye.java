@@ -47,10 +47,8 @@ public class Eye extends Reagent {
     }
 
     @Override
-    public void doActions(AbstractPlayer p, AbstractMonster m) {
-        if (PotionTracker.potionsUsedThisTurn.get(p) > 0) {
-            this.addToBot(new PlayRandomCardAction(p.hand));
-        }
+    public void doEffects(AbstractPlayer p, AbstractMonster m) {
+        this.addToBot(new PlayRandomCardAction(p.hand));
     }
 
     @Override

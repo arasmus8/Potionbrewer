@@ -48,10 +48,8 @@ public class Horn extends Reagent {
     }
 
     @Override
-    public void doActions(AbstractPlayer p, AbstractMonster m) {
-        if (PotionTracker.potionsUsedThisTurn.get(p) > 0) {
-            this.addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, 3), 3));
-        }
+    public void doEffects(AbstractPlayer p, AbstractMonster m) {
+        this.addToTop(new ApplyPowerAction(p, p, new StrengthPower(p, 3), 3));
     }
 
     @Override

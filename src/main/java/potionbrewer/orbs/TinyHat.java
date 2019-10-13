@@ -25,6 +25,7 @@ public class TinyHat extends Reagent {
     public TinyHat() {
         super(ORB_ID, img, orbString.NAME);
         damages = true;
+        damage = 18;
         catalyze = true;
     }
 
@@ -50,14 +51,13 @@ public class TinyHat extends Reagent {
     }
 
     @Override
-    public void doActions(AbstractPlayer p, AbstractMonster m) {
-        if (PotionTracker.potionsUsedThisTurn.get(p) > 0) {
-            if (m == null) {
-                this.addToBot(new DamageAllEnemiesAction(p, DamageInfo.createDamageMatrix(18), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SMASH));
-            } else {
-                this.addToBot(new DamageAction(m, new DamageInfo(p, 18, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SMASH));
-            }
-        }
+    public void doAoeDamage(AbstractPlayer p, int amount) {
+        this.addToBot(new DamageAllEnemiesAction(p, DamageInfo.createDamageMatrix(amount), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SMASH));
+    }
+
+    @Override
+    public void doDamage(AbstractPlayer p, AbstractMonster m, DamageInfo info) {
+        this.addToBot(new DamageAction(m, info, AbstractGameAction.AttackEffect.SMASH));
     }
 
     @Override

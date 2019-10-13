@@ -9,7 +9,11 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.potions.PotionSlot;
 import potionbrewer.PotionbrewerMod;
+import potionbrewer.cards.Prototype;
 import potionbrewer.cards.ReagentCard;
+import potionbrewer.orbs.Hand;
+import potionbrewer.orbs.Lightning;
+import potionbrewer.orbs.Tooth;
 import potionbrewer.potions.tonics.TonicLibrary;
 import potionbrewer.util.TextureLoader;
 

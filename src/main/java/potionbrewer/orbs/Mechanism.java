@@ -29,6 +29,7 @@ public class Mechanism extends Reagent {
     public Mechanism() {
         super(ORB_ID, img, orbString.NAME);
         damages = true;
+        damage = 30;
     }
 
     @Override
@@ -53,14 +54,19 @@ public class Mechanism extends Reagent {
     }
 
     @Override
-    public void doActions(AbstractPlayer p, AbstractMonster m) {
+    public void doDamage(AbstractPlayer p, AbstractMonster m, DamageInfo info) {
         this.addToBot(new SFXAction("ATTACK_HEAVY"));
         this.addToBot(new VFXAction(p, new MindblastEffect(p.dialogX, p.dialogY, p.flipHorizontal), 0.1F));
-        if (m == null) {
-            this.addToBot(new DamageAllEnemiesAction(p, DamageInfo.createDamageMatrix(30), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.NONE));
-        } else {
-            this.addToBot(new DamageAction(m, new DamageInfo(p, 30, DamageInfo.DamageType.NORMAL)));
-        }
+        this.addToBot(new DamageAction(m, info));
+    }
+
+    @Override
+    public void doAoeDamage(AbstractPlayer p, int amount) {
+        this.addToBot(new DamageAllEnemiesAction(p, DamageInfo.createDamageMatrix(amount), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.NONE));
+    }
+
+    @Override
+    public void doEffects(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new MakeTempCardInDrawPileAction(new VoidCard(), 1, false, true, false));
     }
 

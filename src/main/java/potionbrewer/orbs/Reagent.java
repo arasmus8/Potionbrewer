@@ -6,9 +6,11 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
@@ -25,15 +27,17 @@ public abstract class Reagent extends AbstractOrb {
     public boolean blocks = false;
     public int blockTimes = 0;
     public boolean targeted = true;
+    public int damage = 0;
+    public int block = 0;
 
     private float vfxTimer = 1.0f;
-    private float vfxIntervalMin = 0.1f;
-    private float vfxIntervalMax = 0.4f;
-    private static final float ORB_WAVY_DIST = 0.04f;
-    private static final float PI_4 = 12.566371f;
 
     protected void addToBot(AbstractGameAction action) {
         AbstractDungeon.actionManager.addToBottom(action);
+    }
+
+    protected void addToTop(AbstractGameAction action) {
+        AbstractDungeon.actionManager.addToTop(action);
     }
 
     @Override
@@ -75,6 +79,8 @@ public abstract class Reagent extends AbstractOrb {
         vfxTimer -= Gdx.graphics.getDeltaTime();
         if (vfxTimer < 0.0f) {
             AbstractDungeon.effectList.add(new DarkOrbPassiveEffect(cX, cY));
+            float vfxIntervalMin = 0.1f;
+            float vfxIntervalMax = 0.4f;
             vfxTimer = MathUtils.random(vfxIntervalMin, vfxIntervalMax);
         }
     }
@@ -104,10 +110,20 @@ public abstract class Reagent extends AbstractOrb {
 
     public abstract AbstractPotion getPotion();
 
-    public void doActions(AbstractPlayer p, AbstractMonster m) {
-    }
+    public void doEffects(AbstractPlayer p, AbstractMonster m) {}
+
+    public void doAoeDamage(AbstractPlayer p, int amount) {}
+
+    public void doDamage(AbstractPlayer p, AbstractMonster m, DamageInfo info) {}
+
+    public void doBlock(AbstractPlayer p, int amount) {}
 
     public String getCardDescription() {
         return "";
+    }
+
+    public static Texture getDefaultTexture() {
+        ImageMaster.loadRelicImg("Question Card", "questionCard.png");
+        return ImageMaster.getRelicImg("Question Card");
     }
 }
