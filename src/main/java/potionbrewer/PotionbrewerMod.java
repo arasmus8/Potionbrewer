@@ -321,6 +321,7 @@ public class PotionbrewerMod implements
         
         
         BaseMod.addCard(new Collect());
+        BaseMod.addCard(new ChemicalSpill());
         BaseMod.addCard(new Prototype());
         BaseMod.addCard(new ReagentCard());
 
@@ -340,6 +341,7 @@ public class PotionbrewerMod implements
         
         
         UnlockTracker.unlockCard(Collect.ID);
+        UnlockTracker.unlockCard(ChemicalSpill.ID);
         UnlockTracker.unlockCard(Prototype.ID);
         UnlockTracker.unlockCard(ReagentCard.ID);
 

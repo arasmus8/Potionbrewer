@@ -46,6 +46,10 @@
     "NAME": "Cool 2 Number Card",
     "DESCRIPTION": "Apply !M! vulnerable and !potionbrewer:SecondMagic! poison to an enemy."
   },
+  "potionbrewer:ChemicalSpill": {
+    "NAME": "Chemical Spill",
+    "DESCRIPTION": "Deal !D! Damage. NL potionbrewer:Catalyze: Gain !B! block."
+  },
   "potionbrewer:Collect": {
     "NAME": "Collect",
     "DESCRIPTION": "Collect a potionbrewer:Reagent from an enemy. Apply !M! Vulnerable. Exhaust."

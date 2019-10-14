@@ -20,6 +20,7 @@ import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import potionbrewer.PotionbrewerMod;
+import potionbrewer.cards.ChemicalSpill;
 import potionbrewer.cards.Collect;
 import potionbrewer.cards.DefaultCommonAttack;
 import potionbrewer.cards.DefaultCommonSkill;
@@ -121,6 +122,7 @@ public class Potionbrewer extends CustomPlayer {
         retVal.add(DefaultCommonSkill.ID);
         retVal.add(DefaultCommonSkill.ID);
         retVal.add(Collect.ID);
+        retVal.add(ChemicalSpill.ID);
         return retVal;
     }
     
