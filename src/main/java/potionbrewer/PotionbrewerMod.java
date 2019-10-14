@@ -432,9 +432,6 @@ public class PotionbrewerMod implements
     public void receiveStartAct() {
         if (AbstractDungeon.floorNum == 0) {
             reagents.clear();
-            AbstractDungeon.player.masterDeck.addToBottom(new Prototype(new Eye(), new Eye(), new Eye()));
-            AbstractDungeon.player.masterDeck.addToBottom(new Prototype(new Barb(), new Hand(), new Meteorite()));
-            AbstractDungeon.player.masterDeck.addToBottom(new Prototype(new Tooth(), new Silk(), new RunicShape()));
         }
     }
 
