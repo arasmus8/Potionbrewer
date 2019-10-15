@@ -1,26 +1,22 @@
 package potionbrewer.cards;
 
 import basemod.abstracts.CustomCard;
-import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import potionbrewer.PotionbrewerMod;
+import potionbrewer.actions.BrewPotionAction;
 import potionbrewer.characters.Potionbrewer;
-import potionbrewer.orbs.ReagentList;
-
-import java.util.ArrayList;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static potionbrewer.PotionbrewerMod.makeCardPath;
 
-public class ReagentCard extends CustomCard {
+public class Distill extends CustomCard {
 
 // TEXT DECLARATION
 
-    public static final String ID = PotionbrewerMod.makeID(ReagentCard.class.getSimpleName());
-    public static final String IMG = makeCardPath("ReagentCard.png");
+    public static final String ID = PotionbrewerMod.makeID(Distill.class.getSimpleName());
+    public static final String IMG = makeCardPath("Skill.png");
     public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
 // Must have an image with the same NAME as the card in your image folder!
 
@@ -37,24 +33,24 @@ public class ReagentCard extends CustomCard {
 
 // /STAT DECLARATION/
 
-    public ReagentCard() {
+
+    public Distill() {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        selfRetain = true;
         exhaust = true;
     }
-
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        ArrayList<AbstractCard> reagentChoices = ReagentList.randomChoice(3);
-
-        this.addToBot(new ChooseOneAction(reagentChoices));
+        this.addToBot(new BrewPotionAction());
     }
-
 
     // Upgraded stats.
     @Override
     public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            initializeDescription();
+        }
     }
 }

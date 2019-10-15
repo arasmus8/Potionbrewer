@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import potionbrewer.patches.PotionTracker;
+import potionbrewer.powers.NoCatalyzePower;
 
 public abstract class CatalyzeCard extends CustomCard {
 
@@ -37,12 +38,13 @@ public abstract class CatalyzeCard extends CustomCard {
     }
 
     public abstract void catalyzeActions(AbstractPlayer p, AbstractMonster m);
-    public abstract void onUseActions(AbstractPlayer p, AbstractMonster m);
+
+    public abstract void useActions(AbstractPlayer p, AbstractMonster m);
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.onUseActions(p, m);
-        if (p != null && PotionTracker.potionsUsedThisTurn.get(p) > 0) {
+        this.useActions(p, m);
+        if (p != null && PotionTracker.potionsUsedThisTurn.get(p) > 0 && !p.hasPower(NoCatalyzePower.POWER_ID)) {
             this.catalyzeActions(p, m);
         }
     }

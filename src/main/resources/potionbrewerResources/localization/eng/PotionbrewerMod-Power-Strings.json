@@ -6,6 +6,13 @@
       " Strength until the end of this turn each time you play a Skill."
     ]
   },
+  "potionbrewer:BrewPotionPower": {
+    "NAME": "Brew Potion",
+    "DESCRIPTIONS": [
+      "After #b",
+      " turns, obtain a #y"
+    ]
+  },
   "potionbrewer:DiseasePower": {
     "NAME": "Disease",
     "DESCRIPTIONS": [
@@ -19,6 +26,12 @@
     "DESCRIPTIONS": [
       "Doubles each turn. When Infection reaches #b",
       " applies #b1 Disease, and is reduced by #b"
+    ]
+  },
+  "potionbrewer:NoCatalyzePower": {
+    "NAME": "Catalyze Blocked",
+    "DESCRIPTIONS": [
+      "No catalyze effects can be triggered this turn."
     ]
   },
   "potionbrewer:RootPower": {

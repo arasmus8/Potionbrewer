@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import potionbrewer.PotionbrewerMod;
@@ -15,12 +14,12 @@ import potionbrewer.characters.Potionbrewer;
 
 import static potionbrewer.PotionbrewerMod.makeCardPath;
 
-public class DefaultCommonAttack extends CustomCard {
-    
-    public static final String ID = PotionbrewerMod.makeID(DefaultCommonAttack.class.getSimpleName());
+public class PotionbrewerStrike extends CustomCard {
+
+    public static final String ID = PotionbrewerMod.makeID(PotionbrewerStrike.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    
-    public static final String IMG = makeCardPath("Attack.png");
+
+    public static final String IMG = makeCardPath("Strike.png");
     
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
@@ -33,19 +32,18 @@ public class DefaultCommonAttack extends CustomCard {
     private static final int COST = 1;
     private static final int DAMAGE = 6;
     private static final int UPGRADE_PLUS_DMG = 3;
-    
-    public DefaultCommonAttack() {
+
+    public PotionbrewerStrike() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
         this.tags.add(BaseModCardTags.BASIC_STRIKE);
         this.tags.add(CardTags.STRIKE);
+        this.tags.add(CardTags.STARTER_STRIKE);
     }
     
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn),
-                        AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
     }
     
     @Override

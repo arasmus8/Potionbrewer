@@ -1,8 +1,8 @@
 package potionbrewer.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -13,46 +13,48 @@ import potionbrewer.characters.Potionbrewer;
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static potionbrewer.PotionbrewerMod.makeCardPath;
 
-public class ChemicalSpill extends CatalyzeCard {
-// TEXT DECLARATION
+public class FlashPowder extends CatalyzeCard {
+    // TEXT DECLARATION
 
-    public static final String ID = PotionbrewerMod.makeID(ChemicalSpill.class.getSimpleName());
-    public static final String IMG = makeCardPath("ChemicalSpill.png");
+    public static final String ID = PotionbrewerMod.makeID(FlashPowder.class.getSimpleName());
+    public static final String IMG = makeCardPath("FlashPowder.png");
     public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
-// Must have an image with the same NAME as the card in your image folder!.
+    // Must have an image with the same NAME as the card in your image folder!.
 
-// /TEXT DECLARATION/
+    // /TEXT DECLARATION/
 
-// STAT DECLARATION
+    // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.BASIC;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
+    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = Potionbrewer.Enums.COLOR_CYAN;
 
     private static final int COST = 1;
 
-    private static final int DAMAGE = 9;
-    private static final int UPGRADE_PLUS_DMG = 4;
+    private static final int DAMAGE = 6;
+    private static final int UPGRADE_PLUS_DMG = 3;
 
-    private static final int BLOCK = 10;
-    private static final int UPGRADE_BLOCK = 5;
-// /STAT DECLARATION/
+    private static final int DRAW = 1;
+    private static final int UPGRADE_DRAW = 1;
+    // /STAT DECLARATION/
 
-    public ChemicalSpill() {
+    public FlashPowder() {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
-        baseBlock = BLOCK;
+        baseMagicNumber = DRAW;
+        magicNumber = DRAW;
+        isMultiDamage = true;
     }
 
     @Override
     public void catalyzeActions(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new GainBlockAction(p, block));
+        this.addToBot(new DrawCardAction(p, magicNumber));
     }
 
     @Override
     public void useActions(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.POISON));
+        this.addToBot(new DamageAllEnemiesAction(p, multiDamage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE));
     }
 
     // Upgraded stats.
@@ -61,9 +63,8 @@ public class ChemicalSpill extends CatalyzeCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
-            upgradeBlock(UPGRADE_BLOCK);
+            // upgradeMagicNumber(UPGRADE_DRAW);
             initializeDescription();
         }
     }
 }
-

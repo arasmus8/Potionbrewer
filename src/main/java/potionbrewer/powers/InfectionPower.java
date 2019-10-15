@@ -1,16 +1,10 @@
 package potionbrewer.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
-import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.HealthBarRenderPower;
-import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -54,7 +48,8 @@ public class InfectionPower extends AbstractPower implements CloneablePowerInter
         updateDescription();
     }
 
-    public void atStartOfTurn() {
+    @Override
+    public void atStartOfTurnPostDraw() {
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             this.flashWithoutSound();
             this.addToBot(new ApplyPowerAction(owner, source, this.makeCopy(), this.amount));

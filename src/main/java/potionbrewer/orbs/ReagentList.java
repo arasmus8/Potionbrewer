@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import potionbrewer.cards.option.*;
 
 import java.util.*;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class ReagentList {
@@ -124,7 +125,7 @@ public class ReagentList {
         return new Ichor();
     }
 
-    private static RandomEntry randomEntry() {
+    private static RandomEntry randomEntry(ArrayList<RandomEntry> toExclude) {
         ArrayList<RandomEntry> list = new ArrayList<>();
         list.add(new RandomEntry(9, new ChooseBone(), new Bone()));
         list.add(new RandomEntry(5, new ChooseEther(), new Ether()));
@@ -137,6 +138,11 @@ public class ReagentList {
         list.add(new RandomEntry(9, new ChooseSpore(), new Spore()));
         list.add(new RandomEntry(5, new ChooseSteel(), new Steel()));
         list.add(new RandomEntry(9, new ChooseTooth(), new Tooth()));
+        if (toExclude != null) {
+            for (RandomEntry exclude : toExclude) {
+                list.remove(exclude);
+            }
+        }
         list.sort(new SortScoreDescending());
         int total = list.stream().mapToInt(e -> e.chance).reduce(0, Integer::sum);
         int roll = MathUtils.random(1, total);
@@ -149,11 +155,19 @@ public class ReagentList {
     }
 
     public static AbstractOrb randomReagent() {
-        return randomEntry().reagent;
+        return randomEntry(null).reagent;
+    }
+
+    public static ArrayList<AbstractCard> randomChoice(int amount) {
+        ArrayList<RandomEntry> list = new ArrayList<>();
+        for (int i = 0; i < amount; i++) {
+            list.add(randomEntry(list));
+        }
+        return list.stream().map(re -> re.optionCard).collect(Collectors.toCollection(ArrayList::new));
     }
 
     public static AbstractCard randomChoice() {
-        return randomEntry().optionCard;
+        return randomEntry(null).optionCard;
     }
 
     private static class RandomEntry {
@@ -165,6 +179,14 @@ public class ReagentList {
             this.chance = chance;
             this.optionCard = optionCard;
             this.reagent = reagent;
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof RandomEntry) {
+                return ((RandomEntry) obj).optionCard.cardID.equals(this.optionCard.cardID);
+            }
+            return false;
         }
     }
 

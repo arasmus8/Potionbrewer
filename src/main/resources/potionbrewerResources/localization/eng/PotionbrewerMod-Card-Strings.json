@@ -54,13 +54,29 @@
     "NAME": "Collect",
     "DESCRIPTION": "Collect a potionbrewer:Reagent from an enemy. Apply !M! Vulnerable. Exhaust."
   },
+  "potionbrewer:FlashPowder": {
+    "NAME": "Flash Powder",
+    "DESCRIPTION": "Deal !D! Damage to all enemies. NL potionbrewer:Catalyze: Draw !M! card."
+  },
+  "potionbrewer:PotionbrewerDefend": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! Block."
+  },
+  "potionbrewer:PotionbrewerStrike": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! Damage."
+  },
   "potionbrewer:Prototype": {
     "NAME": "Prototype Potion",
     "DESCRIPTION": "Has various effects based on the Reagents collected."
   },
+  "potionbrewer:Distill": {
+    "NAME": "Distill",
+    "DESCRIPTION": "Brew your rightmost potionbrewer:Reagent into a potion over 3 turns. NL Exhaust."
+  },
   "potionbrewer:ReagentCard": {
     "NAME": "Reagent",
-    "DESCRIPTION": "Choose 1 of 3 random potionbrewer:Reagents to collect."
+    "DESCRIPTION": "Choose 1 of 3 random potionbrewer:Reagent to collect."
   },
   "potionbrewer:ChooseBone": {
     "NAME": "Bone",

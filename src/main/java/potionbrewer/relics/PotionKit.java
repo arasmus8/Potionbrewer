@@ -9,11 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.potions.PotionSlot;
 import potionbrewer.PotionbrewerMod;
-import potionbrewer.cards.Prototype;
-import potionbrewer.cards.ReagentCard;
-import potionbrewer.orbs.Hand;
-import potionbrewer.orbs.Lightning;
-import potionbrewer.orbs.Tooth;
+import potionbrewer.cards.Distill;
 import potionbrewer.potions.tonics.TonicLibrary;
 import potionbrewer.util.TextureLoader;
 
@@ -36,7 +32,7 @@ public class PotionKit extends CustomRelic {
         flash();
         AbstractPotion p = TonicLibrary.getRandomTonic();
         this.addToBot(new ObtainPotionAction(p));
-        this.addToBot(new MakeTempCardInHandAction(new ReagentCard()));
+        this.addToBot(new MakeTempCardInHandAction(new Distill()));
     }
     
     @Override

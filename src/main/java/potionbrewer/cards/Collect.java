@@ -49,6 +49,7 @@ public class Collect extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = VULNERABLE;
         this.magicNumber = VULNERABLE;
+        exhaust = true;
     }
 
     public AbstractOrb getOrbForMonster(AbstractMonster m) {

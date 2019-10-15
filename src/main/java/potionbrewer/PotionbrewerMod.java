@@ -30,7 +30,8 @@ import potionbrewer.cards.*;
 import potionbrewer.characters.Invalid;
 import potionbrewer.characters.Potionbrewer;
 import potionbrewer.events.IdentityCrisisEvent;
-import potionbrewer.orbs.*;
+import potionbrewer.orbs.Reagent;
+import potionbrewer.orbs.ReagentList;
 import potionbrewer.patches.PotionTracker;
 import potionbrewer.potions.*;
 import potionbrewer.potions.tonics.TonicLibrary;
@@ -318,17 +319,16 @@ public class PotionbrewerMod implements
         BaseMod.addDynamicVariable(new TurnNumber());
 
         logger.info("Adding cards");
-        
-        
-        BaseMod.addCard(new Collect());
-        BaseMod.addCard(new ChemicalSpill());
-        BaseMod.addCard(new Prototype());
-        BaseMod.addCard(new ReagentCard());
 
+
+        for (AbstractCard c : CardList.allCards) {
+            BaseMod.addCard(c);
+            UnlockTracker.unlockCard(c.cardID);
+        }
         BaseMod.addCard(new DefaultSecondMagicNumberSkill());
-        BaseMod.addCard(new DefaultCommonAttack());
+        BaseMod.addCard(new PotionbrewerStrike());
         BaseMod.addCard(new DefaultAttackWithVariable());
-        BaseMod.addCard(new DefaultCommonSkill());
+        BaseMod.addCard(new PotionbrewerDefend());
         BaseMod.addCard(new DefaultCommonPower());
         BaseMod.addCard(new DefaultUncommonSkill());
         BaseMod.addCard(new DefaultUncommonAttack());
@@ -336,26 +336,6 @@ public class PotionbrewerMod implements
         BaseMod.addCard(new DefaultRareAttack());
         BaseMod.addCard(new DefaultRareSkill());
         BaseMod.addCard(new DefaultRarePower());
-        
-        logger.info("Making sure the cards are unlocked.");
-        
-        
-        UnlockTracker.unlockCard(Collect.ID);
-        UnlockTracker.unlockCard(ChemicalSpill.ID);
-        UnlockTracker.unlockCard(Prototype.ID);
-        UnlockTracker.unlockCard(ReagentCard.ID);
-
-        UnlockTracker.unlockCard(DefaultSecondMagicNumberSkill.ID);
-        UnlockTracker.unlockCard(DefaultCommonAttack.ID);
-        UnlockTracker.unlockCard(DefaultAttackWithVariable.ID);
-        UnlockTracker.unlockCard(DefaultCommonSkill.ID);
-        UnlockTracker.unlockCard(DefaultCommonPower.ID);
-        UnlockTracker.unlockCard(DefaultUncommonSkill.ID);
-        UnlockTracker.unlockCard(DefaultUncommonAttack.ID);
-        UnlockTracker.unlockCard(DefaultUncommonPower.ID);
-        UnlockTracker.unlockCard(DefaultRareAttack.ID);
-        UnlockTracker.unlockCard(DefaultRareSkill.ID);
-        UnlockTracker.unlockCard(DefaultRarePower.ID);
         
         logger.info("Done adding cards!");
     }

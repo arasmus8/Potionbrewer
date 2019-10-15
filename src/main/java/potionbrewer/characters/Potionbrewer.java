@@ -22,8 +22,8 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import potionbrewer.PotionbrewerMod;
 import potionbrewer.cards.ChemicalSpill;
 import potionbrewer.cards.Collect;
-import potionbrewer.cards.DefaultCommonAttack;
-import potionbrewer.cards.DefaultCommonSkill;
+import potionbrewer.cards.PotionbrewerDefend;
+import potionbrewer.cards.PotionbrewerStrike;
 import potionbrewer.patches.PotionTracker;
 import potionbrewer.relics.DefaultClickableRelic;
 import potionbrewer.relics.PlaceholderRelic2;
@@ -112,15 +112,15 @@ public class Potionbrewer extends CustomPlayer {
         ArrayList<String> retVal = new ArrayList<>();
         
         logger.info("Begin loading starter Deck Strings");
-        
-        retVal.add(DefaultCommonAttack.ID);
-        retVal.add(DefaultCommonAttack.ID);
-        retVal.add(DefaultCommonAttack.ID);
-        retVal.add(DefaultCommonAttack.ID);
-        retVal.add(DefaultCommonSkill.ID);
-        retVal.add(DefaultCommonSkill.ID);
-        retVal.add(DefaultCommonSkill.ID);
-        retVal.add(DefaultCommonSkill.ID);
+
+        retVal.add(PotionbrewerStrike.ID);
+        retVal.add(PotionbrewerStrike.ID);
+        retVal.add(PotionbrewerStrike.ID);
+        retVal.add(PotionbrewerStrike.ID);
+        retVal.add(PotionbrewerDefend.ID);
+        retVal.add(PotionbrewerDefend.ID);
+        retVal.add(PotionbrewerDefend.ID);
+        retVal.add(PotionbrewerDefend.ID);
         retVal.add(Collect.ID);
         retVal.add(ChemicalSpill.ID);
         return retVal;
@@ -177,7 +177,7 @@ public class Potionbrewer extends CustomPlayer {
     
     @Override
     public AbstractCard getStartCardForEvent() {
-        return new DefaultCommonAttack();
+        return new PotionbrewerStrike();
     }
     
     @Override

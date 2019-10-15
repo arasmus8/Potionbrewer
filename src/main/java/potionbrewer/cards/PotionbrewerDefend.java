@@ -1,19 +1,23 @@
 package potionbrewer.cards;
 
+import basemod.abstracts.CustomCard;
 import basemod.helpers.BaseModCardTags;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import potionbrewer.PotionbrewerMod;
 import potionbrewer.characters.Potionbrewer;
 
 import static potionbrewer.PotionbrewerMod.makeCardPath;
 
-public class DefaultCommonSkill extends AbstractDynamicCard {
-    
-    public static final String ID = PotionbrewerMod.makeID(DefaultCommonSkill.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+public class PotionbrewerDefend extends CustomCard {
+
+    public static final String ID = PotionbrewerMod.makeID(PotionbrewerDefend.class.getSimpleName());
+    private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String IMG = makeCardPath("Defend.png");
     
     private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.SELF;
@@ -23,9 +27,9 @@ public class DefaultCommonSkill extends AbstractDynamicCard {
     private static final int COST = 1;
     private static final int BLOCK = 5;
     private static final int UPGRADE_PLUS_BLOCK = 3;
-    
-    public DefaultCommonSkill() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+
+    public PotionbrewerDefend() {
+        super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         baseBlock = BLOCK;
         this.tags.add(BaseModCardTags.BASIC_DEFEND);
     }

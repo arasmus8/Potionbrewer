@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import potionbrewer.cards.Prototype;
 import potionbrewer.orbs.Reagent;
 import potionbrewer.patches.PotionTracker;
+import potionbrewer.powers.NoCatalyzePower;
 
 public class PrototypeAction extends AbstractGameAction {
     private Prototype card;
@@ -43,6 +44,8 @@ public class PrototypeAction extends AbstractGameAction {
         if (duration == Settings.ACTION_DUR_XFAST) {
             this.isDone = true;
             if (reagent.catalyze && PotionTracker.potionsUsedThisTurn.get(player) == 0) {
+                return;
+            } else if (reagent.catalyze && player.hasPower(NoCatalyzePower.POWER_ID)) {
                 return;
             }
             if (reagent.damages) {
