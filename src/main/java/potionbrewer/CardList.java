@@ -25,6 +25,7 @@ public class CardList {
         allCards.add(new Contingency());
         allCards.add(new EyeGouge());
         allCards.add(new FlashPowder());
+        allCards.add(new OneTwoPunch());
         allCards.add(new Smack());
         allCards.add(new TimeBomb());
         allCards.add(new UnstableFormula());

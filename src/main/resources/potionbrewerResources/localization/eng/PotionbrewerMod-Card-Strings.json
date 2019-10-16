@@ -70,6 +70,10 @@
     "NAME": "Flash Powder",
     "DESCRIPTION": "Deal !D! Damage to all enemies. NL potionbrewer:Catalyze: Draw !M! card."
   },
+  "potionbrewer:OneTwoPunch": {
+    "NAME": "One-Two Punch",
+    "DESCRIPTION": "Deal !D! Damage. If the last card played cost 0, play this twice."
+  },
   "potionbrewer:PotionbrewerDefend": {
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block."
