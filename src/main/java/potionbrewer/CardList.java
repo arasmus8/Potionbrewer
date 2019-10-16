@@ -21,6 +21,7 @@ public class CardList {
         allCards.add(new Distill());
         allCards.add(new ReagentCard());
 
+        // Common Attacks
         allCards.add(new BlindingSpray());
         allCards.add(new Contingency());
         allCards.add(new EyeGouge());
@@ -30,5 +31,10 @@ public class CardList {
         allCards.add(new TimeBomb());
         allCards.add(new UnstableFormula());
         allCards.add(new VolatileSolution());
+
+        //Common Skills
+        allCards.add(new Brandish());
+        allCards.add(new QuickStep());
+        allCards.add(new Smokescreen());
     }
 }

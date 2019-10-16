@@ -1,45 +1,47 @@
 package potionbrewer.cards;
 
 import basemod.abstracts.CustomCard;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.defect.ScrapeAction;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.TheBombPower;
 import potionbrewer.PotionbrewerMod;
+import potionbrewer.actions.BrandishAction;
 import potionbrewer.characters.Potionbrewer;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static potionbrewer.PotionbrewerMod.makeCardPath;
 
-public class TimeBomb extends CustomCard {
-    // TEXT DECLARATION
+public class Brandish extends CustomCard {
 
-    public static final String ID = PotionbrewerMod.makeID(TimeBomb.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
+// TEXT DECLARATION
+
+    public static final String ID = PotionbrewerMod.makeID(Brandish.class.getSimpleName());
+    public static final String IMG = makeCardPath("Skill.png");
     public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
-    // Must have an image with the same NAME as the card in your image folder!.
+// Must have an image with the same NAME as the card in your image folder!
 
-    // /TEXT DECLARATION/
+// /TEXT DECLARATION/
 
-    // STAT DECLARATION
+// STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.COMMON;
-    private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
-    private static final CardType TYPE = CardType.ATTACK;
+    private static final CardTarget TARGET = CardTarget.SELF;
+    private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = Potionbrewer.Enums.COLOR_CYAN;
 
-    private static final int COST = 1;
-
-    private static final int DAMAGE = 20;
-    private static final int UPGRADE_PLUS_DMG = 5;
+    private static final int COST = 0;
 
     private static final int MAGIC = 3;
-    // /STAT DECLARATION/
+    private static final int UPGRADED_MAGIC = 2;
 
-    public TimeBomb() {
+// /STAT DECLARATION/
+
+
+    public Brandish() {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = DAMAGE;
         baseMagicNumber = MAGIC;
         magicNumber = baseMagicNumber;
     }
@@ -48,7 +50,9 @@ public class TimeBomb extends CustomCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p, p, new TheBombPower(p, magicNumber, damage)));
+        this.addToBot(new ScrapeAction(p, magicNumber));
+        this.addToBot(new WaitAction(Settings.ACTION_DUR_MED));
+        this.addToBot(new BrandishAction());
     }
 
 
@@ -57,7 +61,7 @@ public class TimeBomb extends CustomCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
+            upgradeMagicNumber(UPGRADED_MAGIC);
             initializeDescription();
         }
     }

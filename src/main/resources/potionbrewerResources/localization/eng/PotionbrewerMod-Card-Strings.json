@@ -50,6 +50,10 @@
     "NAME": "Blinding Spray",
     "DESCRIPTION": "Deal !D! Damage. Apply !M! Weak."
   },
+  "potionbrewer:Brandish": {
+    "NAME": "Brandish",
+    "DESCRIPTION": "Draw !M! cards. Discard all Skills drawn this way."
+  },
   "potionbrewer:ChemicalSpill": {
     "NAME": "Chemical Spill",
     "DESCRIPTION": "Deal !D! Damage. NL potionbrewer:Catalyze: Gain !B! block."
@@ -82,9 +86,17 @@
     "NAME": "Strike",
     "DESCRIPTION": "Deal !D! Damage."
   },
+  "potionbrewer:QuickStep": {
+    "NAME": "Quick Step",
+    "DESCRIPTION": "Gain !B! Block. If you've played less than !M! cards this turn, draw a card."
+  },
   "potionbrewer:Smack": {
     "NAME": "Smack",
     "DESCRIPTION": "Deal !D! Damage. NL potionbrewer:Catalyze: Gain !M! [E]."
+  },
+  "potionbrewer:Smokescreen": {
+    "NAME": "Smokescreen",
+    "DESCRIPTION": "Gain !B! Block. NL potionbrewer:Catalyze: Draw a card."
   },
   "potionbrewer:TimeBomb": {
     "NAME": "Time Bomb",
