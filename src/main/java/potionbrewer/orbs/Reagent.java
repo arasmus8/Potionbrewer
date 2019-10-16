@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
+import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
@@ -18,6 +19,7 @@ import com.megacrit.cardcrawl.vfx.combat.DarkOrbActivateEffect;
 import com.megacrit.cardcrawl.vfx.combat.DarkOrbPassiveEffect;
 
 public abstract class Reagent extends AbstractOrb {
+    public String[] descriptions;
     public boolean exhaust = false;
     public boolean catalyze = false;
     public boolean aoeDamage = false;
@@ -32,6 +34,9 @@ public abstract class Reagent extends AbstractOrb {
 
     private float vfxTimer = 1.0f;
 
+    private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString("potionbrewer:REAGENT");
+    public static final String[] DESC = orbString.DESCRIPTION;
+
     protected void addToBot(AbstractGameAction action) {
         AbstractDungeon.actionManager.addToBottom(action);
     }
@@ -45,17 +50,25 @@ public abstract class Reagent extends AbstractOrb {
         return this.ID;
     }
 
-    public Reagent(String id, Texture img, String name) {
+    public Reagent(String id, Texture img, String name, String[] descriptions) {
         this.ID = id;
-        this.name = name;
         this.img = img;
+        this.name = name;
+        this.descriptions = descriptions;
         evokeAmount = baseEvokeAmount = 0;
         passiveAmount = basePassiveAmount = 0;
         updateDescription();
         angle = MathUtils.random(360.0f);
         channelAnimTimer = 0.5f;
     }
-    
+
+    @Override
+    public void updateDescription() {
+        this.applyFocus();
+        String cardEffects = descriptions[1];
+        this.description = descriptions[0] + DESC[0] + getPotion().name + DESC[1] + cardEffects.replace("potionbrewer:", "");
+    }
+
     @Override
     public void applyFocus() {
         passiveAmount = basePassiveAmount;

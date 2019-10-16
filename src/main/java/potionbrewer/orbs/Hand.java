@@ -16,15 +16,9 @@ public class Hand extends Reagent {
     public static final String[] DESC = orbString.DESCRIPTION;
 
     public Hand() {
-        super(ORB_ID, img, orbString.NAME);
+        super(ORB_ID, img, orbString.NAME, DESC);
         multiDamage = true;
         damageTimes = 2;
-    }
-
-    @Override
-    public void updateDescription() {
-        this.applyFocus();
-        this.description = DESC[0];
     }
 
     @Override

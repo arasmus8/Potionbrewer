@@ -4,7 +4,6 @@ import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -21,13 +20,7 @@ public class Tentacle extends Reagent {
     public static final String[] DESC = orbString.DESCRIPTION;
 
     public Tentacle() {
-        super(ORB_ID, img, orbString.NAME);
-    }
-
-    @Override
-    public void updateDescription() {
-        this.applyFocus();
-        this.description = DESC[0];
+        super(ORB_ID, img, orbString.NAME, DESC);
     }
 
     @Override

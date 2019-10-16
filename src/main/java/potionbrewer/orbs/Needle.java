@@ -16,16 +16,10 @@ public class Needle extends Reagent {
     public static final String[] DESC = orbString.DESCRIPTION;
 
     public Needle() {
-        super(ORB_ID, img, orbString.NAME);
+        super(ORB_ID, img, orbString.NAME, DESC);
         multiDamage = true;
         damageTimes = -1; // Turn # times
         exhaust = true;
-    }
-
-    @Override
-    public void updateDescription() {
-        this.applyFocus();
-        this.description = DESC[0];
     }
 
     @Override

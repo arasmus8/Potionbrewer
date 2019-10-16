@@ -23,17 +23,11 @@ public class Barb extends Reagent {
     public static final String[] DESC = orbString.DESCRIPTION;
 
     public Barb() {
-        super(ORB_ID, img, orbString.NAME);
+        super(ORB_ID, img, orbString.NAME, DESC);
         damages = true;
         blocks = true;
         damage = 5;
         block = 5;
-    }
-
-    @Override
-    public void updateDescription() {
-        this.applyFocus();
-        this.description = DESC[0];
     }
 
     @Override

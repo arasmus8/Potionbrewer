@@ -1,4 +1,11 @@
 {
+  "potionbrewer:REAGENT": {
+    "NAME": "REAGENT",
+    "DESCRIPTION": [
+      " NL #yPotion: Distill to brew a ",
+      " NL #yCard #yEffect: "
+    ]
+  },
   "potionbrewer:Barb": {
     "NAME": "Barb",
     "DESCRIPTION": [
@@ -73,7 +80,7 @@
     "NAME": "Gold",
     "DESCRIPTION": [
       "Gold harvested from a bandit.",
-      "Steal 10 Gold."
+      "Steal 5 Gold."
     ]
   },
   "potionbrewer:Grimace": {
@@ -129,7 +136,7 @@
     "NAME": "Needle",
     "DESCRIPTION": [
       "Sharp splinter of metal from a ghostly knife.",
-      "Damage is dealt !potionbrewer:TURN_NUMBER! times."
+      "Damage is dealt Turn Number ( !potionbrewer:TURN_NUMBER! ) times."
     ]
   },
   "potionbrewer:Nethershroud": {
@@ -142,7 +149,8 @@
   "potionbrewer:PhilosopherShard": {
     "NAME": "Philosopher's Shard",
     "DESCRIPTION": [
-      "Shard of the legendary Philosopher's Stone."
+      "Shard of the legendary Philosopher's Stone.",
+      "Target all enemies 3 times."
     ]
   },
   "potionbrewer:PowerCore": {

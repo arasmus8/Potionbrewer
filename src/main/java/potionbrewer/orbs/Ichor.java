@@ -6,12 +6,10 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.OrbStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.potions.SmokeBomb;
 import potionbrewer.PotionbrewerMod;
-import potionbrewer.patches.PotionTracker;
 
 public class Ichor extends Reagent {
     public static final String ORB_ID = PotionbrewerMod.makeID("Ichor");
@@ -20,17 +18,11 @@ public class Ichor extends Reagent {
     public static final String[] DESC = orbString.DESCRIPTION;
 
     public Ichor() {
-        super(ORB_ID, img, orbString.NAME);
+        super(ORB_ID, img, orbString.NAME, DESC);
         catalyze = true;
         blocks = true;
         block = 10;
         targeted = false;
-    }
-
-    @Override
-    public void updateDescription() {
-        this.applyFocus();
-        this.description = DESC[0];
     }
 
     @Override

@@ -16,14 +16,8 @@ public class Lightning extends Reagent {
     public static final String[] DESC = orbString.DESCRIPTION;
 
     public Lightning() {
-        super(ORB_ID, img, orbString.NAME);
+        super(ORB_ID, img, orbString.NAME, DESC);
         aoeDamage = true;
-    }
-
-    @Override
-    public void updateDescription() {
-        this.applyFocus();
-        this.description = DESC[0];
     }
 
     @Override

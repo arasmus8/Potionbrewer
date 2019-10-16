@@ -27,15 +27,9 @@ public class Mechanism extends Reagent {
     public static final String[] DESC = orbString.DESCRIPTION;
 
     public Mechanism() {
-        super(ORB_ID, img, orbString.NAME);
+        super(ORB_ID, img, orbString.NAME, DESC);
         damages = true;
         damage = 30;
-    }
-
-    @Override
-    public void updateDescription() {
-        this.applyFocus();
-        this.description = DESC[0];
     }
 
     @Override

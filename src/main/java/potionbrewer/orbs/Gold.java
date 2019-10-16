@@ -20,14 +20,8 @@ public class Gold extends Reagent {
     public static final String[] DESC = orbString.DESCRIPTION;
 
     public Gold() {
-        super(ORB_ID, img, orbString.NAME);
+        super(ORB_ID, img, orbString.NAME, DESC);
         exhaust = true;
-    }
-
-    @Override
-    public void updateDescription() {
-        this.applyFocus();
-        this.description = DESC[0];
     }
 
     @Override
@@ -47,8 +41,8 @@ public class Gold extends Reagent {
 
     @Override
     public void doEffects(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.player.gainGold(10);
-        for (int i = 0; i < 10; ++i) {// 39
+        AbstractDungeon.player.gainGold(5);
+        for (int i = 0; i < 5; ++i) {// 39
             AbstractDungeon.effectList.add(new GainPennyEffect(m, m.hb.cX, m.hb.cY, p.hb.cX, p.hb.cY, true));
         }
     }

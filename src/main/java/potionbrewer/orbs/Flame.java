@@ -22,15 +22,9 @@ public class Flame extends Reagent {
     public static final String[] DESC = orbString.DESCRIPTION;
 
     public Flame() {
-        super(ORB_ID, img, orbString.NAME);
+        super(ORB_ID, img, orbString.NAME, DESC);
         damages = true;
         damage = PotionbrewerMod.turnNumber * 3;
-    }
-
-    @Override
-    public void updateDescription() {
-        this.applyFocus();
-        this.description = DESC[0];
     }
 
     @Override

@@ -22,15 +22,9 @@ public class Tooth extends Reagent {
     public static final String[] DESC = orbString.DESCRIPTION;
 
     public Tooth() {
-        super(ORB_ID, img, orbString.NAME);
+        super(ORB_ID, img, orbString.NAME, DESC);
         damages = true;
         damage = 5;
-    }
-
-    @Override
-    public void updateDescription() {
-        this.applyFocus();
-        this.description = DESC[0];
     }
 
     @Override

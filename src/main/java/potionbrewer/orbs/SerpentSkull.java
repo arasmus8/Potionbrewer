@@ -25,15 +25,9 @@ public class SerpentSkull extends Reagent {
     public static final String[] DESC = orbString.DESCRIPTION;
 
     public SerpentSkull() {
-        super(ORB_ID, img, orbString.NAME);
+        super(ORB_ID, img, orbString.NAME, DESC);
         damages = true;
         damage = 15;
-    }
-
-    @Override
-    public void updateDescription() {
-        this.applyFocus();
-        this.description = DESC[0];
     }
 
     @Override

@@ -19,15 +19,9 @@ public class Ether extends Reagent {
     public static final String[] DESC = orbString.DESCRIPTION;
 
     public Ether() {
-        super(ORB_ID, img, orbString.NAME);
+        super(ORB_ID, img, orbString.NAME, DESC);
         exhaust = true;
         targeted = false;
-    }
-
-    @Override
-    public void updateDescription() {
-        this.applyFocus();
-        this.description = DESC[0];
     }
 
     @Override

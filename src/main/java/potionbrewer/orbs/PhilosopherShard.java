@@ -8,9 +8,6 @@ import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.potions.EntropicBrew;
 import potionbrewer.PotionbrewerMod;
-import potionbrewer.util.TextureLoader;
-
-import static potionbrewer.PotionbrewerMod.makeOrbPath;
 
 public class PhilosopherShard extends Reagent {
     public static final String ORB_ID = PotionbrewerMod.makeID("PhilosopherShard");
@@ -19,13 +16,10 @@ public class PhilosopherShard extends Reagent {
     public static final String[] DESC = orbString.DESCRIPTION;
 
     public PhilosopherShard() {
-        super(ORB_ID, img, orbString.NAME);
-    }
-
-    @Override
-    public void updateDescription() {
-        this.applyFocus();
-        this.description = DESC[0];
+        super(ORB_ID, img, orbString.NAME, DESC);
+        aoeDamage = true;
+        multiDamage = true;
+        damageTimes = 3;
     }
 
     @Override

@@ -11,7 +11,6 @@ import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.potions.SneckoOil;
 import potionbrewer.PotionbrewerMod;
 import potionbrewer.actions.PlayRandomCardAction;
-import potionbrewer.patches.PotionTracker;
 
 public class Eye extends Reagent {
     public static final String ORB_ID = PotionbrewerMod.makeID("Eye");
@@ -20,15 +19,9 @@ public class Eye extends Reagent {
     public static final String[] DESC = orbString.DESCRIPTION;
 
     public Eye() {
-        super(ORB_ID, img, orbString.NAME);
+        super(ORB_ID, img, orbString.NAME, DESC);
         catalyze = true;
         targeted = false;
-    }
-
-    @Override
-    public void updateDescription() {
-        this.applyFocus();
-        this.description = DESC[0];
     }
 
     @Override

@@ -14,7 +14,6 @@ import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.potions.PowerPotion;
 import potionbrewer.PotionbrewerMod;
-import potionbrewer.patches.PotionTracker;
 
 public class Meteorite extends Reagent {
     public static final String ORB_ID = PotionbrewerMod.makeID("Meteorite");
@@ -23,16 +22,10 @@ public class Meteorite extends Reagent {
     public static final String[] DESC = orbString.DESCRIPTION;
 
     public Meteorite() {
-        super(ORB_ID, img, orbString.NAME);
+        super(ORB_ID, img, orbString.NAME, DESC);
         catalyze = true;
         damages = true;
         damage = 25;
-    }
-
-    @Override
-    public void updateDescription() {
-        this.applyFocus();
-        this.description = DESC[0];
     }
 
     @Override

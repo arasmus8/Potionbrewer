@@ -14,7 +14,6 @@ import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.potions.DuplicationPotion;
 import potionbrewer.PotionbrewerMod;
-import potionbrewer.patches.PotionTracker;
 
 public class TinyHat extends Reagent {
     public static final String ORB_ID = PotionbrewerMod.makeID("TinyHat");
@@ -23,16 +22,10 @@ public class TinyHat extends Reagent {
     public static final String[] DESC = orbString.DESCRIPTION;
 
     public TinyHat() {
-        super(ORB_ID, img, orbString.NAME);
+        super(ORB_ID, img, orbString.NAME, DESC);
         damages = true;
         damage = 18;
         catalyze = true;
-    }
-
-    @Override
-    public void updateDescription() {
-        this.applyFocus();
-        this.description = DESC[0];
     }
 
     @Override

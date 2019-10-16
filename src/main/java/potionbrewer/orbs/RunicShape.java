@@ -16,15 +16,9 @@ public class RunicShape extends Reagent {
     public static final String[] DESC = orbString.DESCRIPTION;
 
     public RunicShape() {
-        super(ORB_ID, img, orbString.NAME);
+        super(ORB_ID, img, orbString.NAME, DESC);
         blockTimes = 2;
         targeted = false;
-    }
-
-    @Override
-    public void updateDescription() {
-        this.applyFocus();
-        this.description = DESC[0];
     }
 
     @Override

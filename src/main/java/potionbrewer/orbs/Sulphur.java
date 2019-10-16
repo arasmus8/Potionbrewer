@@ -23,17 +23,11 @@ public class Sulphur extends Reagent {
     public static final String[] DESC = orbString.DESCRIPTION;
 
     public Sulphur() {
-        super(ORB_ID, img, orbString.NAME);
+        super(ORB_ID, img, orbString.NAME, DESC);
         blocks = true;
         block = 8;
         damages = true;
         damage = 8;
-    }
-
-    @Override
-    public void updateDescription() {
-        this.applyFocus();
-        this.description = DESC[0];
     }
 
     @Override

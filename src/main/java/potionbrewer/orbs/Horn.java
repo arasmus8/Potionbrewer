@@ -12,7 +12,6 @@ import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.potions.StrengthPotion;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import potionbrewer.PotionbrewerMod;
-import potionbrewer.patches.PotionTracker;
 
 public class Horn extends Reagent {
     public static final String ORB_ID = PotionbrewerMod.makeID("Horn");
@@ -21,15 +20,9 @@ public class Horn extends Reagent {
     public static final String[] DESC = orbString.DESCRIPTION;
 
     public Horn() {
-        super(ORB_ID, img, orbString.NAME);
+        super(ORB_ID, img, orbString.NAME, DESC);
         catalyze = true;
         targeted = false;
-    }
-
-    @Override
-    public void updateDescription() {
-        this.applyFocus();
-        this.description = DESC[0];
     }
 
     @Override
