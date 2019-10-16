@@ -54,6 +54,10 @@
     "NAME": "Collect",
     "DESCRIPTION": "Collect a potionbrewer:Reagent from an enemy. Apply !M! Vulnerable. Exhaust."
   },
+  "potionbrewer:EyeGouge": {
+    "NAME": "Eye Gouge",
+    "DESCRIPTION": "Deal !D! Damage. potionbrewer:Catalyze: Gain !B! Block."
+  },
   "potionbrewer:FlashPowder": {
     "NAME": "Flash Powder",
     "DESCRIPTION": "Deal !D! Damage to all enemies. NL potionbrewer:Catalyze: Draw !M! card."
@@ -84,7 +88,7 @@
   },
   "potionbrewer:Distill": {
     "NAME": "Distill",
-    "DESCRIPTION": "Brew your rightmost potionbrewer:Reagent into a potion over 3 turns. NL Exhaust."
+    "DESCRIPTION": "Retain. NL Brew your rightmost potionbrewer:Reagent into a potion over 3 turns. NL Exhaust."
   },
   "potionbrewer:ReagentCard": {
     "NAME": "Reagent",

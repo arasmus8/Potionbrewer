@@ -10,13 +10,18 @@ public class CardList {
 
     static {
         allCards = new ArrayList<>();
+        // Starting Cards
         allCards.add(new PotionbrewerDefend());
         allCards.add(new PotionbrewerStrike());
         allCards.add(new Collect());
         allCards.add(new ChemicalSpill());
+
+        // Special Cards
         allCards.add(new Prototype());
         allCards.add(new Distill());
         allCards.add(new ReagentCard());
+
+        allCards.add(new EyeGouge());
         allCards.add(new FlashPowder());
         allCards.add(new Smack());
         allCards.add(new UnstableFormula());

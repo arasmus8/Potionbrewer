@@ -39,7 +39,6 @@ public class ReagentCard extends CustomCard {
 
     public ReagentCard() {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        selfRetain = true;
         exhaust = true;
     }
 
