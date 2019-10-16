@@ -66,6 +66,10 @@
     "NAME": "Strike",
     "DESCRIPTION": "Deal !D! Damage."
   },
+  "potionbrewer:Smack": {
+    "NAME": "Smack",
+    "DESCRIPTION": "Deal !D! Damage. NL potionbrewer:Catalyze: Gain !M! [E]."
+  },
   "potionbrewer:UnstableFormula": {
     "NAME": "Unstable Formula",
     "DESCRIPTION": "Deal !D! Damage. NL Next turn, deal !D! Damage."
