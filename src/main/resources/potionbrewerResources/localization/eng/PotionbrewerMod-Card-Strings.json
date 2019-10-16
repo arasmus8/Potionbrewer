@@ -66,6 +66,10 @@
     "NAME": "Strike",
     "DESCRIPTION": "Deal !D! Damage."
   },
+  "potionbrewer:UnstableFormula": {
+    "NAME": "Unstable Formula",
+    "DESCRIPTION": "Deal !D! Damage. NL Next turn, deal !D! Damage."
+  },
   "potionbrewer:Prototype": {
     "NAME": "Prototype Potion",
     "DESCRIPTION": "Has various effects based on the Reagents collected."

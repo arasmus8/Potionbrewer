@@ -10,7 +10,14 @@
     "NAME": "Brew Potion",
     "DESCRIPTIONS": [
       "After #b",
-      " turns, obtain a #y"
+      " turns, obtain a "
+    ]
+  },
+  "potionbrewer:DamageNextTurnPower": {
+    "NAME": "Damage Next Turn",
+    "DESCRIPTIONS": [
+      "Takes #b",
+      " Damage next turn."
     ]
   },
   "potionbrewer:DiseasePower": {

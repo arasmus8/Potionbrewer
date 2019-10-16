@@ -49,7 +49,7 @@ public class InfectionPower extends AbstractPower implements CloneablePowerInter
     }
 
     @Override
-    public void atStartOfTurnPostDraw() {
+    public void atEndOfRound() {
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             this.flashWithoutSound();
             this.addToBot(new ApplyPowerAction(owner, source, this.makeCopy(), this.amount));
