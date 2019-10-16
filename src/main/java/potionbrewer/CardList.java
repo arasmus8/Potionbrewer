@@ -21,9 +21,12 @@ public class CardList {
         allCards.add(new Distill());
         allCards.add(new ReagentCard());
 
+        allCards.add(new BlindingSpray());
+        allCards.add(new Contingency());
         allCards.add(new EyeGouge());
         allCards.add(new FlashPowder());
         allCards.add(new Smack());
+        allCards.add(new TimeBomb());
         allCards.add(new UnstableFormula());
         allCards.add(new VolatileSolution());
     }
