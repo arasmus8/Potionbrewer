@@ -3,6 +3,7 @@ package potionbrewer.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -43,6 +44,7 @@ public class DamageNextTurnPower extends AbstractPower implements CloneablePower
     public void atEndOfRound() {
         this.flash();
         this.addToBot(new DamageAction(owner, new DamageInfo(source, amount, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.FIRE));
+        this.addToBot(new RemoveSpecificPowerAction(owner, source, this));
     }
 
     @Override
