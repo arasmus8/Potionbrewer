@@ -20,5 +20,6 @@ public class CardList {
         allCards.add(new FlashPowder());
         allCards.add(new Smack());
         allCards.add(new UnstableFormula());
+        allCards.add(new VolatileSolution());
     }
 }

@@ -19,6 +19,7 @@ import potionbrewer.orbs.Eye;
 import potionbrewer.orbs.Reagent;
 import potionbrewer.orbs.ReagentList;
 import potionbrewer.patches.PotionTracker;
+import potionbrewer.powers.NoCatalyzePower;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static potionbrewer.PotionbrewerMod.makeCardPath;
@@ -201,7 +202,11 @@ public class Prototype extends CustomCard {
                 catalyze = true;
             }
         }
-        if (catalyze && AbstractDungeon.player != null && PotionTracker.potionsUsedThisTurn.get(AbstractDungeon.player) > 0) {
+        if ( catalyze &&
+                AbstractDungeon.player != null &&
+                PotionTracker.potionsUsedThisTurn.get(AbstractDungeon.player) > 0 &&
+                !AbstractDungeon.player.hasPower(NoCatalyzePower.POWER_ID)
+        ) {
             this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
         } else {
             this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();

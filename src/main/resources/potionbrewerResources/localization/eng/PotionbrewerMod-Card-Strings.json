@@ -74,6 +74,10 @@
     "NAME": "Unstable Formula",
     "DESCRIPTION": "Deal !D! Damage. NL Next turn, deal !D! Damage."
   },
+  "potionbrewer:VolatileSolution": {
+    "NAME": "Volatile Solution",
+    "DESCRIPTION": "Deal !D! Damage. No cards will trigger their potionbrewer:Catalyze effects this turn."
+  },
   "potionbrewer:Prototype": {
     "NAME": "Prototype Potion",
     "DESCRIPTION": "Has various effects based on the Reagents collected."

@@ -30,7 +30,10 @@ public abstract class CatalyzeCard extends CustomCard {
 
     @Override
     public void triggerOnGlowCheck() {
-        if (AbstractDungeon.player != null && PotionTracker.potionsUsedThisTurn.get(AbstractDungeon.player) > 0) {
+        if (AbstractDungeon.player != null &&
+                PotionTracker.potionsUsedThisTurn.get(AbstractDungeon.player) > 0 &&
+                !AbstractDungeon.player.hasPower(NoCatalyzePower.POWER_ID)
+        ) {
             this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
         } else {
             this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
