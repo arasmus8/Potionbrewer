@@ -36,5 +36,6 @@ public class CardList {
         allCards.add(new Brandish());
         allCards.add(new QuickStep());
         allCards.add(new Smokescreen());
+        allCards.add(new TestFormula());
     }
 }

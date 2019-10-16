@@ -98,6 +98,11 @@
     "NAME": "Smokescreen",
     "DESCRIPTION": "Gain !B! Block. NL potionbrewer:Catalyze: Draw a card."
   },
+  "potionbrewer:TestFormula": {
+    "NAME": "Test Formula",
+    "DESCRIPTION": "Generate and use a random potionbrewer:Tonic.",
+    "UPGRADE_DESCRIPTION": "Generate and use 2 random potionbrewer:Tonics."
+  },
   "potionbrewer:TimeBomb": {
     "NAME": "Time Bomb",
     "DESCRIPTION": "Deal !D! Damage in !M! turns."

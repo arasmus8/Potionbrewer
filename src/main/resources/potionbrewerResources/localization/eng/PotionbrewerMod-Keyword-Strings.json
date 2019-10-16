@@ -24,6 +24,17 @@
     "DESCRIPTION": "Doubles each turn. Applies Disease when infection is 10 or higher and is reduced by 10."
   },
   {
+    "NAMES": [
+      "Tonic",
+      "tonic",
+      "Tonics",
+      "tonics",
+      "Tonic:",
+      "Tonic."
+    ],
+    "DESCRIPTION": "A smaller version of a regular potion that can't be found in shops or rewards."
+  },
+  {
     "PROPER_NAME": "Reagent",
     "NAMES": [
       "Reagent",
