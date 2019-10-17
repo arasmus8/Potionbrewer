@@ -1,9 +1,9 @@
 package potionbrewer.cards;
 
+import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import potionbrewer.PotionbrewerMod;
@@ -12,14 +12,13 @@ import potionbrewer.powers.ToxicPower;
 
 import static potionbrewer.PotionbrewerMod.makeCardPath;
 
-public class DefaultCommonPower extends AbstractDynamicCard {
-    
-    public static final String ID = PotionbrewerMod.makeID(DefaultCommonPower.class.getSimpleName());
+public class Toxicity extends CustomCard {
+
+    public static final String ID = PotionbrewerMod.makeID(Toxicity.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
-    
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    
+
+    private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
+
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.SKILL;
@@ -28,9 +27,9 @@ public class DefaultCommonPower extends AbstractDynamicCard {
     private static final int COST = 1;
     private static final int MAGIC = 1;
     private static final int UPGRADE_MAGIC = 1;
-    
-    public DefaultCommonPower() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+
+    public Toxicity() {
+        super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
     }
     
@@ -44,7 +43,6 @@ public class DefaultCommonPower extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(UPGRADE_MAGIC);
-            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

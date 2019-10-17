@@ -46,6 +46,10 @@
     "NAME": "Cool 2 Number Card",
     "DESCRIPTION": "Apply !M! vulnerable and !potionbrewer:SecondMagic! poison to an enemy."
   },
+  "potionbrewer:Biohazard": {
+    "NAME": "Bio-Hazard",
+    "DESCRIPTION": "Apply !M! potionbrewer:Infection to an enemy."
+  },
   "potionbrewer:BlindingSpray": {
     "NAME": "Blinding Spray",
     "DESCRIPTION": "Deal !D! Damage. Apply !M! Weak."
@@ -53,6 +57,10 @@
   "potionbrewer:Brandish": {
     "NAME": "Brandish",
     "DESCRIPTION": "Draw !M! cards. Discard all Skills drawn this way."
+  },
+  "potionbrewer:CausticBarrier": {
+    "NAME": "Caustic Barrier",
+    "DESCRIPTION": "Gain !B! Block. Add a *Distill to your hand."
   },
   "potionbrewer:ChemicalSpill": {
     "NAME": "Chemical Spill",
@@ -74,6 +82,10 @@
     "NAME": "Flash Powder",
     "DESCRIPTION": "Deal !D! Damage to all enemies. NL potionbrewer:Catalyze: Draw !M! card."
   },
+  "potionbrewer:FortifiedSerum": {
+    "NAME": "Fortified Serum",
+    "DESCRIPTION": "Gain !B! Block."
+  },
   "potionbrewer:OneTwoPunch": {
     "NAME": "One-Two Punch",
     "DESCRIPTION": "Deal !D! Damage. If the last card played cost 0, play this twice."
@@ -85,6 +97,10 @@
   "potionbrewer:PotionbrewerStrike": {
     "NAME": "Strike",
     "DESCRIPTION": "Deal !D! Damage."
+  },
+  "potionbrewer:Toxicity": {
+    "NAME": "Toxicity",
+    "DESCRIPTION": "Apply !M! potionbrewer:Toxic to an enemy."
   },
   "potionbrewer:QuickStep": {
     "NAME": "Quick Step",

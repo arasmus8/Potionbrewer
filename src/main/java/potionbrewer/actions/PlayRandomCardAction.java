@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.CardQueueItem;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class PlayRandomCardAction extends AbstractGameAction {
     private CardGroup group;
@@ -21,7 +20,7 @@ public class PlayRandomCardAction extends AbstractGameAction {
         if (duration == Settings.ACTION_DUR_XFAST) {
             this.isDone = true;
             CardGroup filtered = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-            group.group.stream().filter(c -> !c.freeToPlayOnce).forEach(filtered::addToTop);
+            group.group.stream().filter(c -> !c.freeToPlayOnce && c.costForTurn >= -1).forEach(filtered::addToTop);
             if(filtered.size() < 1) {
                 return;
             }

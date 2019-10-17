@@ -33,9 +33,13 @@ public class CardList {
         allCards.add(new VolatileSolution());
 
         //Common Skills
+        allCards.add(new Biohazard());
         allCards.add(new Brandish());
+        allCards.add(new CausticBarrier());
+        allCards.add(new FortifiedSerum());
         allCards.add(new QuickStep());
         allCards.add(new Smokescreen());
         allCards.add(new TestFormula());
+        allCards.add(new Toxicity());
     }
 }

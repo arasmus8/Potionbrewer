@@ -329,7 +329,7 @@ public class PotionbrewerMod implements
         BaseMod.addCard(new PotionbrewerStrike());
         BaseMod.addCard(new DefaultAttackWithVariable());
         BaseMod.addCard(new PotionbrewerDefend());
-        BaseMod.addCard(new DefaultCommonPower());
+        BaseMod.addCard(new Toxicity());
         BaseMod.addCard(new DefaultUncommonSkill());
         BaseMod.addCard(new DefaultUncommonAttack());
         BaseMod.addCard(new DefaultUncommonPower());

@@ -50,7 +50,7 @@ public class DiseasePower extends AbstractPower implements CloneablePowerInterfa
     }
 
     @Override
-    public void atStartOfTurn() {
+    public void atEndOfRound() {
         this.flash();
         DamageInfo info = new DamageInfo(source, amount * DAMAGE_PER_STACK, DamageInfo.DamageType.HP_LOSS);
         this.addToBot(new DamageAction(owner, info, AttackEffect.POISON));
