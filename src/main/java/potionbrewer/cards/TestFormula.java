@@ -1,10 +1,13 @@
 package potionbrewer.cards;
 
 import basemod.abstracts.CustomCard;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.combat.PotionBounceEffect;
 import potionbrewer.PotionbrewerMod;
 import potionbrewer.actions.UseTempPotionAction;
 import potionbrewer.characters.Potionbrewer;
@@ -52,7 +55,9 @@ public class TestFormula extends CustomCard {
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             for (int i = 0; i < magicNumber; i++) {
                 AbstractMonster m = AbstractDungeon.getRandomMonster();
+                this.addToBot(new VFXAction(new PotionBounceEffect(p.hb.cX, p.hb.cY, m.hb.cX, this.hb.cY), 0.3F));
                 this.addToBot(new UseTempPotionAction(TonicLibrary.getRandomTonic(), m));
+                this.addToBot(new WaitAction(0.5F));
             }
         }
     }
