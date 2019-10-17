@@ -106,6 +106,10 @@
     "NAME": "Quick Step",
     "DESCRIPTION": "Gain !B! Block. If you've played less than !M! cards this turn, draw a card."
   },
+  "potionbrewer:Refill": {
+    "NAME": "Refill",
+    "DESCRIPTION": "Gain !B! Block. Next turn, gain [E]."
+  },
   "potionbrewer:Smack": {
     "NAME": "Smack",
     "DESCRIPTION": "Deal !D! Damage. NL potionbrewer:Catalyze: Gain !M! [E]."
