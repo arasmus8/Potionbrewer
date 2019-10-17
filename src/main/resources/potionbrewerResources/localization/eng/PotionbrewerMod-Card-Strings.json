@@ -46,6 +46,15 @@
     "NAME": "Cool 2 Number Card",
     "DESCRIPTION": "Apply !M! vulnerable and !potionbrewer:SecondMagic! poison to an enemy."
   },
+  "potionbrewer:AlchemistForm": {
+    "NAME": "Alchemist Form",
+    "DESCRIPTION": "Each turn, convert !M! gold into a random potion if you have an empty potion slot."
+  },
+  "potionbrewer:AnotherRound": {
+    "NAME": "Another Round",
+    "DESCRIPTION": "Each turn, return 1 card that costs 0 to your hand from your discard pile.",
+    "UPGRADE_DESCRIPTION": "Each turn, return 1 card that costs 0 to your hand from your discard pile. NL Innate."
+  },
   "potionbrewer:Biohazard": {
     "NAME": "Bio-Hazard",
     "DESCRIPTION": "Apply !M! potionbrewer:Infection to an enemy."
@@ -57,6 +66,19 @@
   "potionbrewer:Brandish": {
     "NAME": "Brandish",
     "DESCRIPTION": "Draw !M! cards. Discard all Skills drawn this way."
+  },
+  "potionbrewer:Bribery": {
+    "NAME": "Bribery",
+    "DESCRIPTION": "Whenever you would lose HP, pay 3 gold to lose !M! less."
+  },
+  "potionbrewer:BrokenBeakers": {
+    "NAME": "Broken Beakers",
+    "DESCRIPTION": "Deal !D! Damage to all Enemies. Reduce this card's damage by !M! this combat."
+  },
+  "potionbrewer:Catalyze": {
+    "NAME": "Catalyze",
+    "DESCRIPTION": "Draw !M! Card. NL Gain [E]. Trigger all potionbrewer:Catalyze effects this turn. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Draw !M! Cards. NL Gain [E] [E]. Trigger all potionbrewer:Catalyze effects this turn. NL Exhaust."
   },
   "potionbrewer:CausticBarrier": {
     "NAME": "Caustic Barrier",

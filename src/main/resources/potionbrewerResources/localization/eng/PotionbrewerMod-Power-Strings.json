@@ -1,4 +1,25 @@
 {
+  "potionbrewer:AlchemistFormPower": {
+    "NAME": "Alchemist Form",
+    "DESCRIPTIONS": [
+      "At the start of your turn, spend #b",
+      " gold and obtain a random potion."
+    ]
+  },
+  "potionbrewer:AnotherRoundPower": {
+    "NAME": "Another Round",
+    "DESCRIPTIONS": [
+      "At the start of your turn, return a 0 cost card from your discard pile to your hand."
+    ]
+  },
+  "potionbrewer:BriberyPower": {
+    "NAME": "Bribery",
+    "DESCRIPTIONS": [
+      "Whenever you would lose HP, reduce the HP lost by #b",
+      ", and lose #y",
+      " gold."
+    ]
+  },
   "potionbrewer:BilePower": {
     "NAME": "Bile",
     "DESCRIPTIONS": [
@@ -51,9 +72,5 @@
   "potionbrewer:ToxicPower": {
     "NAME": "Toxic",
     "DESCRIPTIONS": ["At the beginning of each turn, lose ", " of current health."]
-  },
-  "potionbrewer:RarePower": {
-    "NAME": "Placeholder Power",
-    "DESCRIPTIONS": ["At the start of your turn, TOUCH #b", " enemy." , " enemies."]
   }
 }

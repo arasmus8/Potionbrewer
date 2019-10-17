@@ -42,5 +42,18 @@ public class CardList {
         allCards.add(new Smokescreen());
         allCards.add(new TestFormula());
         allCards.add(new Toxicity());
+
+        //Uncommon Powers
+        allCards.add(new AnotherRound());
+
+        //Rare Attacks
+        allCards.add(new BrokenBeakers());
+
+        //Rare Skills
+        allCards.add(new Catalyze());
+
+        //Rare Powers
+        allCards.add(new AlchemistForm());
+        allCards.add(new Bribery());
     }
 }

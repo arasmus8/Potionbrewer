@@ -326,17 +326,13 @@ public class PotionbrewerMod implements
             UnlockTracker.unlockCard(c.cardID);
         }
         BaseMod.addCard(new DefaultSecondMagicNumberSkill());
-        BaseMod.addCard(new PotionbrewerStrike());
         BaseMod.addCard(new DefaultAttackWithVariable());
-        BaseMod.addCard(new PotionbrewerDefend());
-        BaseMod.addCard(new Toxicity());
         BaseMod.addCard(new DefaultUncommonSkill());
         BaseMod.addCard(new DefaultUncommonAttack());
         BaseMod.addCard(new DefaultUncommonPower());
         BaseMod.addCard(new DefaultRareAttack());
         BaseMod.addCard(new DefaultRareSkill());
-        BaseMod.addCard(new DefaultRarePower());
-        
+
         logger.info("Done adding cards!");
     }
     

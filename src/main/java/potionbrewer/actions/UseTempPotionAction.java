@@ -21,12 +21,6 @@ public class UseTempPotionAction extends AbstractGameAction {
         if (duration == Settings.ACTION_DUR_FAST) {
             this.isDone = true;
 
-            /*
-            float posX = 900.0F * Settings.scale;
-            float posY = 500.0F * Settings.scale;
-            this.addToBot(new VFXAction(new SpeechTextEffect(posX, posY, Settings.ACTION_DUR_FAST, potion.name, DialogWord.AppearEffect.GROW_IN)));
-            */
-
             BaseMod.publishPrePotionUse(potion);
             potion.use(target);
             BaseMod.publishPostPotionUse(potion);

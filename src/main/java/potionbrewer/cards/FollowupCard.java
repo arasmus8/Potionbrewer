@@ -50,7 +50,7 @@ public abstract class FollowupCard extends CustomCard {
         ArrayList<AbstractCard> cardsPlayedThisCombat = AbstractDungeon.actionManager.cardsPlayedThisCombat;
         if (cardsPlayedThisCombat.size() >= 2) {
             AbstractCard lastPlayed = cardsPlayedThisCombat.get(cardsPlayedThisCombat.size() - 2);
-            if (lastPlayed.cost == 0) {
+            if (!lastPlayed.purgeOnUse && (lastPlayed.cost == 0 || lastPlayed.freeToPlayOnce)) {
                 this.followupActions(p, m);
             }
         }
