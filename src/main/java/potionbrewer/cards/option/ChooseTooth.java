@@ -15,7 +15,7 @@ public class ChooseTooth extends AbstractCard {
     public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
 
     public ChooseTooth() {
-        super(ID, CARD_STRINGS.NAME, "", -2, CARD_STRINGS.DESCRIPTION, CardType.STATUS, CardColor.COLORLESS, CardRarity.COMMON, CardTarget.NONE);
+        super(ID, CARD_STRINGS.NAME, "colorless/attack/bite", -2, CARD_STRINGS.DESCRIPTION, CardType.STATUS, CardColor.COLORLESS, CardRarity.COMMON, CardTarget.NONE);
     }
 
     @Override

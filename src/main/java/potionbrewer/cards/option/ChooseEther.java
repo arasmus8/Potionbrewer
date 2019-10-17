@@ -15,7 +15,7 @@ public class ChooseEther extends AbstractCard {
     public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
 
     public ChooseEther() {
-        super(ID, CARD_STRINGS.NAME, "", -2, CARD_STRINGS.DESCRIPTION, CardType.STATUS, CardColor.COLORLESS, CardRarity.COMMON, CardTarget.NONE);
+        super(ID, CARD_STRINGS.NAME, "green/skill/catalyst", -2, CARD_STRINGS.DESCRIPTION, CardType.STATUS, CardColor.COLORLESS, CardRarity.COMMON, CardTarget.NONE);
     }
 
     @Override

@@ -15,7 +15,7 @@ public class ChooseSilk extends AbstractCard {
     public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
 
     public ChooseSilk() {
-        super(ID, CARD_STRINGS.NAME, "", -2, CARD_STRINGS.DESCRIPTION, CardType.STATUS, CardColor.COLORLESS, CardRarity.COMMON, CardTarget.NONE);
+        super(ID, CARD_STRINGS.NAME, "purple/attack/cut_through_fate", -2, CARD_STRINGS.DESCRIPTION, CardType.STATUS, CardColor.COLORLESS, CardRarity.COMMON, CardTarget.NONE);
     }
 
     @Override

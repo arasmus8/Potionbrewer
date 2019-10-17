@@ -116,8 +116,7 @@
   },
   "potionbrewer:TestFormula": {
     "NAME": "Test Formula",
-    "DESCRIPTION": "Generate and use a random potionbrewer:Tonic.",
-    "UPGRADE_DESCRIPTION": "Generate and use 2 random potionbrewer:Tonics."
+    "DESCRIPTION": "Choose 1 of !M! random potionbrewer:Tonics to use immediately."
   },
   "potionbrewer:TimeBomb": {
     "NAME": "Time Bomb",
@@ -186,5 +185,41 @@
   "potionbrewer:ChooseTooth": {
     "NAME": "Tooth",
     "DESCRIPTION": "Collect a Tooth Reagent."
+  },
+  "potionbrewer:ChooseBlockTonic": {
+    "NAME": "Block Tonic",
+    "DESCRIPTION": "Use a Block Tonic."
+  },
+  "potionbrewer:ChooseEnergyTonic": {
+    "NAME": "Energy Tonic",
+    "DESCRIPTION": "Use an Energy Tonic."
+  },
+  "potionbrewer:ChooseExplosiveTonic": {
+    "NAME": "Explosive Tonic.",
+    "DESCRIPTION": "Use an Explosive Tonic."
+  },
+  "potionbrewer:ChooseFearTonic": {
+    "NAME": "Fear Tonic",
+    "DESCRIPTION": "Use a Fear Tonic."
+  },
+  "potionbrewer:ChooseFireTonic": {
+    "NAME": "Fire Tonic",
+    "DESCRIPTION": "Use a Fire Tonic."
+  },
+  "potionbrewer:ChooseFlexTonic": {
+    "NAME": "Flex Tonic",
+    "DESCRIPTION": "Use a Flex Tonic."
+  },
+  "potionbrewer:ChooseSpeedTonic": {
+    "NAME": "Speed Tonic",
+    "DESCRIPTION": "Use a Speed Tonic."
+  },
+  "potionbrewer:ChooseSwiftTonic": {
+    "NAME": "Swift Tonic",
+    "DESCRIPTION": "Use a Swift Tonic."
+  },
+  "potionbrewer:ChooseWeakTonic": {
+    "NAME": "Weak Tonic",
+    "DESCRIPTION": "Use a Weak Tonic."
   }
 }

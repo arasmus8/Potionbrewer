@@ -15,7 +15,7 @@ public class ChooseBone extends AbstractCard {
     public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
 
     public ChooseBone() {
-        super(ID, CARD_STRINGS.NAME, "", -2, CARD_STRINGS.DESCRIPTION, CardType.STATUS, CardColor.COLORLESS, CardRarity.COMMON, CardTarget.NONE);
+        super(ID, CARD_STRINGS.NAME, "red/skill/offering", -2, CARD_STRINGS.DESCRIPTION, CardType.STATUS, CardColor.COLORLESS, CardRarity.COMMON, CardTarget.NONE);
     }
 
     @Override

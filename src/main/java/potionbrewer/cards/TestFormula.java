@@ -1,17 +1,17 @@
 package potionbrewer.cards;
 
 import basemod.abstracts.CustomCard;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.utility.WaitAction;
+import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.combat.PotionBounceEffect;
 import potionbrewer.PotionbrewerMod;
-import potionbrewer.actions.UseTempPotionAction;
 import potionbrewer.characters.Potionbrewer;
 import potionbrewer.potions.tonics.TonicLibrary;
+
+import java.util.ArrayList;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static potionbrewer.PotionbrewerMod.makeCardPath;
@@ -36,8 +36,8 @@ public class TestFormula extends CustomCard {
 
     private static final int COST = 1;
 
-    private static final int MAGIC = 1;
-    private static final int UPGRADED_MAGIC = 1;
+    private static final int MAGIC = 2;
+    private static final int UPGRADED_MAGIC = 2;
 
 // /STAT DECLARATION/
 
@@ -53,12 +53,8 @@ public class TestFormula extends CustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster target) {
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-            for (int i = 0; i < magicNumber; i++) {
-                AbstractMonster m = AbstractDungeon.getRandomMonster();
-                this.addToBot(new VFXAction(new PotionBounceEffect(p.hb.cX, p.hb.cY, m.hb.cX, this.hb.cY), 0.3F));
-                this.addToBot(new UseTempPotionAction(TonicLibrary.getRandomTonic(), m));
-                this.addToBot(new WaitAction(0.5F));
-            }
+            ArrayList<AbstractCard> tonicChoices = TonicLibrary.getRandomChoices(magicNumber);
+            this.addToBot(new ChooseOneAction(tonicChoices));
         }
     }
 
@@ -69,7 +65,6 @@ public class TestFormula extends CustomCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(UPGRADED_MAGIC);
-            rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

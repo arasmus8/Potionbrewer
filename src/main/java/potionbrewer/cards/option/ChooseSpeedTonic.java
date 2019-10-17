@@ -1,21 +1,21 @@
 package potionbrewer.cards.option;
 
-import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import potionbrewer.PotionbrewerMod;
-import potionbrewer.orbs.Ichor;
+import potionbrewer.actions.UseTempPotionAction;
+import potionbrewer.potions.tonics.SpeedTonic;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 
-public class ChooseIchor extends AbstractCard {
-    public static String ID = PotionbrewerMod.makeID(ChooseIchor.class.getSimpleName());
+public class ChooseSpeedTonic extends AbstractCard {
+    public static String ID = PotionbrewerMod.makeID(ChooseSpeedTonic.class.getSimpleName());
     public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
 
-    public ChooseIchor() {
-        super(ID, CARD_STRINGS.NAME, "status/slimed", -2, CARD_STRINGS.DESCRIPTION, CardType.STATUS, CardColor.COLORLESS, CardRarity.COMMON, CardTarget.NONE);
+    public ChooseSpeedTonic() {
+        super(ID, CARD_STRINGS.NAME, "green/skill/backflip", -2, CARD_STRINGS.DESCRIPTION, CardType.STATUS, CardColor.COLORLESS, CardRarity.COMMON, CardTarget.NONE);
     }
 
     @Override
@@ -34,11 +34,11 @@ public class ChooseIchor extends AbstractCard {
 
     @Override
     public void onChoseThisOption() {
-        this.addToBot(new ChannelAction(new Ichor()));
+        this.addToBot(new UseTempPotionAction(new SpeedTonic(), null));
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new ChooseIchor();
+        return new ChooseSpeedTonic();
     }
 }
