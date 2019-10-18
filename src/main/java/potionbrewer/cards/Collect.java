@@ -1,5 +1,6 @@
 package potionbrewer.cards;
 
+import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -24,15 +25,12 @@ import java.util.HashMap;
 
 import static potionbrewer.PotionbrewerMod.makeCardPath;
 
-public class Collect extends AbstractDynamicCard {
+public class Collect extends CustomCard {
     
     public static final String ID = PotionbrewerMod.makeID(Collect.class.getSimpleName());
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
 
     public static final String IMG = makeCardPath("ReagentCard.png");
-    
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     
     private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -41,12 +39,12 @@ public class Collect extends AbstractDynamicCard {
     
     private static final int COST = 0;
     private static final int VULNERABLE = 1;
-    private static final int UPGRADE_VULNERABLE = 2;
+    private static final int UPGRADE_VULNERABLE = 1;
 
     private static final HashMap<String, Class<? extends Reagent>> monsterReagents = new HashMap<>();
 
     public Collect() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = VULNERABLE;
         this.magicNumber = VULNERABLE;
         exhaust = true;
@@ -76,6 +74,8 @@ public class Collect extends AbstractDynamicCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeMagicNumber(UPGRADE_VULNERABLE);
+            this.isInnate = true;
+            this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }
     }

@@ -43,6 +43,9 @@ public class CardList {
         allCards.add(new TestFormula());
         allCards.add(new Toxicity());
 
+        //Uncommon Attacks
+        allCards.add(new ChemicalWeapons());
+
         //Uncommon Powers
         allCards.add(new AnotherRound());
 

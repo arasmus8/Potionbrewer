@@ -77,8 +77,8 @@
   },
   "potionbrewer:Catalyze": {
     "NAME": "Catalyze",
-    "DESCRIPTION": "Draw !M! Card. NL Gain [E]. Trigger all potionbrewer:Catalyze effects this turn. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Draw !M! Cards. NL Gain [E] [E]. Trigger all potionbrewer:Catalyze effects this turn. NL Exhaust."
+    "DESCRIPTION": "Draw !M! Card. NL Gain [E] NL Trigger all potionbrewer:Catalyze effects this turn. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Draw !M! Cards. NL Gain [E] [E] NL Trigger all potionbrewer:Catalyze effects this turn. NL Exhaust."
   },
   "potionbrewer:CausticBarrier": {
     "NAME": "Caustic Barrier",
@@ -88,9 +88,14 @@
     "NAME": "Chemical Spill",
     "DESCRIPTION": "Deal !D! Damage. NL potionbrewer:Catalyze: Gain !B! block."
   },
+  "potionbrewer:ChemicalWeapons": {
+    "NAME": "Chemical Weapons",
+    "DESCRIPTION": "Deal !D! Damage. NL potionbrewer:Catalyze: Gain [E] and Draw a card."
+  },
   "potionbrewer:Collect": {
     "NAME": "Collect",
-    "DESCRIPTION": "Collect a potionbrewer:Reagent from an enemy. Apply !M! Vulnerable. Exhaust."
+    "DESCRIPTION": "Collect a potionbrewer:Reagent from an enemy. Apply !M! Vulnerable. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Collect a potionbrewer:Reagent from an enemy. Apply !M! Vulnerable. Exhaust."
   },
   "potionbrewer:Contingency": {
     "NAME": "Contingency",

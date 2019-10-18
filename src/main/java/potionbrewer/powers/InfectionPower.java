@@ -58,6 +58,15 @@ public class InfectionPower extends AbstractPower implements CloneablePowerInter
     }
 
     @Override
+    public void stackPower(int stackAmount) {
+        if (amount + stackAmount >= THRESHOLD) {
+            int stacks = (amount + stackAmount) / THRESHOLD;
+            this.addToBot(new ReducePowerAction(owner, source, this, stacks * REDUCEBY));
+            this.addToBot(new ApplyPowerAction(owner, source, new DiseasePower(owner, source, stacks * DISEASE), stacks * DISEASE));
+        }
+    }
+
+    @Override
     public void atEndOfRound() {
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             this.flashWithoutSound();
