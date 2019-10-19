@@ -396,9 +396,11 @@ public class PotionbrewerMod implements
 
             config.load();
             String reagentStr = config.getString(REAGENTS);
-            for (String r : reagentStr.split(DELIM)) {
-                AbstractOrb o = ReagentList.fromId(r);
-                reagents.add((Reagent) o);
+            if (!reagentStr.equals("")) {
+                for (String r : reagentStr.split(DELIM)) {
+                    AbstractOrb o = ReagentList.fromId(r);
+                    reagents.add((Reagent) o);
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -409,6 +411,14 @@ public class PotionbrewerMod implements
     public void receiveStartAct() {
         if (AbstractDungeon.floorNum == 0) {
             reagents.clear();
+            potionbrewerSettings.setProperty(REAGENTS, "");
+            try {
+                SpireConfig config = new SpireConfig("PotionbrewerMod", "potionbrewerConfig", potionbrewerSettings);
+                config.setString(REAGENTS, "");
+                config.save();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 

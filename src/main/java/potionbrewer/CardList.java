@@ -44,11 +44,22 @@ public class CardList {
         allCards.add(new Toxicity());
 
         //Uncommon Attacks
+        allCards.add(new Backhand());
+        allCards.add(new BalancedFormula());
         allCards.add(new ChemicalWeapons());
+        allCards.add(new Discombobulate());
         allCards.add(new EmptyBottle());
+        allCards.add(new ExothermicReaction());
+        allCards.add(new ExplosiveReaction());
+        allCards.add(new FlareUp());
+        allCards.add(new FollowUp());
+        allCards.add(new IronFist());
+        allCards.add(new TestSubject());
+        allCards.add(new WhizBang());
 
         //Uncommon Skills
         allCards.add(new BlindingMist());
+        allCards.add(new LeftoverSpecimen());
 
         //Uncommon Powers
         allCards.add(new AnotherRound());

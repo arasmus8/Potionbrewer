@@ -55,6 +55,14 @@
     "DESCRIPTION": "Each turn, return 1 card that costs 0 to your hand from your discard pile.",
     "UPGRADE_DESCRIPTION": "Each turn, return 1 card that costs 0 to your hand from your discard pile. NL Innate."
   },
+  "potionbrewer:Backhand": {
+    "NAME": "Backhand",
+    "DESCRIPTION": "Deal !D! Damage. Draw !M! cards."
+  },
+  "potionbrewer:BalancedFormula": {
+    "NAME": "Balanced Formula",
+    "DESCRIPTION": "Deal !D! Damage. Move a 0 cost card from your draw pile and from your discard pile to your hand."
+  },
   "potionbrewer:Biohazard": {
     "NAME": "Bio-Hazard",
     "DESCRIPTION": "Apply !M! potionbrewer:Infection to an enemy."
@@ -105,21 +113,50 @@
     "NAME": "Contingency",
     "DESCRIPTION": "Deal !D! Damage. Scry !M! cards."
   },
+  "potionbrewer:Discombobulate": {
+    "NAME": "Discombobulate",
+    "DESCRIPTION": "Deal !D! Damage. NL potionbrewer:Catalyze: The target loses !M! Strength."
+  },
   "potionbrewer:EmptyBottle": {
     "NAME": "Empty Bottle",
     "DESCRIPTION": "Deal !D! Damage. When you use a potion, move this to your hand."
+  },
+  "potionbrewer:ExplosiveReaction": {
+    "NAME": "Explosive Reaction",
+    "DESCRIPTION": "Deal !D! Damage. Sacrifice your rightmost potionbrewer:Reagent to do double damage."
+  },
+  "potionbrewer:ExothermicReaction": {
+    "NAME": "Exothermic Reaction",
+    "DESCRIPTION": "Deal !D! Damage. If the last card played cost 0, another card costs 0 this turn."
   },
   "potionbrewer:EyeGouge": {
     "NAME": "Eye Gouge",
     "DESCRIPTION": "Deal !D! Damage. potionbrewer:Catalyze: Gain !B! Block."
   },
+  "potionbrewer:FlareUp": {
+    "NAME": "Flare Up",
+    "DESCRIPTION": "Deal !D! Damage. Deal !M! more Damage for each potion played this combat."
+  },
   "potionbrewer:FlashPowder": {
     "NAME": "Flash Powder",
     "DESCRIPTION": "Deal !D! Damage to all enemies. NL potionbrewer:Catalyze: Draw !M! card."
   },
+  "potionbrewer:FollowUp": {
+    "NAME": "Follow Up",
+    "DESCRIPTION": "Deal !D! Damage. If the last card played cost 0, draw a card."
+  },
   "potionbrewer:FortifiedSerum": {
     "NAME": "Fortified Serum",
     "DESCRIPTION": "Gain !B! Block."
+  },
+  "potionbrewer:IronFist": {
+    "NAME": "Iron Fist",
+    "DESCRIPTION": "Deal !D! Damage. NL potionbrewer:Catalyze: Strength affects this !M! times."
+  },
+  "potionbrewer:LeftoverSpecimen": {
+    "NAME": "Leftover Specimen",
+    "DESCRIPTION": "Shuffle a *Reagent card into your draw pile. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Shuffle a *Reagent card into your draw pile."
   },
   "potionbrewer:OneTwoPunch": {
     "NAME": "One-Two Punch",
@@ -132,10 +169,6 @@
   "potionbrewer:PotionbrewerStrike": {
     "NAME": "Strike",
     "DESCRIPTION": "Deal !D! Damage."
-  },
-  "potionbrewer:Toxicity": {
-    "NAME": "Toxicity",
-    "DESCRIPTION": "Apply !M! potionbrewer:Toxic to an enemy."
   },
   "potionbrewer:QuickStep": {
     "NAME": "Quick Step",
@@ -157,9 +190,17 @@
     "NAME": "Test Formula",
     "DESCRIPTION": "Choose 1 of !M! random potionbrewer:Tonics to use immediately."
   },
+  "potionbrewer:TestSubject": {
+    "NAME": "Test Subject",
+    "DESCRIPTION": "Deal !D! Damage. NL potionbrewer:Catalyze: Apply !M! potionbrewer:Infection. "
+  },
   "potionbrewer:TimeBomb": {
     "NAME": "Time Bomb",
     "DESCRIPTION": "Deal !D! Damage in !M! turns."
+  },
+  "potionbrewer:Toxicity": {
+    "NAME": "Toxicity",
+    "DESCRIPTION": "Apply !M! potionbrewer:Toxic to an enemy."
   },
   "potionbrewer:UnstableFormula": {
     "NAME": "Unstable Formula",
@@ -168,6 +209,10 @@
   "potionbrewer:VolatileSolution": {
     "NAME": "Volatile Solution",
     "DESCRIPTION": "Deal !D! Damage. No cards will trigger their potionbrewer:Catalyze effects this turn."
+  },
+  "potionbrewer:WhizBang": {
+    "NAME": "Whiz Bang",
+    "DESCRIPTION": "Deal !D! Damage 2 times. NL potionbrewer:Catalyze: 3 times."
   },
   "potionbrewer:Prototype": {
     "NAME": "Prototype Potion",

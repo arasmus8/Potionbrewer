@@ -27,6 +27,7 @@ public class BrewPotionAction extends AbstractGameAction {
             if (this.orb instanceof EmptyOrbSlot) {
                 this.isDone = true;
             } else if (this.orb instanceof Reagent) {
+                this.isDone = true;
                 Reagent reagent = (Reagent) this.orb;
                 p.evokeOrb();
                 this.addToTop(new ApplyPowerAction(p, p, new BrewPotionPower(p, TURNS, reagent.getPotion())));
