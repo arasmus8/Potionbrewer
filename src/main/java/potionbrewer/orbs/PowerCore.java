@@ -20,6 +20,7 @@ public class PowerCore extends Reagent {
     public PowerCore() {
         super(ORB_ID, img, orbString.NAME, DESC);
         blocks = true;
+        block = 12;
         catalyze = true;
         targeted = false;
     }

@@ -16,7 +16,7 @@ import static potionbrewer.PotionbrewerMod.makeCardPath;
 public class AlchemistForm extends CustomCard {
 
     public static final String ID = PotionbrewerMod.makeID(AlchemistForm.class.getSimpleName());
-    public static final String IMG = makeCardPath("Power.png");
+    public static final String IMG = makeCardPath("AlchemistForm.png");
     public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
     
     private static final CardRarity RARITY = CardRarity.RARE;

@@ -59,8 +59,9 @@ public class InfectionPower extends AbstractPower implements CloneablePowerInter
 
     @Override
     public void stackPower(int stackAmount) {
-        if (amount + stackAmount >= THRESHOLD) {
-            int stacks = (amount + stackAmount) / THRESHOLD;
+        amount += stackAmount;
+        if (amount >= THRESHOLD) {
+            int stacks = (amount) / THRESHOLD;
             this.addToBot(new ReducePowerAction(owner, source, this, stacks * REDUCEBY));
             this.addToBot(new ApplyPowerAction(owner, source, new DiseasePower(owner, source, stacks * DISEASE), stacks * DISEASE));
         }

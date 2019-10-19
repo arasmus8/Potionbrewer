@@ -34,7 +34,10 @@ public abstract class FollowupCard extends CustomCard {
         ArrayList<AbstractCard> cardsPlayedThisCombat = AbstractDungeon.actionManager.cardsPlayedThisCombat;
         if (!cardsPlayedThisCombat.isEmpty()) {
             AbstractCard lastPlayed = cardsPlayedThisCombat.get(cardsPlayedThisCombat.size() - 1);
-            if (lastPlayed.cost == 0) {
+            if (lastPlayed.purgeOnUse) {
+                return;
+            }
+            if (lastPlayed.cost == 0 || lastPlayed.freeToPlayOnce) {
                 this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
             }
         }
@@ -50,7 +53,7 @@ public abstract class FollowupCard extends CustomCard {
         ArrayList<AbstractCard> cardsPlayedThisCombat = AbstractDungeon.actionManager.cardsPlayedThisCombat;
         if (cardsPlayedThisCombat.size() >= 2) {
             AbstractCard lastPlayed = cardsPlayedThisCombat.get(cardsPlayedThisCombat.size() - 2);
-            if (!lastPlayed.purgeOnUse && (lastPlayed.cost == 0 || lastPlayed.freeToPlayOnce)) {
+            if (!lastPlayed.purgeOnUse && !this.uuid.equals(lastPlayed.uuid) && (lastPlayed.cost == 0 || lastPlayed.freeToPlayOnce)) {
                 this.followupActions(p, m);
             }
         }

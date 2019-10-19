@@ -1,8 +1,6 @@
 package potionbrewer.cards;
 
 import basemod.abstracts.CustomCard;
-import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
@@ -15,7 +13,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import potionbrewer.PotionbrewerMod;
 import potionbrewer.actions.PrototypeAction;
 import potionbrewer.characters.Potionbrewer;
-import potionbrewer.orbs.Eye;
 import potionbrewer.orbs.Reagent;
 import potionbrewer.orbs.ReagentList;
 import potionbrewer.patches.PotionTracker;
@@ -100,6 +97,9 @@ public class Prototype extends CustomCard {
             }
         } else {
             target = CardTarget.SELF;
+        }
+        if (!a.damages && !b.damages && !c.damages) {
+            type = CardType.SKILL;
         }
     }
 
