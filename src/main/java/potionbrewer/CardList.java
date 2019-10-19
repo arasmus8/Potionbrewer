@@ -45,6 +45,10 @@ public class CardList {
 
         //Uncommon Attacks
         allCards.add(new ChemicalWeapons());
+        allCards.add(new EmptyBottle());
+
+        //Uncommon Skills
+        allCards.add(new BlindingMist());
 
         //Uncommon Powers
         allCards.add(new AnotherRound());

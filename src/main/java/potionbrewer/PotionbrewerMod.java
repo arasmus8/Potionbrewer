@@ -14,6 +14,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
+import com.megacrit.cardcrawl.actions.utility.DiscardToHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
@@ -426,6 +427,26 @@ public class PotionbrewerMod implements
 
         for(AbstractCard c : p.hand.group) {
             c.triggerOnGlowCheck();
+        }
+
+        ArrayList<AbstractCard> emptyBottlesInDrawPile = p.drawPile.group.stream()
+                .filter(c -> c instanceof EmptyBottle)
+                .collect(Collectors.toCollection(ArrayList::new));
+
+        for (AbstractCard c : emptyBottlesInDrawPile) {
+            if (p.hand.size() >= BaseMod.MAX_HAND_SIZE) {
+                p.drawPile.moveToDiscardPile(c);
+                p.createHandIsFullDialog();
+            } else {
+                p.drawPile.moveToHand(c, p.drawPile);
+            }
+        }
+        AbstractDungeon.player.hand.refreshHandLayout();
+
+        for (AbstractCard c : p.discardPile.group) {
+            if (c instanceof EmptyBottle) {
+                AbstractDungeon.actionManager.addToBottom(new DiscardToHandAction(c));
+            }
         }
     }
 

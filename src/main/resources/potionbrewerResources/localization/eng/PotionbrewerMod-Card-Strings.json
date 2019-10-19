@@ -59,6 +59,10 @@
     "NAME": "Bio-Hazard",
     "DESCRIPTION": "Apply !M! potionbrewer:Infection to an enemy."
   },
+  "potionbrewer:BlindingMist": {
+    "NAME": "Blinding Mist",
+    "DESCRIPTION": "Gain !B! Block for each enemy in combat."
+  },
   "potionbrewer:BlindingSpray": {
     "NAME": "Blinding Spray",
     "DESCRIPTION": "Deal !D! Damage. Apply !M! Weak."
@@ -100,6 +104,10 @@
   "potionbrewer:Contingency": {
     "NAME": "Contingency",
     "DESCRIPTION": "Deal !D! Damage. Scry !M! cards."
+  },
+  "potionbrewer:EmptyBottle": {
+    "NAME": "Empty Bottle",
+    "DESCRIPTION": "Deal !D! Damage. When you use a potion, move this to your hand."
   },
   "potionbrewer:EyeGouge": {
     "NAME": "Eye Gouge",

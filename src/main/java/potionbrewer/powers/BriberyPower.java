@@ -40,7 +40,7 @@ public class BriberyPower extends AbstractPower implements CloneablePowerInterfa
 
     @Override
     public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
-        if (AbstractDungeon.player.gold >= goldCost) {
+        if (damageAmount > 0 && AbstractDungeon.player.gold >= goldCost) {
             this.addToBot(new SFXAction("EVENT_PURCHASE"));
             this.flashWithoutSound();
             AbstractDungeon.player.loseGold(goldCost);
