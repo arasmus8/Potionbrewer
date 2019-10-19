@@ -169,6 +169,14 @@
     "NAME": "Distill",
     "DESCRIPTION": "Retain. NL Brew your rightmost potionbrewer:Reagent into a potion over 3 turns. NL Exhaust."
   },
+  "potionbrewer:ChoosePotion": {
+    "NAME": "Potion",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "Use a ",
+      "Obtain a "
+    ]
+  },
   "potionbrewer:ReagentCard": {
     "NAME": "Reagent",
     "DESCRIPTION": "Choose 1 of 3 random potionbrewer:Reagent to collect."
