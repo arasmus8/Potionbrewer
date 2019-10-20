@@ -46,6 +46,14 @@
     "NAME": "Cool 2 Number Card",
     "DESCRIPTION": "Apply !M! vulnerable and !potionbrewer:SecondMagic! poison to an enemy."
   },
+  "potionbrewer:AcidCloud": {
+    "NAME": "Acid Cloud",
+    "DESCRIPTION": "Gain !B! Block. If the last card played cost 0, Apply !M! Vulnerable to all enemies."
+  },
+  "potionbrewer:Alacrity": {
+    "NAME": "Alacrity",
+    "DESCRIPTION": "Scry !M!. NL Draw a card."
+  },
   "potionbrewer:AlchemistForm": {
     "NAME": "Alchemist Form",
     "DESCRIPTION": "Each turn, convert !M! gold into a random potion if you have an empty potion slot."
@@ -96,6 +104,10 @@
     "NAME": "Caustic Barrier",
     "DESCRIPTION": "Gain !B! Block. Add a *Distill to your hand."
   },
+  "potionbrewer:ChemicalShroud": {
+    "NAME": "Chemical Shroud",
+    "DESCRIPTION": "Gain !B! Block. This costs 1 less for each potion used this combat."
+  },
   "potionbrewer:ChemicalSpill": {
     "NAME": "Chemical Spill",
     "DESCRIPTION": "Deal !D! Damage. NL potionbrewer:Catalyze: Gain !B! block."
@@ -122,13 +134,17 @@
     "DESCRIPTION": "Move X skills from your draw pile to your hand. They cost 0 this turn.",
     "UPGRADE_DESCRIPTION": "Move X + 1 skills from your draw pile to your hand. They cost 0 this turn."
   },
+  "potionbrewer:DigDeep": {
+    "NAME": "Dig Deep",
+    "DESCRIPTION": "Draw !M! cards. If the last card played cost 0, gain [E]"
+  },
   "potionbrewer:Discombobulate": {
     "NAME": "Discombobulate",
     "DESCRIPTION": "Deal !D! Damage. NL potionbrewer:Catalyze: The target loses !M! Strength."
   },
   "potionbrewer:EmptyBottle": {
     "NAME": "Empty Bottle",
-    "DESCRIPTION": "Deal !D! Damage. When you use a potion, move this to your hand."
+    "DESCRIPTION": "Deal !D! Damage. When you use a potion, move this from the discard pile to your hand."
   },
   "potionbrewer:ExplosiveReaction": {
     "NAME": "Explosive Reaction",
@@ -157,6 +173,15 @@
   "potionbrewer:FortifiedSerum": {
     "NAME": "Fortified Serum",
     "DESCRIPTION": "Gain !B! Block."
+  },
+  "potionbrewer:FuelCell": {
+    "NAME": "Fuel Cell",
+    "DESCRIPTION": "Gain !B! Block. NL Gain [E] [E] NL Reduce energy gained from this card by 1 this combat."
+  },
+  "potionbrewer:HazardousMaterials": {
+    "NAME": "Hazardous Materials",
+    "DESCRIPTION": "Apply X potionbrewer:Toxic. NL potionbrewer:Catalyze: And X potionbrewer:Disease.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Apply X potionbrewer:Toxic. NL potionbrewer:Catalyze: And X potionbrewer:Disease."
   },
   "potionbrewer:IronFist": {
     "NAME": "Iron Fist",
@@ -199,6 +224,10 @@
     "NAME": "Smokescreen",
     "DESCRIPTION": "Gain !B! Block. NL potionbrewer:Catalyze: Draw a card."
   },
+  "potionbrewer:SpecialFormula": {
+    "NAME": "Special Formula",
+    "DESCRIPTION": "Choose 1 of !M! random potions to obtain. NL Exhaust."
+  },
   "potionbrewer:TestFormula": {
     "NAME": "Test Formula",
     "DESCRIPTION": "Choose 1 of !M! random potionbrewer:Tonics to use immediately."
@@ -214,6 +243,10 @@
   "potionbrewer:Toxicity": {
     "NAME": "Toxicity",
     "DESCRIPTION": "Apply !M! potionbrewer:Toxic to an enemy."
+  },
+  "potionbrewer:Transmute": {
+    "NAME": "Transmute",
+    "DESCRIPTION": "Deal !D! Damage. If this kills a non-minion enemy, choose 1 of 3 random potions to obtain."
   },
   "potionbrewer:UnstableFormula": {
     "NAME": "Unstable Formula",

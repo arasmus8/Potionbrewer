@@ -50,7 +50,7 @@ public class Backhand extends CustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-        this.addToBot(new DrawCardAction(magicNumber));
+        this.addToBot(new DrawCardAction(p, magicNumber));
     }
 
     // Upgraded stats.

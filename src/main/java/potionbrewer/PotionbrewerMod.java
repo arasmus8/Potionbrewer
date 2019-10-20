@@ -14,7 +14,6 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
-import com.megacrit.cardcrawl.actions.utility.DiscardToHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
@@ -27,7 +26,7 @@ import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
-import potionbrewer.cards.*;
+import potionbrewer.cards.PotionTrackingCard;
 import potionbrewer.characters.Invalid;
 import potionbrewer.characters.Potionbrewer;
 import potionbrewer.events.IdentityCrisisEvent;
@@ -42,8 +41,6 @@ import potionbrewer.relics.PlaceholderRelic2;
 import potionbrewer.relics.PotionKit;
 import potionbrewer.util.IDCheckDontTouchPls;
 import potionbrewer.util.TextureLoader;
-import potionbrewer.variables.DefaultCustomVariable;
-import potionbrewer.variables.DefaultSecondMagicNumber;
 import potionbrewer.variables.TurnNumber;
 
 import java.io.InputStream;
@@ -76,94 +73,94 @@ public class PotionbrewerMod implements
     public static final String REAGENTS = "reagentList";
     private static final String DELIM = ", ";
     public static boolean enablePlaceholder = true;
-    
+
     private static final String MODNAME = "Potionbrewer";
     private static final String AUTHOR = "NotInTheFace";
     private static final String DESCRIPTION = "A custom character with potion synergies.";
-    
+
     public static final Color BREWER_CYAN = CardHelper.getColor(0, 180, 239);
-    
+
     private static final String ATTACK_DEFAULT_GRAY = "potionbrewerResources/images/512/bg_attack_default_gray.png";
     private static final String SKILL_DEFAULT_GRAY = "potionbrewerResources/images/512/bg_skill_default_gray.png";
     private static final String POWER_DEFAULT_GRAY = "potionbrewerResources/images/512/bg_power_default_gray.png";
-    
+
     private static final String ENERGY_ORB_DEFAULT_GRAY = "potionbrewerResources/images/512/card_default_gray_orb.png";
     private static final String CARD_ENERGY_ORB = "potionbrewerResources/images/512/card_small_orb.png";
-    
+
     private static final String ATTACK_DEFAULT_GRAY_PORTRAIT = "potionbrewerResources/images/1024/bg_attack_default_gray.png";
     private static final String SKILL_DEFAULT_GRAY_PORTRAIT = "potionbrewerResources/images/1024/bg_skill_default_gray.png";
     private static final String POWER_DEFAULT_GRAY_PORTRAIT = "potionbrewerResources/images/1024/bg_power_default_gray.png";
     private static final String ENERGY_ORB_DEFAULT_GRAY_PORTRAIT = "potionbrewerResources/images/1024/card_default_gray_orb.png";
-    
+
     private static final String THE_DEFAULT_BUTTON = "potionbrewerResources/images/charSelect/DefaultCharacterButton.png";
     private static final String THE_DEFAULT_PORTRAIT = "potionbrewerResources/images/charSelect/DefaultCharacterPortraitBG.png";
     public static final String THE_DEFAULT_SHOULDER_1 = "potionbrewerResources/images/char/potionbrewer/shoulder.png";
     public static final String THE_DEFAULT_SHOULDER_2 = "potionbrewerResources/images/char/potionbrewer/shoulder2.png";
     public static final String THE_DEFAULT_CORPSE = "potionbrewerResources/images/char/potionbrewer/corpse.png";
-    
+
     public static final String BADGE_IMAGE = "potionbrewerResources/images/Badge.png";
-    
+
     public static final String THE_DEFAULT_SKELETON_ATLAS = "potionbrewerResources/images/char/potionbrewer/skeleton.atlas";
     public static final String THE_DEFAULT_SKELETON_JSON = "potionbrewerResources/images/char/potionbrewer/skeleton.json";
-    
+
     public static String makeCardPath(String resourcePath) {
         return getModID() + "Resources/images/cards/" + resourcePath;
     }
-    
+
     public static String makeRelicPath(String resourcePath) {
         return getModID() + "Resources/images/relics/" + resourcePath;
     }
-    
+
     public static String makeRelicOutlinePath(String resourcePath) {
         return getModID() + "Resources/images/relics/outline/" + resourcePath;
     }
-    
+
     public static String makeOrbPath(String resourcePath) {
         return getModID() + "Resources/orbs/" + resourcePath;
     }
-    
+
     public static String makePowerPath(String resourcePath) {
         return getModID() + "Resources/images/powers/" + resourcePath;
     }
-    
+
     public static String makeEventPath(String resourcePath) {
         return getModID() + "Resources/images/events/" + resourcePath;
     }
 
     public static ArrayList<Reagent> reagents;
     public static int turnNumber = 1;
-    
+
     public PotionbrewerMod() {
         logger.info("Subscribe to BaseMod hooks");
 
         reagents = new ArrayList<>();
 
         BaseMod.subscribe(this);
-        
-        
+
+
         setModID("potionbrewer");
-        
-        
+
+
         logger.info("Done subscribing");
-        
+
         logger.info("Creating the color " + Potionbrewer.Enums.COLOR_CYAN.toString());
-        
+
         BaseMod.addColor(Potionbrewer.Enums.COLOR_CYAN, BREWER_CYAN, BREWER_CYAN, BREWER_CYAN,
                 BREWER_CYAN, BREWER_CYAN, BREWER_CYAN, BREWER_CYAN,
                 ATTACK_DEFAULT_GRAY, SKILL_DEFAULT_GRAY, POWER_DEFAULT_GRAY, ENERGY_ORB_DEFAULT_GRAY,
                 ATTACK_DEFAULT_GRAY_PORTRAIT, SKILL_DEFAULT_GRAY_PORTRAIT, POWER_DEFAULT_GRAY_PORTRAIT,
                 ENERGY_ORB_DEFAULT_GRAY_PORTRAIT, CARD_ENERGY_ORB);
-        
+
         logger.info("Done creating the color");
-        
-        
+
+
         logger.info("Adding mod settings");
 
 
         potionbrewerSettings.setProperty(ENABLE_PLACEHOLDER_SETTINGS, "FALSE");
         try {
             SpireConfig config = new SpireConfig("PotionbrewerMod", "potionbrewerConfig", potionbrewerSettings);
-            
+
             config.load();
             enablePlaceholder = config.getBool(ENABLE_PLACEHOLDER_SETTINGS);
         } catch (Exception e) {
@@ -171,10 +168,10 @@ public class PotionbrewerMod implements
         }
         logger.info("Done adding mod settings");
     }
-    
+
     public static void setModID(String ID) {
         Gson coolG = new Gson();
-        
+
         InputStream in = PotionbrewerMod.class.getResourceAsStream("/IDCheckStringsDONT-EDIT-AT-ALL.json");
         IDCheckDontTouchPls EXCEPTION_STRINGS = coolG.fromJson(new InputStreamReader(in, StandardCharsets.UTF_8), IDCheckDontTouchPls.class);
         logger.info("You are attempting to set your mod ID as: " + ID);
@@ -187,14 +184,14 @@ public class PotionbrewerMod implements
         }
         logger.info("Success! ID is " + modID);
     }
-    
+
     public static String getModID() {
         return modID;
     }
-    
+
     private static void pathCheck() {
         Gson coolG = new Gson();
-        
+
         InputStream in = PotionbrewerMod.class.getResourceAsStream("/IDCheckStringsDONT-EDIT-AT-ALL.json");
         IDCheckDontTouchPls EXCEPTION_STRINGS = coolG.fromJson(new InputStreamReader(in, StandardCharsets.UTF_8), IDCheckDontTouchPls.class);
         String packageName = PotionbrewerMod.class.getPackage().getName();
@@ -208,36 +205,36 @@ public class PotionbrewerMod implements
             }
         }
     }
-    
+
     @SuppressWarnings("unused")
     public static void initialize() {
         logger.info("========================= Initializing Default Mod. Hi. =========================");
         PotionbrewerMod defaultmod = new PotionbrewerMod();
         logger.info("========================= /Default Mod Initialized. Hello World./ =========================");
     }
-    
+
     @Override
     public void receiveEditCharacters() {
         logger.info("Beginning to edit characters. " + "Add " + Potionbrewer.Enums.POTIONBREWER.toString());
-        
+
         BaseMod.addCharacter(new Potionbrewer("Potionbrewer", Potionbrewer.Enums.POTIONBREWER),
                 THE_DEFAULT_BUTTON, THE_DEFAULT_PORTRAIT, Potionbrewer.Enums.POTIONBREWER);
-        
+
         receiveEditPotions();
         logger.info("Added " + Potionbrewer.Enums.POTIONBREWER.toString());
     }
-    
+
     @Override
     public void receivePostInitialize() {
         logger.info("Loading badge image and mod options");
-        
-        
+
+
         Texture badgeTexture = TextureLoader.getTexture(BADGE_IMAGE);
-        
-        
+
+
         ModPanel settingsPanel = new ModPanel();
-        
-        
+
+
         ModLabeledToggleButton enableNormalsButton = new ModLabeledToggleButton("This is the text which goes next to the checkbox.",
                 350.0f, 700.0f, Settings.CREAM_COLOR, FontHelper.charDescFont,
                 enablePlaceholder,
@@ -245,7 +242,7 @@ public class PotionbrewerMod implements
                 (label) -> {
                 },
                 (button) -> {
-                    
+
                     enablePlaceholder = button.enabled;
                     try {
 
@@ -256,18 +253,18 @@ public class PotionbrewerMod implements
                         e.printStackTrace();
                     }
                 });
-        
+
         settingsPanel.addUIElement(enableNormalsButton);
-        
+
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
-        
-        
+
+
         BaseMod.addEvent(IdentityCrisisEvent.ID, IdentityCrisisEvent.class, TheCity.ID);
-        
-        
+
+
         logger.info("Done loading badge Image and mod options");
     }
-    
+
     public void receiveEditPotions() {
         logger.info("Beginning to edit potions");
 
@@ -289,34 +286,32 @@ public class PotionbrewerMod implements
 
         logger.info("Done editing potions");
     }
-    
+
     @Override
     public void receiveEditRelics() {
         logger.info("Adding relics");
-        
-        
+
+
         BaseMod.addRelicToCustomPool(new PotionKit(), Potionbrewer.Enums.COLOR_CYAN);
         BaseMod.addRelicToCustomPool(new BottledPlaceholderRelic(), Potionbrewer.Enums.COLOR_CYAN);
         BaseMod.addRelicToCustomPool(new DefaultClickableRelic(), Potionbrewer.Enums.COLOR_CYAN);
-        
-        
+
+
         BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);
-        
-        
+
+
         UnlockTracker.markRelicAsSeen(BottledPlaceholderRelic.ID);
         logger.info("Done adding relics!");
     }
-    
+
     @Override
     public void receiveEditCards() {
         logger.info("Adding variables");
-        
+
         pathCheck();
 
         logger.info("Add variables");
-        
-        BaseMod.addDynamicVariable(new DefaultCustomVariable());
-        BaseMod.addDynamicVariable(new DefaultSecondMagicNumber());
+
         BaseMod.addDynamicVariable(new TurnNumber());
 
         logger.info("Adding cards");
@@ -326,60 +321,53 @@ public class PotionbrewerMod implements
             BaseMod.addCard(c);
             UnlockTracker.unlockCard(c.cardID);
         }
-        BaseMod.addCard(new DefaultSecondMagicNumberSkill());
-        BaseMod.addCard(new DefaultAttackWithVariable());
-        BaseMod.addCard(new DefaultUncommonSkill());
-        BaseMod.addCard(new DefaultUncommonAttack());
-        BaseMod.addCard(new DefaultUncommonPower());
-        BaseMod.addCard(new DefaultRareAttack());
-        BaseMod.addCard(new DefaultRareSkill());
 
         logger.info("Done adding cards!");
     }
-    
+
     @Override
     public void receiveEditStrings() {
         logger.info("Beginning to edit strings for mod with ID: " + getModID());
-        
-        
+
+
         BaseMod.loadCustomStringsFile(CardStrings.class,
                 getModID() + "Resources/localization/eng/PotionbrewerMod-Card-Strings.json");
-        
-        
+
+
         BaseMod.loadCustomStringsFile(PowerStrings.class,
                 getModID() + "Resources/localization/eng/PotionbrewerMod-Power-Strings.json");
-        
-        
+
+
         BaseMod.loadCustomStringsFile(RelicStrings.class,
                 getModID() + "Resources/localization/eng/PotionbrewerMod-Relic-Strings.json");
-        
-        
+
+
         BaseMod.loadCustomStringsFile(EventStrings.class,
                 getModID() + "Resources/localization/eng/PotionbrewerMod-Event-Strings.json");
-        
-        
+
+
         BaseMod.loadCustomStringsFile(PotionStrings.class,
                 getModID() + "Resources/localization/eng/PotionbrewerMod-Potion-Strings.json");
-        
-        
+
+
         BaseMod.loadCustomStringsFile(CharacterStrings.class,
                 getModID() + "Resources/localization/eng/PotionbrewerMod-Character-Strings.json");
-        
-        
+
+
         BaseMod.loadCustomStringsFile(OrbStrings.class,
                 getModID() + "Resources/localization/eng/PotionbrewerMod-Orb-Strings.json");
-        
+
         logger.info("Done edittting strings");
     }
-    
+
     @Override
     public void receiveEditKeywords() {
-        
-        
+
+
         Gson gson = new Gson();
         String json = Gdx.files.internal(getModID() + "Resources/localization/eng/PotionbrewerMod-Keyword-Strings.json").readString(String.valueOf(StandardCharsets.UTF_8));
         com.evacipated.cardcrawl.mod.stslib.Keyword[] keywords = gson.fromJson(json, com.evacipated.cardcrawl.mod.stslib.Keyword[].class);
-        
+
         if (keywords != null) {
             for (Keyword keyword : keywords) {
                 BaseMod.addKeyword(getModID().toLowerCase(), keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);
@@ -423,7 +411,7 @@ public class PotionbrewerMod implements
     }
 
     @Override
-    public void receivePostPotionUse(AbstractPotion abstractPotion) {
+    public void receivePostPotionUse(AbstractPotion potion) {
         AbstractPlayer p = AbstractDungeon.player;
         if (p == null) {
             return;
@@ -435,27 +423,22 @@ public class PotionbrewerMod implements
         Integer turn = PotionTracker.potionsUsedThisTurn.get(p);
         PotionTracker.potionsUsedThisTurn.set(p, turn + 1);
 
-        for(AbstractCard c : p.hand.group) {
+        for (AbstractCard c : p.hand.group) {
             c.triggerOnGlowCheck();
-        }
-
-        ArrayList<AbstractCard> emptyBottlesInDrawPile = p.drawPile.group.stream()
-                .filter(c -> c instanceof EmptyBottle)
-                .collect(Collectors.toCollection(ArrayList::new));
-
-        for (AbstractCard c : emptyBottlesInDrawPile) {
-            if (p.hand.size() >= BaseMod.MAX_HAND_SIZE) {
-                p.drawPile.moveToDiscardPile(c);
-                p.createHandIsFullDialog();
-            } else {
-                p.drawPile.moveToHand(c, p.drawPile);
+            if (c instanceof PotionTrackingCard) {
+                ((PotionTrackingCard) c).onUsePotion(potion);
             }
         }
-        AbstractDungeon.player.hand.refreshHandLayout();
 
         for (AbstractCard c : p.discardPile.group) {
-            if (c instanceof EmptyBottle) {
-                AbstractDungeon.actionManager.addToBottom(new DiscardToHandAction(c));
+            if (c instanceof PotionTrackingCard) {
+                ((PotionTrackingCard) c).onUsePotion(potion);
+            }
+        }
+
+        for (AbstractCard c : p.drawPile.group) {
+            if (c instanceof PotionTrackingCard) {
+                ((PotionTrackingCard) c).onUsePotion(potion);
             }
         }
     }

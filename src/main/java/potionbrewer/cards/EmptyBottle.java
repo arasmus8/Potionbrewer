@@ -1,19 +1,20 @@
 package potionbrewer.cards;
 
-import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.utility.DiscardToHandAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.potions.AbstractPotion;
 import potionbrewer.PotionbrewerMod;
 import potionbrewer.characters.Potionbrewer;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static potionbrewer.PotionbrewerMod.makeCardPath;
 
-public class EmptyBottle extends CustomCard {
+public class EmptyBottle extends PotionTrackingCard {
 // TEXT DECLARATION
 
     public static final String ID = PotionbrewerMod.makeID(EmptyBottle.class.getSimpleName());
@@ -39,6 +40,11 @@ public class EmptyBottle extends CustomCard {
     public EmptyBottle() {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
+    }
+
+    @Override
+    public void onUsePotion(AbstractPotion p) {
+        this.addToBot(new DiscardToHandAction(this));
     }
 
     // Actions the card should do.

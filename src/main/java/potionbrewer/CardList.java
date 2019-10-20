@@ -59,9 +59,15 @@ public class CardList {
         allCards.add(new WhizBang());
 
         //Uncommon Skills
+        allCards.add(new AcidCloud());
+        allCards.add(new Alacrity());
         allCards.add(new BlindingMist());
+        allCards.add(new ChemicalShroud());
         allCards.add(new ChokingPowder());
         allCards.add(new CrossReference());
+        allCards.add(new DigDeep());
+        allCards.add(new FuelCell());
+        allCards.add(new HazardousMaterials());
         allCards.add(new LeftoverSpecimen());
         allCards.add(new MicrobeSpray());
 
@@ -70,9 +76,11 @@ public class CardList {
 
         //Rare Attacks
         allCards.add(new BrokenBeakers());
+        allCards.add(new Transmute());
 
         //Rare Skills
         allCards.add(new Catalyze());
+        allCards.add(new SpecialFormula());
 
         //Rare Powers
         allCards.add(new AlchemistForm());

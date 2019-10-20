@@ -56,7 +56,7 @@ public class QuickStep extends CustomCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new GainBlockAction(p, p, block));
         if (AbstractDungeon.actionManager.cardsPlayedThisTurn.size() <= magicNumber) {
-            this.addToBot(new DrawCardAction(1));
+            this.addToBot(new DrawCardAction(p, 1));
         }
     }
 
