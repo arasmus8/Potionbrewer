@@ -220,6 +220,10 @@
     "NAME": "Refill",
     "DESCRIPTION": "Gain !B! Block. Next turn, gain [E]."
   },
+  "potionbrewer:RefinedProcess": {
+    "NAME": "Refined Process",
+    "DESCRIPTION": "Deal !D! Damage !M! times. NL potionbrewer:Catalyze: Permanently increase this card's damage by 1 and exhaust it."
+  },
   "potionbrewer:ResearchResults": {
     "NAME": "Research Results",
     "DESCRIPTION": "Generate and use X random potions.",

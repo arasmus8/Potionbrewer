@@ -77,6 +77,7 @@ public class CardList {
 
         //Rare Attacks
         allCards.add(new BrokenBeakers());
+        allCards.add(new RefinedProcess());
         allCards.add(new ResearchResults());
         allCards.add(new Transmute());
 
