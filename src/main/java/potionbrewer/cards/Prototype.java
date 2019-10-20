@@ -114,10 +114,6 @@ public class Prototype extends CustomCard {
     }
 
     public void renderPortrait(SpriteBatch sb) {
-        /*
-        Reagent r = new Eye();
-        renderHelper(sb, r.getTexture(), 0.0F, 86.0F);
-        */
         Reagent a = ReagentList.firstReagent(misc);
         if (a != null) {
             // first is at 150deg

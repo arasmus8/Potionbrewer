@@ -54,6 +54,7 @@ public class PrototypeAction extends AbstractGameAction {
                         reagent.doAoeDamage(player, reagent.damage);
                     } else {
                         card.applyPowersDynamic(reagent.damage);
+                        card.calculateCardDamage(monster);
                         reagent.doDamage(player, monster, new DamageInfo(player, card.damage, card.damageTypeForTurn));
                     }
                 }

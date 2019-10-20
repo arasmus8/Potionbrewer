@@ -146,13 +146,17 @@
     "NAME": "Empty Bottle",
     "DESCRIPTION": "Deal !D! Damage. When you use a potion, move this from the discard pile to your hand."
   },
-  "potionbrewer:ExplosiveReaction": {
-    "NAME": "Explosive Reaction",
-    "DESCRIPTION": "Deal !D! Damage. Sacrifice your rightmost potionbrewer:Reagent to do double damage."
-  },
   "potionbrewer:ExothermicReaction": {
     "NAME": "Exothermic Reaction",
     "DESCRIPTION": "Deal !D! Damage. If the last card played cost 0, another card costs 0 this turn."
+  },
+  "potionbrewer:Experimentation": {
+    "NAME": "Experimentation",
+    "DESCRIPTION": "Rotate your rightmost potionbrewer:Reagent to the far left. If you have collected 3 *reagents, create a card from them and shuffle it into your draw pile."
+  },
+  "potionbrewer:ExplosiveReaction": {
+    "NAME": "Explosive Reaction",
+    "DESCRIPTION": "Deal !D! Damage. Sacrifice your rightmost potionbrewer:Reagent to do double damage."
   },
   "potionbrewer:EyeGouge": {
     "NAME": "Eye Gouge",
@@ -215,6 +219,11 @@
   "potionbrewer:Refill": {
     "NAME": "Refill",
     "DESCRIPTION": "Gain !B! Block. Next turn, gain [E]."
+  },
+  "potionbrewer:ResearchResults": {
+    "NAME": "Research Results",
+    "DESCRIPTION": "Generate and use X random potions.",
+    "UPGRADE_DESCRIPTION": "Generate and use X + 1 random potions."
   },
   "potionbrewer:Smack": {
     "NAME": "Smack",

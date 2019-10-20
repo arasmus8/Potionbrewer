@@ -66,6 +66,7 @@ public class CardList {
         allCards.add(new ChokingPowder());
         allCards.add(new CrossReference());
         allCards.add(new DigDeep());
+        allCards.add(new Experimentation());
         allCards.add(new FuelCell());
         allCards.add(new HazardousMaterials());
         allCards.add(new LeftoverSpecimen());
@@ -76,6 +77,7 @@ public class CardList {
 
         //Rare Attacks
         allCards.add(new BrokenBeakers());
+        allCards.add(new ResearchResults());
         allCards.add(new Transmute());
 
         //Rare Skills
