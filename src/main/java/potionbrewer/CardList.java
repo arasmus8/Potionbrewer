@@ -20,6 +20,7 @@ public class CardList {
         allCards.add(new Prototype());
         allCards.add(new Distill());
         allCards.add(new ReagentCard());
+        allCards.add(new TestPotionSelect());
 
         // Common Attacks
         allCards.add(new BlindingSpray());
@@ -59,7 +60,10 @@ public class CardList {
 
         //Uncommon Skills
         allCards.add(new BlindingMist());
+        allCards.add(new ChokingPowder());
+        allCards.add(new CrossReference());
         allCards.add(new LeftoverSpecimen());
+        allCards.add(new MicrobeSpray());
 
         //Uncommon Powers
         allCards.add(new AnotherRound());

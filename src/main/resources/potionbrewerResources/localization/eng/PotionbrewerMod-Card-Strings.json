@@ -104,6 +104,10 @@
     "NAME": "Chemical Weapons",
     "DESCRIPTION": "Deal !D! Damage. NL potionbrewer:Catalyze: Gain [E] and Draw a card."
   },
+  "potionbrewer:ChokingPowder": {
+    "NAME": "Choking Powder",
+    "DESCRIPTION": "The target takes !M! damage each time you play a card this turn."
+  },
   "potionbrewer:Collect": {
     "NAME": "Collect",
     "DESCRIPTION": "Collect a potionbrewer:Reagent from an enemy. Apply !M! Vulnerable. Exhaust.",
@@ -112,6 +116,11 @@
   "potionbrewer:Contingency": {
     "NAME": "Contingency",
     "DESCRIPTION": "Deal !D! Damage. Scry !M! cards."
+  },
+  "potionbrewer:CrossReference": {
+    "NAME": "Cross-Reference",
+    "DESCRIPTION": "Move X skills from your draw pile to your hand. They cost 0 this turn.",
+    "UPGRADE_DESCRIPTION": "Move X + 1 skills from your draw pile to your hand. They cost 0 this turn."
   },
   "potionbrewer:Discombobulate": {
     "NAME": "Discombobulate",
@@ -157,6 +166,10 @@
     "NAME": "Leftover Specimen",
     "DESCRIPTION": "Shuffle a *Reagent card into your draw pile. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Shuffle a *Reagent card into your draw pile."
+  },
+  "potionbrewer:MicrobeSpray": {
+    "NAME": "Microbe Spray",
+    "DESCRIPTION": "Apply !M! Weak and !M! potionbrewer:Infection to all enemies. NL Exhaust."
   },
   "potionbrewer:OneTwoPunch": {
     "NAME": "One-Two Punch",
@@ -278,40 +291,8 @@
     "NAME": "Tooth",
     "DESCRIPTION": "Collect a Tooth Reagent."
   },
-  "potionbrewer:ChooseBlockTonic": {
-    "NAME": "Block Tonic",
-    "DESCRIPTION": "Use a Block Tonic."
-  },
-  "potionbrewer:ChooseEnergyTonic": {
-    "NAME": "Energy Tonic",
-    "DESCRIPTION": "Use an Energy Tonic."
-  },
-  "potionbrewer:ChooseExplosiveTonic": {
-    "NAME": "Explosive Tonic.",
-    "DESCRIPTION": "Use an Explosive Tonic."
-  },
-  "potionbrewer:ChooseFearTonic": {
-    "NAME": "Fear Tonic",
-    "DESCRIPTION": "Use a Fear Tonic."
-  },
-  "potionbrewer:ChooseFireTonic": {
-    "NAME": "Fire Tonic",
-    "DESCRIPTION": "Use a Fire Tonic."
-  },
-  "potionbrewer:ChooseFlexTonic": {
-    "NAME": "Flex Tonic",
-    "DESCRIPTION": "Use a Flex Tonic."
-  },
-  "potionbrewer:ChooseSpeedTonic": {
-    "NAME": "Speed Tonic",
-    "DESCRIPTION": "Use a Speed Tonic."
-  },
-  "potionbrewer:ChooseSwiftTonic": {
-    "NAME": "Swift Tonic",
-    "DESCRIPTION": "Use a Swift Tonic."
-  },
-  "potionbrewer:ChooseWeakTonic": {
-    "NAME": "Weak Tonic",
-    "DESCRIPTION": "Use a Weak Tonic."
+  "potionbrewer:TestPotionSelect": {
+    "NAME": "TEST - Potion Select",
+    "DESCRIPTION": "Select a potion."
   }
 }
