@@ -195,6 +195,10 @@
     "NAME": "Iron Fist",
     "DESCRIPTION": "Deal !D! Damage. NL potionbrewer:Catalyze: Strength affects this !M! times."
   },
+  "potionbrewer:IronFlesh": {
+    "NAME": "Iron Flesh",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !B! Block next turn."
+  },
   "potionbrewer:LeftoverSpecimen": {
     "NAME": "Leftover Specimen",
     "DESCRIPTION": "Shuffle a *Reagent card into your draw pile. NL Exhaust.",

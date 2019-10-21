@@ -86,6 +86,7 @@ public class CardList {
 
         //Rare Skills
         allCards.add(new Catalyze());
+        allCards.add(new IronFlesh());
         allCards.add(new SpecialFormula());
 
         //Rare Powers
