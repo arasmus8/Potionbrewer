@@ -31,6 +31,7 @@ public class ChoosePotion extends AbstractCard {
         this.potionId = id;
         this.obtain = obtain;
         rawDescription = (obtain ? CARD_STRINGS.EXTENDED_DESCRIPTION[1] : CARD_STRINGS.EXTENDED_DESCRIPTION[0]) + this.name;
+        exhaust = true;
         initializeDescription();
     }
 
@@ -79,6 +80,9 @@ public class ChoosePotion extends AbstractCard {
     }
 
     public static String name(final String id) {
+        if (id == null) {
+            return "Random Potion";
+        }
         AbstractPotion p = fromId(id);
         if (p == null) {
             return "Unknown Potion";

@@ -74,12 +74,14 @@ public class CardList {
 
         //Uncommon Powers
         allCards.add(new AnotherRound());
+        allCards.add(new PortableLab());
 
         //Rare Attacks
         allCards.add(new BeatDown());
         allCards.add(new BrokenBeakers());
         allCards.add(new RefinedProcess());
         allCards.add(new ResearchResults());
+        allCards.add(new TheFinalStraw());
         allCards.add(new Transmute());
 
         //Rare Skills

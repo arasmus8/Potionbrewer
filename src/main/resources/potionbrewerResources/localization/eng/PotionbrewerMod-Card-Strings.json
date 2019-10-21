@@ -208,6 +208,10 @@
     "NAME": "One-Two Punch",
     "DESCRIPTION": "Deal !D! Damage. If the last card played cost 0, play this twice."
   },
+  "potionbrewer:PortableLab": {
+    "NAME": "Portable Lab",
+    "DESCRIPTION": "Consume any leftover energy after each turn. When !M! energy is consumed, add a *Potion *Card to your hand."
+  },
   "potionbrewer:PotionbrewerDefend": {
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block."
@@ -252,6 +256,10 @@
   "potionbrewer:TestSubject": {
     "NAME": "Test Subject",
     "DESCRIPTION": "Deal !D! Damage. NL potionbrewer:Catalyze: Apply !M! potionbrewer:Infection. "
+  },
+  "potionbrewer:TheFinalStraw": {
+    "NAME": "The Final Straw",
+    "DESCRIPTION": "Deal damage equal to !M! percent of the target's missing HP."
   },
   "potionbrewer:TimeBomb": {
     "NAME": "Time Bomb",

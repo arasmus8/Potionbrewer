@@ -62,6 +62,15 @@
       "No catalyze effects can be triggered this turn."
     ]
   },
+  "potionbrewer:PortableLabPower": {
+    "NAME": "Portable Lab",
+    "DESCRIPTIONS": [
+      "Consume leftover energy after each turn. After consuming #b",
+      " energy, add #b",
+      " #yPotion #yCard to your hand.",
+      " #yPotion #yCards to your hand."
+    ]
+  },
   "potionbrewer:RootPower": {
     "NAME": "Root",
     "DESCRIPTIONS": [
