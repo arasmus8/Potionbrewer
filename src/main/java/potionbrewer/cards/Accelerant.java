@@ -1,64 +1,59 @@
 package potionbrewer.cards;
 
+import basemod.BaseMod;
+import basemod.abstracts.CustomCard;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import potionbrewer.PotionbrewerMod;
 import potionbrewer.characters.Potionbrewer;
+import potionbrewer.powers.AccelerantPower;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static potionbrewer.PotionbrewerMod.makeCardPath;
 
-public class DigDeep extends FollowupCard {
+public class Accelerant extends CustomCard {
 
-    // TEXT DECLARATION
+// TEXT DECLARATION
 
-    public static final String ID = PotionbrewerMod.makeID(DigDeep.class.getSimpleName());
+    public static final String ID = PotionbrewerMod.makeID(Accelerant.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
     public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
-    // Must have an image with the same NAME as the card in your image folder!
+// Must have an image with the same NAME as the card in your image folder!
 
-    // /TEXT DECLARATION/
+// /TEXT DECLARATION/
 
-    // STAT DECLARATION
+// STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = Potionbrewer.Enums.COLOR_CYAN;
 
-    private static final int COST = 1;
+    private static final int COST = 0;
+// /STAT DECLARATION/
 
-    private static final int MAGIC = 2;
-    private static final int UPGRADE_MAGIC_AMT = 1;
-
-    // /STAT DECLARATION/
-
-
-    public DigDeep() {
+    public Accelerant() {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.baseMagicNumber = MAGIC;
-        this.magicNumber = MAGIC;
     }
 
+    // Actions the card should do.
     @Override
-    public void followupActions(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new GainEnergyAction(1));
-    }
-
-    @Override
-    public void useActions(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new DrawCardAction(p, magicNumber));
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        int cardsToDraw = BaseMod.MAX_HAND_SIZE - p.hand.size();
+        addToBot(new DrawCardAction(p, cardsToDraw));
+        this.addToBot(new ApplyPowerAction(p, p, new AccelerantPower()));
     }
 
     // Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {
-            name = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
-            upgradeMagicNumber(UPGRADE_MAGIC_AMT);
+            upgradeName();
+            rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
+            exhaust = true;
             initializeDescription();
         }
     }

@@ -96,7 +96,7 @@ public class IronFist extends CatalyzeCard {
     @Override
     public void upgrade() {
         if (!upgraded) {
-            upgradeName();
+            name = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
             upgradeDamage(UPGRADE_PLUS_DMG);
             upgradeMagicNumber(UPGRADE_MAGIC_AMT);
             initializeDescription();

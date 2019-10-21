@@ -56,7 +56,7 @@ public class CardList {
         allCards.add(new FollowUp());
         allCards.add(new IronFist());
         allCards.add(new TestSubject());
-        allCards.add(new WhizBang());
+        allCards.add(new WizBang());
 
         //Uncommon Skills
         allCards.add(new AcidCloud());
@@ -85,7 +85,9 @@ public class CardList {
         allCards.add(new Transmute());
 
         //Rare Skills
+        allCards.add(new Accelerant());
         allCards.add(new Catalyze());
+        allCards.add(new HazardousWaste());
         allCards.add(new IronFlesh());
         allCards.add(new SpecialFormula());
 

@@ -29,7 +29,7 @@ public class RootPower extends AbstractPower implements CloneablePowerInterface 
         this.owner = owner;
         this.amount = amount;
         this.updateDescription();
-        this.loadRegion("reactive");// 22
+        this.loadRegion("malleable");
     }
 
     @Override

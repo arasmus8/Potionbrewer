@@ -3,12 +3,12 @@ package potionbrewer.cards;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-
-import java.util.ArrayList;
+import potionbrewer.PotionbrewerMod;
 
 public abstract class FollowupCard extends CustomCard {
+
+    private boolean lastWasFree = false;
 
     public FollowupCard(final String id,
                         final String name,
@@ -30,16 +30,10 @@ public abstract class FollowupCard extends CustomCard {
 
     @Override
     public void triggerOnGlowCheck() {
-        this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
-        ArrayList<AbstractCard> cardsPlayedThisCombat = AbstractDungeon.actionManager.cardsPlayedThisCombat;
-        if (!cardsPlayedThisCombat.isEmpty()) {
-            AbstractCard lastPlayed = cardsPlayedThisCombat.get(cardsPlayedThisCombat.size() - 1);
-            if (lastPlayed.purgeOnUse) {
-                return;
-            }
-            if (lastPlayed.cost == 0 || lastPlayed.freeToPlayOnce) {
-                this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
-            }
+        if (PotionbrewerMod.lastPlayedCardCostZero) {
+            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+        } else {
+            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
         }
     }
 
@@ -50,12 +44,9 @@ public abstract class FollowupCard extends CustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.useActions(p, m);
-        ArrayList<AbstractCard> cardsPlayedThisCombat = AbstractDungeon.actionManager.cardsPlayedThisCombat;
-        if (cardsPlayedThisCombat.size() >= 2) {
-            AbstractCard lastPlayed = cardsPlayedThisCombat.get(cardsPlayedThisCombat.size() - 2);
-            if (!lastPlayed.purgeOnUse && !this.uuid.equals(lastPlayed.uuid) && (lastPlayed.cost == 0 || lastPlayed.freeToPlayOnce)) {
-                this.followupActions(p, m);
-            }
+        if (PotionbrewerMod.lastPlayedCardCostZero) {
+            this.followupActions(p, m);
+            PotionbrewerMod.lastPlayedCardCostZero = !this.purgeOnUse && (this.costForTurn == 0 || this.freeToPlayOnce);
         }
     }
 }

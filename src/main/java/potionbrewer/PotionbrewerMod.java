@@ -28,6 +28,7 @@ import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
+import potionbrewer.cards.FollowupCard;
 import potionbrewer.cards.PotionTrackingCard;
 import potionbrewer.characters.Invalid;
 import potionbrewer.characters.Potionbrewer;
@@ -61,6 +62,7 @@ public class PotionbrewerMod implements
         EditStringsSubscriber,
         EditKeywordsSubscriber,
         EditCharactersSubscriber,
+        OnCardUseSubscriber,
         OnStartBattleSubscriber,
         PostBattleSubscriber,
         PostInitializeSubscriber,
@@ -484,6 +486,8 @@ public class PotionbrewerMod implements
         PotionTracker.potionsUsedThisTurn.set(p, 0);
 
         turnNumber = 1;
+
+        lastPlayedCardCostZero = false;
     }
 
     @Override
@@ -504,6 +508,16 @@ public class PotionbrewerMod implements
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public static boolean lastPlayedCardCostZero = false;
+
+    @Override
+    public void receiveCardUsed(AbstractCard card) {
+        if (card instanceof FollowupCard) {
+            return;
+        }
+        lastPlayedCardCostZero = (card.costForTurn == 0 || card.freeToPlayOnce) && !card.purgeOnUse;
     }
 
     public static String makeID(String idText) {

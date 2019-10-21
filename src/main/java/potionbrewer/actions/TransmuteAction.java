@@ -35,11 +35,7 @@ public class TransmuteAction extends AbstractGameAction {
                 for (int i = 0; i < potionChoiceCount; i++) {
                     choices.add(new ChoosePotion(PotionHelper.getRandomPotion().ID, true));
                 }
-                this.addToBot(new ChooseOneAction(choices));
-            }
-
-            if (AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()) {
-                AbstractDungeon.actionManager.clearPostCombatActions();
+                this.addToTop(new ChooseOneAction(choices));
             }
         }
 

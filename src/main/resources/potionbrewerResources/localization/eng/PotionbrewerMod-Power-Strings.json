@@ -1,4 +1,10 @@
 {
+  "potionbrewer:AccelerantPower": {
+    "NAME": "Accelerant",
+    "DESCRIPTIONS": [
+      "At the end of this turn, exhaust all cards remaining in your hand."
+    ]
+  },
   "potionbrewer:AlchemistFormPower": {
     "NAME": "Alchemist Form",
     "DESCRIPTIONS": [

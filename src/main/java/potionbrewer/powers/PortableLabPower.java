@@ -54,6 +54,7 @@ public class PortableLabPower extends AbstractPower implements CloneablePowerInt
     @Override
     public void atStartOfTurnPostDraw() {
         if (amount <= 0) {
+            this.flash();
             amount = threshold;
             int freeHandSlots = BaseMod.MAX_HAND_SIZE - AbstractDungeon.player.hand.size();
             int cardsToCreate = Math.min(freeHandSlots, cardCount);
@@ -66,6 +67,9 @@ public class PortableLabPower extends AbstractPower implements CloneablePowerInt
     @Override
     public void atEndOfTurn(boolean isPlayer) {
         if (isPlayer) {
+            if (EnergyPanel.totalCount > 0) {
+                this.flash();
+            }
             amount -= EnergyPanel.totalCount;
             if (amount < 0) {
                 amount = 0;

@@ -11,7 +11,7 @@ import potionbrewer.characters.Potionbrewer;
 
 import static potionbrewer.PotionbrewerMod.makeCardPath;
 
-public class HazardousMaterials extends AbstractDynamicCard {
+public class HazardousMaterials extends CatalyzeCard {
 
     public static final String ID = PotionbrewerMod.makeID(HazardousMaterials.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
@@ -27,17 +27,21 @@ public class HazardousMaterials extends AbstractDynamicCard {
     private static final int COST = -1;
 
     public HazardousMaterials() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, cardStrings.NAME, IMG, COST, cardStrings.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
     }
-    
+
     @Override
-    public void use(final AbstractPlayer p, final AbstractMonster m) {
+    public void catalyzeActions(AbstractPlayer p, AbstractMonster m) {
+    }
+
+    @Override
+    public void useActions(AbstractPlayer p, AbstractMonster m) {
         if (energyOnUse < EnergyPanel.totalCount) {
             energyOnUse = EnergyPanel.totalCount;
         }
         this.addToBot(new HazardousMaterialsAction(p, m, freeToPlayOnce, energyOnUse));
     }
-    
+
     @Override
     public void upgrade() {
         if (!upgraded) {

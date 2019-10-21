@@ -1,54 +1,15 @@
 {
-  "potionbrewer:DefaultCommonAttack": {
-    "NAME": "Strike",
-    "DESCRIPTION": "Deal !D! Damage. NL [#0000ff]This[] [#ff0000]Is[] [#ffff00]How[] [#88888]color[] [#ff00ff]works.[]"
-  },
-  "potionbrewer:DefaultCommonSkill": {
-    "NAME": "Defend",
-    "DESCRIPTION": "Gain !B! Block. NL potionbrewer:Multiword_Keyword."
-  },
-  "potionbrewer:DefaultCommonPower": {
-    "NAME": "Hold Place",
-    "DESCRIPTION": "Apply !M! potionbrewer:Toxic.",
-    "UPGRADE_DESCRIPTION": "Gain !M! potionbrewer:Toxic."
-  },
-  "potionbrewer:DefaultUncommonAttack": {
-    "NAME": "Big slap",
-    "DESCRIPTION": "Deal !D! Damage."
-  },
-  "potionbrewer:DefaultUncommonSkill": {
-    "NAME": "A Better Defend",
-    "DESCRIPTION": "Gain !B! Plated Armor. Affected by Dexterity."
-  },
-  "potionbrewer:DefaultUncommonPower": {
-    "NAME": "Weirdness",
-    "DESCRIPTION": "Gain X potionbrewer:Keywords.",
-    "UPGRADE_DESCRIPTION": "Gain X +1 potionbrewer:Keywords."
-  },
-  "potionbrewer:DefaultRareAttack": {
-    "NAME": "TOUCH",
-    "DESCRIPTION": "Deal !D! Damage."
-  },
-  "potionbrewer:DefaultRareSkill": {
-    "NAME": "For Each Loop x2",
-    "DESCRIPTION": "Apply !M! vulnerable to all enemies, 2 times.",
-    "UPGRADE_DESCRIPTION": "Apply !M! vulnerable to all enemies, 3 times."
-  },
-  "potionbrewer:DefaultRarePower": {
-    "NAME": "In-Progress Form",
-    "DESCRIPTION": "At the start of your turn, play a *TOUCH."
-  },
-  "potionbrewer:DefaultAttackWithVariable": {
-    "NAME": "Special Strike",
-    "DESCRIPTION": "Deal !D! Damage [E] times. NL (Deal !potionbrewer:ENERGY_DAMAGE! damage total.)"
-  },
-  "potionbrewer:DefaultSecondMagicNumberSkill": {
-    "NAME": "Cool 2 Number Card",
-    "DESCRIPTION": "Apply !M! vulnerable and !potionbrewer:SecondMagic! poison to an enemy."
+  "potionbrewer:Accelerant": {
+    "NAME": "Accelerant",
+    "DESCRIPTION": "Draw cards until your hand is full. Any cards remaining in your hand at the end of turn are Exhausted.",
+    "UPGRADE_DESCRIPTION": "Draw cards until your hand is full. Any cards remaining in your hand at the end of turn are Exhausted. NL Exhaust."
   },
   "potionbrewer:AcidCloud": {
     "NAME": "Acid Cloud",
-    "DESCRIPTION": "Gain !B! Block. If the last card played cost 0, Apply !M! Vulnerable to all enemies."
+    "DESCRIPTION": "Gain !B! Block. If the last card played cost 0, Apply !M! Vulnerable to all enemies.",
+    "EXTENDED_DESCRIPTION": [
+      "Acid Fog"
+    ]
   },
   "potionbrewer:Alacrity": {
     "NAME": "Alacrity",
@@ -140,7 +101,10 @@
   },
   "potionbrewer:DigDeep": {
     "NAME": "Dig Deep",
-    "DESCRIPTION": "Draw !M! cards. If the last card played cost 0, gain [E]"
+    "DESCRIPTION": "Draw !M! cards. If the last card played cost 0, gain [E]",
+    "EXTENDED_DESCRIPTION": [
+      "Dig Deeper"
+    ]
   },
   "potionbrewer:Discombobulate": {
     "NAME": "Discombobulate",
@@ -172,7 +136,10 @@
   },
   "potionbrewer:FlashPowder": {
     "NAME": "Flash Powder",
-    "DESCRIPTION": "Deal !D! Damage to all enemies. NL potionbrewer:Catalyze: Draw !M! card."
+    "DESCRIPTION": "Deal !D! Damage to all enemies. NL potionbrewer:Catalyze: Draw !M! card.",
+    "EXTENDED_DESCRIPTION": [
+      "Flash-Bang Powder"
+    ]
   },
   "potionbrewer:FollowUp": {
     "NAME": "Follow Up",
@@ -191,13 +158,27 @@
     "DESCRIPTION": "Apply X potionbrewer:Toxic. NL potionbrewer:Catalyze: And X potionbrewer:Disease.",
     "UPGRADE_DESCRIPTION": "Innate. NL Apply X potionbrewer:Toxic. NL potionbrewer:Catalyze: And X potionbrewer:Disease."
   },
+  "potionbrewer:HazardousWaste": {
+    "NAME": "Hazardous Waste",
+    "DESCRIPTION": "Apply !M! Poison. NL potionbrewer:Catalyze: Permanently increase Poison by 1. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Apply !M! Poison. NL potionbrewer:Catalyze: Permanently increase Poison by 2. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "Hazardous Sludge"
+    ]
+  },
   "potionbrewer:IronFist": {
     "NAME": "Iron Fist",
-    "DESCRIPTION": "Deal !D! Damage. NL potionbrewer:Catalyze: Strength affects this !M! times."
+    "DESCRIPTION": "Deal !D! Damage. NL potionbrewer:Catalyze: Strength affects this !M! times.",
+    "EXTENDED_DESCRIPTION": [
+      "Steel Fist"
+    ]
   },
   "potionbrewer:IronFlesh": {
     "NAME": "Iron Flesh",
-    "DESCRIPTION": "Gain !B! Block. NL Gain !B! Block next turn."
+    "DESCRIPTION": "Gain !B! Block. NL Gain !B! Block next turn.",
+    "EXTENDED_DESCRIPTION": [
+      "Steel Flesh"
+    ]
   },
   "potionbrewer:LeftoverSpecimen": {
     "NAME": "Leftover Specimen",
@@ -285,9 +266,12 @@
     "NAME": "Volatile Solution",
     "DESCRIPTION": "Deal !D! Damage. No cards will trigger their potionbrewer:Catalyze effects this turn."
   },
-  "potionbrewer:WhizBang": {
-    "NAME": "Whiz Bang",
-    "DESCRIPTION": "Deal !D! Damage 2 times. NL potionbrewer:Catalyze: 3 times."
+  "potionbrewer:WizBang": {
+    "NAME": "Wiz Bang",
+    "DESCRIPTION": "Deal !D! Damage 2 times. NL potionbrewer:Catalyze: 3 times.",
+    "EXTENDED_DESCRIPTION": [
+      "Wiz Bang Boom"
+    ]
   },
   "potionbrewer:Prototype": {
     "NAME": "Prototype Potion",

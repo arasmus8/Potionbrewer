@@ -1,23 +1,23 @@
 package potionbrewer.cards;
 
-import basemod.abstracts.CustomCard;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.defect.IncreaseMiscAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.NextTurnBlockPower;
+import com.megacrit.cardcrawl.powers.PoisonPower;
 import potionbrewer.PotionbrewerMod;
 import potionbrewer.characters.Potionbrewer;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static potionbrewer.PotionbrewerMod.makeCardPath;
 
-public class IronFlesh extends CustomCard {
+public class HazardousWaste extends CatalyzeCard {
 
 // TEXT DECLARATION
 
-    public static final String ID = PotionbrewerMod.makeID(IronFlesh.class.getSimpleName());
+    public static final String ID = PotionbrewerMod.makeID(HazardousWaste.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
     public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
 // Must have an image with the same NAME as the card in your image folder!
@@ -27,37 +27,45 @@ public class IronFlesh extends CustomCard {
 // STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.RARE;
-    private static final CardTarget TARGET = CardTarget.SELF;
+    private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = Potionbrewer.Enums.COLOR_CYAN;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
+    private static final int MAGIC = 3;
 
-    private static final int BLOCK = 12;
-    private static final int UPGRADE_PLUS_BLOCK = 4;
 // /STAT DECLARATION/
 
 
-    public IronFlesh() {
+    public HazardousWaste() {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        baseBlock = BLOCK;
+        misc = magicNumber = baseMagicNumber = MAGIC;
+        exhaust = true;
     }
 
-
-    // Actions the card should do.
     @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p, p, block));
-        addToBot(new ApplyPowerAction(p, p, new NextTurnBlockPower(p, block), block));
+    public void applyPowers() {
+        baseMagicNumber = misc;
+        super.applyPowers();
+        initializeDescription();
     }
 
+    @Override
+    public void catalyzeActions(AbstractPlayer p, AbstractMonster m) {
+        this.addToBot(new IncreaseMiscAction(this.uuid, this.misc, upgraded ? 2 : 1));
+    }
+
+    @Override
+    public void useActions(AbstractPlayer p, AbstractMonster m) {
+        this.addToBot(new ApplyPowerAction(m, p, new PoisonPower(m, p, misc), misc, AbstractGameAction.AttackEffect.POISON));
+    }
 
     // Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {
-            name = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
-            upgradeBlock(UPGRADE_PLUS_BLOCK);
+            this.name = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
+            rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }
