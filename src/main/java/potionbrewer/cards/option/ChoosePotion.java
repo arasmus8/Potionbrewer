@@ -22,8 +22,8 @@ public class ChoosePotion extends AbstractCard {
     public static String ID = PotionbrewerMod.makeID(ChoosePotion.class.getSimpleName());
     public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
 
-    private String potionId;
-    private boolean obtain;
+    public String potionId;
+    public boolean obtain;
     private static Map<String, String> imageMap;
 
     public ChoosePotion(final String id, boolean obtain) {

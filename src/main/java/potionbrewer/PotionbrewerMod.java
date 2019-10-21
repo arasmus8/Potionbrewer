@@ -16,6 +16,7 @@ import com.google.gson.Gson;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.TheCity;
@@ -24,6 +25,7 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import potionbrewer.cards.PotionTrackingCard;
@@ -35,6 +37,7 @@ import potionbrewer.orbs.ReagentList;
 import potionbrewer.patches.PotionTracker;
 import potionbrewer.potions.*;
 import potionbrewer.potions.tonics.TonicLibrary;
+import potionbrewer.powers.PotionTrackingPower;
 import potionbrewer.relics.BottledPlaceholderRelic;
 import potionbrewer.relics.DefaultClickableRelic;
 import potionbrewer.relics.PlaceholderRelic2;
@@ -439,6 +442,16 @@ public class PotionbrewerMod implements
         for (AbstractCard c : p.drawPile.group) {
             if (c instanceof PotionTrackingCard) {
                 ((PotionTrackingCard) c).onUsePotion(potion);
+            }
+        }
+
+        ArrayList<AbstractCreature> creatures = new ArrayList<>(AbstractDungeon.getCurrRoom().monsters.monsters);
+        creatures.add(AbstractDungeon.player);
+        for (AbstractCreature creature : creatures) {
+            for (AbstractPower power : creature.powers) {
+                if (power instanceof PotionTrackingPower) {
+                    ((PotionTrackingPower) power).onUsePotion(potion);
+                }
             }
         }
     }

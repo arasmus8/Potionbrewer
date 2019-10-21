@@ -71,6 +71,10 @@
     "NAME": "Balanced Formula",
     "DESCRIPTION": "Deal !D! Damage. Move a 0 cost card from your draw pile and from your discard pile to your hand."
   },
+  "potionbrewer:BeatDown": {
+    "NAME": "Beat Down",
+    "DESCRIPTION": "Deal !D! Damage. Place this card on top of your draw pile."
+  },
   "potionbrewer:Biohazard": {
     "NAME": "Bio-Hazard",
     "DESCRIPTION": "Apply !M! potionbrewer:Infection to an enemy."

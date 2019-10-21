@@ -76,6 +76,7 @@ public class CardList {
         allCards.add(new AnotherRound());
 
         //Rare Attacks
+        allCards.add(new BeatDown());
         allCards.add(new BrokenBeakers());
         allCards.add(new RefinedProcess());
         allCards.add(new ResearchResults());
