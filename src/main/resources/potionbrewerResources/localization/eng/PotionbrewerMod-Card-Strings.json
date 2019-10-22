@@ -62,8 +62,8 @@
   },
   "potionbrewer:Catalyze": {
     "NAME": "Catalyze",
-    "DESCRIPTION": "Draw !M! Card. NL Gain [E] NL Trigger all potionbrewer:Catalyze effects this turn. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Draw !M! Cards. NL Gain [E] [E] NL Trigger all potionbrewer:Catalyze effects this turn. NL Exhaust."
+    "DESCRIPTION": "Use an Energy Tonic and a Speed Tonic. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Use an Energy Potion and a Speed Potion. NL Exhaust."
   },
   "potionbrewer:CausticBarrier": {
     "NAME": "Caustic Barrier",
