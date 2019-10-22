@@ -20,7 +20,6 @@ public class CardList {
         allCards.add(new Prototype());
         allCards.add(new Distill());
         allCards.add(new ReagentCard());
-        allCards.add(new TestPotionSelect());
 
         // Common Attacks
         allCards.add(new BlindingSpray());

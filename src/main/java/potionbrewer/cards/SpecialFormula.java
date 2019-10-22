@@ -4,7 +4,6 @@ import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.helpers.PotionHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import potionbrewer.PotionbrewerMod;
@@ -12,6 +11,7 @@ import potionbrewer.cards.option.ChoosePotion;
 import potionbrewer.characters.Potionbrewer;
 
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static potionbrewer.PotionbrewerMod.makeCardPath;
@@ -50,10 +50,9 @@ public class SpecialFormula extends CustomCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        ArrayList<AbstractCard> choices = new ArrayList<>();
-        for (int i = 0; i < magicNumber; i++) {
-            choices.add(new ChoosePotion(PotionHelper.getRandomPotion().ID, true));
-        }
+        ArrayList<AbstractCard> choices = ChoosePotion.getRandomPotionIdList(magicNumber).stream()
+                .map((s -> new ChoosePotion(s, true)))
+                .collect(Collectors.toCollection(ArrayList::new));
         this.addToBot(new ChooseOneAction(choices));
     }
 

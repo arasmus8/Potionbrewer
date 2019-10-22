@@ -1,5 +1,6 @@
 package potionbrewer.cards.option;
 
+import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.common.ObtainPotionAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -8,11 +9,14 @@ import com.megacrit.cardcrawl.helpers.PotionHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.potions.*;
+import com.megacrit.cardcrawl.random.Random;
 import potionbrewer.PotionbrewerMod;
 import potionbrewer.actions.UseTempPotionAction;
 import potionbrewer.potions.*;
 import potionbrewer.potions.tonics.*;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -25,6 +29,8 @@ public class ChoosePotion extends AbstractCard {
     public String potionId;
     public boolean obtain;
     private static Map<String, String> imageMap;
+    private static ArrayList<String> inBattleIds;
+    private static Random rng = new Random();
 
     public ChoosePotion(final String id, boolean obtain) {
         super(ID, name(id), portrait(id), 0, CARD_STRINGS.DESCRIPTION, CardType.STATUS, CardColor.COLORLESS, CardRarity.COMMON, CardTarget.NONE);
@@ -40,7 +46,17 @@ public class ChoosePotion extends AbstractCard {
     }
 
     public ChoosePotion() {
-        this(PotionHelper.getRandomPotion().ID, false);
+        this(getRandomPotionId(), false);
+    }
+
+    public static String getRandomPotionId() {
+        return inBattleIds.get(MathUtils.random(inBattleIds.size()));
+    }
+
+    public static ArrayList<String> getRandomPotionIdList(final int amount) {
+        ArrayList<String> ret = new ArrayList<>(inBattleIds);
+        Collections.shuffle(ret, rng.random);
+        return new ArrayList<>(ret.subList(0, amount));
     }
 
     @Override
@@ -165,5 +181,11 @@ public class ChoosePotion extends AbstractCard {
         imageMap.put(StrengthPotion.POTION_ID, "red/skill/limit_break");
         imageMap.put(SwiftPotion.POTION_ID, "blue/skill/skim");
         imageMap.put(WeakenPotion.POTION_ID, "red/skill/intimidate");
+
+        inBattleIds = new ArrayList<>(imageMap.keySet());
+        inBattleIds.remove(RegenPotion.POTION_ID);
+        inBattleIds.remove(FruitJuice.POTION_ID);
+        inBattleIds.remove(EntropicBrew.POTION_ID);
+        inBattleIds.remove(SplittingPotion.POTION_ID);
     }
 }
