@@ -69,6 +69,11 @@
     "NAME": "Caustic Barrier",
     "DESCRIPTION": "Gain !B! Block. Add a *Distill to your hand."
   },
+  "potionbrewer:ChainReaction": {
+    "NAME": "Chain Reaction",
+    "DESCRIPTION": "Each turn, shuffle a *Reaction into your draw pile.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Each turn, shuffle a *Reaction into your draw pile."
+  },
   "potionbrewer:ChemicalShroud": {
     "NAME": "Chemical Shroud",
     "DESCRIPTION": "Gain !B! Block. This costs 1 less for each potion used this combat."
@@ -276,6 +281,10 @@
   "potionbrewer:Prototype": {
     "NAME": "Prototype Potion",
     "DESCRIPTION": "Has various effects based on the Reagents collected."
+  },
+  "potionbrewer:Reaction": {
+    "NAME": "Reaction",
+    "DESCRIPTION": "Unplayable. NL When drawn, gain [E] and draw !M! cards. NL Exhaust."
   },
   "potionbrewer:Distill": {
     "NAME": "Distill",

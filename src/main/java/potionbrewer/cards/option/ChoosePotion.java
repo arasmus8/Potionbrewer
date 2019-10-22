@@ -59,6 +59,18 @@ public class ChoosePotion extends AbstractCard {
         return new ArrayList<>(ret.subList(0, amount));
     }
 
+    public static void initializePotionList(AbstractPlayer.PlayerClass playerClass) {
+        ArrayList<String> ids = PotionHelper.getPotions(playerClass, false);
+        ids.remove(RegenPotion.POTION_ID);
+        ids.remove(BloodPotion.POTION_ID);
+        ids.remove(FruitJuice.POTION_ID);
+        ids.remove(FairyPotion.POTION_ID);
+        ids.remove(EntropicBrew.POTION_ID);
+        ids.remove(SplittingPotion.POTION_ID);
+
+        inBattleIds = new ArrayList<>(ids);
+    }
+
     @Override
     public boolean canUpgrade() {
         return false;
@@ -181,11 +193,5 @@ public class ChoosePotion extends AbstractCard {
         imageMap.put(StrengthPotion.POTION_ID, "red/skill/limit_break");
         imageMap.put(SwiftPotion.POTION_ID, "blue/skill/skim");
         imageMap.put(WeakenPotion.POTION_ID, "red/skill/intimidate");
-
-        inBattleIds = new ArrayList<>(imageMap.keySet());
-        inBattleIds.remove(RegenPotion.POTION_ID);
-        inBattleIds.remove(FruitJuice.POTION_ID);
-        inBattleIds.remove(EntropicBrew.POTION_ID);
-        inBattleIds.remove(SplittingPotion.POTION_ID);
     }
 }

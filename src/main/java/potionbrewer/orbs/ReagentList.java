@@ -53,7 +53,6 @@ public class ReagentList {
 
     private static Reagent byIndex(int index) {
         Set<String> keys = reagentsById.keySet();
-        keys.remove(PhilosopherShard.ORB_ID);
         String[] list = keys.toArray(new String[0]);
         Arrays.sort(list);
         try {
@@ -88,9 +87,8 @@ public class ReagentList {
         return byIndex(idx);
     }
 
-    private static int indexFromReagent(Reagent o) {
+    public static int indexFromReagent(Reagent o) {
         Set<String> keys = reagentsById.keySet();
-        keys.remove(PhilosopherShard.ORB_ID);
         String[] list = keys.toArray(new String[0]);
         Arrays.sort(list);
         String id = o.ID;

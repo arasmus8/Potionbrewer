@@ -1,55 +1,45 @@
 package potionbrewer.cards;
 
 import basemod.abstracts.CustomCard;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import potionbrewer.PotionbrewerMod;
-import potionbrewer.actions.BrewPotionAction;
+import potionbrewer.characters.Potionbrewer;
+import potionbrewer.powers.ChainReactionPower;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static potionbrewer.PotionbrewerMod.makeCardPath;
 
-public class Distill extends CustomCard {
+public class ChainReaction extends CustomCard {
 
-// TEXT DECLARATION
-
-    public static final String ID = PotionbrewerMod.makeID(Distill.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String ID = PotionbrewerMod.makeID(ChainReaction.class.getSimpleName());
+    public static final String IMG = makeCardPath("Power.png");
     public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
-// Must have an image with the same NAME as the card in your image folder!
 
-// /TEXT DECLARATION/
-
-// STAT DECLARATION
-
-    private static final CardRarity RARITY = CardRarity.SPECIAL;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
-    private static final CardType TYPE = CardType.SKILL;
-    public static final CardColor COLOR = CardColor.COLORLESS;
+    private static final CardType TYPE = CardType.POWER;
+    public static final CardColor COLOR = Potionbrewer.Enums.COLOR_CYAN;
 
-    private static final int COST = 0;
+    private static final int COST = 1;
 
-// /STAT DECLARATION/
-
-
-    public Distill() {
+    public ChainReaction() {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        exhaust = true;
-        selfRetain = true;
+        cardsToPreview = new Reaction();
     }
 
-    // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new BrewPotionAction());
+        this.addToBot(new ApplyPowerAction(p, p, new ChainReactionPower()));
     }
 
-    // Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            isInnate = true;
             initializeDescription();
         }
     }

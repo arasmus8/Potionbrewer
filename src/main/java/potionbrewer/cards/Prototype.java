@@ -15,6 +15,7 @@ import potionbrewer.actions.PrototypeAction;
 import potionbrewer.characters.Potionbrewer;
 import potionbrewer.orbs.Reagent;
 import potionbrewer.orbs.ReagentList;
+import potionbrewer.orbs.Skull;
 import potionbrewer.patches.PotionTracker;
 import potionbrewer.powers.NoCatalyzePower;
 
@@ -42,6 +43,16 @@ public class Prototype extends CustomCard {
     private static final int UPGRADED_COST = 0;
 
     // /STAT DECLARATION/
+
+    private static String buildName(final boolean upgraded, Reagent a, Reagent b, Reagent c) {
+        String[] adjs = {"Potent", "Robust", "Concentrated", "Full-Bodied", "Stiff", "Diluted", "Congealed", "Fizzy", "Shimmering"};
+        String[] types = {"Compound", "Solution", "Serum", "Draught", "Elixir", "Brew", "Tincture", "Mixture", "Philter"};
+        String chosenAdj = adjs[(ReagentList.indexFromReagent(a) + ReagentList.indexFromReagent(b)) % adjs.length];
+        String chosenType = types[(ReagentList.indexFromReagent(b) + ReagentList.indexFromReagent(c)) % types.length];
+        String suffix = "#" + ReagentList.indexFromReagent(a) + ReagentList.indexFromReagent(c);
+        return chosenAdj + " " + chosenType + " " + suffix;
+        // return a.name + "/" + b.name + "/" + c.name + (upgraded ? " +" : "");
+    }
 
     private static String buildDescription(Reagent a, Reagent b, Reagent c) {
         if (a == null || b == null || c == null) {
@@ -81,10 +92,7 @@ public class Prototype extends CustomCard {
         if (a == null || b == null || c == null) {
             return;
         }
-        name = a.name + " " + b.name + " " + c.name;
-        if (upgraded) {
-            name += "+";
-        }
+        name = buildName(upgraded, a, b, c);
         rawDescription = buildDescription(a, b, c);
         initializeDescription();
         exhaust = a.exhaust || b.exhaust || c.exhaust;
@@ -100,6 +108,9 @@ public class Prototype extends CustomCard {
         }
         if (!a.damages && !b.damages && !c.damages) {
             type = CardType.SKILL;
+        }
+        if (a instanceof Skull || b instanceof Skull || c instanceof Skull) {
+            cardsToPreview = new Reaction();
         }
     }
 

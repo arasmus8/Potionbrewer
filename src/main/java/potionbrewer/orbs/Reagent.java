@@ -62,11 +62,16 @@ public abstract class Reagent extends AbstractOrb {
         channelAnimTimer = 0.5f;
     }
 
+    private static String cleanupOrbText(String s) {
+        return s.replace("potionbrewer:", "")
+                .replaceAll("[(] !.*! [)] ", "");
+    }
+
     @Override
     public void updateDescription() {
         this.applyFocus();
         String cardEffects = descriptions[1];
-        this.description = descriptions[0] + DESC[0] + getPotion().name + DESC[1] + cardEffects.replace("potionbrewer:", "");
+        this.description = descriptions[0] + DESC[0] + getPotion().name + DESC[1] + cleanupOrbText(cardEffects);
     }
 
     @Override

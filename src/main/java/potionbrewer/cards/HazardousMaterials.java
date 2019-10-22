@@ -26,12 +26,15 @@ public class HazardousMaterials extends CatalyzeCard {
     
     private static final int COST = -1;
 
+    private HazardousMaterialsAction action;
+
     public HazardousMaterials() {
         super(ID, cardStrings.NAME, IMG, COST, cardStrings.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
     }
 
     @Override
     public void catalyzeActions(AbstractPlayer p, AbstractMonster m) {
+        action.triggerCatalyze = true;
     }
 
     @Override
@@ -39,7 +42,8 @@ public class HazardousMaterials extends CatalyzeCard {
         if (energyOnUse < EnergyPanel.totalCount) {
             energyOnUse = EnergyPanel.totalCount;
         }
-        this.addToBot(new HazardousMaterialsAction(p, m, freeToPlayOnce, energyOnUse));
+        action = new HazardousMaterialsAction(p, m, freeToPlayOnce, energyOnUse);
+        this.addToBot(action);
     }
 
     @Override

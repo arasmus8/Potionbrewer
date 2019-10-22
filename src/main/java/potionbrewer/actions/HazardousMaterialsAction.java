@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.ChemicalX;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
-import potionbrewer.patches.PotionTracker;
 import potionbrewer.powers.DiseasePower;
 import potionbrewer.powers.ToxicPower;
 
@@ -15,6 +14,7 @@ public class HazardousMaterialsAction extends AbstractGameAction {
     private AbstractPlayer p;
     private AbstractMonster m;
     private int energyOnUse;
+    public boolean triggerCatalyze = false;
 
     public HazardousMaterialsAction(final AbstractPlayer p, final AbstractMonster m, final boolean freeToPlayOnce, final int energyOnUse) {
         this.freeToPlayOnce = false;
@@ -36,10 +36,9 @@ public class HazardousMaterialsAction extends AbstractGameAction {
             p.getRelic(ChemicalX.ID).flash();
         }
         if (effect > 0) {
-            boolean c = PotionTracker.potionsUsedThisTurn.get(p) > 0;
             for (int i = 0; i < effect; ++i) {
                 this.addToBot(new ApplyPowerAction(m, p, new ToxicPower(m, p, 1), 1, AttackEffect.POISON));
-                if (c) {
+                if (triggerCatalyze) {
                     this.addToBot(new ApplyPowerAction(m, p, new DiseasePower(m, p, 1), 1, AttackEffect.NONE));
                 }
             }

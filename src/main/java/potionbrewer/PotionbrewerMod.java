@@ -30,6 +30,7 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import potionbrewer.cards.FollowupCard;
 import potionbrewer.cards.PotionTrackingCard;
+import potionbrewer.cards.option.ChoosePotion;
 import potionbrewer.characters.Invalid;
 import potionbrewer.characters.Potionbrewer;
 import potionbrewer.events.IdentityCrisisEvent;
@@ -398,6 +399,8 @@ public class PotionbrewerMod implements
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        ChoosePotion.initializePotionList(AbstractDungeon.player.chosenClass);
     }
 
     @Override

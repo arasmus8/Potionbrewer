@@ -40,6 +40,12 @@
       " turns, obtain a "
     ]
   },
+  "potionbrewer:ChainReactionPower": {
+    "NAME": "Chain Reaction",
+    "DESCRIPTIONS": [
+      "Each turn, shuffle a #yReaction into your draw pile."
+    ]
+  },
   "potionbrewer:DamageNextTurnPower": {
     "NAME": "Damage Next Turn",
     "DESCRIPTIONS": [

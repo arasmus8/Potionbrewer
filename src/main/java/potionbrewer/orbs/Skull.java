@@ -2,7 +2,6 @@ package potionbrewer.orbs;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
-import com.megacrit.cardcrawl.cards.tempCards.Insight;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
@@ -12,6 +11,7 @@ import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.potions.PoisonPotion;
 import potionbrewer.PotionbrewerMod;
+import potionbrewer.cards.Reaction;
 
 public class Skull extends Reagent {
     public static final String ORB_ID = PotionbrewerMod.makeID("Skull");
@@ -41,7 +41,7 @@ public class Skull extends Reagent {
 
     @Override
     public void doEffects(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new MakeTempCardInDrawPileAction(new Insight(), 1, true, true));
+        this.addToBot(new MakeTempCardInDrawPileAction(new Reaction(), 1, true, true));
     }
 
     @Override
