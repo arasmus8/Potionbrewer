@@ -210,6 +210,10 @@
     "NAME": "Strike",
     "DESCRIPTION": "Deal !D! Damage."
   },
+  "potionbrewer:PrivateReserves": {
+    "NAME": "Private Reserves",
+    "DESCRIPTION": "Each time you use a Potion, gain !M! block."
+  },
   "potionbrewer:QuickStep": {
     "NAME": "Quick Step",
     "DESCRIPTION": "Gain !B! Block. If you've played less than !M! cards this turn, draw a card."

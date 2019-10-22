@@ -64,23 +64,30 @@
   "potionbrewer:InfectionPower": {
     "NAME": "Infection",
     "DESCRIPTIONS": [
-      "Doubles each turn. When Infection reaches #b",
-      " applies #b1 Disease, and is reduced by #b"
+      "Doubles each turn. When #yInfection reaches #b",
+      " applies #b1 #yDisease, and is reduced by #b"
     ]
   },
   "potionbrewer:NoCatalyzePower": {
     "NAME": "Catalyze Blocked",
     "DESCRIPTIONS": [
-      "No catalyze effects can be triggered this turn."
+      "No #yCatalyze effects can be triggered this turn."
     ]
   },
   "potionbrewer:PortableLabPower": {
     "NAME": "Portable Lab",
     "DESCRIPTIONS": [
-      "Consume leftover energy after each turn. After consuming #b",
-      " energy, add #b",
+      "Consume leftover Energy after each turn. After consuming #b",
+      " Energy, add #b",
       " #yPotion #yCard to your hand.",
       " #yPotion #yCards to your hand."
+    ]
+  },
+  "potionbrewer:PrivateReservesPower": {
+    "NAME": "Private Reserves",
+    "DESCRIPTIONS": [
+      "Whenever you use a Potion, gain #b",
+      " Block."
     ]
   },
   "potionbrewer:RootPower": {
