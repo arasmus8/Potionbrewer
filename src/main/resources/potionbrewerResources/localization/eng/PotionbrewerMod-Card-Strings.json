@@ -86,6 +86,10 @@
     "NAME": "Chemical Weapons",
     "DESCRIPTION": "Deal !D! Damage. NL potionbrewer:Catalyze: Gain [E] and Draw a card."
   },
+  "potionbrewer:ChemicalRage": {
+    "NAME": "Chemical Rage",
+    "DESCRIPTION": "Each time you use a Potion, deal !M! Damage to all enemies."
+  },
   "potionbrewer:ChokingPowder": {
     "NAME": "Choking Powder",
     "DESCRIPTION": "The target takes !M! damage each time you play a card this turn."

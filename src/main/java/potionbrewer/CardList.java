@@ -74,6 +74,7 @@ public class CardList {
         //Uncommon Powers
         allCards.add(new AnotherRound());
         allCards.add(new ChainReaction());
+        allCards.add(new ChemicalRage());
         allCards.add(new PortableLab());
         allCards.add(new PrivateReserves());
 

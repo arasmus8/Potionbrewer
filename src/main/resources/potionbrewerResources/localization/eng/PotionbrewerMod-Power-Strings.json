@@ -46,6 +46,13 @@
       "Each turn, shuffle a #yReaction into your draw pile."
     ]
   },
+  "potionbrewer:ChemicalRagePower": {
+    "NAME": "Chemical Rage",
+    "DESCRIPTIONS": [
+      "Whenever you use a Potion, deal #b",
+      " Damage to all enemies."
+    ]
+  },
   "potionbrewer:DamageNextTurnPower": {
     "NAME": "Damage Next Turn",
     "DESCRIPTIONS": [
