@@ -52,7 +52,7 @@ public class PortableLabPower extends AbstractPower implements CloneablePowerInt
     }
 
     @Override
-    public void atStartOfTurnPostDraw() {
+    public void atStartOfTurn() {
         if (amount <= 0) {
             this.flash();
             amount = threshold;
