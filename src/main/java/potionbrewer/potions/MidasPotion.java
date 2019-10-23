@@ -42,9 +42,8 @@ public class MidasPotion extends AbstractPotion {
     @Override
     public void use(AbstractCreature target) {
         AbstractPlayer p = AbstractDungeon.player;
-        AbstractCreature m = target;
-        if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && p != null && m != null) {
-            this.addToBot(new GreedAction(m, new DamageInfo(p, potency, DamageInfo.DamageType.THORNS), potency));
+        if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && p != null && target != null) {
+            this.addToBot(new GreedAction(target, new DamageInfo(p, potency, DamageInfo.DamageType.THORNS), potency));
         }
     }
     
@@ -55,10 +54,6 @@ public class MidasPotion extends AbstractPotion {
     
     @Override
     public int getPotency(final int potency) {
-        if (AbstractDungeon.player == null) {
-            return 10;
-        } else {
-            return AbstractDungeon.player.hasRelic("SacredBark") ? 20 : 10;
-        }
+        return 10;
     }
 }

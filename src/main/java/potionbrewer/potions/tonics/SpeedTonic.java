@@ -10,8 +10,6 @@ import com.megacrit.cardcrawl.localization.PotionStrings;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.LoseDexterityPower;
-import com.megacrit.cardcrawl.powers.LoseStrengthPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import potionbrewer.PotionbrewerMod;
 
@@ -49,16 +47,12 @@ public class SpeedTonic extends AbstractPotion {
     }
 
     @Override
-    public int getPotency(int i) {
-        int p = 2;
-        if( AbstractDungeon.player != null && AbstractDungeon.player.hasRelic("SacredBark") ) {
-            p *= 2;
-        }
-        return p;
+    public int getPotency(int ascLevel) {
+        return 2;
     }
 
     @Override
     public AbstractPotion makeCopy() {
-        return null;
+        return new SpeedTonic();
     }
 }

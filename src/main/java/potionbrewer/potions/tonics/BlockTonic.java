@@ -1,18 +1,13 @@
 package potionbrewer.potions.tonics;
 
 import com.badlogic.gdx.graphics.Color;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.localization.PotionStrings;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import potionbrewer.PotionbrewerMod;
 
 public class BlockTonic extends AbstractPotion {
@@ -45,16 +40,12 @@ public class BlockTonic extends AbstractPotion {
     }
 
     @Override
-    public int getPotency(int i) {
-        int p = 5;
-        if( AbstractDungeon.player != null && AbstractDungeon.player.hasRelic("SacredBark") ) {
-            p *= 2;
-        }
-        return p;
+    public int getPotency(int ascLevel) {
+        return 5;
     }
 
     @Override
     public AbstractPotion makeCopy() {
-        return null;
+        return new BlockTonic();
     }
 }

@@ -2,7 +2,6 @@ package potionbrewer.potions.tonics;
 
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -48,16 +47,12 @@ public class FlexTonic extends AbstractPotion {
     }
 
     @Override
-    public int getPotency(int i) {
-        int p = 2;
-        if( AbstractDungeon.player != null && AbstractDungeon.player.hasRelic("SacredBark") ) {
-            p *= 2;
-        }
-        return p;
+    public int getPotency(int ascLevel) {
+        return 2;
     }
 
     @Override
     public AbstractPotion makeCopy() {
-        return null;
+        return new FlexTonic();
     }
 }

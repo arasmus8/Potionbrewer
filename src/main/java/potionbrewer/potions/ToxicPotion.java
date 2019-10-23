@@ -42,9 +42,8 @@ public class ToxicPotion extends AbstractPotion {
     @Override
     public void use(AbstractCreature target) {
         AbstractPlayer p = AbstractDungeon.player;
-        AbstractCreature m = target;
-        if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && p != null && m != null) {
-            this.addToBot(new ApplyPowerAction(m, p, new ToxicPower(m, p, potency), potency));
+        if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && p != null && target != null) {
+            this.addToBot(new ApplyPowerAction(target, p, new ToxicPower(target, p, potency), potency));
         }
     }
     
@@ -55,10 +54,6 @@ public class ToxicPotion extends AbstractPotion {
     
     @Override
     public int getPotency(final int potency) {
-        if (AbstractDungeon.player == null) {
-            return 1;
-        } else {
-            return AbstractDungeon.player.hasRelic("SacredBark") ? 2 : 1;
-        }
+        return 1;
     }
 }

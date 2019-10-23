@@ -9,21 +9,21 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import potionbrewer.PotionbrewerMod;
-import potionbrewer.cards.Reaction;
+import potionbrewer.cards.ReagentCard;
 import potionbrewer.util.TextureLoader;
 
 import static potionbrewer.PotionbrewerMod.makePowerPath;
 
-public class ChainReactionPower extends AbstractPower implements CloneablePowerInterface {
-    public static final String POWER_ID = PotionbrewerMod.makeID(ChainReactionPower.class.getSimpleName());
+public class HoarderPower extends AbstractPower implements CloneablePowerInterface {
+    public static final String POWER_ID = PotionbrewerMod.makeID(HoarderPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("chain_reaction84.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("chain_reaction32.png"));
+    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("hoarder84.png"));
+    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("hoarder32.png"));
 
-    public ChainReactionPower(final int amount) {
+    public HoarderPower(final int amount) {
         name = NAME;
         ID = POWER_ID;
 
@@ -41,7 +41,7 @@ public class ChainReactionPower extends AbstractPower implements CloneablePowerI
 
     @Override
     public void atStartOfTurn() {
-        this.addToBot(new MakeTempCardInDrawPileAction(new Reaction(), amount, true, true));
+        this.addToBot(new MakeTempCardInDrawPileAction(new ReagentCard(), amount, true, true));
     }
 
     @Override
@@ -55,6 +55,6 @@ public class ChainReactionPower extends AbstractPower implements CloneablePowerI
 
     @Override
     public AbstractPower makeCopy() {
-        return new ChainReactionPower(amount);
+        return new HoarderPower(amount);
     }
 }

@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.localization.PotionStrings;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
-import com.megacrit.cardcrawl.powers.WeakPower;
 import potionbrewer.PotionbrewerMod;
 
 public class FearTonic extends AbstractPotion {
@@ -44,16 +43,12 @@ public class FearTonic extends AbstractPotion {
     }
 
     @Override
-    public int getPotency(int i) {
-        int p = 1;
-        if( AbstractDungeon.player != null && AbstractDungeon.player.hasRelic("SacredBark") ) {
-            p *= 2;
-        }
-        return p;
+    public int getPotency(int ascLevel) {
+        return 1;
     }
 
     @Override
     public AbstractPotion makeCopy() {
-        return null;
+        return new FearTonic();
     }
 }

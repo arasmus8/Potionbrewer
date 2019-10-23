@@ -44,10 +44,9 @@ public class AcidPotion extends AbstractPotion {
     @Override
     public void use(AbstractCreature target) {
         AbstractPlayer p = AbstractDungeon.player;
-        AbstractCreature m = target;
-        if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && p != null && m != null) {
-            this.addToBot(new RemoveAllBlockAction(m, p));
-            this.addToBot(new DamageAction(m, new DamageInfo(p, potency, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.POISON));
+        if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && p != null && target != null) {
+            this.addToBot(new RemoveAllBlockAction(target, p));
+            this.addToBot(new DamageAction(target, new DamageInfo(p, potency, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.POISON));
         }
     }
     
@@ -57,11 +56,7 @@ public class AcidPotion extends AbstractPotion {
     }
     
     @Override
-    public int getPotency(final int potency) {
-        if (AbstractDungeon.player == null) {
-            return 5;
-        } else {
-            return AbstractDungeon.player.hasRelic("SacredBark") ? 10 : 5;
-        }
+    public int getPotency(final int ascLevel) {
+        return 5;
     }
 }

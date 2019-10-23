@@ -1,11 +1,9 @@
 package potionbrewer.potions.tonics;
 
 import com.badlogic.gdx.graphics.Color;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.localization.PotionStrings;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
@@ -41,16 +39,12 @@ public class EnergyTonic extends AbstractPotion {
     }
 
     @Override
-    public int getPotency(int i) {
-        int p = 1;
-        if( AbstractDungeon.player != null && AbstractDungeon.player.hasRelic("SacredBark") ) {
-            p *= 2;
-        }
-        return p;
+    public int getPotency(int ascLevel) {
+        return 1;
     }
 
     @Override
     public AbstractPotion makeCopy() {
-        return null;
+        return new EnergyTonic();
     }
 }

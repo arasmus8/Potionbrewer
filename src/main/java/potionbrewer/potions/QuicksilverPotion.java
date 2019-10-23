@@ -57,10 +57,6 @@ public class QuicksilverPotion extends AbstractPotion {
     
     @Override
     public int getPotency(final int potency) {
-        if (AbstractDungeon.player == null) {
-            return 1;
-        } else {
-            return AbstractDungeon.player.hasRelic("SacredBark") ? 2 : 1;
-        }
+        return 1;
     }
 }

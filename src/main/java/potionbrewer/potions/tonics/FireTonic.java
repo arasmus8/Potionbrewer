@@ -13,7 +13,6 @@ import com.megacrit.cardcrawl.localization.PotionStrings;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import potionbrewer.PotionbrewerMod;
-import potionbrewer.potions.AcidPotion;
 
 public class FireTonic extends AbstractPotion {
 
@@ -52,16 +51,12 @@ public class FireTonic extends AbstractPotion {
     }
 
     @Override
-    public int getPotency(int i) {
-        int p = 6;
-        if( AbstractDungeon.player != null && AbstractDungeon.player.hasRelic("SacredBark") ) {
-            p *= 2;
-        }
-        return p;
+    public int getPotency(int ascLevel) {
+        return 6;
     }
 
     @Override
     public AbstractPotion makeCopy() {
-        return null;
+        return new FireTonic();
     }
 }

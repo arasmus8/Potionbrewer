@@ -53,10 +53,6 @@ public class FreezingPotion extends AbstractPotion {
     
     @Override
     public int getPotency(final int potency) {
-        if (AbstractDungeon.player == null) {
-            return 5;
-        } else {
-            return AbstractDungeon.player.hasRelic("SacredBark") ? 10 : 5;
-        }
+        return 5;
     }
 }

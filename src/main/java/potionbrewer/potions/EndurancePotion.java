@@ -53,10 +53,6 @@ public class EndurancePotion extends AbstractPotion {
 
     @Override
     public int getPotency(final int potency) {
-        if (AbstractDungeon.player == null) {
-            return 10;
-        } else {
-            return AbstractDungeon.player.hasRelic("SacredBark") ? 20 : 10;
-        }
+        return 10;
     }
 }

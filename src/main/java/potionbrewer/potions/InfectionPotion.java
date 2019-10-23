@@ -12,7 +12,6 @@ import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import potionbrewer.PotionbrewerMod;
 import potionbrewer.powers.InfectionPower;
-import potionbrewer.powers.ToxicPower;
 
 public class InfectionPotion extends AbstractPotion {
 
@@ -43,9 +42,8 @@ public class InfectionPotion extends AbstractPotion {
     @Override
     public void use(AbstractCreature target) {
         AbstractPlayer p = AbstractDungeon.player;
-        AbstractCreature m = target;
-        if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && p != null && m != null) {
-            this.addToBot(new ApplyPowerAction(m, p, new InfectionPower(m, p, potency), potency));
+        if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && p != null && target != null) {
+            this.addToBot(new ApplyPowerAction(target, p, new InfectionPower(target, p, potency), potency));
         }
     }
     
@@ -56,10 +54,6 @@ public class InfectionPotion extends AbstractPotion {
     
     @Override
     public int getPotency(final int potency) {
-        if (AbstractDungeon.player == null) {
-            return 2;
-        } else {
-            return AbstractDungeon.player.hasRelic("SacredBark") ? 4 : 2;
-        }
+        return 3;
     }
 }

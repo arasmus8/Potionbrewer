@@ -54,10 +54,6 @@ public class NoxiousPotion extends AbstractPotion {
     
     @Override
     public int getPotency(final int potency) {
-        if (AbstractDungeon.player == null) {
-            return 4;
-        } else {
-            return AbstractDungeon.player.hasRelic("SacredBark") ? 8 : 4;
-        }
+        return 4;
     }
 }

@@ -61,11 +61,7 @@ public class CleansingPotion extends AbstractPotion {
     }
     
     @Override
-    public int getPotency(final int potency) {
-        if (AbstractDungeon.player == null) {
-            return 2;
-        } else {
-            return AbstractDungeon.player.hasRelic("SacredBark") ? 4 : 2;
-        }
+    public int getPotency(final int ascLevel) {
+        return 2;
     }
 }

@@ -43,7 +43,9 @@
   "potionbrewer:ChainReactionPower": {
     "NAME": "Chain Reaction",
     "DESCRIPTIONS": [
-      "Each turn, shuffle a #yReaction into your draw pile."
+      "Each turn, shuffle #b",
+      " #yReaction into your draw pile.",
+      " #yReactions into your draw pile."
     ]
   },
   "potionbrewer:ChemicalRagePower": {
@@ -66,6 +68,14 @@
       "Damage is reduced by half. At the end of turn, deal #b",
       " Damage and apply #b",
       " Infection to all enemies."
+    ]
+  },
+  "potionbrewer:HoarderPower": {
+    "NAME": "Hoarder",
+    "DESCRIPTIONS": [
+      "Add #b",
+      " #yReagent to your draw pile each turn.",
+      " #yReagents to your draw pile each turn."
     ]
   },
   "potionbrewer:InfectionPower": {

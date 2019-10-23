@@ -175,6 +175,11 @@
       "Hazardous Sludge"
     ]
   },
+  "potionbrewer:Hoarder": {
+    "NAME": "Hoarder",
+    "DESCRIPTION": "Each turn, add a *Reagent to your draw pile.",
+    "UPGRADE_DESCRIPTION": "Innate NL Each turn, add a *Reagent to your draw pile."
+  },
   "potionbrewer:IronFist": {
     "NAME": "Iron Fist",
     "DESCRIPTION": "Deal !D! Damage. NL potionbrewer:Catalyze: Strength affects this !M! times.",
