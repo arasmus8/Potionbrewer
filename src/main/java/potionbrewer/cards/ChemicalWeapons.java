@@ -2,8 +2,7 @@ package potionbrewer.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -40,18 +39,18 @@ public class ChemicalWeapons extends CatalyzeCard {
     public ChemicalWeapons() {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
+        cardsToPreview = new ReagentCard();
     }
 
     // Actions the card should do.
     @Override
     public void useActions(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
     }
 
     @Override
     public void catalyzeActions(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new GainEnergyAction(1));
-        this.addToBot(new DrawCardAction(p, 1));
+        addToBot(new MakeTempCardInHandAction(new ReagentCard()));
     }
 
     // Upgraded stats.

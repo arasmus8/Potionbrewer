@@ -1,7 +1,7 @@
 package potionbrewer.cards;
 
 import basemod.abstracts.CustomCard;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -16,7 +16,6 @@ import com.megacrit.cardcrawl.monsters.ending.SpireShield;
 import com.megacrit.cardcrawl.monsters.ending.SpireSpear;
 import com.megacrit.cardcrawl.monsters.exordium.*;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
 import potionbrewer.PotionbrewerMod;
 import potionbrewer.characters.Potionbrewer;
 import potionbrewer.orbs.*;
@@ -48,6 +47,7 @@ public class Collect extends CustomCard {
         this.baseMagicNumber = VULNERABLE;
         this.magicNumber = VULNERABLE;
         exhaust = true;
+        cardsToPreview = new Distill();
     }
 
     public AbstractOrb getOrbForMonster(AbstractMonster m) {
@@ -64,7 +64,7 @@ public class Collect extends CustomCard {
     
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, magicNumber, false), magicNumber));
+        addToBot(new MakeTempCardInHandAction(new Distill()));
         AbstractOrb orb = getOrbForMonster(m);
         AbstractDungeon.actionManager.addToBottom(new ChannelAction(orb));
     }
@@ -163,5 +163,44 @@ public class Collect extends CustomCard {
         monsterReagents.put(SpireSpear.ID, Tentacle.class);
         // boss
         monsterReagents.put(CorruptHeart.ID, PhilosopherShard.class);
+
+
+        // TheJungle
+        monsterReagents.put("theJungle:BabySneko", Eye.class);
+        monsterReagents.put("theJungle:CarcassSack", Root.class);
+        monsterReagents.put("theJungle:Cassacara", Root.class);
+        monsterReagents.put("theJungle:Flameango", Feather.class);
+        monsterReagents.put("theJungle:FunGuy", Spore.class);
+        monsterReagents.put("theJungle:GianWrat", Sulphur.class);
+        monsterReagents.put("theJungle:JungleHunters", Bone.class);
+        monsterReagents.put("theJungle:Lyon", Tooth.class);
+        monsterReagents.put("theJungle:MamaSnecko", Eye.class);
+        monsterReagents.put("theJungle:Phrog", Ichor.class);
+        monsterReagents.put("theJungle:SlimyTreeVines", Root.class);
+        monsterReagents.put("theJungle:SneckoCultist", Eye.class);
+        monsterReagents.put("theJungle:SneckoEgg", Eye.class);
+        monsterReagents.put("theJungle:SwingingAxe", Steel.class);
+
+        // TheFactory
+        monsterReagents.put("theFactory:BigBot", Steel.class);
+        monsterReagents.put("theFactory:DecayingSentinel", Steel.class);
+        monsterReagents.put("theFactory:DefectiveSentry", Steel.class);
+        monsterReagents.put("theFactory:DrinkBrewer", Steel.class);
+        monsterReagents.put("theFactory:Experiment01", Meteorite.class);
+        monsterReagents.put("theFactory:ExpPersonnel", Ichor.class);
+        monsterReagents.put("theFactory:Guardian2", PowerCore.class);
+        monsterReagents.put("theFactory:Manservantes", Steel.class);
+        monsterReagents.put("theFactory:MiniBotBeamer", Flame.class);
+        monsterReagents.put("theFactory:MiniBotBuilderBuilder", Lightning.class);
+        monsterReagents.put("theFactory:MiniBotDebuff", Steel.class);
+        monsterReagents.put("theFactory:MiniBotRepair", Barb.class);
+        monsterReagents.put("theFactory:MiniBotVirus", Ether.class);
+        monsterReagents.put("theFactory:SentinelSpawn", Silk.class);
+        monsterReagents.put("theFactory:ShrapnelHeap", Barb.class);
+        monsterReagents.put("theFactory:ShrapnelTosser", Barb.class);
+        monsterReagents.put("theFactory:SmogElemental", Sulphur.class);
+        monsterReagents.put("theFactory:SPIDER", Silk.class);
+        monsterReagents.put("theFactory:ToyOrb", Steel.class);
+
     }
 }

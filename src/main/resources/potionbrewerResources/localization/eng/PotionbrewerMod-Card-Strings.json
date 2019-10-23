@@ -84,7 +84,7 @@
   },
   "potionbrewer:ChemicalWeapons": {
     "NAME": "Chemical Weapons",
-    "DESCRIPTION": "Deal !D! Damage. NL potionbrewer:Catalyze: Gain [E] and Draw a card."
+    "DESCRIPTION": "Deal !D! Damage. NL potionbrewer:Catalyze: Add a *Reagent to your hand."
   },
   "potionbrewer:ChemicalRage": {
     "NAME": "Chemical Rage",
@@ -96,8 +96,8 @@
   },
   "potionbrewer:Collect": {
     "NAME": "Collect",
-    "DESCRIPTION": "Collect a potionbrewer:Reagent from an enemy. Apply !M! Vulnerable. Exhaust.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Collect a potionbrewer:Reagent from an enemy. Apply !M! Vulnerable. Exhaust."
+    "DESCRIPTION": "Collect a potionbrewer:Reagent from an enemy. Add a *Distill to your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Collect a potionbrewer:Reagent from an enemy. Add a *Distill to your hand. NL Exhaust."
   },
   "potionbrewer:Contingency": {
     "NAME": "Contingency",
@@ -203,8 +203,8 @@
   },
   "potionbrewer:LeftoverSpecimen": {
     "NAME": "Leftover Specimen",
-    "DESCRIPTION": "Shuffle a *Reagent card into your draw pile. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Shuffle a *Reagent card into your draw pile."
+    "DESCRIPTION": "Gain !B! Block. NL Shuffle a *Reagent card into your draw pile. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Shuffle a *Reagent card into your draw pile."
   },
   "potionbrewer:MicrobeSpray": {
     "NAME": "Microbe Spray",
