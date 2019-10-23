@@ -93,6 +93,7 @@ public class CardList {
         allCards.add(new HazardousWaste());
         allCards.add(new IronFlesh());
         allCards.add(new SpecialFormula());
+        allCards.add(new TwoForOne());
 
         //Rare Powers
         allCards.add(new AlchemistForm());

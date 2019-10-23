@@ -7,40 +7,56 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import potionbrewer.PotionbrewerMod;
 import potionbrewer.characters.Potionbrewer;
-import potionbrewer.powers.ChainReactionPower;
+import potionbrewer.powers.TwoForOnePower;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static potionbrewer.PotionbrewerMod.makeCardPath;
 
-public class ChainReaction extends CustomCard {
+public class TwoForOne extends CustomCard {
 
-    public static final String ID = PotionbrewerMod.makeID(ChainReaction.class.getSimpleName());
-    public static final String IMG = makeCardPath("Power.png");
+// TEXT DECLARATION
+
+    public static final String ID = PotionbrewerMod.makeID(TwoForOne.class.getSimpleName());
+    public static final String IMG = makeCardPath("Skill.png");
     public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
+// Must have an image with the same NAME as the card in your image folder!
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+// /TEXT DECLARATION/
+
+// STAT DECLARATION
+
+    private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
-    private static final CardType TYPE = CardType.POWER;
+    private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = Potionbrewer.Enums.COLOR_CYAN;
 
     private static final int COST = 1;
+    private static final int UPGRADED_COST = 0;
 
-    public ChainReaction() {
+    private static final int MAGIC = 1;
+// /STAT DECLARATION/
+
+
+    public TwoForOne() {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        cardsToPreview = new Reaction();
+        baseMagicNumber = MAGIC;
+        magicNumber = baseMagicNumber;
     }
 
+
+    // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p, p, new ChainReactionPower()));
+        addToBot(new ApplyPowerAction(p, p, new TwoForOnePower(p, magicNumber), magicNumber));
     }
 
+
+    // Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            isInnate = true;
-            rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
+            upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }
     }

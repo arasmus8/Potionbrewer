@@ -58,7 +58,7 @@ public class ChemicalShroud extends PotionTrackingCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new GainBlockAction(p, magicNumber));
+        this.addToBot(new GainBlockAction(p, block));
     }
 
     // Upgraded stats.

@@ -278,6 +278,10 @@
     "NAME": "Transmute",
     "DESCRIPTION": "Deal !D! Damage. If this kills a non-minion enemy, choose 1 of 3 random potions to obtain."
   },
+  "potionbrewer:TwoForOne": {
+    "NAME": "Two For One",
+    "DESCRIPTION": "Obtain another copy of the next Potion you use. NL Exhaust."
+  },
   "potionbrewer:UnstableFormula": {
     "NAME": "Unstable Formula",
     "DESCRIPTION": "Deal !D! Damage. NL Next turn, deal !D! Damage."

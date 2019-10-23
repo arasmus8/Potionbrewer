@@ -114,5 +114,11 @@
   "potionbrewer:ToxicPower": {
     "NAME": "Toxic",
     "DESCRIPTIONS": ["At the beginning of each turn, lose ", " of current health."]
+  },
+  "potionbrewer:TwoForOnePower": {
+    "NAME": "Two For One",
+    "DESCRIPTIONS": [
+      "Obtain a copy of the next Potion you use."
+    ]
   }
 }
