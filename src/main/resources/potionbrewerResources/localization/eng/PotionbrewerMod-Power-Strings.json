@@ -97,6 +97,13 @@
       " #yPotion #yCards to your hand."
     ]
   },
+  "potionbrewer:PotentialEnergyPower": {
+    "NAME": "Potential Energy",
+    "DESCRIPTIONS": [
+      "Whenever you gain Strength or Dexterity, gain #b",
+      " more"
+    ]
+  },
   "potionbrewer:PrivateReservesPower": {
     "NAME": "Private Reserves",
     "DESCRIPTIONS": [
