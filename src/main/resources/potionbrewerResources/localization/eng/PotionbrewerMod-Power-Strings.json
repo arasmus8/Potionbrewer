@@ -75,6 +75,13 @@
       " applies #b1 #yDisease, and is reduced by #b"
     ]
   },
+  "potionbrewer:IronHeartPower": {
+    "NAME": "Iron Heart",
+    "DESCRIPTIONS": [
+      "Gain #b",
+      "% more Block."
+    ]
+  },
   "potionbrewer:NoCatalyzePower": {
     "NAME": "Catalyze Blocked",
     "DESCRIPTIONS": [

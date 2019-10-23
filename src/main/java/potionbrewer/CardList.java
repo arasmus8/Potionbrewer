@@ -75,6 +75,7 @@ public class CardList {
         allCards.add(new AnotherRound());
         allCards.add(new ChainReaction());
         allCards.add(new ChemicalRage());
+        allCards.add(new IronHeart());
         allCards.add(new PortableLab());
         allCards.add(new PrivateReserves());
 

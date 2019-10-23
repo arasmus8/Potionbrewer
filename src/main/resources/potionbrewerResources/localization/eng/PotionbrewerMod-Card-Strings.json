@@ -189,6 +189,13 @@
       "Steel Flesh"
     ]
   },
+  "potionbrewer:IronHeart": {
+    "NAME": "Iron Heart",
+    "DESCRIPTION": "Gain !M! percent more Block when playing cards that grant Block.",
+    "EXTENDED_DESCRIPTION": [
+      "Steel Heart"
+    ]
+  },
   "potionbrewer:LeftoverSpecimen": {
     "NAME": "Leftover Specimen",
     "DESCRIPTION": "Shuffle a *Reagent card into your draw pile. NL Exhaust.",
