@@ -1,6 +1,7 @@
 package potionbrewer.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
+import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.NonStackablePower;
 import com.megacrit.cardcrawl.actions.common.ObtainPotionAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -11,7 +12,7 @@ import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import potionbrewer.PotionbrewerMod;
 
-public class BrewPotionPower extends AbstractPower implements CloneablePowerInterface {
+public class BrewPotionPower extends AbstractPower implements NonStackablePower, CloneablePowerInterface {
     public static final String POWER_ID = PotionbrewerMod.makeID(BrewPotionPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;

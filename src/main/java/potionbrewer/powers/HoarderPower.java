@@ -40,8 +40,10 @@ public class HoarderPower extends AbstractPower implements CloneablePowerInterfa
     }
 
     @Override
-    public void atStartOfTurn() {
-        this.addToBot(new MakeTempCardInDrawPileAction(new ReagentCard(), amount, true, true));
+    public void atEndOfTurn(boolean isPlayer) {
+        if (isPlayer) {
+            this.addToBot(new MakeTempCardInDrawPileAction(new ReagentCard(), amount, true, true));
+        }
     }
 
     @Override

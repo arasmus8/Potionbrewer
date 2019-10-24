@@ -64,7 +64,8 @@ public abstract class Reagent extends AbstractOrb {
 
     private static String cleanupOrbText(String s) {
         return s.replace("potionbrewer:", "")
-                .replaceAll("[(] !.*! [)] ", "");
+                .replaceAll("[(] !.*! [)] ", "")
+                .replace("[E]", "Energy");
     }
 
     @Override

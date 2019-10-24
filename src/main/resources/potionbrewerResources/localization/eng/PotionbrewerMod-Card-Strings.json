@@ -221,7 +221,7 @@
   "potionbrewer:PotentialEnergy": {
     "NAME": "Potential Energy",
     "DESCRIPTION": "Ethereal NL Whenever you gain Strength or Dexterity, gain !M! more.",
-    "UPGRADE_DESCRIPTION": "Ethereal NL Whenever you gain Strength or Dexterity, gain !M! more."
+    "UPGRADE_DESCRIPTION": "Whenever you gain Strength or Dexterity, gain !M! more."
   },
   "potionbrewer:PotionbrewerDefend": {
     "NAME": "Defend",

@@ -38,9 +38,11 @@ public class RootPower extends AbstractPower implements CloneablePowerInterface 
     }
 
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        this.addToBot(new ApplyPowerAction(this.owner, this.owner, new DexterityPower(this.owner, this.amount), this.amount));
-        this.addToBot(new ApplyPowerAction(this.owner, this.owner, new LoseDexterityPower(this.owner, this.amount), this.amount));
-        this.flash();
+        if (card.type.equals(AbstractCard.CardType.ATTACK)) {
+            this.addToBot(new ApplyPowerAction(this.owner, this.owner, new DexterityPower(this.owner, this.amount), this.amount));
+            this.addToBot(new ApplyPowerAction(this.owner, this.owner, new LoseDexterityPower(this.owner, this.amount), this.amount));
+            this.flash();
+        }
     }
 
     @Override

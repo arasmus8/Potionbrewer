@@ -164,7 +164,7 @@
     "NAME": "Root",
     "DESCRIPTION": [
       "Root harvested from a carnivorous plant.",
-      "Gain 1 Temporary Dexterity each time you play a card."
+      "Gain 1 Temporary Dexterity whenever you play an Attack."
     ]
   },
   "potionbrewer:RunicShape": {

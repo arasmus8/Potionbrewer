@@ -40,8 +40,10 @@ public class ChainReactionPower extends AbstractPower implements CloneablePowerI
     }
 
     @Override
-    public void atStartOfTurn() {
-        this.addToBot(new MakeTempCardInDrawPileAction(new Reaction(), amount, true, true));
+    public void atEndOfTurn(boolean isPlayer) {
+        if (isPlayer) {
+            this.addToBot(new MakeTempCardInDrawPileAction(new Reaction(), amount, true, true));
+        }
     }
 
     @Override

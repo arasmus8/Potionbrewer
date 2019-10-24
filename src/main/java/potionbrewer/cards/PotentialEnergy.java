@@ -43,6 +43,7 @@ public class PotentialEnergy extends CustomCard {
         if (!upgraded) {
             upgradeName();
             isEthereal = false;
+            rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }
