@@ -45,11 +45,6 @@ public class FeyFire extends Reagent {
         this.addToTop(new ApplyPowerAction(m, p, new VulnerablePower(m, 3, false), 3));
     }
 
-    @Override
-    public String getCardDescription() {
-        return DESC[1];
-    }
-
     static {
         ImageMaster.loadRelicImg("Lantern", "lantern.png");
         img = ImageMaster.getRelicImg("Lantern");

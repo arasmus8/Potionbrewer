@@ -25,8 +25,8 @@ import potionbrewer.cards.Collect;
 import potionbrewer.cards.PotionbrewerDefend;
 import potionbrewer.cards.PotionbrewerStrike;
 import potionbrewer.patches.PotionTracker;
+import potionbrewer.relics.BunsenBurner;
 import potionbrewer.relics.DefaultClickableRelic;
-import potionbrewer.relics.PlaceholderRelic2;
 import potionbrewer.relics.PotionKit;
 
 import java.util.ArrayList;
@@ -132,7 +132,7 @@ public class Potionbrewer extends CustomPlayer {
         retVal.add(PotionKit.ID);
 
         UnlockTracker.markRelicAsSeen(PotionKit.ID);
-        UnlockTracker.markRelicAsSeen(PlaceholderRelic2.ID);
+        UnlockTracker.markRelicAsSeen(BunsenBurner.ID);
         UnlockTracker.markRelicAsSeen(DefaultClickableRelic.ID);
         
         return retVal;

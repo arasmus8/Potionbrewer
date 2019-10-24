@@ -35,11 +35,6 @@ public class Lightning extends Reagent {
         return new ExplosivePotion();
     }
 
-    @Override
-    public String getCardDescription() {
-        return DESC[1];
-    }
-
     static {
         ImageMaster.loadRelicImg("Bottled Lightning", "bottledLightning.png");
         img = ImageMaster.getRelicImg("Bottled Lightning");

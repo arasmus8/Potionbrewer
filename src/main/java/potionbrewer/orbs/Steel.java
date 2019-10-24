@@ -44,11 +44,6 @@ public class Steel extends Reagent {
         this.addToBot(new GainBlockAction(p, amount));
     }
 
-    @Override
-    public String getCardDescription() {
-        return DESC[1];
-    }
-
     static {
         ImageMaster.loadRelicImg("Orichalcum", "orichalcum.png");
         img = ImageMaster.getRelicImg("Orichalcum");

@@ -36,7 +36,7 @@ public class Distill extends CustomCard {
     public Distill() {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         exhaust = true;
-        selfRetain = true;
+        isEthereal = true;
     }
 
     // Actions the card should do.

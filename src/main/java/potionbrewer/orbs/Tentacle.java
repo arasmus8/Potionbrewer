@@ -43,11 +43,6 @@ public class Tentacle extends Reagent {
         this.addToBot(new ApplyPowerAction(m, p, new ConstrictedPower(m, p, 5)));
     }
 
-    @Override
-    public String getCardDescription() {
-        return DESC[1];
-    }
-
     static {
         ImageMaster.loadRelicImg("Lizard Tail", "lizardTail.png");
         img = ImageMaster.getRelicImg("Lizard Tail");

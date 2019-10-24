@@ -1,14 +1,16 @@
 package potionbrewer.orbs;
 
 import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.OrbStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.potions.LiquidBronze;
+import com.megacrit.cardcrawl.powers.ThornsPower;
 import potionbrewer.PotionbrewerMod;
 
 public class PowerCore extends Reagent {
@@ -19,8 +21,6 @@ public class PowerCore extends Reagent {
 
     public PowerCore() {
         super(ORB_ID, img, orbString.NAME, DESC);
-        blocks = true;
-        block = 12;
         catalyze = true;
         targeted = false;
     }
@@ -41,13 +41,8 @@ public class PowerCore extends Reagent {
     }
 
     @Override
-    public void doBlock(AbstractPlayer p, int amount) {
-            this.addToBot(new GainBlockAction(p, amount));
-    }
-
-    @Override
-    public String getCardDescription() {
-        return DESC[1];
+    public void doEffects(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new ApplyPowerAction(p, p, new ThornsPower(p, 3), 3));
     }
 
     static {

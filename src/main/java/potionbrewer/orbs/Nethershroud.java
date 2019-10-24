@@ -45,11 +45,6 @@ public class Nethershroud extends Reagent {
         this.addToTop(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, 1), 1));
     }
 
-    @Override
-    public String getCardDescription() {
-        return DESC[1];
-    }
-
     static {
         ImageMaster.loadRelicImg("Symbiotic Virus", "virus.png");
         img = ImageMaster.getRelicImg("Symbiotic Virus");

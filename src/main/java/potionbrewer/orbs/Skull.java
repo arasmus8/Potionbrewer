@@ -44,11 +44,6 @@ public class Skull extends Reagent {
         this.addToBot(new MakeTempCardInDrawPileAction(new Reaction(), 1, true, true));
     }
 
-    @Override
-    public String getCardDescription() {
-        return DESC[1];
-    }
-
     static {
         ImageMaster.loadRelicImg("Red Skull", "red_skull.png");
         img = ImageMaster.getRelicImg("Red Skull");

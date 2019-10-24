@@ -44,11 +44,6 @@ public class Bile extends Reagent {
         this.addToBot(new ApplyPowerAction(p, p, new BilePower(p, 1), 1));
     }
 
-    @Override
-    public String getCardDescription() {
-        return DESC[1];
-    }
-
     static {
         ImageMaster.loadRelicImg("Blood Vial", "blood_vial.png");
         img = ImageMaster.getRelicImg("Blood Vial");

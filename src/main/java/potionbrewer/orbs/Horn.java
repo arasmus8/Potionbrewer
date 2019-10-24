@@ -45,11 +45,6 @@ public class Horn extends Reagent {
         this.addToTop(new ApplyPowerAction(p, p, new StrengthPower(p, 3), 3));
     }
 
-    @Override
-    public String getCardDescription() {
-        return DESC[1];
-    }
-
     static {
         ImageMaster.loadRelicImg("Gremlin Horn", "gremlinHorn.png");
         img = ImageMaster.getRelicImg("Gremlin Horn");

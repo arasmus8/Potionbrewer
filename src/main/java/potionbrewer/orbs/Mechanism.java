@@ -64,11 +64,6 @@ public class Mechanism extends Reagent {
         this.addToBot(new MakeTempCardInDrawPileAction(new VoidCard(), 1, false, true, false));
     }
 
-    @Override
-    public String getCardDescription() {
-        return DESC[1];
-    }
-
     static {
         ImageMaster.loadRelicImg("ClockworkSouvenir", "clockwork.png");
         img = ImageMaster.getRelicImg("ClockworkSouvenir");

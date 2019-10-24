@@ -49,11 +49,6 @@ public class Feather extends Reagent {
         this.addToTop(new ApplyPowerAction(p, p, new StrengthPower(p, 1), 1));
     }
 
-    @Override
-    public String getCardDescription() {
-        return DESC[1];
-    }
-
     static {
         ImageMaster.loadRelicImg("Eternal Feather", "eternal_feather.png");
         img = ImageMaster.getRelicImg("Eternal Feather");

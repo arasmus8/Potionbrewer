@@ -60,11 +60,6 @@ public class Sulphur extends Reagent {
         this.addToBot(new GainBlockAction(p, amount));
     }
 
-    @Override
-    public String getCardDescription() {
-        return super.getCardDescription();
-    }
-
     static {
         ImageMaster.loadRelicImg("Brimstone", "brimstone.png");
         img = ImageMaster.getRelicImg("Brimstone");

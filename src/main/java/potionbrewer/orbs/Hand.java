@@ -36,11 +36,6 @@ public class Hand extends Reagent {
         return new BloodPotion();
     }
 
-    @Override
-    public String getCardDescription() {
-        return DESC[1];
-    }
-
     static {
         ImageMaster.loadRelicImg("Mummified Hand", "mummifiedHand.png");
         img = ImageMaster.getRelicImg("Mummified Hand");

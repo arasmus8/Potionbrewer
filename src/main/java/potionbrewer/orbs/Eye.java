@@ -44,11 +44,6 @@ public class Eye extends Reagent {
         this.addToBot(new PlayRandomCardAction(p.hand));
     }
 
-    @Override
-    public String getCardDescription() {
-        return DESC[1];
-    }
-
     static {
         ImageMaster.loadRelicImg("Snecko Eye", "sneckoEye.png");
         img = ImageMaster.getRelicImg("Snecko Eye");

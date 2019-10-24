@@ -46,11 +46,6 @@ public class Grimace extends Reagent {
         this.addToBot(new ApplyPowerAction(p, p, new LoseStrengthPower(p, 3), 3));
     }
 
-    @Override
-    public String getCardDescription() {
-        return DESC[1];
-    }
-
     static {
         ImageMaster.loadRelicImg("GremlinMask", "gremlinMask.png");
         img = ImageMaster.getRelicImg("GremlinMask");

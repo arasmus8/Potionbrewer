@@ -44,11 +44,6 @@ public class Ether extends Reagent {
         this.addToBot(new GainEnergyAction(1));
     }
 
-    @Override
-    public String getCardDescription() {
-        return DESC[1];
-    }
-
     static {
         ImageMaster.loadRelicImg("Bottled Tornado", "bottledTornado.png");
         img = ImageMaster.getRelicImg("Bottled Tornado");

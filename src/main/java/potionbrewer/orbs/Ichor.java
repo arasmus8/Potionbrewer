@@ -20,8 +20,8 @@ public class Ichor extends Reagent {
     public Ichor() {
         super(ORB_ID, img, orbString.NAME, DESC);
         catalyze = true;
-        blocks = true;
-        block = 10;
+        damages = true;
+        damage = 3;
         targeted = false;
     }
 
@@ -43,11 +43,6 @@ public class Ichor extends Reagent {
     @Override
     public void doBlock(AbstractPlayer p, int block) {
         this.addToBot(new GainBlockAction(p, block));
-    }
-
-    @Override
-    public String getCardDescription() {
-        return DESC[1];
     }
 
     static {

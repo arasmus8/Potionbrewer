@@ -52,11 +52,6 @@ public class Flame extends Reagent {
         this.addToBot(new DamageAllEnemiesAction(p, DamageInfo.createDamageMatrix(damage), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE));
     }
 
-    @Override
-    public String getCardDescription() {
-        return DESC[1];
-    }
-
     static {
         ImageMaster.loadRelicImg("Bottled Flame", "bottledFlame.png");
         img = ImageMaster.getRelicImg("Bottled Flame");

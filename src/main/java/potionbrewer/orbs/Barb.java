@@ -60,11 +60,6 @@ public class Barb extends Reagent {
         this.addToBot(new GainBlockAction(p, amount));
     }
 
-    @Override
-    public String getCardDescription() {
-        return DESC[1];
-    }
-
     static {
         ImageMaster.loadRelicImg("Shuriken", "shuriken.png");
         img = ImageMaster.getRelicImg("Shuriken");

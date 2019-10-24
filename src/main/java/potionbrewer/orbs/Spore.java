@@ -43,11 +43,6 @@ public class Spore extends Reagent {
         this.addToTop(new ApplyPowerAction(m, p, new VulnerablePower(m, 1, false), 1));
     }
 
-    @Override
-    public String getCardDescription() {
-        return DESC[1];
-    }
-
     static {
         ImageMaster.loadRelicImg("Odd Mushroom", "mushroom.png");
         img = ImageMaster.getRelicImg("Odd Mushroom");

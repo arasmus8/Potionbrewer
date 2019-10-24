@@ -36,11 +36,6 @@ public class RunicShape extends Reagent {
         return new SpeedPotion();
     }
 
-    @Override
-    public String getCardDescription() {
-        return DESC[1];
-    }
-
     static {
         ImageMaster.loadRelicImg("Runic Cube", "runicCube.png");
         img = ImageMaster.getRelicImg("Runic Cube");

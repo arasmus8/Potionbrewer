@@ -53,11 +53,6 @@ public class Meteorite extends Reagent {
         this.addToBot(new DamageAction(m, info, AbstractGameAction.AttackEffect.SMASH));
     }
 
-    @Override
-    public String getCardDescription() {
-        return DESC[1];
-    }
-
     static {
         ImageMaster.loadRelicImg("Black Star", "blackstar.png");
         img = ImageMaster.getRelicImg("Black Star");

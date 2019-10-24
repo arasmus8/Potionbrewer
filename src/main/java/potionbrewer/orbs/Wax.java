@@ -59,11 +59,6 @@ public class Wax extends Reagent {
         this.addToBot(new DamageAction(m, info, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
     }
 
-    @Override
-    public String getCardDescription() {
-        return DESC[1];
-    }
-
     static {
         ImageMaster.loadRelicImg("Blue Candle", "blueCandle.png");
         img = ImageMaster.getRelicImg("Blue Candle");

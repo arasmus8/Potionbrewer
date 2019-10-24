@@ -45,11 +45,6 @@ public class Crown extends Reagent {
         this.addToBot(new ApplyPowerAction(p, p, new MetallicizePower(p, 6), 6));
     }
 
-    @Override
-    public String getCardDescription() {
-        return DESC[1];
-    }
-
     static {
         ImageMaster.loadRelicImg("Busted Crown", "crown.png");
         img = ImageMaster.getRelicImg("Busted Crown");

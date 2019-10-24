@@ -41,12 +41,12 @@ import potionbrewer.potions.*;
 import potionbrewer.potions.tonics.TonicLibrary;
 import potionbrewer.powers.PotionTrackingPower;
 import potionbrewer.relics.BottledPlaceholderRelic;
+import potionbrewer.relics.BunsenBurner;
 import potionbrewer.relics.DefaultClickableRelic;
-import potionbrewer.relics.PlaceholderRelic2;
 import potionbrewer.relics.PotionKit;
 import potionbrewer.util.IDCheckDontTouchPls;
 import potionbrewer.util.TextureLoader;
-import potionbrewer.variables.TurnNumber;
+import potionbrewer.variables.*;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -302,7 +302,7 @@ public class PotionbrewerMod implements
         BaseMod.addRelicToCustomPool(new DefaultClickableRelic(), Potionbrewer.Enums.COLOR_CYAN);
 
 
-        BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);
+        BaseMod.addRelic(new BunsenBurner(), RelicType.SHARED);
 
 
         UnlockTracker.markRelicAsSeen(BottledPlaceholderRelic.ID);
@@ -318,6 +318,12 @@ public class PotionbrewerMod implements
         logger.info("Add variables");
 
         BaseMod.addDynamicVariable(new TurnNumber());
+        BaseMod.addDynamicVariable(new ReagentOneDamage());
+        BaseMod.addDynamicVariable(new ReagentTwoDamage());
+        BaseMod.addDynamicVariable(new ReagentThreeDamage());
+        BaseMod.addDynamicVariable(new ReagentOneBlock());
+        BaseMod.addDynamicVariable(new ReagentTwoBlock());
+        BaseMod.addDynamicVariable(new ReagentThreeBlock());
 
         logger.info("Adding cards");
 

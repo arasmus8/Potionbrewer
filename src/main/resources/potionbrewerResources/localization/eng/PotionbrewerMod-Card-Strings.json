@@ -317,7 +317,7 @@
   },
   "potionbrewer:Distill": {
     "NAME": "Distill",
-    "DESCRIPTION": "Retain. NL Brew your rightmost potionbrewer:Reagent into a potion over 3 turns. NL Exhaust."
+    "DESCRIPTION": "Ethereal. NL Brew your rightmost potionbrewer:Reagent into a potion over 3 turns. NL Exhaust."
   },
   "potionbrewer:ChoosePotion": {
     "NAME": "Potion",
@@ -325,6 +325,14 @@
     "EXTENDED_DESCRIPTION": [
       "Use a ",
       "Obtain a "
+    ]
+  },
+  "potionbrewer:ChooseReagent": {
+    "NAME": "Reagent",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "Collect a ",
+      "Collect an "
     ]
   },
   "potionbrewer:ReagentCard": {
@@ -374,9 +382,5 @@
   "potionbrewer:ChooseTooth": {
     "NAME": "Tooth",
     "DESCRIPTION": "Collect a Tooth Reagent."
-  },
-  "potionbrewer:TestPotionSelect": {
-    "NAME": "TEST - Potion Select",
-    "DESCRIPTION": "Select a potion."
   }
 }

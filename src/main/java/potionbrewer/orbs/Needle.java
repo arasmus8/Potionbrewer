@@ -37,11 +37,6 @@ public class Needle extends Reagent {
         return new SwiftPotion();
     }
 
-    @Override
-    public String getCardDescription() {
-        return DESC[1];
-    }
-
     static {
         ImageMaster.loadRelicImg("Vajra", "vajra.png");
         img = ImageMaster.getRelicImg("Vajra");

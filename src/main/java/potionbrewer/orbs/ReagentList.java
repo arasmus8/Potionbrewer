@@ -3,7 +3,7 @@ package potionbrewer.orbs;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
-import potionbrewer.cards.option.*;
+import potionbrewer.cards.option.ChooseReagent;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -125,17 +125,17 @@ public class ReagentList {
 
     private static RandomEntry randomEntry(ArrayList<RandomEntry> toExclude) {
         ArrayList<RandomEntry> list = new ArrayList<>();
-        list.add(new RandomEntry(9, new ChooseBone(), new Bone()));
-        list.add(new RandomEntry(5, new ChooseEther(), new Ether()));
-        list.add(new RandomEntry(15, new ChooseFeather(), new Feather()));
-        list.add(new RandomEntry(5, new ChooseFlame(), new Flame()));
-        list.add(new RandomEntry(9, new ChooseGrimace(), new Grimace()));
-        list.add(new RandomEntry(20, new ChooseIchor(), new Ichor()));
-        list.add(new RandomEntry(5, new ChooseLightning(), new Lightning()));
-        list.add(new RandomEntry(9, new ChooseSilk(), new Silk()));
-        list.add(new RandomEntry(9, new ChooseSpore(), new Spore()));
-        list.add(new RandomEntry(5, new ChooseSteel(), new Steel()));
-        list.add(new RandomEntry(9, new ChooseTooth(), new Tooth()));
+        list.add(new RandomEntry(9, new Bone()));
+        list.add(new RandomEntry(5, new Ether()));
+        list.add(new RandomEntry(15, new Feather()));
+        list.add(new RandomEntry(5, new Flame()));
+        list.add(new RandomEntry(9, new Grimace()));
+        list.add(new RandomEntry(20, new Ichor()));
+        list.add(new RandomEntry(5, new Lightning()));
+        list.add(new RandomEntry(9, new Silk()));
+        list.add(new RandomEntry(9, new Spore()));
+        list.add(new RandomEntry(5, new Steel()));
+        list.add(new RandomEntry(9, new Tooth()));
         if (toExclude != null) {
             for (RandomEntry exclude : toExclude) {
                 list.remove(exclude);
@@ -173,9 +173,9 @@ public class ReagentList {
         protected AbstractCard optionCard;
         protected Reagent reagent;
 
-        public RandomEntry(int chance, AbstractCard optionCard, Reagent reagent) {
+        public RandomEntry(int chance, Reagent reagent) {
             this.chance = chance;
-            this.optionCard = optionCard;
+            this.optionCard = new ChooseReagent(reagent.ID);
             this.reagent = reagent;
         }
 

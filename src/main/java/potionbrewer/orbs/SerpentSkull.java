@@ -60,11 +60,6 @@ public class SerpentSkull extends Reagent {
         this.addToBot(new VFXAction(new BiteEffect(m.hb.cX, m.hb.cY - 40.0F * Settings.scale, Settings.GOLD_COLOR.cpy()), 0.3F));
     }
 
-    @Override
-    public String getCardDescription() {
-        return DESC[1];
-    }
-
     static {
         ImageMaster.loadRelicImg("Snake Skull", "snakeSkull.png");
         img = ImageMaster.getRelicImg("Snake Skull");

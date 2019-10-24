@@ -49,7 +49,7 @@ public class Prototype extends CustomCard {
         String[] types = {"Compound", "Solution", "Serum", "Draught", "Elixir", "Brew", "Tincture", "Mixture", "Philter"};
         String chosenAdj = adjs[(ReagentList.indexFromReagent(a) + ReagentList.indexFromReagent(b)) % adjs.length];
         String chosenType = types[(ReagentList.indexFromReagent(b) + ReagentList.indexFromReagent(c)) % types.length];
-        String suffix = "#" + ReagentList.indexFromReagent(a) + ReagentList.indexFromReagent(c);
+        String suffix = "#" + (ReagentList.indexFromReagent(a) + ReagentList.indexFromReagent(c));
         return chosenAdj + " " + chosenType + " " + suffix;
         // return a.name + "/" + b.name + "/" + c.name + (upgraded ? " +" : "");
     }
@@ -59,11 +59,11 @@ public class Prototype extends CustomCard {
             return CARD_STRINGS.DESCRIPTION;
         }
         StringBuilder s = new StringBuilder();
-        s.append(a.getCardDescription());
+        s.append(a.getCardDescription(1));
         s.append(" NL ");
-        s.append(b.getCardDescription());
+        s.append(b.getCardDescription(2));
         s.append(" NL ");
-        s.append(c.getCardDescription());
+        s.append(c.getCardDescription(3));
         if (a.exhaust || b.exhaust || c.exhaust) {
             s.append(" NL Exhaust.");
         }
@@ -120,7 +120,7 @@ public class Prototype extends CustomCard {
         vec.rotate(this.angle);
         float x = this.current_x + vec.x;
         float y = this.current_y + vec.y;
-        float scale = this.drawScale * 0.5F;
+        float scale = this.drawScale * 0.7F;
         sb.draw(img, x - 64.0F, y - 64.0F, 64.0F, 64.0F, 128.0F, 128.0F, scale, scale, 0.0F, 0, 0, 128, 128, false, false);
     }
 

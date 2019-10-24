@@ -24,7 +24,7 @@ public class Tooth extends Reagent {
     public Tooth() {
         super(ORB_ID, img, orbString.NAME, DESC);
         damages = true;
-        damage = 5;
+        damage = 6;
     }
 
     @Override
@@ -50,11 +50,6 @@ public class Tooth extends Reagent {
     @Override
     public void doDamage(AbstractPlayer p, AbstractMonster m, DamageInfo info) {
         this.addToBot(new DamageAction(m, info, AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-    }
-
-    @Override
-    public String getCardDescription() {
-        return DESC[1];
     }
 
     static {

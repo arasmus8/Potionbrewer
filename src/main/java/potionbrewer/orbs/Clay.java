@@ -44,11 +44,6 @@ public class Clay extends Reagent {
         this.addToBot(new ApplyPowerAction(p, p, new TheBombPower(p, 2, 30), 2));
     }
 
-    @Override
-    public String getCardDescription() {
-        return DESC[1];
-    }
-
     static {
         ImageMaster.loadRelicImg("Self Forming Clay", "clay.png");
         img = ImageMaster.getRelicImg("Self Forming Clay");

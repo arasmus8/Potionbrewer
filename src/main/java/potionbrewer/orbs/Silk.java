@@ -44,11 +44,6 @@ public class Silk extends Reagent {
         this.addToBot(new GainBlockAction(p, amount));
     }
 
-    @Override
-    public String getCardDescription() {
-        return DESC[1];
-    }
-
     static {
         ImageMaster.loadRelicImg("Thread and Needle", "threadAndNeedle.png");
         img = ImageMaster.getRelicImg("Thread and Needle");

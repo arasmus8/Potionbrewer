@@ -53,11 +53,6 @@ public class TinyHat extends Reagent {
         this.addToBot(new DamageAction(m, info, AbstractGameAction.AttackEffect.SMASH));
     }
 
-    @Override
-    public String getCardDescription() {
-        return DESC[1];
-    }
-
     static {
         ImageMaster.loadRelicImg("Bowler Hat", "bowlerHat.png");
         img = ImageMaster.getRelicImg("Bowler Hat");

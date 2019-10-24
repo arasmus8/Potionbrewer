@@ -45,11 +45,6 @@ public class Root extends Reagent {
         this.addToBot(new ApplyPowerAction(p, p, new RootPower(p, 1), 1));
     }
 
-    @Override
-    public String getCardDescription() {
-        return DESC[1];
-    }
-
     static {
         ImageMaster.loadRelicImg("Ginger", "ginger.png");
         img = ImageMaster.getRelicImg("Ginger");

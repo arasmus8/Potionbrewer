@@ -47,11 +47,6 @@ public class Gold extends Reagent {
         }
     }
 
-    @Override
-    public String getCardDescription() {
-        return DESC[1];
-    }
-
     static {
         ImageMaster.loadRelicImg("Old Coin", "oldCoin.png");
         img = ImageMaster.getRelicImg("Old Coin");

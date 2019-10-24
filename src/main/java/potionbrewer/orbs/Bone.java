@@ -43,11 +43,6 @@ public class Bone extends Reagent {
         this.addToBot(new ApplyPowerAction(m, p, new WeakPower(m, 1, false), 1));
     }
 
-    @Override
-    public String getCardDescription() {
-        return DESC[1];
-    }
-
     static {
         ImageMaster.loadRelicImg("Meat on the Bone", "meat.png");
         img = ImageMaster.getRelicImg("Meat on the Bone");
