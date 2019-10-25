@@ -36,9 +36,24 @@ public class ChoosePotion extends AbstractCard {
         super(ID, name(id), portrait(id), 0, CARD_STRINGS.DESCRIPTION, CardType.STATUS, CardColor.COLORLESS, CardRarity.COMMON, CardTarget.NONE);
         this.potionId = id;
         this.obtain = obtain;
-        rawDescription = (obtain ? CARD_STRINGS.EXTENDED_DESCRIPTION[1] : CARD_STRINGS.EXTENDED_DESCRIPTION[0]) + this.name;
+        rawDescription = (obtain ? CARD_STRINGS.EXTENDED_DESCRIPTION[1] : CARD_STRINGS.EXTENDED_DESCRIPTION[0])
+                + (isVowel(this.name.charAt(0)) ? CARD_STRINGS.EXTENDED_DESCRIPTION[3] : CARD_STRINGS.EXTENDED_DESCRIPTION[2])
+                + this.name;
         exhaust = true;
         initializeDescription();
+    }
+
+    private static boolean isVowel(final char leading) {
+        return leading == 'A' ||
+                leading == 'E' ||
+                leading == 'I' ||
+                leading == 'O' ||
+                leading == 'U' ||
+                leading == 'a' ||
+                leading == 'e' ||
+                leading == 'i' ||
+                leading == 'o' ||
+                leading == 'u';
     }
 
     public ChoosePotion(final String id) {
@@ -50,7 +65,7 @@ public class ChoosePotion extends AbstractCard {
     }
 
     public static String getRandomPotionId() {
-        return inBattleIds.get(MathUtils.random(inBattleIds.size()));
+        return inBattleIds.get(MathUtils.random(inBattleIds.size() - 1));
     }
 
     public static ArrayList<String> getRandomPotionIdList(final int amount) {
@@ -109,13 +124,13 @@ public class ChoosePotion extends AbstractCard {
 
     public static String name(final String id) {
         if (id == null) {
-            return CARD_STRINGS.EXTENDED_DESCRIPTION[2];
+            return CARD_STRINGS.EXTENDED_DESCRIPTION[4];
         } else if (id.equals("RAND_TONIC")) {
-            return CARD_STRINGS.EXTENDED_DESCRIPTION[3];
+            return CARD_STRINGS.EXTENDED_DESCRIPTION[5];
         }
         AbstractPotion p = fromId(id);
         if (p == null) {
-            return CARD_STRINGS.EXTENDED_DESCRIPTION[4];
+            return CARD_STRINGS.EXTENDED_DESCRIPTION[6];
         } else {
             return p.name;
         }
@@ -157,6 +172,7 @@ public class ChoosePotion extends AbstractCard {
         imageMap.put(Ambrosia.POTION_ID, "purple/power/deva_form");
         imageMap.put(AncientPotion.POTION_ID, "colorless/skill/panacea");
         imageMap.put(AttackPotion.POTION_ID, "red/skill/infernal_blade");
+        imageMap.put(BlessingOfTheForge.POTION_ID, "red/skill/armaments");
         imageMap.put(BlockPotion.POTION_ID, "red/skill/defend");
         imageMap.put(BloodPotion.POTION_ID, "colorless/skill/violence");
         imageMap.put(BottledMiracle.POTION_ID, "colorless/skill/miracle");

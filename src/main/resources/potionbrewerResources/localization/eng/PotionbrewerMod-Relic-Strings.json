@@ -1,34 +1,26 @@
 {
+  "potionbrewer:BottledElixir": {
+    "NAME": "Bottled Elixir",
+    "FLAVOR": "TODO: Add some flavor.",
+    "DESCRIPTIONS": [
+      "Choose a card. The first time you use a potion, draw the chosen card.",
+      "When you use a potion, draw ",
+      ".",
+      "Select a card to bottle for "
+    ]
+  },
+  "potionbrewer:BunsenBurner": {
+    "NAME": "Bunsen Burner",
+    "FLAVOR": "It's labeled 'Property of Citytown High'.",
+    "DESCRIPTIONS": [
+      "Whenever you use a Potion, add a #yDistill to your hand."
+    ]
+  },
   "potionbrewer:PotionKit": {
     "NAME": "Potion Kit",
     "FLAVOR": "The essential tools of the Potion Brewer's trade.",
     "DESCRIPTIONS": [
       "Add an additional Potion slot. Each battle brew a tonic."
-    ]
-  },
-  "potionbrewer:PlaceholderRelic2": {
-    "NAME": "Placeholder Relic 2",
-    "FLAVOR": "You feel stronger.",
-    "DESCRIPTIONS": [
-      "At the start of each combat, gain #b1 #yStrength."
-    ]
-  },
-  "potionbrewer:DefaultClickableRelic": {
-    "NAME": "Right-Clicky Relic",
-    "FLAVOR": "The more you right-click it, the more orbs you've evoked in your lifetime.",
-    "DESCRIPTIONS": [
-      "[#2aecd7]Usable [#2aecd7]once [#2aecd7]per [#2aecd7]turn.[] NL #yEvoke your rightmost Orb.",
-      "YOU ARE MINE!"
-    ]
-  },
-  "potionbrewer:BottledPlaceholderRelic": {
-    "NAME": "Bottled Placeholder",
-    "FLAVOR": "What is this?",
-    "DESCRIPTIONS": [
-      "Choose a card. Whenever you take play any card, draw the chosen card.",
-      "Whenever you play a card, draw ",
-      ".",
-      "Select a card to bottle for "
     ]
   }
 }

@@ -41,7 +41,10 @@ public class IronHeart extends CustomCard {
     @Override
     public void upgrade() {
         if (!upgraded) {
+            ++this.timesUpgraded;// 860
+            upgraded = true;
             name = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
+            initializeTitle();
             upgradeMagicNumber(UPGRADE_MAGIC);
             initializeDescription();
         }

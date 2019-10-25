@@ -70,7 +70,10 @@ public class AcidCloud extends FollowupCard {
     @Override
     public void upgrade() {
         if (!upgraded) {
+            ++this.timesUpgraded;// 860
+            upgraded = true;
             name = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
+            initializeTitle();
             upgradeBlock(UPGRADE_BLOCK_AMT);
             upgradeMagicNumber(UPGRADE_MAGIC_AMT);
             initializeDescription();

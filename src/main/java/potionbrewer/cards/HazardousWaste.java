@@ -64,7 +64,10 @@ public class HazardousWaste extends CatalyzeCard {
     @Override
     public void upgrade() {
         if (!upgraded) {
-            this.name = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
+            ++this.timesUpgraded;// 860
+            upgraded = true;
+            name = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
+            initializeTitle();
             rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
             initializeDescription();
         }

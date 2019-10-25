@@ -36,7 +36,6 @@ public class FlashPowder extends CatalyzeCard {
     private static final int UPGRADE_PLUS_DMG = 3;
 
     private static final int DRAW = 1;
-    private static final int UPGRADE_DRAW = 1;
     // /STAT DECLARATION/
 
     public FlashPowder() {
@@ -61,9 +60,11 @@ public class FlashPowder extends CatalyzeCard {
     @Override
     public void upgrade() {
         if (!upgraded) {
+            ++this.timesUpgraded;// 860
+            upgraded = true;
             name = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
+            initializeTitle();
             upgradeDamage(UPGRADE_PLUS_DMG);
-            // upgradeMagicNumber(UPGRADE_DRAW);
             initializeDescription();
         }
     }

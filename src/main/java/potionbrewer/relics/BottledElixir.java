@@ -7,16 +7,17 @@ import basemod.abstracts.CustomSavable;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.AutoplayCardAction;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.AutoplayField;
-import com.megacrit.cardcrawl.actions.utility.UseCardAction;
+import com.evacipated.cardcrawl.mod.stslib.relics.BetterOnUsePotionRelic;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.PowerTip;
+import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import potionbrewer.PotionbrewerMod;
-import potionbrewer.patches.relics.BottledPlaceholderField;
+import potionbrewer.patches.relics.BottledElixirField;
 import potionbrewer.util.TextureLoader;
 
 import java.util.Iterator;
@@ -25,16 +26,16 @@ import java.util.function.Predicate;
 import static potionbrewer.PotionbrewerMod.makeRelicOutlinePath;
 import static potionbrewer.PotionbrewerMod.makeRelicPath;
 
-public class BottledPlaceholderRelic extends CustomRelic implements CustomBottleRelic, CustomSavable<Integer> {
+public class BottledElixir extends CustomRelic implements BetterOnUsePotionRelic, CustomBottleRelic, CustomSavable<Integer> {
     
     private static AbstractCard card;
     private boolean cardSelected = true;
-    
-    public static final String ID = PotionbrewerMod.makeID("BottledPlaceholderRelic");
+
+    public static final String ID = PotionbrewerMod.makeID(BottledElixir.class.getSimpleName());
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("BottledPlaceholder.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("BottledPlaceholder.png"));
-    
-    public BottledPlaceholderRelic() {
+
+    public BottledElixir() {
         super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.CLINK);
         tips.clear();
         tips.add(new PowerTip(name, description));
@@ -42,7 +43,7 @@ public class BottledPlaceholderRelic extends CustomRelic implements CustomBottle
     
     @Override
     public Predicate<AbstractCard> isOnCard() {
-        return BottledPlaceholderField.inBottledPlaceholderField::get;
+        return BottledElixirField.inBottledElixirField::get;
     }
     
     @Override
@@ -62,7 +63,7 @@ public class BottledPlaceholderRelic extends CustomRelic implements CustomBottle
         if (cardIndex >= 0 && cardIndex < AbstractDungeon.player.masterDeck.group.size()) {
             card = AbstractDungeon.player.masterDeck.group.get(cardIndex);
             if (card != null) {
-                BottledPlaceholderField.inBottledPlaceholderField.set(card, true);
+                BottledElixirField.inBottledElixirField.set(card, true);
                 setDescriptionAfterLoading();
             }
         }
@@ -87,7 +88,7 @@ public class BottledPlaceholderRelic extends CustomRelic implements CustomBottle
         if (card != null) {
             AbstractCard cardInDeck = AbstractDungeon.player.masterDeck.getSpecificCard(card);
             if (cardInDeck != null) {
-                BottledPlaceholderField.inBottledPlaceholderField.set(cardInDeck, false);
+                BottledElixirField.inBottledElixirField.set(cardInDeck, false);
             }
         }
     }
@@ -98,8 +99,8 @@ public class BottledPlaceholderRelic extends CustomRelic implements CustomBottle
         if (!cardSelected && !AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
             cardSelected = true;
             card = AbstractDungeon.gridSelectScreen.selectedCards.get(0);
-            
-            BottledPlaceholderField.inBottledPlaceholderField.set(card, true);
+
+            BottledElixirField.inBottledElixirField.set(card, true);
             if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.INCOMPLETE) {
                 AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
             }
@@ -108,35 +109,44 @@ public class BottledPlaceholderRelic extends CustomRelic implements CustomBottle
             setDescriptionAfterLoading();
         }
     }
-    
-    public void onUseCard(AbstractCard targetCard, UseCardAction useCardAction) {
+
+    @Override
+    public void atBattleStartPreDraw() {
+        pulse = true;
+    }
+
+    @Override
+    public void betterOnUsePotion(AbstractPotion abstractPotion) {
         boolean fullHandDialog = false;
-        for (Iterator<AbstractCard> it = AbstractDungeon.player.drawPile.group.iterator(); it.hasNext(); ) {
-            AbstractCard card = it.next();
-            if (BottledPlaceholderField.inBottledPlaceholderField.get(card)) {
-                this.flash();
-                it.remove();
-                if (AbstractDungeon.player.hand.size() < BaseMod.MAX_HAND_SIZE) {
-                    if (AutoplayField.autoplay.get(card)) {
-                        AbstractDungeon.actionManager.addToBottom(new AutoplayCardAction(card, AbstractDungeon.player.hand));
+        if (pulse) {
+            pulse = false;
+            for (Iterator<AbstractCard> it = AbstractDungeon.player.drawPile.group.iterator(); it.hasNext(); ) {
+                AbstractCard card = it.next();
+                if (BottledElixirField.inBottledElixirField.get(card)) {
+                    this.flash();
+                    it.remove();
+                    if (AbstractDungeon.player.hand.size() < BaseMod.MAX_HAND_SIZE) {
+                        if (AutoplayField.autoplay.get(card)) {
+                            AbstractDungeon.actionManager.addToBottom(new AutoplayCardAction(card, AbstractDungeon.player.hand));
+                        }
+                        card.triggerWhenDrawn();
+                        AbstractDungeon.player.drawPile.moveToHand(card, AbstractDungeon.player.drawPile);
+
+                        for (AbstractRelic r : AbstractDungeon.player.relics) {
+                            r.onCardDraw(card);
+                        }
+                    } else {
+                        if (!fullHandDialog) {
+                            AbstractDungeon.player.createHandIsFullDialog();
+                            fullHandDialog = true;
+                        }
+                        AbstractDungeon.player.drawPile.moveToDiscardPile(card);
                     }
-                    card.triggerWhenDrawn();
-                    AbstractDungeon.player.drawPile.moveToHand(card, AbstractDungeon.player.drawPile);
-                    
-                    for (AbstractRelic r : AbstractDungeon.player.relics) {
-                        r.onCardDraw(card);
-                    }
-                } else {
-                    if (!fullHandDialog) {
-                        AbstractDungeon.player.createHandIsFullDialog();
-                        fullHandDialog = true;
-                    }
-                    AbstractDungeon.player.drawPile.moveToDiscardPile(card);
                 }
             }
         }
     }
-    
+
     public void setDescriptionAfterLoading() {
         this.description = DESCRIPTIONS[1] + FontHelper.colorString(card.name, "y") + DESCRIPTIONS[2];
         this.tips.clear();

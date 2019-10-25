@@ -1,11 +1,14 @@
 package potionbrewer.orbs;
 
 import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.OrbStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.potions.SmokeBomb;
@@ -21,7 +24,6 @@ public class Ichor extends Reagent {
         super(ORB_ID, img, orbString.NAME, DESC);
         damages = true;
         damage = 3;
-        targeted = false;
     }
 
     @Override
@@ -40,8 +42,8 @@ public class Ichor extends Reagent {
     }
 
     @Override
-    public void doBlock(AbstractPlayer p, int block) {
-        this.addToBot(new GainBlockAction(p, block));
+    public void doDamage(AbstractPlayer p, AbstractMonster m, DamageInfo info) {
+        this.addToBot(new DamageAction(m, info, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
     }
 
     static {

@@ -3,6 +3,7 @@ package potionbrewer;
 import basemod.BaseMod;
 import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
+import basemod.abstracts.CustomSavable;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
@@ -10,6 +11,7 @@ import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
+import com.evacipated.cardcrawl.mod.stslib.relics.BetterOnUsePotionRelic;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
@@ -26,6 +28,7 @@ import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import potionbrewer.cards.FollowupCard;
@@ -40,9 +43,8 @@ import potionbrewer.patches.PotionTracker;
 import potionbrewer.potions.*;
 import potionbrewer.potions.tonics.TonicLibrary;
 import potionbrewer.powers.PotionTrackingPower;
-import potionbrewer.relics.BottledPlaceholderRelic;
+import potionbrewer.relics.BottledElixir;
 import potionbrewer.relics.BunsenBurner;
-import potionbrewer.relics.DefaultClickableRelic;
 import potionbrewer.relics.PotionKit;
 import potionbrewer.util.IDCheckDontTouchPls;
 import potionbrewer.util.TextureLoader;
@@ -58,6 +60,7 @@ import java.util.stream.Collectors;
 
 @SpireInitializer
 public class PotionbrewerMod implements
+        CustomSavable<String>,
         EditCardsSubscriber,
         EditRelicsSubscriber,
         EditStringsSubscriber,
@@ -76,7 +79,6 @@ public class PotionbrewerMod implements
     private static final Logger logger = Logger.getLogger(PotionbrewerMod.class.getName());
     public static Properties potionbrewerSettings = new Properties();
     public static final String ENABLE_PLACEHOLDER_SETTINGS = "enablePlaceholder";
-    public static final String REAGENTS = "reagentList";
     private static final String DELIM = ", ";
     public static boolean enablePlaceholder = true;
 
@@ -173,6 +175,9 @@ public class PotionbrewerMod implements
             e.printStackTrace();
         }
         logger.info("Done adding mod settings");
+
+        BaseMod.addSaveField("potionbrewer:reagents", this);
+        logger.info("Done adding mod savable fields");
     }
 
     public static void setModID(String ID) {
@@ -298,14 +303,12 @@ public class PotionbrewerMod implements
 
 
         BaseMod.addRelicToCustomPool(new PotionKit(), Potionbrewer.Enums.COLOR_CYAN);
-        BaseMod.addRelicToCustomPool(new BottledPlaceholderRelic(), Potionbrewer.Enums.COLOR_CYAN);
-        BaseMod.addRelicToCustomPool(new DefaultClickableRelic(), Potionbrewer.Enums.COLOR_CYAN);
+        BaseMod.addRelicToCustomPool(new BunsenBurner(), Potionbrewer.Enums.COLOR_CYAN);
 
+        BaseMod.addRelic(new BottledElixir(), RelicType.SHARED);
 
-        BaseMod.addRelic(new BunsenBurner(), RelicType.SHARED);
-
-
-        UnlockTracker.markRelicAsSeen(BottledPlaceholderRelic.ID);
+        UnlockTracker.markRelicAsSeen(BottledElixir.ID);
+        UnlockTracker.markRelicAsSeen(BunsenBurner.ID);
         logger.info("Done adding relics!");
     }
 
@@ -388,23 +391,6 @@ public class PotionbrewerMod implements
 
     @Override
     public void receiveStartGame() {
-        reagents.clear();
-        potionbrewerSettings.remove(REAGENTS);
-        try {
-            SpireConfig config = new SpireConfig("PotionbrewerMod", "potionbrewerConfig", potionbrewerSettings);
-
-            config.load();
-            String reagentStr = config.getString(REAGENTS);
-            if (!reagentStr.equals("")) {
-                for (String r : reagentStr.split(DELIM)) {
-                    AbstractOrb o = ReagentList.fromId(r);
-                    reagents.add((Reagent) o);
-                }
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
         ChoosePotion.initializePotionList(AbstractDungeon.player.chosenClass);
     }
 
@@ -412,14 +398,6 @@ public class PotionbrewerMod implements
     public void receiveStartAct() {
         if (AbstractDungeon.floorNum == 0) {
             reagents.clear();
-            potionbrewerSettings.setProperty(REAGENTS, "");
-            try {
-                SpireConfig config = new SpireConfig("PotionbrewerMod", "potionbrewerConfig", potionbrewerSettings);
-                config.setString(REAGENTS, "");
-                config.save();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
         }
     }
 
@@ -464,6 +442,12 @@ public class PotionbrewerMod implements
                 }
             }
         }
+
+        for (AbstractRelic relic : AbstractDungeon.player.relics) {
+            if (relic instanceof BetterOnUsePotionRelic) {
+                ((BetterOnUsePotionRelic) relic).betterOnUsePotion(potion);
+            }
+        }
     }
 
     @Override
@@ -471,17 +455,6 @@ public class PotionbrewerMod implements
         AbstractPlayer p = AbstractDungeon.player;
         if (p == null) {
             return;
-        }
-
-        String listString = reagents.stream().map(Object::toString)
-                .collect(Collectors.joining(DELIM));
-        potionbrewerSettings.setProperty(REAGENTS, listString);
-        try {
-            SpireConfig config = new SpireConfig("PotionbrewerMod", "potionbrewerConfig", potionbrewerSettings);
-            config.setString(REAGENTS, listString);
-            config.save();
-        } catch (Exception e) {
-            e.printStackTrace();
         }
 
         for (Reagent r : reagents) {
@@ -506,15 +479,23 @@ public class PotionbrewerMod implements
                 reagents.add((Reagent) orb);
             }
         }
-        String listString = reagents.stream().map(Object::toString)
+    }
+
+    @Override
+    public String onSave() {
+        return reagents.stream()
+                .map(Object::toString)
                 .collect(Collectors.joining(DELIM));
-        potionbrewerSettings.setProperty(REAGENTS, listString);
-        try {
-            SpireConfig config = new SpireConfig("PotionbrewerMod", "potionbrewerConfig", potionbrewerSettings);
-            config.setString(REAGENTS, listString);
-            config.save();
-        } catch (Exception e) {
-            e.printStackTrace();
+    }
+
+    @Override
+    public void onLoad(String reagentStr) {
+        reagents.clear();
+        if (reagentStr != null && !reagentStr.equals("")) {
+            for (String r : reagentStr.split(DELIM)) {
+                AbstractOrb o = ReagentList.fromId(r);
+                reagents.add((Reagent) o);
+            }
         }
     }
 

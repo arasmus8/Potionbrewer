@@ -29,6 +29,11 @@ public abstract class CatalyzeCard extends CustomCard {
     }
 
     @Override
+    public void triggerWhenDrawn() {
+        triggerOnGlowCheck();
+    }
+
+    @Override
     public void triggerOnGlowCheck() {
         if (AbstractDungeon.player != null &&
                 PotionTracker.potionsUsedThisTurn.get(AbstractDungeon.player) > 0 &&
