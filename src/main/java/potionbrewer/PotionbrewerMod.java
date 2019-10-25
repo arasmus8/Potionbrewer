@@ -43,9 +43,7 @@ import potionbrewer.patches.PotionTracker;
 import potionbrewer.potions.*;
 import potionbrewer.potions.tonics.TonicLibrary;
 import potionbrewer.powers.PotionTrackingPower;
-import potionbrewer.relics.BottledElixir;
-import potionbrewer.relics.BunsenBurner;
-import potionbrewer.relics.PotionKit;
+import potionbrewer.relics.*;
 import potionbrewer.util.IDCheckDontTouchPls;
 import potionbrewer.util.TextureLoader;
 import potionbrewer.variables.*;
@@ -306,9 +304,15 @@ public class PotionbrewerMod implements
         BaseMod.addRelicToCustomPool(new BunsenBurner(), Potionbrewer.Enums.COLOR_CYAN);
 
         BaseMod.addRelic(new BottledElixir(), RelicType.SHARED);
+        BaseMod.addRelic(new MortarAndPestle(), RelicType.SHARED);
+        BaseMod.addRelic(new SalesContract(), RelicType.SHARED);
+        BaseMod.addRelic(new Torch(), RelicType.SHARED);
 
         UnlockTracker.markRelicAsSeen(BottledElixir.ID);
         UnlockTracker.markRelicAsSeen(BunsenBurner.ID);
+        UnlockTracker.markRelicAsSeen(MortarAndPestle.ID);
+        UnlockTracker.markRelicAsSeen(SalesContract.ID);
+        UnlockTracker.markRelicAsSeen(Torch.ID);
         logger.info("Done adding relics!");
     }
 

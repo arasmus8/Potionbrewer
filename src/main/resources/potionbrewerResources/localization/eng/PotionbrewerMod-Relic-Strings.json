@@ -16,11 +16,32 @@
       "Whenever you use a Potion, add a #yDistill to your hand."
     ]
   },
+  "potionbrewer:MortarAndPestle": {
+    "NAME": "Mortal and Pestle",
+    "FLAVOR": "TODO: Add Flavor",
+    "DESCRIPTIONS": [
+      "Whenever you discard a potion, heal 3 HP."
+    ]
+  },
   "potionbrewer:PotionKit": {
     "NAME": "Potion Kit",
     "FLAVOR": "The essential tools of the Potion Brewer's trade.",
     "DESCRIPTIONS": [
       "Add an additional Potion slot. Each battle brew a tonic."
+    ]
+  },
+  "potionbrewer:SalesContract": {
+    "NAME": "Sales Contract",
+    "FLAVOR": "TODO: Add flavor.",
+    "DESCRIPTIONS": [
+      "Whenever you discard a potion, receive 20 gold."
+    ]
+  },
+  "potionbrewer:Torch": {
+    "NAME": "Torch",
+    "FLAVOR": "Burns brightly. Goes great with pitchforks.",
+    "DESCRIPTIONS": [
+      "Gain [E] on your second turn."
     ]
   }
 }
