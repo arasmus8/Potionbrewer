@@ -1,5 +1,6 @@
 package potionbrewer.cards;
 
+import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
@@ -8,12 +9,14 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import potionbrewer.PotionbrewerMod;
+import potionbrewer.cards.option.ChoosePotion;
 import potionbrewer.characters.Potionbrewer;
+import potionbrewer.potions.tonics.TonicLibrary;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static potionbrewer.PotionbrewerMod.makeCardPath;
 
-public class ChemicalWeapons extends CatalyzeCard {
+public class ChemicalWeapons extends CustomCard {
 // TEXT DECLARATION
 
     public static final String ID = PotionbrewerMod.makeID(ChemicalWeapons.class.getSimpleName());
@@ -39,18 +42,13 @@ public class ChemicalWeapons extends CatalyzeCard {
     public ChemicalWeapons() {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
-        cardsToPreview = new ReagentCard();
+        cardsToPreview = new ChoosePotion("RAND_TONIC");
     }
 
-    // Actions the card should do.
     @Override
-    public void useActions(AbstractPlayer p, AbstractMonster m) {
+    public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-    }
-
-    @Override
-    public void catalyzeActions(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new MakeTempCardInHandAction(new ReagentCard()));
+        addToBot(new MakeTempCardInHandAction(new ChoosePotion(TonicLibrary.getRandomTonic().ID)));
     }
 
     // Upgraded stats.

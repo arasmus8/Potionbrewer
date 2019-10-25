@@ -109,11 +109,13 @@ public class ChoosePotion extends AbstractCard {
 
     public static String name(final String id) {
         if (id == null) {
-            return "Random Potion";
+            return CARD_STRINGS.EXTENDED_DESCRIPTION[2];
+        } else if (id.equals("RAND_TONIC")) {
+            return CARD_STRINGS.EXTENDED_DESCRIPTION[3];
         }
         AbstractPotion p = fromId(id);
         if (p == null) {
-            return "Unknown Potion";
+            return CARD_STRINGS.EXTENDED_DESCRIPTION[4];
         } else {
             return p.name;
         }

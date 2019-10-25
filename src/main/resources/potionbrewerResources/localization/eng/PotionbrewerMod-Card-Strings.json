@@ -84,7 +84,7 @@
   },
   "potionbrewer:ChemicalWeapons": {
     "NAME": "Chemical Weapons",
-    "DESCRIPTION": "Deal !D! Damage. NL potionbrewer:Catalyze: Add a *Reagent to your hand."
+    "DESCRIPTION": "Deal !D! Damage. Add a random *Tonic card to your hand."
   },
   "potionbrewer:ChemicalRage": {
     "NAME": "Chemical Rage",
@@ -137,7 +137,7 @@
   },
   "potionbrewer:EyeGouge": {
     "NAME": "Eye Gouge",
-    "DESCRIPTION": "Deal !D! Damage. potionbrewer:Catalyze: Gain !B! Block."
+    "DESCRIPTION": "Deal !D! Damage. Shuffle a *Reagent into your draw pile."
   },
   "potionbrewer:FlareUp": {
     "NAME": "Flare Up",
@@ -203,8 +203,8 @@
   },
   "potionbrewer:LeftoverSpecimen": {
     "NAME": "Leftover Specimen",
-    "DESCRIPTION": "Gain !B! Block. NL Shuffle a *Reagent card into your draw pile. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Shuffle a *Reagent card into your draw pile."
+    "DESCRIPTION": "Gain !B! Block. NL Add a *Reagent card into your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Add a *Reagent card into your hand."
   },
   "potionbrewer:MicrobeSpray": {
     "NAME": "Microbe Spray",
@@ -324,7 +324,10 @@
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
       "Use a ",
-      "Obtain a "
+      "Obtain a ",
+      "Random Potion",
+      "Random Tonic",
+      "Unknown Potion"
     ]
   },
   "potionbrewer:ChooseReagent": {

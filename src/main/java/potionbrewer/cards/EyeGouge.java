@@ -1,8 +1,9 @@
 package potionbrewer.cards;
 
+import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -13,7 +14,7 @@ import potionbrewer.characters.Potionbrewer;
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static potionbrewer.PotionbrewerMod.makeCardPath;
 
-public class EyeGouge extends CatalyzeCard {
+public class EyeGouge extends CustomCard {
     // TEXT DECLARATION
 
     public static final String ID = PotionbrewerMod.makeID(EyeGouge.class.getSimpleName());
@@ -34,26 +35,18 @@ public class EyeGouge extends CatalyzeCard {
 
     private static final int DAMAGE = 5;
     private static final int UPGRADE_PLUS_DMG = 3;
-
-    private static final int BLOCK = 5;
-    private static final int UPGRADE_PLUS_BLOCK = 3;
-
     // /STAT DECLARATION/
 
     public EyeGouge() {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
-        baseBlock = BLOCK;
+        cardsToPreview = new ReagentCard();
     }
 
     @Override
-    public void catalyzeActions(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new GainBlockAction(p, block));
-    }
-
-    @Override
-    public void useActions(AbstractPlayer p, AbstractMonster m) {
+    public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        addToBot(new MakeTempCardInDrawPileAction(new ReagentCard(), 1, true, true));
     }
 
     // Upgraded stats.
@@ -62,7 +55,6 @@ public class EyeGouge extends CatalyzeCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
-            upgradeBlock(UPGRADE_PLUS_BLOCK);
             initializeDescription();
         }
     }

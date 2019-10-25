@@ -2,7 +2,7 @@ package potionbrewer.cards;
 
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -46,7 +46,7 @@ public class LeftoverSpecimen extends CustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, block));
-        this.addToBot(new MakeTempCardInDrawPileAction(new ReagentCard(), 1, true, true));
+        this.addToBot(new MakeTempCardInHandAction(new ReagentCard()));
     }
 
     // Upgraded stats.
