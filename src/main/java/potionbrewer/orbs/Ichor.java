@@ -19,7 +19,6 @@ public class Ichor extends Reagent {
 
     public Ichor() {
         super(ORB_ID, img, orbString.NAME, DESC);
-        catalyze = true;
         damages = true;
         damage = 3;
         targeted = false;

@@ -22,7 +22,7 @@
   "potionbrewer:AnotherRound": {
     "NAME": "Another Round",
     "DESCRIPTION": "Each turn, return 1 card that costs 0 to your hand from your discard pile.",
-    "UPGRADE_DESCRIPTION": "Each turn, return 1 card that costs 0 to your hand from your discard pile. NL Innate."
+    "UPGRADE_DESCRIPTION": "Innate NL Each turn, return 1 card that costs 0 to your hand from your discard pile."
   },
   "potionbrewer:Backhand": {
     "NAME": "Backhand",
@@ -129,7 +129,7 @@
   },
   "potionbrewer:Experimentation": {
     "NAME": "Experimentation",
-    "DESCRIPTION": "Rotate your rightmost potionbrewer:Reagent to the far left. If you have collected 3 *reagents, create a card from them and shuffle it into your draw pile."
+    "DESCRIPTION": "Ethereal NL Rotate your rightmost potionbrewer:Reagent to the far left. If you have collected 3 *reagents, create a card from them and shuffle it into your draw pile."
   },
   "potionbrewer:ExplosiveReaction": {
     "NAME": "Explosive Reaction",

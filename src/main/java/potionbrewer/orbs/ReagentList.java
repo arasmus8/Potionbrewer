@@ -182,7 +182,7 @@ public class ReagentList {
         @Override
         public boolean equals(Object obj) {
             if (obj instanceof RandomEntry) {
-                return ((RandomEntry) obj).optionCard.cardID.equals(this.optionCard.cardID);
+                return ((RandomEntry) obj).reagent.ID.equals(this.reagent.ID);
             }
             return false;
         }

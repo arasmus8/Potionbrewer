@@ -41,6 +41,7 @@ public class Experimentation extends CustomCard {
 
     public Experimentation() {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        isEthereal = true;
     }
 
 
