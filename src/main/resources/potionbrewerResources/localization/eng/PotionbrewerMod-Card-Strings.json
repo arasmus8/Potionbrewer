@@ -274,7 +274,10 @@
   },
   "potionbrewer:TheFinalStraw": {
     "NAME": "The Final Straw",
-    "DESCRIPTION": "Deal damage equal to !M! percent of the target's missing HP."
+    "DESCRIPTION": "Deal damage equal to !M! percent of the target's missing HP.",
+    "EXTENDED_DESCRIPTION": [
+      "Deal !D! damage. NL !M! percent of the target's missing HP."
+    ]
   },
   "potionbrewer:TimeBomb": {
     "NAME": "Time Bomb",

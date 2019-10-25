@@ -43,6 +43,8 @@ public class TheFinalStraw extends CustomCard {
     public void calculateCardDamage(AbstractMonster mo) {
         baseDamage = (mo.maxHealth - mo.currentHealth) * magicNumber / 100;
         super.calculateCardDamage(mo);
+        rawDescription = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
+        initializeDescription();
     }
 
     // Actions the card should do.
