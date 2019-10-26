@@ -303,6 +303,7 @@ public class PotionbrewerMod implements
         BaseMod.addRelicToCustomPool(new BunsenBurner(), Potionbrewer.Enums.COLOR_CYAN);
 
         BaseMod.addRelic(new AlchemistFlask(), RelicType.SHARED);
+        BaseMod.addRelic(new BoosterPack(), RelicType.SHARED);
         BaseMod.addRelic(new BottledElixir(), RelicType.SHARED);
         BaseMod.addRelic(new MortarAndPestle(), RelicType.SHARED);
         BaseMod.addRelic(new SalesContract(), RelicType.SHARED);
@@ -311,6 +312,7 @@ public class PotionbrewerMod implements
         BaseMod.addRelic(new WarMedal(), RelicType.SHARED);
 
         UnlockTracker.markRelicAsSeen(AlchemistFlask.ID);
+        UnlockTracker.markRelicAsSeen(BoosterPack.ID);
         UnlockTracker.markRelicAsSeen(BottledElixir.ID);
         UnlockTracker.markRelicAsSeen(BunsenBurner.ID);
         UnlockTracker.markRelicAsSeen(MortarAndPestle.ID);
