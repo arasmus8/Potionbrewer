@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.events.shrines.WeMeetAgain;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.localization.PotionStrings;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
+import com.megacrit.cardcrawl.potions.PotionSlot;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import potionbrewer.PotionbrewerMod;
 
@@ -24,6 +25,8 @@ public class SplittingPotion extends AbstractPotion {
     public static final Color LIQUID_COLOR = Color.CHARTREUSE;
     public static final Color HYBRID_COLOR = Color.GOLD;
     public static final Color SPOTS_COLOR = Color.CLEAR;
+
+    public int createdCount = 0;
 
     public SplittingPotion() {
         super(NAME, POTION_ID, PotionRarity.UNCOMMON, PotionSize.S, PotionColor.ANCIENT);
@@ -47,12 +50,15 @@ public class SplittingPotion extends AbstractPotion {
                 this.addToBot(new ObtainPotionAction(AbstractDungeon.returnRandomPotion(true)));
             }
         } else {
-            for(i = 0; i < potency && i < player.potionSlots; ++i) {
-                player.obtainPotion(AbstractDungeon.returnRandomPotion());
+            for (i = 0; i < player.potionSlots && createdCount < getPotency(); ++i) {
+                if (player.potions.get(i) instanceof PotionSlot) {
+                    player.obtainPotion(AbstractDungeon.returnRandomPotion());
+                    createdCount += 1;
+                }
             }
         }
 
-    }// 39
+    }
 
     @Override
     public boolean canUse() {

@@ -415,37 +415,39 @@ public class PotionbrewerMod implements
             return;
         }
 
-        Integer combat = PotionTracker.potionsUsedThisCombat.get(p);
-        PotionTracker.potionsUsedThisCombat.set(p, combat + 1);
+        if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
+            Integer combat = PotionTracker.potionsUsedThisCombat.get(p);
+            PotionTracker.potionsUsedThisCombat.set(p, combat + 1);
 
-        Integer turn = PotionTracker.potionsUsedThisTurn.get(p);
-        PotionTracker.potionsUsedThisTurn.set(p, turn + 1);
+            Integer turn = PotionTracker.potionsUsedThisTurn.get(p);
+            PotionTracker.potionsUsedThisTurn.set(p, turn + 1);
 
-        for (AbstractCard c : p.hand.group) {
-            c.triggerOnGlowCheck();
-            if (c instanceof PotionTrackingCard) {
-                ((PotionTrackingCard) c).onUsePotion(potion);
+            for (AbstractCard c : p.hand.group) {
+                c.triggerOnGlowCheck();
+                if (c instanceof PotionTrackingCard) {
+                    ((PotionTrackingCard) c).onUsePotion(potion);
+                }
             }
-        }
 
-        for (AbstractCard c : p.discardPile.group) {
-            if (c instanceof PotionTrackingCard) {
-                ((PotionTrackingCard) c).onUsePotion(potion);
+            for (AbstractCard c : p.discardPile.group) {
+                if (c instanceof PotionTrackingCard) {
+                    ((PotionTrackingCard) c).onUsePotion(potion);
+                }
             }
-        }
 
-        for (AbstractCard c : p.drawPile.group) {
-            if (c instanceof PotionTrackingCard) {
-                ((PotionTrackingCard) c).onUsePotion(potion);
+            for (AbstractCard c : p.drawPile.group) {
+                if (c instanceof PotionTrackingCard) {
+                    ((PotionTrackingCard) c).onUsePotion(potion);
+                }
             }
-        }
 
-        ArrayList<AbstractCreature> creatures = new ArrayList<>(AbstractDungeon.getCurrRoom().monsters.monsters);
-        creatures.add(AbstractDungeon.player);
-        for (AbstractCreature creature : creatures) {
-            for (AbstractPower power : creature.powers) {
-                if (power instanceof PotionTrackingPower) {
-                    ((PotionTrackingPower) power).onUsePotion(potion);
+            ArrayList<AbstractCreature> creatures = new ArrayList<>(AbstractDungeon.getCurrRoom().monsters.monsters);
+            creatures.add(AbstractDungeon.player);
+            for (AbstractCreature creature : creatures) {
+                for (AbstractPower power : creature.powers) {
+                    if (power instanceof PotionTrackingPower) {
+                        ((PotionTrackingPower) power).onUsePotion(potion);
+                    }
                 }
             }
         }
