@@ -22,7 +22,7 @@ public class SalesContract extends CustomRelic implements DiscardPotionRelic {
     }
 
     @Override
-    public void onDiscardPotion(int potionSlot) {
+    public void onDiscardPotion() {
         CardCrawlGame.sound.play("GOLD_GAIN");
         AbstractDungeon.player.gainGold(20);
     }

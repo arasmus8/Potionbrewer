@@ -306,12 +306,14 @@ public class PotionbrewerMod implements
         BaseMod.addRelic(new BottledElixir(), RelicType.SHARED);
         BaseMod.addRelic(new MortarAndPestle(), RelicType.SHARED);
         BaseMod.addRelic(new SalesContract(), RelicType.SHARED);
+        BaseMod.addRelic(new SlideRule(), RelicType.SHARED);
         BaseMod.addRelic(new Torch(), RelicType.SHARED);
 
         UnlockTracker.markRelicAsSeen(BottledElixir.ID);
         UnlockTracker.markRelicAsSeen(BunsenBurner.ID);
         UnlockTracker.markRelicAsSeen(MortarAndPestle.ID);
         UnlockTracker.markRelicAsSeen(SalesContract.ID);
+        UnlockTracker.markRelicAsSeen(SlideRule.ID);
         UnlockTracker.markRelicAsSeen(Torch.ID);
         logger.info("Done adding relics!");
     }

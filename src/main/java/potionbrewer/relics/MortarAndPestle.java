@@ -21,7 +21,7 @@ public class MortarAndPestle extends CustomRelic implements DiscardPotionRelic {
     }
 
     @Override
-    public void onDiscardPotion(int potionSlot) {
+    public void onDiscardPotion() {
         AbstractDungeon.player.heal(3, true);
     }
 

@@ -37,6 +37,14 @@
       "Whenever you discard a potion, receive 20 gold."
     ]
   },
+  "potionbrewer:SlideRule": {
+    "NAME": "Slide Rule",
+    "FLAVOR": "TODO: Add flavor.",
+    "DESCRIPTIONS": [
+      "When you shuffle your draw pile, deal #b",
+      " damage to all enemies."
+    ]
+  },
   "potionbrewer:Torch": {
     "NAME": "Torch",
     "FLAVOR": "Burns brightly. Goes great with pitchforks.",
