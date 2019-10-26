@@ -7,7 +7,6 @@ import basemod.abstracts.CustomSavable;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.AutoplayCardAction;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.AutoplayField;
-import com.evacipated.cardcrawl.mod.stslib.relics.BetterOnUsePotionRelic;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -26,7 +25,7 @@ import java.util.function.Predicate;
 import static potionbrewer.PotionbrewerMod.makeRelicOutlinePath;
 import static potionbrewer.PotionbrewerMod.makeRelicPath;
 
-public class BottledElixir extends CustomRelic implements BetterOnUsePotionRelic, CustomBottleRelic, CustomSavable<Integer> {
+public class BottledElixir extends CustomRelic implements UsePotionRelic, CustomBottleRelic, CustomSavable<Integer> {
     
     private static AbstractCard card;
     private boolean cardSelected = true;
@@ -115,8 +114,9 @@ public class BottledElixir extends CustomRelic implements BetterOnUsePotionRelic
         pulse = true;
     }
 
+
     @Override
-    public void betterOnUsePotion(AbstractPotion abstractPotion) {
+    public void customOnUsePotion(AbstractPotion abstractPotion) {
         boolean fullHandDialog = false;
         if (pulse) {
             pulse = false;

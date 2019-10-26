@@ -11,7 +11,6 @@ import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
-import com.evacipated.cardcrawl.mod.stslib.relics.BetterOnUsePotionRelic;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
@@ -308,6 +307,7 @@ public class PotionbrewerMod implements
         BaseMod.addRelic(new SalesContract(), RelicType.SHARED);
         BaseMod.addRelic(new SlideRule(), RelicType.SHARED);
         BaseMod.addRelic(new Torch(), RelicType.SHARED);
+        BaseMod.addRelic(new WarMedal(), RelicType.SHARED);
 
         UnlockTracker.markRelicAsSeen(BottledElixir.ID);
         UnlockTracker.markRelicAsSeen(BunsenBurner.ID);
@@ -315,6 +315,7 @@ public class PotionbrewerMod implements
         UnlockTracker.markRelicAsSeen(SalesContract.ID);
         UnlockTracker.markRelicAsSeen(SlideRule.ID);
         UnlockTracker.markRelicAsSeen(Torch.ID);
+        UnlockTracker.markRelicAsSeen(WarMedal.ID);
         logger.info("Done adding relics!");
     }
 
@@ -450,8 +451,8 @@ public class PotionbrewerMod implements
         }
 
         for (AbstractRelic relic : AbstractDungeon.player.relics) {
-            if (relic instanceof BetterOnUsePotionRelic) {
-                ((BetterOnUsePotionRelic) relic).betterOnUsePotion(potion);
+            if (relic instanceof UsePotionRelic) {
+                ((UsePotionRelic) relic).customOnUsePotion(potion);
             }
         }
     }
@@ -485,6 +486,8 @@ public class PotionbrewerMod implements
                 reagents.add((Reagent) orb);
             }
         }
+        PotionTracker.potionsUsedThisCombat.set(p, 0);
+        PotionTracker.potionsUsedThisTurn.set(p, 0);
     }
 
     @Override

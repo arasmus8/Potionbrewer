@@ -2,7 +2,6 @@ package potionbrewer.relics;
 
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
-import com.evacipated.cardcrawl.mod.stslib.relics.BetterOnUsePotionRelic;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import potionbrewer.PotionbrewerMod;
@@ -12,7 +11,7 @@ import potionbrewer.util.TextureLoader;
 import static potionbrewer.PotionbrewerMod.makeRelicOutlinePath;
 import static potionbrewer.PotionbrewerMod.makeRelicPath;
 
-public class BunsenBurner extends CustomRelic implements BetterOnUsePotionRelic {
+public class BunsenBurner extends CustomRelic implements UsePotionRelic {
 
     public static final String ID = PotionbrewerMod.makeID(BunsenBurner.class.getSimpleName());
     
@@ -24,7 +23,7 @@ public class BunsenBurner extends CustomRelic implements BetterOnUsePotionRelic 
     }
 
     @Override
-    public void betterOnUsePotion(AbstractPotion abstractPotion) {
+    public void customOnUsePotion(AbstractPotion abstractPotion) {
         flash();
         addToBot(new MakeTempCardInHandAction(new Distill()));
     }

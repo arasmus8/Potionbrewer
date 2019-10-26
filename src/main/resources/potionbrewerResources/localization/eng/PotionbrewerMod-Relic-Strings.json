@@ -51,5 +51,12 @@
     "DESCRIPTIONS": [
       "Gain [E] on your second turn."
     ]
+  },
+  "potionbrewer:WarMedal": {
+    "NAME": "War Medal",
+    "FLAVOR": "TODO: Add Flavor",
+    "DESCRIPTIONS": [
+      "Every time you play 10 cards, your next attack deals 5 bonus damage."
+    ]
   }
 }
