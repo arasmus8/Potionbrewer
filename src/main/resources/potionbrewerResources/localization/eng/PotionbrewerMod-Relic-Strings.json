@@ -1,4 +1,12 @@
 {
+  "potionbrewer:AlchemistFlask": {
+    "NAME": "Alchemist's Flask",
+    "FLAVOR": "It's labeled 'Property of Nicholas Flamel'.",
+    "DESCRIPTIONS": [
+      "Every time you play #b",
+      " cards, choose 1 of 3 random potions to use."
+    ]
+  },
   "potionbrewer:BottledElixir": {
     "NAME": "Bottled Elixir",
     "FLAVOR": "TODO: Add some flavor.",
