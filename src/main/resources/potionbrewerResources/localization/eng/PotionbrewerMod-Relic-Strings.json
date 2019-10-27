@@ -67,6 +67,13 @@
       "Gain [E] on your second turn."
     ]
   },
+  "potionbrewer:ToyAutogyro": {
+    "NAME": "Toy Autogyro",
+    "FLAVOR": "Vrooom, zoom zoom zoom!",
+    "DESCRIPTIONS": [
+      "Whenever you use a potion, gain 3 temporary HP."
+    ]
+  },
   "potionbrewer:WarMedal": {
     "NAME": "War Medal",
     "FLAVOR": "TODO: Add Flavor",

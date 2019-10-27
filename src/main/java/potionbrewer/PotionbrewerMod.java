@@ -309,6 +309,7 @@ public class PotionbrewerMod implements
         BaseMod.addRelic(new SalesContract(), RelicType.SHARED);
         BaseMod.addRelic(new SlideRule(), RelicType.SHARED);
         BaseMod.addRelic(new Torch(), RelicType.SHARED);
+        BaseMod.addRelic(new ToyAutogyro(), RelicType.SHARED);
         BaseMod.addRelic(new WarMedal(), RelicType.SHARED);
 
         UnlockTracker.markRelicAsSeen(AlchemistFlask.ID);
@@ -319,6 +320,7 @@ public class PotionbrewerMod implements
         UnlockTracker.markRelicAsSeen(SalesContract.ID);
         UnlockTracker.markRelicAsSeen(SlideRule.ID);
         UnlockTracker.markRelicAsSeen(Torch.ID);
+        UnlockTracker.markRelicAsSeen(ToyAutogyro.ID);
         UnlockTracker.markRelicAsSeen(WarMedal.ID);
         logger.info("Done adding relics!");
     }
