@@ -28,7 +28,7 @@ public class BlacksmithPotion extends AbstractPotion {
 
     public static final Color LIQUID_COLOR = Color.BLACK.cpy();
     public static final Color HYBRID_COLOR = Color.GRAY.cpy();
-    public static final Color SPOTS_COLOR = Color.FIREBRICK.cpy();
+    public static final Color SPOTS_COLOR = null;
 
     public BlacksmithPotion() {
         super(NAME, POTION_ID, PotionRarity.RARE, PotionSize.ANVIL, PotionColor.SMOKE);
@@ -52,7 +52,7 @@ public class BlacksmithPotion extends AbstractPotion {
         AbstractDungeon.player.bottledCardUpgradeCheck(card);
         AbstractDungeon.effectsQueue.add(new UpgradeShineEffect((float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
         AbstractDungeon.topLevelEffectsQueue.add(new ShowCardBrieflyEffect(card.makeStatEquivalentCopy()));
-        this.addToTop(new WaitAction(Settings.ACTION_DUR_MED));
+        addToBot(new WaitAction(Settings.ACTION_DUR_MED));
     }
 
     @Override
@@ -62,14 +62,10 @@ public class BlacksmithPotion extends AbstractPotion {
                 .collect(Collectors.toCollection(ArrayList::new));
 
         if (!upgradeableCards.isEmpty()) {
-            if (upgradeableCards.size() >= getPotency()) {
-                Collections.shuffle(upgradeableCards, AbstractDungeon.miscRng.random);
-                upgradeableCards.stream()
-                        .limit(getPotency())
-                        .forEach(this::doUpgrade);
-            } else {
-                upgradeableCards.forEach(this::doUpgrade);
-            }
+            Collections.shuffle(upgradeableCards, AbstractDungeon.miscRng.random);
+            upgradeableCards.stream()
+                    .limit(getPotency())
+                    .forEach(this::doUpgrade);
         }
     }
 

@@ -55,6 +55,12 @@
       " Damage to all enemies."
     ]
   },
+  "potionbrewer:CreatePotionCardPower": {
+    "NAME": "Create Potion Card",
+    "DESCRIPTIONS": [
+      "Add a card that mimics a random potion to your hand at the start of turn."
+    ]
+  },
   "potionbrewer:DamageNextTurnPower": {
     "NAME": "Damage Next Turn",
     "DESCRIPTIONS": [

@@ -1,12 +1,12 @@
 package potionbrewer.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.utility.WaitAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.ChemicalX;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
+import potionbrewer.powers.CreatePotionCardPower;
 
 public class ResearchResultsAction extends AbstractGameAction {
     private AbstractPlayer p;
@@ -40,8 +40,7 @@ public class ResearchResultsAction extends AbstractGameAction {
         }
         if (effect > 0) {
             for (int i = 0; i < effect; ++i) {
-                this.addToBot(new PlayPotionCardAction(m));
-                this.addToBot(new WaitAction(Settings.ACTION_DUR_XFAST));
+                addToBot(new ApplyPowerAction(p, p, new CreatePotionCardPower(1), 1));
             }
             if (!freeToPlayOnce) {
                 p.energy.use(EnergyPanel.totalCount);

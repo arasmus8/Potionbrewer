@@ -21,7 +21,7 @@ public class BoundlessPotion extends AbstractPotion {
 
     public static final Color LIQUID_COLOR = Color.GOLDENROD.cpy();
     public static final Color HYBRID_COLOR = Color.YELLOW.cpy();
-    public static final Color SPOTS_COLOR = Color.CLEAR.cpy();
+    public static final Color SPOTS_COLOR = null;
 
     public BoundlessPotion() {
         super(NAME, POTION_ID, PotionRarity.UNCOMMON, PotionSize.HEART, PotionColor.ENERGY);
@@ -32,9 +32,9 @@ public class BoundlessPotion extends AbstractPotion {
     public void initializeData() {
         potency = getPotency();
         if (potency > 1) {
-            description = DESCRIPTIONS[0] + DESCRIPTIONS[1];
+            description = DESCRIPTIONS[0] + " " + potency + DESCRIPTIONS[2];
         } else {
-            description = DESCRIPTIONS[0] + potency + DESCRIPTIONS[2];
+            description = DESCRIPTIONS[0] + DESCRIPTIONS[1];
         }
         tips.clear();
         tips.add(new PowerTip(name, description));

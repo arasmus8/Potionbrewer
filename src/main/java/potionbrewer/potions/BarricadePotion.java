@@ -22,10 +22,10 @@ public class BarricadePotion extends AbstractPotion {
 
     public static final Color LIQUID_COLOR = Color.LIGHT_GRAY.cpy();
     public static final Color HYBRID_COLOR = Color.SKY.cpy();
-    public static final Color SPOTS_COLOR = Color.CLEAR.cpy();
+    public static final Color SPOTS_COLOR = Color.FIREBRICK.cpy();
 
     public BarricadePotion() {
-        super(NAME, POTION_ID, PotionRarity.UNCOMMON, PotionSize.MOON, PotionColor.ENERGY);
+        super(NAME, POTION_ID, PotionRarity.UNCOMMON, PotionSize.SPHERE, PotionColor.ENERGY);
         isThrown = false;
     }
 
@@ -33,9 +33,9 @@ public class BarricadePotion extends AbstractPotion {
     public void initializeData() {
         potency = getPotency();
         if (potency > 1) {
-            description = DESCRIPTIONS[0] + DESCRIPTIONS[1];
+            description = DESCRIPTIONS[0] + " " + potency + DESCRIPTIONS[2];
         } else {
-            description = DESCRIPTIONS[0] + potency + DESCRIPTIONS[2];
+            description = DESCRIPTIONS[0] + DESCRIPTIONS[1];
         }
         tips.clear();
         tips.add(new PowerTip(name, description));
