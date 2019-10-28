@@ -278,6 +278,9 @@ public class PotionbrewerMod implements
 
 
         BaseMod.addPotion(AcidPotion.class, AcidPotion.LIQUID_COLOR, AcidPotion.HYBRID_COLOR, AcidPotion.SPOTS_COLOR, AcidPotion.POTION_ID, null);
+        BaseMod.addPotion(BarricadePotion.class, BarricadePotion.LIQUID_COLOR, BarricadePotion.HYBRID_COLOR, BarricadePotion.SPOTS_COLOR, BarricadePotion.POTION_ID, null);
+        BaseMod.addPotion(BlacksmithPotion.class, BlacksmithPotion.LIQUID_COLOR, BlacksmithPotion.HYBRID_COLOR, BlacksmithPotion.SPOTS_COLOR, BlacksmithPotion.POTION_ID, null);
+        BaseMod.addPotion(BoundlessPotion.class, BoundlessPotion.LIQUID_COLOR, BoundlessPotion.HYBRID_COLOR, BoundlessPotion.SPOTS_COLOR, BoundlessPotion.POTION_ID, null);
         BaseMod.addPotion(CleansingPotion.class, CleansingPotion.LIQUID_COLOR, CleansingPotion.HYBRID_COLOR, CleansingPotion.SPOTS_COLOR, CleansingPotion.POTION_ID, null);
         BaseMod.addPotion(DiscountPotion.class, DiscountPotion.LIQUID_COLOR, DiscountPotion.HYBRID_COLOR, DiscountPotion.SPOTS_COLOR, DiscountPotion.POTION_ID, null);
         BaseMod.addPotion(EndurancePotion.class, EndurancePotion.LIQUID_COLOR, EndurancePotion.HYBRID_COLOR, EndurancePotion.SPOTS_COLOR, EndurancePotion.POTION_ID, null);

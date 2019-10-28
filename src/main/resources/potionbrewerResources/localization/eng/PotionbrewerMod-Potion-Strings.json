@@ -3,6 +3,30 @@
     "NAME": "Acid Potion",
     "DESCRIPTIONS": [ "Remove the target's Block and deal #b", " damage." ]
   },
+  "potionbrewer:BlacksmithPotion": {
+    "NAME": "Blacksmith Potion",
+    "DESCRIPTIONS": [
+      "Permanently upgrade #b",
+      " card.",
+      " cards."
+    ]
+  },
+  "potionbrewer:BoundlessPotion": {
+    "NAME": "Boundless Potion",
+    "DESCRIPTIONS": [
+      "Double your Strength",
+      ".",
+      " times."
+    ]
+  },
+  "potionbrewer:BarricadePotion": {
+    "NAME": "Barricade Potion",
+    "DESCRIPTIONS": [
+      "Double your Block",
+      ".",
+      " times."
+    ]
+  },
   "potionbrewer:CleansingPotion": {
     "NAME": "Cleansing Potion",
     "DESCRIPTIONS": [ "Remove #b", " debuffs from yourself." ]

@@ -156,6 +156,9 @@ public class ChoosePotion extends AbstractCard {
 
         //Potionbrewer Potions
         imageMap.put(AcidPotion.POTION_ID, "blue/attack/melter");
+        imageMap.put(BarricadePotion.POTION_ID, "red/skill/entrench");
+        imageMap.put(BlacksmithPotion.POTION_ID, "colorless/skill/forethought");
+        imageMap.put(BoundlessPotion.POTION_ID, "red/skill/limit_break");
         imageMap.put(CleansingPotion.POTION_ID, "colorless/skill/deep_breath");
         imageMap.put(DiscountPotion.POTION_ID, "colorless/skill/madness");
         imageMap.put(EndurancePotion.POTION_ID, "red/skill/impervious");
@@ -208,7 +211,7 @@ public class ChoosePotion extends AbstractCard {
         imageMap.put(SpeedPotion.POTION_ID, "green/skill/backflip");
         imageMap.put(StancePotion.POTION_ID, "purple/attack/tantrum");
         imageMap.put(SteroidPotion.POTION_ID, "red/skill/flex");
-        imageMap.put(StrengthPotion.POTION_ID, "red/skill/limit_break");
+        imageMap.put(StrengthPotion.POTION_ID, "red/power/demon_form");
         imageMap.put(SwiftPotion.POTION_ID, "blue/skill/skim");
         imageMap.put(WeakenPotion.POTION_ID, "red/skill/intimidate");
     }
