@@ -82,6 +82,7 @@ public class ChoosePotion extends AbstractCard {
         ids.remove(FairyPotion.POTION_ID);
         ids.remove(EntropicBrew.POTION_ID);
         ids.remove(SplittingPotion.POTION_ID);
+        ids.remove(BlacksmithPotion.POTION_ID);
 
         inBattleIds = new ArrayList<>(ids);
     }

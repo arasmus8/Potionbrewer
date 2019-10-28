@@ -35,12 +35,13 @@ public class ResearchResults extends CustomCard {
     public ResearchResults() {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         cardsToPreview = new ChoosePotion(null);
+        exhaust = true;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ResearchResultsAction(p, m, upgraded, freeToPlayOnce, energyOnUse));
+        this.addToBot(new ResearchResultsAction(p, m, freeToPlayOnce, energyOnUse));
     }
 
     // Upgraded stats.
@@ -48,6 +49,7 @@ public class ResearchResults extends CustomCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            exhaust = false;
             rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
             initializeDescription();
         }

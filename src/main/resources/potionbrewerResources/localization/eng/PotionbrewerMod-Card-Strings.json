@@ -249,8 +249,8 @@
   },
   "potionbrewer:ResearchResults": {
     "NAME": "Research Results",
-    "DESCRIPTION": "For X turns, add a *Random *Potion card to your hand.",
-    "UPGRADE_DESCRIPTION": "For X + 1 turns, add a *Random *Potion card to your hand."
+    "DESCRIPTION": "For X turns, add a *Random *Potion card to your hand. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "For X turns, add a *Random *Potion card to your hand."
   },
   "potionbrewer:Smack": {
     "NAME": "Smack",
