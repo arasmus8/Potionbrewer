@@ -17,6 +17,7 @@ public class ReagentList {
         reagentsById.put("", null);
         reagentsById.put(Barb.ORB_ID, Barb.class);
         reagentsById.put(Bile.ORB_ID, Bile.class);
+        reagentsById.put(Bludgeon.ORB_ID, Bludgeon.class);
         reagentsById.put(Bone.ORB_ID, Bone.class);
         reagentsById.put(Clay.ORB_ID, Clay.class);
         reagentsById.put(Crown.ORB_ID, Crown.class);
@@ -30,18 +31,25 @@ public class ReagentList {
         reagentsById.put(Hand.ORB_ID, Hand.class);
         reagentsById.put(Horn.ORB_ID, Horn.class);
         reagentsById.put(Ichor.ORB_ID, Ichor.class);
+        reagentsById.put(Ink.ORB_ID, Ink.class);
+        reagentsById.put(Jaw.ORB_ID, Jaw.class);
+        reagentsById.put(LaserCore.ORB_ID, LaserCore.class);
         reagentsById.put(Lightning.ORB_ID, Lightning.class);
         reagentsById.put(Mechanism.ORB_ID, Mechanism.class);
         reagentsById.put(Meteorite.ORB_ID, Meteorite.class);
         reagentsById.put(Needle.ORB_ID, Needle.class);
         reagentsById.put(Nethershroud.ORB_ID, Nethershroud.class);
+        reagentsById.put(Pocketwatch.ORB_ID, Pocketwatch.class);
         reagentsById.put(PhilosopherShard.ORB_ID, PhilosopherShard.class);
         reagentsById.put(PowerCore.ORB_ID, PowerCore.class);
+        reagentsById.put(Pyramid.ORB_ID, Pyramid.class);
+        reagentsById.put(RitualJar.ORB_ID, RitualJar.class);
         reagentsById.put(Root.ORB_ID, Root.class);
         reagentsById.put(RunicShape.ORB_ID, RunicShape.class);
         reagentsById.put(SerpentSkull.ORB_ID, SerpentSkull.class);
         reagentsById.put(Silk.ORB_ID, Silk.class);
         reagentsById.put(Skull.ORB_ID, Skull.class);
+        reagentsById.put(Slime.ORB_ID, Slime.class);
         reagentsById.put(Spore.ORB_ID, Spore.class);
         reagentsById.put(Steel.ORB_ID, Steel.class);
         reagentsById.put(Sulphur.ORB_ID, Sulphur.class);
@@ -120,7 +128,7 @@ public class ReagentList {
                 System.out.println("Error instanciating class for Id=" + Id);
             }
         }
-        return new Ichor();
+        return new Slime();
     }
 
     private static RandomEntry randomEntry(ArrayList<RandomEntry> toExclude) {
@@ -130,7 +138,7 @@ public class ReagentList {
         list.add(new RandomEntry(15, new Feather()));
         list.add(new RandomEntry(5, new Flame()));
         list.add(new RandomEntry(9, new Grimace()));
-        list.add(new RandomEntry(20, new Ichor()));
+        list.add(new RandomEntry(20, new Slime()));
         list.add(new RandomEntry(5, new Lightning()));
         list.add(new RandomEntry(9, new Silk()));
         list.add(new RandomEntry(9, new Spore()));

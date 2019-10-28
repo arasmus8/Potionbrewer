@@ -63,7 +63,7 @@ public class ChooseReagent extends AbstractCard {
     public void onChoseThisOption() {
         Reagent r = fromId(reagentId);
         if (r == null) {
-            r = new Ichor();
+            r = new Slime();
         }
         this.addToBot(new ChannelAction(r));
     }
@@ -101,7 +101,7 @@ public class ChooseReagent extends AbstractCard {
         imageMap.put(Feather.ORB_ID, "colorless/skill/apotheosis");
         imageMap.put(Flame.ORB_ID, "red/power/fire_breathing");
         imageMap.put(Grimace.ORB_ID, "colorless/skill/madness");
-        imageMap.put(Ichor.ORB_ID, "status/slimed");
+        imageMap.put(Slime.ORB_ID, "status/slimed");
         imageMap.put(Lightning.ORB_ID, "blue/skill/zap");
         imageMap.put(Silk.ORB_ID, "purple/attack/cut_through_fate");
         imageMap.put(Spore.ORB_ID, "curse/parasite");

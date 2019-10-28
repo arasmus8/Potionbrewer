@@ -82,13 +82,13 @@ public class Collect extends CustomCard {
 
     static {
         // Exordium
-        monsterReagents.put(AcidSlime_S.ID, Ichor.class);
-        monsterReagents.put(AcidSlime_M.ID, Ichor.class);
-        monsterReagents.put(AcidSlime_L.ID, Ichor.class);
-        monsterReagents.put(SpikeSlime_L.ID, Ichor.class);
-        monsterReagents.put(SpikeSlime_M.ID, Ichor.class);
-        monsterReagents.put(SpikeSlime_S.ID, Ichor.class);
-        monsterReagents.put(ApologySlime.ID, Ichor.class);
+        monsterReagents.put(AcidSlime_S.ID, Slime.class);
+        monsterReagents.put(AcidSlime_M.ID, Slime.class);
+        monsterReagents.put(AcidSlime_L.ID, Slime.class);
+        monsterReagents.put(SpikeSlime_L.ID, Slime.class);
+        monsterReagents.put(SpikeSlime_M.ID, Slime.class);
+        monsterReagents.put(SpikeSlime_S.ID, Slime.class);
+        monsterReagents.put(ApologySlime.ID, Slime.class);
         monsterReagents.put(Cultist.ID, Feather.class);
         monsterReagents.put(FungiBeast.ID, Spore.class);
         monsterReagents.put(GremlinFat.ID, Grimace.class);
@@ -104,8 +104,8 @@ public class Collect extends CustomCard {
         monsterReagents.put(SlaverRed.ID, Bone.class);
         // elites
         monsterReagents.put(GremlinNob.ID, Bile.class);
-        monsterReagents.put(Lagavulin.ID, Eye.class);
-        monsterReagents.put(Sentry.ID, Steel.class);
+        monsterReagents.put(Lagavulin.ID, Ink.class);
+        monsterReagents.put(Sentry.ID, LaserCore.class);
         // bosses
         monsterReagents.put(Hexaghost.ID, RunicShape.class);
         monsterReagents.put(SlimeBoss.ID, TinyHat.class);
@@ -117,7 +117,7 @@ public class Collect extends CustomCard {
         monsterReagents.put(BanditPointy.ID, Hand.class);
         monsterReagents.put(BronzeOrb.ID, Steel.class);
         monsterReagents.put(Byrd.ID, Feather.class);
-        monsterReagents.put(Centurion.ID, Steel.class);
+        monsterReagents.put(Centurion.ID, Bludgeon.class);
         monsterReagents.put(Chosen.ID, Feather.class);
         monsterReagents.put(Healer.ID, Ether.class);
         monsterReagents.put(Mugger.ID, Gold.class);
@@ -138,7 +138,7 @@ public class Collect extends CustomCard {
         // Beyond
         monsterReagents.put(Darkling.ID, Ichor.class);
         monsterReagents.put(Exploder.ID, Flame.class);
-        monsterReagents.put(Maw.ID, Tooth.class);
+        monsterReagents.put(Maw.ID, Jaw.class);
         monsterReagents.put(OrbWalker.ID, Flame.class);
         monsterReagents.put(Repulsor.ID, Lightning.class);
         monsterReagents.put(Spiker.ID, Barb.class);
@@ -151,10 +151,10 @@ public class Collect extends CustomCard {
         monsterReagents.put(Reptomancer.ID, SerpentSkull.class);
         monsterReagents.put(SnakeDagger.ID, Needle.class);
         // bosses
-        monsterReagents.put(AwakenedOne.ID, Feather.class);
-        monsterReagents.put(Deca.ID, Mechanism.class);
-        monsterReagents.put(Donu.ID, RunicShape.class);
-        monsterReagents.put(TimeEater.ID, Tentacle.class);
+        monsterReagents.put(AwakenedOne.ID, RitualJar.class);
+        monsterReagents.put(Deca.ID, Pyramid.class);
+        monsterReagents.put(Donu.ID, Pyramid.class);
+        monsterReagents.put(TimeEater.ID, Pocketwatch.class);
 
         // Ending
         monsterReagents.put(Eyes.ID, Eye.class);
@@ -175,7 +175,7 @@ public class Collect extends CustomCard {
         monsterReagents.put("theJungle:JungleHunters", Bone.class);
         monsterReagents.put("theJungle:Lyon", Tooth.class);
         monsterReagents.put("theJungle:MamaSnecko", Eye.class);
-        monsterReagents.put("theJungle:Phrog", Ichor.class);
+        monsterReagents.put("theJungle:Phrog", Slime.class);
         monsterReagents.put("theJungle:SlimyTreeVines", Root.class);
         monsterReagents.put("theJungle:SneckoCultist", Eye.class);
         monsterReagents.put("theJungle:SneckoEgg", Eye.class);
@@ -187,7 +187,7 @@ public class Collect extends CustomCard {
         monsterReagents.put("theFactory:DefectiveSentry", Steel.class);
         monsterReagents.put("theFactory:DrinkBrewer", Steel.class);
         monsterReagents.put("theFactory:Experiment01", Meteorite.class);
-        monsterReagents.put("theFactory:ExpPersonnel", Ichor.class);
+        monsterReagents.put("theFactory:ExpPersonnel", Slime.class);
         monsterReagents.put("theFactory:Guardian2", PowerCore.class);
         monsterReagents.put("theFactory:Manservantes", Steel.class);
         monsterReagents.put("theFactory:MiniBotBeamer", Flame.class);

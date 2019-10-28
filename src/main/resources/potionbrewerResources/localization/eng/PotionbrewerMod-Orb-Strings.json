@@ -22,6 +22,14 @@
       "Gain 1 Temporary Strength whenever you play a Skill."
     ]
   },
+  "potionbrewer:Bludgeon": {
+    "NAME": "Bludgeon",
+    "DESCRIPTION": [
+      "Vintage weapon taken from a Knight.",
+      "Deal 8 Damage.",
+      "Deal DD Damage."
+    ]
+  },
   "potionbrewer:Bone": {
     "NAME": "Bone",
     "DESCRIPTION": [
@@ -34,16 +42,16 @@
     "NAME": "Clay",
     "DESCRIPTION": [
       "Clay harvested from a Giant Head.",
-      "Deal 30 damage in 2 turns.",
-      "Deal 30 damage in 2 turns."
+      "Deal 30 Damage in 2 turns.",
+      "Deal 30 Damage in 2 turns."
     ]
   },
   "potionbrewer:Crown": {
     "NAME": "Crown",
     "DESCRIPTION": [
       "The crown of a Champion.",
-      "Block 6 damage each turn.",
-      "Block 6 damage each turn."
+      "Block 6 Damage each turn.",
+      "Block 6 Damage each turn."
     ]
   },
   "potionbrewer:Ether": {
@@ -82,8 +90,8 @@
     "NAME": "Flame",
     "DESCRIPTION": [
       "Flaming core of an odd machine.",
-      "Deals 3xTurn Number damage.",
-      "Deals DD damage."
+      "Deals 3xTurn Number Damage.",
+      "Deals DD Damage."
     ]
   },
   "potionbrewer:Gold": {
@@ -121,9 +129,36 @@
   "potionbrewer:Ichor": {
     "NAME": "Ichor",
     "DESCRIPTION": [
-      "Ichor harvested from a slime.",
-      "Deal 3 damage.",
-      "Deal DD damage."
+      "Ichor harvested from a Darkling.",
+      "Gain 8 Temporary HP.",
+      "Gain 8 Temporary HP."
+    ]
+  },
+  "potionbrewer:Ink": {
+    "NAME": "Ink",
+    "DESCRIPTION": [
+      "Ink harvested from a Lagavulin.",
+      "Turns 1-3: Nothing. Turns 4+: 18 Damage.",
+      "Deal DD Damage.",
+      "Nothing."
+    ]
+  },
+  "potionbrewer:Jaw": {
+    "NAME": "Jaw",
+    "DESCRIPTION": [
+      "The jawbone of a giant monster.",
+      "Odd Turns: 5 block, Even Turns: 8 Damage.",
+      "Gain BB Block.",
+      "Deal DD Damage."
+    ]
+  },
+  "potionbrewer:LaserCore": {
+    "NAME": "Laser Core",
+    "DESCRIPTION": [
+      "Damaged core of a Sentry.",
+      "Odd turns: Deal 18 Damage, Even turns: Nothing.",
+      "Deal DD Damage.",
+      "Nothing."
     ]
   },
   "potionbrewer:Lightning": {
@@ -138,16 +173,16 @@
     "NAME": "Mechanism",
     "DESCRIPTION": [
       "The mechanical core of an Automaton.",
-      "Deal 30 damage. Place a Void on top of your draw pile.",
-      "Deal DD damage. Place a Void on top of your draw pile."
+      "Deal 30 Damage. Place a Void on top of your draw pile.",
+      "Deal DD Damage. Place a Void on top of your draw pile."
     ]
   },
   "potionbrewer:Meteorite": {
     "NAME": "Meteorite",
     "DESCRIPTION": [
       "Piece of strange metal from another world.",
-      "#yCatalyze: Deal 25 damage.",
-      "potionbrewer:Catalyze: Deal 25 damage."
+      "#yCatalyze: Deal 25 Damage.",
+      "potionbrewer:Catalyze: Deal 25 Damage."
     ]
   },
   "potionbrewer:Needle": {
@@ -174,12 +209,36 @@
       "Target all enemies 3 times."
     ]
   },
+  "potionbrewer:Pocketwatch": {
+    "NAME": "Pocketwatch",
+    "DESCRIPTION": [
+      "Timekeeping device taken from an Eldrich Horror.",
+      "Draw 3 cards.",
+      "Draw 3 cards."
+    ]
+  },
   "potionbrewer:PowerCore": {
     "NAME": "Power Core",
     "DESCRIPTION": [
       "The power core of a guardian mechanism.",
       "#yCatalyze: Gain 3 Thorns.",
       "potionbrewer:Catalyze: Gain 3 Thorns."
+    ]
+  },
+  "potionbrewer:Pyramid": {
+    "NAME": "Pyramid",
+    "DESCRIPTION": [
+      "Bizarre object harvested from an anthropomorphic shape.",
+      "Damages and Blocks 2 times.",
+      "Damages and Blocks 2 times."
+    ]
+  },
+  "potionbrewer:RitualJar": {
+    "NAME": "Ritual Jar",
+    "DESCRIPTION": [
+      "Odd relic found near an Awakened Beast.",
+      "Gain 3 Strength.",
+      "Gain 3 Strength."
     ]
   },
   "potionbrewer:Root": {
@@ -202,8 +261,8 @@
     "NAME": "Serpent Skull",
     "DESCRIPTION": [
       "The skull of a giant serpent.",
-      "Deal 15 damage.",
-      "Deal DD damage."
+      "Deal 15 Damage.",
+      "Deal DD Damage."
     ]
   },
   "potionbrewer:Silk": {
@@ -220,6 +279,14 @@
       "Stained skull taken from a slaver.",
       "Shuffle a #yReaction into your draw pile.",
       "Shuffle a *Reaction into your draw pile."
+    ]
+  },
+  "potionbrewer:Slime": {
+    "NAME": "Slime",
+    "DESCRIPTION": [
+      "Slime harvested from one of the Spire's pests.",
+      "Deal 3 Damage.",
+      "Deal DD Damage."
     ]
   },
   "potionbrewer:Spore": {
@@ -250,8 +317,8 @@
     "NAME": "Tentacle",
     "DESCRIPTION": [
       "Severed tentacle of one of the Spire's horrors.",
-      "Deal 5 damage every turn.",
-      "Deal 5 damage every turn."
+      "Deal 5 Damage every turn.",
+      "Deal 5 Damage every turn."
     ]
   },
   "potionbrewer:TinyHat": {

@@ -6,25 +6,26 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
-import com.megacrit.cardcrawl.potions.BloodPotion;
 import potionbrewer.PotionbrewerMod;
+import potionbrewer.potions.BoundlessPotion;
 
-public class Hand extends Reagent {
-    public static final String ORB_ID = PotionbrewerMod.makeID("Hand");
+public class Pyramid extends Reagent {
+    public static final String ORB_ID = PotionbrewerMod.makeID("Pyramid");
     private static final Texture img;
     private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString(ORB_ID);
     public static final String[] DESC = orbString.DESCRIPTION;
 
-    public Hand() {
+    public Pyramid() {
         super(ORB_ID, img, orbString.NAME, DESC);
         multiDamage = true;
         damageTimes = 2;
+        blockTimes = 2;
         targeted = false;
     }
 
     @Override
     public AbstractOrb makeCopy() {
-        return new Hand();
+        return new Pyramid();
     }
 
     @Override
@@ -34,11 +35,11 @@ public class Hand extends Reagent {
 
     @Override
     public AbstractPotion getPotion() {
-        return new BloodPotion();
+        return new BoundlessPotion();
     }
 
     static {
-        ImageMaster.loadRelicImg("Mummified Hand", "mummifiedHand.png");
-        img = ImageMaster.getRelicImg("Mummified Hand");
+        ImageMaster.loadRelicImg("Runic Pyramid", "runicPyramid.png");
+        img = ImageMaster.getRelicImg("Runic Pyramid");
     }
 }

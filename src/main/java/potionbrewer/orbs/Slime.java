@@ -12,25 +12,24 @@ import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
-import com.megacrit.cardcrawl.potions.DuplicationPotion;
+import com.megacrit.cardcrawl.potions.SmokeBomb;
 import potionbrewer.PotionbrewerMod;
 
-public class TinyHat extends Reagent {
-    public static final String ORB_ID = PotionbrewerMod.makeID("TinyHat");
+public class Slime extends Reagent {
+    public static final String ORB_ID = PotionbrewerMod.makeID("Slime");
     private static final Texture img;
     private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString(ORB_ID);
     public static final String[] DESC = orbString.DESCRIPTION;
 
-    public TinyHat() {
+    public Slime() {
         super(ORB_ID, img, orbString.NAME, DESC);
         damages = true;
-        damage = 24;
-        catalyze = true;
+        damage = 3;
     }
 
     @Override
     public AbstractOrb makeCopy() {
-        return new TinyHat();
+        return new Slime();
     }
 
     @Override
@@ -40,21 +39,21 @@ public class TinyHat extends Reagent {
 
     @Override
     public AbstractPotion getPotion() {
-        return new DuplicationPotion();
+        return new SmokeBomb();
     }
 
     @Override
     public void doAoeDamage(AbstractPlayer p, int amount) {
-        this.addToBot(new DamageAllEnemiesAction(p, DamageInfo.createDamageMatrix(amount), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SMASH));
+        this.addToBot(new DamageAllEnemiesAction(p, DamageInfo.createDamageMatrix(amount), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
     }
 
     @Override
     public void doDamage(AbstractPlayer p, AbstractMonster m, DamageInfo info) {
-        this.addToBot(new DamageAction(m, info, AbstractGameAction.AttackEffect.SMASH));
+        this.addToBot(new DamageAction(m, info, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
     }
 
     static {
-        ImageMaster.loadRelicImg("Bowler Hat", "bowlerHat.png");
-        img = ImageMaster.getRelicImg("Bowler Hat");
+        ImageMaster.loadRelicImg("Ectoplasm", "ectoplasm.png");
+        img = ImageMaster.getRelicImg("Ectoplasm");
     }
 }

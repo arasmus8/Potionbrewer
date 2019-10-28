@@ -48,7 +48,7 @@ public class PotentialEnergyPower extends AbstractPower implements BetterOnApply
     @Override
     public int betterOnApplyPowerStacks(AbstractPower power, AbstractCreature target, AbstractCreature source, int stackAmount) {
         if (power.ID.equals(StrengthPower.POWER_ID) || power.ID.equals(DexterityPower.POWER_ID)) {
-            if (target.equals(owner)) {
+            if (target.equals(owner) && stackAmount > 0) {
                 power.amount += amount;
                 return stackAmount + amount;
             }

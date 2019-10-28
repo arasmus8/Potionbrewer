@@ -499,6 +499,8 @@ public class PotionbrewerMod implements
         }
         PotionTracker.potionsUsedThisCombat.set(p, 0);
         PotionTracker.potionsUsedThisTurn.set(p, 0);
+        turnNumber = 1;
+        lastPlayedCardCostZero = false;
     }
 
     @Override

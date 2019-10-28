@@ -130,14 +130,18 @@ public abstract class Reagent extends AbstractOrb {
 
     public void doBlock(AbstractPlayer p, int amount) {}
 
-    private String variableInsertion(int idx, String d) {
+    private String variableInsertion(final int idx, final String d) {
         return d
                 .replace("DD", "!potionbrewer:R" + idx + "D!")
                 .replace("BB", "!potionbrewer:R" + idx + "B!");
     }
 
-    public String getCardDescription(int idx) {
-        return variableInsertion(idx, descriptions[2]);
+    public String getCardDescription(final int idx, final String content) {
+        return variableInsertion(idx, content);
+    }
+
+    public String getCardDescription(final int idx) {
+        return getCardDescription(idx, descriptions[2]);
     }
 
     public static Texture getDefaultTexture() {
