@@ -17,9 +17,9 @@ import static potionbrewer.PotionbrewerMod.makeRelicPath;
 public class PotionKit extends CustomRelic {
     
     public static final String ID = PotionbrewerMod.makeID(PotionKit.class.getSimpleName());
-    
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("placeholder_relic.png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic.png"));
+
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("PotionKit.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("PotionKit.png"));
     
     public PotionKit() {
         super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.CLINK);

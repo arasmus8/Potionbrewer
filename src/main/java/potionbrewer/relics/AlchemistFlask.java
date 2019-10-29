@@ -22,11 +22,11 @@ public class AlchemistFlask extends CustomRelic {
 
     public static final String ID = PotionbrewerMod.makeID(AlchemistFlask.class.getSimpleName());
 
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("placeholder_relic2.png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic2.png"));
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("AlchemistsFlask.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("AlchemistsFlask.png"));
 
     public AlchemistFlask() {
-        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.SOLID);
+        super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.SOLID);
         counter = 0;
     }
 

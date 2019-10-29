@@ -42,16 +42,19 @@ public class Prototype extends CustomCard {
     private static final int COST = 1;
     private static final int UPGRADED_COST = 0;
 
+    private Texture textureA;
+    private Texture textureB;
+    private Texture textureC;
+
     // /STAT DECLARATION/
 
-    private static String buildName(final boolean upgraded, Reagent a, Reagent b, Reagent c) {
-        String[] adjs = {"Potent", "Robust", "Concentrated", "Full-Bodied", "Stiff", "Diluted", "Congealed", "Fizzy", "Shimmering"};
+    private static String buildName(Reagent a, Reagent b, Reagent c) {
+        String[] adjs = {"Potent", "Robust", "Dull", "Bubbly", "Stiff", "Diluted", "Congealed", "Fizzy", "Shiny"};
         String[] types = {"Compound", "Solution", "Serum", "Draught", "Elixir", "Brew", "Tincture", "Mixture", "Philter"};
         String chosenAdj = adjs[(ReagentList.indexFromReagent(a) + ReagentList.indexFromReagent(b)) % adjs.length];
         String chosenType = types[(ReagentList.indexFromReagent(b) + ReagentList.indexFromReagent(c)) % types.length];
         String suffix = "#" + (ReagentList.indexFromReagent(a) + ReagentList.indexFromReagent(c));
         return chosenAdj + " " + chosenType + " " + suffix;
-        // return a.name + "/" + b.name + "/" + c.name + (upgraded ? " +" : "");
     }
 
     private static String buildDescription(Reagent a, Reagent b, Reagent c) {
@@ -90,11 +93,17 @@ public class Prototype extends CustomCard {
         Reagent b = ReagentList.secondReagent(misc);
         Reagent c = ReagentList.thirdReagent(misc);
         if (a == null || b == null || c == null) {
+            textureA = Reagent.getDefaultTexture();
+            textureB = Reagent.getDefaultTexture();
+            textureC = Reagent.getDefaultTexture();
             return;
         }
-        name = buildName(upgraded, a, b, c);
+        name = buildName(a, b, c);
         rawDescription = buildDescription(a, b, c);
         initializeDescription();
+        textureA = a.getTexture();
+        textureB = b.getTexture();
+        textureC = c.getTexture();
         exhaust = a.exhaust || b.exhaust || c.exhaust;
         if (a.targeted || b.targeted || c.targeted) {
             if (a.aoeDamage || b.aoeDamage || c.aoeDamage) {
@@ -125,27 +134,12 @@ public class Prototype extends CustomCard {
     }
 
     public void renderPortrait(SpriteBatch sb) {
-        Reagent a = ReagentList.firstReagent(misc);
-        if (a != null) {
-            // first is at 150deg
-            renderHelper(sb, a.getTexture(), -71.96F, 116.0F);
-        } else {
-            renderHelper(sb, Reagent.getDefaultTexture(), -71.96F, 116.0F);
-        }
-        Reagent b = ReagentList.secondReagent(misc);
-        if (b != null) {
-            // second is at 60deg
-            renderHelper(sb, b.getTexture(), 80.0F, 116.0F);
-        } else {
-            renderHelper(sb, Reagent.getDefaultTexture(), 80.0F, 116.0F);
-        }
-        Reagent c = ReagentList.thirdReagent(misc);
-        if (c != null) {
-            // third is at 270deg
-            renderHelper(sb, c.getTexture(), 0.0F, 26.0F);
-        } else {
-            renderHelper(sb, Reagent.getDefaultTexture(),0.0F, 26.0F);
-        }
+        // first is at 150deg
+        renderHelper(sb, textureA, -71.96F, 116.0F);
+        // second is at 60deg
+        renderHelper(sb, textureB, 80.0F, 116.0F);
+        // third is at 270deg
+        renderHelper(sb, textureC, 0.0F, 26.0F);
     }
 
     private int calcDamageTimes(Reagent r) {

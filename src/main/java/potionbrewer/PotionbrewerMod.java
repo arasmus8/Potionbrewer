@@ -1,9 +1,8 @@
 package potionbrewer;
 
 import basemod.BaseMod;
-import basemod.ModLabeledToggleButton;
-import basemod.ModPanel;
 import basemod.abstracts.CustomSavable;
+import basemod.devcommands.ConsoleCommand;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
@@ -18,11 +17,9 @@ import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.helpers.CardHelper;
-import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
@@ -240,6 +237,7 @@ public class PotionbrewerMod implements
         Texture badgeTexture = TextureLoader.getTexture(BADGE_IMAGE);
 
 
+/*
         ModPanel settingsPanel = new ModPanel();
 
 
@@ -263,14 +261,17 @@ public class PotionbrewerMod implements
                 });
 
         settingsPanel.addUIElement(enableNormalsButton);
+*/
 
-        BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
+        BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, null);
 
 
         BaseMod.addEvent(IdentityCrisisEvent.ID, IdentityCrisisEvent.class, TheCity.ID);
 
 
         logger.info("Done loading badge Image and mod options");
+
+        ConsoleCommand.addCommand("prototype", PrototypeConsoleCommand.class);
     }
 
     public void receiveEditPotions() {
@@ -308,6 +309,7 @@ public class PotionbrewerMod implements
         BaseMod.addRelic(new AlchemistFlask(), RelicType.SHARED);
         BaseMod.addRelic(new BoosterPack(), RelicType.SHARED);
         BaseMod.addRelic(new BottledElixir(), RelicType.SHARED);
+        BaseMod.addRelic(new DrinkingBird(), RelicType.SHARED);
         BaseMod.addRelic(new MortarAndPestle(), RelicType.SHARED);
         BaseMod.addRelic(new SalesContract(), RelicType.SHARED);
         BaseMod.addRelic(new SlideRule(), RelicType.SHARED);
@@ -319,6 +321,7 @@ public class PotionbrewerMod implements
         UnlockTracker.markRelicAsSeen(BoosterPack.ID);
         UnlockTracker.markRelicAsSeen(BottledElixir.ID);
         UnlockTracker.markRelicAsSeen(BunsenBurner.ID);
+        UnlockTracker.markRelicAsSeen(DrinkingBird.ID);
         UnlockTracker.markRelicAsSeen(MortarAndPestle.ID);
         UnlockTracker.markRelicAsSeen(SalesContract.ID);
         UnlockTracker.markRelicAsSeen(SlideRule.ID);
@@ -529,6 +532,11 @@ public class PotionbrewerMod implements
             return;
         }
         lastPlayedCardCostZero = (card.costForTurn == 0 || card.freeToPlayOnce) && !card.purgeOnUse;
+        for (AbstractCard inHand : AbstractDungeon.player.hand.group) {
+            if (inHand instanceof FollowupCard) {
+                inHand.triggerOnGlowCheck();
+            }
+        }
     }
 
     public static String makeID(String idText) {

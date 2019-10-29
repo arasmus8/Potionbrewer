@@ -2,7 +2,7 @@
   "potionbrewer:REAGENT": {
     "NAME": "REAGENT",
     "DESCRIPTION": [
-      " NL #yPotion: Distill to brew a ",
+      " NL #yPotion: Distill to brew: ",
       " NL #yCard #yEffect: "
     ]
   },
@@ -139,8 +139,8 @@
     "DESCRIPTION": [
       "Ink harvested from a Lagavulin.",
       "Turns 1-3: Nothing. Turns 4+: 18 Damage.",
-      "Deal DD Damage.",
-      "Nothing."
+      "Turn !potionbrewer:TURN_NUMBER! : Deal DD Damage.",
+      "Turn !potionbrewer:TURN_NUMBER! : Nothing."
     ]
   },
   "potionbrewer:Jaw": {
@@ -148,8 +148,8 @@
     "DESCRIPTION": [
       "The jawbone of a giant monster.",
       "Odd Turns: 5 block, Even Turns: 8 Damage.",
-      "Gain BB Block.",
-      "Deal DD Damage."
+      "Odd Turn: Gain BB Block.",
+      "Even Turn: Deal DD Damage."
     ]
   },
   "potionbrewer:LaserCore": {
@@ -157,8 +157,8 @@
     "DESCRIPTION": [
       "Damaged core of a Sentry.",
       "Odd turns: Deal 18 Damage, Even turns: Nothing.",
-      "Deal DD Damage.",
-      "Nothing."
+      "Odd Turn: Deal DD Damage.",
+      "Even Turn: Nothing."
     ]
   },
   "potionbrewer:Lightning": {
@@ -325,8 +325,8 @@
     "NAME": "Tiny Hat",
     "DESCRIPTION": [
       "A stylish hat, taken from a giant slime.",
-      "#yCatalyze: Deal 18 Damage.",
-      "potionbrewer:Catalyze: Deal 18 Damage."
+      "#yCatalyze: Deal 24 Damage.",
+      "potionbrewer:Catalyze: Deal DD Damage."
     ]
   },
   "potionbrewer:Tooth": {

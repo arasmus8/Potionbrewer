@@ -35,7 +35,7 @@ public class BottledElixir extends CustomRelic implements UsePotionRelic, Custom
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("BottledPlaceholder.png"));
 
     public BottledElixir() {
-        super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.CLINK);
+        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.CLINK);
         tips.clear();
         tips.add(new PowerTip(name, description));
     }

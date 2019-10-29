@@ -31,6 +31,13 @@
       "Whenever you use a Potion, add a #yDistill to your hand."
     ]
   },
+  "potionbrewer:DrinkingBird": {
+    "NAME": "Drinking Bird",
+    "FLAVOR": "TODO: Add flavor.",
+    "DESCRIPTIONS": [
+      "At the start of each combat, begin brewing a random potion."
+    ]
+  },
   "potionbrewer:MortarAndPestle": {
     "NAME": "Mortal and Pestle",
     "FLAVOR": "TODO: Add Flavor",

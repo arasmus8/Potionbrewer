@@ -39,8 +39,8 @@ public class ReagentList {
         reagentsById.put(Meteorite.ORB_ID, Meteorite.class);
         reagentsById.put(Needle.ORB_ID, Needle.class);
         reagentsById.put(Nethershroud.ORB_ID, Nethershroud.class);
-        reagentsById.put(Pocketwatch.ORB_ID, Pocketwatch.class);
         reagentsById.put(PhilosopherShard.ORB_ID, PhilosopherShard.class);
+        reagentsById.put(Pocketwatch.ORB_ID, Pocketwatch.class);
         reagentsById.put(PowerCore.ORB_ID, PowerCore.class);
         reagentsById.put(Pyramid.ORB_ID, Pyramid.class);
         reagentsById.put(RitualJar.ORB_ID, RitualJar.class);

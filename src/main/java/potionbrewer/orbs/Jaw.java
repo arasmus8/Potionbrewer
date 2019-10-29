@@ -40,15 +40,16 @@ public class Jaw extends Reagent {
             }
         } else {
             damages = true;
+            blocks = true;
         }
     }
 
     @Override
     public String getCardDescription(int idx) {
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
-            return getCardDescription(idx, PotionbrewerMod.turnNumber % 2 == 0 ? DESC[4] : DESC[3]);
+            return getCardDescription(idx, PotionbrewerMod.turnNumber % 2 == 0 ? DESC[3] : DESC[2]);
         }
-        return getCardDescription(idx, DESC[2]);
+        return getCardDescription(idx, DESC[1]);
     }
 
     @Override
@@ -83,7 +84,9 @@ public class Jaw extends Reagent {
 
     @Override
     public void doEffects(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new VFXAction(new BiteEffect(m.hb.cX, m.hb.cY - 40.0F * Settings.scale, Settings.GOLD_COLOR.cpy()), 0.3F));
+        if (damages) {
+            this.addToBot(new VFXAction(new BiteEffect(m.hb.cX, m.hb.cY - 40.0F * Settings.scale, Settings.GOLD_COLOR.cpy()), 0.3F));
+        }
     }
 
     static {
