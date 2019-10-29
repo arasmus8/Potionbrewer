@@ -135,10 +135,6 @@
     "NAME": "Explosive Reaction",
     "DESCRIPTION": "Deal !D! Damage. Sacrifice your rightmost potionbrewer:Reagent to do double damage."
   },
-  "potionbrewer:EyeGouge": {
-    "NAME": "Eye Gouge",
-    "DESCRIPTION": "Deal !D! Damage. Shuffle a *Reagent into your draw pile."
-  },
   "potionbrewer:FlareUp": {
     "NAME": "Flare Up",
     "DESCRIPTION": "Deal !D! Damage. Deal !M! more Damage for each potion played this combat."
@@ -251,6 +247,10 @@
     "NAME": "Research Results",
     "DESCRIPTION": "For X turns, add a *Random *Potion card to your hand. NL Exhaust",
     "UPGRADE_DESCRIPTION": "For X turns, add a *Random *Potion card to your hand."
+  },
+  "potionbrewer:Shovel": {
+    "NAME": "Shovel",
+    "DESCRIPTION": "Deal !D! Damage. Shuffle a *Reagent into your draw pile."
   },
   "potionbrewer:Smack": {
     "NAME": "Smack",

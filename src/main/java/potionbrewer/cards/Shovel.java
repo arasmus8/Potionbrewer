@@ -14,10 +14,10 @@ import potionbrewer.characters.Potionbrewer;
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static potionbrewer.PotionbrewerMod.makeCardPath;
 
-public class EyeGouge extends CustomCard {
+public class Shovel extends CustomCard {
     // TEXT DECLARATION
 
-    public static final String ID = PotionbrewerMod.makeID(EyeGouge.class.getSimpleName());
+    public static final String ID = PotionbrewerMod.makeID(Shovel.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
     public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
     // Must have an image with the same NAME as the card in your image folder!.
@@ -37,7 +37,7 @@ public class EyeGouge extends CustomCard {
     private static final int UPGRADE_PLUS_DMG = 3;
     // /STAT DECLARATION/
 
-    public EyeGouge() {
+    public Shovel() {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
         cardsToPreview = new ReagentCard();
