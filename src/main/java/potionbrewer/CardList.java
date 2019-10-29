@@ -24,9 +24,9 @@ public class CardList {
         // Common Attacks
         allCards.add(new BlindingSpray());
         allCards.add(new Contingency());
-        allCards.add(new Shovel());
         allCards.add(new FlashPowder());
         allCards.add(new OneTwoPunch());
+        allCards.add(new Shovel());
         allCards.add(new Smack());
         allCards.add(new TimeBomb());
         allCards.add(new UnstableFormula());
