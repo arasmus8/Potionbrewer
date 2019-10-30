@@ -20,8 +20,8 @@ public class BoosterPack extends CustomRelic {
     private static final int RARE_CARDS = 1;
     public static final String ID = PotionbrewerMod.makeID(BoosterPack.class.getSimpleName());
 
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("placeholder_relic2.png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic2.png"));
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("BoosterPack.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("BoosterPack.png"));
 
     public BoosterPack() {
         super(ID, IMG, OUTLINE, RelicTier.SHOP, LandingSound.FLAT);

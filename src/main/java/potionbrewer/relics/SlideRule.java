@@ -18,8 +18,8 @@ public class SlideRule extends CustomRelic {
 
     public static final String ID = PotionbrewerMod.makeID(SlideRule.class.getSimpleName());
 
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("placeholder_relic2.png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic2.png"));
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("SlideRule.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("SlideRule.png"));
 
     public SlideRule() {
         super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.FLAT);
