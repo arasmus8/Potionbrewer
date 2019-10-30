@@ -20,8 +20,8 @@ public class WarMedal extends CustomRelic {
 
     public static final String ID = PotionbrewerMod.makeID(WarMedal.class.getSimpleName());
 
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("placeholder_relic2.png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic2.png"));
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("WarMedal.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("WarMedal.png"));
 
     public WarMedal() {
         super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.SOLID);
