@@ -7,6 +7,13 @@
       " cards, choose 1 of 3 random potions to use."
     ]
   },
+  "potionbrewer:AlchemistKit": {
+    "NAME": "Alchemist Kit",
+    "FLAVOR": "Legendary tools of an Alchemist.",
+    "DESCRIPTIONS": [
+      "Replaces Potion Kit. Obtain an additional copy of the first potion you use each combat."
+    ]
+  },
   "potionbrewer:BoosterPack": {
     "NAME": "Booster Pack",
     "FLAVOR": "TODO: Add Flavor",
