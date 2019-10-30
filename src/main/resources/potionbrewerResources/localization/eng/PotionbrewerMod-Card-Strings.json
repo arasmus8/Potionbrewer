@@ -11,10 +11,6 @@
       "Acid Fog"
     ]
   },
-  "potionbrewer:Alacrity": {
-    "NAME": "Alacrity",
-    "DESCRIPTION": "Scry !M!. NL Draw a card."
-  },
   "potionbrewer:AlchemistForm": {
     "NAME": "Alchemist Form",
     "DESCRIPTION": "Each turn, convert !M! gold into a random potion if you have an empty potion slot."
@@ -146,13 +142,13 @@
       "Flash-Bang Powder"
     ]
   },
-  "potionbrewer:FollowUp": {
-    "NAME": "Follow Up",
-    "DESCRIPTION": "Deal !D! Damage. If the last card played cost 0, draw a card."
-  },
   "potionbrewer:FortifiedSerum": {
     "NAME": "Fortified Serum",
     "DESCRIPTION": "Gain !B! Block."
+  },
+  "potionbrewer:Fuel": {
+    "NAME": "Fuel",
+    "DESCRIPTION": "Shuffle a *Reaction into your draw pile. NL Scry !M!."
   },
   "potionbrewer:FuelCell": {
     "NAME": "Fuel Cell",
@@ -259,6 +255,10 @@
   "potionbrewer:Smokescreen": {
     "NAME": "Smokescreen",
     "DESCRIPTION": "Gain !B! Block. NL potionbrewer:Catalyze: Draw a card."
+  },
+  "potionbrewer:Spark": {
+    "NAME": "Spark",
+    "DESCRIPTION": "Deal !D! Damage. Draw a *Reaction."
   },
   "potionbrewer:SpecialFormula": {
     "NAME": "Special Formula",

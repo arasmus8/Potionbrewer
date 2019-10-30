@@ -52,20 +52,20 @@ public class CardList {
         allCards.add(new ExothermicReaction());
         allCards.add(new ExplosiveReaction());
         allCards.add(new FlareUp());
-        allCards.add(new FollowUp());
         allCards.add(new IronFist());
+        allCards.add(new Spark());
         allCards.add(new TestSubject());
         allCards.add(new WizBang());
 
         //Uncommon Skills
         allCards.add(new AcidCloud());
-        allCards.add(new Alacrity());
         allCards.add(new BlindingMist());
         allCards.add(new ChemicalShroud());
         allCards.add(new ChokingPowder());
         allCards.add(new CrossReference());
         allCards.add(new DigDeep());
         allCards.add(new Experimentation());
+        allCards.add(new Fuel());
         allCards.add(new FuelCell());
         allCards.add(new HazardousMaterials());
         allCards.add(new LeftoverSpecimen());

@@ -77,6 +77,9 @@ public class Prototype extends CustomCard {
         super(ID, CARD_STRINGS.NAME, IMG, COST, buildDescription(a, b, c), TYPE, COLOR, RARITY, TARGET);
         isMultiDamage = true;
         if (a == null || b == null || c == null) {
+            textureA = Reagent.getDefaultTexture();
+            textureB = Reagent.getDefaultTexture();
+            textureC = Reagent.getDefaultTexture();
             misc = 0;
         } else {
             misc = ReagentList.buildMisc(a, b, c);
