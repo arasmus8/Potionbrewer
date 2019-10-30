@@ -29,7 +29,7 @@ public class Jaw extends Reagent {
 
     public Jaw() {
         super(ORB_ID, img, orbString.NAME, DESC);
-        if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
+        if (AbstractDungeon.isPlayerInDungeon() && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
             if (PotionbrewerMod.turnNumber % 2 == 0) {
                 damages = true;
                 damage = 8;
@@ -46,7 +46,7 @@ public class Jaw extends Reagent {
 
     @Override
     public String getCardDescription(int idx) {
-        if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
+        if (AbstractDungeon.isPlayerInDungeon() && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
             return getCardDescription(idx, PotionbrewerMod.turnNumber % 2 == 0 ? DESC[3] : DESC[2]);
         }
         return getCardDescription(idx, DESC[1]);

@@ -25,7 +25,7 @@ public class Ink extends Reagent {
 
     public Ink() {
         super(ORB_ID, img, orbString.NAME, DESC);
-        if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
+        if (AbstractDungeon.isPlayerInDungeon() && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
             if (PotionbrewerMod.turnNumber > 3) {
                 damages = true;
                 damage = 18;
@@ -41,7 +41,7 @@ public class Ink extends Reagent {
 
     @Override
     public String getCardDescription(int idx) {
-        if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
+        if (AbstractDungeon.isPlayerInDungeon() && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
             return getCardDescription(idx, PotionbrewerMod.turnNumber > 3 ? DESC[2] : DESC[3]);
         }
         return getCardDescription(idx, DESC[1]);
