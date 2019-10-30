@@ -53,6 +53,7 @@ public class CardList {
         allCards.add(new ExplosiveReaction());
         allCards.add(new FlareUp());
         allCards.add(new IronFist());
+        allCards.add(new LabAccident());
         allCards.add(new Spark());
         allCards.add(new TestSubject());
         allCards.add(new WizBang());

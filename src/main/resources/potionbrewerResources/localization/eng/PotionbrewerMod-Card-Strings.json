@@ -193,6 +193,10 @@
       "Steel Heart"
     ]
   },
+  "potionbrewer:LabAccident": {
+    "NAME": "Lab Accident",
+    "DESCRIPTION": "potionbrewer:Catalyze: Deal !D! Damage."
+  },
   "potionbrewer:LeftoverSpecimen": {
     "NAME": "Leftover Specimen",
     "DESCRIPTION": "Gain !B! Block. NL Add a *Reagent card into your hand. NL Exhaust.",
