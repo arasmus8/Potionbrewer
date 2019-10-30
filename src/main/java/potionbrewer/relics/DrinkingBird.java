@@ -17,8 +17,8 @@ public class DrinkingBird extends CustomRelic {
 
     public static final String ID = PotionbrewerMod.makeID(DrinkingBird.class.getSimpleName());
 
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("placeholder_relic.png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic.png"));
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("DrinkingBird.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("DrinkingBird.png"));
 
     public DrinkingBird() {
         super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.CLINK);

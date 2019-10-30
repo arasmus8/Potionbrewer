@@ -16,8 +16,8 @@ public class ToyAutogyro extends CustomRelic implements UsePotionRelic {
 
     public static final String ID = PotionbrewerMod.makeID(ToyAutogyro.class.getSimpleName());
 
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("placeholder_relic2.png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic2.png"));
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("ToyAutogyro.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("ToyAutogyro.png"));
 
     public ToyAutogyro() {
         super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.FLAT);

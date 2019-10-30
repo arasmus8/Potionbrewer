@@ -13,8 +13,8 @@ public class MortarAndPestle extends CustomRelic implements DiscardPotionRelic {
 
     public static final String ID = PotionbrewerMod.makeID(MortarAndPestle.class.getSimpleName());
 
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("placeholder_relic2.png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic2.png"));
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("MortarAndPestle.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("MortarAndPestle.png"));
 
     public MortarAndPestle() {
         super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.SOLID);
