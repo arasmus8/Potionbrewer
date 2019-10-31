@@ -51,7 +51,7 @@ public class SpecialFormula extends CustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         ArrayList<AbstractCard> choices = ChoosePotion.getRandomPotionIdList(magicNumber).stream()
-                .map((s -> new ChoosePotion(s, true)))
+                .map((ChoosePotion::new))
                 .collect(Collectors.toCollection(ArrayList::new));
         this.addToBot(new ChooseOneAction(choices));
     }

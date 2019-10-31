@@ -270,7 +270,7 @@
   },
   "potionbrewer:SpecialFormula": {
     "NAME": "Special Formula",
-    "DESCRIPTION": "Choose 1 of !M! random potions to obtain. NL Exhaust."
+    "DESCRIPTION": "Choose 1 of !M! random potions to use. NL Exhaust."
   },
   "potionbrewer:TestFormula": {
     "NAME": "Test Formula",
