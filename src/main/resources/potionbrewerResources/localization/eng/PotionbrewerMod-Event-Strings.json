@@ -8,6 +8,12 @@
       "[Open Secret Compartment] Lose all your potions, take the #gAlchemist's #gFlask."
     ]
   },
+  "potionbrewer:WomanInBlue": {
+    "NAME": "The Woman In Blue -- Override",
+    "DESCRIPTIONS": [
+      "From the darkness, an arm pulls you into a small shop. As your eyes adjust, you see a pale woman in sharp clothes gesturing towards a wall of potions. NL \"You!\" she exclaims. \"Never mind. Buy a potion. Now!\""
+    ]
+  },
   "potionbrewer:IdentityCrisisEvent": {
     "NAME": "Identity Crisis",
     "DESCRIPTIONS": [
