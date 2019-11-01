@@ -93,7 +93,10 @@
   "potionbrewer:Collect": {
     "NAME": "Collect",
     "DESCRIPTION": "Collect a potionbrewer:Reagent from an enemy. Add a *Distill to your hand. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Collect a potionbrewer:Reagent from an enemy. Add a *Distill to your hand. NL Exhaust."
+    "UPGRADE_DESCRIPTION": "Innate. NL Collect a potionbrewer:Reagent from an enemy. Add a *Distill to your hand. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "Collect: "
+    ]
   },
   "potionbrewer:Contingency": {
     "NAME": "Contingency",

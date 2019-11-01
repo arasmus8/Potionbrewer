@@ -27,7 +27,7 @@ import static potionbrewer.PotionbrewerMod.makeCardPath;
 public class Collect extends CustomCard {
     
     public static final String ID = PotionbrewerMod.makeID(Collect.class.getSimpleName());
-    private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
 
     public static final String IMG = makeCardPath("ReagentCard.png");
     
@@ -50,7 +50,7 @@ public class Collect extends CustomCard {
         cardsToPreview = new Distill();
     }
 
-    public AbstractOrb getOrbForMonster(AbstractMonster m) {
+    public static AbstractOrb getOrbForMonster(AbstractMonster m) {
         if(monsterReagents.containsKey(m.id)) {
             try {
                 Class<? extends Reagent> clz = monsterReagents.get(m.id);
@@ -61,7 +61,21 @@ public class Collect extends CustomCard {
         }
         return ReagentList.randomReagent();
     }
-    
+
+    /*
+    @Override
+    public void render(SpriteBatch sb) {
+        if(AbstractDungeon.player != null) {
+            AbstractMonster m = (AbstractMonster) ReflectionHacks.getPrivate(AbstractDungeon.player, AbstractPlayer.class, "hoveredMonster");
+            if (m != null) {
+                Reagent r = (Reagent) getOrbForMonster(m);
+                TipHelper.renderGenericTip(m.hb.x, m.hb.y, "Collect: " + r.name, r.description);
+            }
+        }
+        super.render(sb);
+    }
+    */
+
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new MakeTempCardInHandAction(new Distill()));
