@@ -22,7 +22,7 @@ import java.lang.reflect.Method;
 )
 public class Render {
     @SpireInsertPatch(
-            locator = Locator.class
+            rloc = 6
     )
     public static void RenderTipForCollectOnHover(SpriteBatch sb) {
         if (AbstractDungeon.player != null) {

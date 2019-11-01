@@ -66,7 +66,11 @@
   },
   "potionbrewer:MidasPotion": {
     "NAME": "Midas Potion",
-    "DESCRIPTIONS": [ "Deal #b", " Damage, if the enemy is defeated, gain #b", " gold." ]
+    "DESCRIPTIONS": [
+      "Deal #b",
+      " Damage, if this defeats a non-minion enemy, gain #b",
+      " gold."
+    ]
   },
   "potionbrewer:NoxiousPotion": {
     "NAME": "Noxious Potion",
