@@ -45,6 +45,13 @@
       "At the start of each combat, begin brewing a random potion."
     ]
   },
+  "potionbrewer:ElricsMonocle": {
+    "NAME": "Elric's Monocle",
+    "FLAVOR": "This curious lens is said to reveal Truth.",
+    "DESCRIPTIONS": [
+      "Right Click to use once per battle. NL Exhaust your hand and replace each card with an upgraded Colorless card."
+    ]
+  },
   "potionbrewer:MortarAndPestle": {
     "NAME": "Mortal and Pestle",
     "FLAVOR": "TODO: Add Flavor",

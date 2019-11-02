@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.screens.CombatRewardScreen;
 import javassist.CtBehavior;
 import potionbrewer.characters.Potionbrewer;
-import potionbrewer.relics.AlchemistFlask;
+import potionbrewer.relics.ElricsMonocle;
 
 public class PatchLabEvent {
     @SpirePatch(
@@ -54,7 +54,7 @@ public class PatchLabEvent {
         public static void Insert(Lab __instance, int buttonPressed) {
             if (AbstractDungeon.player.chosenClass == Potionbrewer.Enums.POTIONBREWER && buttonPressed == 0) {
                 AbstractDungeon.getCurrRoom().rewards.clear();
-                AbstractDungeon.getCurrRoom().rewards.add(new RewardItem(new AlchemistFlask()));
+                AbstractDungeon.getCurrRoom().rewards.add(new RewardItem(new ElricsMonocle()));
                 for (int i = 0; i < AbstractDungeon.player.potionSlots; i++) {
                     AbstractDungeon.player.potions.set(i, new PotionSlot(i));
                 }
