@@ -70,7 +70,7 @@
     "NAME": "Sales Contract",
     "FLAVOR": "TODO: Add flavor.",
     "DESCRIPTIONS": [
-      "Whenever you discard a potion, receive 20 gold."
+      "Whenever you obtain a (non-tonic) potion, instead receive 20 gold."
     ]
   },
   "potionbrewer:SlideRule": {

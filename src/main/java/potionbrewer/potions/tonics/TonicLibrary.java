@@ -32,6 +32,10 @@ public class TonicLibrary {
         return list.subList(0, amount).stream().map(ChoosePotion::new).collect(Collectors.toCollection(ArrayList::new));
     }
 
+    public static boolean isATonic(AbstractPotion potion) {
+        return tonicList.containsKey(potion.ID);
+    }
+
     public static AbstractPotion getRandomTonic() {
         try {
             String[] list = tonicList.keySet().toArray(new String[0]);
