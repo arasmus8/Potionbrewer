@@ -25,20 +25,15 @@ public class Ink extends Reagent {
 
     public Ink() {
         super(ORB_ID, img, orbString.NAME, DESC);
+        damages = true;
+        damage = 1;
         if (AbstractDungeon.isPlayerInDungeon()
                 && AbstractDungeon.getCurrMapNode() != null
                 && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT
         ) {
             if (PotionbrewerMod.turnNumber > 3) {
-                damages = true;
-                damage = 18;
-            } else {
-                damages = false;
-                targeted = false;
+                damage = 12;
             }
-        } else {
-            damage = 0;
-            damages = true;
         }
     }
 
@@ -48,7 +43,7 @@ public class Ink extends Reagent {
                 && AbstractDungeon.getCurrMapNode() != null
                 && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT
         ) {
-            return getCardDescription(idx, PotionbrewerMod.turnNumber > 3 ? DESC[2] : DESC[3]);
+            return getCardDescription(idx, DESC[2]);
         }
         return getCardDescription(idx, DESC[1]);
     }

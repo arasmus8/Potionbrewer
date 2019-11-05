@@ -189,7 +189,7 @@ public class Collect extends CustomCard {
         monsterReagents.put("theJungle:JungleHunters", Bone.class);
         monsterReagents.put("theJungle:Lyon", Tooth.class);
         monsterReagents.put("theJungle:MamaSnecko", Eye.class);
-        monsterReagents.put("theJungle:Phrog", Slime.class);
+        monsterReagents.put("theJungle:Phrog", Ink.class);
         monsterReagents.put("theJungle:SlimyTreeVines", Root.class);
         monsterReagents.put("theJungle:SneckoCultist", Eye.class);
         monsterReagents.put("theJungle:SneckoEgg", Eye.class);
@@ -199,7 +199,7 @@ public class Collect extends CustomCard {
         monsterReagents.put("theFactory:BigBot", Steel.class);
         monsterReagents.put("theFactory:DecayingSentinel", Steel.class);
         monsterReagents.put("theFactory:DefectiveSentry", Steel.class);
-        monsterReagents.put("theFactory:DrinkBrewer", Steel.class);
+        monsterReagents.put("theFactory:DrinkBrewer", Clay.class);
         monsterReagents.put("theFactory:Experiment01", Meteorite.class);
         monsterReagents.put("theFactory:ExpPersonnel", Slime.class);
         monsterReagents.put("theFactory:Guardian2", PowerCore.class);
@@ -213,7 +213,7 @@ public class Collect extends CustomCard {
         monsterReagents.put("theFactory:ShrapnelHeap", Barb.class);
         monsterReagents.put("theFactory:ShrapnelTosser", Barb.class);
         monsterReagents.put("theFactory:SmogElemental", Sulphur.class);
-        monsterReagents.put("theFactory:SPIDER", Silk.class);
+        monsterReagents.put("theFactory:SPIDER", Pyramid.class);
         monsterReagents.put("theFactory:ToyOrb", Steel.class);
 
     }

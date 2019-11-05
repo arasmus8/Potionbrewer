@@ -29,21 +29,19 @@ public class Jaw extends Reagent {
 
     public Jaw() {
         super(ORB_ID, img, orbString.NAME, DESC);
+        damages = true;
+        blocks = true;
+        damage = 0;
+        block = 0;
         if (AbstractDungeon.isPlayerInDungeon()
                 && AbstractDungeon.getCurrMapNode() != null
                 && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT
         ) {
             if (PotionbrewerMod.turnNumber % 2 == 0) {
-                damages = true;
                 damage = 8;
             } else {
-                blocks = true;
                 block = 5;
-                targeted = false;
             }
-        } else {
-            damages = true;
-            blocks = true;
         }
     }
 
