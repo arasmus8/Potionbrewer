@@ -31,8 +31,8 @@ public class BottledElixir extends CustomRelic implements UsePotionRelic, Custom
     private boolean cardSelected = true;
 
     public static final String ID = PotionbrewerMod.makeID(BottledElixir.class.getSimpleName());
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("BottledPlaceholder.png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("BottledPlaceholder.png"));
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("BottledElixir.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("BottledElixir.png"));
 
     public BottledElixir() {
         super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.CLINK);
