@@ -29,7 +29,7 @@ public class Mechanism extends Reagent {
     public Mechanism() {
         super(ORB_ID, img, orbString.NAME, DESC);
         damages = true;
-        damage = 30;
+        damage = 20;
     }
 
     @Override

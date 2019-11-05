@@ -49,6 +49,7 @@ public class Discombobulate extends CatalyzeCard {
 
     @Override
     public void catalyzeActions(AbstractPlayer p, AbstractMonster m) {
+        exhaust = true;
         this.addToBot(new ApplyPowerAction(m, p, new StrengthPower(m, -this.magicNumber), -this.magicNumber));
     }
 

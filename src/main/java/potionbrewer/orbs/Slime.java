@@ -24,7 +24,7 @@ public class Slime extends Reagent {
     public Slime() {
         super(ORB_ID, img, orbString.NAME, DESC);
         damages = true;
-        damage = 3;
+        damage = 4;
     }
 
     @Override

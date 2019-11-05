@@ -70,6 +70,10 @@
     "DESCRIPTION": "Each turn, shuffle a *Reaction into your draw pile.",
     "UPGRADE_DESCRIPTION": "Innate. NL Each turn, shuffle a *Reaction into your draw pile."
   },
+  "potionbrewer:ChemicalRage": {
+    "NAME": "Chemical Rage",
+    "DESCRIPTION": "Each time you use a Potion, deal !M! Damage to all enemies."
+  },
   "potionbrewer:ChemicalShroud": {
     "NAME": "Chemical Shroud",
     "DESCRIPTION": "Gain !B! Block. This costs 1 less for each potion used this combat."
@@ -81,10 +85,6 @@
   "potionbrewer:ChemicalWeapons": {
     "NAME": "Chemical Weapons",
     "DESCRIPTION": "Deal !D! Damage. Add a random *Tonic card to your hand."
-  },
-  "potionbrewer:ChemicalRage": {
-    "NAME": "Chemical Rage",
-    "DESCRIPTION": "Each time you use a Potion, deal !M! Damage to all enemies."
   },
   "potionbrewer:ChokingPowder": {
     "NAME": "Choking Powder",
@@ -116,7 +116,7 @@
   },
   "potionbrewer:Discombobulate": {
     "NAME": "Discombobulate",
-    "DESCRIPTION": "Deal !D! Damage. NL potionbrewer:Catalyze: The target loses !M! Strength."
+    "DESCRIPTION": "Deal !D! Damage. NL potionbrewer:Catalyze: Exhaust this card and remove !M! Strength from the target."
   },
   "potionbrewer:EmptyBottle": {
     "NAME": "Empty Bottle",
@@ -132,7 +132,7 @@
   },
   "potionbrewer:Experimentation": {
     "NAME": "Experimentation",
-    "DESCRIPTION": "Ethereal NL Rotate your rightmost potionbrewer:Reagent to the far left. If you have collected 3 *reagents, create a card from them and shuffle it into your draw pile."
+    "DESCRIPTION": "Ethereal NL Rotate your rightmost potionbrewer:Reagent to the far left. If you have collected 3 *reagents, shuffle a *Prototype into your draw pile."
   },
   "potionbrewer:ExplosiveReaction": {
     "NAME": "Explosive Reaction",
@@ -168,8 +168,8 @@
   },
   "potionbrewer:HazardousWaste": {
     "NAME": "Hazardous Waste",
-    "DESCRIPTION": "Apply !M! Poison. NL potionbrewer:Catalyze: Permanently increase Poison by 1. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Apply !M! Poison. NL potionbrewer:Catalyze: Permanently increase Poison by 2. NL Exhaust.",
+    "DESCRIPTION": "Apply !M! Poison. NL potionbrewer:Catalyze: Permanently increase Poison by 2. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Apply !M! Poison. NL potionbrewer:Catalyze: Permanently increase Poison by 3. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
       "Hazardous Sludge"
     ]

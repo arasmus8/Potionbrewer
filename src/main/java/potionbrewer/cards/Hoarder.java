@@ -12,6 +12,7 @@ import potionbrewer.powers.HoarderPower;
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static potionbrewer.PotionbrewerMod.makeCardPath;
 
+// Change this to channel a random Reagent instead? Also add orb slot(s)?
 public class Hoarder extends CustomCard {
 
     public static final String ID = PotionbrewerMod.makeID(Hoarder.class.getSimpleName());

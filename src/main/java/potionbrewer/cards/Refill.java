@@ -33,8 +33,8 @@ public class Refill extends CustomCard {
 
     private static final int COST = 2;
 
-    private static final int BLOCK = 14;
-    private static final int UPGRADE_PLUS_BLOCK = 6;
+    private static final int BLOCK = 12;
+    private static final int UPGRADE_PLUS_BLOCK = 4;
 
 // /STAT DECLARATION/
 

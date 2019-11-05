@@ -20,7 +20,6 @@ public class Pocketwatch extends Reagent {
 
     public Pocketwatch() {
         super(ORB_ID, img, orbString.NAME, DESC);
-        exhaust = true;
         targeted = false;
     }
 

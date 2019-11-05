@@ -12,6 +12,7 @@ import potionbrewer.powers.PotentialEnergyPower;
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static potionbrewer.PotionbrewerMod.makeCardPath;
 
+// Maybe change this to add 1 temp Str/Dex when you use a potion?
 public class PotentialEnergy extends CustomCard {
 
     public static final String ID = PotionbrewerMod.makeID(PotentialEnergy.class.getSimpleName());

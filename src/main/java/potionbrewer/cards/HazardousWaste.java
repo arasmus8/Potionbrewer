@@ -52,7 +52,7 @@ public class HazardousWaste extends CatalyzeCard {
 
     @Override
     public void catalyzeActions(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new IncreaseMiscAction(this.uuid, this.misc, upgraded ? 2 : 1));
+        this.addToBot(new IncreaseMiscAction(this.uuid, this.misc, upgraded ? 3 : 2));
     }
 
     @Override
