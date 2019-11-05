@@ -156,9 +156,8 @@
     "NAME": "Laser Core",
     "DESCRIPTION": [
       "Damaged core of a Sentry.",
-      "Odd turns: Deal 18 Damage, Even turns: Nothing.",
-      "Odd Turn: Deal DD Damage.",
-      "Even Turn: Nothing."
+      "Odd turns: Deal 12 Damage, Even turns: Deal 0 Damage.",
+      "Deal DD Damage."
     ]
   },
   "potionbrewer:Lightning": {

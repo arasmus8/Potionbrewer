@@ -180,12 +180,12 @@ public class Collect extends CustomCard {
 
 
         // TheJungle
-        monsterReagents.put("theJungle:BabySneko", Eye.class);
+        monsterReagents.put("theJungle:BabySnecko", Eye.class);
         monsterReagents.put("theJungle:CarcassSack", Root.class);
         monsterReagents.put("theJungle:Cassacara", Root.class);
         monsterReagents.put("theJungle:Flameango", Feather.class);
         monsterReagents.put("theJungle:FunGuy", Spore.class);
-        monsterReagents.put("theJungle:GianWrat", Sulphur.class);
+        monsterReagents.put("theJungle:GiantWrat", Sulphur.class);
         monsterReagents.put("theJungle:JungleHunters", Bone.class);
         monsterReagents.put("theJungle:Lyon", Tooth.class);
         monsterReagents.put("theJungle:MamaSnecko", Eye.class);

@@ -201,6 +201,11 @@ public class Prototype extends CustomCard {
     }
 
     @Override
+    public void triggerAtStartOfTurn() {
+        hydrate();
+    }
+
+    @Override
     public void triggerOnGlowCheck() {
         boolean catalyze = false;
         if (misc > 0) {

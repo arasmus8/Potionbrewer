@@ -30,22 +30,8 @@ public class LaserCore extends Reagent {
 
     public LaserCore() {
         super(ORB_ID, img, orbString.NAME, DESC);
-        if (AbstractDungeon.isPlayerInDungeon()
-                && AbstractDungeon.getCurrMapNode() != null
-                && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT
-        ) {
-            if (PotionbrewerMod.turnNumber % 2 == 0) {
-                // Even turns do nothing
-                damages = false;
-                targeted = false;
-            } else {
-                damages = true;
-                damage = 18;
-            }
-        } else {
-            damages = true;
-            damage = 0;
-        }
+        damages = true;
+        damage = (PotionbrewerMod.turnNumber % 2 == 0) ? 0 : 12;
     }
 
     @Override
@@ -54,7 +40,7 @@ public class LaserCore extends Reagent {
                 && AbstractDungeon.getCurrMapNode() != null
                 && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT
         ) {
-            return getCardDescription(idx, PotionbrewerMod.turnNumber % 2 == 0 ? DESC[3] : DESC[2]);
+            return getCardDescription(idx, DESC[2]);
         }
         return getCardDescription(idx, DESC[1]);
     }
