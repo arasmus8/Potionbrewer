@@ -30,6 +30,7 @@ public class HazardousMaterials extends CatalyzeCard {
 
     public HazardousMaterials() {
         super(ID, cardStrings.NAME, IMG, COST, cardStrings.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        exhaust = true;
     }
 
     @Override

@@ -163,8 +163,8 @@
   },
   "potionbrewer:HazardousMaterials": {
     "NAME": "Hazardous Materials",
-    "DESCRIPTION": "Apply X potionbrewer:Toxic. NL potionbrewer:Catalyze: And X potionbrewer:Disease.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Apply X potionbrewer:Toxic. NL potionbrewer:Catalyze: And X potionbrewer:Disease."
+    "DESCRIPTION": "Apply X potionbrewer:Toxic. NL potionbrewer:Catalyze: And X potionbrewer:Disease. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Innate. NL Apply X potionbrewer:Toxic. NL potionbrewer:Catalyze: And X potionbrewer:Disease. NL Exhaust"
   },
   "potionbrewer:HazardousWaste": {
     "NAME": "Hazardous Waste",
