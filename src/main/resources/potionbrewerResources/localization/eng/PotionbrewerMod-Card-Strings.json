@@ -13,7 +13,7 @@
   },
   "potionbrewer:AlchemistForm": {
     "NAME": "Alchemist Form",
-    "DESCRIPTION": "Each turn, convert !M! gold into a random potion if you have an empty potion slot."
+    "DESCRIPTION": "Each turn, convert !M! gold into a random potion if you have an empty potion slot. NL Non-minion enemies give 40 gold when defeated."
   },
   "potionbrewer:AnotherRound": {
     "NAME": "Another Round",

@@ -23,8 +23,8 @@ public class EquivalentExchange extends CustomCard {
     private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = Potionbrewer.Enums.COLOR_CYAN;
 
-    private static final int COST = 2;
-    private static final int UPGRADE_COST = 1;
+    private static final int COST = 4;
+    private static final int UPGRADE_COST = 3;
 
     private static final int MAGIC = 1;
 

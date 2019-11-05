@@ -16,8 +16,8 @@ public class Torch extends CustomRelic {
 
     public static final String ID = PotionbrewerMod.makeID(Torch.class.getSimpleName());
 
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("placeholder_relic2.png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic2.png"));
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("Torch.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("Torch.png"));
 
     public Torch() {
         super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.SOLID);

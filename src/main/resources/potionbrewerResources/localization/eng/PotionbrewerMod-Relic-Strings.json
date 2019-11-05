@@ -35,7 +35,7 @@
     "NAME": "Bunsen Burner",
     "FLAVOR": "It's labeled 'Property of Citytown High'.",
     "DESCRIPTIONS": [
-      "Whenever you use a Potion, add a #yDistill to your hand."
+      "Brewing a potion takes 2 turns instead of 3."
     ]
   },
   "potionbrewer:DrinkingBird": {

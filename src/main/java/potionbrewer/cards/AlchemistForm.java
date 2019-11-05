@@ -4,10 +4,13 @@ import basemod.abstracts.CustomCard;
 import basemod.helpers.BaseModCardTags;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.MinionPower;
 import potionbrewer.PotionbrewerMod;
 import potionbrewer.characters.Potionbrewer;
+import potionbrewer.powers.AlchemistFormEnemyPower;
 import potionbrewer.powers.AlchemistFormPower;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
@@ -26,6 +29,7 @@ public class AlchemistForm extends CustomCard {
     
     private static final int COST = 3;
 
+    public static final int ENEMY_GOLD = 40;
     private static final int MAGIC = 20;
     private static final int UPGRADE_MAGIC = -5;
 
@@ -36,8 +40,13 @@ public class AlchemistForm extends CustomCard {
     }
     
     @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
+    public void use(AbstractPlayer p, AbstractMonster monster) {
         this.addToBot(new ApplyPowerAction(p, p, new AlchemistFormPower(magicNumber)));
+        for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
+            if (!m.hasPower(MinionPower.POWER_ID)) {
+                this.addToBot(new ApplyPowerAction(m, m, new AlchemistFormEnemyPower(m, ENEMY_GOLD)));
+            }
+        }
     }
     
     @Override

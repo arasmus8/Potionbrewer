@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.orbs.EmptyOrbSlot;
 import potionbrewer.orbs.Reagent;
 import potionbrewer.powers.BrewPotionPower;
+import potionbrewer.relics.BunsenBurner;
 
 public class BrewPotionAction extends AbstractGameAction {
     private AbstractOrb orb;
@@ -30,7 +31,11 @@ public class BrewPotionAction extends AbstractGameAction {
                 this.isDone = true;
                 Reagent reagent = (Reagent) this.orb;
                 p.evokeOrb();
-                this.addToTop(new ApplyPowerAction(p, p, new BrewPotionPower(p, TURNS, reagent.getPotion())));
+                int turns = TURNS;
+                if (p.hasRelic(BunsenBurner.ID)) {
+                    turns -= 1;
+                }
+                this.addToTop(new ApplyPowerAction(p, p, new BrewPotionPower(p, turns, reagent.getPotion())));
             }
         }
 

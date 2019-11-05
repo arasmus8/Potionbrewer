@@ -3,15 +3,19 @@ package potionbrewer.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ObtainPotionAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.PotionHelper;
 import com.megacrit.cardcrawl.localization.PowerStrings;
-import com.megacrit.cardcrawl.potions.*;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.potions.AbstractPotion;
+import com.megacrit.cardcrawl.potions.PotionSlot;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.MinionPower;
 import com.megacrit.cardcrawl.random.Random;
 import potionbrewer.PotionbrewerMod;
+import potionbrewer.cards.AlchemistForm;
 import potionbrewer.util.TextureLoader;
 
 import static potionbrewer.PotionbrewerMod.makePowerPath;
@@ -51,11 +55,14 @@ public class AlchemistFormPower extends AbstractPower implements CloneablePowerI
         boolean hasEmptySlot = AbstractDungeon.player.potions.stream().anyMatch(p -> p instanceof PotionSlot);
         if (hasEmptySlot && AbstractDungeon.player.gold >= goldCost) {
             AbstractDungeon.player.loseGold(goldCost);
-            AbstractPotion randomPotion = PotionHelper.getRandomPotion(rng);
-            while (randomPotion instanceof FruitJuice || randomPotion instanceof BloodPotion || randomPotion instanceof RegenPotion) {
-                randomPotion = PotionHelper.getRandomPotion(rng);
-            }
+            AbstractPotion randomPotion = AbstractDungeon.returnRandomPotion(true);
             this.addToBot(new ObtainPotionAction(randomPotion));
+        }
+
+        for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
+            if (!m.hasPower(MinionPower.POWER_ID) && !m.hasPower(AlchemistFormEnemyPower.POWER_ID)) {
+                this.addToBot(new ApplyPowerAction(m, m, new AlchemistFormEnemyPower(m, AlchemistForm.ENEMY_GOLD)));
+            }
         }
     }
     

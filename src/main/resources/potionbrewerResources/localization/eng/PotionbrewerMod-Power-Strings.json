@@ -12,6 +12,13 @@
       " gold and obtain a random potion."
     ]
   },
+  "potionbrewer:AlchemistFormEnemyPower": {
+    "NAME": "Alchemist Form",
+    "DESCRIPTIONS": [
+      "Defeating this enemy grants #b",
+      " gold."
+    ]
+  },
   "potionbrewer:AnotherRoundPower": {
     "NAME": "Another Round",
     "DESCRIPTIONS": [

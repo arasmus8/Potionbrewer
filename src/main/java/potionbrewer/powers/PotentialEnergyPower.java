@@ -21,8 +21,8 @@ public class PotentialEnergyPower extends AbstractPower implements BetterOnApply
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("iron_heart84.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("iron_heart32.png"));
+    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("potential_energy84.png"));
+    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("potential_energy32.png"));
 
     public PotentialEnergyPower(AbstractCreature owner, final int amount) {
         name = NAME;

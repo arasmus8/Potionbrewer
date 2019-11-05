@@ -29,7 +29,11 @@ public class DrinkingBird extends CustomRelic {
         flash();
         AbstractPotion p = AbstractDungeon.returnRandomPotion(true);
         AbstractPlayer player = AbstractDungeon.player;
-        addToBot(new ApplyPowerAction(player, player, new BrewPotionPower(player, 3, p)));
+        int turns = 3;
+        if (player.hasRelic(BunsenBurner.ID)) {
+            turns -= 1;
+        }
+        addToBot(new ApplyPowerAction(player, player, new BrewPotionPower(player, turns, p)));
     }
 
     @Override
