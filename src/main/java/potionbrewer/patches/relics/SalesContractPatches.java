@@ -5,9 +5,11 @@ import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ObtainPotionAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
+import com.megacrit.cardcrawl.potions.EntropicBrew;
 import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.shop.StorePotion;
 import javassist.CtBehavior;
@@ -40,6 +42,20 @@ public class SalesContractPatches {
     )
     public static class StorePotionPatch {
         public static SpireReturn Prefix(StorePotion __instance) {
+            if (AbstractDungeon.player.hasRelic(SalesContract.ID)) {
+                AbstractDungeon.player.getRelic(SalesContract.ID).flash();
+                return SpireReturn.Return(null);
+            }
+            return SpireReturn.Continue();
+        }
+    }
+
+    @SpirePatch(
+            clz = EntropicBrew.class,
+            method = "use"
+    )
+    public static class EntropicBrewPatch {
+        public static SpireReturn Prefix(EntropicBrew __instance, AbstractCreature target) {
             if (AbstractDungeon.player.hasRelic(SalesContract.ID)) {
                 AbstractDungeon.player.getRelic(SalesContract.ID).flash();
                 return SpireReturn.Return(null);

@@ -11,8 +11,10 @@ import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.localization.PotionStrings;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.potions.PotionSlot;
+import com.megacrit.cardcrawl.relics.Sozu;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import potionbrewer.PotionbrewerMod;
+import potionbrewer.relics.SalesContract;
 
 public class SplittingPotion extends AbstractPotion {
 
@@ -44,6 +46,11 @@ public class SplittingPotion extends AbstractPotion {
     @Override
     public void use(AbstractCreature target) {
         AbstractPlayer player = AbstractDungeon.player;
+        if (player.hasRelic(Sozu.ID)) {
+            return;
+        } else if (player.hasRelic(SalesContract.ID)) {
+            return;
+        }
         int i;
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
             for(i = 0; i < potency && i < player.potionSlots; ++i) {
