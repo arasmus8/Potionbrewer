@@ -3,13 +3,13 @@ package potionbrewer.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
+import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import potionbrewer.PotionbrewerMod;
-import potionbrewer.cards.ReagentCard;
+import potionbrewer.orbs.ReagentList;
 import potionbrewer.util.TextureLoader;
 
 import static potionbrewer.PotionbrewerMod.makePowerPath;
@@ -23,12 +23,12 @@ public class HoarderPower extends AbstractPower implements CloneablePowerInterfa
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("hoarder84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("hoarder32.png"));
 
-    public HoarderPower(final int amount) {
+    public HoarderPower() {
         name = NAME;
         ID = POWER_ID;
 
         this.owner = AbstractDungeon.player;
-        this.amount = amount;
+        this.amount = -1;
 
         type = PowerType.BUFF;
         isTurnBased = false;
@@ -40,23 +40,23 @@ public class HoarderPower extends AbstractPower implements CloneablePowerInterfa
     }
 
     @Override
+    public void stackPower(int stackAmount) {
+    }
+
+    @Override
     public void atEndOfTurn(boolean isPlayer) {
         if (isPlayer) {
-            this.addToBot(new MakeTempCardInDrawPileAction(new ReagentCard(), amount, true, true));
+            this.addToBot(new ChannelAction(ReagentList.randomReagent()));
         }
     }
 
     @Override
     public void updateDescription() {
-        if (amount > 1) {
-            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
-        } else {
-            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
-        }
+        description = DESCRIPTIONS[0];
     }
 
     @Override
     public AbstractPower makeCopy() {
-        return new HoarderPower(amount);
+        return new HoarderPower();
     }
 }

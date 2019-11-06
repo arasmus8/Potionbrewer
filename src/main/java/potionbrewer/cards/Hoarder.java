@@ -2,6 +2,7 @@ package potionbrewer.cards;
 
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.defect.IncreaseMaxOrbAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -27,23 +28,24 @@ public class Hoarder extends CustomCard {
     private static final int COST = 1;
 
     private static final int MAGIC = 1;
+    private static final int UPGRADE_MAGIC = 1;
 
     public Hoarder() {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
-        cardsToPreview = new ReagentCard();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p, p, new HoarderPower(magicNumber), magicNumber));
+        this.addToBot(new IncreaseMaxOrbAction(this.magicNumber));
+        this.addToBot(new ApplyPowerAction(p, p, new HoarderPower(), magicNumber));
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            isInnate = true;
+            upgradeMagicNumber(UPGRADE_MAGIC);
             rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
             initializeDescription();
         }

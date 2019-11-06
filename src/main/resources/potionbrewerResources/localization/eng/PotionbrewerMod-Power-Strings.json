@@ -93,9 +93,7 @@
   "potionbrewer:HoarderPower": {
     "NAME": "Hoarder",
     "DESCRIPTIONS": [
-      "Add #b",
-      " #yReagent to your draw pile each turn.",
-      " #yReagents to your draw pile each turn."
+      "Channel a random #yReagent each turn."
     ]
   },
   "potionbrewer:InfectionPower": {

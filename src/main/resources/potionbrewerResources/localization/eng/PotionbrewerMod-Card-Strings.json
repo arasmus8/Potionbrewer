@@ -176,8 +176,8 @@
   },
   "potionbrewer:Hoarder": {
     "NAME": "Hoarder",
-    "DESCRIPTION": "Each turn, add a *Reagent to your draw pile.",
-    "UPGRADE_DESCRIPTION": "Innate NL Each turn, add a *Reagent to your draw pile."
+    "DESCRIPTION": "Gain !M! additional potionbrewer:Reagent slot. Each turn, collect a random *Reagent.",
+    "UPGRADE_DESCRIPTION": "Gain !M! additional potionbrewer:Reagent slots. Each turn, collect a random *Reagent."
   },
   "potionbrewer:IronFist": {
     "NAME": "Iron Fist",
