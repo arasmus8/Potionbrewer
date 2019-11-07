@@ -59,21 +59,31 @@ public class Potionbrewer extends CustomPlayer {
     private static final String[] TEXT = characterStrings.TEXT;
     
     public static final String[] orbTextures = {
-            "potionbrewerResources/images/char/potionbrewer/orb/layer1.png",
-            "potionbrewerResources/images/char/potionbrewer/orb/layer2.png",
-            "potionbrewerResources/images/char/potionbrewer/orb/layer3.png",
-            "potionbrewerResources/images/char/potionbrewer/orb/layer4.png",
             "potionbrewerResources/images/char/potionbrewer/orb/layer5.png",
+            "potionbrewerResources/images/char/potionbrewer/orb/layer4.png",
+            "potionbrewerResources/images/char/potionbrewer/orb/layer3.png",
+            "potionbrewerResources/images/char/potionbrewer/orb/layer2.png",
+            "potionbrewerResources/images/char/potionbrewer/orb/layer1.png",
             "potionbrewerResources/images/char/potionbrewer/orb/layer6.png",
-            "potionbrewerResources/images/char/potionbrewer/orb/layer1d.png",
-            "potionbrewerResources/images/char/potionbrewer/orb/layer2d.png",
-            "potionbrewerResources/images/char/potionbrewer/orb/layer3d.png",
+            "potionbrewerResources/images/char/potionbrewer/orb/layer5d.png",
             "potionbrewerResources/images/char/potionbrewer/orb/layer4d.png",
-            "potionbrewerResources/images/char/potionbrewer/orb/layer5d.png",};
-    
+            "potionbrewerResources/images/char/potionbrewer/orb/layer3d.png",
+            "potionbrewerResources/images/char/potionbrewer/orb/layer2d.png",
+            "potionbrewerResources/images/char/potionbrewer/orb/layer1d.png",
+    };
+
+    public static final float[] layerSpeeds = {
+            -40.0F,
+            40.0F,
+            -20.0F,
+            20.0F,
+            0.0F,
+    };
+    // layerSpeeds = new float[]{-20.0F, 20.0F, -40.0F, 40.0F, 360.0F};// 67
+
     public Potionbrewer(String name, PlayerClass setClass) {
         super(name, setClass, orbTextures,
-                "potionbrewerResources/images/char/potionbrewer/orb/vfx.png", null,
+                "potionbrewerResources/images/char/potionbrewer/orb/vfx.png", layerSpeeds,
                 new SpriterAnimation(
                         "potionbrewerResources/images/char/potionbrewer/Spriter/Potionbrewer.scml"));
         
