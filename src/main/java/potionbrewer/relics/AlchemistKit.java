@@ -16,8 +16,8 @@ public class AlchemistKit extends CustomRelic {
 
     public static final String ID = PotionbrewerMod.makeID(AlchemistKit.class.getSimpleName());
 
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("PotionKit.png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("PotionKit.png"));
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("AlchemistKit.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("AlchemistKit.png"));
 
     public AlchemistKit() {
         super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.CLINK);

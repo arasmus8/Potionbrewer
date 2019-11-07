@@ -90,6 +90,6 @@ public class ToxicPower extends AbstractPower implements CloneablePowerInterface
 
     @Override
     public Color getColor() {
-        return Color.SALMON;
+        return Color.MAGENTA.cpy();
     }
 }

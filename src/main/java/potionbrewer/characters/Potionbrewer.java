@@ -148,7 +148,7 @@ public class Potionbrewer extends CustomPlayer {
     
     @Override
     public int getAscensionMaxHPLoss() {
-        return 0;
+        return 5;
     }
     
     @Override
