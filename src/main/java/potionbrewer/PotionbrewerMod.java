@@ -80,19 +80,19 @@ public class PotionbrewerMod implements
 
     public static final Color BREWER_CYAN = CardHelper.getColor(0, 180, 239);
 
-    private static final String ATTACK_DEFAULT_GRAY = "potionbrewerResources/images/512/bg_attack_default_gray.png";
-    private static final String SKILL_DEFAULT_GRAY = "potionbrewerResources/images/512/bg_skill_default_gray.png";
-    private static final String POWER_DEFAULT_GRAY = "potionbrewerResources/images/512/bg_power_default_gray.png";
+    private static final String ATTACK_CYAN_BG = "potionbrewerResources/images/512/bg_attack.png";
+    private static final String SKILL_CYAN_BG = "potionbrewerResources/images/512/bg_skill.png";
+    private static final String POWER_CYAN_BG = "potionbrewerResources/images/512/bg_power.png";
 
-    private static final String ENERGY_ORB_DEFAULT_GRAY = "potionbrewerResources/images/512/card_default_gray_orb.png";
+    private static final String ENERGY_ORB_DEFAULT_GRAY = "potionbrewerResources/images/512/card_cyan_orb.png";
     private static final String CARD_ENERGY_ORB = "potionbrewerResources/images/512/card_small_orb.png";
 
-    private static final String ATTACK_DEFAULT_GRAY_PORTRAIT = "potionbrewerResources/images/1024/bg_attack_default_gray.png";
-    private static final String SKILL_DEFAULT_GRAY_PORTRAIT = "potionbrewerResources/images/1024/bg_skill_default_gray.png";
-    private static final String POWER_DEFAULT_GRAY_PORTRAIT = "potionbrewerResources/images/1024/bg_power_default_gray.png";
-    private static final String ENERGY_ORB_DEFAULT_GRAY_PORTRAIT = "potionbrewerResources/images/1024/card_default_gray_orb.png";
+    private static final String ATTACK_DEFAULT_GRAY_PORTRAIT = "potionbrewerResources/images/1024/bg_attack.png";
+    private static final String SKILL_DEFAULT_GRAY_PORTRAIT = "potionbrewerResources/images/1024/bg_skill.png";
+    private static final String POWER_DEFAULT_GRAY_PORTRAIT = "potionbrewerResources/images/1024/bg_power.png";
+    private static final String ENERGY_ORB_DEFAULT_GRAY_PORTRAIT = "potionbrewerResources/images/1024/card_cyan_orb.png";
 
-    private static final String THE_DEFAULT_BUTTON = "potionbrewerResources/images/charSelect/DefaultCharacterButton.png";
+    private static final String THE_DEFAULT_BUTTON = "potionbrewerResources/images/charSelect/PotionbrewerCharacterButton.png";
     private static final String THE_DEFAULT_PORTRAIT = "potionbrewerResources/images/charSelect/DefaultCharacterPortraitBG.png";
     public static final String THE_DEFAULT_SHOULDER_1 = "potionbrewerResources/images/char/potionbrewer/shoulder.png";
     public static final String THE_DEFAULT_SHOULDER_2 = "potionbrewerResources/images/char/potionbrewer/shoulder2.png";
@@ -147,7 +147,7 @@ public class PotionbrewerMod implements
 
         BaseMod.addColor(Potionbrewer.Enums.COLOR_CYAN, BREWER_CYAN, BREWER_CYAN, BREWER_CYAN,
                 BREWER_CYAN, BREWER_CYAN, BREWER_CYAN, BREWER_CYAN,
-                ATTACK_DEFAULT_GRAY, SKILL_DEFAULT_GRAY, POWER_DEFAULT_GRAY, ENERGY_ORB_DEFAULT_GRAY,
+                ATTACK_CYAN_BG, SKILL_CYAN_BG, POWER_CYAN_BG, ENERGY_ORB_DEFAULT_GRAY,
                 ATTACK_DEFAULT_GRAY_PORTRAIT, SKILL_DEFAULT_GRAY_PORTRAIT, POWER_DEFAULT_GRAY_PORTRAIT,
                 ENERGY_ORB_DEFAULT_GRAY_PORTRAIT, CARD_ENERGY_ORB);
 
