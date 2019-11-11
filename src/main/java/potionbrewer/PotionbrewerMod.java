@@ -301,10 +301,17 @@ public class PotionbrewerMod implements
         logger.info("Adding relics");
 
 
-        BaseMod.addRelicToCustomPool(new AlchemistKit(), Potionbrewer.Enums.COLOR_CYAN);
         BaseMod.addRelicToCustomPool(new PotionKit(), Potionbrewer.Enums.COLOR_CYAN);
+
+        BaseMod.addRelicToCustomPool(new AlchemistKit(), Potionbrewer.Enums.COLOR_CYAN);
+        BaseMod.addRelicToCustomPool(new BhaskarasWheel(), Potionbrewer.Enums.COLOR_CYAN);
         BaseMod.addRelicToCustomPool(new BunsenBurner(), Potionbrewer.Enums.COLOR_CYAN);
         BaseMod.addRelicToCustomPool(new ElricsMonocle(), Potionbrewer.Enums.COLOR_CYAN);
+
+        UnlockTracker.markRelicAsSeen(AlchemistKit.ID);
+        UnlockTracker.markRelicAsSeen(BhaskarasWheel.ID);
+        UnlockTracker.markRelicAsSeen(BunsenBurner.ID);
+        UnlockTracker.markRelicAsSeen(ElricsMonocle.ID);
 
         BaseMod.addRelic(new AlchemistFlask(), RelicType.SHARED);
         BaseMod.addRelic(new BoosterPack(), RelicType.SHARED);
@@ -317,7 +324,6 @@ public class PotionbrewerMod implements
         BaseMod.addRelic(new ToyAutogyro(), RelicType.SHARED);
         BaseMod.addRelic(new WarMedal(), RelicType.SHARED);
 
-        UnlockTracker.markRelicAsSeen(AlchemistKit.ID);
         UnlockTracker.markRelicAsSeen(AlchemistFlask.ID);
         UnlockTracker.markRelicAsSeen(BoosterPack.ID);
         UnlockTracker.markRelicAsSeen(BottledElixir.ID);

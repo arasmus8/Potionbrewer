@@ -14,6 +14,14 @@
       "Replaces Potion Kit. Obtain an additional copy of the first potion you use each combat."
     ]
   },
+  "potionbrewer:BhaskarasWheel": {
+    "NAME": "Bhaskara's Wheel",
+    "FLAVOR": "It just keeps turning forever and ever.",
+    "DESCRIPTIONS": [
+      "Every #b",
+      " turns, shuffle a #yReaction into your draw pile."
+    ]
+  },
   "potionbrewer:BoosterPack": {
     "NAME": "Booster Pack",
     "FLAVOR": "TODO: Add Flavor",
