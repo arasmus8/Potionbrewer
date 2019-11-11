@@ -41,6 +41,7 @@ public class TwoForOne extends CustomCard {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = MAGIC;
         magicNumber = baseMagicNumber;
+        exhaust = true;
     }
 
 
