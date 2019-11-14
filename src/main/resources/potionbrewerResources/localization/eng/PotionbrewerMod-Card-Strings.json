@@ -44,6 +44,10 @@
     "NAME": "Blinding Spray",
     "DESCRIPTION": "Deal !D! Damage. Apply !M! Weak."
   },
+  "potionbrewer:BottomlessFlask": {
+    "NAME": "Bottomless Flask",
+    "DESCRIPTION": "Choose 1 of !M! potion cards. Replace this card permanently with your choice."
+  },
   "potionbrewer:Brandish": {
     "NAME": "Brandish",
     "DESCRIPTION": "Draw !M! cards. Discard all Skills drawn this way."

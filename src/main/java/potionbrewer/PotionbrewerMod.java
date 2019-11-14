@@ -93,7 +93,7 @@ public class PotionbrewerMod implements
     private static final String ENERGY_ORB_DEFAULT_GRAY_PORTRAIT = "potionbrewerResources/images/1024/card_cyan_orb.png";
 
     private static final String THE_DEFAULT_BUTTON = "potionbrewerResources/images/charSelect/PotionbrewerCharacterButton.png";
-    private static final String THE_DEFAULT_PORTRAIT = "potionbrewerResources/images/charSelect/DefaultCharacterPortraitBG.png";
+    private static final String THE_DEFAULT_PORTRAIT = "potionbrewerResources/images/charSelect/CharacterSelect.png";
     public static final String THE_DEFAULT_SHOULDER_1 = "potionbrewerResources/images/char/potionbrewer/shoulder.png";
     public static final String THE_DEFAULT_SHOULDER_2 = "potionbrewerResources/images/char/potionbrewer/shoulder2.png";
     public static final String THE_DEFAULT_CORPSE = "potionbrewerResources/images/char/potionbrewer/corpse.png";
@@ -362,6 +362,9 @@ public class PotionbrewerMod implements
             UnlockTracker.unlockCard(c.cardID);
         }
 
+        BaseMod.addCard(new ChoosePotion());
+        UnlockTracker.unlockCard(ChoosePotion.ID);
+
         logger.info("Done adding cards!");
     }
 
@@ -396,6 +399,9 @@ public class PotionbrewerMod implements
 
         BaseMod.loadCustomStringsFile(OrbStrings.class,
                 getModID() + "Resources/localization/eng/PotionbrewerMod-Orb-Strings.json");
+
+        BaseMod.loadCustomStringsFile(UIStrings.class,
+                getModID() + "Resources/localization/eng/PotionbrewerMod-UI-Strings.json");
 
         logger.info("Done edittting strings");
     }

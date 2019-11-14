@@ -98,6 +98,7 @@ public class CardList {
 
         //Rare Powers
         allCards.add(new AlchemistForm());
+        allCards.add(new BottomlessFlask());
         allCards.add(new Bribery());
         allCards.add(new EquivalentExchange());
         allCards.add(new Hoarder());

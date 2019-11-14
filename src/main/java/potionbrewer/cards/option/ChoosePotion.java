@@ -1,5 +1,8 @@
 package potionbrewer.cards.option;
 
+import basemod.abstracts.CustomSavable;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.common.ObtainPotionAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -22,7 +25,7 @@ import java.util.Map;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 
-public class ChoosePotion extends AbstractCard {
+public class ChoosePotion extends AbstractCard implements CustomSavable<String> {
     public static String ID = PotionbrewerMod.makeID(ChoosePotion.class.getSimpleName());
     public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
 
@@ -65,6 +68,9 @@ public class ChoosePotion extends AbstractCard {
     }
 
     public static String getRandomPotionId() {
+        if (inBattleIds == null) {
+            return "";
+        }
         return inBattleIds.get(MathUtils.random(inBattleIds.size() - 1));
     }
 
@@ -139,6 +145,34 @@ public class ChoosePotion extends AbstractCard {
 
     public static String portrait(final String id) {
         return imageMap.getOrDefault(id, "green/skill/alchemize");
+    }
+
+    @Override
+    public String onSave() {
+        return potionId;
+    }
+
+    @Override
+    public void onLoad(String s) {
+        potionId = s;
+        this.name = this.originalName = name(potionId);
+        this.assetUrl = portrait(s);
+        TextureAtlas cardAtlas = new TextureAtlas(Gdx.files.internal("cards/cards.atlas"));
+        TextureAtlas oldCardAtlas = new TextureAtlas(Gdx.files.internal("oldCards/cards.atlas"));
+        this.portrait = cardAtlas.findRegion(this.assetUrl);
+        this.jokePortrait = oldCardAtlas.findRegion(this.assetUrl);
+        if (this.portrait == null) {
+            if (this.jokePortrait != null) {
+                this.portrait = this.jokePortrait;
+            } else {
+                this.portrait = cardAtlas.findRegion("status/beta");
+            }
+        }
+        rawDescription = (obtain ? CARD_STRINGS.EXTENDED_DESCRIPTION[1] : CARD_STRINGS.EXTENDED_DESCRIPTION[0])
+                + (isVowel(this.name.charAt(0)) ? CARD_STRINGS.EXTENDED_DESCRIPTION[3] : CARD_STRINGS.EXTENDED_DESCRIPTION[2])
+                + this.name;
+        exhaust = true;
+        initializeDescription();
     }
 
     static {
