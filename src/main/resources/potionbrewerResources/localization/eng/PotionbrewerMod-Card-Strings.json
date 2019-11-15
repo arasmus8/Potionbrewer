@@ -46,7 +46,7 @@
   },
   "potionbrewer:BottomlessFlask": {
     "NAME": "Bottomless Flask",
-    "DESCRIPTION": "Choose 1 of !M! potion cards. Replace this card permanently with your choice."
+    "DESCRIPTION": "Choose !M! of 10 potion cards. Replace this card permanently with your choice."
   },
   "potionbrewer:Brandish": {
     "NAME": "Brandish",

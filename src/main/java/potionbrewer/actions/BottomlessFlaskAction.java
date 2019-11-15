@@ -23,8 +23,8 @@ public class BottomlessFlaskAction extends AbstractGameAction {
     public BottomlessFlaskAction(AbstractPlayer p, AbstractCard cardToReplace, final int numberOfPotions) {
         this.player = p;
         this.card = cardToReplace;
-        this.groupSize = numberOfPotions;
-        this.selectCount = 1;
+        this.groupSize = 10;
+        this.selectCount = numberOfPotions;
         duration = startDuration = Settings.ACTION_DUR_FAST;
 
         this.card.purgeOnUse = true;
