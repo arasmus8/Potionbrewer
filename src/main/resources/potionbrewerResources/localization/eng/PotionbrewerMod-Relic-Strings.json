@@ -31,7 +31,7 @@
   },
   "potionbrewer:BottledElixir": {
     "NAME": "Bottled Elixir",
-    "FLAVOR": "TODO: Add some flavor.",
+    "FLAVOR": "A strange fluid that attracts matter through time and space.",
     "DESCRIPTIONS": [
       "Choose a card. The first time you use a potion, draw the chosen card.",
       "When you use a potion, draw ",
@@ -48,7 +48,7 @@
   },
   "potionbrewer:DrinkingBird": {
     "NAME": "Drinking Bird",
-    "FLAVOR": "TODO: Add flavor.",
+    "FLAVOR": "An odd contraption that somehow keeps drinking forever.",
     "DESCRIPTIONS": [
       "At the start of each combat, begin brewing a random potion."
     ]
@@ -61,8 +61,8 @@
     ]
   },
   "potionbrewer:MortarAndPestle": {
-    "NAME": "Mortal and Pestle",
-    "FLAVOR": "TODO: Add Flavor",
+    "NAME": "Mortar and Pestle",
+    "FLAVOR": "One of the quintessential tools of an Alchemist.",
     "DESCRIPTIONS": [
       "Whenever you discard a potion, heal 3 HP."
     ]
@@ -76,14 +76,14 @@
   },
   "potionbrewer:SalesContract": {
     "NAME": "Sales Contract",
-    "FLAVOR": "TODO: Add flavor.",
+    "FLAVOR": "Signed in blue ink.",
     "DESCRIPTIONS": [
       "Whenever you obtain a (non-tonic) potion, instead receive 20 gold."
     ]
   },
   "potionbrewer:SlideRule": {
     "NAME": "Slide Rule",
-    "FLAVOR": "TODO: Add flavor.",
+    "FLAVOR": "An archaic device of unknown origin.",
     "DESCRIPTIONS": [
       "When you shuffle your draw pile, deal #b",
       " damage to all enemies."
@@ -105,7 +105,7 @@
   },
   "potionbrewer:WarMedal": {
     "NAME": "War Medal",
-    "FLAVOR": "TODO: Add Flavor",
+    "FLAVOR": "For service to King and Country.",
     "DESCRIPTIONS": [
       "Every time you play 10 cards, your next attack deals 5 bonus damage."
     ]
