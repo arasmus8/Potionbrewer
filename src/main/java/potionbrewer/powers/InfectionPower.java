@@ -62,7 +62,6 @@ public class InfectionPower extends AbstractPower implements CloneablePowerInter
     public void stackPower(int stackAmount) {
         amount += stackAmount;
         if (amount >= THRESHOLD) {
-            // TODO: Make sure the math works here
             int stacks = (amount) / THRESHOLD;
             if (amount - stacks * REDUCEBY <= 0) {
                 addToBot(new RemoveSpecificPowerAction(owner, owner, this));
