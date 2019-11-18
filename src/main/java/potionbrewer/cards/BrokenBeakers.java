@@ -41,7 +41,7 @@ public class BrokenBeakers extends CustomCard {
     private static final int DAMAGE = 13;
     private static final int UPGRADE_PLUS_DMG = 4;
 
-    private static final int MAGIC = 2;
+    private static final int MAGIC = 3;
     // /STAT DECLARATION/
 
     public BrokenBeakers() {
