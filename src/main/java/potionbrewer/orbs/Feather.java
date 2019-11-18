@@ -12,13 +12,9 @@ import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.potions.GamblersBrew;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import potionbrewer.PotionbrewerMod;
-import potionbrewer.util.TextureLoader;
-
-import static potionbrewer.PotionbrewerMod.makeOrbPath;
 
 public class Feather extends Reagent {
     public static final String ORB_ID = PotionbrewerMod.makeID("Feather");
-    private static final Texture IMG = TextureLoader.getTexture(makeOrbPath("default_orb.png"));
     private static final Texture img;
     private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString(ORB_ID);
     public static final String[] DESC = orbString.DESCRIPTION;
