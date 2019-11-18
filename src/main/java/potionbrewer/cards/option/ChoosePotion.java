@@ -7,6 +7,7 @@ import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.common.ObtainPotionAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PotionHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -41,7 +42,9 @@ public class ChoosePotion extends AbstractCard implements CustomSavable<String> 
         this.obtain = obtain;
         rawDescription = (obtain ? CARD_STRINGS.EXTENDED_DESCRIPTION[1] : CARD_STRINGS.EXTENDED_DESCRIPTION[0])
                 + (isVowel(this.name.charAt(0)) ? CARD_STRINGS.EXTENDED_DESCRIPTION[3] : CARD_STRINGS.EXTENDED_DESCRIPTION[2])
-                + this.name;
+                + this.name
+                + " NL "
+                + potionDescription(id);
         exhaust = true;
         initializeDescription();
     }
@@ -140,6 +143,34 @@ public class ChoosePotion extends AbstractCard implements CustomSavable<String> 
             return CARD_STRINGS.EXTENDED_DESCRIPTION[6];
         } else {
             return p.name;
+        }
+    }
+
+    private static final String rCode = Settings.RED_TEXT_COLOR.toString();
+    private static final String gCode = Settings.GREEN_TEXT_COLOR.toString();
+    private static final String bCode = Settings.BLUE_TEXT_COLOR.toString();
+    private static final String yCode = Settings.GOLD_COLOR.toString();
+
+    private static String fixColors(final String orig) {
+        return orig
+                .replaceAll("#r(\\w+)", "[#" + rCode + "]$1[]")
+                .replaceAll("#g(\\w+)", "[#" + gCode + "]$1[]")
+                .replaceAll("#b(\\w+)", "[#" + bCode + "]$1[]")
+                .replaceAll("#y(\\w+)", "[#" + yCode + "]$1[]")
+                ;
+    }
+
+    public static String potionDescription(final String id) {
+        if (id == null) {
+            return "";
+        } else if (id.equals("RAND_TONIC")) {
+            return "";
+        }
+        AbstractPotion p = fromId(id);
+        if (p == null) {
+            return "";
+        } else {
+            return "(" + fixColors(p.description) + ")";
         }
     }
 
