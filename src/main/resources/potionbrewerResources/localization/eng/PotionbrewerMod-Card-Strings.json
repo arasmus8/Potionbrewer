@@ -54,7 +54,7 @@
   },
   "potionbrewer:Bribery": {
     "NAME": "Bribery",
-    "DESCRIPTION": "Whenever you would lose HP, pay 3 gold to lose !M! less."
+    "DESCRIPTION": "Whenever you would lose HP, pay 1 gold to lose !M! less."
   },
   "potionbrewer:BrokenBeakers": {
     "NAME": "Broken Beakers",

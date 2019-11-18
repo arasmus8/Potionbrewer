@@ -23,9 +23,9 @@ public class Bribery extends CustomCard {
     private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = Potionbrewer.Enums.COLOR_CYAN;
 
-    private static final int COST = 2;
+    private static final int COST = 0;
 
-    private static final int MAGIC = 2;
+    private static final int MAGIC = 3;
     private static final int UPGRADE_MAGIC = 2;
 
     public Bribery() {
@@ -35,7 +35,7 @@ public class Bribery extends CustomCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p, p, new BriberyPower(magicNumber, 3)));
+        this.addToBot(new ApplyPowerAction(p, p, new BriberyPower(magicNumber, 1)));
     }
 
     @Override
