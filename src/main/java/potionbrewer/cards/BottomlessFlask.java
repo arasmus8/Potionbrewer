@@ -30,6 +30,7 @@ public class BottomlessFlask extends CustomCard {
     public BottomlessFlask() {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
+        tags.add(CardTags.HEALING); // Don't generate in combat via e.g. Dead Branch
     }
 
     @Override

@@ -1,6 +1,7 @@
 package potionbrewer.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -55,6 +56,7 @@ public class BottomlessFlaskAction extends AbstractGameAction {
         } else {
             if (!AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
                 for (AbstractCard selectedCard : AbstractDungeon.gridSelectScreen.selectedCards) {
+                    addToBot(new MakeTempCardInHandAction(selectedCard.makeCopy()));
                     player.masterDeck.addToTop(selectedCard);
                     selectedCard.lighten(false);
                     selectedCard.unhover();
