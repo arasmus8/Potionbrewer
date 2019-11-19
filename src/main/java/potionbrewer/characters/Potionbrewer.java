@@ -72,36 +72,19 @@ public class Potionbrewer extends CustomPlayer {
             "potionbrewerResources/images/char/potionbrewer/orb/layer1d.png",
     };
 
-    public static final float[] layerSpeeds = {
-            -40.0F,
-            40.0F,
-            -20.0F,
-            20.0F,
-            0.0F,
-    };
-    // layerSpeeds = new float[]{-20.0F, 20.0F, -40.0F, 40.0F, 360.0F};// 67
-
     public Potionbrewer(String name, PlayerClass setClass) {
         super(name, setClass, new PotionbrewerEnergyOrb(), new SpriterAnimation("potionbrewerResources/images/char/potionbrewer/Spriter/Potionbrewer.scml"));
-        /*
-        super(name, setClass, orbTextures,
-                "potionbrewerResources/images/char/potionbrewer/orb/vfx.png", layerSpeeds,
-                new SpriterAnimation(
-                        "potionbrewerResources/images/char/potionbrewer/Spriter/Potionbrewer.scml"));
-         */
-        
-        
+
         initializeClass(null,
-                
                 THE_DEFAULT_SHOULDER_1,
                 THE_DEFAULT_SHOULDER_2,
-                THE_DEFAULT_CORPSE,
+                POTIONBREWER_CORPSE,
                 getLoadout(), 20.0F, -10.0F, 220.0F, 290.0F, new EnergyManager(ENERGY_PER_TURN));
         
         
         loadAnimation(
-                THE_DEFAULT_SKELETON_ATLAS,
-                THE_DEFAULT_SKELETON_JSON,
+                POTIONBREWER_SKELETON_ATLAS,
+                POTIONBREWER_SKELETON_JSON,
                 1.0f);
         AnimationState.TrackEntry e = state.setAnimation(0, "animation", true);
         e.setTime(e.getEndTime() * MathUtils.random());

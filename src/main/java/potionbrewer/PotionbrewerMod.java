@@ -84,24 +84,24 @@ public class PotionbrewerMod implements
     private static final String SKILL_CYAN_BG = "potionbrewerResources/images/512/bg_skill.png";
     private static final String POWER_CYAN_BG = "potionbrewerResources/images/512/bg_power.png";
 
-    private static final String ENERGY_ORB_DEFAULT_GRAY = "potionbrewerResources/images/512/card_cyan_orb.png";
+    private static final String ENERGY_ORB_POTIONBREWER = "potionbrewerResources/images/512/card_cyan_orb.png";
     private static final String CARD_ENERGY_ORB = "potionbrewerResources/images/512/card_small_orb.png";
 
-    private static final String ATTACK_DEFAULT_GRAY_PORTRAIT = "potionbrewerResources/images/1024/bg_attack.png";
-    private static final String SKILL_DEFAULT_GRAY_PORTRAIT = "potionbrewerResources/images/1024/bg_skill.png";
-    private static final String POWER_DEFAULT_GRAY_PORTRAIT = "potionbrewerResources/images/1024/bg_power.png";
-    private static final String ENERGY_ORB_DEFAULT_GRAY_PORTRAIT = "potionbrewerResources/images/1024/card_cyan_orb.png";
+    private static final String ATTACK_POTIONBREWER_PORTRAIT = "potionbrewerResources/images/1024/bg_attack.png";
+    private static final String SKILL_POTIONBREWER_PORTRAIT = "potionbrewerResources/images/1024/bg_skill.png";
+    private static final String POWER_POTIONBREWER_PORTRAIT = "potionbrewerResources/images/1024/bg_power.png";
+    private static final String ENERGY_ORB_POTIONBREWER_PORTRAIT = "potionbrewerResources/images/1024/card_cyan_orb.png";
 
     private static final String THE_DEFAULT_BUTTON = "potionbrewerResources/images/charSelect/PotionbrewerCharacterButton.png";
     private static final String THE_DEFAULT_PORTRAIT = "potionbrewerResources/images/charSelect/CharacterSelect.png";
     public static final String THE_DEFAULT_SHOULDER_1 = "potionbrewerResources/images/char/potionbrewer/shoulder.png";
     public static final String THE_DEFAULT_SHOULDER_2 = "potionbrewerResources/images/char/potionbrewer/shoulder2.png";
-    public static final String THE_DEFAULT_CORPSE = "potionbrewerResources/images/char/potionbrewer/corpse.png";
+    public static final String POTIONBREWER_CORPSE = "potionbrewerResources/images/char/potionbrewer/corpse.png";
 
     public static final String BADGE_IMAGE = "potionbrewerResources/images/Badge.png";
 
-    public static final String THE_DEFAULT_SKELETON_ATLAS = "potionbrewerResources/images/char/potionbrewer/skeleton.atlas";
-    public static final String THE_DEFAULT_SKELETON_JSON = "potionbrewerResources/images/char/potionbrewer/skeleton.json";
+    public static final String POTIONBREWER_SKELETON_ATLAS = "potionbrewerResources/images/char/potionbrewer/skeleton.atlas";
+    public static final String POTIONBREWER_SKELETON_JSON = "potionbrewerResources/images/char/potionbrewer/skeleton.json";
 
     public static String makeCardPath(String resourcePath) {
         return getModID() + "Resources/images/cards/" + resourcePath;
@@ -147,9 +147,9 @@ public class PotionbrewerMod implements
 
         BaseMod.addColor(Potionbrewer.Enums.COLOR_CYAN, BREWER_CYAN, BREWER_CYAN, BREWER_CYAN,
                 BREWER_CYAN, BREWER_CYAN, BREWER_CYAN, BREWER_CYAN,
-                ATTACK_CYAN_BG, SKILL_CYAN_BG, POWER_CYAN_BG, ENERGY_ORB_DEFAULT_GRAY,
-                ATTACK_DEFAULT_GRAY_PORTRAIT, SKILL_DEFAULT_GRAY_PORTRAIT, POWER_DEFAULT_GRAY_PORTRAIT,
-                ENERGY_ORB_DEFAULT_GRAY_PORTRAIT, CARD_ENERGY_ORB);
+                ATTACK_CYAN_BG, SKILL_CYAN_BG, POWER_CYAN_BG, ENERGY_ORB_POTIONBREWER,
+                ATTACK_POTIONBREWER_PORTRAIT, SKILL_POTIONBREWER_PORTRAIT, POWER_POTIONBREWER_PORTRAIT,
+                ENERGY_ORB_POTIONBREWER_PORTRAIT, CARD_ENERGY_ORB);
 
         logger.info("Done creating the color");
 
