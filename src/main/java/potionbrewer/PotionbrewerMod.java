@@ -290,6 +290,7 @@ public class PotionbrewerMod implements
         BaseMod.addPotion(NoxiousPotion.class, NoxiousPotion.LIQUID_COLOR, NoxiousPotion.HYBRID_COLOR, NoxiousPotion.SPOTS_COLOR, NoxiousPotion.POTION_ID, null);
         BaseMod.addPotion(QuicksilverPotion.class, QuicksilverPotion.LIQUID_COLOR, QuicksilverPotion.HYBRID_COLOR, QuicksilverPotion.SPOTS_COLOR, QuicksilverPotion.POTION_ID, null);
         BaseMod.addPotion(SplittingPotion.class, SplittingPotion.LIQUID_COLOR, SplittingPotion.HYBRID_COLOR, SplittingPotion.SPOTS_COLOR, SplittingPotion.POTION_ID, null);
+        BaseMod.addPotion(StunPotion.class, StunPotion.LIQUID_COLOR, StunPotion.HYBRID_COLOR, StunPotion.SPOTS_COLOR, StunPotion.POTION_ID, null);
         BaseMod.addPotion(ToxicPotion.class, ToxicPotion.LIQUID_COLOR, ToxicPotion.HYBRID_COLOR, ToxicPotion.SPOTS_COLOR, ToxicPotion.POTION_ID, null);
         TonicLibrary.tonicList.forEach((k, v) -> BaseMod.addPotion(v, null, null, null, k, Invalid.Enums.INVALID_PLAYER_CLASS));
 

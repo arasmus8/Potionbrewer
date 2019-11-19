@@ -84,6 +84,14 @@
     "NAME": "Splitting Potion",
     "DESCRIPTIONS": [ "Obtain #b", " random potions." ]
   },
+  "potionbrewer:StunPotion": {
+    "NAME": "Stun Potion",
+    "DESCRIPTIONS": [
+      "Stun an enemy for #b",
+      " turn.",
+      " turns."
+    ]
+  },
   "potionbrewer:ToxicPotion": {
     "NAME": "Toxic Potion",
     "DESCRIPTIONS": [ "Apply #b", " Toxic to an enemy." ]
