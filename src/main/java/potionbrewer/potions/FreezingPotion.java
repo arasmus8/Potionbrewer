@@ -5,7 +5,6 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.localization.PotionStrings;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
@@ -21,9 +20,9 @@ public class FreezingPotion extends AbstractPotion {
     public static final String NAME = potionStrings.NAME;
     public static final String[] DESCRIPTIONS = potionStrings.DESCRIPTIONS;
 
-    public static final Color LIQUID_COLOR = CardHelper.getColor(0, 0, 0);
+    public static final Color LIQUID_COLOR = Color.BLACK.cpy();
     public static final Color HYBRID_COLOR = Color.SKY.cpy();
-    public static final Color SPOTS_COLOR = new Color(255, 255, 255, 0);
+    public static final Color SPOTS_COLOR = Color.CLEAR.cpy();
 
     public FreezingPotion() {
         super(NAME, POTION_ID, PotionRarity.UNCOMMON, PotionSize.FAIRY, PotionColor.POWER);
