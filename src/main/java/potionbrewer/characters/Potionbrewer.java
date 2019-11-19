@@ -82,10 +82,13 @@ public class Potionbrewer extends CustomPlayer {
     // layerSpeeds = new float[]{-20.0F, 20.0F, -40.0F, 40.0F, 360.0F};// 67
 
     public Potionbrewer(String name, PlayerClass setClass) {
+        super(name, setClass, new PotionbrewerEnergyOrb(), new SpriterAnimation("potionbrewerResources/images/char/potionbrewer/Spriter/Potionbrewer.scml"));
+        /*
         super(name, setClass, orbTextures,
                 "potionbrewerResources/images/char/potionbrewer/orb/vfx.png", layerSpeeds,
                 new SpriterAnimation(
                         "potionbrewerResources/images/char/potionbrewer/Spriter/Potionbrewer.scml"));
+         */
         
         
         initializeClass(null,
