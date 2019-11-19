@@ -37,8 +37,8 @@ public class PotionbrewerEnergyOrb extends CustomEnergyOrb {
             this.x = MathUtils.random(-55.0F, 5.0F);
             this.y = MathUtils.random(-60.0F, -30.0F);
             this.a = 0.0F;
-            this.scale = MathUtils.random(0.8F, 1.2F);
-            this.velocity = MathUtils.random(1.0F, 5.0F);
+            this.scale = MathUtils.random(0.3F, 1.0F);
+            this.velocity = MathUtils.random(1.0F, 8.0F);
             if (lg) {
                 origin = 24.0F;
                 size = 48.0F;
