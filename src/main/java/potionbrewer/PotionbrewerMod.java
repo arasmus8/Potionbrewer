@@ -92,10 +92,10 @@ public class PotionbrewerMod implements
     private static final String POWER_POTIONBREWER_PORTRAIT = "potionbrewerResources/images/1024/bg_power.png";
     private static final String ENERGY_ORB_POTIONBREWER_PORTRAIT = "potionbrewerResources/images/1024/card_cyan_orb.png";
 
-    private static final String THE_DEFAULT_BUTTON = "potionbrewerResources/images/charSelect/PotionbrewerCharacterButton.png";
-    private static final String THE_DEFAULT_PORTRAIT = "potionbrewerResources/images/charSelect/CharacterSelect.png";
-    public static final String THE_DEFAULT_SHOULDER_1 = "potionbrewerResources/images/char/potionbrewer/shoulder.png";
-    public static final String THE_DEFAULT_SHOULDER_2 = "potionbrewerResources/images/char/potionbrewer/shoulder2.png";
+    private static final String POTIONBREWER_CHARACTER_BUTTON_PNG = "potionbrewerResources/images/charSelect/PotionbrewerCharacterButton.png";
+    private static final String CHARACTER_SELECT_PORTRAIT = "potionbrewerResources/images/charSelect/CharacterSelect.png";
+    public static final String POTIONBREWER_SHOULDER = "potionbrewerResources/images/char/potionbrewer/shoulder.png";
+    public static final String POTIONBREWER_SHOULDER_2 = "potionbrewerResources/images/char/potionbrewer/shoulder2.png";
     public static final String POTIONBREWER_CORPSE = "potionbrewerResources/images/char/potionbrewer/corpse.png";
 
     public static final String BADGE_IMAGE = "potionbrewerResources/images/Badge.png";
@@ -221,7 +221,7 @@ public class PotionbrewerMod implements
         logger.info("Beginning to edit characters. " + "Add " + Potionbrewer.Enums.POTIONBREWER.toString());
 
         BaseMod.addCharacter(new Potionbrewer("Potionbrewer", Potionbrewer.Enums.POTIONBREWER),
-                THE_DEFAULT_BUTTON, THE_DEFAULT_PORTRAIT, Potionbrewer.Enums.POTIONBREWER);
+                POTIONBREWER_CHARACTER_BUTTON_PNG, CHARACTER_SELECT_PORTRAIT, Potionbrewer.Enums.POTIONBREWER);
 
         receiveEditPotions();
         logger.info("Added " + Potionbrewer.Enums.POTIONBREWER.toString());

@@ -76,8 +76,8 @@ public class Potionbrewer extends CustomPlayer {
         super(name, setClass, new PotionbrewerEnergyOrb(), new SpriterAnimation("potionbrewerResources/images/char/potionbrewer/Spriter/Potionbrewer.scml"));
 
         initializeClass(null,
-                THE_DEFAULT_SHOULDER_1,
-                THE_DEFAULT_SHOULDER_2,
+                POTIONBREWER_SHOULDER,
+                POTIONBREWER_SHOULDER_2,
                 POTIONBREWER_CORPSE,
                 getLoadout(), 20.0F, -10.0F, 220.0F, 290.0F, new EnergyManager(ENERGY_PER_TURN));
         
