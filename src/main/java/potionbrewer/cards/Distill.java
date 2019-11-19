@@ -45,12 +45,13 @@ public class Distill extends CustomCard {
         this.addToBot(new BrewPotionAction());
     }
 
+    @Override
+    public boolean canUpgrade() {
+        return false;
+    }
+
     // Upgraded stats.
     @Override
     public void upgrade() {
-        if (!upgraded) {
-            upgradeName();
-            initializeDescription();
-        }
     }
 }
