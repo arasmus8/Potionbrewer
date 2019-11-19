@@ -235,6 +235,7 @@ public class ChoosePotion extends AbstractCard implements CustomSavable<String> 
         imageMap.put(NoxiousPotion.POTION_ID, "green/attack/choke");
         imageMap.put(QuicksilverPotion.POTION_ID, "blue/power/buffer");
         imageMap.put(SplittingPotion.POTION_ID, "red/attack/sever_soul");
+        imageMap.put(StunPotion.POTION_ID, "status/dazed");
         imageMap.put(ToxicPotion.POTION_ID, "status/slimed");
 
         // built-in potions
