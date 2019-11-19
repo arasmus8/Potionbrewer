@@ -44,9 +44,9 @@ public abstract class FollowupCard extends CustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.useActions(p, m);
-        if (PotionbrewerMod.lastPlayedCardCostZero) {
+        if (PotionbrewerMod.lastPlayedCardCostZero && !this.purgeOnUse) {
             this.followupActions(p, m);
-            PotionbrewerMod.lastPlayedCardCostZero = !this.purgeOnUse && (this.costForTurn == 0 || this.freeToPlayOnce);
+            PotionbrewerMod.lastPlayedCardCostZero = this.costForTurn == 0 || this.freeToPlayOnce;
         }
     }
 }
