@@ -5,8 +5,10 @@ import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
+import com.megacrit.cardcrawl.localization.TutorialStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.beyond.*;
 import com.megacrit.cardcrawl.monsters.city.*;
@@ -16,26 +18,31 @@ import com.megacrit.cardcrawl.monsters.ending.SpireShield;
 import com.megacrit.cardcrawl.monsters.ending.SpireSpear;
 import com.megacrit.cardcrawl.monsters.exordium.*;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
+import com.megacrit.cardcrawl.ui.FtueTip;
 import potionbrewer.PotionbrewerMod;
+import potionbrewer.PotionbrewerTipTracker;
 import potionbrewer.characters.Potionbrewer;
 import potionbrewer.orbs.*;
 
 import java.util.HashMap;
 
 import static potionbrewer.PotionbrewerMod.makeCardPath;
+import static potionbrewer.PotionbrewerTipTracker.REAGENTS;
 
 public class Collect extends CustomCard {
-    
+
     public static final String ID = PotionbrewerMod.makeID(Collect.class.getSimpleName());
     public static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
 
+    public static final TutorialStrings TUTORIAL_STRINGS = CardCrawlGame.languagePack.getTutorialString(REAGENTS);
+
     public static final String IMG = makeCardPath("ReagentCard.png");
-    
+
     private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = Potionbrewer.Enums.COLOR_CYAN;
-    
+
     private static final int COST = 0;
     private static final int VULNERABLE = 1;
     private static final int UPGRADE_VULNERABLE = 1;
@@ -51,7 +58,7 @@ public class Collect extends CustomCard {
     }
 
     public static AbstractOrb getOrbForMonster(AbstractMonster m) {
-        if(monsterReagents.containsKey(m.id)) {
+        if (monsterReagents.containsKey(m.id)) {
             try {
                 Class<? extends Reagent> clz = monsterReagents.get(m.id);
                 return clz.newInstance();
@@ -62,27 +69,17 @@ public class Collect extends CustomCard {
         return ReagentList.randomReagent();
     }
 
-    /*
-    @Override
-    public void render(SpriteBatch sb) {
-        if(AbstractDungeon.player != null) {
-            AbstractMonster m = (AbstractMonster) ReflectionHacks.getPrivate(AbstractDungeon.player, AbstractPlayer.class, "hoveredMonster");
-            if (m != null) {
-                Reagent r = (Reagent) getOrbForMonster(m);
-                TipHelper.renderGenericTip(m.hb.x, m.hb.y, "Collect: " + r.name, r.description);
-            }
-        }
-        super.render(sb);
-    }
-    */
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new MakeTempCardInHandAction(new Distill()));
         AbstractOrb orb = getOrbForMonster(m);
         AbstractDungeon.actionManager.addToBottom(new ChannelAction(orb));
+        if (!PotionbrewerTipTracker.hasShown(REAGENTS)) {
+            PotionbrewerTipTracker.neverShowAgain(REAGENTS);
+            AbstractDungeon.ftue = new FtueTip(TUTORIAL_STRINGS.LABEL[0], TUTORIAL_STRINGS.TEXT[0], (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F, FtueTip.TipType.COMBAT);
+        }
     }
-    
+
     @Override
     public void upgrade() {
         if (!this.upgraded) {
@@ -184,25 +181,25 @@ public class Collect extends CustomCard {
         monsterReagents.put("theJungle:CarcassSack", Root.class);
         monsterReagents.put("theJungle:Cassacara", Root.class);
         monsterReagents.put("theJungle:Flameango", Feather.class);
-        monsterReagents.put("theJungle:FunGuy", Spore.class);
-        monsterReagents.put("theJungle:GiantWrat", Sulphur.class);
         monsterReagents.put("theJungle:JungleHunters", Bone.class);
         monsterReagents.put("theJungle:Lyon", Tooth.class);
-        monsterReagents.put("theJungle:MamaSnecko", Eye.class);
-        monsterReagents.put("theJungle:Phrog", Ink.class);
         monsterReagents.put("theJungle:SlimyTreeVines", Root.class);
         monsterReagents.put("theJungle:SneckoCultist", Eye.class);
         monsterReagents.put("theJungle:SneckoEgg", Eye.class);
         monsterReagents.put("theJungle:SwingingAxe", Steel.class);
+        //elites
+        monsterReagents.put("theJungle:GiantWrat", Sulphur.class);
+        monsterReagents.put("theJungle:MamaSnecko", Eye.class);
+        monsterReagents.put("theJungle:Phrog", Ichor.class);
+        //boss
+        monsterReagents.put("theJungle:FunGuy", SuperSpore.class);
 
         // TheFactory
         monsterReagents.put("theFactory:BigBot", Steel.class);
         monsterReagents.put("theFactory:DecayingSentinel", Steel.class);
         monsterReagents.put("theFactory:DefectiveSentry", Steel.class);
-        monsterReagents.put("theFactory:DrinkBrewer", Clay.class);
         monsterReagents.put("theFactory:Experiment01", Meteorite.class);
         monsterReagents.put("theFactory:ExpPersonnel", Slime.class);
-        monsterReagents.put("theFactory:Guardian2", PowerCore.class);
         monsterReagents.put("theFactory:Manservantes", Steel.class);
         monsterReagents.put("theFactory:MiniBotBeamer", Flame.class);
         monsterReagents.put("theFactory:MiniBotBuilderBuilder", Lightning.class);
@@ -212,9 +209,87 @@ public class Collect extends CustomCard {
         monsterReagents.put("theFactory:SentinelSpawn", Silk.class);
         monsterReagents.put("theFactory:ShrapnelHeap", Barb.class);
         monsterReagents.put("theFactory:ShrapnelTosser", Barb.class);
-        monsterReagents.put("theFactory:SmogElemental", Sulphur.class);
-        monsterReagents.put("theFactory:SPIDER", Pyramid.class);
         monsterReagents.put("theFactory:ToyOrb", Steel.class);
+        //elites
+        monsterReagents.put("theFactory:DrinkBrewer", Clay.class);
+        monsterReagents.put("theFactory:Guardian2", PowerCore.class);
+        monsterReagents.put("theFactory:SmogElemental", Sulphur.class);
+        //boss
+        monsterReagents.put("theFactory:SPIDER", Pyramid.class);
 
+        //ReplayTheSpire
+        monsterReagents.put("Replay:BronzeOrb", Steel.class);
+        monsterReagents.put("GremlinCook", Grimace.class);
+        monsterReagents.put("Jyrdo", Feather.class);
+        //elites
+        monsterReagents.put("Replay:BlueRogue", Needle.class);
+        monsterReagents.put("Replay:GhostMerchant", Chest.class);
+        monsterReagents.put("R_Hoarder", Hand.class);
+        monsterReagents.put("Replay:Snechameleon", Jaw.class);
+        //boss
+        monsterReagents.put("CaptainAbe", Chest.class);
+        monsterReagents.put("FadingForestBoss", Storybook.class);
+        monsterReagents.put("PondfishBoss", FeyFire.class);
+        monsterReagents.put("Replay:Conductor", TrainTicket.class);
+        monsterReagents.put("Replay:ConductorBomb", TrainTicket.class);
+        monsterReagents.put("Replay:Hell Engine", TrainTicket.class);
+        //Storyteller Summons
+        monsterReagents.put("FF_ComboSlime_L", Slime.class);
+        monsterReagents.put("FF_FungiBeast", Spore.class);
+        monsterReagents.put("FF_GremlinFat", Grimace.class);
+        monsterReagents.put("FF_GremlinThief", Grimace.class);
+        monsterReagents.put("FF_GremlinTsundere", Grimace.class);
+        monsterReagents.put("FF_GremlinWarrior", Grimace.class);
+        monsterReagents.put("FF_GremlinWizard", Grimace.class);
+        monsterReagents.put("FF_GremlinNob", Bile.class);
+        monsterReagents.put("FF_JawWorm", Tooth.class);
+        monsterReagents.put("FF_Lagavulin", Ink.class);
+        monsterReagents.put("FF_LouseDefensive", Silk.class);
+        monsterReagents.put("FF_LouseNormal", Silk.class);
+        monsterReagents.put("FF_Sentry", LaserCore.class);
+
+        //InfiniteSpire
+        //elites
+        monsterReagents.put("Nightmare", TwistedRelic.class);
+        monsterReagents.put("infinitespire:Voidling", Ichor.class);
+        //bosses
+        monsterReagents.put("LordOfAnnihilation", PhilosopherShard.class);
+        monsterReagents.put("LordOfDawn", PhilosopherShard.class);
+        monsterReagents.put("LordOfFortification", PhilosopherShard.class);
+        monsterReagents.put("infinitespire:MassOfShapes", Pyramid.class);
+
+        //Hubris
+        monsterReagents.put("hubris:GrandMystic", Ether.class);
+        monsterReagents.put("hubris:GrandSnecko", Eye.class);
+        monsterReagents.put("hubris:Merchant", Chest.class);
+        monsterReagents.put("hubris:MusketHawk", Mechanism.class);
+        monsterReagents.put("hubris:NecromanticTotem", Pyramid.class);
+
+        //Conspire
+        monsterReagents.put("conspire:FuzzyDie", RunicShape.class);
+        monsterReagents.put("conspire:HeadLouse", Horn.class);
+        monsterReagents.put("conspire:HollyBat", Root.class);
+        monsterReagents.put("conspire:HypodermicNeedle", Needle.class);
+        monsterReagents.put("FuzzyLouseWeak", Silk.class);
+        monsterReagents.put("conspire:MimicChest", Chest.class);
+        monsterReagents.put("conspire:MirrorImage", Steel.class);
+        monsterReagents.put("conspire:MysteriousRune", RunicShape.class);
+        monsterReagents.put("conspire:OrnateMirror", Pyramid.class);
+        monsterReagents.put("conspire:RoseBush", Root.class);
+        monsterReagents.put("conspire:SneckoGhost", Eye.class);
+
+        //MimicMod
+        monsterReagents.put("Mimic", Chest.class);
+
+        //StrawberrySpire
+        monsterReagents.put("strawberrySpire:Accio", Flame.class);
+        monsterReagents.put("strawberrySpire:AncientClocktower", LaserCore.class);
+        monsterReagents.put("strawberrySpire:Crucio", Flame.class);
+        monsterReagents.put("strawberrySpire:ElectricalPylon", LaserCore.class);
+        monsterReagents.put("strawberrySpire:Imperio", Steel.class);
+        monsterReagents.put("strawberrySpire:KineticPylon", LaserCore.class);
+        monsterReagents.put("strawberrySpire:Minicio", Lightning.class);
+        monsterReagents.put("strawberrySpire:ThermalPylon", LaserCore.class);
+        monsterReagents.put("strawberrySpire:Zivicio", Lightning.class);
     }
 }

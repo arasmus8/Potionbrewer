@@ -1,8 +1,12 @@
 package potionbrewer.orbs;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardQueueItem;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -10,7 +14,6 @@ import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.potions.SneckoOil;
 import potionbrewer.PotionbrewerMod;
-import potionbrewer.actions.PlayRandomCardAction;
 
 public class Eye extends Reagent {
     public static final String ORB_ID = PotionbrewerMod.makeID("Eye");
@@ -20,7 +23,6 @@ public class Eye extends Reagent {
 
     public Eye() {
         super(ORB_ID, img, orbString.NAME, DESC);
-        catalyze = true;
         targeted = false;
     }
 
@@ -41,7 +43,21 @@ public class Eye extends Reagent {
 
     @Override
     public void doEffects(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new PlayRandomCardAction(p.hand));
+        AbstractCard tmp = p.masterDeck.getRandomCard(true);
+        p.limbo.addToBottom(tmp);
+        tmp.current_x = p.hb.cX;
+        tmp.current_y = p.hb.cY;
+        tmp.target_x = (float) Settings.WIDTH / 2.0F - 300.0F * Settings.scale;
+        tmp.target_y = (float) Settings.HEIGHT / 2.0F;
+        if (m != null) {
+            tmp.calculateCardDamage(m);
+        } else {
+            m = AbstractDungeon.getRandomMonster();
+            tmp.calculateCardDamage(m);
+        }
+
+        tmp.purgeOnUse = true;
+        AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(tmp, m, tmp.energyOnUse, true, true), true);
     }
 
     static {

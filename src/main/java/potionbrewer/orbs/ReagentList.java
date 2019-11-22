@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class ReagentList {
-    private static HashMap<String, Class> reagentsById;
+    public static HashMap<String, Class> reagentsById;
 
     static {
         reagentsById = new HashMap<>();
@@ -19,6 +19,7 @@ public class ReagentList {
         reagentsById.put(Bile.ORB_ID, Bile.class);
         reagentsById.put(Bludgeon.ORB_ID, Bludgeon.class);
         reagentsById.put(Bone.ORB_ID, Bone.class);
+        reagentsById.put(Chest.ORB_ID, Chest.class);
         reagentsById.put(Clay.ORB_ID, Clay.class);
         reagentsById.put(Crown.ORB_ID, Crown.class);
         reagentsById.put(Ether.ORB_ID, Ether.class);
@@ -52,10 +53,14 @@ public class ReagentList {
         reagentsById.put(Slime.ORB_ID, Slime.class);
         reagentsById.put(Spore.ORB_ID, Spore.class);
         reagentsById.put(Steel.ORB_ID, Steel.class);
+        reagentsById.put(Storybook.ORB_ID, Storybook.class);
         reagentsById.put(Sulphur.ORB_ID, Sulphur.class);
+        reagentsById.put(SuperSpore.ORB_ID, SuperSpore.class);
         reagentsById.put(Tentacle.ORB_ID, Tentacle.class);
         reagentsById.put(TinyHat.ORB_ID, TinyHat.class);
         reagentsById.put(Tooth.ORB_ID, Tooth.class);
+        reagentsById.put(TrainTicket.ORB_ID, TrainTicket.class);
+        reagentsById.put(TwistedRelic.ORB_ID, TwistedRelic.class);
         reagentsById.put(Wax.ORB_ID, Wax.class);
     }
 
@@ -103,7 +108,7 @@ public class ReagentList {
         int len = list.length;
         return IntStream.range(0, len)
                 .filter(i -> id.equals(list[i]))
-                .findFirst() // first occurence
+                .findFirst() // first occurrence
                 .orElse(-1); // No element found
     }
 

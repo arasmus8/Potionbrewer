@@ -33,7 +33,6 @@ public class VolatileSolution extends CustomCard {
     public static final CardColor COLOR = Potionbrewer.Enums.COLOR_CYAN;
 
     private static final int COST = 2;
-    private static final int UPGRADE_COST = 1;
 
     private static final int DAMAGE = 20;
     private static final int UPGRADE_PLUS_DMG = 5;
@@ -57,7 +56,6 @@ public class VolatileSolution extends CustomCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADE_COST);
             upgradeDamage(UPGRADE_PLUS_DMG);
             initializeDescription();
         }

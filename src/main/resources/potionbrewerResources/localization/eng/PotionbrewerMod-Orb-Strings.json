@@ -38,6 +38,14 @@
       "Apply 1 Weak."
     ]
   },
+  "potionbrewer:Chest": {
+    "NAME": "Chest",
+    "DESCRIPTION": [
+      "Treasure chest filled with gold.",
+      "Deal 1 Damage for every 10 gold.",
+      "Deal DD Damage."
+    ]
+  },
   "potionbrewer:Clay": {
     "NAME": "Clay",
     "DESCRIPTION": [
@@ -66,8 +74,8 @@
     "NAME": "Eye",
     "DESCRIPTION": [
       "Eye harvested from a monster.",
-      "#yCatalyze: Play a random card.",
-      "potionbrewer:Catalyze: Play a random card."
+      "Play a copy of a random card from your deck.",
+      "Play a copy of a random card from your deck."
     ]
   },
   "potionbrewer:Feather": {
@@ -295,6 +303,22 @@
       "Apply 1 Vulnerable."
     ]
   },
+  "potionbrewer:Storybook": {
+    "NAME": "Storybook",
+    "DESCRIPTION": [
+      "An enchanted storybook taken from an old crone.",
+      "Stun the target.",
+      "Stun the target."
+    ]
+  },
+  "potionbrewer:SuperSpore": {
+    "NAME": "Super Spore",
+    "DESCRIPTION": [
+      "An unusually aggressive Spore harvested from a giant fungus.",
+      "Remove 5 HP for each debuff on the target.",
+      "Remove 5 HP for each debuff on the target."
+    ]
+  },
   "potionbrewer:Steel": {
     "NAME": "Steel",
     "DESCRIPTION": [
@@ -333,6 +357,22 @@
       "Tooth harvested from a Jaw worm.",
       "Deal 6 Damage.",
       "Deal DD Damage."
+    ]
+  },
+  "potionbrewer:TrainTicket": {
+    "NAME": "Train Ticket",
+    "DESCRIPTION": [
+      "Ticket for passage on an hellish train.",
+      "Deal Damage equal to the floor number.",
+      "Deal DD Damage."
+    ]
+  },
+  "potionbrewer:TwistedRelic": {
+    "NAME": "Twisted Relic",
+    "DESCRIPTION": [
+      "An otherworldly object.",
+      "Gain 13 Thorns.",
+      "Gain 13 Thorns."
     ]
   },
   "potionbrewer:Wax": {
