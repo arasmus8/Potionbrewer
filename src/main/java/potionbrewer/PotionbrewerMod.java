@@ -253,6 +253,7 @@ public class PotionbrewerMod implements
         logger.info("Done loading badge Image and mod options");
 
         ConsoleCommand.addCommand("prototype", PrototypeConsoleCommand.class);
+        ConsoleCommand.addCommand("reagent", ReagentConsoleCommand.class);
     }
 
     public void receiveEditPotions() {
