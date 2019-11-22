@@ -1,6 +1,8 @@
 package potionbrewer;
 
 import basemod.BaseMod;
+import basemod.ModLabel;
+import basemod.ModPanel;
 import basemod.abstracts.CustomSavable;
 import basemod.devcommands.ConsoleCommand;
 import basemod.helpers.RelicType;
@@ -17,8 +19,10 @@ import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
+import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
@@ -46,7 +50,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.Properties;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
@@ -69,10 +72,9 @@ public class PotionbrewerMod implements
     private static String modID;
 
     private static final Logger logger = Logger.getLogger(PotionbrewerMod.class.getName());
-    public static Properties potionbrewerSettings = new Properties();
     public static final String ENABLE_PLACEHOLDER_SETTINGS = "enablePlaceholder";
     private static final String DELIM = ", ";
-    public static boolean enablePlaceholder = true;
+    public static SpireConfig config;
 
     private static final String MODNAME = "Potionbrewer";
     private static final String AUTHOR = "NotInTheFace";
@@ -154,20 +156,6 @@ public class PotionbrewerMod implements
         logger.info("Done creating the color");
 
 
-        logger.info("Adding mod settings");
-
-
-        potionbrewerSettings.setProperty(ENABLE_PLACEHOLDER_SETTINGS, "FALSE");
-        try {
-            SpireConfig config = new SpireConfig("PotionbrewerMod", "potionbrewerConfig", potionbrewerSettings);
-
-            config.load();
-            enablePlaceholder = config.getBool(ENABLE_PLACEHOLDER_SETTINGS);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        logger.info("Done adding mod settings");
-
         BaseMod.addSaveField("potionbrewer:reagents", this);
         logger.info("Done adding mod savable fields");
     }
@@ -234,38 +222,33 @@ public class PotionbrewerMod implements
 
         Texture badgeTexture = TextureLoader.getTexture(BADGE_IMAGE);
 
-
-/*
-        ModPanel settingsPanel = new ModPanel();
+        logger.info("Adding mod settings");
 
 
-        ModLabeledToggleButton enableNormalsButton = new ModLabeledToggleButton("This is the text which goes next to the checkbox.",
-                350.0f, 700.0f, Settings.CREAM_COLOR, FontHelper.charDescFont,
-                enablePlaceholder,
-                settingsPanel,
-                (label) -> {
-                },
-                (button) -> {
-
-                    enablePlaceholder = button.enabled;
-                    try {
-
-                        SpireConfig config = new SpireConfig("PotionbrewerMod", "potionbrewerConfig", potionbrewerSettings);
-                        config.setBool(ENABLE_PLACEHOLDER_SETTINGS, enablePlaceholder);
-                        config.save();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                });
-
-        settingsPanel.addUIElement(enableNormalsButton);
-*/
-
-        BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, null);
+        try {
+            config = new SpireConfig("PotionbrewerMod", "potionbrewerConfig");
+            config.load();
+            PotionbrewerTipTracker.initialize();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        logger.info("Done adding mod settings");
 
 
-        // BaseMod.addEvent(IdentityCrisisEvent.ID, IdentityCrisisEvent.class, TheCity.ID);
+        ModPanel panel = new ModPanel();
+        panel.addUIElement(
+                new ModLabel("Thanks for trying this character! I hope you like it.",
+                        350.0F,
+                        700.0F,
+                        Settings.CREAM_COLOR,
+                        FontHelper.charDescFont,
+                        panel,
+                        (b) -> {
+                        }
+                )
+        );
 
+        BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, panel);
 
         logger.info("Done loading badge Image and mod options");
 
@@ -404,7 +387,10 @@ public class PotionbrewerMod implements
         BaseMod.loadCustomStringsFile(UIStrings.class,
                 getModID() + "Resources/localization/eng/PotionbrewerMod-UI-Strings.json");
 
-        logger.info("Done edittting strings");
+        BaseMod.loadCustomStringsFile(TutorialStrings.class,
+                getModID() + "Resources/localization/eng/PotionbrewerMod-Tutorial-Strings.json");
+
+        logger.info("Done editing strings");
     }
 
     @Override
