@@ -132,7 +132,7 @@ public class Prototype extends CustomCard {
         vec.rotate(this.angle);
         float x = this.current_x + vec.x;
         float y = this.current_y + vec.y;
-        float scale = this.drawScale * 0.7F;
+        float scale = this.drawScale * 0.75F;
         sb.draw(img, x - 64.0F, y - 64.0F, 64.0F, 64.0F, 128.0F, 128.0F, scale, scale, 0.0F, 0, 0, 128, 128, false, false);
     }
 
@@ -143,6 +143,29 @@ public class Prototype extends CustomCard {
         renderHelper(sb, textureB, 80.0F, 116.0F);
         // third is at 270deg
         renderHelper(sb, textureC, 0.0F, 26.0F);
+    }
+
+    private void renderLargeHelper(SpriteBatch sb, Texture img, float drawX, float drawY, float cardX, float cardY) {
+        Vector2 vec = new Vector2(drawX, drawY);
+        vec.scl(Settings.scale);
+        vec.rotate(this.angle);
+        float x = cardX + vec.x;
+        float y = cardY + vec.y;
+        float scale = Settings.scale * 1.5F;
+        sb.draw(img, x - 64.0F, y - 64.0F, 64.0F, 64.0F, 128.0F, 128.0F, scale, scale, 0.0F, 0, 0, 128, 128, false, false);
+    }
+
+    public static float xOff1 = -120F;
+    public static float xOff2 = 120F;
+    public static float yOff1 = 75F;
+    public static float yOff2 = -75F;
+
+    public void renderLargePortrait(SpriteBatch sb) {
+        float xPos = (float) Settings.WIDTH / 2.0F;
+        float yPos = (float) Settings.HEIGHT / 2.0F + 136.0F * Settings.scale;
+        renderLargeHelper(sb, textureA, xOff1, yOff1, xPos, yPos);
+        renderLargeHelper(sb, textureB, xOff2, yOff1, xPos, yPos);
+        renderLargeHelper(sb, textureC, 0.0F, yOff2, xPos, yPos);
     }
 
     private int calcDamageTimes(Reagent r) {
@@ -196,6 +219,11 @@ public class Prototype extends CustomCard {
     }
 
     @Override
+    public void triggerWhenCopied() {
+        hydrate();
+    }
+
+    @Override
     public void triggerWhenDrawn() {
         hydrate();
     }
@@ -227,14 +255,14 @@ public class Prototype extends CustomCard {
         }
     }
 
+    @Override
+    public boolean canUpgrade() {
+        return false;
+    }
+
     // Upgraded stats.
     @Override
     public void upgrade() {
-        if (!upgraded) {
-            upgradeName();
-            upgradeBaseCost(UPGRADED_COST);
-            initializeDescription();
-        }
     }
 
     @Override
