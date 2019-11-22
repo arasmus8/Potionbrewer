@@ -71,7 +71,7 @@
     "NAME": "Potion Kit",
     "FLAVOR": "The essential tools of the Potion Brewer's trade.",
     "DESCRIPTIONS": [
-      "Add an additional Potion slot. Each battle brew a tonic."
+      "Add an additional Potion slot. Each battle brew a #yTonic."
     ]
   },
   "potionbrewer:SalesContract": {
@@ -100,7 +100,7 @@
     "NAME": "Toy Autogyro",
     "FLAVOR": "Vrooom, zoom zoom zoom!",
     "DESCRIPTIONS": [
-      "Whenever you use a potion, gain 3 temporary HP."
+      "Whenever you use a potion, gain 3 #yTemporary #yHP."
     ]
   },
   "potionbrewer:WarMedal": {
