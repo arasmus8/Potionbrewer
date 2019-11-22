@@ -27,7 +27,7 @@ public class PotionKit extends CustomRelic {
     private static final KeywordStrings KEYWORD_STRINGS = CardCrawlGame.languagePack.getKeywordString("potionbrewer:tonic");
     
     public PotionKit() {
-        super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.CLINK);
+        super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.SOLID);
         tips.clear();
         tips.add(new PowerTip(this.name, this.description));
         tips.add(new PowerTip("Tonic", "A smaller version of a regular potion that can't be found in shops or rewards."));

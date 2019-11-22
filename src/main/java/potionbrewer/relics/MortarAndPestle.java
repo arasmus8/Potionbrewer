@@ -17,7 +17,7 @@ public class MortarAndPestle extends CustomRelic implements DiscardPotionRelic {
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("MortarAndPestle.png"));
 
     public MortarAndPestle() {
-        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.SOLID);
+        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.HEAVY);
     }
 
     @Override

@@ -26,7 +26,7 @@ public class AlchemistFlask extends CustomRelic {
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("AlchemistsFlask.png"));
 
     public AlchemistFlask() {
-        super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.SOLID);
+        super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.CLINK);
         counter = 0;
     }
 

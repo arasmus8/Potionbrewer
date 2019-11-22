@@ -20,7 +20,7 @@ public class Torch extends CustomRelic {
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("Torch.png"));
 
     public Torch() {
-        super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.SOLID);
+        super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.CLINK);
     }
 
     public void atBattleStart() {

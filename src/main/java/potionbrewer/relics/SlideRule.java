@@ -22,7 +22,7 @@ public class SlideRule extends CustomRelic {
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("SlideRule.png"));
 
     public SlideRule() {
-        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.FLAT);
+        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.SOLID);
     }
 
     @Override

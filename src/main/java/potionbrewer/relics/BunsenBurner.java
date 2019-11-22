@@ -16,7 +16,7 @@ public class BunsenBurner extends CustomRelic {
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("BunsenBurner.png"));
 
     public BunsenBurner() {
-        super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.FLAT);
+        super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.SOLID);
     }
 
     @Override
