@@ -36,7 +36,7 @@ public class Collect extends CustomCard {
 
     public static final TutorialStrings TUTORIAL_STRINGS = CardCrawlGame.languagePack.getTutorialString(REAGENTS);
 
-    public static final String IMG = makeCardPath("ReagentCard.png");
+    public static final String IMG = makeCardPath("Collect.png");
 
     private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.ENEMY;
