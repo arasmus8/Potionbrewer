@@ -7,12 +7,17 @@
     <artifactId>Potionbrewer</artifactId>
     <name>Potionbrewer</name>
     <version>0.0.1</version>
-    <description>Potion synergy</description>
+    <description>
+        Adds the Potionbrewer.
+        - Includes 16 new potions
+        - Catalyze mechanic (power up certain cards by using potions)
+        - Collect Reagents from monsters in the spire and use them to brew potions or create custom cards.
+    </description>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <SlayTheSpire.version>07-07-2019</SlayTheSpire.version>
+        <SlayTheSpire.version>11-12-2019</SlayTheSpire.version>
         <ModTheSpire.version>3.8.0</ModTheSpire.version>
         <!--CHANGE THIS TO YOUR STEAM INSTALLATION-->
         <Steam.path>D:\Programs\steamapps</Steam.path>
