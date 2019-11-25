@@ -44,15 +44,11 @@ public class Collect extends CustomCard {
     public static final CardColor COLOR = Potionbrewer.Enums.COLOR_CYAN;
 
     private static final int COST = 0;
-    private static final int VULNERABLE = 1;
-    private static final int UPGRADE_VULNERABLE = 1;
 
     private static final HashMap<String, Class<? extends Reagent>> monsterReagents = new HashMap<>();
 
     public Collect() {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.baseMagicNumber = VULNERABLE;
-        this.magicNumber = VULNERABLE;
         exhaust = true;
         cardsToPreview = new Distill();
     }
@@ -84,7 +80,6 @@ public class Collect extends CustomCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeMagicNumber(UPGRADE_VULNERABLE);
             this.isInnate = true;
             this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
             this.initializeDescription();
