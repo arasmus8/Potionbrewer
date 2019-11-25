@@ -22,6 +22,7 @@ public class Storybook extends Reagent {
     public Storybook() {
         super(ORB_ID, img, orbString.NAME, DESC);
         exhaust = true;
+        updateDescription();
     }
 
     @Override

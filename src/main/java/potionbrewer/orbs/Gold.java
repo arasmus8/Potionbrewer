@@ -22,6 +22,7 @@ public class Gold extends Reagent {
     public Gold() {
         super(ORB_ID, img, orbString.NAME, DESC);
         exhaust = true;
+        updateDescription();
     }
 
     @Override

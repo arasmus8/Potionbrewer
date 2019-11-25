@@ -66,6 +66,9 @@ public abstract class Reagent extends AbstractOrb {
     public void updateDescription() {
         this.applyFocus();
         this.description = descriptions[0] + DESC[0] + getPotion().name + DESC[1] + descriptions[1];
+        if (this.exhaust) {
+            this.description = this.description + " - Exhaust.";
+        }
     }
 
     @Override

@@ -22,6 +22,7 @@ public class Ether extends Reagent {
         super(ORB_ID, img, orbString.NAME, DESC);
         exhaust = true;
         targeted = false;
+        updateDescription();
     }
 
     @Override

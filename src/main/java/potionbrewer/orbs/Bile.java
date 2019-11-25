@@ -23,6 +23,7 @@ public class Bile extends Reagent {
         super(ORB_ID, img, orbString.NAME, DESC);
         targeted = false;
         exhaust = true;
+        updateDescription();
     }
 
     @Override

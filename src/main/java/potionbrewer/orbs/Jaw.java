@@ -73,17 +73,23 @@ public class Jaw extends Reagent {
 
     @Override
     public void doDamage(AbstractPlayer p, AbstractMonster m, DamageInfo info) {
-        this.addToBot(new DamageAction(m, info, AbstractGameAction.AttackEffect.NONE));
+        if (damage > 0) {
+            this.addToBot(new DamageAction(m, info, AbstractGameAction.AttackEffect.NONE));
+        }
     }
 
     @Override
     public void doAoeDamage(AbstractPlayer p, int damage) {
-        this.addToBot(new DamageAllEnemiesAction(p, DamageInfo.createDamageMatrix(damage), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.NONE));
+        if (damage > 0) {
+            this.addToBot(new DamageAllEnemiesAction(p, DamageInfo.createDamageMatrix(damage), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.NONE));
+        }
     }
 
     @Override
     public void doBlock(AbstractPlayer p, int amount) {
-        addToBot(new GainBlockAction(p, amount));
+        if (block > 0) {
+            addToBot(new GainBlockAction(p, amount));
+        }
     }
 
     @Override

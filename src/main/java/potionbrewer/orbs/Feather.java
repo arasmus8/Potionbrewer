@@ -21,8 +21,9 @@ public class Feather extends Reagent {
 
     public Feather() {
         super(ORB_ID, img, orbString.NAME, DESC);
-        exhaust = true;
         targeted = false;
+        exhaust = true;
+        updateDescription();
     }
 
     @Override
