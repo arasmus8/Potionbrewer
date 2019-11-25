@@ -30,6 +30,8 @@ public class TwoForOnePower extends AbstractPower implements PotionTrackingPower
 
     @Override
     public void onUsePotion(AbstractPotion potion) {
+        if (PotionbrewerMod.potionIsFromCard) return;
+        this.flash();
         if (amount > 1) {
             this.addToBot(new ReducePowerAction(owner, owner, this, 1));
         } else {

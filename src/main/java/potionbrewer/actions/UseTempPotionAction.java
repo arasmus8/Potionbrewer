@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
+import potionbrewer.PotionbrewerMod;
 
 public class UseTempPotionAction extends AbstractGameAction {
 
@@ -21,9 +22,11 @@ public class UseTempPotionAction extends AbstractGameAction {
         if (duration == Settings.ACTION_DUR_FAST) {
             this.isDone = true;
 
+            PotionbrewerMod.potionIsFromCard = true;
             BaseMod.publishPrePotionUse(potion);
             potion.use(target);
             BaseMod.publishPostPotionUse(potion);
+            PotionbrewerMod.potionIsFromCard = false;
         }
         tickDuration();
     }

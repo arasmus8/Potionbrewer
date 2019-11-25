@@ -78,7 +78,10 @@ public class PotionbrewerMod implements
 
     private static final String MODNAME = "Potionbrewer";
     private static final String AUTHOR = "NotInTheFace";
-    private static final String DESCRIPTION = "A custom character with potion synergies.";
+    private static final String DESCRIPTION = "A custom character with potion synergies." +
+            "\n- Includes 16 new potions" +
+            "\n- Catalyze mechanic (power up certain cards by using potions)" +
+            "\n- Collect Reagents from monsters in the spire and use them to brew potions or create custom cards.";
 
     public static final Color BREWER_CYAN = CardHelper.getColor(0, 180, 239);
 
@@ -131,6 +134,7 @@ public class PotionbrewerMod implements
 
     public static ArrayList<Reagent> reagents;
     public static int turnNumber = 1;
+    public static boolean potionIsFromCard = false;
 
     public PotionbrewerMod() {
         logger.info("Subscribe to BaseMod hooks");
