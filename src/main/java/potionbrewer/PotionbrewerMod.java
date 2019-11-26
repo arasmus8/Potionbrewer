@@ -135,6 +135,7 @@ public class PotionbrewerMod implements
     public static ArrayList<Reagent> reagents;
     public static int turnNumber = 1;
     public static boolean potionIsFromCard = false;
+    public static TonicLibrary tonicLibrary;
 
     public PotionbrewerMod() {
         logger.info("Subscribe to BaseMod hooks");
@@ -258,6 +259,9 @@ public class PotionbrewerMod implements
 
         ConsoleCommand.addCommand("prototype", PrototypeConsoleCommand.class);
         ConsoleCommand.addCommand("reagent", ReagentConsoleCommand.class);
+
+        tonicLibrary = new TonicLibrary();
+        BaseMod.addSaveField("potionbrewer:TonicLibrary", tonicLibrary);
     }
 
     public void receiveEditPotions() {
@@ -416,6 +420,7 @@ public class PotionbrewerMod implements
     @Override
     public void receiveStartGame() {
         ChoosePotion.initializePotionList(AbstractDungeon.player.chosenClass);
+        TonicLibrary.initialize();
     }
 
     @Override

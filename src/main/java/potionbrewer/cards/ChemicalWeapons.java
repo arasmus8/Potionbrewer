@@ -11,7 +11,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import potionbrewer.PotionbrewerMod;
 import potionbrewer.cards.option.ChoosePotion;
 import potionbrewer.characters.Potionbrewer;
-import potionbrewer.potions.tonics.TonicLibrary;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static potionbrewer.PotionbrewerMod.makeCardPath;
@@ -48,7 +47,7 @@ public class ChemicalWeapons extends CustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        addToBot(new MakeTempCardInHandAction(new ChoosePotion(TonicLibrary.getRandomTonic().ID)));
+        addToBot(new MakeTempCardInHandAction(new ChoosePotion(PotionbrewerMod.tonicLibrary.getRandomTonic().ID)));
     }
 
     // Upgraded stats.

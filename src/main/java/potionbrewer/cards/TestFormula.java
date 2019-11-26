@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import potionbrewer.PotionbrewerMod;
 import potionbrewer.characters.Potionbrewer;
-import potionbrewer.potions.tonics.TonicLibrary;
 
 import java.util.ArrayList;
 
@@ -53,7 +52,7 @@ public class TestFormula extends CustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster target) {
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-            ArrayList<AbstractCard> tonicChoices = TonicLibrary.getRandomChoices(magicNumber);
+            ArrayList<AbstractCard> tonicChoices = PotionbrewerMod.tonicLibrary.getRandomChoices(magicNumber);
             this.addToBot(new ChooseOneAction(tonicChoices));
         }
     }

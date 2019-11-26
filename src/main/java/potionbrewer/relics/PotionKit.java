@@ -11,7 +11,6 @@ import com.megacrit.cardcrawl.localization.KeywordStrings;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.potions.PotionSlot;
 import potionbrewer.PotionbrewerMod;
-import potionbrewer.potions.tonics.TonicLibrary;
 import potionbrewer.util.TextureLoader;
 
 import static potionbrewer.PotionbrewerMod.makeRelicOutlinePath;
@@ -37,7 +36,7 @@ public class PotionKit extends CustomRelic {
     @Override
     public void atBattleStartPreDraw() {
         flash();
-        AbstractPotion p = TonicLibrary.getRandomTonic();
+        AbstractPotion p = PotionbrewerMod.tonicLibrary.getRandomTonic();
         this.addToBot(new ObtainPotionAction(p));
     }
     

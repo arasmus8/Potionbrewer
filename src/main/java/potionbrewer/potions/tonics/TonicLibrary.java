@@ -1,8 +1,10 @@
 package potionbrewer.potions.tonics;
 
-import com.badlogic.gdx.math.MathUtils;
+import basemod.abstracts.CustomSavable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
+import com.megacrit.cardcrawl.random.Random;
 import potionbrewer.cards.option.ChoosePotion;
 
 import java.util.ArrayList;
@@ -10,8 +12,10 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.stream.Collectors;
 
-public class TonicLibrary {
+public class TonicLibrary implements CustomSavable<Integer> {
     public static HashMap<String, Class<? extends AbstractPotion>> tonicList;
+    private static Random rng;
+    private static int randomCount = 0;
 
     static {
         tonicList = new HashMap<>();
@@ -26,9 +30,17 @@ public class TonicLibrary {
         tonicList.put(WeakTonic.ID, WeakTonic.class);
     }
 
-    public static ArrayList<AbstractCard> getRandomChoices(int amount) {
+    public static void initialize() {
+        if (rng == null) {
+            rng = new Random(Settings.seed);
+        }
+    }
+
+    public ArrayList<AbstractCard> getRandomChoices(int amount) {
         ArrayList<String> list = new ArrayList<>(tonicList.keySet());
-        Collections.shuffle(list, MathUtils.random);
+        randomCount += 1;
+        Random forShuffle = new Random(rng.randomLong());
+        Collections.shuffle(list, forShuffle.random);
         return list.subList(0, amount).stream().map(ChoosePotion::new).collect(Collectors.toCollection(ArrayList::new));
     }
 
@@ -36,10 +48,11 @@ public class TonicLibrary {
         return tonicList.containsKey(potion.ID);
     }
 
-    public static AbstractPotion getRandomTonic() {
+    public AbstractPotion getRandomTonic() {
         try {
             String[] list = tonicList.keySet().toArray(new String[0]);
-            int i = MathUtils.random(0, list.length - 1);
+            int i = rng.random(0, list.length - 1);
+            randomCount += 1;
             Class p = tonicList.get(list[i]);
             return (AbstractPotion)p.newInstance();
         } catch (Exception e) {
@@ -60,5 +73,16 @@ public class TonicLibrary {
             err.printStackTrace();
             return new FireTonic();
         }
+    }
+
+    @Override
+    public Integer onSave() {
+        return randomCount;
+    }
+
+    @Override
+    public void onLoad(Integer savedValue) {
+        randomCount = savedValue;
+        rng = new Random(Settings.seed, randomCount);
     }
 }
