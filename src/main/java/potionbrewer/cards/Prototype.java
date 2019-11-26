@@ -155,17 +155,12 @@ public class Prototype extends CustomCard {
         sb.draw(img, x - 64.0F, y - 64.0F, 64.0F, 64.0F, 128.0F, 128.0F, scale, scale, 0.0F, 0, 0, 128, 128, false, false);
     }
 
-    public static float xOff1 = -120F;
-    public static float xOff2 = 120F;
-    public static float yOff1 = 75F;
-    public static float yOff2 = -75F;
-
     public void renderLargePortrait(SpriteBatch sb) {
         float xPos = (float) Settings.WIDTH / 2.0F;
         float yPos = (float) Settings.HEIGHT / 2.0F + 136.0F * Settings.scale;
-        renderLargeHelper(sb, textureA, xOff1, yOff1, xPos, yPos);
-        renderLargeHelper(sb, textureB, xOff2, yOff1, xPos, yPos);
-        renderLargeHelper(sb, textureC, 0.0F, yOff2, xPos, yPos);
+        renderLargeHelper(sb, textureA, -120F, 75F, xPos, yPos);
+        renderLargeHelper(sb, textureB, 120F, 75F, xPos, yPos);
+        renderLargeHelper(sb, textureC, 0.0F, -75F, xPos, yPos);
     }
 
     private int calcDamageTimes(Reagent r) {
