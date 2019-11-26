@@ -55,6 +55,9 @@ public class PotionbrewerEnergyOrb extends CustomEnergyOrb {
                     isDone = true;
                 } else {
                     a -= dt * ANIM_STEP;
+                    if (a < 0.0F) {
+                        a = 0.0F;
+                    }
                 }
             } else {
                 y += dt * ANIM_STEP * velocity;
