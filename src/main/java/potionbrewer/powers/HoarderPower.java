@@ -46,6 +46,7 @@ public class HoarderPower extends AbstractPower implements CloneablePowerInterfa
     @Override
     public void atEndOfTurn(boolean isPlayer) {
         if (isPlayer) {
+            this.flash();
             this.addToBot(new ChannelAction(ReagentList.randomReagent()));
         }
     }
