@@ -39,7 +39,6 @@ import potionbrewer.orbs.Reagent;
 import potionbrewer.orbs.ReagentList;
 import potionbrewer.patches.PotionTracker;
 import potionbrewer.potions.*;
-import potionbrewer.potions.tonics.TonicLibrary;
 import potionbrewer.powers.PotionTrackingPower;
 import potionbrewer.relics.*;
 import potionbrewer.util.IDCheckDontTouchPls;
@@ -136,6 +135,7 @@ public class PotionbrewerMod implements
     public static int turnNumber = 1;
     public static boolean potionIsFromCard = false;
     public static TonicLibrary tonicLibrary;
+    public static PotionLibrary potionLibrary;
 
     public PotionbrewerMod() {
         logger.info("Subscribe to BaseMod hooks");
@@ -262,6 +262,8 @@ public class PotionbrewerMod implements
 
         tonicLibrary = new TonicLibrary();
         BaseMod.addSaveField("potionbrewer:TonicLibrary", tonicLibrary);
+        potionLibrary = new PotionLibrary();
+        BaseMod.addSaveField("potionbrewer:PotionLibrary", potionLibrary);
     }
 
     public void receiveEditPotions() {
@@ -419,7 +421,7 @@ public class PotionbrewerMod implements
 
     @Override
     public void receiveStartGame() {
-        ChoosePotion.initializePotionList(AbstractDungeon.player.chosenClass);
+        PotionLibrary.initializePotionList(AbstractDungeon.player.chosenClass);
         TonicLibrary.initialize();
     }
 

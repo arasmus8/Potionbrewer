@@ -43,7 +43,7 @@ public class BottomlessFlaskAction extends AbstractGameAction {
                 String tipMessage = TEXT[0];
 
                 CardGroup cardGroup = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
-                ChoosePotion.getRandomPotionIdList(groupSize).stream()
+                PotionbrewerMod.potionLibrary.getRandomPotionIdList(groupSize).stream()
                         .map(ChoosePotion::new)
                         .forEach(cardGroup::addToTop);
                 cardGroup.sortAlphabetically(true);

@@ -165,6 +165,7 @@ public class ReagentList {
         return list.get(index);
     }
 
+    //TODO: save/load rng seed
     public static AbstractOrb randomReagent() {
         return randomEntry(null).reagent;
     }

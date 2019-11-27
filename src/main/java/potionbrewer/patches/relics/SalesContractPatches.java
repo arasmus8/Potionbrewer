@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.potions.EntropicBrew;
 import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.shop.StorePotion;
 import javassist.CtBehavior;
-import potionbrewer.potions.tonics.TonicLibrary;
+import potionbrewer.TonicLibrary;
 import potionbrewer.relics.SalesContract;
 
 import java.lang.reflect.Method;

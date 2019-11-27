@@ -13,7 +13,6 @@ import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.potions.PotionSlot;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.MinionPower;
-import com.megacrit.cardcrawl.random.Random;
 import potionbrewer.PotionbrewerMod;
 import potionbrewer.cards.AlchemistForm;
 import potionbrewer.util.TextureLoader;
@@ -29,7 +28,6 @@ public class AlchemistFormPower extends AbstractPower implements CloneablePowerI
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("alchemy84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("alchemy32.png"));
 
-    private static Random rng;
     private int goldCost;
 
     public AlchemistFormPower(final int goldCost) {
@@ -42,8 +40,6 @@ public class AlchemistFormPower extends AbstractPower implements CloneablePowerI
         type = PowerType.BUFF;
         isTurnBased = false;
 
-        rng = new Random();
-        
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
         

@@ -50,7 +50,7 @@ public class SpecialFormula extends CustomCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        ArrayList<AbstractCard> choices = ChoosePotion.getRandomPotionIdList(magicNumber).stream()
+        ArrayList<AbstractCard> choices = PotionbrewerMod.potionLibrary.getRandomPotionIdList(magicNumber).stream()
                 .map((ChoosePotion::new))
                 .collect(Collectors.toCollection(ArrayList::new));
         this.addToBot(new ChooseOneAction(choices));

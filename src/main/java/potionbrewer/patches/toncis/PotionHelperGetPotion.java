@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.helpers.PotionHelper;
 import com.megacrit.cardcrawl.potions.FirePotion;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import potionbrewer.potions.tonics.TonicLibrary;
+import potionbrewer.TonicLibrary;
 
 @SpirePatch(
         clz = PotionHelper.class,

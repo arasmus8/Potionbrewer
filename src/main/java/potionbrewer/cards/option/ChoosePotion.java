@@ -3,7 +3,6 @@ package potionbrewer.cards.option;
 import basemod.abstracts.CustomSavable;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.common.ObtainPotionAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -13,14 +12,11 @@ import com.megacrit.cardcrawl.helpers.PotionHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.potions.*;
-import com.megacrit.cardcrawl.random.Random;
 import potionbrewer.PotionbrewerMod;
 import potionbrewer.actions.UseTempPotionAction;
 import potionbrewer.potions.*;
 import potionbrewer.potions.tonics.*;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -33,8 +29,6 @@ public class ChoosePotion extends AbstractCard implements CustomSavable<String> 
     public String potionId;
     public boolean obtain;
     private static Map<String, String> imageMap;
-    private static ArrayList<String> inBattleIds;
-    private static Random rng = new Random();
 
     public ChoosePotion(final String id, boolean obtain) {
         super(ID, name(id), portrait(id), 0, CARD_STRINGS.DESCRIPTION, CardType.STATUS, CardColor.COLORLESS, CardRarity.COMMON, CardTarget.NONE);
@@ -67,33 +61,12 @@ public class ChoosePotion extends AbstractCard implements CustomSavable<String> 
     }
 
     public ChoosePotion() {
-        this(getRandomPotionId(), false);
-    }
-
-    public static String getRandomPotionId() {
-        if (inBattleIds == null) {
-            return "";
-        }
-        return inBattleIds.get(MathUtils.random(inBattleIds.size() - 1));
-    }
-
-    public static ArrayList<String> getRandomPotionIdList(final int amount) {
-        ArrayList<String> ret = new ArrayList<>(inBattleIds);
-        Collections.shuffle(ret, rng.random);
-        return new ArrayList<>(ret.subList(0, amount));
-    }
-
-    public static void initializePotionList(AbstractPlayer.PlayerClass playerClass) {
-        ArrayList<String> ids = PotionHelper.getPotions(playerClass, false);
-        ids.remove(RegenPotion.POTION_ID);
-        ids.remove(BloodPotion.POTION_ID);
-        ids.remove(FruitJuice.POTION_ID);
-        ids.remove(FairyPotion.POTION_ID);
-        ids.remove(EntropicBrew.POTION_ID);
-        ids.remove(SplittingPotion.POTION_ID);
-        ids.remove(BlacksmithPotion.POTION_ID);
-
-        inBattleIds = new ArrayList<>(ids);
+        this(
+                PotionbrewerMod.potionLibrary == null ?
+                        FirePotion.POTION_ID :
+                        PotionbrewerMod.potionLibrary.getRandomPotionId(),
+                false
+        );
     }
 
     @Override

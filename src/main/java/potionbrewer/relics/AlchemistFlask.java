@@ -39,7 +39,7 @@ public class AlchemistFlask extends CustomRelic {
             this.pulse = false;
             this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
             addToBot(new ChooseOneAction(
-                    ChoosePotion.getRandomPotionIdList(3).stream()
+                    PotionbrewerMod.potionLibrary.getRandomPotionIdList(3).stream()
                             .map(ChoosePotion::new)
                             .collect(Collectors.toCollection(ArrayList::new))
             ));
