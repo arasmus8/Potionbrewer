@@ -51,6 +51,7 @@ public class AnotherRoundPower extends AbstractPower implements CloneablePowerIn
                 Collections.shuffle(zeroes, MathUtils.random);
                 AbstractCard toHand = zeroes.get(0);
                 this.addToBot(new DiscardToHandAction(toHand));
+                this.flash();
             }
         }
     }
