@@ -36,7 +36,7 @@ public class TestSubject extends CatalyzeCard {
     private static final int DAMAGE = 9;
     private static final int UPGRADE_DMG_AMT = 3;
 
-    private static final int MAGIC = 1;
+    private static final int MAGIC = 3;
     private static final int UPGRADE_MAGIC_AMT = 1;
 
     // /STAT DECLARATION/
