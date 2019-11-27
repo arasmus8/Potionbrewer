@@ -62,7 +62,7 @@ public class Collect extends CustomCard {
                 System.out.println("Problem with orb for monster! m=" + m);
             }
         }
-        return ReagentList.randomReagent();
+        return PotionbrewerMod.reagentList.randomReagent();
     }
 
     @Override

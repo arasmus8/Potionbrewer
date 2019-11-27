@@ -136,6 +136,7 @@ public class PotionbrewerMod implements
     public static boolean potionIsFromCard = false;
     public static TonicLibrary tonicLibrary;
     public static PotionLibrary potionLibrary;
+    public static ReagentList reagentList;
 
     public PotionbrewerMod() {
         logger.info("Subscribe to BaseMod hooks");
@@ -264,6 +265,8 @@ public class PotionbrewerMod implements
         BaseMod.addSaveField("potionbrewer:TonicLibrary", tonicLibrary);
         potionLibrary = new PotionLibrary();
         BaseMod.addSaveField("potionbrewer:PotionLibrary", potionLibrary);
+        reagentList = new ReagentList();
+        BaseMod.addSaveField("potionbrewer:ReagentList", reagentList);
     }
 
     public void receiveEditPotions() {
@@ -423,6 +426,7 @@ public class PotionbrewerMod implements
     public void receiveStartGame() {
         PotionLibrary.initializePotionList(AbstractDungeon.player.chosenClass);
         TonicLibrary.initialize();
+        reagentList.initialize();
     }
 
     @Override

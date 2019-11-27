@@ -1,16 +1,24 @@
 package potionbrewer.orbs;
 
-import com.badlogic.gdx.math.MathUtils;
+import basemod.abstracts.CustomSavable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
+import com.megacrit.cardcrawl.random.Random;
 import potionbrewer.cards.option.ChooseReagent;
 
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-public class ReagentList {
+public class ReagentList implements CustomSavable<Integer> {
     public static HashMap<String, Class> reagentsById;
+    private Random rng;
+    private int randomCount = 0;
+
+    public ReagentList() {
+        rng = new Random();
+    }
 
     static {
         reagentsById = new HashMap<>();
@@ -136,7 +144,7 @@ public class ReagentList {
         return new Slime();
     }
 
-    private static RandomEntry randomEntry(ArrayList<RandomEntry> toExclude) {
+    private RandomEntry randomEntry(ArrayList<RandomEntry> toExclude) {
         ArrayList<RandomEntry> list = new ArrayList<>();
         list.add(new RandomEntry(9, new Bone()));
         list.add(new RandomEntry(5, new Ether()));
@@ -156,7 +164,8 @@ public class ReagentList {
         }
         list.sort(new SortScoreDescending());
         int total = list.stream().mapToInt(e -> e.chance).reduce(0, Integer::sum);
-        int roll = MathUtils.random(1, total);
+        randomCount += 1;
+        int roll = rng.random(1, total);
         int index = -1, chanceSum = 0;
         while (chanceSum < roll) {
             index += 1;
@@ -165,12 +174,11 @@ public class ReagentList {
         return list.get(index);
     }
 
-    //TODO: save/load rng seed
-    public static AbstractOrb randomReagent() {
+    public AbstractOrb randomReagent() {
         return randomEntry(null).reagent;
     }
 
-    public static ArrayList<AbstractCard> randomChoice(int amount) {
+    public ArrayList<AbstractCard> randomChoice(int amount) {
         ArrayList<RandomEntry> list = new ArrayList<>();
         for (int i = 0; i < amount; i++) {
             list.add(randomEntry(list));
@@ -178,8 +186,19 @@ public class ReagentList {
         return list.stream().map(re -> re.optionCard).collect(Collectors.toCollection(ArrayList::new));
     }
 
-    public static AbstractCard randomChoice() {
-        return randomEntry(null).optionCard;
+    @Override
+    public Integer onSave() {
+        return randomCount;
+    }
+
+    @Override
+    public void onLoad(Integer savedValue) {
+        randomCount = Optional.ofNullable(savedValue).orElse(0);
+        rng = new Random(Settings.seed, randomCount);
+    }
+
+    public void initialize() {
+        rng = new Random(Settings.seed);
     }
 
     private static class RandomEntry {

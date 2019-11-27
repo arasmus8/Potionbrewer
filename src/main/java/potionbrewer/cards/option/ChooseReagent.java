@@ -42,7 +42,7 @@ public class ChooseReagent extends AbstractCard {
     }
 
     public ChooseReagent() {
-        this(ReagentList.randomReagent().ID);
+        this(PotionbrewerMod.reagentList.randomReagent().ID);
     }
 
     @Override

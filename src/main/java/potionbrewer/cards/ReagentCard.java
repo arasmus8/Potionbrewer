@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import potionbrewer.PotionbrewerMod;
 import potionbrewer.characters.Potionbrewer;
-import potionbrewer.orbs.ReagentList;
 
 import java.util.ArrayList;
 
@@ -46,7 +45,7 @@ public class ReagentCard extends CustomCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        ArrayList<AbstractCard> reagentChoices = ReagentList.randomChoice(3);
+        ArrayList<AbstractCard> reagentChoices = PotionbrewerMod.reagentList.randomChoice(3);
 
         this.addToBot(new ChooseOneAction(reagentChoices));
     }

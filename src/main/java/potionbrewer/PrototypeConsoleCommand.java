@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import potionbrewer.cards.Prototype;
 import potionbrewer.orbs.Reagent;
-import potionbrewer.orbs.ReagentList;
 
 public class PrototypeConsoleCommand extends ConsoleCommand {
 
@@ -26,9 +25,9 @@ public class PrototypeConsoleCommand extends ConsoleCommand {
         } else {
             if (tokens.length == 1) {
                 AbstractCard card = new Prototype(
-                        (Reagent) ReagentList.randomReagent(),
-                        (Reagent) ReagentList.randomReagent(),
-                        (Reagent) ReagentList.randomReagent()
+                        (Reagent) PotionbrewerMod.reagentList.randomReagent(),
+                        (Reagent) PotionbrewerMod.reagentList.randomReagent(),
+                        (Reagent) PotionbrewerMod.reagentList.randomReagent()
                 );
                 AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(card, (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
             } else {

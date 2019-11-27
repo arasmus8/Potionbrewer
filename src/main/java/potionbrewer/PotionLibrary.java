@@ -11,6 +11,7 @@ import potionbrewer.potions.SplittingPotion;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Optional;
 
 public class PotionLibrary implements CustomSavable<Integer> {
     private static Random rng;
@@ -57,7 +58,7 @@ public class PotionLibrary implements CustomSavable<Integer> {
 
     @Override
     public void onLoad(Integer savedValue) {
-        randomCount = savedValue;
+        randomCount = Optional.ofNullable(savedValue).orElse(0);
         rng = new Random(Settings.seed, randomCount);
     }
 }

@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import potionbrewer.PotionbrewerMod;
-import potionbrewer.orbs.ReagentList;
 import potionbrewer.util.TextureLoader;
 
 import static potionbrewer.PotionbrewerMod.makePowerPath;
@@ -47,7 +46,7 @@ public class HoarderPower extends AbstractPower implements CloneablePowerInterfa
     public void atEndOfTurn(boolean isPlayer) {
         if (isPlayer) {
             this.flash();
-            this.addToBot(new ChannelAction(ReagentList.randomReagent()));
+            this.addToBot(new ChannelAction(PotionbrewerMod.reagentList.randomReagent()));
         }
     }
 

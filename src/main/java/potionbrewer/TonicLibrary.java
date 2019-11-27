@@ -11,6 +11,7 @@ import potionbrewer.potions.tonics.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class TonicLibrary implements CustomSavable<Integer> {
@@ -83,7 +84,7 @@ public class TonicLibrary implements CustomSavable<Integer> {
 
     @Override
     public void onLoad(Integer savedValue) {
-        randomCount = savedValue;
+        randomCount = Optional.ofNullable(savedValue).orElse(0);
         rng = new Random(Settings.seed, randomCount);
     }
 }
