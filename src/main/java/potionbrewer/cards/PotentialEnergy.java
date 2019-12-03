@@ -16,7 +16,7 @@ import static potionbrewer.PotionbrewerMod.makeCardPath;
 public class PotentialEnergy extends CustomCard {
 
     public static final String ID = PotionbrewerMod.makeID(PotentialEnergy.class.getSimpleName());
-    public static final String IMG = makeCardPath("Power.png");
+    public static final String IMG = makeCardPath("PotentialEnergy.png");
     public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
 
     private static final CardRarity RARITY = CardRarity.RARE;
