@@ -2,7 +2,8 @@ package potionbrewer.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.GameActionManager;
-import com.megacrit.cardcrawl.actions.defect.ScrapeAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -15,19 +16,16 @@ public class BrandishAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        if (this.duration == Settings.ACTION_DUR_FASTER) {
-
-            for (AbstractCard c : ScrapeAction.scrapedCards) {
+        AbstractDungeon.actionManager.addToTop(new WaitAction(0.4F));
+        this.tickDuration();
+        if (this.isDone) {
+            for (AbstractCard c : DrawCardAction.drawnCards) {
                 if (c.type == AbstractCard.CardType.SKILL) {
                     AbstractDungeon.player.hand.moveToDiscardPile(c);
                     c.triggerOnManualDiscard();
                     GameActionManager.incrementDiscard(false);
                 }
             }
-
-            ScrapeAction.scrapedCards.clear();
         }
-
-        this.tickDuration();
     }
 }
