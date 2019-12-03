@@ -15,7 +15,7 @@ import static potionbrewer.PotionbrewerMod.makeCardPath;
 public class PrivateReserves extends CustomCard {
 
     public static final String ID = PotionbrewerMod.makeID(PrivateReserves.class.getSimpleName());
-    public static final String IMG = makeCardPath("Power.png");
+    public static final String IMG = makeCardPath("PrivateReserves.png");
     public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
