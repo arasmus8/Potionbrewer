@@ -20,7 +20,7 @@ public class OneTwoPunch extends FollowupCard {
     // TEXT DECLARATION
 
     public static final String ID = PotionbrewerMod.makeID(OneTwoPunch.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
+    public static final String IMG = makeCardPath("OneTwoPunch.png");
     public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
     // Must have an image with the same NAME as the card in your image folder!.
 
