@@ -16,7 +16,7 @@ public class WizBang extends CatalyzeCard {
 // TEXT DECLARATION
 
     public static final String ID = PotionbrewerMod.makeID(WizBang.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
+    public static final String IMG = makeCardPath("WizBang.png");
     public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
 // Must have an image with the same NAME as the card in your image folder!.
 
