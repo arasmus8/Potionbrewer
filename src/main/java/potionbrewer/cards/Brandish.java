@@ -1,10 +1,8 @@
 package potionbrewer.cards;
 
 import basemod.abstracts.CustomCard;
-import com.megacrit.cardcrawl.actions.defect.ScrapeAction;
-import com.megacrit.cardcrawl.actions.utility.WaitAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import potionbrewer.PotionbrewerMod;
@@ -19,7 +17,7 @@ public class Brandish extends CustomCard {
 // TEXT DECLARATION
 
     public static final String ID = PotionbrewerMod.makeID(Brandish.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("Brandish.png");
     public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
 // Must have an image with the same NAME as the card in your image folder!
 
@@ -50,9 +48,7 @@ public class Brandish extends CustomCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ScrapeAction(p, magicNumber));
-        this.addToBot(new WaitAction(Settings.ACTION_DUR_MED));
-        this.addToBot(new BrandishAction());
+        this.addToBot(new DrawCardAction(magicNumber, new BrandishAction()));
     }
 
 

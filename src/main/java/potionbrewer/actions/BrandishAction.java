@@ -5,13 +5,12 @@ import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class BrandishAction extends AbstractGameAction {
 
     public BrandishAction() {
-        this.duration = Settings.ACTION_DUR_FASTER;
+        this.duration = 0.001F;
     }
 
     @Override
