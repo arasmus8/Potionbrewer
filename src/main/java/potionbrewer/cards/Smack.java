@@ -17,7 +17,7 @@ public class Smack extends CatalyzeCard {
     // TEXT DECLARATION
 
     public static final String ID = PotionbrewerMod.makeID(Smack.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
+    public static final String IMG = makeCardPath("Smack.png");
     public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
     // Must have an image with the same NAME as the card in your image folder!.
 
