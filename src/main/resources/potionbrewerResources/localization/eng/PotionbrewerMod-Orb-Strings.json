@@ -106,8 +106,8 @@
     "NAME": "Gold",
     "DESCRIPTION": [
       "Gold harvested from a bandit.",
-      "Steal 5 Gold.",
-      "Steal 5 Gold."
+      "Steal 10 Gold.",
+      "Steal 10 Gold."
     ]
   },
   "potionbrewer:Grimace": {
