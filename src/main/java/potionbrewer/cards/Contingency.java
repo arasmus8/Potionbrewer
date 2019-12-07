@@ -18,7 +18,7 @@ public class Contingency extends CustomCard {
     // TEXT DECLARATION
 
     public static final String ID = PotionbrewerMod.makeID(Contingency.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
+    public static final String IMG = makeCardPath("Contingency.png");
     public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
     // Must have an image with the same NAME as the card in your image folder!.
 
