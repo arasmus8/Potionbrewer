@@ -15,7 +15,7 @@ import static potionbrewer.PotionbrewerMod.makeCardPath;
 public class Toxicity extends CustomCard {
 
     public static final String ID = PotionbrewerMod.makeID(Toxicity.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("Toxicity.png");
 
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
 
