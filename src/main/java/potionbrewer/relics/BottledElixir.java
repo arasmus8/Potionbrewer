@@ -103,7 +103,6 @@ public class BottledElixir extends CustomRelic implements UsePotionRelic, Custom
             if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.INCOMPLETE) {
                 AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
             }
-            AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
             AbstractDungeon.gridSelectScreen.selectedCards.clear();
             setDescriptionAfterLoading();
         }
@@ -135,6 +134,7 @@ public class BottledElixir extends CustomRelic implements UsePotionRelic, Custom
                         for (AbstractRelic r : AbstractDungeon.player.relics) {
                             r.onCardDraw(card);
                         }
+                        card.triggerOnGlowCheck();
                     } else {
                         if (!fullHandDialog) {
                             AbstractDungeon.player.createHandIsFullDialog();
