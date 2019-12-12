@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import potionbrewer.PotionbrewerMod;
-import potionbrewer.characters.Potionbrewer;
 
 import java.util.ArrayList;
 
@@ -30,7 +29,7 @@ public class ReagentCard extends CustomCard {
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
-    public static final CardColor COLOR = Potionbrewer.Enums.COLOR_CYAN;
+    public static final CardColor COLOR = CardColor.COLORLESS;
 
     private static final int COST = 0;
 

@@ -19,6 +19,7 @@ public class CardList {
         // Special Cards
         allCards.add(new Prototype());
         allCards.add(new Distill());
+        allCards.add(new Reaction());
         allCards.add(new ReagentCard());
 
         // Common Attacks
