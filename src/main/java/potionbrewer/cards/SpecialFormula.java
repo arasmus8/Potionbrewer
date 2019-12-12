@@ -21,7 +21,7 @@ public class SpecialFormula extends CustomCard {
     // TEXT DECLARATION
 
     public static final String ID = PotionbrewerMod.makeID(SpecialFormula.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("SpecialFormula.png");
     public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
     // Must have an image with the same NAME as the card in your image folder!
 
