@@ -15,7 +15,7 @@ import static potionbrewer.PotionbrewerMod.makeCardPath;
 public class AnotherRound extends CustomCard {
 
     public static final String ID = PotionbrewerMod.makeID(AnotherRound.class.getSimpleName());
-    public static final String IMG = makeCardPath("Power.png");
+    public static final String IMG = makeCardPath("AnotherRound.png");
     public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
