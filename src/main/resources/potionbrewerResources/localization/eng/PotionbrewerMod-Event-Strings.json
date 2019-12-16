@@ -14,23 +14,31 @@
       "From the darkness, an arm pulls you into a small shop. As your eyes adjust, you see a pale woman in sharp clothes gesturing towards a wall of potions. NL \"You!\" she exclaims. \"Never mind. Buy a potion. Now!\""
     ]
   },
-  "potionbrewer:IdentityCrisisEvent": {
-    "NAME": "Identity Crisis",
+  "potionbrewer:JunkPileEvent": {
+    "NAME": "Junk Pile",
     "DESCRIPTIONS": [
-      "As you move through ~The~ ~City~ you come across a #pPurple #pMirror. NL You look at it, but you see no reflection.",
-      "You see no one but #g~You~ #g~wish~ #g~to~ #g~become~ #g~someone.~",
-      "#r@YOU@ #r@EXIST@ #r@AND@ #r@ARE@ #r@VALID!@",
-      "#yYou #yare #yat #ypeace #ywith #yyour #ypresence.",
-      "You have no hands."
+      "Behind a collapsing tenement in ~The~ ~City,~ you come across an enormous pile of discarded #yjunk. NL NL It looks like garbage has been piled here for many years. You wonder if you could find any useful potion ingredients among the useless junk.",
+      "Digging through the ~Junk,~ you discover a few common ingredients, but you suspect that deeper in you will be able to find something rarer...",
+      "Deeper in the pile, you find some cast-off ~machine~ ~parts~ that could be useful, but you sense some powerful energy even deeper in...",
+      "At last, you find some rare ingredients - An #p~Enchanted~ #p~Book~ that could entrance an enemy, an old #r~Train~ #r~Ticket~ filled with dark energy, and a #g~Fungal~ #g~Spore~ that would quickly attack any weakened foes.",
+      "You turn around and leave with your find.",
+      "You turn around and leave."
     ],
     "OPTIONS": [
-      "[Inspiration] #gGain #ga #gRandom #gStarting #gRelic.",
-      "[Denial] #rLose #r",
-      " #rMax #rHP. #gRemove #ga #gCard #gfrom #gyour #gdeck.",
-      "[Acceptance] #gGain #gApotheosis.",
-      "[TOUCH THE MIRROR] TOUCH TOUCH TO#C# TOUCH TO UCH TOUCH #rTOUCH TOUCH",
-      "[Leave]",
-      "Select card to remove."
+      "[Dig for Reagents]",
+      "[Collect a Feather]",
+      "[Collect Silk]",
+      "[Collect a Tooth]",
+      "[Dig Deeper] #rLose #r",
+      " #rHP.",
+      "[Collect Steel]",
+      "[Collect Barb]",
+      "[Collect Bludgeon]",
+      "[Dig Deeper Still] #rLose #r",
+      "[Collect Storybook] Stuns Enemies.",
+      "[Collect Train Ticket] Power to defeat Monsters.",
+      "[Collect Super Spore] Damage weakened foes.",
+      "[Leave]"
     ]
   }
 }

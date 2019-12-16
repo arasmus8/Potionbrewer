@@ -21,6 +21,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
@@ -35,6 +36,7 @@ import potionbrewer.cards.PotionTrackingCard;
 import potionbrewer.cards.option.ChoosePotion;
 import potionbrewer.characters.Invalid;
 import potionbrewer.characters.Potionbrewer;
+import potionbrewer.events.JunkPileEvent;
 import potionbrewer.orbs.Reagent;
 import potionbrewer.orbs.ReagentList;
 import potionbrewer.patches.PotionTracker;
@@ -258,15 +260,20 @@ public class PotionbrewerMod implements
 
         logger.info("Done loading badge Image and mod options");
 
+        // Console Commands
         ConsoleCommand.addCommand("prototype", PrototypeConsoleCommand.class);
         ConsoleCommand.addCommand("reagent", ReagentConsoleCommand.class);
 
+        // Save/Load fields
         tonicLibrary = new TonicLibrary();
         BaseMod.addSaveField("potionbrewer:TonicLibrary", tonicLibrary);
         potionLibrary = new PotionLibrary();
         BaseMod.addSaveField("potionbrewer:PotionLibrary", potionLibrary);
         reagentList = new ReagentList();
         BaseMod.addSaveField("potionbrewer:ReagentList", reagentList);
+
+        // Events
+        BaseMod.addEvent(JunkPileEvent.ID, JunkPileEvent.class, TheCity.ID);
     }
 
     public void receiveEditPotions() {
