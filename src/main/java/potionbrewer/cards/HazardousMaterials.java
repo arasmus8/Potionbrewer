@@ -14,7 +14,7 @@ import static potionbrewer.PotionbrewerMod.makeCardPath;
 public class HazardousMaterials extends CatalyzeCard {
 
     public static final String ID = PotionbrewerMod.makeID(HazardousMaterials.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("HazardousMaterials.png");
     
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
