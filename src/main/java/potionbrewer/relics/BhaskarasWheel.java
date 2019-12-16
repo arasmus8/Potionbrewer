@@ -31,7 +31,7 @@ public class BhaskarasWheel extends CustomRelic {
             ++this.counter;
         }
 
-        if (this.counter == 3) {
+        if (this.counter == 2) {
             this.counter = 0;
             this.flash();
             this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
