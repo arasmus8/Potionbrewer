@@ -13,7 +13,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.beyond.*;
 import com.megacrit.cardcrawl.monsters.city.*;
 import com.megacrit.cardcrawl.monsters.ending.CorruptHeart;
-import com.megacrit.cardcrawl.monsters.ending.Eyes;
 import com.megacrit.cardcrawl.monsters.ending.SpireShield;
 import com.megacrit.cardcrawl.monsters.ending.SpireSpear;
 import com.megacrit.cardcrawl.monsters.exordium.*;
@@ -163,7 +162,6 @@ public class Collect extends CustomCard {
         monsterReagents.put(TimeEater.ID, Pocketwatch.class);
 
         // Ending
-        monsterReagents.put(Eyes.ID, Eye.class);
         // elites
         monsterReagents.put(SpireShield.ID, Tentacle.class);
         monsterReagents.put(SpireSpear.ID, Tentacle.class);
