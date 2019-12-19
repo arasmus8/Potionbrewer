@@ -67,6 +67,13 @@
       "Whenever you discard a potion, heal 3 HP."
     ]
   },
+  "potionbrewer:PaperSwan": {
+    "NAME": "Paper Swan",
+    "FLAVOR": "An elegant origami of a white bird.",
+    "DESCRIPTIONS": [
+      "Toxic removes 25% of current HP instead of 20%."
+    ]
+  },
   "potionbrewer:PotionKit": {
     "NAME": "Potion Kit",
     "FLAVOR": "The essential tools of the Potion Brewer's trade.",

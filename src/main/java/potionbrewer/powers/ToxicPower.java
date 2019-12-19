@@ -17,6 +17,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import potionbrewer.PotionbrewerMod;
+import potionbrewer.relics.PaperSwan;
 import potionbrewer.util.TextureLoader;
 
 import static potionbrewer.PotionbrewerMod.makePowerPath;
@@ -52,9 +53,18 @@ public class ToxicPower extends AbstractPower implements CloneablePowerInterface
 
     private int damageAmount() {
         int curr = owner.currentHealth;
-        if(curr<1) {
+        if (AbstractDungeon.player.hasRelic(PaperSwan.ID)) {
+            if (curr < 1) {
+                return 0;
+            } else if (curr < 4) {
+                return 1;
+            } else {
+                return curr / 4;
+            }
+        }
+        if (curr < 1) {
             return 0;
-        } else if(curr<5) {
+        } else if (curr < 5) {
             return 1;
         } else {
             return curr / 5;

@@ -312,11 +312,13 @@ public class PotionbrewerMod implements
         BaseMod.addRelicToCustomPool(new BhaskarasWheel(), Potionbrewer.Enums.COLOR_CYAN);
         BaseMod.addRelicToCustomPool(new BunsenBurner(), Potionbrewer.Enums.COLOR_CYAN);
         BaseMod.addRelicToCustomPool(new ElricsMonocle(), Potionbrewer.Enums.COLOR_CYAN);
+        BaseMod.addRelicToCustomPool(new PaperSwan(), Potionbrewer.Enums.COLOR_CYAN);
 
         UnlockTracker.markRelicAsSeen(AlchemistKit.ID);
         UnlockTracker.markRelicAsSeen(BhaskarasWheel.ID);
         UnlockTracker.markRelicAsSeen(BunsenBurner.ID);
         UnlockTracker.markRelicAsSeen(ElricsMonocle.ID);
+        UnlockTracker.markRelicAsSeen(PaperSwan.ID);
 
         BaseMod.addRelic(new AlchemistFlask(), RelicType.SHARED);
         BaseMod.addRelic(new BoosterPack(), RelicType.SHARED);
