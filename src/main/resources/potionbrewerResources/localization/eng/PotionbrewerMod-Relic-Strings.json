@@ -60,6 +60,13 @@
       "Right Click to use once per battle. NL Exhaust your hand and replace each card with an upgraded Colorless card."
     ]
   },
+  "potionbrewer:Keyblade": {
+    "NAME": "Keyblade",
+    "FLAVOR": "A ridiculously impractical weapon.",
+    "DESCRIPTIONS": [
+      "Gain 1 Strength for each key (Emerald, Ruby, and Sapphire) you have collected."
+    ]
+  },
   "potionbrewer:MortarAndPestle": {
     "NAME": "Mortar and Pestle",
     "FLAVOR": "One of the quintessential tools of an Alchemist.",

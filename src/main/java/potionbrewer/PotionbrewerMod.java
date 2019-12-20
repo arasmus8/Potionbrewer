@@ -324,6 +324,7 @@ public class PotionbrewerMod implements
         BaseMod.addRelic(new BoosterPack(), RelicType.SHARED);
         BaseMod.addRelic(new BottledElixir(), RelicType.SHARED);
         BaseMod.addRelic(new DrinkingBird(), RelicType.SHARED);
+        BaseMod.addRelic(new Keyblade(), RelicType.SHARED);
         BaseMod.addRelic(new MortarAndPestle(), RelicType.SHARED);
         BaseMod.addRelic(new SalesContract(), RelicType.SHARED);
         BaseMod.addRelic(new SlideRule(), RelicType.SHARED);
@@ -336,6 +337,7 @@ public class PotionbrewerMod implements
         UnlockTracker.markRelicAsSeen(BottledElixir.ID);
         UnlockTracker.markRelicAsSeen(BunsenBurner.ID);
         UnlockTracker.markRelicAsSeen(DrinkingBird.ID);
+        UnlockTracker.markRelicAsSeen(Keyblade.ID);
         UnlockTracker.markRelicAsSeen(MortarAndPestle.ID);
         UnlockTracker.markRelicAsSeen(SalesContract.ID);
         UnlockTracker.markRelicAsSeen(SlideRule.ID);
