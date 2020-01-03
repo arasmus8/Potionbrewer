@@ -143,7 +143,7 @@
     "NAME": "Root",
     "DESCRIPTIONS": [
       "Gain #b",
-      " Dexterity until the end of this turn each time you play a card."
+      " Dexterity until the end of this turn each time you play an Attack."
     ]
   },
   "potionbrewer:ToxicPower": {
