@@ -133,8 +133,8 @@ public class JunkPileEvent extends AbstractImageEvent {
                     case 1: // Train Ticket
                         PotionbrewerMod.reagents.add(new TrainTicket());
                         break;
-                    case 2: // Super Spore
-                        PotionbrewerMod.reagents.add(new SuperSpore());
+                    case 2: // Treasure Chest
+                        PotionbrewerMod.reagents.add(new Chest());
                         break;
                 }
                 imageEventText.updateBodyText(DESCRIPTIONS[4]);

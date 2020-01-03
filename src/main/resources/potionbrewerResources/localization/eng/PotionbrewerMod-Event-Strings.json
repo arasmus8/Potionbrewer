@@ -20,7 +20,7 @@
       "Behind a collapsing tenement in ~The~ ~City,~ you come across an enormous pile of discarded #yjunk. NL NL It looks like garbage has been piled here for many years. You wonder if you could find any useful potion ingredients among the useless junk.",
       "Digging through the ~Junk,~ you discover a few common ingredients, but you suspect that deeper in you will be able to find something rarer...",
       "Deeper in the pile, you find some cast-off ~machine~ ~parts~ that could be useful, but you sense some powerful energy even deeper in...",
-      "At last, you find some rare ingredients - An #p~Enchanted~ #p~Book~ that could entrance an enemy, an old #r~Train~ #r~Ticket~ filled with dark energy, and a #g~Fungal~ #g~Spore~ that would quickly attack any weakened foes.",
+      "At last, you find some rare ingredients - An #p~Enchanted~ #p~Book~ that could entrance an enemy, an old #r~Train~ #r~Ticket~ filled with dark energy, and a #g~Treasure~ #g~Chest~ that use gold against your foes.",
       "You turn around and leave with your find.",
       "You turn around and leave."
     ],
@@ -36,8 +36,8 @@
       "[Collect Bludgeon]",
       "[Dig Deeper Still] #rLose #r",
       "[Collect Storybook] Stuns Enemies.",
-      "[Collect Train Ticket] Power to defeat Monsters.",
-      "[Collect Super Spore] Damage weakened foes.",
+      "[Collect Train Ticket] Damage based on floor number.",
+      "[Collect Treasure Chest] Damage foes based on gold.",
       "[Leave]"
     ]
   }
