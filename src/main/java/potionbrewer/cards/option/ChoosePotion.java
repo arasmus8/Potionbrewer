@@ -3,19 +3,21 @@ package potionbrewer.cards.option;
 import basemod.abstracts.CustomSavable;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.megacrit.cardcrawl.actions.common.ObtainPotionAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PotionHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.potions.*;
+import com.megacrit.cardcrawl.relics.Sozu;
 import potionbrewer.PotionbrewerMod;
 import potionbrewer.actions.UseTempPotionAction;
 import potionbrewer.potions.*;
 import potionbrewer.potions.tonics.*;
+import potionbrewer.relics.SalesContract;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -90,7 +92,15 @@ public class ChoosePotion extends AbstractCard implements CustomSavable<String> 
             p = new FireTonic();
         }
         if (obtain) {
-            this.addToBot(new ObtainPotionAction(p));
+            if (AbstractDungeon.player.hasRelic(SalesContract.ID)) {
+                AbstractDungeon.player.getRelic(SalesContract.ID).flash();
+                AbstractDungeon.player.gainGold(SalesContract.GOLD_AMOUNT);
+                CardCrawlGame.sound.play("GOLD_GAIN");
+            } else if (AbstractDungeon.player.hasRelic(Sozu.ID)) {
+                AbstractDungeon.player.getRelic(Sozu.ID).flash();
+            } else {
+                AbstractDungeon.player.obtainPotion(p);
+            }
         } else {
             this.addToBot(new UseTempPotionAction(p, AbstractDungeon.getRandomMonster()));
         }
