@@ -2,6 +2,7 @@ package potionbrewer.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -37,12 +38,18 @@ public class RootPower extends AbstractPower implements CloneablePowerInterface 
         description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
     }
 
+    @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
         if (card.type.equals(AbstractCard.CardType.ATTACK)) {
             this.addToBot(new ApplyPowerAction(this.owner, this.owner, new DexterityPower(this.owner, this.amount), this.amount));
             this.addToBot(new ApplyPowerAction(this.owner, this.owner, new LoseDexterityPower(this.owner, this.amount), this.amount));
             this.flash();
         }
+    }
+
+    @Override
+    public void atEndOfTurn(boolean isPlayer) {
+        this.addToBot(new RemoveSpecificPowerAction(owner, owner, this));
     }
 
     @Override

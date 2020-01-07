@@ -19,10 +19,11 @@ public class Bile extends Reagent {
     private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString(ORB_ID);
     public static final String[] DESC = orbString.DESCRIPTION;
 
+    private static final int AMOUNT = 3;
+
     public Bile() {
         super(ORB_ID, img, orbString.NAME, DESC);
         targeted = false;
-        exhaust = true;
         updateDescription();
     }
 
@@ -43,7 +44,7 @@ public class Bile extends Reagent {
 
     @Override
     public void doEffects(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p, p, new BilePower(p, 1), 1));
+        this.addToBot(new ApplyPowerAction(p, p, new BilePower(p, AMOUNT), AMOUNT));
     }
 
     static {

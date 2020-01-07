@@ -19,9 +19,10 @@ public class Root extends Reagent {
     private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString(ORB_ID);
     public static final String[] DESC = orbString.DESCRIPTION;
 
+    private static final int AMOUNT = 3;
+
     public Root() {
         super(ORB_ID, img, orbString.NAME, DESC);
-        exhaust = true;
         targeted = false;
         updateDescription();
     }
@@ -43,7 +44,7 @@ public class Root extends Reagent {
 
     @Override
     public void doEffects(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p, p, new RootPower(p, 1), 1));
+        this.addToBot(new ApplyPowerAction(p, p, new RootPower(p, AMOUNT), AMOUNT));
     }
 
     static {

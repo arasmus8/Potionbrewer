@@ -18,8 +18,8 @@
     "NAME": "Bile",
     "DESCRIPTION": [
       "Bile harvested from Gremlin Nob.",
-      "Gain 1 Temporary Strength whenever you play a Skill.",
-      "Gain 1 Temporary Strength whenever you play a Skill."
+      "Gain 3 Temporary Strength whenever you play a Skill this turn.",
+      "Gain 3 Temporary Strength whenever you play a Skill this turn."
     ]
   },
   "potionbrewer:Bludgeon": {
@@ -251,8 +251,8 @@
     "NAME": "Root",
     "DESCRIPTION": [
       "Root harvested from a carnivorous plant.",
-      "Gain 1 Temporary Dexterity whenever you play an Attack.",
-      "Gain 1 Temporary Dexterity whenever you play an Attack."
+      "Gain 3 Temporary Dexterity whenever you play an Attack this turn.",
+      "Gain 3 Temporary Dexterity whenever you play an Attack this turn."
     ]
   },
   "potionbrewer:RunicShape": {
