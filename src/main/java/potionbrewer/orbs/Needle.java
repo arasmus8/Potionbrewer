@@ -20,6 +20,7 @@ public class Needle extends Reagent {
         multiDamage = true;
         damageTimes = -1; // Turn # times
         exhaust = true;
+        updateDescription();
     }
 
     @Override
