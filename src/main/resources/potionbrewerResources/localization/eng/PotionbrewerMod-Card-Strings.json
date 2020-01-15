@@ -104,7 +104,7 @@
   },
   "potionbrewer:Contingency": {
     "NAME": "Contingency",
-    "DESCRIPTION": "Deal !D! Damage. Scry !M! cards."
+    "DESCRIPTION": "Deal !D! Damage. Choose a card from your draw pile and move it to the top of your draw pile."
   },
   "potionbrewer:CrossReference": {
     "NAME": "Cross-Reference",
@@ -159,7 +159,7 @@
   },
   "potionbrewer:Fuel": {
     "NAME": "Fuel",
-    "DESCRIPTION": "Shuffle a *Reaction into your draw pile. NL Scry !M!."
+    "DESCRIPTION": "Shuffle a *Reaction into your draw pile. NL Gain !B! Block."
   },
   "potionbrewer:FuelCell": {
     "NAME": "Fuel Cell",

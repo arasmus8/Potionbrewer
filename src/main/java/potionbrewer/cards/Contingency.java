@@ -3,12 +3,12 @@ package potionbrewer.cards;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.utility.ScryAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import potionbrewer.PotionbrewerMod;
+import potionbrewer.actions.DrawPileToTopOfDeckAction;
 import potionbrewer.characters.Potionbrewer;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
@@ -52,7 +52,7 @@ public class Contingency extends CustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        this.addToBot(new ScryAction(magicNumber));
+        this.addToBot(new DrawPileToTopOfDeckAction(p));
     }
 
 
