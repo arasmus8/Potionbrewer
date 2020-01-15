@@ -23,7 +23,7 @@ public class IronHeart extends CustomCard {
     private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = Potionbrewer.Enums.COLOR_CYAN;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
 
     private static final int MAGIC = 20;
     private static final int UPGRADE_MAGIC = 10;

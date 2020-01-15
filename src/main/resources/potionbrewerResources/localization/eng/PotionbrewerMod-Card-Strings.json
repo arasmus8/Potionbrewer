@@ -63,7 +63,7 @@
   "potionbrewer:Catalyze": {
     "NAME": "Catalyze",
     "DESCRIPTION": "Use an Energy Tonic and a Swift Tonic. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Use an Energy Potion and a Swift Potion. NL Exhaust."
+    "UPGRADE_DESCRIPTION": "Use an Energy Potion and a Swift Tonic. NL Exhaust."
   },
   "potionbrewer:CausticBarrier": {
     "NAME": "Caustic Barrier",
@@ -128,7 +128,7 @@
   },
   "potionbrewer:EquivalentExchange": {
     "NAME": "Equivalent Exchange",
-    "DESCRIPTION": "Gain [E] each turn. NL When you play a card, Exhaust it and replace it with a random card."
+    "DESCRIPTION": "The first !M! cards played each turn are Exhausted and replaced with a random card."
   },
   "potionbrewer:ExothermicReaction": {
     "NAME": "Exothermic Reaction",

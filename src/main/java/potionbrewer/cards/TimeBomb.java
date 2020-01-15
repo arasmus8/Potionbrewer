@@ -34,7 +34,7 @@ public class TimeBomb extends CustomCard {
     private static final int DAMAGE = 20;
     private static final int UPGRADE_PLUS_DMG = 5;
 
-    private static final int MAGIC = 3;
+    private static final int MAGIC = 4;
     // /STAT DECLARATION/
 
     public TimeBomb() {

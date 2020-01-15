@@ -55,7 +55,7 @@ public class WizBang extends CatalyzeCard {
     @Override
     public void upgrade() {
         if (!upgraded) {
-            ++this.timesUpgraded;// 860
+            ++this.timesUpgraded;
             upgraded = true;
             name = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
             initializeTitle();

@@ -86,8 +86,8 @@
   "potionbrewer:EquivalentExchangePower": {
     "NAME": "Equivalent Exchange",
     "DESCRIPTIONS": [
-      "Gain #b",
-      " [E] each turn. NL When you play a card, exhaust it and create a random card."
+      "The first #b",
+      " cards played each turn are Exhausted and replaced with a random card."
     ]
   },
   "potionbrewer:HoarderPower": {

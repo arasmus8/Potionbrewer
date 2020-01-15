@@ -25,7 +25,7 @@ public class PrivateReserves extends CustomCard {
 
     private static final int COST = 0;
 
-    private static final int MAGIC = 3;
+    private static final int MAGIC = 5;
     private static final int UPGRADE_MAGIC = 2;
 
     public PrivateReserves() {

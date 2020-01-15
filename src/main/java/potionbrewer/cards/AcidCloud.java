@@ -32,7 +32,7 @@ public class AcidCloud extends FollowupCard {
     public static final CardColor COLOR = Potionbrewer.Enums.COLOR_CYAN;
 
     private static final int COST = 1;
-    private static final int BLOCK = 8;
+    private static final int BLOCK = 7;
     private static final int UPGRADE_BLOCK_AMT = 3;
 
     private static final int MAGIC = 1;

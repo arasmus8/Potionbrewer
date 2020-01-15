@@ -18,6 +18,8 @@ public class EquivalentExchangePower extends AbstractPower implements CloneableP
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
+    private int cardsThisTurn;
+
     /*
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("disease_84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("disease_32.png"));
@@ -30,6 +32,7 @@ public class EquivalentExchangePower extends AbstractPower implements CloneableP
         this.amount = amount;
         this.updateDescription();
         this.loadRegion("rushdown");
+        cardsThisTurn = 0;
     }
 
     @Override
@@ -37,25 +40,25 @@ public class EquivalentExchangePower extends AbstractPower implements CloneableP
         description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
     }
 
+    @Override
+    public void atStartOfTurn() {
+        cardsThisTurn = 0;
+    }
+
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (!card.purgeOnUse) {
+        if (!card.purgeOnUse && cardsThisTurn < amount) {
             this.flash();
+            cardsThisTurn += 1;
             action.exhaustCard = true;
             int roll = MathUtils.random(100);
             AbstractCard generated;
-            if (roll < 15) {
+            if (roll < 10) {
                 generated = AbstractDungeon.returnTrulyRandomColorlessCardInCombat();
             } else {
                 generated = AbstractDungeon.returnTrulyRandomCardInCombat().makeCopy();
             }
             this.addToBot(new MakeTempCardInHandAction(generated, false));
         }
-    }
-
-    @Override
-    public void onEnergyRecharge() {
-        this.flash();
-        AbstractDungeon.player.gainEnergy(this.amount);
     }
 
     @Override

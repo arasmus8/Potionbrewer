@@ -5,7 +5,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.potions.EnergyPotion;
-import com.megacrit.cardcrawl.potions.SwiftPotion;
 import potionbrewer.PotionbrewerMod;
 import potionbrewer.actions.UseTempPotionAction;
 import potionbrewer.characters.Potionbrewer;
@@ -48,7 +47,7 @@ public class Catalyze extends CustomCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (upgraded) {
             this.addToBot(new UseTempPotionAction(new EnergyPotion(), m));
-            this.addToBot(new UseTempPotionAction(new SwiftPotion(), m));
+            this.addToBot(new UseTempPotionAction(new SwiftTonic(), m));
         } else {
             this.addToBot(new UseTempPotionAction(new EnergyTonic(), m));
             this.addToBot(new UseTempPotionAction(new SwiftTonic(), m));
