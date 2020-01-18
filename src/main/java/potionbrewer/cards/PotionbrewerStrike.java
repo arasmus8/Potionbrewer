@@ -1,7 +1,6 @@
 package potionbrewer.cards;
 
 import basemod.abstracts.CustomCard;
-import basemod.helpers.BaseModCardTags;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -36,7 +35,6 @@ public class PotionbrewerStrike extends CustomCard {
     public PotionbrewerStrike() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
-        this.tags.add(BaseModCardTags.BASIC_STRIKE);
         this.tags.add(CardTags.STRIKE);
         this.tags.add(CardTags.STARTER_STRIKE);
     }

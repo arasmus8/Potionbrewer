@@ -1,7 +1,6 @@
 package potionbrewer.cards;
 
 import basemod.abstracts.CustomCard;
-import basemod.helpers.BaseModCardTags;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -31,7 +30,7 @@ public class PotionbrewerDefend extends CustomCard {
     public PotionbrewerDefend() {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         baseBlock = BLOCK;
-        this.tags.add(BaseModCardTags.BASIC_DEFEND);
+        this.tags.add(CardTags.STARTER_DEFEND);
     }
     
     @Override
