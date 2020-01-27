@@ -122,8 +122,8 @@
     "NAME": "Hand",
     "DESCRIPTION": [
       "Dessicated hand harvested from a sneak-thief.",
-      "Damage is dealt 2 times.",
-      "Damage is dealt 2 times."
+      "Damaging effects happen 2 times.",
+      "Damaging effects happen 2 times."
     ]
   },
   "potionbrewer:Horn": {
@@ -195,8 +195,8 @@
     "NAME": "Needle",
     "DESCRIPTION": [
       "Sharp splinter of metal from a ghostly knife.",
-      "Damage is dealt Turn Number times.",
-      "Damage is dealt !potionbrewer:TURN_NUMBER! times."
+      "Damaging effects trigger Turn Number times.",
+      "Damaging effects trigger !potionbrewer:TURN_NUMBER! times."
     ]
   },
   "potionbrewer:Nethershroud": {
@@ -259,8 +259,8 @@
     "NAME": "Runic Shape",
     "DESCRIPTION": [
       "Twisted shape with runic writing.",
-      "Block is gained 2 times.",
-      "Block is gained 2 times."
+      "Block effects happen 2 times.",
+      "Block effects happen 2 times."
     ]
   },
   "potionbrewer:SerpentSkull": {
