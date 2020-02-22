@@ -144,7 +144,15 @@ public abstract class Reagent extends AbstractOrb {
     }
 
     public String getCardDescription(final int idx) {
-        return getCardDescription(idx, descriptions[2]);
+        if (
+                AbstractDungeon.isPlayerInDungeon() &&
+                        AbstractDungeon.currMapNode != null &&
+                        !AbstractDungeon.getMonsters().areMonstersBasicallyDead()
+        ) {
+            return getCardDescription(idx, descriptions[2]);
+        } else {
+            return descriptions[1];
+        }
     }
 
     public static Texture getDefaultTexture() {
