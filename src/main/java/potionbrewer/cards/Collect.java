@@ -284,5 +284,20 @@ public class Collect extends CustomCard {
         monsterReagents.put("strawberrySpire:Minicio", Lightning.class);
         monsterReagents.put("strawberrySpire:ThermalPylon", LaserCore.class);
         monsterReagents.put("strawberrySpire:Zivicio", Lightning.class);
+
+        //BugKnight
+        monsterReagents.put("HollowMod:MossKnight", Bug.class);
+        monsterReagents.put("HollowMod:Nosk", Bug.class);
+        monsterReagents.put("HollowMod:StalkingDevout", Bug.class);
+        monsterReagents.put("HollowMod:HuskSentry", Bug.class);
+        monsterReagents.put("HollowMod:HuskWarrior", Bug.class);
+        monsterReagents.put("HollowMod:LittleWeaver", Bug.class);
+        monsterReagents.put("HollowMod:SlobberingHusk", Bug.class);
+        monsterReagents.put("HollowMod:ViolentHusk", Bug.class);
+        monsterReagents.put("HollowMod:Zote", Bug.class);
+        //Bosses
+        monsterReagents.put("HollowMod:FalseKnight", CityCrest.class);
+        monsterReagents.put("HollowMod:NKGrimm", Fireflies.class);
+        monsterReagents.put("HollowMod:Radiance", Radiance.class);
     }
 }

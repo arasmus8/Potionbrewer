@@ -11,6 +11,7 @@
     "DESCRIPTION": [
       "Metallic barb harvested from a Spiker.",
       "Gain 5 Block. Deal 5 Damage.",
+      "Gain 5 Block. Deal 5 Damage.",
       "Gain BB Block. Deal DD Damage."
     ]
   },
@@ -18,6 +19,7 @@
     "NAME": "Bile",
     "DESCRIPTION": [
       "Bile harvested from Gremlin Nob.",
+      "Gain 3 Temporary Strength whenever you play a Skill this turn.",
       "Gain 3 Temporary Strength whenever you play a Skill this turn.",
       "Gain 3 Temporary Strength whenever you play a Skill this turn."
     ]
@@ -27,6 +29,7 @@
     "DESCRIPTION": [
       "Vintage weapon taken from a Knight.",
       "Deal 8 Damage.",
+      "Deal 8 Damage.",
       "Deal DD Damage."
     ]
   },
@@ -35,7 +38,17 @@
     "DESCRIPTION": [
       "Bone harvested from a slaver.",
       "Apply 1 Weak.",
+      "Apply 1 Weak.",
       "Apply 1 Weak."
+    ]
+  },
+  "potionbrewer:Bug": {
+    "NAME": "Bug",
+    "DESCRIPTION": [
+      "The carapace of a strange insect.",
+      "Reduce the target's Strength by 6 this turn.",
+      "Reduce the target's Strength by 6 this turn.",
+      "Reduce the target's Strength by 6 this turn."
     ]
   },
   "potionbrewer:Chest": {
@@ -43,6 +56,16 @@
     "DESCRIPTION": [
       "Treasure chest filled with gold.",
       "Deal 1 Damage for every 10 gold.",
+      "Deal 1 Damage for every 10 gold.",
+      "Deal DD Damage."
+    ]
+  },
+  "potionbrewer:CityCrest": {
+    "NAME": "City Crest",
+    "DESCRIPTION": [
+      "Ancient seal to a forgotten city.",
+      "Deal 1 Damage for every HP you are missing.",
+      "Deal 1 Damage for every HP you are missing.",
       "Deal DD Damage."
     ]
   },
@@ -50,6 +73,7 @@
     "NAME": "Clay",
     "DESCRIPTION": [
       "Clay harvested from a Giant Head.",
+      "Deal 25 Damage in 2 turns.",
       "Deal 25 Damage in 2 turns.",
       "Deal 25 Damage in 2 turns."
     ]
@@ -59,6 +83,7 @@
     "DESCRIPTION": [
       "The crown of a Champion.",
       "Block 6 Damage each turn.",
+      "Block 6 Damage each turn.",
       "Block 6 Damage each turn."
     ]
   },
@@ -67,6 +92,7 @@
     "DESCRIPTION": [
       "Magical vapor harvested from a Mystic.",
       "Gain 1 #yEnergy.",
+      "Gain 1 [E].",
       "Gain 1 [E]."
     ]
   },
@@ -74,6 +100,7 @@
     "NAME": "Eye",
     "DESCRIPTION": [
       "Eye harvested from a monster.",
+      "Play a copy of a random card from your deck.",
       "Play a copy of a random card from your deck.",
       "Play a copy of a random card from your deck."
     ]
@@ -83,6 +110,7 @@
     "DESCRIPTION": [
       "Feather harvested from a cultist.",
       "Gain 1 Strength.",
+      "Gain 1 Strength.",
       "Gain 1 Strength."
     ]
   },
@@ -91,13 +119,24 @@
     "DESCRIPTION": [
       "Otherworldly flame collected from a Collector.",
       "Apply 3 Weak and Vulnerable.",
+      "Apply 3 Weak and Vulnerable.",
       "Apply 3 Weak and Vulnerable."
+    ]
+  },
+  "potionbrewer:Fireflies": {
+    "NAME": "Fireflies",
+    "DESCRIPTION": [
+      "Luminous insects that glow with crimson fire.",
+      "Catalyze: Gain 2 Dexterity.",
+      "potionbrewer:Catalyze: Gain 2 Dexterity.",
+      "potionbrewer:Catalyze: Gain 2 Dexterity."
     ]
   },
   "potionbrewer:Flame": {
     "NAME": "Flame",
     "DESCRIPTION": [
       "Flaming core of an odd machine.",
+      "Deals 3xTurn Number Damage.",
       "Deals 3xTurn Number Damage.",
       "Deals DD Damage."
     ]
@@ -107,6 +146,7 @@
     "DESCRIPTION": [
       "Gold harvested from a bandit.",
       "Steal 10 Gold.",
+      "Steal 10 Gold.",
       "Steal 10 Gold."
     ]
   },
@@ -114,6 +154,7 @@
     "NAME": "Grimace",
     "DESCRIPTION": [
       "Grimace harvested from a gremlin.",
+      "Gain 3 Temporary Strength.",
       "Gain 3 Temporary Strength.",
       "Gain 3 Temporary Strength."
     ]
@@ -123,6 +164,7 @@
     "DESCRIPTION": [
       "Dessicated hand harvested from a sneak-thief.",
       "Damaging effects happen 2 times.",
+      "Damaging effects happen 2 times.",
       "Damaging effects happen 2 times."
     ]
   },
@@ -131,6 +173,7 @@
     "DESCRIPTION": [
       "Crooked horn harvested from a Gremlin Leader.",
       "#yCatalyze: Gain 3 Strength.",
+      "potionbrewer:Catalyze: Gain 3 Strength.",
       "potionbrewer:Catalyze: Gain 3 Strength."
     ]
   },
@@ -139,6 +182,7 @@
     "DESCRIPTION": [
       "Ichor harvested from a Darkling.",
       "Gain 8 Temporary HP.",
+      "Gain 8 Temporary HP.",
       "Gain 8 Temporary HP."
     ]
   },
@@ -146,6 +190,7 @@
     "NAME": "Ink",
     "DESCRIPTION": [
       "Ink harvested from a Lagavulin.",
+      "Turns 1-3: 1 Damage. Turns 4+: 12 Damage.",
       "Turns 1-3: 1 Damage. Turns 4+: 12 Damage.",
       "Turn !potionbrewer:TURN_NUMBER! : Deal DD Damage."
     ]
@@ -164,6 +209,7 @@
     "DESCRIPTION": [
       "Damaged core of a Sentry.",
       "Odd turns: Deal 12 Damage, Even turns: Deal 0 Damage.",
+      "Odd turns: Deal 12 Damage, Even turns: Deal 0 Damage.",
       "Deal DD Damage."
     ]
   },
@@ -171,6 +217,7 @@
     "NAME": "Lightning",
     "DESCRIPTION": [
       "Electric charge from a repulsor's power core.",
+      "Targets all enemies.",
       "Targets all enemies.",
       "Targets all enemies."
     ]
@@ -180,6 +227,7 @@
     "DESCRIPTION": [
       "The mechanical core of an Automaton.",
       "Deal 20 Damage. Place a Void on top of your draw pile.",
+      "Deal 20 Damage. Place a Void on top of your draw pile.",
       "Deal DD Damage. Place a Void on top of your draw pile."
     ]
   },
@@ -188,13 +236,15 @@
     "DESCRIPTION": [
       "Piece of strange metal from another world.",
       "#yCatalyze: Deal 25 Damage.",
-      "potionbrewer:Catalyze: Deal 25 Damage."
+      "potionbrewer:Catalyze: Deal 25 Damage.",
+      "potionbrewer:Catalyze: Deal DD Damage."
     ]
   },
   "potionbrewer:Needle": {
     "NAME": "Needle",
     "DESCRIPTION": [
       "Sharp splinter of metal from a ghostly knife.",
+      "Damaging effects trigger Turn Number times.",
       "Damaging effects trigger Turn Number times.",
       "Damaging effects trigger !potionbrewer:TURN_NUMBER! times."
     ]
@@ -204,6 +254,7 @@
     "DESCRIPTION": [
       "The ghostly shroud of the Nemesis.",
       "Become Intangible.",
+      "Become Intangible.",
       "Become Intangible."
     ]
   },
@@ -211,6 +262,7 @@
     "NAME": "Philosopher's Shard",
     "DESCRIPTION": [
       "Shard of the legendary Philosopher's Stone.",
+      "Target all enemies 3 times.",
       "Target all enemies 3 times.",
       "Target all enemies 3 times."
     ]
@@ -220,6 +272,7 @@
     "DESCRIPTION": [
       "Timekeeping device taken from an Eldrich Horror.",
       "Draw 3 cards.",
+      "Draw 3 cards.",
       "Draw 3 cards."
     ]
   },
@@ -228,6 +281,7 @@
     "DESCRIPTION": [
       "The power core of a guardian mechanism.",
       "#yCatalyze: Gain 3 Thorns.",
+      "potionbrewer:Catalyze: Gain 3 Thorns.",
       "potionbrewer:Catalyze: Gain 3 Thorns."
     ]
   },
@@ -236,13 +290,24 @@
     "DESCRIPTION": [
       "Bizarre object harvested from an anthropomorphic shape.",
       "Damages and Blocks 2 times.",
+      "Damages and Blocks 2 times.",
       "Damages and Blocks 2 times."
+    ]
+  },
+  "potionbrewer:Radiance": {
+    "NAME": "Radiance",
+    "DESCRIPTION": [
+      "The shining heart of an ascendant moth.",
+      "Your next attack deals 12 more Damage.",
+      "Your next attack deals 12 more Damage.",
+      "Your next attack deals 12 more Damage."
     ]
   },
   "potionbrewer:RitualJar": {
     "NAME": "Ritual Jar",
     "DESCRIPTION": [
       "Odd relic found near an Awakened Beast.",
+      "Gain 3 Strength.",
       "Gain 3 Strength.",
       "Gain 3 Strength."
     ]
@@ -252,6 +317,7 @@
     "DESCRIPTION": [
       "Root harvested from a carnivorous plant.",
       "Gain 3 Temporary Dexterity whenever you play an Attack this turn.",
+      "Gain 3 Temporary Dexterity whenever you play an Attack this turn.",
       "Gain 3 Temporary Dexterity whenever you play an Attack this turn."
     ]
   },
@@ -259,6 +325,7 @@
     "NAME": "Runic Shape",
     "DESCRIPTION": [
       "Twisted shape with runic writing.",
+      "Block effects happen 2 times.",
       "Block effects happen 2 times.",
       "Block effects happen 2 times."
     ]
@@ -268,6 +335,7 @@
     "DESCRIPTION": [
       "The skull of a giant serpent.",
       "Deal 15 Damage.",
+      "Deal 15 Damage.",
       "Deal DD Damage."
     ]
   },
@@ -275,6 +343,7 @@
     "NAME": "Silk",
     "DESCRIPTION": [
       "Silk harvested from a louse.",
+      "Gain 5 Block.",
       "Gain 5 Block.",
       "Gain BB Block."
     ]
@@ -284,6 +353,7 @@
     "DESCRIPTION": [
       "Stained skull taken from a slaver.",
       "Shuffle a #yReaction into your draw pile.",
+      "Shuffle a *Reaction into your draw pile.",
       "Shuffle a *Reaction into your draw pile."
     ]
   },
@@ -291,6 +361,7 @@
     "NAME": "Slime",
     "DESCRIPTION": [
       "Slime harvested from one of the Spire's pests.",
+      "Deal 4 Damage.",
       "Deal 4 Damage.",
       "Deal DD Damage."
     ]
@@ -300,6 +371,7 @@
     "DESCRIPTION": [
       "A Spore harvested from a parasitic fungus.",
       "Apply 1 Vulnerable.",
+      "Apply 1 Vulnerable.",
       "Apply 1 Vulnerable."
     ]
   },
@@ -307,6 +379,7 @@
     "NAME": "Storybook",
     "DESCRIPTION": [
       "An enchanted storybook taken from an old crone.",
+      "Stun the target.",
       "Stun the target.",
       "Stun the target."
     ]
@@ -316,6 +389,7 @@
     "DESCRIPTION": [
       "An unusually aggressive Spore harvested from a giant fungus.",
       "Remove 5 HP for each debuff on the target.",
+      "Remove 5 HP for each debuff on the target.",
       "Remove 5 HP for each debuff on the target."
     ]
   },
@@ -323,6 +397,7 @@
     "NAME": "Steel",
     "DESCRIPTION": [
       "Steel harvested from a machine.",
+      "Gain 8 Block.",
       "Gain 8 Block.",
       "Gain BB Block."
     ]
@@ -332,6 +407,7 @@
     "DESCRIPTION": [
       "Sulphur harvested from a strong man.",
       "Gain 8 Block. Deal 8 Damage.",
+      "Gain 8 Block. Deal 8 Damage.",
       "Gain BB Block. Deal DD Damage."
     ]
   },
@@ -339,6 +415,7 @@
     "NAME": "Tentacle",
     "DESCRIPTION": [
       "Severed tentacle of one of the Spire's horrors.",
+      "Deal 5 Damage every turn.",
       "Deal 5 Damage every turn.",
       "Deal 5 Damage every turn."
     ]
@@ -348,6 +425,7 @@
     "DESCRIPTION": [
       "A stylish hat, taken from a giant slime.",
       "#yCatalyze: Deal 24 Damage.",
+      "potionbrewer:Catalyze: Deal 24 Damage.",
       "potionbrewer:Catalyze: Deal DD Damage."
     ]
   },
@@ -355,6 +433,7 @@
     "NAME": "Tooth",
     "DESCRIPTION": [
       "Tooth harvested from a Jaw worm.",
+      "Deal 6 Damage.",
       "Deal 6 Damage.",
       "Deal DD Damage."
     ]
@@ -364,6 +443,7 @@
     "DESCRIPTION": [
       "Ticket for passage on an hellish train.",
       "Deal Damage equal to the floor number.",
+      "Deal Damage equal to the floor number.",
       "Deal DD Damage."
     ]
   },
@@ -372,6 +452,7 @@
     "DESCRIPTION": [
       "An otherworldly object.",
       "Gain 13 Thorns.",
+      "Gain 13 Thorns.",
       "Gain 13 Thorns."
     ]
   },
@@ -379,6 +460,7 @@
     "NAME": "Wax",
     "DESCRIPTION": [
       "Sealing wax taken from a bandit leader.",
+      "Deal 5 Damage. Apply 1 Weak.",
       "Deal 5 Damage. Apply 1 Weak.",
       "Deal DD Damage. Apply 1 Weak."
     ]

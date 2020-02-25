@@ -47,13 +47,16 @@ public class Jaw extends Reagent {
 
     @Override
     public String getCardDescription(int idx) {
-        if (AbstractDungeon.isPlayerInDungeon()
-                && AbstractDungeon.getCurrMapNode() != null
-                && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT
+        if (
+                AbstractDungeon.isPlayerInDungeon() &&
+                        AbstractDungeon.currMapNode != null &&
+                        AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT &&
+                        !AbstractDungeon.getMonsters().areMonstersBasicallyDead()
         ) {
             return getCardDescription(idx, PotionbrewerMod.turnNumber % 2 == 0 ? DESC[3] : DESC[2]);
+        } else {
+            return descriptions[1];
         }
-        return getCardDescription(idx, DESC[1]);
     }
 
     @Override

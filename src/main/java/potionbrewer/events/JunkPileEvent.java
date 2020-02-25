@@ -38,7 +38,7 @@ public class JunkPileEvent extends AbstractImageEvent {
         }
 
         imageEventText.setDialogOption(OPTIONS[0]); // Dig
-        imageEventText.setDialogOption(OPTIONS[13]); // Leave
+        imageEventText.setDialogOption(OPTIONS[14]); // Leave
     }
 
     @Override
@@ -59,7 +59,7 @@ public class JunkPileEvent extends AbstractImageEvent {
                         screen = CurScreen.END;
                         imageEventText.updateBodyText(DESCRIPTIONS[5]);
                         imageEventText.clearAllDialogs();
-                        imageEventText.setDialogOption(OPTIONS[13]);
+                        imageEventText.setDialogOption(OPTIONS[14]);
                         openMap();
                         break;
                 }
@@ -92,7 +92,7 @@ public class JunkPileEvent extends AbstractImageEvent {
                     screen = CurScreen.END;
                     imageEventText.updateBodyText(DESCRIPTIONS[4]);
                     imageEventText.clearAllDialogs();
-                    imageEventText.setDialogOption(OPTIONS[13]);
+                    imageEventText.setDialogOption(OPTIONS[14]);
                 }
                 break;
             case UNCOMMON: // choose an uncommon reagent or dig deeper
@@ -116,13 +116,14 @@ public class JunkPileEvent extends AbstractImageEvent {
                         imageEventText.setDialogOption(OPTIONS[10]);
                         imageEventText.setDialogOption(OPTIONS[11]);
                         imageEventText.setDialogOption(OPTIONS[12]);
+                        imageEventText.setDialogOption(OPTIONS[13]);
                         break;
                 }
                 if (buttonIndex < 3) {
                     screen = CurScreen.END;
                     imageEventText.updateBodyText(DESCRIPTIONS[4]);
                     imageEventText.clearAllDialogs();
-                    imageEventText.setDialogOption(OPTIONS[13]);
+                    imageEventText.setDialogOption(OPTIONS[14]);
                 }
                 break;
             case RARE: // choose a rare reagent
@@ -136,14 +137,17 @@ public class JunkPileEvent extends AbstractImageEvent {
                     case 2: // Treasure Chest
                         PotionbrewerMod.reagents.add(new Chest());
                         break;
+                    case 3: // Radiance
+                        PotionbrewerMod.reagents.add(new Radiance());
+                        break;
                 }
                 imageEventText.updateBodyText(DESCRIPTIONS[4]);
                 imageEventText.clearAllDialogs();
-                imageEventText.setDialogOption(OPTIONS[13]);
+                imageEventText.setDialogOption(OPTIONS[14]);
                 screen = CurScreen.END;
                 break;
             case END:
-                imageEventText.updateDialogOption(0, OPTIONS[13]);
+                imageEventText.updateDialogOption(0, OPTIONS[14]);
                 imageEventText.clearRemainingOptions();
                 openMap();
         }

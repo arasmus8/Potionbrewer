@@ -52,6 +52,13 @@
             <scope>system</scope>
             <systemPath>${Steam.path}/workshop/content/646570/1609158507/StSLib.jar</systemPath>
         </dependency>
+        <dependency>
+            <groupId>com.evacipated.cardcrawl.mod</groupId>
+            <artifactId>hollowmod</artifactId>
+            <version>1.2.3</version>
+            <scope>system</scope>
+            <systemPath>${Steam.path}/workshop/content/646570/1750758531/HollowMod.jar</systemPath>
+        </dependency>
     </dependencies>
 
 

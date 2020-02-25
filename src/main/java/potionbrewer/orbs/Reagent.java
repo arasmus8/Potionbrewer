@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.combat.DarkOrbActivateEffect;
 import com.megacrit.cardcrawl.vfx.combat.DarkOrbPassiveEffect;
 
@@ -147,11 +148,12 @@ public abstract class Reagent extends AbstractOrb {
         if (
                 AbstractDungeon.isPlayerInDungeon() &&
                         AbstractDungeon.currMapNode != null &&
+                        AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT &&
                         !AbstractDungeon.getMonsters().areMonstersBasicallyDead()
         ) {
-            return getCardDescription(idx, descriptions[2]);
+            return getCardDescription(idx, descriptions[3]);
         } else {
-            return descriptions[1];
+            return descriptions[2];
         }
     }
 

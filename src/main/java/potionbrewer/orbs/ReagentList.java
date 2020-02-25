@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class ReagentList implements CustomSavable<Integer> {
-    public static HashMap<String, Class> reagentsById;
+    public static HashMap<String, Class<? extends AbstractOrb>> reagentsById;
     private Random rng;
     private int randomCount = 0;
 
@@ -27,13 +27,16 @@ public class ReagentList implements CustomSavable<Integer> {
         reagentsById.put(Bile.ORB_ID, Bile.class);
         reagentsById.put(Bludgeon.ORB_ID, Bludgeon.class);
         reagentsById.put(Bone.ORB_ID, Bone.class);
+        reagentsById.put(Bug.ORB_ID, Bug.class);
         reagentsById.put(Chest.ORB_ID, Chest.class);
+        reagentsById.put(CityCrest.ORB_ID, CityCrest.class);
         reagentsById.put(Clay.ORB_ID, Clay.class);
         reagentsById.put(Crown.ORB_ID, Crown.class);
         reagentsById.put(Ether.ORB_ID, Ether.class);
         reagentsById.put(Eye.ORB_ID, Eye.class);
         reagentsById.put(Feather.ORB_ID, Feather.class);
         reagentsById.put(FeyFire.ORB_ID, FeyFire.class);
+        reagentsById.put(Fireflies.ORB_ID, Fireflies.class);
         reagentsById.put(Flame.ORB_ID, Flame.class);
         reagentsById.put(Gold.ORB_ID, Gold.class);
         reagentsById.put(Grimace.ORB_ID, Grimace.class);
@@ -52,6 +55,7 @@ public class ReagentList implements CustomSavable<Integer> {
         reagentsById.put(Pocketwatch.ORB_ID, Pocketwatch.class);
         reagentsById.put(PowerCore.ORB_ID, PowerCore.class);
         reagentsById.put(Pyramid.ORB_ID, Pyramid.class);
+        reagentsById.put(Radiance.ORB_ID, Radiance.class);
         reagentsById.put(RitualJar.ORB_ID, RitualJar.class);
         reagentsById.put(Root.ORB_ID, Root.class);
         reagentsById.put(RunicShape.ORB_ID, RunicShape.class);
@@ -134,11 +138,11 @@ public class ReagentList implements CustomSavable<Integer> {
 
     public static AbstractOrb fromId(String Id) {
         if (reagentsById.containsKey(Id)) {
-            Class clz = reagentsById.get(Id);
+            Class<? extends AbstractOrb> clz = reagentsById.get(Id);
             try {
-                return (AbstractOrb) clz.newInstance();
+                return clz.newInstance();
             } catch (Exception err) {
-                System.out.println("Error instanciating class for Id=" + Id);
+                System.out.println("Error instantiating class for Id=" + Id);
             }
         }
         return new Slime();
