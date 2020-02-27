@@ -2,18 +2,19 @@ package potionbrewer.orbs;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.potions.SmokeBomb;
+import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 import potionbrewer.PotionbrewerMod;
+import potionbrewer.powers.SlimedPower;
 
 public class Slime extends Reagent {
     public static final String ORB_ID = PotionbrewerMod.makeID("Slime");
@@ -23,8 +24,6 @@ public class Slime extends Reagent {
 
     public Slime() {
         super(ORB_ID, img, orbString.NAME, DESC);
-        damages = true;
-        damage = 4;
     }
 
     @Override
@@ -43,13 +42,9 @@ public class Slime extends Reagent {
     }
 
     @Override
-    public void doAoeDamage(AbstractPlayer p, int amount) {
-        this.addToBot(new DamageAllEnemiesAction(p, DamageInfo.createDamageMatrix(amount), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-    }
-
-    @Override
-    public void doDamage(AbstractPlayer p, AbstractMonster m, DamageInfo info) {
-        this.addToBot(new DamageAction(m, info, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+    public void doEffects(AbstractPlayer p, AbstractMonster m) {
+        AbstractDungeon.effectList.add(new FlashAtkImgEffect(m.hb.cX, m.hb.cY, AbstractGameAction.AttackEffect.POISON, false));
+        addToBot(new ApplyPowerAction(m, p, new SlimedPower(m, p, 3), 3));
     }
 
     static {

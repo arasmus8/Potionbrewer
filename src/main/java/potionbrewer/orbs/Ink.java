@@ -38,17 +38,6 @@ public class Ink extends Reagent {
     }
 
     @Override
-    public String getCardDescription(int idx) {
-        if (AbstractDungeon.isPlayerInDungeon()
-                && AbstractDungeon.getCurrMapNode() != null
-                && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT
-        ) {
-            return getCardDescription(idx, DESC[2]);
-        }
-        return getCardDescription(idx, DESC[1]);
-    }
-
-    @Override
     public AbstractOrb makeCopy() {
         return new Ink();
     }

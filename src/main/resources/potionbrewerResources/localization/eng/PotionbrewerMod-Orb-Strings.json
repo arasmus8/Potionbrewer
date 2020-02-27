@@ -361,9 +361,9 @@
     "NAME": "Slime",
     "DESCRIPTION": [
       "Slime harvested from one of the Spire's pests.",
-      "Deal 4 Damage.",
-      "Deal 4 Damage.",
-      "Deal DD Damage."
+      "Your attacks against #ySlimed targets deal 1 more damage for each stack of #ySlimed.",
+      "Apply 3 potionbrewer:Slimed",
+      "Apply 3 potionbrewer:Slimed"
     ]
   },
   "potionbrewer:Spore": {

@@ -16,7 +16,6 @@ import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.SmallLaserEffect;
 import potionbrewer.PotionbrewerMod;
@@ -32,17 +31,6 @@ public class LaserCore extends Reagent {
         super(ORB_ID, img, orbString.NAME, DESC);
         damages = true;
         damage = (PotionbrewerMod.turnNumber % 2 == 0) ? 0 : 12;
-    }
-
-    @Override
-    public String getCardDescription(int idx) {
-        if (AbstractDungeon.isPlayerInDungeon()
-                && AbstractDungeon.getCurrMapNode() != null
-                && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT
-        ) {
-            return getCardDescription(idx, DESC[2]);
-        }
-        return getCardDescription(idx, DESC[1]);
     }
 
     @Override

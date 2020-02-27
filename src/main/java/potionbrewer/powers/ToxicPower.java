@@ -85,7 +85,8 @@ public class ToxicPower extends AbstractPower implements CloneablePowerInterface
 
     @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0] + "20%" + DESCRIPTIONS[1];
+        String s = (AbstractDungeon.player.hasRelic(PaperSwan.ID)) ? "25%" : "20%";
+        description = DESCRIPTIONS[0] + s + DESCRIPTIONS[1];
     }
     
     @Override
