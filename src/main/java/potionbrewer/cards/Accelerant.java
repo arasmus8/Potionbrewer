@@ -37,6 +37,7 @@ public class Accelerant extends CustomCard {
 
     public Accelerant() {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        exhaust = true;
     }
 
     // Actions the card should do.
@@ -44,7 +45,7 @@ public class Accelerant extends CustomCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         int cardsToDraw = BaseMod.MAX_HAND_SIZE - p.hand.size();
         addToBot(new DrawCardAction(p, cardsToDraw));
-        this.addToBot(new ApplyPowerAction(p, p, new AccelerantPower()));
+        this.addToBot(new ApplyPowerAction(p, p, new AccelerantPower(upgraded)));
     }
 
     // Upgraded stats.
@@ -53,7 +54,6 @@ public class Accelerant extends CustomCard {
         if (!upgraded) {
             upgradeName();
             rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
-            exhaust = true;
             initializeDescription();
         }
     }

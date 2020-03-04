@@ -1,8 +1,8 @@
 {
   "potionbrewer:Accelerant": {
     "NAME": "Accelerant",
-    "DESCRIPTION": "Draw cards until your hand is full. Any cards remaining in your hand at the end of turn are Exhausted.",
-    "UPGRADE_DESCRIPTION": "Draw cards until your hand is full. Any cards remaining in your hand at the end of turn are Exhausted. NL Exhaust."
+    "DESCRIPTION": "Draw cards until your hand is full. Any cards remaining in your hand at the end of turn are Exhausted. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Draw cards until your hand is full. Half the cards remaining in your hand at the end of turn are Exhausted. NL Exhaust"
   },
   "potionbrewer:AcidCloud": {
     "NAME": "Acid Cloud",
@@ -62,8 +62,8 @@
   },
   "potionbrewer:Catalyze": {
     "NAME": "Catalyze",
-    "DESCRIPTION": "Use an Energy Tonic and a Swift Tonic. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Use an Energy Potion and a Swift Tonic. NL Exhaust."
+    "DESCRIPTION": "Use an Energy Tonic and a Swift Tonic. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Use an Energy Potion and a Swift Tonic. NL Exhaust"
   },
   "potionbrewer:CausticBarrier": {
     "NAME": "Caustic Barrier",
@@ -96,8 +96,8 @@
   },
   "potionbrewer:Collect": {
     "NAME": "Collect",
-    "DESCRIPTION": "Collect a potionbrewer:Reagent from an enemy. Add a *Distill to your hand. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Collect a potionbrewer:Reagent from an enemy. Add a *Distill to your hand. NL Exhaust.",
+    "DESCRIPTION": "Collect a potionbrewer:Reagent from an enemy. Add a *Distill to your hand. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Innate. NL Collect a potionbrewer:Reagent from an enemy. Add a *Distill to your hand. NL Exhaust",
     "EXTENDED_DESCRIPTION": [
       "Collect: "
     ]
@@ -172,8 +172,8 @@
   },
   "potionbrewer:HazardousWaste": {
     "NAME": "Hazardous Waste",
-    "DESCRIPTION": "Apply !M! Poison. NL potionbrewer:Catalyze: Permanently increase Poison by 2. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Apply !M! Poison. NL potionbrewer:Catalyze: Permanently increase Poison by 3. NL Exhaust.",
+    "DESCRIPTION": "Apply !M! Poison. NL potionbrewer:Catalyze: Permanently increase Poison by 2. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Innate. NL Apply !M! Poison. NL potionbrewer:Catalyze: Permanently increase Poison by 3. NL Exhaust",
     "EXTENDED_DESCRIPTION": [
       "Hazardous Sludge"
     ]
@@ -210,12 +210,12 @@
   },
   "potionbrewer:LeftoverSpecimen": {
     "NAME": "Leftover Specimen",
-    "DESCRIPTION": "Gain !B! Block. NL Add a *Reagent card into your hand. NL Exhaust.",
+    "DESCRIPTION": "Gain !B! Block. NL Add a *Reagent card into your hand. NL Exhaust",
     "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Add a *Reagent card into your hand."
   },
   "potionbrewer:MicrobeSpray": {
     "NAME": "Microbe Spray",
-    "DESCRIPTION": "Apply !M! Weak and !M! potionbrewer:Infection to all enemies. NL Exhaust."
+    "DESCRIPTION": "Apply !M! Weak and !M! potionbrewer:Infection to all enemies. NL Exhaust"
   },
   "potionbrewer:OneTwoPunch": {
     "NAME": "One-Two Punch",
@@ -277,7 +277,7 @@
   },
   "potionbrewer:SpecialFormula": {
     "NAME": "Special Formula",
-    "DESCRIPTION": "Choose 1 of !M! random potions to use. NL Exhaust."
+    "DESCRIPTION": "Choose 1 of !M! random potions to use. NL Exhaust"
   },
   "potionbrewer:TestFormula": {
     "NAME": "Test Formula",
@@ -308,7 +308,7 @@
   },
   "potionbrewer:TwoForOne": {
     "NAME": "Two For One",
-    "DESCRIPTION": "Obtain another copy of the next Potion you use. NL Exhaust."
+    "DESCRIPTION": "Obtain another copy of the next Potion you use. NL Exhaust"
   },
   "potionbrewer:UnstableFormula": {
     "NAME": "Unstable Formula",
@@ -331,11 +331,11 @@
   },
   "potionbrewer:Reaction": {
     "NAME": "Reaction",
-    "DESCRIPTION": "Unplayable. NL When drawn, gain [E] and draw !M! cards. NL Exhaust."
+    "DESCRIPTION": "Unplayable. NL When drawn, gain [E] and draw !M! cards. NL Exhaust"
   },
   "potionbrewer:Distill": {
     "NAME": "Distill",
-    "DESCRIPTION": "Ethereal. NL Brew your rightmost potionbrewer:Reagent into a potion over 3 turns. NL Exhaust."
+    "DESCRIPTION": "Ethereal. NL Brew your rightmost potionbrewer:Reagent into a potion over 3 turns. NL Exhaust"
   },
   "potionbrewer:ChoosePotion": {
     "NAME": "Potion",

@@ -15,7 +15,9 @@ public class AccelerantPower extends AbstractPower implements CloneablePowerInte
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    public AccelerantPower() {
+    private boolean upgraded;
+
+    public AccelerantPower(boolean upgraded) {
         name = NAME;
         ID = POWER_ID;
         isTurnBased = true;
@@ -23,6 +25,7 @@ public class AccelerantPower extends AbstractPower implements CloneablePowerInte
         this.owner = AbstractDungeon.player;
         this.amount = -1;
         this.loadRegion("corruption");
+        this.upgraded = upgraded;
 
         updateDescription();
     }
@@ -30,7 +33,11 @@ public class AccelerantPower extends AbstractPower implements CloneablePowerInte
     @Override
     public void atEndOfTurn(boolean isPlayer) {
         if (isPlayer) {
-            addToTop(new ExhaustAction(AbstractDungeon.player.hand.size(), true, true));
+            int countToExhaust = AbstractDungeon.player.hand.size();
+            if (upgraded) {
+                countToExhaust /= 2;
+            }
+            addToTop(new ExhaustAction(countToExhaust, true, true));
             addToBot(new RemoveSpecificPowerAction(owner, owner, this));
         }
     }
@@ -42,6 +49,6 @@ public class AccelerantPower extends AbstractPower implements CloneablePowerInte
 
     @Override
     public AbstractPower makeCopy() {
-        return new AccelerantPower();
+        return new AccelerantPower(upgraded);
     }
 }
