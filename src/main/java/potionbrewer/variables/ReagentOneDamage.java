@@ -1,8 +1,7 @@
 package potionbrewer.variables;
 
-import com.megacrit.cardcrawl.cards.AbstractCard;
+import potionbrewer.cards.Prototype;
 import potionbrewer.orbs.Reagent;
-import potionbrewer.orbs.ReagentList;
 
 import static potionbrewer.PotionbrewerMod.makeID;
 
@@ -13,7 +12,7 @@ public class ReagentOneDamage extends ReagentDamage {
     }
 
     @Override
-    protected Reagent getReagent(AbstractCard card) {
-        return ReagentList.firstReagent(card.misc);
+    protected Reagent getReagent(Prototype card) {
+        return card.reagentA;
     }
 }

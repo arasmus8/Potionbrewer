@@ -1,6 +1,7 @@
 package potionbrewer.cards;
 
 import basemod.abstracts.CustomCard;
+import basemod.abstracts.CustomSavable;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
@@ -22,7 +23,7 @@ import potionbrewer.powers.NoCatalyzePower;
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static potionbrewer.PotionbrewerMod.makeCardPath;
 
-public class Prototype extends CustomCard {
+public class Prototype extends CustomCard implements CustomSavable<String[]> {
     // TEXT DECLARATION
 
     public static final String ID = PotionbrewerMod.makeID(Prototype.class.getSimpleName());
@@ -40,11 +41,10 @@ public class Prototype extends CustomCard {
     public static final CardColor COLOR = Potionbrewer.Enums.COLOR_CYAN;
 
     private static final int COST = 1;
-    private static final int UPGRADED_COST = 0;
 
-    private Texture textureA;
-    private Texture textureB;
-    private Texture textureC;
+    public Reagent reagentA;
+    public Reagent reagentB;
+    public Reagent reagentC;
 
     // /STAT DECLARATION/
 
@@ -75,14 +75,10 @@ public class Prototype extends CustomCard {
 
     public Prototype(Reagent a, Reagent b, Reagent c) {
         super(ID, CARD_STRINGS.NAME, IMG, COST, buildDescription(a, b, c), TYPE, COLOR, RARITY, TARGET);
-        isMultiDamage = true;
-        if (a == null || b == null || c == null) {
-            textureA = Reagent.getDefaultTexture();
-            textureB = Reagent.getDefaultTexture();
-            textureC = Reagent.getDefaultTexture();
-            misc = 0;
-        } else {
-            misc = ReagentList.buildMisc(a, b, c);
+        if (a != null && b != null && c != null) {
+            reagentA = a;
+            reagentB = b;
+            reagentC = c;
             hydrate();
         }
     }
@@ -92,24 +88,15 @@ public class Prototype extends CustomCard {
     }
 
     public void hydrate() {
-        Reagent a = ReagentList.firstReagent(misc);
-        Reagent b = ReagentList.secondReagent(misc);
-        Reagent c = ReagentList.thirdReagent(misc);
-        if (a == null || b == null || c == null) {
-            textureA = Reagent.getDefaultTexture();
-            textureB = Reagent.getDefaultTexture();
-            textureC = Reagent.getDefaultTexture();
+        if (reagentA == null || reagentB == null || reagentC == null) {
             return;
         }
-        name = buildName(a, b, c);
-        rawDescription = buildDescription(a, b, c);
+        name = buildName(reagentA, reagentB, reagentC);
+        rawDescription = buildDescription(reagentA, reagentB, reagentC);
         initializeDescription();
-        textureA = a.getTexture();
-        textureB = b.getTexture();
-        textureC = c.getTexture();
-        exhaust = a.exhaust || b.exhaust || c.exhaust;
-        if (a.targeted || b.targeted || c.targeted) {
-            if (a.aoeDamage || b.aoeDamage || c.aoeDamage) {
+        exhaust = reagentA.exhaust || reagentB.exhaust || reagentC.exhaust;
+        if (reagentA.targeted || reagentB.targeted || reagentC.targeted) {
+            if (reagentA.aoeDamage || reagentB.aoeDamage || reagentC.aoeDamage) {
                 target = CardTarget.ALL_ENEMY;
                 isMultiDamage = true;
             } else {
@@ -118,10 +105,10 @@ public class Prototype extends CustomCard {
         } else {
             target = CardTarget.SELF;
         }
-        if (!a.damages && !b.damages && !c.damages) {
+        if (!reagentA.damages && !reagentB.damages && !reagentC.damages) {
             type = CardType.SKILL;
         }
-        if (a instanceof Skull || b instanceof Skull || c instanceof Skull) {
+        if (reagentA instanceof Skull || reagentB instanceof Skull || reagentC instanceof Skull) {
             cardsToPreview = new Reaction();
         }
     }
@@ -138,11 +125,11 @@ public class Prototype extends CustomCard {
 
     public void renderPortrait(SpriteBatch sb) {
         // first is at 150deg
-        renderHelper(sb, textureA, -71.96F, 116.0F);
+        renderHelper(sb, reagentA == null ? Reagent.getDefaultTexture() : reagentA.getTexture(), -71.96F, 116.0F);
         // second is at 60deg
-        renderHelper(sb, textureB, 80.0F, 116.0F);
+        renderHelper(sb, reagentB == null ? Reagent.getDefaultTexture() : reagentB.getTexture(), 80.0F, 116.0F);
         // third is at 270deg
-        renderHelper(sb, textureC, 0.0F, 26.0F);
+        renderHelper(sb, reagentC == null ? Reagent.getDefaultTexture() : reagentC.getTexture(), 0.0F, 26.0F);
     }
 
     private void renderLargeHelper(SpriteBatch sb, Texture img, float drawX, float drawY, float cardX, float cardY) {
@@ -158,9 +145,9 @@ public class Prototype extends CustomCard {
     public void renderLargePortrait(SpriteBatch sb) {
         float xPos = (float) Settings.WIDTH / 2.0F;
         float yPos = (float) Settings.HEIGHT / 2.0F + 136.0F * Settings.scale;
-        renderLargeHelper(sb, textureA, -120F, 75F, xPos, yPos);
-        renderLargeHelper(sb, textureB, 120F, 75F, xPos, yPos);
-        renderLargeHelper(sb, textureC, 0.0F, -75F, xPos, yPos);
+        renderLargeHelper(sb, reagentA == null ? Reagent.getDefaultTexture() : reagentA.getTexture(), -120F, 75F, xPos, yPos);
+        renderLargeHelper(sb, reagentB == null ? Reagent.getDefaultTexture() : reagentB.getTexture(), 120F, 75F, xPos, yPos);
+        renderLargeHelper(sb, reagentC == null ? Reagent.getDefaultTexture() : reagentC.getTexture(), 0.0F, -75F, xPos, yPos);
     }
 
     private int calcDamageTimes(Reagent r) {
@@ -193,9 +180,9 @@ public class Prototype extends CustomCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Reagent a = ReagentList.firstReagent(misc);
-        Reagent b = ReagentList.secondReagent(misc);
-        Reagent c = ReagentList.thirdReagent(misc);
+        Reagent a = reagentA;
+        Reagent b = reagentB;
+        Reagent c = reagentC;
         if (a == null || b == null || c == null) {
             return;
         }
@@ -231,15 +218,12 @@ public class Prototype extends CustomCard {
     @Override
     public void triggerOnGlowCheck() {
         boolean catalyze = false;
-        if (misc > 0) {
-            Reagent a = ReagentList.firstReagent(misc);
-            Reagent b = ReagentList.secondReagent(misc);
-            Reagent c = ReagentList.thirdReagent(misc);
-            if (a != null && b != null && c != null && (a.catalyze || b.catalyze || c.catalyze)) {
+        if (reagentA != null && reagentB != null && reagentC != null) {
+            if (reagentA.catalyze || reagentB.catalyze || reagentC.catalyze) {
                 catalyze = true;
             }
         }
-        if ( catalyze &&
+        if (catalyze &&
                 AbstractDungeon.player != null &&
                 PotionTracker.potionsUsedThisTurn.get(AbstractDungeon.player) > 0 &&
                 !AbstractDungeon.player.hasPower(NoCatalyzePower.POWER_ID)
@@ -263,8 +247,29 @@ public class Prototype extends CustomCard {
     @Override
     public AbstractCard makeCopy() {
         Prototype c = new Prototype();
-        c.misc = misc;
+        c.reagentA = reagentA;
+        c.reagentB = reagentB;
+        c.reagentC = reagentC;
         c.hydrate();
         return c;
+    }
+
+    @Override
+    public String[] onSave() {
+        String[] ids = new String[3];
+        ids[0] = reagentA.ID;
+        ids[1] = reagentB.ID;
+        ids[2] = reagentC.ID;
+        return ids;
+    }
+
+    @Override
+    public void onLoad(String[] ids) {
+        if (ids.length == 3) {
+            reagentA = (Reagent) ReagentList.fromId(ids[0]);
+            reagentB = (Reagent) ReagentList.fromId(ids[1]);
+            reagentC = (Reagent) ReagentList.fromId(ids[2]);
+            hydrate();
+        }
     }
 }

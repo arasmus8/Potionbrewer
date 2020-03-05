@@ -9,13 +9,13 @@ import potionbrewer.orbs.Reagent;
 
 public abstract class ReagentDamage extends DynamicVariable {
 
-    protected abstract Reagent getReagent(AbstractCard card);
+    protected abstract Reagent getReagent(Prototype card);
 
     @Override
     public boolean isModified(AbstractCard card) {
         if (AbstractDungeon.getCurrRoom().phase.equals(AbstractRoom.RoomPhase.COMBAT) && card instanceof Prototype) {
             Prototype p = (Prototype) card;
-            Reagent reagent = getReagent(card);
+            Reagent reagent = getReagent(p);
             if (reagent != null && reagent.damages) {
                 p.applyPowersDynamic(reagent.damage);
                 return reagent.damage != p.damage;
@@ -28,7 +28,7 @@ public abstract class ReagentDamage extends DynamicVariable {
     public int value(AbstractCard card) {
         if (card instanceof Prototype) {
             Prototype p = (Prototype) card;
-            Reagent reagent = getReagent(card);
+            Reagent reagent = getReagent(p);
             if (reagent != null && reagent.damages) {
                 p.applyPowersDynamic(reagent.damage);
                 return p.damage;
@@ -40,7 +40,8 @@ public abstract class ReagentDamage extends DynamicVariable {
     @Override
     public int baseValue(AbstractCard card) {
         if (card instanceof Prototype) {
-            Reagent reagent = getReagent(card);
+            Prototype p = (Prototype) card;
+            Reagent reagent = getReagent(p);
             if (reagent != null && reagent.damages) {
                 return reagent.damage;
             }

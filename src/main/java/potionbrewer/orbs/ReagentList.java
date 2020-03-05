@@ -76,42 +76,6 @@ public class ReagentList implements CustomSavable<Integer> {
         reagentsById.put(Wax.ORB_ID, Wax.class);
     }
 
-    private static Reagent byIndex(int index) {
-        Set<String> keys = reagentsById.keySet();
-        String[] list = keys.toArray(new String[0]);
-        Arrays.sort(list);
-        try {
-            return (Reagent) reagentsById.get(list[index]).newInstance();
-        } catch (Exception err) {
-            err.printStackTrace();
-            return null;
-        }
-    }
-
-    public static Reagent firstReagent(int misc) {
-        if (misc == 0) {
-            return null;
-        }
-        int idx = misc % 100;
-        return byIndex(idx);
-    }
-
-    public static Reagent secondReagent(int misc) {
-        if (misc == 0) {
-            return null;
-        }
-        int idx = misc / 100 % 100;
-        return byIndex(idx);
-    }
-
-    public static Reagent thirdReagent(int misc) {
-        if (misc == 0) {
-            return null;
-        }
-        int idx = misc / 10000 % 100;
-        return byIndex(idx);
-    }
-
     public static int indexFromReagent(Reagent o) {
         Set<String> keys = reagentsById.keySet();
         String[] list = keys.toArray(new String[0]);
@@ -122,18 +86,6 @@ public class ReagentList implements CustomSavable<Integer> {
                 .filter(i -> id.equals(list[i]))
                 .findFirst() // first occurrence
                 .orElse(-1); // No element found
-    }
-
-    public static int buildMisc(Reagent first, Reagent second, Reagent third) {
-        int f = indexFromReagent(first);
-        int s = indexFromReagent(second);
-        int t = indexFromReagent(third);
-
-        if (f == -1 || s == -1 || t == -1) {
-            throw new IllegalThreadStateException("Invalid orb!");
-        }
-
-        return t * 10000 + s * 100 + f;
     }
 
     public static AbstractOrb fromId(String Id) {
