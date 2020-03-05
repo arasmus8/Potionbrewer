@@ -38,6 +38,15 @@ public class Ink extends Reagent {
     }
 
     @Override
+    public void applyPowers() {
+        if (PotionbrewerMod.turnNumber > 3) {
+            damage = 12;
+        } else {
+            damage = 1;
+        }
+    }
+
+    @Override
     public AbstractOrb makeCopy() {
         return new Ink();
     }

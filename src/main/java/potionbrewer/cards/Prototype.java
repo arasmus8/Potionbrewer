@@ -202,16 +202,25 @@ public class Prototype extends CustomCard implements CustomSavable<String[]> {
 
     @Override
     public void triggerWhenCopied() {
+        reagentA.applyPowers();
+        reagentB.applyPowers();
+        reagentC.applyPowers();
         hydrate();
     }
 
     @Override
     public void triggerWhenDrawn() {
+        reagentA.applyPowers();
+        reagentB.applyPowers();
+        reagentC.applyPowers();
         hydrate();
     }
 
     @Override
     public void triggerAtStartOfTurn() {
+        reagentA.applyPowers();
+        reagentB.applyPowers();
+        reagentC.applyPowers();
         hydrate();
     }
 
@@ -247,9 +256,15 @@ public class Prototype extends CustomCard implements CustomSavable<String[]> {
     @Override
     public AbstractCard makeCopy() {
         Prototype c = new Prototype();
-        c.reagentA = reagentA;
-        c.reagentB = reagentB;
-        c.reagentC = reagentC;
+        if (reagentA != null) {
+            c.reagentA = (Reagent) reagentA.makeCopy();
+        }
+        if (reagentB != null) {
+            c.reagentB = (Reagent) reagentB.makeCopy();
+        }
+        if (reagentC != null) {
+            c.reagentC = (Reagent) reagentC.makeCopy();
+        }
         c.hydrate();
         return c;
     }

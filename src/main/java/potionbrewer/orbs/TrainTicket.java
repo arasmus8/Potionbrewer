@@ -29,6 +29,11 @@ public class TrainTicket extends Reagent {
     }
 
     @Override
+    public void applyPowers() {
+        damage = AbstractDungeon.floorNum;
+    }
+
+    @Override
     public AbstractOrb makeCopy() {
         return new TrainTicket();
     }

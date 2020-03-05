@@ -28,6 +28,11 @@ public class Flame extends Reagent {
     }
 
     @Override
+    public void applyPowers() {
+        damage = PotionbrewerMod.turnNumber * 3;
+    }
+
+    @Override
     public AbstractOrb makeCopy() {
         return new Flame();
     }

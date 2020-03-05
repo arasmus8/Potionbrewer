@@ -29,6 +29,11 @@ public class CityCrest extends Reagent {
     }
 
     @Override
+    public void applyPowers() {
+        damage = AbstractDungeon.player.maxHealth - AbstractDungeon.player.currentHealth;
+    }
+
+    @Override
     public AbstractOrb makeCopy() {
         return new CityCrest();
     }

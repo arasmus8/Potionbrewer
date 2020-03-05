@@ -116,7 +116,7 @@ public abstract class Reagent extends AbstractOrb {
     public void triggerEvokeAnimation() {
         AbstractDungeon.effectsQueue.add(new DarkOrbActivateEffect(cX, cY));
     }
-    
+
     @Override
     public void playChannelSFX() {
         CardCrawlGame.sound.play("RELIC_DROP_FLAT", 0.1f);
@@ -126,13 +126,20 @@ public abstract class Reagent extends AbstractOrb {
 
     public abstract AbstractPotion getPotion();
 
-    public void doEffects(AbstractPlayer p, AbstractMonster m) {}
+    public void applyPowers() {
+    }
 
-    public void doAoeDamage(AbstractPlayer p, int amount) {}
+    public void doEffects(AbstractPlayer p, AbstractMonster m) {
+    }
 
-    public void doDamage(AbstractPlayer p, AbstractMonster m, DamageInfo info) {}
+    public void doAoeDamage(AbstractPlayer p, int amount) {
+    }
 
-    public void doBlock(AbstractPlayer p, int amount) {}
+    public void doDamage(AbstractPlayer p, AbstractMonster m, DamageInfo info) {
+    }
+
+    public void doBlock(AbstractPlayer p, int amount) {
+    }
 
     private String variableInsertion(final int idx, final String d) {
         return d

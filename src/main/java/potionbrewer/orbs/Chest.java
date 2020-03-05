@@ -30,6 +30,11 @@ public class Chest extends Reagent {
     }
 
     @Override
+    public void applyPowers() {
+        damage = (AbstractDungeon.player != null) ? AbstractDungeon.player.gold / 10 : 0;
+    }
+
+    @Override
     public AbstractOrb makeCopy() {
         return new Chest();
     }

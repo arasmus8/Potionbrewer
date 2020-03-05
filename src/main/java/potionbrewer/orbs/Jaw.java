@@ -46,6 +46,17 @@ public class Jaw extends Reagent {
     }
 
     @Override
+    public void applyPowers() {
+        if (PotionbrewerMod.turnNumber % 2 == 0) {
+            damage = 8;
+            block = 0;
+        } else {
+            damage = 0;
+            block = 5;
+        }
+    }
+
+    @Override
     public String getCardDescription(int idx) {
         if (
                 AbstractDungeon.isPlayerInDungeon() &&

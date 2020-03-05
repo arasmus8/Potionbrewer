@@ -34,6 +34,11 @@ public class LaserCore extends Reagent {
     }
 
     @Override
+    public void applyPowers() {
+        damage = (PotionbrewerMod.turnNumber % 2 == 0) ? 0 : 12;
+    }
+
+    @Override
     public AbstractOrb makeCopy() {
         return new LaserCore();
     }
