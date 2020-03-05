@@ -54,8 +54,8 @@ public class MicrobeSpray extends CustomCard {
 
             for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
                 if (!monster.isDead && !monster.isDying) {
-                    this.addToBot(new ApplyPowerAction(monster, p, new InfectionPower(monster, p, magicNumber), magicNumber));
                     this.addToBot(new ApplyPowerAction(monster, p, new WeakPower(monster, magicNumber, false), magicNumber));
+                    this.addToBot(new ApplyPowerAction(monster, p, new InfectionPower(monster, p, magicNumber), magicNumber));
                 }
             }
         }
