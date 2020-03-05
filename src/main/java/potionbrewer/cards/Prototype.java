@@ -76,9 +76,9 @@ public class Prototype extends CustomCard implements CustomSavable<String[]> {
     public Prototype(Reagent a, Reagent b, Reagent c) {
         super(ID, CARD_STRINGS.NAME, IMG, COST, buildDescription(a, b, c), TYPE, COLOR, RARITY, TARGET);
         if (a != null && b != null && c != null) {
-            reagentA = a;
-            reagentB = b;
-            reagentC = c;
+            reagentA = (Reagent) a.makeCopy();
+            reagentB = (Reagent) b.makeCopy();
+            reagentC = (Reagent) c.makeCopy();
             hydrate();
         }
     }
@@ -255,18 +255,19 @@ public class Prototype extends CustomCard implements CustomSavable<String[]> {
 
     @Override
     public AbstractCard makeCopy() {
-        Prototype c = new Prototype();
-        if (reagentA != null) {
-            c.reagentA = (Reagent) reagentA.makeCopy();
+        return new Prototype(reagentA, reagentB, reagentC);
+    }
+
+    @Override
+    public AbstractCard makeStatEquivalentCopy() {
+        Prototype p = (Prototype) super.makeStatEquivalentCopy();
+        if (reagentA != null && reagentB != null && reagentC != null) {
+            p.reagentA = reagentA;
+            p.reagentB = reagentB;
+            p.reagentC = reagentC;
+            p.hydrate();
         }
-        if (reagentB != null) {
-            c.reagentB = (Reagent) reagentB.makeCopy();
-        }
-        if (reagentC != null) {
-            c.reagentC = (Reagent) reagentC.makeCopy();
-        }
-        c.hydrate();
-        return c;
+        return p;
     }
 
     @Override

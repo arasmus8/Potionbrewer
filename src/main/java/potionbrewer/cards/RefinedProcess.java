@@ -3,6 +3,7 @@ package potionbrewer.cards;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.defect.IncreaseMiscAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -76,6 +77,13 @@ public class RefinedProcess extends CatalyzeCard {
             upgradeMagicNumber(UPGRADE_MAGIC_AMT);
             initializeDescription();
         }
+    }
+
+    @Override
+    public AbstractCard makeStatEquivalentCopy() {
+        AbstractCard copy = super.makeStatEquivalentCopy();
+        copy.baseDamage = copy.misc;
+        return copy;
     }
 }
 
