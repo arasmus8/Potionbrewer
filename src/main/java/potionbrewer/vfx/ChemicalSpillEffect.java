@@ -29,6 +29,7 @@ public class ChemicalSpillEffect extends AbstractGameEffect {
     private static Color color2 = new Color(0.65f, 1f, 84f, 0.7f);
 
     private static float DURATION = 0.5f;
+    private static float HALF_DURATION = 0.25f;
     private static float VERTICAL_OFFSET = 400f;
 
     public ChemicalSpillEffect(float originX, float originY, float targetX, float targetY) {
@@ -40,11 +41,11 @@ public class ChemicalSpillEffect extends AbstractGameEffect {
         this.targetX = targetX;
         this.targetY = targetY;
         if (this.originY > this.targetY) {
-            this.bounceHeight = VERTICAL_OFFSET * Settings.scale;
+            bounceHeight = VERTICAL_OFFSET * Settings.scale;
         } else {
-            this.bounceHeight = this.targetY - this.originY + VERTICAL_OFFSET * Settings.scale;
+            bounceHeight = this.targetY - this.originY + VERTICAL_OFFSET * Settings.scale;
         }
-        this.duration = DURATION;
+        duration = DURATION;
     }
 
     @Override
@@ -52,12 +53,12 @@ public class ChemicalSpillEffect extends AbstractGameEffect {
         duration -= Gdx.graphics.getDeltaTime();
         x = Interpolation.linear.apply(targetX, originX, duration / DURATION);
         y = Interpolation.linear.apply(targetY, originY, duration / DURATION);
-        if (this.duration > DURATION / 2f) {
-            color.a = Interpolation.exp5In.apply(1.0F, 0.0F, (this.duration - DURATION / 2f) / 0.2F) * Settings.scale;
-            color2.a = Interpolation.exp5In.apply(1.0F, 0.0F, (this.duration - DURATION / 2f) / 0.2F) * Settings.scale;
-            this.yOffset = Interpolation.circleIn.apply(this.bounceHeight, 0.0F, (this.duration - 0.25F) / 0.25F) * Settings.scale;
+        if (duration > HALF_DURATION) {
+            color.a = Interpolation.exp5In.apply(1.0F, 0.0F, (duration - HALF_DURATION) / HALF_DURATION);
+            color2.a = Interpolation.exp5In.apply(1.0F, 0.0F, (duration - HALF_DURATION) / HALF_DURATION);
+            yOffset = Interpolation.circleIn.apply(bounceHeight, 0.0F, (duration - HALF_DURATION) / HALF_DURATION) * Settings.scale;
         } else {
-            this.yOffset = Interpolation.circleOut.apply(0.0F, this.bounceHeight, this.duration / 0.25F) * Settings.scale;
+            yOffset = Interpolation.circleOut.apply(0.0F, bounceHeight, duration / HALF_DURATION) * Settings.scale;
         }
 
         smallParticleTimer -= Gdx.graphics.getDeltaTime();
@@ -65,6 +66,14 @@ public class ChemicalSpillEffect extends AbstractGameEffect {
             AbstractDungeon.effectsQueue.add(new ChemicalSpillSmallParticleEffect(x, y + yOffset));
             smallParticleTimer = MathUtils.random(0.02f, 0.06f);
         }
+
+        if (targetX > originX) {
+            rotation -= Gdx.graphics.getDeltaTime() * 1000.0F;
+        } else {
+            rotation += Gdx.graphics.getDeltaTime() * 1000.0F;
+        }
+
+        scale = Interpolation.pow2Out.apply(1f, 0.25f, duration / DURATION) * Settings.scale;
 
         if (duration <= 0f) {
             // trigger final splash effect
@@ -85,8 +94,8 @@ public class ChemicalSpillEffect extends AbstractGameEffect {
                 (float) poisonAttackImage.packedHeight / 2.0F,
                 (float) poisonAttackImage.packedWidth,
                 (float) poisonAttackImage.packedHeight,
-                scale * 0.8F,
-                scale * 0.8F,
+                scale,
+                scale,
                 rotation);
         sb.setColor(color2);
         sb.draw(poisonAttackImage,
@@ -96,8 +105,8 @@ public class ChemicalSpillEffect extends AbstractGameEffect {
                 (float) poisonAttackImage.packedHeight / 2.0F,
                 (float) poisonAttackImage.packedWidth,
                 (float) poisonAttackImage.packedHeight,
-                0.8f + MathUtils.random(0.01f, 0.02f),
-                0.8f + MathUtils.random(0.01f, 0.02f),
+                scale + MathUtils.random(0.01f, 0.02f),
+                scale + MathUtils.random(0.01f, 0.02f),
                 rotation);
         sb.setBlendFunction(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA);
     }
