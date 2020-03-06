@@ -3,18 +3,18 @@ package potionbrewer.vfx;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.g2d.ParticleEffect;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.math.MathUtils;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
 public class ChemicalSpillEffect extends AbstractGameEffect {
     private static TextureAtlas.AtlasRegion poisonAttackImage;
-    private static ParticleEffect finalParticleEffect;
     private float originX;
     private float originY;
     private float targetX;
@@ -24,7 +24,7 @@ public class ChemicalSpillEffect extends AbstractGameEffect {
     private float y;
     private float yOffset;
     private boolean soundPlayed = false;
-    private boolean particalInitialized = false;
+    private float smallParticleTimer = 0f;
     private static Color color = new Color(0.33f, 1f, 64f, 0.8f);
     private static Color color2 = new Color(0.65f, 1f, 84f, 0.7f);
 
@@ -34,11 +34,6 @@ public class ChemicalSpillEffect extends AbstractGameEffect {
     public ChemicalSpillEffect(float originX, float originY, float targetX, float targetY) {
         if (poisonAttackImage == null) {
             poisonAttackImage = ImageMaster.ATK_POISON;
-        }
-        if (finalParticleEffect == null) {
-            finalParticleEffect = new ParticleEffect();
-            finalParticleEffect.load(Gdx.files.internal("potionbrewerResources/particles/chemical-splash-large.p"),
-                    Gdx.files.internal("potionbrewerResources/particles"));
         }
         this.originX = originX;
         this.originY = originY;
@@ -50,7 +45,6 @@ public class ChemicalSpillEffect extends AbstractGameEffect {
             this.bounceHeight = this.targetY - this.originY + VERTICAL_OFFSET * Settings.scale;
         }
         this.duration = DURATION;
-        finalParticleEffect.setPosition(targetX, targetY);
     }
 
     @Override
@@ -65,9 +59,18 @@ public class ChemicalSpillEffect extends AbstractGameEffect {
         } else {
             this.yOffset = Interpolation.circleOut.apply(0.0F, this.bounceHeight, this.duration / 0.25F) * Settings.scale;
         }
+
+        smallParticleTimer -= Gdx.graphics.getDeltaTime();
+        if (smallParticleTimer <= 0f) {
+            AbstractDungeon.effectsQueue.add(new ChemicalSpillSmallParticleEffect(x, y + yOffset));
+            smallParticleTimer = MathUtils.random(0.02f, 0.06f);
+        }
+
         if (duration <= 0f) {
             // trigger final splash effect
             isDone = true;
+            AbstractDungeon.effectsQueue.add(new ChemicalSpillLargeParticleEffect(targetX, targetY));
+            CardCrawlGame.sound.play("ATTACK_POISON", 1.3f);
         }
     }
 
