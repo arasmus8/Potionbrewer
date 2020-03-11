@@ -1,6 +1,7 @@
 package potionbrewer.cards;
 
 import basemod.abstracts.CustomCard;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -22,6 +23,7 @@ import potionbrewer.PotionbrewerMod;
 import potionbrewer.PotionbrewerTipTracker;
 import potionbrewer.characters.Potionbrewer;
 import potionbrewer.orbs.*;
+import potionbrewer.vfx.CollectEffect;
 
 import java.util.HashMap;
 
@@ -66,6 +68,7 @@ public class Collect extends CustomCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new VFXAction(new CollectEffect(p.hb.cX, p.hb.cY, m.hb.cX, m.hb.cY)));
         addToBot(new MakeTempCardInHandAction(new Distill()));
         AbstractOrb orb = getOrbForMonster(m);
         AbstractDungeon.actionManager.addToBottom(new ChannelAction(orb));

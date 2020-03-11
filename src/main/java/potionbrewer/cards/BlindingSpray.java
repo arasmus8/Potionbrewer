@@ -11,9 +11,9 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.WeakPower;
-import com.megacrit.cardcrawl.vfx.combat.SmokeBombEffect;
 import potionbrewer.PotionbrewerMod;
 import potionbrewer.characters.Potionbrewer;
+import potionbrewer.vfx.BlindingSprayEffect;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static potionbrewer.PotionbrewerMod.makeCardPath;
@@ -55,7 +55,7 @@ public class BlindingSpray extends CustomCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new VFXAction(new SmokeBombEffect(m.hb.cX, m.hb.cY)));
+        this.addToBot(new VFXAction(new BlindingSprayEffect(m.hb.cX, m.hb.cY)));
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
         this.addToBot(new ApplyPowerAction(m, p, new WeakPower(m, magicNumber, false), magicNumber));
     }
