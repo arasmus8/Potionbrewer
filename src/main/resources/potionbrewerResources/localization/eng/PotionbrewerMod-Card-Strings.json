@@ -304,7 +304,7 @@
   },
   "potionbrewer:Transmute": {
     "NAME": "Transmute",
-    "DESCRIPTION": "Deal !D! Damage. NL Fatal: Choose 1 of 3 random potions to obtain."
+    "DESCRIPTION": "Deal !D! Damage. NL Fatal: Choose 1 of 3 random potions to obtain. NL Exhaust"
   },
   "potionbrewer:TwoForOne": {
     "NAME": "Two For One",

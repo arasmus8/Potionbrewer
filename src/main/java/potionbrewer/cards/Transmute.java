@@ -38,6 +38,7 @@ public class Transmute extends CustomCard {
     public Transmute() {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
+        exhaust = true;
     }
 
     // Actions the card should do.
