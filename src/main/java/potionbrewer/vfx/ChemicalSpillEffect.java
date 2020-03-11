@@ -7,7 +7,6 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.math.MathUtils;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
@@ -79,7 +78,6 @@ public class ChemicalSpillEffect extends AbstractGameEffect {
             // trigger final splash effect
             isDone = true;
             AbstractDungeon.effectsQueue.add(new ChemicalSpillLargeParticleEffect(targetX, targetY));
-            CardCrawlGame.sound.play("ATTACK_POISON", 1.3f);
         }
     }
 

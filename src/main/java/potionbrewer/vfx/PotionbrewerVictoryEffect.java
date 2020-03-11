@@ -48,5 +48,7 @@ public class PotionbrewerVictoryEffect extends AbstractGameEffect {
     }
 
     public void dispose() {
+        bubbles1.dispose();
+        bubbles2.dispose();
     }
 }

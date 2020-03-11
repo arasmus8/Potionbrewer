@@ -31,5 +31,6 @@ public class ChemicalSpillSmallParticleEffect extends AbstractGameEffect {
 
     @Override
     public void dispose() {
+        pe.dispose();
     }
 }
