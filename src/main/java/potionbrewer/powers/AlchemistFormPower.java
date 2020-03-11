@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ObtainPotionAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.PotionHelper;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
@@ -51,7 +52,7 @@ public class AlchemistFormPower extends AbstractPower implements CloneablePowerI
         boolean hasEmptySlot = AbstractDungeon.player.potions.stream().anyMatch(p -> p instanceof PotionSlot);
         if (hasEmptySlot && AbstractDungeon.player.gold >= goldCost) {
             AbstractDungeon.player.loseGold(goldCost);
-            AbstractPotion randomPotion = AbstractDungeon.returnRandomPotion(true);
+            AbstractPotion randomPotion = PotionHelper.getPotion(PotionbrewerMod.potionLibrary.getRandomPotionId());
             this.addToBot(new ObtainPotionAction(randomPotion));
         }
 
