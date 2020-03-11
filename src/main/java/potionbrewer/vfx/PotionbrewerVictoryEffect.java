@@ -2,78 +2,49 @@ package potionbrewer.vfx;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.ParticleEffect;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
-import com.badlogic.gdx.math.Interpolation;
-import com.badlogic.gdx.math.MathUtils;
-import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.helpers.ImageMaster;
-import com.megacrit.cardcrawl.helpers.MathHelper;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
 public class PotionbrewerVictoryEffect extends AbstractGameEffect {
-    private static AtlasRegion img;
-    private static AtlasRegion img2;
-
-    private static int COLUMNS = 7;
-    private static int ROWS = 5;
+    private ParticleEffect bubbles1;
+    private ParticleEffect bubbles2;
+    private float timer1 = 0f;
+    private float timer2 = 5f;
+    private boolean initialized2 = false;
 
     public PotionbrewerVictoryEffect() {
         renderBehind = true;
-        Texture texture = ImageMaster.loadImage("potionbrewerResources/images/char/potionbrewer/orb/new2.png");
-        img2 = new AtlasRegion(texture, 0, 0, texture.getWidth(), texture.getHeight());
-        texture = ImageMaster.loadImage("potionbrewerResources/images/char/potionbrewer/orb/new3.png");
-        img = new AtlasRegion(texture, 0, 0, texture.getWidth(), texture.getHeight());
-        scale = 1.5F * Settings.scale;
         color = new Color(1.0F, 1.0F, 1.0F, 0.0F);
+        bubbles1 = new ParticleEffect();
+        bubbles1.load(Gdx.files.internal("potionbrewerResources/particles/victory-bubbles.p"), Gdx.files.internal("potionbrewerResources/particles"));
+        bubbles1.setPosition(0f, 0f);
+        bubbles2 = new ParticleEffect();
+        bubbles2.load(Gdx.files.internal("potionbrewerResources/particles/victory-bubbles.p"), Gdx.files.internal("potionbrewerResources/particles"));
+        bubbles2.setPosition(0f, 0f);
     }
 
     public void update() {
-        color.a = MathHelper.slowColorLerpSnap(color.a, 1.0F);
-        duration += Gdx.graphics.getDeltaTime();
-    }
-
-    private void renderHelper(SpriteBatch sb, int index) {
-        float cX = Settings.WIDTH / 2f;
-        float cY = Settings.HEIGHT / 2f;
-        // float x = Interpolation.linear.apply(100f, Settings.WIDTH - 100f, (index % COLUMNS) / (float)(COLUMNS - 1));
-        float x = Interpolation.linear.apply(cX - 400f, cX + 400f, (index % COLUMNS) / (float) (COLUMNS - 1));
-        x += 12f * MathUtils.sin(duration * 0.92f + index / 13f);
-        x *= Settings.scale;
-        // float y = Interpolation.linear.apply(100f, Settings.HEIGHT - 100f, Math.floorDiv(index, COLUMNS) / (float)ROWS);
-        float y = Interpolation.linear.apply(cY + 350f, cY - 350f, Math.floorDiv(index, COLUMNS) / (float) ROWS);
-        y += 4f * MathUtils.sin(duration + index / 13f);
-        y *= Settings.scale;
-        sb.draw(getImg(index),
-                x,
-                y,
-                (float) img.packedWidth / 2.0F - x,
-                (float) img.packedHeight / 2.0F - y,
-                (float) img.packedWidth,
-                (float) img.packedHeight,
-                scale,
-                scale,
-                1.0f);
-    }
-
-    private AtlasRegion getImg(int input) {
-        if (input % 4 == 0) {
-            return img2;
-        } else {
-            return img;
+        float dt = Gdx.graphics.getDeltaTime();
+        timer1 -= dt;
+        timer2 -= dt;
+        if (timer1 < 0f) {
+            bubbles1.start();
         }
+        if (timer2 < 0f) {
+            initialized2 = true;
+            bubbles2.start();
+        }
+        bubbles1.update(dt);
+        bubbles2.update(dt);
     }
 
     public void render(SpriteBatch sb) {
-        sb.setBlendFunction(770, 1);
-        sb.setColor(color);
-
-        for (int i = 0; i < COLUMNS * ROWS; ++i) {
-            renderHelper(sb, i);
+        sb.setColor(Color.WHITE);
+        bubbles1.draw(sb);
+        if (initialized2) {
+            bubbles2.draw(sb);
         }
-
-        sb.setBlendFunction(770, 771);
     }
 
     public void dispose() {

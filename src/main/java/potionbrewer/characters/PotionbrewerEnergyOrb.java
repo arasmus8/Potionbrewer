@@ -94,11 +94,11 @@ public class PotionbrewerEnergyOrb extends CustomEnergyOrb {
     public PotionbrewerEnergyOrb() {
         super(null, null, null);
         jar = ImageMaster.loadImage("potionbrewerResources/images/char/potionbrewer/orb/new4.png");
-        liquid = ImageMaster.loadImage("potionbrewerResources/images/char/potionbrewer/orb/new1.png");
+        liquid = ImageMaster.loadImage("potionbrewerResources/images/char/potionbrewer/orb/liquid.png");
         liquidDark = ImageMaster.loadImage("potionbrewerResources/images/char/potionbrewer/orb/new1d.png");
-        bubble1 = ImageMaster.loadImage("potionbrewerResources/images/char/potionbrewer/orb/new2.png");
+        bubble1 = ImageMaster.loadImage("potionbrewerResources/particles/double-bubble.png");
         bubble1Dark = ImageMaster.loadImage("potionbrewerResources/images/char/potionbrewer/orb/new2d.png");
-        bubble2 = ImageMaster.loadImage("potionbrewerResources/images/char/potionbrewer/orb/new3.png");
+        bubble2 = ImageMaster.loadImage("potionbrewerResources/particles/bubble.png");
         bubble2Dark = ImageMaster.loadImage("potionbrewerResources/images/char/potionbrewer/orb/new3d.png");
         orbVfx = ImageMaster.loadImage("potionbrewerResources/images/char/potionbrewer/orb/vfx.png");
         bubbles = new Bubble[4];
