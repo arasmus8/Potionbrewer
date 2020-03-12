@@ -2,13 +2,13 @@ package potionbrewer.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.defect.IncreaseMiscAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import potionbrewer.PotionbrewerMod;
+import potionbrewer.actions.RefinedProcessAction;
 import potionbrewer.characters.Potionbrewer;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
@@ -57,7 +57,7 @@ public class RefinedProcess extends CatalyzeCard {
     @Override
     public void catalyzeActions(AbstractPlayer p, AbstractMonster m) {
         exhaust = true;
-        this.addToBot(new IncreaseMiscAction(this.uuid, this.misc, 1));
+        this.addToBot(new RefinedProcessAction(uuid, 1));
     }
 
     @Override
