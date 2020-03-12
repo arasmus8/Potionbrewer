@@ -36,6 +36,19 @@ public class AlchemistKit extends CustomRelic {
     }
 
     @Override
+    public void obtain() {
+        if (AbstractDungeon.player.hasRelic(PotionKit.ID)) {
+            for (int i = 0; i < AbstractDungeon.player.relics.size(); ++i) {
+                if (AbstractDungeon.player.relics.get(i).relicId.equals(PotionKit.ID)) {
+                    this.instantObtain(AbstractDungeon.player, i, true);
+                    return;
+                }
+            }
+        }
+        super.obtain();
+    }
+
+    @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];
     }
