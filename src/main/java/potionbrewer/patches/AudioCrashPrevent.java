@@ -10,6 +10,7 @@ import javassist.CtBehavior;
         method = "play"
 )
 public class AudioCrashPrevent {
+    @SuppressWarnings("rawtypes")
     @SpireInsertPatch(
             locator = Locator.class,
             localvars = {"errorCode"}
