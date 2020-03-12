@@ -29,7 +29,12 @@ public class Keyblade extends CustomRelic {
         if (Settings.hasEmeraldKey) c += 1;
         if (Settings.hasRubyKey) c += 1;
         if (Settings.hasSapphireKey) c += 1;
+        counter = c;
         return c;
+    }
+
+    public void onKeyObtain() {
+        keyCount();
     }
 
     @Override
