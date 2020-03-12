@@ -18,7 +18,8 @@ public class AutoRebound {
     public static void doAutoRebound(UseCardAction __instance) {
         AbstractCard targetCard = (AbstractCard) ReflectionHacks.getPrivate(__instance, UseCardAction.class, "targetCard");
         if (targetCard instanceof BeatDown) {
-            __instance.reboundCard = true;
+            BeatDown b = (BeatDown) targetCard;
+            __instance.reboundCard = b.shouldRebound;
         }
     }
 
