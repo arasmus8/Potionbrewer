@@ -22,6 +22,7 @@ import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
+import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import potionbrewer.PotionbrewerMod;
 import potionbrewer.cards.ChemicalSpill;
 import potionbrewer.cards.Collect;
@@ -29,6 +30,7 @@ import potionbrewer.cards.PotionbrewerDefend;
 import potionbrewer.cards.PotionbrewerStrike;
 import potionbrewer.patches.PotionTracker;
 import potionbrewer.relics.PotionKit;
+import potionbrewer.vfx.PotionbrewerVictoryEffect;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -228,6 +230,17 @@ public class Potionbrewer extends CustomPlayer {
         panels.add(new CutscenePanel("potionbrewerResources/images/heart2.png"));
         panels.add(new CutscenePanel("potionbrewerResources/images/heart3.png"));
         return panels;
+    }
+
+    @Override
+    public void updateVictoryVfx(ArrayList<AbstractGameEffect> effects) {
+        for (AbstractGameEffect effect : effects) {
+            if (effect instanceof PotionbrewerVictoryEffect) {
+                // already created the effect
+                return;
+            }
+        }
+        effects.add(new PotionbrewerVictoryEffect());
     }
 
     @Override
