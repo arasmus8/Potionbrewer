@@ -29,7 +29,7 @@ public class AlchemistForm extends CustomCard {
     
     private static final int COST = 3;
 
-    public static final int ENEMY_GOLD = 40;
+    public static final int ENEMY_GOLD = 15;
     private static final int MAGIC = 20;
     private static final int UPGRADE_MAGIC = -5;
 
