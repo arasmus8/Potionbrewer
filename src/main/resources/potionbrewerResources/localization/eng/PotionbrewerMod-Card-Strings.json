@@ -210,8 +210,8 @@
   },
   "potionbrewer:LeftoverSpecimen": {
     "NAME": "Leftover Specimen",
-    "DESCRIPTION": "Gain !B! Block. NL Add a *Reagent card into your hand. NL Exhaust",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Add a *Reagent card into your hand."
+    "DESCRIPTION": "Gain !B! Block. NL Choose 1 of 3 random potionbrewer:Reagents to collect. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Choose 1 of 3 random potionbrewer:Reagents to collect."
   },
   "potionbrewer:MicrobeSpray": {
     "NAME": "Microbe Spray",
@@ -261,7 +261,7 @@
   },
   "potionbrewer:Shovel": {
     "NAME": "Shovel",
-    "DESCRIPTION": "Deal !D! Damage. Shuffle a *Reagent into your draw pile."
+    "DESCRIPTION": "Deal !D! Damage. Shuffle a *Reagent card into your draw pile."
   },
   "potionbrewer:Smack": {
     "NAME": "Smack",
