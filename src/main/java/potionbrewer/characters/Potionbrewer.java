@@ -226,7 +226,7 @@ public class Potionbrewer extends CustomPlayer {
     @Override
     public List<CutscenePanel> getCutscenePanels() {
         List<CutscenePanel> panels = new ArrayList<>();
-        panels.add(new CutscenePanel("potionbrewerResources/images/heart1.png", "ATTACK_HEAVY"));
+        panels.add(new CutscenePanel("potionbrewerResources/images/heart1.png", "ATTACK_WHIFF_1"));
         panels.add(new CutscenePanel("potionbrewerResources/images/heart2.png"));
         panels.add(new CutscenePanel("potionbrewerResources/images/heart3.png"));
         return panels;
