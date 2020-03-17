@@ -7,9 +7,9 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.PoisonPower;
 import potionbrewer.PotionbrewerMod;
 import potionbrewer.characters.Potionbrewer;
+import potionbrewer.powers.SlimedPower;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static potionbrewer.PotionbrewerMod.makeCardPath;
@@ -33,7 +33,7 @@ public class HazardousWaste extends CatalyzeCard {
     public static final CardColor COLOR = Potionbrewer.Enums.COLOR_CYAN;
 
     private static final int COST = 1;
-    private static final int MAGIC = 3;
+    private static final int MAGIC = 2;
 
 // /STAT DECLARATION/
 
@@ -41,7 +41,6 @@ public class HazardousWaste extends CatalyzeCard {
     public HazardousWaste() {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         misc = magicNumber = baseMagicNumber = MAGIC;
-        exhaust = true;
     }
 
     @Override
@@ -53,12 +52,13 @@ public class HazardousWaste extends CatalyzeCard {
 
     @Override
     public void catalyzeActions(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new IncreaseMiscAction(this.uuid, this.misc, upgraded ? 3 : 2));
+        exhaust = true;
+        this.addToBot(new IncreaseMiscAction(this.uuid, this.misc, upgraded ? 2 : 1));
     }
 
     @Override
     public void useActions(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(m, p, new PoisonPower(m, p, misc), misc, AbstractGameAction.AttackEffect.POISON));
+        this.addToBot(new ApplyPowerAction(m, p, new SlimedPower(m, p, misc), misc, AbstractGameAction.AttackEffect.POISON));
     }
 
     // Upgraded stats.
