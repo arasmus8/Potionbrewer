@@ -67,7 +67,7 @@ public class JunkPileEvent extends AbstractImageEvent {
             case COMMON: // choose a common reagent or dig deeper
                 switch (buttonIndex) {
                     case 0: // Feather
-                        PotionbrewerMod.reagents.add(new Feather());
+                        PotionbrewerMod.reagents.add(new Beak());
                         break;
                     case 1: // Silk
                         PotionbrewerMod.reagents.add(new Silk());

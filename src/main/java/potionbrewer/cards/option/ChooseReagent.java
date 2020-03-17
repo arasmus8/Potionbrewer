@@ -98,7 +98,7 @@ public class ChooseReagent extends AbstractCard {
 
         imageMap.put(Bone.ORB_ID, "red/skill/offering");
         imageMap.put(Ether.ORB_ID, "green/skill/catalyst");
-        imageMap.put(Feather.ORB_ID, "colorless/skill/apotheosis");
+        imageMap.put(Beak.ORB_ID, "colorless/skill/apotheosis");
         imageMap.put(Flame.ORB_ID, "red/power/fire_breathing");
         imageMap.put(Grimace.ORB_ID, "colorless/skill/madness");
         imageMap.put(Slime.ORB_ID, "status/slimed");

@@ -15,6 +15,15 @@
       "Gain BB Block. Deal DD Damage."
     ]
   },
+  "potionbrewer:Beak": {
+    "NAME": "Beak",
+    "DESCRIPTION": [
+      "Beaked Mask taken from a cultist.",
+      "Gain 1 Strength.",
+      "Gain 1 Strength.",
+      "Gain 1 Strength."
+    ]
+  },
   "potionbrewer:Bile": {
     "NAME": "Bile",
     "DESCRIPTION": [
@@ -109,9 +118,9 @@
     "NAME": "Feather",
     "DESCRIPTION": [
       "Feather harvested from a cultist.",
-      "Gain 1 Strength.",
-      "Gain 1 Strength.",
-      "Gain 1 Strength."
+      "Apply 1 Weak and Vulnerable.",
+      "Apply 1 Weak and Vulnerable.",
+      "Apply 1 Weak and Vulnerable."
     ]
   },
   "potionbrewer:FeyFire": {
@@ -157,6 +166,15 @@
       "Gain 3 Temporary Strength.",
       "Gain 3 Temporary Strength.",
       "Gain 3 Temporary Strength."
+    ]
+  },
+  "potionbrewer:GuardianScales": {
+    "NAME": "Guardian Scales",
+    "DESCRIPTION": [
+      "The sharp scales of a guardian mechanism.",
+      "#yCatalyze: Gain 3 Thorns.",
+      "potionbrewer:Catalyze: Gain 3 Thorns.",
+      "potionbrewer:Catalyze: Gain 3 Thorns."
     ]
   },
   "potionbrewer:Hand": {
@@ -258,6 +276,15 @@
       "Become Intangible."
     ]
   },
+  "potionbrewer:Pebble": {
+    "NAME": "Pebble",
+    "DESCRIPTION": [
+      "Pebble found clutched in a Byrd's claw.",
+      "Gain 4 Block and apply 1 Weak.",
+      "Gain 4 Block and apply 1 Weak.",
+      "Gain BB Block and apply 1 Weak."
+    ]
+  },
   "potionbrewer:PhilosopherShard": {
     "NAME": "Philosopher's Shard",
     "DESCRIPTION": [
@@ -274,15 +301,6 @@
       "Draw 3 cards.",
       "Draw 3 cards.",
       "Draw 3 cards."
-    ]
-  },
-  "potionbrewer:PowerCore": {
-    "NAME": "Power Core",
-    "DESCRIPTION": [
-      "The power core of a guardian mechanism.",
-      "#yCatalyze: Gain 3 Thorns.",
-      "potionbrewer:Catalyze: Gain 3 Thorns.",
-      "potionbrewer:Catalyze: Gain 3 Thorns."
     ]
   },
   "potionbrewer:Pyramid": {

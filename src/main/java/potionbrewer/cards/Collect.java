@@ -97,7 +97,7 @@ public class Collect extends CustomCard {
         monsterReagents.put(SpikeSlime_M.ID, Slime.class);
         monsterReagents.put(SpikeSlime_S.ID, Slime.class);
         monsterReagents.put(ApologySlime.ID, Slime.class);
-        monsterReagents.put(Cultist.ID, Feather.class);
+        monsterReagents.put(Cultist.ID, Beak.class);
         monsterReagents.put(FungiBeast.ID, Spore.class);
         monsterReagents.put(GremlinFat.ID, Grimace.class);
         monsterReagents.put(GremlinThief.ID, Grimace.class);
@@ -117,14 +117,14 @@ public class Collect extends CustomCard {
         // bosses
         monsterReagents.put(Hexaghost.ID, RunicShape.class);
         monsterReagents.put(SlimeBoss.ID, TinyHat.class);
-        monsterReagents.put(TheGuardian.ID, PowerCore.class);
+        monsterReagents.put(TheGuardian.ID, GuardianScales.class);
 
         // City
         monsterReagents.put(BanditBear.ID, Sulphur.class);
         monsterReagents.put(BanditLeader.ID, Wax.class);
         monsterReagents.put(BanditPointy.ID, Hand.class);
         monsterReagents.put(BronzeOrb.ID, Steel.class);
-        monsterReagents.put(Byrd.ID, Feather.class);
+        monsterReagents.put(Byrd.ID, Pebble.class);
         monsterReagents.put(Centurion.ID, Bludgeon.class);
         monsterReagents.put(Chosen.ID, Feather.class);
         monsterReagents.put(Healer.ID, Ether.class);
@@ -176,7 +176,7 @@ public class Collect extends CustomCard {
         monsterReagents.put("theJungle:BabySnecko", Eye.class);
         monsterReagents.put("theJungle:CarcassSack", Root.class);
         monsterReagents.put("theJungle:Cassacara", Root.class);
-        monsterReagents.put("theJungle:Flameango", Feather.class);
+        monsterReagents.put("theJungle:Flameango", Beak.class);
         monsterReagents.put("theJungle:JungleHunters", Bone.class);
         monsterReagents.put("theJungle:Lyon", Tooth.class);
         monsterReagents.put("theJungle:SlimyTreeVines", Root.class);
@@ -208,7 +208,7 @@ public class Collect extends CustomCard {
         monsterReagents.put("theFactory:ToyOrb", Steel.class);
         //elites
         monsterReagents.put("theFactory:DrinkBrewer", Clay.class);
-        monsterReagents.put("theFactory:Guardian2", PowerCore.class);
+        monsterReagents.put("theFactory:Guardian2", GuardianScales.class);
         monsterReagents.put("theFactory:SmogElemental", Sulphur.class);
         //boss
         monsterReagents.put("theFactory:SPIDER", Pyramid.class);
@@ -216,7 +216,7 @@ public class Collect extends CustomCard {
         //ReplayTheSpire
         monsterReagents.put("Replay:BronzeOrb", Steel.class);
         monsterReagents.put("GremlinCook", Grimace.class);
-        monsterReagents.put("Jyrdo", Feather.class);
+        monsterReagents.put("Jyrdo", Beak.class);
         //elites
         monsterReagents.put("Replay:BlueRogue", Needle.class);
         monsterReagents.put("Replay:GhostMerchant", Chest.class);

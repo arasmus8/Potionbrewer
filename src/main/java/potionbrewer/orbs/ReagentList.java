@@ -24,6 +24,7 @@ public class ReagentList implements CustomSavable<Integer> {
         reagentsById = new HashMap<>();
         reagentsById.put("", null);
         reagentsById.put(Barb.ORB_ID, Barb.class);
+        reagentsById.put(Beak.ORB_ID, Beak.class);
         reagentsById.put(Bile.ORB_ID, Bile.class);
         reagentsById.put(Bludgeon.ORB_ID, Bludgeon.class);
         reagentsById.put(Bone.ORB_ID, Bone.class);
@@ -51,9 +52,10 @@ public class ReagentList implements CustomSavable<Integer> {
         reagentsById.put(Meteorite.ORB_ID, Meteorite.class);
         reagentsById.put(Needle.ORB_ID, Needle.class);
         reagentsById.put(Nethershroud.ORB_ID, Nethershroud.class);
+        reagentsById.put(Pebble.ORB_ID, Pebble.class);
         reagentsById.put(PhilosopherShard.ORB_ID, PhilosopherShard.class);
         reagentsById.put(Pocketwatch.ORB_ID, Pocketwatch.class);
-        reagentsById.put(PowerCore.ORB_ID, PowerCore.class);
+        reagentsById.put(GuardianScales.ORB_ID, GuardianScales.class);
         reagentsById.put(Pyramid.ORB_ID, Pyramid.class);
         reagentsById.put(Radiance.ORB_ID, Radiance.class);
         reagentsById.put(RitualJar.ORB_ID, RitualJar.class);
@@ -104,7 +106,7 @@ public class ReagentList implements CustomSavable<Integer> {
         ArrayList<RandomEntry> list = new ArrayList<>();
         list.add(new RandomEntry(9, new Bone()));
         list.add(new RandomEntry(5, new Ether()));
-        list.add(new RandomEntry(15, new Feather()));
+        list.add(new RandomEntry(15, new Beak()));
         list.add(new RandomEntry(5, new Flame()));
         list.add(new RandomEntry(9, new Grimace()));
         list.add(new RandomEntry(20, new Slime()));

@@ -9,24 +9,25 @@ import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
-import com.megacrit.cardcrawl.powers.WeakPower;
+import com.megacrit.cardcrawl.potions.LiquidBronze;
+import com.megacrit.cardcrawl.powers.ThornsPower;
 import potionbrewer.PotionbrewerMod;
-import potionbrewer.potions.ToxicPotion;
 
-public class Feather extends Reagent {
-    public static final String ORB_ID = PotionbrewerMod.makeID("Feather");
+public class GuardianScales extends Reagent {
+    public static final String ORB_ID = PotionbrewerMod.makeID("GuardianScales");
     private static final Texture img;
     private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString(ORB_ID);
     public static final String[] DESC = orbString.DESCRIPTION;
 
-    public Feather() {
+    public GuardianScales() {
         super(ORB_ID, img, orbString.NAME, DESC);
+        catalyze = true;
+        targeted = false;
     }
 
     @Override
     public AbstractOrb makeCopy() {
-        return new Feather();
+        return new GuardianScales();
     }
 
     @Override
@@ -36,17 +37,16 @@ public class Feather extends Reagent {
 
     @Override
     public AbstractPotion getPotion() {
-        return new ToxicPotion();
+        return new LiquidBronze();
     }
 
     @Override
     public void doEffects(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(m, p, new WeakPower(m, 1, false), 1));
-        this.addToTop(new ApplyPowerAction(m, p, new VulnerablePower(m, 1, false), 1));
+        addToBot(new ApplyPowerAction(p, p, new ThornsPower(p, 3), 3));
     }
 
     static {
-        ImageMaster.loadRelicImg("Eternal Feather", "eternal_feather.png");
-        img = ImageMaster.getRelicImg("Eternal Feather");
+        ImageMaster.loadRelicImg("Bronze Scales", "bronzeScales.png");
+        img = ImageMaster.getRelicImg("Bronze Scales");
     }
 }

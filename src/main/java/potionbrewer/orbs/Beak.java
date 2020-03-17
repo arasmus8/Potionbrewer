@@ -9,24 +9,26 @@ import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
-import com.megacrit.cardcrawl.powers.WeakPower;
+import com.megacrit.cardcrawl.potions.GamblersBrew;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import potionbrewer.PotionbrewerMod;
-import potionbrewer.potions.ToxicPotion;
 
-public class Feather extends Reagent {
-    public static final String ORB_ID = PotionbrewerMod.makeID("Feather");
+public class Beak extends Reagent {
+    public static final String ORB_ID = PotionbrewerMod.makeID("Beak");
     private static final Texture img;
     private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString(ORB_ID);
     public static final String[] DESC = orbString.DESCRIPTION;
 
-    public Feather() {
+    public Beak() {
         super(ORB_ID, img, orbString.NAME, DESC);
+        targeted = false;
+        exhaust = true;
+        updateDescription();
     }
 
     @Override
     public AbstractOrb makeCopy() {
-        return new Feather();
+        return new Beak();
     }
 
     @Override
@@ -36,17 +38,16 @@ public class Feather extends Reagent {
 
     @Override
     public AbstractPotion getPotion() {
-        return new ToxicPotion();
+        return new GamblersBrew();
     }
 
     @Override
     public void doEffects(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(m, p, new WeakPower(m, 1, false), 1));
-        this.addToTop(new ApplyPowerAction(m, p, new VulnerablePower(m, 1, false), 1));
+        this.addToTop(new ApplyPowerAction(p, p, new StrengthPower(p, 1), 1));
     }
 
     static {
-        ImageMaster.loadRelicImg("Eternal Feather", "eternal_feather.png");
-        img = ImageMaster.getRelicImg("Eternal Feather");
+        ImageMaster.loadRelicImg("CultistMask", "cultistMask.png");
+        img = ImageMaster.getRelicImg("CultistMask");
     }
 }
