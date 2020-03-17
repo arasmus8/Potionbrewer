@@ -29,7 +29,7 @@ public class PotionKit extends CustomRelic {
         super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.SOLID);
         tips.clear();
         tips.add(new PowerTip(this.name, this.description));
-        tips.add(new PowerTip("Tonic", "A smaller version of a regular potion that can't be found in shops or rewards."));
+        tips.add(new PowerTip(this.DESCRIPTIONS[1], this.DESCRIPTIONS[2]));
         initializeTips();
     }
     
