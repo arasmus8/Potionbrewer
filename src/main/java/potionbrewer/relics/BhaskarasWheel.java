@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.PowerTip;
 import potionbrewer.PotionbrewerMod;
 import potionbrewer.cards.Reaction;
 import potionbrewer.util.TextureLoader;
@@ -13,7 +14,7 @@ import static potionbrewer.PotionbrewerMod.makeRelicOutlinePath;
 import static potionbrewer.PotionbrewerMod.makeRelicPath;
 
 public class BhaskarasWheel extends CustomRelic {
-    private static final int NUM_TURNS = 3;
+    private static final int NUM_TURNS = 2;
 
     public static final String ID = PotionbrewerMod.makeID(BhaskarasWheel.class.getSimpleName());
 
@@ -22,6 +23,9 @@ public class BhaskarasWheel extends CustomRelic {
 
     public BhaskarasWheel() {
         super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.MAGICAL);
+        tips.clear();
+        tips.add(new PowerTip(this.name, this.description));
+        tips.add(new PowerTip(DESCRIPTIONS[2], DESCRIPTIONS[3]));
     }
 
     public void atTurnStart() {

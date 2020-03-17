@@ -19,7 +19,9 @@
     "FLAVOR": "It just keeps turning forever and ever.",
     "DESCRIPTIONS": [
       "Every #b",
-      " turns, shuffle a #yReaction into your draw pile."
+      " turns, shuffle a #yReaction into your draw pile.",
+      "Reaction",
+      "An unplayable card that grants 1 energy and draws 2 cards when drawn."
     ]
   },
   "potionbrewer:BoosterPack": {
@@ -33,7 +35,7 @@
     "NAME": "Bottled Elixir",
     "FLAVOR": "A strange fluid that attracts matter through time and space.",
     "DESCRIPTIONS": [
-      "Choose a card. The first time you use a potion, draw the chosen card.",
+      "Upon pickup, choose a card. The first time you use a potion, draw the chosen card.",
       "When you use a potion, draw ",
       ".",
       "Select a card to bottle for "
@@ -71,7 +73,7 @@
     "NAME": "Mortar and Pestle",
     "FLAVOR": "One of the quintessential tools of an Alchemist.",
     "DESCRIPTIONS": [
-      "Whenever you discard a potion, heal 3 HP."
+      "Whenever you discard a potion, heal 5 HP."
     ]
   },
   "potionbrewer:PaperSwan": {
@@ -85,7 +87,9 @@
     "NAME": "Potion Kit",
     "FLAVOR": "The essential tools of the Potion Brewer's trade.",
     "DESCRIPTIONS": [
-      "Add an additional Potion slot. Each battle brew a #yTonic."
+      "Add an additional Potion slot. Each battle brew a #yTonic.",
+      "Tonic",
+      "A smaller version of a regular potion that can't be found in shops or rewards."
     ]
   },
   "potionbrewer:SalesContract": {
