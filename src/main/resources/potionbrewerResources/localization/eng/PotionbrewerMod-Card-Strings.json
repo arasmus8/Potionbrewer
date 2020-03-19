@@ -296,7 +296,7 @@
   },
   "potionbrewer:TimeBomb": {
     "NAME": "Time Bomb",
-    "DESCRIPTION": "Deal !D! Damage in !M! turns."
+    "DESCRIPTION": "Deal !D! Damage next turn."
   },
   "potionbrewer:Toxicity": {
     "NAME": "Toxicity",

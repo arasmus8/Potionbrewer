@@ -22,7 +22,6 @@ public class ChemicalSpillEffect extends AbstractGameEffect {
     private float x;
     private float y;
     private float yOffset;
-    private boolean soundPlayed = false;
     private float smallParticleTimer = 0f;
     private static Color color = new Color(0.33f, 1f, 64f, 0.8f);
     private static Color color2 = new Color(0.65f, 1f, 84f, 0.7f);
