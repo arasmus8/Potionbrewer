@@ -14,27 +14,9 @@ public abstract class ReagentDamage extends DynamicVariable {
     @Override
     public boolean isModified(AbstractCard card) {
         if (AbstractDungeon.getCurrRoom().phase.equals(AbstractRoom.RoomPhase.COMBAT) && card instanceof Prototype) {
-            Prototype p = (Prototype) card;
-            Reagent reagent = getReagent(p);
-            if (reagent != null && reagent.damages) {
-                p.applyPowersDynamic(reagent.damage);
-                return reagent.damage != p.damage;
-            }
+            return value(card) != baseValue(card);
         }
         return false;
-    }
-
-    @Override
-    public int value(AbstractCard card) {
-        if (card instanceof Prototype) {
-            Prototype p = (Prototype) card;
-            Reagent reagent = getReagent(p);
-            if (reagent != null && reagent.damages) {
-                p.applyPowersDynamic(reagent.damage);
-                return p.damage;
-            }
-        }
-        return card.damage;
     }
 
     @Override

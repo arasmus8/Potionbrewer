@@ -1,5 +1,6 @@
 package potionbrewer.variables;
 
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import potionbrewer.cards.Prototype;
 import potionbrewer.orbs.Reagent;
 
@@ -14,5 +15,14 @@ public class ReagentTwoDamage extends ReagentDamage {
     @Override
     protected Reagent getReagent(Prototype card) {
         return card.reagentB;
+    }
+
+    @Override
+    public int value(AbstractCard card) {
+        if (card instanceof Prototype) {
+            Prototype p = (Prototype) card;
+            return p.damageB;
+        }
+        return card.damage;
     }
 }

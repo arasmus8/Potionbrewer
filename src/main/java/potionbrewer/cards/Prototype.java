@@ -46,6 +46,10 @@ public class Prototype extends CustomCard implements CustomSavable<String[]> {
     public Reagent reagentB;
     public Reagent reagentC;
 
+    public int damageA;
+    public int damageB;
+    public int damageC;
+
     // /STAT DECLARATION/
 
     private static String buildName(Reagent a, Reagent b, Reagent c) {
@@ -195,33 +199,56 @@ public class Prototype extends CustomCard implements CustomSavable<String[]> {
         }
         boolean aoeDamage = a.aoeDamage || b.aoeDamage || c.aoeDamage;
         int blockTimes = calcBlockTimes(a, b, c);
-        this.addToBot(new PrototypeAction(this, a, p, m, damageTimes, blockTimes, aoeDamage));
-        this.addToBot(new PrototypeAction(this, b, p, m, damageTimes, blockTimes, aoeDamage));
-        this.addToBot(new PrototypeAction(this, c, p, m, damageTimes, blockTimes, aoeDamage));
-    }
-
-    @Override
-    public void triggerWhenCopied() {
-        reagentA.applyPowers();
-        reagentB.applyPowers();
-        reagentC.applyPowers();
-        hydrate();
-    }
-
-    @Override
-    public void triggerWhenDrawn() {
-        reagentA.applyPowers();
-        reagentB.applyPowers();
-        reagentC.applyPowers();
-        hydrate();
+        this.addToBot(new PrototypeAction(this, a, p, m, damageTimes, blockTimes, aoeDamage, damageA));
+        this.addToBot(new PrototypeAction(this, b, p, m, damageTimes, blockTimes, aoeDamage, damageB));
+        this.addToBot(new PrototypeAction(this, c, p, m, damageTimes, blockTimes, aoeDamage, damageC));
     }
 
     @Override
     public void triggerAtStartOfTurn() {
+        applyPowers();
+    }
+
+    @Override
+    public void applyPowers() {
         reagentA.applyPowers();
+        baseDamage = reagentA.damage;
+        super.applyPowers();
+        damageA = damage;
+
         reagentB.applyPowers();
+        baseDamage = reagentB.damage;
+        super.applyPowers();
+        damageB = damage;
+
         reagentC.applyPowers();
+        baseDamage = reagentC.damage;
+        super.applyPowers();
+        damageC = damage;
+
         hydrate();
+        baseDamage = damage = 0;
+    }
+
+    @Override
+    public void calculateCardDamage(AbstractMonster mo) {
+        reagentA.applyPowers();
+        baseDamage = reagentA.damage;
+        super.calculateCardDamage(mo);
+        damageA = damage;
+
+        reagentB.applyPowers();
+        baseDamage = reagentB.damage;
+        super.calculateCardDamage(mo);
+        damageB = damage;
+
+        reagentC.applyPowers();
+        baseDamage = reagentC.damage;
+        super.calculateCardDamage(mo);
+        damageC = damage;
+
+        hydrate();
+        baseDamage = damage = 0;
     }
 
     @Override

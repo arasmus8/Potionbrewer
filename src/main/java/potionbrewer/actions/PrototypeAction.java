@@ -19,6 +19,7 @@ public class PrototypeAction extends AbstractGameAction {
     private int damageTimes;
     private int blockTimes;
     private boolean aoeDamage;
+    private int damage;
 
     public PrototypeAction(
             Prototype card,
@@ -27,7 +28,8 @@ public class PrototypeAction extends AbstractGameAction {
             AbstractMonster monster,
             int damageTimes,
             int blockTimes,
-            boolean aoeDamage
+            boolean aoeDamage,
+            int damage
     ) {
         duration = Settings.ACTION_DUR_XFAST;
         this.card = card;
@@ -37,6 +39,7 @@ public class PrototypeAction extends AbstractGameAction {
         this.damageTimes = damageTimes;
         this.blockTimes = blockTimes;
         this.aoeDamage = aoeDamage;
+        this.damage = damage;
     }
 
     @Override
@@ -51,11 +54,9 @@ public class PrototypeAction extends AbstractGameAction {
             if (reagent.damages) {
                 for (int i = 0; i < damageTimes; i++) {
                     if (aoeDamage) {
-                        reagent.doAoeDamage(player, reagent.damage);
+                        reagent.doAoeDamage(player, damage);
                     } else {
-                        card.applyPowersDynamic(reagent.damage);
-                        card.calculateCardDamage(monster);
-                        reagent.doDamage(player, monster, new DamageInfo(player, card.damage, card.damageTypeForTurn));
+                        reagent.doDamage(player, monster, new DamageInfo(player, damage, card.damageTypeForTurn));
                     }
                 }
             }
