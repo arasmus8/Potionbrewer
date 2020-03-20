@@ -83,7 +83,7 @@ public class Prototype extends CustomCard implements CustomSavable<String[]> {
             reagentA = (Reagent) a.makeCopy();
             reagentB = (Reagent) b.makeCopy();
             reagentC = (Reagent) c.makeCopy();
-            hydrate();
+            applyPowers();
         }
     }
 
@@ -169,11 +169,6 @@ public class Prototype extends CustomCard implements CustomSavable<String[]> {
         if (b.blockTimes > 0) return b.blockTimes;
         if (c.blockTimes > 0) return c.blockTimes;
         return 1;
-    }
-
-    public void applyPowersDynamic(int damage) {
-        this.baseDamage = damage;
-        this.applyPowers();
     }
 
     public void applyPowersToBlockDynamic(int block) {
