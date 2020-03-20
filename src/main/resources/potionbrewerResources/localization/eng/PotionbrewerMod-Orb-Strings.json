@@ -82,9 +82,9 @@
     "NAME": "Clay",
     "DESCRIPTION": [
       "Clay harvested from a Giant Head.",
-      "Deal 25 Damage in 2 turns.",
-      "Deal 25 Damage in 2 turns.",
-      "Deal 25 Damage in 2 turns."
+      "Turns 1-4: 3 Damage, Turn 5+: 25 Damage.",
+      "Deal DD Damage.",
+      "Deal DD Damage."
     ]
   },
   "potionbrewer:Crown": {
