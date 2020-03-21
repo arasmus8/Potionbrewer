@@ -8,14 +8,25 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import potionbrewer.cards.Prototype;
 import potionbrewer.orbs.Reagent;
+import potionbrewer.orbs.ReagentList;
+
+import java.util.ArrayList;
 
 public class PrototypeConsoleCommand extends ConsoleCommand {
 
     public PrototypeConsoleCommand() {
-        maxExtraTokens = 1;
+        maxExtraTokens = 3;
         minExtraTokens = 0;
         requiresPlayer = true;
         simpleCheck = true;
+    }
+
+    @Override
+    protected ArrayList<String> extraOptions(String[] tokens, int depth) {
+        if (depth > 0 && depth < 5) {
+            return new ArrayList<>(ReagentList.reagentsById.keySet());
+        }
+        return new ArrayList<>();
     }
 
     @Override
@@ -30,17 +41,19 @@ public class PrototypeConsoleCommand extends ConsoleCommand {
                         (Reagent) PotionbrewerMod.reagentList.randomReagent()
                 );
                 AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(card, (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
-            } else {
+            } else if (tokens.length == 4) {
                 int i;
                 try {
-                    i = Integer.parseInt(tokens[1]);// 31
-                    Prototype card = new Prototype();
-                    card.misc = i;
-                    card.hydrate();
+                    Reagent a = ReagentList.fromId(tokens[1]);
+                    Reagent b = ReagentList.fromId(tokens[2]);
+                    Reagent c = ReagentList.fromId(tokens[3]);
+                    Prototype card = new Prototype(a, b, c);
                     AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(card, (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
                 } catch (Exception e) {
-                    DevConsole.log("Invalid argument: " + tokens[1] + " is not a number.");
+                    DevConsole.log("Something went wrong!");
                 }
+            } else {
+                DevConsole.log("Cannot generate card - 3 Reagents required!");
             }
         }
 

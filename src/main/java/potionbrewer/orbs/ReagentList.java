@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class ReagentList implements CustomSavable<Integer> {
-    public static HashMap<String, Class<? extends AbstractOrb>> reagentsById;
+    public static HashMap<String, Class<? extends Reagent>> reagentsById;
     private Random rng;
     private int randomCount = 0;
 
@@ -90,9 +90,9 @@ public class ReagentList implements CustomSavable<Integer> {
                 .orElse(-1); // No element found
     }
 
-    public static AbstractOrb fromId(String Id) {
+    public static Reagent fromId(String Id) {
         if (reagentsById.containsKey(Id)) {
-            Class<? extends AbstractOrb> clz = reagentsById.get(Id);
+            Class<? extends Reagent> clz = reagentsById.get(Id);
             try {
                 return clz.newInstance();
             } catch (Exception err) {

@@ -263,6 +263,7 @@ public class PotionbrewerMod implements
         // Console Commands
         ConsoleCommand.addCommand("prototype", PrototypeConsoleCommand.class);
         ConsoleCommand.addCommand("reagent", ReagentConsoleCommand.class);
+        ConsoleCommand.addCommand("potioncard", PotionCardConsoleCommand.class);
 
         // Save/Load fields
         tonicLibrary = new TonicLibrary();
@@ -545,8 +546,8 @@ public class PotionbrewerMod implements
         reagents.clear();
         if (reagentStr != null && !reagentStr.equals("")) {
             for (String r : reagentStr.split(DELIM)) {
-                AbstractOrb o = ReagentList.fromId(r);
-                reagents.add((Reagent) o);
+                Reagent o = ReagentList.fromId(r);
+                reagents.add(o);
             }
         }
     }

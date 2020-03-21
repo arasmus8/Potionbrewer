@@ -347,7 +347,8 @@
       " an ",
       "Random Potion",
       "Random Tonic",
-      "Unknown Potion"
+      "Unknown Potion",
+      "I can't use that now."
     ]
   },
   "potionbrewer:ChooseReagent": {

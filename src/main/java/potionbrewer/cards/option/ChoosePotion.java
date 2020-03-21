@@ -30,7 +30,7 @@ public class ChoosePotion extends AbstractCard implements CustomSavable<String> 
 
     public String potionId;
     public boolean obtain;
-    private static Map<String, String> imageMap;
+    public static Map<String, String> imageMap;
 
     public ChoosePotion(final String id, boolean obtain) {
         super(ID, name(id), portrait(id), 0, CARD_STRINGS.DESCRIPTION, CardType.STATUS, CardColor.COLORLESS, CardRarity.COMMON, CardTarget.NONE);
@@ -43,6 +43,7 @@ public class ChoosePotion extends AbstractCard implements CustomSavable<String> 
                 + potionDescription(id);
         exhaust = true;
         initializeDescription();
+        this.cantUseMessage = CARD_STRINGS.EXTENDED_DESCRIPTION[7];
     }
 
     private static boolean isVowel(final char leading) {
@@ -81,6 +82,16 @@ public class ChoosePotion extends AbstractCard implements CustomSavable<String> 
     }
 
     @Override
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        boolean fromSuper = super.canUse(p, m);
+        AbstractPotion potion = fromId(potionId);
+        if (potion == null) {
+            potion = new FireTonic();
+        }
+        return fromSuper && potion.canUse();
+    }
+
+    @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.onChoseThisOption();
     }
@@ -102,7 +113,9 @@ public class ChoosePotion extends AbstractCard implements CustomSavable<String> 
                 AbstractDungeon.player.obtainPotion(p);
             }
         } else {
-            this.addToBot(new UseTempPotionAction(p, AbstractDungeon.getRandomMonster()));
+            if (p.canUse()) {
+                addToBot(new UseTempPotionAction(p, AbstractDungeon.getRandomMonster()));
+            }
         }
     }
 

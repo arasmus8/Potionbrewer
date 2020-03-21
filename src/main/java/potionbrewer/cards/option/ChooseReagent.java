@@ -74,7 +74,7 @@ public class ChooseReagent extends AbstractCard {
     }
 
     public static Reagent fromId(final String id) {
-        return (Reagent) ReagentList.fromId(id);
+        return ReagentList.fromId(id);
     }
 
     public static String name(final String id) {

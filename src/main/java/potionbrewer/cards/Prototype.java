@@ -304,9 +304,9 @@ public class Prototype extends CustomCard implements CustomSavable<String[]> {
     @Override
     public void onLoad(String[] ids) {
         if (ids.length == 3) {
-            reagentA = (Reagent) ReagentList.fromId(ids[0]);
-            reagentB = (Reagent) ReagentList.fromId(ids[1]);
-            reagentC = (Reagent) ReagentList.fromId(ids[2]);
+            reagentA = ReagentList.fromId(ids[0]);
+            reagentB = ReagentList.fromId(ids[1]);
+            reagentC = ReagentList.fromId(ids[2]);
             hydrate();
         }
     }
