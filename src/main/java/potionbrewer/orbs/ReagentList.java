@@ -3,7 +3,6 @@ package potionbrewer.orbs;
 import basemod.abstracts.CustomSavable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.random.Random;
 import potionbrewer.cards.option.ChooseReagent;
 
@@ -13,8 +12,8 @@ import java.util.stream.IntStream;
 
 public class ReagentList implements CustomSavable<Integer> {
     public static HashMap<String, Class<? extends Reagent>> reagentsById;
+    public static ArrayList<String> inCombatPotionReagentList;
     private Random rng;
-    private int randomCount = 0;
 
     public ReagentList() {
         rng = new Random();
@@ -76,6 +75,43 @@ public class ReagentList implements CustomSavable<Integer> {
         reagentsById.put(TrainTicket.ORB_ID, TrainTicket.class);
         reagentsById.put(TwistedRelic.ORB_ID, TwistedRelic.class);
         reagentsById.put(Wax.ORB_ID, Wax.class);
+
+        inCombatPotionReagentList = new ArrayList<>();
+        inCombatPotionReagentList.add(Mechanism.ORB_ID);
+        inCombatPotionReagentList.add(Bile.ORB_ID);
+        inCombatPotionReagentList.add(Silk.ORB_ID);
+        inCombatPotionReagentList.add(Radiance.ORB_ID);
+        inCombatPotionReagentList.add(Pyramid.ORB_ID);
+        inCombatPotionReagentList.add(Ink.ORB_ID);
+        inCombatPotionReagentList.add(RitualJar.ORB_ID);
+        inCombatPotionReagentList.add(Root.ORB_ID);
+        inCombatPotionReagentList.add(Gold.ORB_ID);
+        inCombatPotionReagentList.add(TinyHat.ORB_ID);
+        inCombatPotionReagentList.add(Ichor.ORB_ID);
+        inCombatPotionReagentList.add(Ether.ORB_ID);
+        inCombatPotionReagentList.add(Bug.ORB_ID);
+        inCombatPotionReagentList.add(Steel.ORB_ID);
+        inCombatPotionReagentList.add(Tooth.ORB_ID);
+        inCombatPotionReagentList.add(Spore.ORB_ID);
+        inCombatPotionReagentList.add(Sulphur.ORB_ID);
+        inCombatPotionReagentList.add(Grimace.ORB_ID);
+        inCombatPotionReagentList.add(Clay.ORB_ID);
+        inCombatPotionReagentList.add(Beak.ORB_ID);
+        inCombatPotionReagentList.add(Crown.ORB_ID);
+        inCombatPotionReagentList.add(Tentacle.ORB_ID);
+        inCombatPotionReagentList.add(GuardianScales.ORB_ID);
+        inCombatPotionReagentList.add(Chest.ORB_ID);
+        inCombatPotionReagentList.add(Feather.ORB_ID);
+        inCombatPotionReagentList.add(Skull.ORB_ID);
+        inCombatPotionReagentList.add(Meteorite.ORB_ID);
+        inCombatPotionReagentList.add(SerpentSkull.ORB_ID);
+        inCombatPotionReagentList.add(Slime.ORB_ID);
+        inCombatPotionReagentList.add(Eye.ORB_ID);
+        inCombatPotionReagentList.add(RunicShape.ORB_ID);
+        inCombatPotionReagentList.add(Horn.ORB_ID);
+        inCombatPotionReagentList.add(Needle.ORB_ID);
+        inCombatPotionReagentList.add(FeyFire.ORB_ID);
+        inCombatPotionReagentList.add(Bone.ORB_ID);
     }
 
     public static int indexFromReagent(Reagent o) {
@@ -122,7 +158,6 @@ public class ReagentList implements CustomSavable<Integer> {
         }
         list.sort(new SortScoreDescending());
         int total = list.stream().mapToInt(e -> e.chance).reduce(0, Integer::sum);
-        randomCount += 1;
         int roll = rng.random(1, total);
         int index = -1, chanceSum = 0;
         while (chanceSum < roll) {
@@ -132,7 +167,7 @@ public class ReagentList implements CustomSavable<Integer> {
         return list.get(index);
     }
 
-    public AbstractOrb randomReagent() {
+    public Reagent randomReagent() {
         return randomEntry(null).reagent;
     }
 
@@ -144,14 +179,19 @@ public class ReagentList implements CustomSavable<Integer> {
         return list.stream().map(re -> re.optionCard).collect(Collectors.toCollection(ArrayList::new));
     }
 
+    public Reagent randomInCombatPotionReagent() {
+        int roll = rng.random(inCombatPotionReagentList.size() - 1);
+        return fromId(inCombatPotionReagentList.get(roll));
+    }
+
     @Override
     public Integer onSave() {
-        return randomCount;
+        return rng.counter;
     }
 
     @Override
     public void onLoad(Integer savedValue) {
-        randomCount = Optional.ofNullable(savedValue).orElse(0);
+        int randomCount = Optional.ofNullable(savedValue).orElse(0);
         rng = new Random(Settings.seed, randomCount);
     }
 

@@ -17,7 +17,6 @@ import java.util.stream.Collectors;
 public class TonicLibrary implements CustomSavable<Integer> {
     public static HashMap<String, Class<? extends AbstractPotion>> tonicList;
     private static Random rng;
-    private static int randomCount = 0;
 
     static {
         tonicList = new HashMap<>();
@@ -40,7 +39,6 @@ public class TonicLibrary implements CustomSavable<Integer> {
 
     public ArrayList<AbstractCard> getRandomChoices(int amount) {
         ArrayList<String> list = new ArrayList<>(tonicList.keySet());
-        randomCount += 1;
         Random forShuffle = new Random(rng.randomLong());
         Collections.shuffle(list, forShuffle.random);
         return list.subList(0, amount).stream().map(ChoosePotion::new).collect(Collectors.toCollection(ArrayList::new));
@@ -54,9 +52,8 @@ public class TonicLibrary implements CustomSavable<Integer> {
         try {
             String[] list = tonicList.keySet().toArray(new String[0]);
             int i = rng.random(0, list.length - 1);
-            randomCount += 1;
-            Class p = tonicList.get(list[i]);
-            return (AbstractPotion)p.newInstance();
+            Class<? extends AbstractPotion> p = tonicList.get(list[i]);
+            return p.newInstance();
         } catch (Exception e) {
             System.out.println("Error getting random tonic!");
             return new FireTonic();
@@ -66,8 +63,8 @@ public class TonicLibrary implements CustomSavable<Integer> {
     public static AbstractPotion getTonicById(String Id) {
         try {
             if (tonicList.containsKey(Id)) {
-                Class clz = tonicList.get(Id);
-                return (AbstractPotion) clz.newInstance();
+                Class<? extends AbstractPotion> clz = tonicList.get(Id);
+                return clz.newInstance();
             } else {
                 return new FireTonic();
             }
@@ -79,12 +76,12 @@ public class TonicLibrary implements CustomSavable<Integer> {
 
     @Override
     public Integer onSave() {
-        return randomCount;
+        return rng.counter;
     }
 
     @Override
     public void onLoad(Integer savedValue) {
-        randomCount = Optional.ofNullable(savedValue).orElse(0);
+        int randomCount = Optional.ofNullable(savedValue).orElse(0);
         rng = new Random(Settings.seed, randomCount);
     }
 }

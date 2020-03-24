@@ -12,7 +12,6 @@ import potionbrewer.powers.BrewPotionPower;
 import potionbrewer.relics.BunsenBurner;
 
 public class BrewPotionAction extends AbstractGameAction {
-    private AbstractOrb orb;
     private static final int TURNS = 3;
 
     public BrewPotionAction() {
@@ -23,19 +22,19 @@ public class BrewPotionAction extends AbstractGameAction {
     @Override
     public void update() {
         if (this.duration == Settings.ACTION_DUR_FAST && !AbstractDungeon.player.orbs.isEmpty()) {
-            this.orb = AbstractDungeon.player.orbs.get(0);
+            AbstractOrb orb = AbstractDungeon.player.orbs.get(0);
             AbstractPlayer p = AbstractDungeon.player;
-            if (this.orb instanceof EmptyOrbSlot) {
+            if (orb instanceof EmptyOrbSlot) {
                 this.isDone = true;
-            } else if (this.orb instanceof Reagent) {
+            } else if (orb instanceof Reagent) {
                 this.isDone = true;
-                Reagent reagent = (Reagent) this.orb;
+                Reagent reagent = (Reagent) orb;
                 p.evokeOrb();
                 int turns = TURNS;
                 if (p.hasRelic(BunsenBurner.ID)) {
                     turns -= 1;
                 }
-                this.addToTop(new ApplyPowerAction(p, p, new BrewPotionPower(p, turns, reagent.getPotion())));
+                this.addToTop(new ApplyPowerAction(p, p, new BrewPotionPower(p, turns, reagent.getPotion(), (Reagent) reagent.makeCopy())));
             }
         }
 

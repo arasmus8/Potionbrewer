@@ -15,7 +15,6 @@ import java.util.Optional;
 
 public class PotionLibrary implements CustomSavable<Integer> {
     private static Random rng;
-    private static int randomCount = 0;
     private static ArrayList<String> inBattleIds;
 
     public static void initializePotionList(AbstractPlayer.PlayerClass playerClass) {
@@ -39,26 +38,24 @@ public class PotionLibrary implements CustomSavable<Integer> {
         if (inBattleIds == null) {
             return "";
         }
-        randomCount += 1;
         return inBattleIds.get(rng.random(inBattleIds.size() - 1));
     }
 
     public ArrayList<String> getRandomPotionIdList(final int amount) {
         ArrayList<String> ret = new ArrayList<>(inBattleIds);
         Random forShuffle = new Random(rng.randomLong());
-        randomCount += 1;
         Collections.shuffle(ret, forShuffle.random);
         return new ArrayList<>(ret.subList(0, amount));
     }
 
     @Override
     public Integer onSave() {
-        return randomCount;
+        return rng.counter;
     }
 
     @Override
     public void onLoad(Integer savedValue) {
-        randomCount = Optional.ofNullable(savedValue).orElse(0);
+        int randomCount = Optional.ofNullable(savedValue).orElse(0);
         rng = new Random(Settings.seed, randomCount);
     }
 }

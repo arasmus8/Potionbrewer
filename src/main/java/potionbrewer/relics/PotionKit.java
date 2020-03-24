@@ -2,6 +2,7 @@ package potionbrewer.relics;
 
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ObtainPotionAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -11,6 +12,8 @@ import com.megacrit.cardcrawl.localization.KeywordStrings;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.potions.PotionSlot;
 import potionbrewer.PotionbrewerMod;
+import potionbrewer.orbs.DummyTonicReagent;
+import potionbrewer.powers.BrewPotionPower;
 import potionbrewer.util.TextureLoader;
 
 import static potionbrewer.PotionbrewerMod.makeRelicOutlinePath;
@@ -36,8 +39,14 @@ public class PotionKit extends CustomRelic {
     @Override
     public void atBattleStartPreDraw() {
         flash();
+        AbstractPlayer player = AbstractDungeon.player;
         AbstractPotion p = PotionbrewerMod.tonicLibrary.getRandomTonic();
         this.addToBot(new ObtainPotionAction(p));
+        int turns = 3;
+        if (player.hasRelic(BunsenBurner.ID)) {
+            turns -= 1;
+        }
+        addToBot(new ApplyPowerAction(player, player, new BrewPotionPower(player, turns, p, new DummyTonicReagent())));
     }
     
     @Override

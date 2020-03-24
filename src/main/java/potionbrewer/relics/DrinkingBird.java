@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import potionbrewer.PotionbrewerMod;
+import potionbrewer.orbs.Reagent;
 import potionbrewer.powers.BrewPotionPower;
 import potionbrewer.util.TextureLoader;
 
@@ -27,13 +28,14 @@ public class DrinkingBird extends CustomRelic {
     @Override
     public void atBattleStartPreDraw() {
         flash();
-        AbstractPotion p = AbstractDungeon.returnRandomPotion(true);
+        Reagent reagent = PotionbrewerMod.reagentList.randomInCombatPotionReagent();
+        AbstractPotion p = reagent.getPotion();
         AbstractPlayer player = AbstractDungeon.player;
         int turns = 3;
         if (player.hasRelic(BunsenBurner.ID)) {
             turns -= 1;
         }
-        addToBot(new ApplyPowerAction(player, player, new BrewPotionPower(player, turns, p)));
+        addToBot(new ApplyPowerAction(player, player, new BrewPotionPower(player, turns, p, reagent)));
     }
 
     @Override

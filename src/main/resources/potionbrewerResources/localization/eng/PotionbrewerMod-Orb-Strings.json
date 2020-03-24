@@ -482,5 +482,14 @@
       "Deal 5 Damage. Apply 1 Weak.",
       "Deal DD Damage. Apply 1 Weak."
     ]
+  },
+  "potionbrewer:DummyTonicReagent": {
+    "NAME": "Dummy",
+    "DESCRIPTION": [
+      "Dummy",
+      "Dummy",
+      "Dummy",
+      "Dummy"
+    ]
   }
 }

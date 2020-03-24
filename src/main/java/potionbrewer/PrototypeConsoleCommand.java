@@ -36,9 +36,9 @@ public class PrototypeConsoleCommand extends ConsoleCommand {
         } else {
             if (tokens.length == 1) {
                 AbstractCard card = new Prototype(
-                        (Reagent) PotionbrewerMod.reagentList.randomReagent(),
-                        (Reagent) PotionbrewerMod.reagentList.randomReagent(),
-                        (Reagent) PotionbrewerMod.reagentList.randomReagent()
+                        PotionbrewerMod.reagentList.randomReagent(),
+                        PotionbrewerMod.reagentList.randomReagent(),
+                        PotionbrewerMod.reagentList.randomReagent()
                 );
                 AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(card, (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
             } else if (tokens.length == 4) {
