@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
-import com.megacrit.cardcrawl.vfx.ExhaustBlurEffect;
 import potionbrewer.powers.BrewPotionPower;
 
 
@@ -38,7 +37,9 @@ public class BrewPotionEffect extends AbstractGameEffect {
         float dt = Gdx.graphics.getDeltaTime();
         if (!isInitialized) {
             isInitialized = true;
-            AbstractDungeon.effectsQueue.add(new ExhaustBlurEffect(x, y));
+            for (int i = 0; i < 30; ++i) {
+                AbstractDungeon.effectsQueue.add(new BrewPotionSmokeEffect(x, y));
+            }
         }
         int reagentCount = BrewPotionPower.reagents.size();
         if (reagentCount == 0) {

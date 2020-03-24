@@ -42,7 +42,6 @@ public class BrewPotionPower extends AbstractPower implements NonStackablePower,
         this.amount = turns;
         this.potion = potion;
         this.reagent = reagent;
-        reagents.add(reagent);
         type = PowerType.BUFF;
         this.updateDescription();
         this.loadRegion("time");
@@ -51,7 +50,11 @@ public class BrewPotionPower extends AbstractPower implements NonStackablePower,
                 .filter(abstractGameEffect -> abstractGameEffect instanceof BrewPotionEffect)
                 .findFirst();
         if (!brewPotionEffect.isPresent()) {
+            reagents.clear();
+            reagents.add(reagent);
             AbstractDungeon.effectList.add(new BrewPotionEffect());
+        } else {
+            reagents.add(reagent);
         }
     }
 
