@@ -33,6 +33,11 @@ public class Keyblade extends CustomRelic {
         return c;
     }
 
+    @Override
+    public void onEquip() {
+        keyCount();
+    }
+
     public void onKeyObtain() {
         keyCount();
     }
