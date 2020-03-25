@@ -43,7 +43,7 @@ public class Eye extends Reagent {
 
     @Override
     public void doEffects(AbstractPlayer p, AbstractMonster m) {
-        AbstractCard tmp = p.masterDeck.getRandomCard(true);
+        AbstractCard tmp = p.masterDeck.getRandomCard(true).makeSameInstanceOf();
         p.limbo.addToBottom(tmp);
         tmp.current_x = p.hb.cX;
         tmp.current_y = p.hb.cY;
