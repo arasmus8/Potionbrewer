@@ -44,7 +44,7 @@ public class Slime extends Reagent {
     @Override
     public void doEffects(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.effectList.add(new FlashAtkImgEffect(m.hb.cX, m.hb.cY, AbstractGameAction.AttackEffect.POISON, false));
-        addToBot(new ApplyPowerAction(m, p, new SlimedPower(m, p, 3), 3));
+        addToBot(new ApplyPowerAction(m, p, new SlimedPower(m, p, 2), 2));
     }
 
     static {
