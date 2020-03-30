@@ -8,6 +8,8 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
+import com.megacrit.cardcrawl.potions.EntropicBrew;
+import com.megacrit.cardcrawl.potions.SmokeBomb;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import potionbrewer.PotionbrewerMod;
 
@@ -31,6 +33,8 @@ public class TwoForOnePower extends AbstractPower implements PotionTrackingPower
     @Override
     public void onUsePotion(AbstractPotion potion) {
         if (PotionbrewerMod.potionIsFromCard) return;
+        if (potion.ID.equals(SmokeBomb.POTION_ID)) return;
+        if (potion.ID.equals(EntropicBrew.POTION_ID)) return;
         this.flash();
         if (amount > 1) {
             this.addToBot(new ReducePowerAction(owner, owner, this, 1));
