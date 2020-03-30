@@ -57,7 +57,7 @@ public class RefinedProcess extends CatalyzeCard {
     @Override
     public void catalyzeActions(AbstractPlayer p, AbstractMonster m) {
         exhaust = true;
-        this.addToBot(new RefinedProcessAction(uuid, 1));
+        this.addToTop(new RefinedProcessAction(uuid, 1));
     }
 
     @Override
