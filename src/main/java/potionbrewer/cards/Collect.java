@@ -302,5 +302,20 @@ public class Collect extends CustomCard {
         monsterReagents.put("HollowMod:FalseKnight", CityCrest.class);
         monsterReagents.put("HollowMod:NKGrimm", Fireflies.class);
         monsterReagents.put("HollowMod:Radiance", Radiance.class);
+
+        //Gensokyo
+
+        //Wandering Minibosses
+        monsterReagents.put("wanderingMiniBosses:GazeMonster", Meteorite.class);
+        monsterReagents.put("wanderingMiniBosses:GremlinKnight", Horn.class);
+        monsterReagents.put("wanderingMiniBosses:ImmortalFlame", FeyFire.class);
+        monsterReagents.put("wanderingMiniBosses:EternalPrincess", Radiance.class);
+        monsterReagents.put("wanderingMiniBosses:Wraith", Meteorite.class);
+        monsterReagents.put("wanderingMiniBosses:InkMan", Ink.class);
+        monsterReagents.put("wanderingMiniBosses:BanditKing", Skull.class);
+        monsterReagents.put("wanderingMiniBosses:ThiefOfABillionGuards", Chest.class);
+        monsterReagents.put("wanderingMiniBosses:Timic", Chest.class);
+
+        //Pale of the Ancients
     }
 }
