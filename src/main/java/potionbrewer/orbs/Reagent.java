@@ -164,6 +164,10 @@ public abstract class Reagent extends AbstractOrb {
         }
     }
 
+    public String getCardDescription() {
+        return descriptions[2];
+    }
+
     public static Texture getDefaultTexture() {
         ImageMaster.loadRelicImg("Question Card", "questionCard.png");
         return ImageMaster.getRelicImg("Question Card");

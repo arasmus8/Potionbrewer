@@ -78,9 +78,8 @@
   "potionbrewer:DiseasePower": {
     "NAME": "Disease",
     "DESCRIPTIONS": [
-      "Damage is reduced by half. At the end of turn, deal #b",
-      " Damage and apply #b",
-      " Infection to all enemies."
+      "Damage is reduced by half. At the end of turn, apply #b",
+      " #yInfection to all enemies."
     ]
   },
   "potionbrewer:EquivalentExchangePower": {
@@ -100,7 +99,7 @@
     "NAME": "Infection",
     "DESCRIPTIONS": [
       "Doubles each turn. When #yInfection reaches #b",
-      " applies #b1 #yDisease, and is reduced by #b"
+      " applies #b1 #yDisease (reduces damage dealt by half), and is reduced by #b"
     ]
   },
   "potionbrewer:IronHeartPower": {

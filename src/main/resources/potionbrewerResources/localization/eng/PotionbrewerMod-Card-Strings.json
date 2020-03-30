@@ -167,13 +167,13 @@
   },
   "potionbrewer:HazardousMaterials": {
     "NAME": "Hazardous Materials",
-    "DESCRIPTION": "Apply X potionbrewer:Toxic. NL potionbrewer:Catalyze: And X potionbrewer:Disease. NL Exhaust",
-    "UPGRADE_DESCRIPTION": "Innate. NL Apply X potionbrewer:Toxic. NL potionbrewer:Catalyze: And X potionbrewer:Disease. NL Exhaust"
+    "DESCRIPTION": "Apply X potionbrewer:Toxic. NL potionbrewer:Catalyze: And X potionbrewer:Infection. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Innate. NL Apply X potionbrewer:Toxic. NL potionbrewer:Catalyze: And X potionbrewer:Infection. NL Exhaust"
   },
   "potionbrewer:HazardousWaste": {
     "NAME": "Hazardous Waste",
     "DESCRIPTION": "Apply !M! potionbrewer:Slimed. NL potionbrewer:Catalyze: Exhaust this card and permanently increase potionbrewer:Slimed by 1.",
-    "UPGRADE_DESCRIPTION": "Innate NL Apply !M! potionbrewer:Slimed. NL potionbrewer:Catalyze: Exhaust this card and permanently increase potionbrewer:Slimed by 2.",
+    "UPGRADE_DESCRIPTION": "Innate NL Apply !M! potionbrewer:Slimed. NL potionbrewer:Catalyze: Exhaust this card and permanently increase potionbrewer:Slimed by 1.",
     "EXTENDED_DESCRIPTION": [
       "Hazardous Sludge"
     ]

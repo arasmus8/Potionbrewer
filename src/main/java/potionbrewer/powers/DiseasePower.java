@@ -3,9 +3,7 @@ package potionbrewer.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -32,7 +30,6 @@ public class DiseasePower extends AbstractPower implements CloneablePowerInterfa
 
     private static final float DAMAGE_REDUCE = 0.5F;
     private static final int INFECTION_MULTIPLIER = 1;
-    private static final int DAMAGE_PER_STACK = 3;
 
     public DiseasePower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         name = NAME;
@@ -54,8 +51,6 @@ public class DiseasePower extends AbstractPower implements CloneablePowerInterfa
     @Override
     public void atEndOfRound() {
         this.flash();
-        DamageInfo info = new DamageInfo(source, amount * DAMAGE_PER_STACK, DamageInfo.DamageType.HP_LOSS);
-        this.addToBot(new DamageAction(owner, info, AttackEffect.POISON));
         this.addToBot(new ReducePowerAction(owner, source, this, 1));
         int infectionAmount = amount * INFECTION_MULTIPLIER;
         for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
@@ -74,7 +69,7 @@ public class DiseasePower extends AbstractPower implements CloneablePowerInterfa
 
     @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0] + amount * DAMAGE_PER_STACK + DESCRIPTIONS[1] + amount * INFECTION_MULTIPLIER + DESCRIPTIONS[2];
+        description = DESCRIPTIONS[0] + amount * INFECTION_MULTIPLIER + DESCRIPTIONS[1];
     }
     
     @Override

@@ -11,13 +11,13 @@
     "NAMES": [
       "disease"
     ],
-    "DESCRIPTION": "Reduces Damage dealt by half and deals damage. Also spreads Infection."
+    "DESCRIPTION": "Reduces Damage dealt by half, and spreads Infection to all enemies."
   },
   {
     "NAMES": [
       "infection"
     ],
-    "DESCRIPTION": "Doubles each turn. Applies Disease when infection is 10 or higher and is reduced by 10."
+    "DESCRIPTION": "Doubles each turn. Applies Disease (damage dealt is reduced by half) when infection is 10 or higher and is reduced by 10."
   },
   {
     "NAMES": [
