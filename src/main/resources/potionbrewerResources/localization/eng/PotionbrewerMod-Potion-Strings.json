@@ -7,8 +7,8 @@
     "NAME": "Blacksmith Potion",
     "DESCRIPTIONS": [
       "Permanently upgrade #b",
-      " card.",
-      " cards."
+      " random card. (Can only be used outside of combat)",
+      " random cards. (Can only be used outside of combat)"
     ]
   },
   "potionbrewer:BoundlessPotion": {

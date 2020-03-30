@@ -23,7 +23,12 @@ public class ChooseReagent extends AbstractCard {
     public ChooseReagent(final String id) {
         super(ID, name(id), portrait(id), -2, CARD_STRINGS.DESCRIPTION, CardType.STATUS, CardColor.COLORLESS, CardRarity.COMMON, CardTarget.NONE);
         this.reagentId = id;
-        rawDescription = (isVowel(name.charAt(0)) ? CARD_STRINGS.EXTENDED_DESCRIPTION[1] : CARD_STRINGS.EXTENDED_DESCRIPTION[0]) + this.name;
+        Reagent r = fromId(reagentId);
+        if (r == null) {
+            r = new Slime();
+        }
+        rawDescription = CARD_STRINGS.EXTENDED_DESCRIPTION[0] + r.getPotion().name + CARD_STRINGS.EXTENDED_DESCRIPTION[1] + r.getCardDescription();
+        // rawDescription = (isVowel(name.charAt(0)) ? CARD_STRINGS.EXTENDED_DESCRIPTION[1] : CARD_STRINGS.EXTENDED_DESCRIPTION[0]) + this.name;
         exhaust = true;
         initializeDescription();
     }

@@ -6,7 +6,7 @@
     <groupId>potionbrewer</groupId>
     <artifactId>Potionbrewer</artifactId>
     <name>Potionbrewer</name>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <description>
         Adds the Potionbrewer.
         - Includes 16 new potions
