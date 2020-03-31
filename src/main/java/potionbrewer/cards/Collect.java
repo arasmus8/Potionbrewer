@@ -304,6 +304,39 @@ public class Collect extends CustomCard {
         monsterReagents.put("HollowMod:Radiance", Radiance.class);
 
         //Gensokyo
+        monsterReagents.put("Gensokyo:Komachi", Meteorite.class);
+        monsterReagents.put("Gensokyo:Yukari", Pyramid.class);
+        monsterReagents.put("Gensokyo:Kokoro", Mechanism.class);
+        monsterReagents.put("Gensokyo:Reimu", RunicShape.class);
+        monsterReagents.put("Gensokyo:YinYangOrb", Steel.class);
+        monsterReagents.put("Gensokyo:Aya", Bile.class);
+        monsterReagents.put("Gensokyo:Cirno", Hand.class);
+        monsterReagents.put("Gensokyo:SunflowerFairy", Bug.class);
+        monsterReagents.put("Gensokyo:ZombieFairy", Bug.class);
+        monsterReagents.put("Gensokyo:GreaterFairy", Bug.class);
+        monsterReagents.put("Gensokyo:MaidFairy", Bug.class);
+        monsterReagents.put("Gensokyo:Mamizou", RunicShape.class);
+        monsterReagents.put("Gensokyo:RedKodama", Slime.class);
+        monsterReagents.put("Gensokyo:GreyKodama", Slime.class);
+        monsterReagents.put("Gensokyo:YellowKodama", Slime.class);
+        monsterReagents.put("Gensokyo:WhiteKodama", Slime.class);
+        monsterReagents.put("Gensokyo:VengefulSpirit", Bone.class);
+        monsterReagents.put("Gensokyo:LivingMonolith", LaserCore.class);
+        monsterReagents.put("Gensokyo:CorruptedTreant", Root.class);
+        monsterReagents.put("Gensokyo:Python", Tentacle.class);
+        monsterReagents.put("Gensokyo:Gryphon", Slime.class);
+        monsterReagents.put("Gensokyo:MoonRabbit", Slime.class);
+        monsterReagents.put("Gensokyo:Kitsune", Slime.class);
+        monsterReagents.put("Gensokyo:Patchouli", Slime.class);
+        monsterReagents.put("Gensokyo:FireOrb", Flame.class);
+        monsterReagents.put("Gensokyo:WaterOrb", Slime.class);
+        monsterReagents.put("Gensokyo:WoodOrb", Root.class);
+        monsterReagents.put("Gensokyo:MetalOrb", Steel.class);
+        monsterReagents.put("Gensokyo:EarthOrb", Lightning.class);
+        monsterReagents.put("Gensokyo:Sumireko", Feather.class);
+        monsterReagents.put("Gensokyo:Yuyuko", RunicShape.class);
+        monsterReagents.put("Gensokyo:Eiki", TinyHat.class);
+
 
         //Wandering Minibosses
         monsterReagents.put("wanderingMiniBosses:GazeMonster", Meteorite.class);
@@ -317,5 +350,27 @@ public class Collect extends CustomCard {
         monsterReagents.put("wanderingMiniBosses:Timic", Chest.class);
 
         //Pale of the Ancients
+        monsterReagents.put("paleoftheancients:DonuDeca", Pyramid.class);
+        monsterReagents.put("paleoftheancients:TheDefect", Mechanism.class);
+        monsterReagents.put("paleoftheancients:lightningorb", Mechanism.class);
+        monsterReagents.put("paleoftheancients:frostorb", Mechanism.class);
+        monsterReagents.put("paleoftheancients:darkorb", Mechanism.class);
+        monsterReagents.put("paleoftheancients:plasmaorb", Mechanism.class);
+        monsterReagents.put("paleoftheancients:TheVixenBoss", FeyFire.class);
+        monsterReagents.put("paleoftheancients:TheShowmanBoss", RitualJar.class);
+        monsterReagents.put("paleoftheancients:ShowmanStage", RitualJar.class);
+        monsterReagents.put("paleoftheancients:IronCluck", RitualJar.class);
+        monsterReagents.put("paleoftheancients:Reimu", PhilosopherShard.class);
+        monsterReagents.put("paleoftheancients:YinYangOrb", PhilosopherShard.class);
+        monsterReagents.put("paleoftheancients:BardBoss", Pocketwatch.class);
+        monsterReagents.put("paleoftheancients:TheSilent", Nethershroud.class);
+        monsterReagents.put("paleoftheancients:Thorton", Chest.class);
+        monsterReagents.put("paleoftheancients:BASlime", Slime.class);
+        monsterReagents.put("paleoftheancients:N", PhilosopherShard.class);
+        monsterReagents.put("paleoftheancients:EyeOfSlumber", PhilosopherShard.class);
+        monsterReagents.put("paleoftheancients:EyeOfDisremembrance", PhilosopherShard.class);
+        monsterReagents.put("paleoftheancients:EyeOfRebirth", PhilosopherShard.class);
+        monsterReagents.put("paleoftheancients:TheBandit", CityCrest.class);
+
     }
 }
