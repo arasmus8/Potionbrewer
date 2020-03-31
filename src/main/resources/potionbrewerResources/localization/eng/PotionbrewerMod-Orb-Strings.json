@@ -55,9 +55,9 @@
     "NAME": "Bug",
     "DESCRIPTION": [
       "The carapace of a strange insect.",
-      "Reduce the target's Strength by 6 this turn.",
-      "Reduce the target's Strength by 6 this turn.",
-      "Reduce the target's Strength by 6 this turn."
+      "Reduce the target's Strength by 3 this turn.",
+      "Reduce the target's Strength by 3 this turn.",
+      "Reduce the target's Strength by 3 this turn."
     ]
   },
   "potionbrewer:Chest": {

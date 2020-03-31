@@ -42,9 +42,9 @@ public class Bug extends Reagent {
 
     @Override
     public void doEffects(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(m, p, new StrengthPower(m, -6), -6));
+        addToBot(new ApplyPowerAction(m, p, new StrengthPower(m, -3), -3));
         if (m != null && !m.hasPower(ArtifactPower.POWER_ID)) {
-            addToBot(new ApplyPowerAction(m, p, new GainStrengthPower(m, 6), 6));
+            addToBot(new ApplyPowerAction(m, p, new GainStrengthPower(m, 3), 3));
         }
     }
 
