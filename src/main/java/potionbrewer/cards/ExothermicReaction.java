@@ -49,8 +49,8 @@ public class ExothermicReaction extends FollowupCard {
                 .filter(c -> !c.uuid.equals(this.uuid))
                 .filter(c -> c.costForTurn > 0)
                 .forEach(g::addToTop);
-        AbstractCard c = g.getRandomCard(true);
-        if (c != null) {
+        if (g.size() > 0) {
+            AbstractCard c = g.getRandomCard(true);
             c.setCostForTurn(0);
         }
     }
