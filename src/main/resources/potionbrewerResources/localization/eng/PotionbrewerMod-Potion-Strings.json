@@ -77,8 +77,14 @@
     "DESCRIPTIONS": [ "Deal #b", " Damage each time you play a card this turn." ]
   },
   "potionbrewer:QuicksilverPotion": {
-    "NAME": "Quicksilver Potion",
-    "DESCRIPTIONS": [ "Prevent the next ", "time", "#b", " times", " you would take damage." ]
+    "NAME": "Buffer in a Bottle",
+    "DESCRIPTIONS": [
+      "Prevent the next ",
+      "time",
+      "#b",
+      " times",
+      " you would take damage."
+    ]
   },
   "potionbrewer:SplittingPotion": {
     "NAME": "Splitting Potion",
