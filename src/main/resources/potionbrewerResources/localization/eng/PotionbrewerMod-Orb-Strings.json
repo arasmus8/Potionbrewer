@@ -361,8 +361,8 @@
     "NAME": "Silk",
     "DESCRIPTION": [
       "Silk harvested from a louse.",
-      "Gain 5 Block.",
-      "Gain 5 Block.",
+      "Gain 6 Block.",
+      "Gain 6 Block.",
       "Gain BB Block."
     ]
   },
@@ -415,9 +415,9 @@
     "NAME": "Steel",
     "DESCRIPTION": [
       "Steel harvested from a machine.",
-      "Gain 8 Block.",
-      "Gain 8 Block.",
-      "Gain BB Block."
+      "Catalyze: Gain 10 Block.",
+      "Catalyze: Gain 10 Block.",
+      "Catalyze: Gain BB Block."
     ]
   },
   "potionbrewer:Sulphur": {

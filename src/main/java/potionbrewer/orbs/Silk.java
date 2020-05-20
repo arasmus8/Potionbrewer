@@ -20,7 +20,7 @@ public class Silk extends Reagent {
     public Silk() {
         super(ORB_ID, img, orbString.NAME, DESC);
         blocks = true;
-        block = 5;
+        block = 6;
         targeted = false;
     }
 

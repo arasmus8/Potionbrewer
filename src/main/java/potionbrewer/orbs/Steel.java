@@ -20,8 +20,9 @@ public class Steel extends Reagent {
     public Steel() {
         super(ORB_ID, img, orbString.NAME, DESC);
         blocks = true;
-        block = 8;
+        block = 10;
         targeted = false;
+        catalyze = true;
     }
 
     @Override
