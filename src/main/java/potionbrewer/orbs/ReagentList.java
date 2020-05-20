@@ -44,6 +44,7 @@ public class ReagentList implements CustomSavable<Integer> {
         reagentsById.put(Horn.ORB_ID, Horn.class);
         reagentsById.put(Ichor.ORB_ID, Ichor.class);
         reagentsById.put(Ink.ORB_ID, Ink.class);
+        reagentsById.put(Iodine.ORB_ID, Iodine.class);
         reagentsById.put(Jaw.ORB_ID, Jaw.class);
         reagentsById.put(LaserCore.ORB_ID, LaserCore.class);
         reagentsById.put(Lightning.ORB_ID, Lightning.class);
@@ -95,6 +96,7 @@ public class ReagentList implements CustomSavable<Integer> {
         inCombatPotionReagentList.add(Horn.ORB_ID);
         inCombatPotionReagentList.add(Ichor.ORB_ID);
         inCombatPotionReagentList.add(Ink.ORB_ID);
+        inCombatPotionReagentList.add(Iodine.ORB_ID);
         inCombatPotionReagentList.add(Mechanism.ORB_ID);
         inCombatPotionReagentList.add(Meteorite.ORB_ID);
         inCombatPotionReagentList.add(Needle.ORB_ID);
@@ -154,6 +156,7 @@ public class ReagentList implements CustomSavable<Integer> {
         list.add(new RandomEntry(5, new Steel()));
         list.add(new RandomEntry(12, new Tooth()));
         list.add(new RandomEntry(20, new Saltpeter()));
+        list.add(new RandomEntry(15, new Iodine()));
         if (toExclude != null) {
             for (RandomEntry exclude : toExclude) {
                 list.remove(exclude);

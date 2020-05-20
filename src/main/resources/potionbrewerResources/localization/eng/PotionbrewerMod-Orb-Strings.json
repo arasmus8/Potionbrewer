@@ -213,6 +213,15 @@
       "Turn !potionbrewer:TURN_NUMBER! : Deal DD Damage."
     ]
   },
+  "potionbrewer:Iodine": {
+    "NAME": "Iodine",
+    "DESCRIPTION": [
+      "Noxious fluid found in any potion lab.",
+      "Draw 1 card.",
+      "Draw 1 card.",
+      "Draw 1 card."
+    ]
+  },
   "potionbrewer:Jaw": {
     "NAME": "Jaw",
     "DESCRIPTION": [

@@ -18,7 +18,7 @@ public class ChooseReagent extends AbstractCard {
     public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
 
     public String reagentId;
-    private static Map<String, String> imageMap;
+    private static final Map<String, String> imageMap;
 
     public ChooseReagent(final String id) {
         super(ID, name(id), portrait(id), -2, CARD_STRINGS.DESCRIPTION, CardType.STATUS, CardColor.COLORLESS, CardRarity.COMMON, CardTarget.NONE);
@@ -112,5 +112,7 @@ public class ChooseReagent extends AbstractCard {
         imageMap.put(Spore.ORB_ID, "curse/parasite");
         imageMap.put(Steel.ORB_ID, "red/power/metallicize");
         imageMap.put(Tooth.ORB_ID, "colorless/attack/bite");
+        imageMap.put(Saltpeter.ORB_ID, "colorless/skill/panacea");
+        imageMap.put(Iodine.ORB_ID, "colorless/skill/impatience");
     }
 }
