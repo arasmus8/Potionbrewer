@@ -348,6 +348,15 @@
       "Block effects happen 2 times."
     ]
   },
+  "potionbrewer:Saltpeter": {
+    "NAME": "Saltpeter",
+    "DESCRIPTION": [
+      "A staple ingredient in any potion lab.",
+      "Gain 3 Temporary Dexterity.",
+      "Gain 3 Temporary Dexterity.",
+      "Gain 3 Temporary Dexterity."
+    ]
+  },
   "potionbrewer:SerpentSkull": {
     "NAME": "Serpent Skull",
     "DESCRIPTION": [
