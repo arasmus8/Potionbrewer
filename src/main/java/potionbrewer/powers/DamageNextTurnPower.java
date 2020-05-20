@@ -30,7 +30,7 @@ public class DamageNextTurnPower extends AbstractPower implements CloneablePower
         this.source = source;
         this.owner = owner;
         this.amount = amount;
-        type = PowerType.DEBUFF;
+        type = PowerType.BUFF;
         this.updateDescription();
         this.loadRegion("vigor");
     }
