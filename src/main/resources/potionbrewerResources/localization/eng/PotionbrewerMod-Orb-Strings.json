@@ -312,6 +312,15 @@
       "Draw 3 cards."
     ]
   },
+  "potionbrewer:PureWater": {
+    "NAME": "Pure Water",
+    "DESCRIPTION": [
+      "Purified water found in any potion lab.",
+      "Gain 3 Block when you play an attack this turn.",
+      "Gain 3 Block when you play an attack this turn.",
+      "Gain 3 Block when you play an attack this turn."
+    ]
+  },
   "potionbrewer:Pyramid": {
     "NAME": "Pyramid",
     "DESCRIPTION": [

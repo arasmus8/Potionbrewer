@@ -40,6 +40,7 @@ public class ReagentList implements CustomSavable<Integer> {
         reagentsById.put(Flame.ORB_ID, Flame.class);
         reagentsById.put(Gold.ORB_ID, Gold.class);
         reagentsById.put(Grimace.ORB_ID, Grimace.class);
+        reagentsById.put(GuardianScales.ORB_ID, GuardianScales.class);
         reagentsById.put(Hand.ORB_ID, Hand.class);
         reagentsById.put(Horn.ORB_ID, Horn.class);
         reagentsById.put(Ichor.ORB_ID, Ichor.class);
@@ -55,7 +56,7 @@ public class ReagentList implements CustomSavable<Integer> {
         reagentsById.put(Pebble.ORB_ID, Pebble.class);
         reagentsById.put(PhilosopherShard.ORB_ID, PhilosopherShard.class);
         reagentsById.put(Pocketwatch.ORB_ID, Pocketwatch.class);
-        reagentsById.put(GuardianScales.ORB_ID, GuardianScales.class);
+        reagentsById.put(PureWater.ORB_ID, PureWater.class);
         reagentsById.put(Pyramid.ORB_ID, Pyramid.class);
         reagentsById.put(Radiance.ORB_ID, Radiance.class);
         reagentsById.put(RitualJar.ORB_ID, RitualJar.class);
@@ -100,6 +101,7 @@ public class ReagentList implements CustomSavable<Integer> {
         inCombatPotionReagentList.add(Mechanism.ORB_ID);
         inCombatPotionReagentList.add(Meteorite.ORB_ID);
         inCombatPotionReagentList.add(Needle.ORB_ID);
+        inCombatPotionReagentList.add(PureWater.ORB_ID);
         inCombatPotionReagentList.add(Pyramid.ORB_ID);
         inCombatPotionReagentList.add(Radiance.ORB_ID);
         inCombatPotionReagentList.add(RitualJar.ORB_ID);
@@ -144,19 +146,20 @@ public class ReagentList implements CustomSavable<Integer> {
 
     private RandomEntry randomEntry(ArrayList<RandomEntry> toExclude) {
         ArrayList<RandomEntry> list = new ArrayList<>();
-        list.add(new RandomEntry(9, new Bone()));
-        list.add(new RandomEntry(5, new Ether()));
-        list.add(new RandomEntry(15, new Beak()));
-        list.add(new RandomEntry(4, new Flame()));
-        list.add(new RandomEntry(9, new Grimace()));
-        list.add(new RandomEntry(10, new Slime()));
-        list.add(new RandomEntry(3, new Lightning()));
-        list.add(new RandomEntry(12, new Silk()));
-        list.add(new RandomEntry(9, new Spore()));
-        list.add(new RandomEntry(5, new Steel()));
-        list.add(new RandomEntry(12, new Tooth()));
-        list.add(new RandomEntry(20, new Saltpeter()));
-        list.add(new RandomEntry(15, new Iodine()));
+        list.add(new RandomEntry(new Beak(), 15));
+        list.add(new RandomEntry(new Bone(), 9));
+        list.add(new RandomEntry(new Ether(), 5));
+        list.add(new RandomEntry(new Flame(), 4));
+        list.add(new RandomEntry(new Grimace(), 9));
+        list.add(new RandomEntry(new Iodine(), 15));
+        list.add(new RandomEntry(new Lightning(), 3));
+        list.add(new RandomEntry(new PureWater(), 15));
+        list.add(new RandomEntry(new Saltpeter(), 20));
+        list.add(new RandomEntry(new Silk(), 12));
+        list.add(new RandomEntry(new Slime(), 10));
+        list.add(new RandomEntry(new Spore(), 9));
+        list.add(new RandomEntry(new Steel(), 5));
+        list.add(new RandomEntry(new Tooth(), 12));
         if (toExclude != null) {
             for (RandomEntry exclude : toExclude) {
                 list.remove(exclude);
@@ -210,7 +213,7 @@ public class ReagentList implements CustomSavable<Integer> {
         protected AbstractCard optionCard;
         protected Reagent reagent;
 
-        public RandomEntry(int chance, Reagent reagent) {
+        public RandomEntry(Reagent reagent, int chance) {
             this.chance = chance;
             this.optionCard = new ChooseReagent(reagent.ID);
             this.reagent = reagent;

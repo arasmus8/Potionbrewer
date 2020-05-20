@@ -114,5 +114,6 @@ public class ChooseReagent extends AbstractCard {
         imageMap.put(Tooth.ORB_ID, "colorless/attack/bite");
         imageMap.put(Saltpeter.ORB_ID, "colorless/skill/panacea");
         imageMap.put(Iodine.ORB_ID, "colorless/skill/impatience");
+        imageMap.put(PureWater.ORB_ID, "purple/skill/inner_peace");
     }
 }
