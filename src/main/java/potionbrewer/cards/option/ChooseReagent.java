@@ -24,30 +24,10 @@ public class ChooseReagent extends AbstractCard {
         super(ID, name(id), portrait(id), -2, CARD_STRINGS.DESCRIPTION, CardType.STATUS, CardColor.COLORLESS, CardRarity.COMMON, CardTarget.NONE);
         this.reagentId = id;
         Reagent r = fromId(reagentId);
-        if (r == null) {
-            r = new Slime();
-        }
         rawDescription = CARD_STRINGS.EXTENDED_DESCRIPTION[0] + r.getPotion().name + CARD_STRINGS.EXTENDED_DESCRIPTION[1] + r.getCardDescription();
         // rawDescription = (isVowel(name.charAt(0)) ? CARD_STRINGS.EXTENDED_DESCRIPTION[1] : CARD_STRINGS.EXTENDED_DESCRIPTION[0]) + this.name;
         exhaust = true;
         initializeDescription();
-    }
-
-    private static boolean isVowel(final char leading) {
-        return leading == 'A' ||
-                leading == 'E' ||
-                leading == 'I' ||
-                leading == 'O' ||
-                leading == 'U' ||
-                leading == 'a' ||
-                leading == 'e' ||
-                leading == 'i' ||
-                leading == 'o' ||
-                leading == 'u';
-    }
-
-    public ChooseReagent() {
-        this(PotionbrewerMod.reagentList.randomReagent().ID);
     }
 
     @Override
@@ -67,9 +47,6 @@ public class ChooseReagent extends AbstractCard {
     @Override
     public void onChoseThisOption() {
         Reagent r = fromId(reagentId);
-        if (r == null) {
-            r = new Slime();
-        }
         this.addToBot(new ChannelAction(r));
     }
 
@@ -87,11 +64,7 @@ public class ChooseReagent extends AbstractCard {
             return "Random Reagent";
         }
         Reagent r = fromId(id);
-        if (r == null) {
-            return "Unknown Reagent";
-        } else {
-            return r.name;
-        }
+        return r.name;
     }
 
     public static String portrait(final String id) {
