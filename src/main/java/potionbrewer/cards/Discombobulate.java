@@ -36,7 +36,7 @@ public class Discombobulate extends CatalyzeCard {
     private static final int DAMAGE = 7;
     private static final int UPGRADE_PLUS_DMG = 3;
 
-    private static final int MAGIC = 2;
+    private static final int MAGIC = 1;
     private static final int UPGRADE_MAGIC_AMT = 1;
 // /STAT DECLARATION/
 
