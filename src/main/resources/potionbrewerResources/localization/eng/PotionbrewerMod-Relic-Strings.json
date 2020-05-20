@@ -92,6 +92,13 @@
       "A smaller version of a regular potion that can't be found in shops or rewards."
     ]
   },
+  "potionbrewer:RamsHorn": {
+    "NAME": "Ram's Horn",
+    "FLAVOR": "Once used by ancient heroes to call for aid.",
+    "DESCRIPTIONS": [
+      "Potions of the same type now stack. All charges are used at once."
+    ]
+  },
   "potionbrewer:SalesContract": {
     "NAME": "Sales Contract",
     "FLAVOR": "Signed in blue ink.",

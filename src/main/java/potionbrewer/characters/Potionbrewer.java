@@ -1,6 +1,7 @@
 package potionbrewer.characters;
 
 import basemod.abstracts.CustomPlayer;
+import basemod.abstracts.CustomSavable;
 import basemod.animations.SpriterAnimation;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -20,6 +21,8 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
+import com.megacrit.cardcrawl.potions.AbstractPotion;
+import com.megacrit.cardcrawl.potions.PotionSlot;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
@@ -29,6 +32,7 @@ import potionbrewer.cards.Collect;
 import potionbrewer.cards.PotionbrewerDefend;
 import potionbrewer.cards.PotionbrewerStrike;
 import potionbrewer.patches.PotionTracker;
+import potionbrewer.patches.relics.PotionStackField;
 import potionbrewer.relics.PotionKit;
 import potionbrewer.vfx.PotionbrewerVictoryEffect;
 
@@ -39,9 +43,9 @@ import java.util.logging.Logger;
 import static potionbrewer.PotionbrewerMod.*;
 import static potionbrewer.characters.Potionbrewer.Enums.COLOR_CYAN;
 
-public class Potionbrewer extends CustomPlayer {
+public class Potionbrewer extends CustomPlayer implements CustomSavable<int[]> {
     private static final Logger logger = Logger.getLogger(PotionbrewerMod.class.getName());
-    
+
     public static class Enums {
         @SpireEnum
         public static AbstractPlayer.PlayerClass POTIONBREWER;
@@ -246,5 +250,22 @@ public class Potionbrewer extends CustomPlayer {
     @Override
     public Texture getCutsceneBg() {
         return ImageMaster.loadImage("images/scenes/blueBg.jpg");
+    }
+
+    @Override
+    public int[] onSave() {
+        return this.potions.stream()
+                .mapToInt(potion -> potion instanceof PotionSlot ? -1 : PotionStackField.stackCount.get(potion))
+                .toArray();
+    }
+
+    @Override
+    public void onLoad(int[] ints) {
+        for (int i = 0; i < ints.length; i++) {
+            AbstractPotion p = this.potions.get(i);
+            if (ints[i] > 0) {
+                PotionStackField.stackCount.set(p, ints[i]);
+            }
+        }
     }
 }
