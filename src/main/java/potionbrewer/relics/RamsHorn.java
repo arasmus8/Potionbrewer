@@ -16,7 +16,7 @@ public class RamsHorn extends CustomRelic {
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("RamsHorn.png"));
 
     public RamsHorn() {
-        super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.SOLID);
+        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.SOLID);
         tips.clear();
         tips.add(new PowerTip(this.name, this.description));
     }
