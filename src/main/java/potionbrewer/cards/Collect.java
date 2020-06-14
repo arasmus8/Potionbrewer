@@ -116,12 +116,12 @@ public class Collect extends CustomCard {
 
         //Conspire
         if (Loader.isModLoaded("conspire")) {
-            FactoryReagentHelper.setupReagentsForCollect(monsterReagents);
+            ConspireReagentHelper.setupReagentsForCollect(monsterReagents);
         }
 
         //MimicMod
         if (Loader.isModLoaded("mimicmod")) {
-            FactoryReagentHelper.setupReagentsForCollect(monsterReagents);
+            MimicmodReagentHelper.setupReagentsForCollect(monsterReagents);
         }
 
         //StrawberrySpire
@@ -146,7 +146,7 @@ public class Collect extends CustomCard {
 
         //Pale of the Ancients
         if (Loader.isModLoaded("paleoftheancients")) {
-            WanderingMinibossesReagentHelper.setupReagentsForCollect(monsterReagents);
+            PaleoftheancientsReagentHelper.setupReagentsForCollect(monsterReagents);
         }
 
         //Hallownest
