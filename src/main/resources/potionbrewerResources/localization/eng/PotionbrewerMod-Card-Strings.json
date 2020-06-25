@@ -361,6 +361,6 @@
   },
   "potionbrewer:ReagentCard": {
     "NAME": "Reagent",
-    "DESCRIPTION": "Choose 1 of 3 random potionbrewer:Reagents to collect."
+    "DESCRIPTION": "Choose 1 of 3 random potionbrewer:Reagents to collect. NL Exhaust"
   }
 }
