@@ -70,6 +70,7 @@ public class CardList {
         allCards.add(new Fuel());
         allCards.add(new FuelCell());
         allCards.add(new HazardousMaterials());
+        allCards.add(new LabJournal());
         allCards.add(new LeftoverSpecimen());
         allCards.add(new MicrobeSpray());
 

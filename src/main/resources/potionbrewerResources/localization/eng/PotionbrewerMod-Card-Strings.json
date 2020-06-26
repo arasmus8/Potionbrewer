@@ -208,6 +208,11 @@
     "NAME": "Lab Accident",
     "DESCRIPTION": "potionbrewer:Catalyze: Deal !D! Damage."
   },
+  "potionbrewer:LabJournal": {
+    "NAME": "Lab Journal",
+    "DESCRIPTION": "Ethereal NL Your *Prototype cards cost 0 this combat. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Your *Prototype cards cost 0 this combat. NL Exhaust"
+  },
   "potionbrewer:LeftoverSpecimen": {
     "NAME": "Leftover Specimen",
     "DESCRIPTION": "Gain !B! Block. NL Choose 1 of 3 random potionbrewer:Reagents to collect. NL Exhaust",
