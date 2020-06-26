@@ -34,37 +34,40 @@ public class TheFinalStraw extends CustomCard {
     // /STAT DECLARATION/
 
     private static final int DAMAGE = 10;
-    private static final int UPGRADE_PLUS_DAMAGE = 5;
 
     public TheFinalStraw() {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
+        magicNumber = baseMagicNumber = 0;
     }
 
     private void resetDesc() {
         magicNumber = baseMagicNumber = 0;
-        rawDescription = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
+        if (upgraded) {
+            rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
+        } else {
+            rawDescription = CARD_STRINGS.DESCRIPTION;
+        }
         initializeDescription();
     }
 
     @Override
-    public void triggerWhenDrawn() {
-        resetDesc();
-    }
-
-    @Override
-    public void triggerAtStartOfTurn() {
-        resetDesc();
-    }
-
-    @Override
-    public void triggerOnOtherCardPlayed(AbstractCard c) {
-        if (PotionbrewerMod.lastPlayedCardCostZero) {
-            magicNumber += 1;
-            isMagicNumberModified = true;
-            rawDescription = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
-            initializeDescription();
+    public void applyPowers() {
+        super.applyPowers();
+        if (upgraded) {
+            magicNumber = PotionbrewerMod.zeroCostCardsThisCombat;
+            rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION + CARD_STRINGS.EXTENDED_DESCRIPTION[0];
+        } else {
+            magicNumber = PotionbrewerMod.zeroCostCardsThisTurn;
+            rawDescription = CARD_STRINGS.DESCRIPTION + CARD_STRINGS.EXTENDED_DESCRIPTION[0];
         }
+        isMagicNumberModified = magicNumber > baseMagicNumber;
+        initializeDescription();
+    }
+
+    @Override
+    public void onMoveToDiscard() {
+        resetDesc();
     }
 
     // Actions the card should do.
@@ -85,7 +88,6 @@ public class TheFinalStraw extends CustomCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DAMAGE);
             initializeDescription();
         }
     }

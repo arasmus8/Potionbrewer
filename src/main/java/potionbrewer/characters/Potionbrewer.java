@@ -31,7 +31,6 @@ import potionbrewer.cards.ChemicalSpill;
 import potionbrewer.cards.Collect;
 import potionbrewer.cards.PotionbrewerDefend;
 import potionbrewer.cards.PotionbrewerStrike;
-import potionbrewer.patches.PotionTracker;
 import potionbrewer.patches.relics.PotionStackField;
 import potionbrewer.relics.PotionKit;
 import potionbrewer.vfx.PotionbrewerVictoryEffect;
@@ -218,13 +217,6 @@ public class Potionbrewer extends CustomPlayer implements CustomSavable<int[]> {
     @Override
     public String getVampireText() {
         return TEXT[2];
-    }
-
-    @Override
-    public void applyStartOfTurnPostDrawPowers() {
-        super.applyStartOfTurnPostDrawPowers();
-        PotionTracker.potionsUsedThisTurn.set(this, 0);
-        PotionbrewerMod.turnNumber += 1;
     }
 
     @Override

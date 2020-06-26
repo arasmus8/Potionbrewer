@@ -290,8 +290,9 @@
   "potionbrewer:TheFinalStraw": {
     "NAME": "The Final Straw",
     "DESCRIPTION": "Deal !D! Damage to a random enemy for every 0-cost card used this turn.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage to a random enemy for every 0-cost card used this combat.",
     "EXTENDED_DESCRIPTION": [
-      "Deal !D! Damage to a random enemy for every 0-cost card used this turn. NL (Damages !M! times)"
+      " NL (Damages !M! times)"
     ]
   },
   "potionbrewer:TimeBomb": {

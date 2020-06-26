@@ -65,6 +65,7 @@ public class PotionbrewerMod implements
         OnCardUseSubscriber,
         OnStartBattleSubscriber,
         PostBattleSubscriber,
+        PostEnergyRechargeSubscriber,
         PostInitializeSubscriber,
         PostPotionUseSubscriber,
         StartActSubscriber,
@@ -520,6 +521,8 @@ public class PotionbrewerMod implements
         turnNumber = 1;
 
         lastPlayedCardCostZero = false;
+        zeroCostCardsThisTurn = 0;
+        zeroCostCardsThisCombat = 0;
     }
 
     @Override
@@ -534,6 +537,8 @@ public class PotionbrewerMod implements
         PotionTracker.potionsUsedThisTurn.set(p, 0);
         turnNumber = 1;
         lastPlayedCardCostZero = false;
+        zeroCostCardsThisCombat = 0;
+        zeroCostCardsThisTurn = 0;
     }
 
     @Override
@@ -554,6 +559,8 @@ public class PotionbrewerMod implements
         }
     }
 
+    public static int zeroCostCardsThisTurn = 0;
+    public static int zeroCostCardsThisCombat = 0;
     public static boolean lastPlayedCardCostZero = false;
 
     @Override
@@ -562,11 +569,22 @@ public class PotionbrewerMod implements
             return;
         }
         lastPlayedCardCostZero = (card.costForTurn == 0 || card.freeToPlayOnce) && !card.purgeOnUse;
+        if (lastPlayedCardCostZero) {
+            zeroCostCardsThisTurn += 1;
+            zeroCostCardsThisCombat += 1;
+        }
         for (AbstractCard inHand : AbstractDungeon.player.hand.group) {
             if (inHand instanceof FollowupCard) {
                 inHand.triggerOnGlowCheck();
             }
         }
+    }
+
+    @Override
+    public void receivePostEnergyRecharge() {
+        turnNumber += 1;
+        PotionTracker.potionsUsedThisTurn.set(AbstractDungeon.player, 0);
+        zeroCostCardsThisTurn = 0;
     }
 
     public static String makeID(String idText) {
