@@ -16,8 +16,8 @@ import java.util.ArrayList;
 import java.util.stream.Collectors;
 
 public class TransmuteAction extends AbstractGameAction {
-    private int potionChoiceCount;
-    private DamageInfo info;
+    private final int potionChoiceCount;
+    private final DamageInfo info;
 
     public TransmuteAction(AbstractCreature target, DamageInfo info, int potionChoiceCount) {
         this.info = info;

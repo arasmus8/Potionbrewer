@@ -30,7 +30,7 @@
   },
   "potionbrewer:BeatDown": {
     "NAME": "Beat Down",
-    "DESCRIPTION": "Deal !D! Damage. If you've played another card with this in your hand, place this card on top of your draw pile."
+    "DESCRIPTION": "Deal !D! Damage. Place this card on top of your draw pile if your hand is not empty."
   },
   "potionbrewer:Biohazard": {
     "NAME": "Bio-Hazard",
