@@ -2,12 +2,12 @@ package potionbrewer.cards;
 
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import potionbrewer.PotionbrewerMod;
+import potionbrewer.actions.ChooseReagentAction;
 import potionbrewer.characters.Potionbrewer;
 
 import java.util.ArrayList;
@@ -49,7 +49,7 @@ public class LeftoverSpecimen extends CustomCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, block));
         ArrayList<AbstractCard> reagentChoices = PotionbrewerMod.reagentList.randomChoice(3);
-        this.addToBot(new ChooseOneAction(reagentChoices));
+        this.addToBot(new ChooseReagentAction(reagentChoices));
     }
 
     // Upgraded stats.
