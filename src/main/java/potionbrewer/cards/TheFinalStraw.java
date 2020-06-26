@@ -88,6 +88,7 @@ public class TheFinalStraw extends CustomCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }
