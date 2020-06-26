@@ -1,8 +1,8 @@
 package potionbrewer.cards;
 
 import basemod.abstracts.CustomCard;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.unique.SwordBoomerangAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -26,31 +26,58 @@ public class TheFinalStraw extends CustomCard {
     // STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.RARE;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
+    private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = Potionbrewer.Enums.COLOR_CYAN;
 
     private static final int COST = 3;
     // /STAT DECLARATION/
 
+    private static final int DAMAGE = 10;
+    private static final int UPGRADE_PLUS_DAMAGE = 5;
+
     public TheFinalStraw() {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = 0;
-        magicNumber = baseMagicNumber = 40;
+        baseDamage = DAMAGE;
+    }
+
+    private void resetDesc() {
+        magicNumber = baseMagicNumber = 0;
+        rawDescription = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
+        initializeDescription();
     }
 
     @Override
-    public void calculateCardDamage(AbstractMonster mo) {
-        baseDamage = (mo.maxHealth - mo.currentHealth) * magicNumber / 100;
-        super.calculateCardDamage(mo);
-        rawDescription = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
-        initializeDescription();
+    public void triggerWhenDrawn() {
+        resetDesc();
+    }
+
+    @Override
+    public void triggerAtStartOfTurn() {
+        resetDesc();
+    }
+
+    @Override
+    public void triggerOnOtherCardPlayed(AbstractCard c) {
+        if (PotionbrewerMod.lastPlayedCardCostZero) {
+            magicNumber += 1;
+            isMagicNumberModified = true;
+            rawDescription = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
+            initializeDescription();
+        }
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SMASH));
+        addToBot(new SwordBoomerangAction(new DamageInfo(p, damage, damageTypeForTurn), magicNumber));
+    }
+
+    @Override
+    public AbstractCard makeCopy() {
+        AbstractCard copy = super.makeCopy();
+        ((TheFinalStraw) copy).resetDesc();
+        return copy;
     }
 
     // Upgraded stats.
@@ -58,7 +85,7 @@ public class TheFinalStraw extends CustomCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(20);
+            upgradeDamage(UPGRADE_PLUS_DAMAGE);
             initializeDescription();
         }
     }

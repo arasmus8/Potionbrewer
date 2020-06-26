@@ -289,9 +289,9 @@
   },
   "potionbrewer:TheFinalStraw": {
     "NAME": "The Final Straw",
-    "DESCRIPTION": "Deal damage equal to !M! percent of the target's missing HP.",
+    "DESCRIPTION": "Deal !D! Damage to a random enemy for every 0-cost card used this turn.",
     "EXTENDED_DESCRIPTION": [
-      "Deal !D! damage. NL !M! percent of the target's missing HP."
+      "Deal !D! Damage to a random enemy for every 0-cost card used this turn. NL (Damages !M! times)"
     ]
   },
   "potionbrewer:TimeBomb": {
