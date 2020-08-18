@@ -106,7 +106,7 @@
     "NAME": "Iron Heart",
     "DESCRIPTIONS": [
       "Gain #b",
-      "% more Block."
+      " Temporary Dexterity when you play a card that costs 0."
     ]
   },
   "potionbrewer:NoCatalyzePower": {
@@ -150,6 +150,20 @@
     "DESCRIPTIONS": [
       "Attacks against this enemy deal #b",
       " more Damage."
+    ]
+  },
+  "potionbrewer:TemporaryDexterity": {
+    "NAME": "Temporary Dexterity",
+    "DESCRIPTIONS": [
+      "Increases #yBlock gained from cards by #b",
+      " this turn."
+    ]
+  },
+  "potionbrewer:TemporaryStrength": {
+    "NAME": "Temporary Strength",
+    "DESCRIPTIONS": [
+      "Increases attack damage by #b",
+      " this turn."
     ]
   },
   "potionbrewer:ToxicPower": {

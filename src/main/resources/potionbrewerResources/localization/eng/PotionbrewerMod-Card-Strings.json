@@ -199,7 +199,7 @@
   },
   "potionbrewer:IronHeart": {
     "NAME": "Iron Heart",
-    "DESCRIPTION": "Gain !M! percent more Block when playing cards that grant Block.",
+    "DESCRIPTION": "When you play a card that costs 0, gain !M! Temporary Dexterity.",
     "EXTENDED_DESCRIPTION": [
       "Steel Heart"
     ]

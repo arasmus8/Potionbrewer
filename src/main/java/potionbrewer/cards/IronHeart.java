@@ -25,8 +25,8 @@ public class IronHeart extends CustomCard {
 
     private static final int COST = 1;
 
-    private static final int MAGIC = 20;
-    private static final int UPGRADE_MAGIC = 10;
+    private static final int MAGIC = 2;
+    private static final int UPGRADE_MAGIC = 1;
 
     public IronHeart() {
         super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
