@@ -17,7 +17,7 @@
     "NAMES": [
       "infection"
     ],
-    "DESCRIPTION": "Doubles each turn. Applies Disease (damage dealt is reduced by half) when infection is 10 or higher and is reduced by 10."
+    "DESCRIPTION": "Doubles each turn. When infection is 10 or higher, the enemy's Damage is reduced by half for a turn."
   },
   {
     "NAMES": [

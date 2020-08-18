@@ -4,7 +4,6 @@ import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -30,7 +29,6 @@ public class InfectionPower extends AbstractPower implements CloneablePowerInter
 
     private static final int THRESHOLD = 10;
     private static final int DISEASE = 1;
-    private static final int REDUCEBY = 10;
 
     public InfectionPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         name = NAME;
@@ -51,10 +49,9 @@ public class InfectionPower extends AbstractPower implements CloneablePowerInter
 
     @Override
     public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
-        if (amount >= THRESHOLD) {
-            int stacks = amount / THRESHOLD;
-            this.addToBot(new ReducePowerAction(owner, source, this, stacks * REDUCEBY));
-            this.addToBot(new ApplyPowerAction(owner, source, new DiseasePower(owner, source, stacks * DISEASE), stacks * DISEASE));
+        if (power.ID.equals(POWER_ID) && amount >= THRESHOLD) {
+            addToBot(new RemoveSpecificPowerAction(owner, owner, this));
+            this.addToBot(new ApplyPowerAction(owner, source, new DiseasePower(owner, source, DISEASE), DISEASE));
         }
     }
 
@@ -62,13 +59,8 @@ public class InfectionPower extends AbstractPower implements CloneablePowerInter
     public void stackPower(int stackAmount) {
         amount += stackAmount;
         if (amount >= THRESHOLD) {
-            int stacks = (amount) / THRESHOLD;
-            if (amount - stacks * REDUCEBY <= 0) {
-                addToBot(new RemoveSpecificPowerAction(owner, owner, this));
-            } else {
-                this.addToBot(new ReducePowerAction(owner, source, this, stacks * REDUCEBY));
-            }
-            this.addToBot(new ApplyPowerAction(owner, source, new DiseasePower(owner, source, stacks * DISEASE), stacks * DISEASE));
+            addToBot(new RemoveSpecificPowerAction(owner, owner, this));
+            addToBot(new ApplyPowerAction(owner, source, new DiseasePower(owner, source, DISEASE), DISEASE));
         }
     }
 
@@ -76,14 +68,13 @@ public class InfectionPower extends AbstractPower implements CloneablePowerInter
     public void atEndOfRound() {
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             this.flashWithoutSound();
-            // this.addToBot(new ApplyPowerAction(owner, source, this.makeCopy(), this.amount));
             stackPower(amount);
         }
     }
 
     @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0] + THRESHOLD + DESCRIPTIONS[1] + REDUCEBY;
+        description = DESCRIPTIONS[0] + THRESHOLD + DESCRIPTIONS[1];
     }
     
     @Override

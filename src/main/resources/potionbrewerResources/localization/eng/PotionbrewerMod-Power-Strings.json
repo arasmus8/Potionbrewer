@@ -99,7 +99,7 @@
     "NAME": "Infection",
     "DESCRIPTIONS": [
       "Doubles each turn. When #yInfection reaches #b",
-      " applies #b1 #yDisease (reduces damage dealt by half), and is reduced by #b"
+      " this monster's Damage is reduced by half for 1 turn."
     ]
   },
   "potionbrewer:IronHeartPower": {
