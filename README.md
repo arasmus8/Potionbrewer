@@ -1,7 +1,4 @@
-# Default Mod Base - Quick Start
+# Potionbrewer
 
-This is a cloneable branch of the Default with all comments removed.
+A character mod for Slay the Spire
 
-You can use this to quickly start up a brand new mod.
-
-I assume you know what you are doing.

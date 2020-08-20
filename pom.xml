@@ -6,7 +6,7 @@
     <groupId>potionbrewer</groupId>
     <artifactId>Potionbrewer</artifactId>
     <name>Potionbrewer</name>
-    <version>1.1.0</version>
+    <version>1.2.0</version>
     <description>
         Adds the Potionbrewer.
         - Includes 16 new potions
@@ -149,6 +149,13 @@
             <version>1.0.0</version>
             <scope>system</scope>
             <systemPath>${Steam.path}/workshop/content/646570/2071633867/Hallownest.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.evacipated.cardcrawl.mod</groupId>
+            <artifactId>Menagerie</artifactId>
+            <version>1.0.0</version>
+            <scope>system</scope>
+            <systemPath>${Steam.path}/workshop/content/646570/2199582452/Menagerie.jar</systemPath>
         </dependency>
     </dependencies>
 

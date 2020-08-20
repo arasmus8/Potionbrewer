@@ -159,5 +159,10 @@ public class Collect extends CustomCard {
             ElementariumReagentHelper.setupReagentsForCollect(monsterReagents);
         }
 
+        //Menagerie
+        if (Loader.isModLoaded("Menagerie")) {
+            MenagerieReagentHelper.setupReagentsForCollect(monsterReagents);
+        }
+
     }
 }
