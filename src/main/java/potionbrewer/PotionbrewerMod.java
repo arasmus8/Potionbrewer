@@ -386,38 +386,44 @@ public class PotionbrewerMod implements
         logger.info("Beginning to edit strings for mod with ID: " + getModID());
 
 
+        String lang = "eng";
+
+        if (Settings.language == Settings.GameLanguage.ZHS) {
+            lang = "zhs";
+        }
+
         BaseMod.loadCustomStringsFile(CardStrings.class,
-                getModID() + "Resources/localization/eng/PotionbrewerMod-Card-Strings.json");
+                getModID() + "Resources/localization/" + lang + "/PotionbrewerMod-Card-Strings.json");
 
 
         BaseMod.loadCustomStringsFile(PowerStrings.class,
-                getModID() + "Resources/localization/eng/PotionbrewerMod-Power-Strings.json");
+                getModID() + "Resources/localization/" + lang + "/PotionbrewerMod-Power-Strings.json");
 
 
         BaseMod.loadCustomStringsFile(RelicStrings.class,
-                getModID() + "Resources/localization/eng/PotionbrewerMod-Relic-Strings.json");
+                getModID() + "Resources/localization/" + lang + "/PotionbrewerMod-Relic-Strings.json");
 
 
         BaseMod.loadCustomStringsFile(EventStrings.class,
-                getModID() + "Resources/localization/eng/PotionbrewerMod-Event-Strings.json");
+                getModID() + "Resources/localization/" + lang + "/PotionbrewerMod-Event-Strings.json");
 
 
         BaseMod.loadCustomStringsFile(PotionStrings.class,
-                getModID() + "Resources/localization/eng/PotionbrewerMod-Potion-Strings.json");
+                getModID() + "Resources/localization/" + lang + "/PotionbrewerMod-Potion-Strings.json");
 
 
         BaseMod.loadCustomStringsFile(CharacterStrings.class,
-                getModID() + "Resources/localization/eng/PotionbrewerMod-Character-Strings.json");
+                getModID() + "Resources/localization/" + lang + "/PotionbrewerMod-Character-Strings.json");
 
 
         BaseMod.loadCustomStringsFile(OrbStrings.class,
-                getModID() + "Resources/localization/eng/PotionbrewerMod-Orb-Strings.json");
+                getModID() + "Resources/localization/" + lang + "/PotionbrewerMod-Orb-Strings.json");
 
         BaseMod.loadCustomStringsFile(UIStrings.class,
-                getModID() + "Resources/localization/eng/PotionbrewerMod-UI-Strings.json");
+                getModID() + "Resources/localization/" + lang + "/PotionbrewerMod-UI-Strings.json");
 
         BaseMod.loadCustomStringsFile(TutorialStrings.class,
-                getModID() + "Resources/localization/eng/PotionbrewerMod-Tutorial-Strings.json");
+                getModID() + "Resources/localization/" + lang + "/PotionbrewerMod-Tutorial-Strings.json");
 
         logger.info("Done editing strings");
     }
