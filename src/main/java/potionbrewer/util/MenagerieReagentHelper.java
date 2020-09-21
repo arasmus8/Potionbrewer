@@ -30,7 +30,7 @@ public class MenagerieReagentHelper {
         reagentList.put(StygianBoar.ID, Grimace.class);
         reagentList.put(WhisperingWraith.ID, Saltpeter.class);
         reagentList.put(YoungSuneater.ID, Beak.class);
-        reagentList.put(FrozenSoldier.ID, Bile.class);
+        reagentList.put(FrozenSoldier.ID, Grimace.class);
         reagentList.put(Hydra.ID, Ink.class);
         reagentList.put(MaskedSummoner.ID, LaserCore.class);
         reagentList.put(VoidReaper.ID, Hand.class);
