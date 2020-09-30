@@ -1,0 +1,12 @@
+{
+  "steamPublishedID": "2041287303",
+  "title": "The Potionbrewer",
+  "description": "Adds an original character: The Potionbrewer.\n\nThe Potionbrewer travels the Spire to collect ingredients to use to brew potions and further his alchemical research.\n\nEach combat, he can collect 1 Reagent from an enemy and use it to brew a potion over 3 turns. Alternatively, after collecting 3 Reagents over several combats, he can combine them into a card with effects based on the Reagents collected.\n\n - Includes 16 new potions\n - 15 relics\n - Catalyze mechanic (power up certain cards by using potions)\n - Collect Reagents from monsters in the Spire and use them to brew potions or create custom cards.\n\nLatest Changes:\n - Chinese translation courtesy of CaptainSnafu",
+  "visibility": "public",
+  "changeNote": "Chinese translation courtesy of CaptainSnafu",
+  "tags": [
+    "Character",
+    "English",
+    "Chinese"
+  ]
+}
