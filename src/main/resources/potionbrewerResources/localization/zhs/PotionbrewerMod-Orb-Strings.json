@@ -1,513 +1,513 @@
 {
   "potionbrewer:REAGENT": {
-    "NAME": "REAGENT",
+    "NAME": "素材",
     "DESCRIPTION": [
-      " NL #yPotion: Distill to brew: ",
-      " NL #yCard #yEffect: "
+      " NL #y药剂: 提取来炼造: ",
+      " NL #y卡牌效果: "
     ]
   },
   "potionbrewer:Barb": {
-    "NAME": "Barb",
+    "NAME": "倒钩",
     "DESCRIPTION": [
-      "Metallic barb harvested from a Spiker.",
-      "Gain 5 Block. Deal 5 Damage.",
-      "Gain 5 Block. Deal 5 Damage.",
-      "Gain BB Block. Deal DD Damage."
+      "金属的倒钩。",
+      "获得 5 格挡. 造成 5 伤害。",
+      "获得 5 格挡. 造成 5 伤害。",
+      "获得 BB 格挡. 造成 DD 伤害。"
     ]
   },
   "potionbrewer:Beak": {
-    "NAME": "Beak",
+    "NAME": "喙",
     "DESCRIPTION": [
-      "Beaked Mask taken from a cultist.",
-      "Gain 1 Strength.",
-      "Gain 1 Strength.",
-      "Gain 1 Strength."
+      "从邪教徒脸上摘下来的喙嘴面具。",
+      "获得 1 力量。",
+      "获得 1 力量。",
+      "获得 1 力量。"
     ]
   },
   "potionbrewer:Bile": {
-    "NAME": "Bile",
+    "NAME": "胆汁",
     "DESCRIPTION": [
-      "Bile harvested from Gremlin Nob.",
-      "Gain 3 Temporary Strength whenever you play a Skill this turn.",
-      "Gain 3 Temporary Strength whenever you play a Skill this turn.",
-      "Gain 3 Temporary Strength whenever you play a Skill this turn."
+      "从小地精身上榨出的胆汁。",
+      "在此回合内，每当打出一张技能牌，获得3 临时力量",
+      "在此回合内，每当打出一张技能牌，获得3 临时力量",
+      "在此回合内，每当打出一张技能牌，获得3 临时力量"
     ]
   },
   "potionbrewer:Bludgeon": {
-    "NAME": "Bludgeon",
+    "NAME": "棍棒",
     "DESCRIPTION": [
-      "Vintage weapon taken from a Knight.",
-      "Deal 8 Damage.",
-      "Deal 8 Damage.",
-      "Deal DD Damage."
+      "从骑士手中夺来的古老武器。",
+      "造成 8 伤害。",
+      "造成 8 伤害。",
+      "造成 DD 伤害。"
     ]
   },
   "potionbrewer:Bone": {
-    "NAME": "Bone",
+    "NAME": "骨头",
     "DESCRIPTION": [
-      "Bone harvested from a slaver.",
-      "Apply 1 Weak.",
-      "Apply 1 Weak.",
-      "Apply 1 Weak."
+      "从奴隶贩子身上拔下来的骨。",
+      "施加 1 虚弱。",
+      "施加 1 虚弱。",
+      "施加 1 虚弱。"
     ]
   },
   "potionbrewer:Bug": {
-    "NAME": "Bug",
+    "NAME": "臭虫",
     "DESCRIPTION": [
-      "The carapace of a strange insect.",
-      "Reduce the target's Strength by 3 this turn.",
-      "Reduce the target's Strength by 3 this turn.",
-      "Reduce the target's Strength by 3 this turn."
+      "奇怪的虫子和它们的甲壳。",
+      "在此回合，减少目标3点力量。",
+      "在此回合，减少目标3点力量。",
+      "在此回合，减少目标3点力量。"
     ]
   },
   "potionbrewer:Chest": {
-    "NAME": "Chest",
+    "NAME": "宝箱",
     "DESCRIPTION": [
-      "Treasure chest filled with gold.",
-      "Deal 1 Damage for every 10 gold.",
-      "Deal 1 Damage for every 10 gold.",
-      "Deal DD Damage."
+      "装满黄金的宝藏。",
+      "每有 10 黄金，造成 1 伤害。",
+      "每有 10 黄金，造成 1 伤害。",
+      "造成 DD 伤害。"
     ]
   },
   "potionbrewer:CityCrest": {
-    "NAME": "City Crest",
+    "NAME": "古城之冠",
     "DESCRIPTION": [
-      "Ancient seal to a forgotten city.",
-      "Deal 1 Damage for every HP you are missing.",
-      "Deal 1 Damage for every HP you are missing.",
-      "Deal DD Damage."
+      "一座被遗忘的城市的标识。",
+      "造成等同于你所缺失的生命值的伤害。",
+      "造成等同于你所缺失的生命值的伤害。",
+      "造成 DD 伤害。"
     ]
   },
   "potionbrewer:Clay": {
-    "NAME": "Clay",
+    "NAME": "粘土",
     "DESCRIPTION": [
-      "Clay harvested from a Giant Head.",
-      "Turns 1-4: 3 Damage, Turn 5+: 25 Damage.",
-      "Turns 1-4: 3 Damage, Turn 5+: 25 Damage.",
-      "Deal DD Damage."
+      "从大脑袋那边取来的粘土。",
+      "在回合1-4: 造成 3 伤害，在回合5+: 造成 25 伤害。",
+      "在回合1-4: 造成 3 伤害，在回合5+: 造成 25 伤害。",
+      "造成 DD 伤害。"
     ]
   },
   "potionbrewer:Crown": {
-    "NAME": "Crown",
+    "NAME": "头冠",
     "DESCRIPTION": [
-      "The crown of a Champion.",
-      "Block 6 Damage each turn.",
-      "Block 6 Damage each turn.",
-      "Block 6 Damage each turn."
+      "冠军之头冠。",
+      "格挡 6 伤害 每回合。",
+      "格挡 6 伤害 每回合。",
+      "格挡 6 伤害 每回合。"
     ]
   },
   "potionbrewer:Ether": {
-    "NAME": "Ether",
+    "NAME": "以太",
     "DESCRIPTION": [
-      "Magical vapor harvested from a Mystic.",
-      "Gain 1 #yEnergy.",
-      "Gain 1 [E].",
-      "Gain 1 [E]."
+      "魔法迷雾。",
+      "获得 1 #y能量 。",
+      "获得 1 [E]。",
+      "获得 1 [E]。"
     ]
   },
   "potionbrewer:Eye": {
-    "NAME": "Eye",
+    "NAME": "眼睛",
     "DESCRIPTION": [
-      "Eye harvested from a monster.",
-      "Play a copy of a random card from your deck.",
-      "Play a copy of a random card from your deck.",
-      "Play a copy of a random card from your deck."
+      "怪物之眼。",
+      "从牌组里随机选一张卡牌，打出它的复制品。",
+      "从牌组里随机选一张卡牌，打出它的复制品。",
+      "从牌组里随机选一张卡牌，打出它的复制品。"
     ]
   },
   "potionbrewer:Feather": {
-    "NAME": "Feather",
+    "NAME": "羽毛",
     "DESCRIPTION": [
-      "Feather harvested from a cultist.",
-      "Apply 1 Weak and Vulnerable.",
-      "Apply 1 Weak and Vulnerable.",
-      "Apply 1 Weak and Vulnerable."
+      "异教徒身上的羽毛。",
+      "施加 1 虚弱 和 易伤",
+      "施加 1 虚弱 和 易伤",
+      "施加 1 虚弱 和 易伤"
     ]
   },
   "potionbrewer:FeyFire": {
-    "NAME": "Fey Fire",
+    "NAME": "鬼火",
     "DESCRIPTION": [
-      "Otherworldly flame taken from the Collector.",
-      "Apply 3 Weak and Vulnerable.",
-      "Apply 3 Weak and Vulnerable.",
-      "Apply 3 Weak and Vulnerable."
+      "从收藏家那里收集到的异界之火。",
+      "施加 3 虚弱 和 易伤",
+      "施加 3 虚弱 和 易伤",
+      "施加 3 虚弱 和 易伤"
     ]
   },
   "potionbrewer:Fireflies": {
-    "NAME": "Fireflies",
+    "NAME": "火蝇",
     "DESCRIPTION": [
-      "Luminous insects that glow with crimson fire.",
-      "Catalyze: Gain 2 Dexterity.",
-      "potionbrewer:Catalyze: Gain 2 Dexterity.",
-      "potionbrewer:Catalyze: Gain 2 Dexterity."
+      "环绕着火光的飞虫。",
+      " #y催化: 获得 2 敏捷 ",
+      " potionbrewer:催化: 获得 2 敏捷 ",
+      " potionbrewer:催化: 获得 2 敏捷 "
     ]
   },
   "potionbrewer:Flame": {
-    "NAME": "Flame",
+    "NAME": "火之核心",
     "DESCRIPTION": [
-      "Flaming core of an odd machine.",
-      "Deals 3xTurn Number Damage.",
-      "Deals 3xTurn Number Damage.",
-      "Deals DD Damage."
+      "从一架奇怪的机器中拆卸下来。",
+      "造成3X回合数的伤害。",
+      "造成3X回合数的伤害。",
+      "造成 DD 伤害。"
     ]
   },
   "potionbrewer:Gold": {
-    "NAME": "Gold",
+    "NAME": "黄金",
     "DESCRIPTION": [
-      "Gold harvested from a bandit.",
-      "Steal 10 Gold.",
-      "Steal 10 Gold.",
-      "Steal 10 Gold."
+      "抢劫了一个抢劫犯。",
+      "偷取 10 金币。",
+      "偷取 10 金币。",
+      "偷取 10 金币。"
     ]
   },
   "potionbrewer:Grimace": {
-    "NAME": "Grimace",
+    "NAME": "鬼脸",
     "DESCRIPTION": [
-      "Grimace harvested from a gremlin.",
-      "Gain 3 Temporary Strength.",
-      "Gain 3 Temporary Strength.",
-      "Gain 3 Temporary Strength."
+      "把它的脸割下来，那才叫真正的鬼脸。",
+      "获得 3 临时力量",
+      "获得 3 临时力量",
+      "获得 3 临时力量"
     ]
   },
   "potionbrewer:GuardianScales": {
-    "NAME": "Guardian Scales",
+    "NAME": "鳞片",
     "DESCRIPTION": [
-      "The sharp scales of a guardian mechanism.",
-      "#yCatalyze: Gain 3 Thorns.",
-      "potionbrewer:Catalyze: Gain 3 Thorns.",
-      "potionbrewer:Catalyze: Gain 3 Thorns."
+      "锋利的鳞片，从守卫者处得到。",
+      " #y催化: 获得 3 荆棘",
+      " potionbrewer:催化: 获得 3 荆棘",
+      " potionbrewer:催化: 获得 3 荆棘"
     ]
   },
   "potionbrewer:Hand": {
-    "NAME": "Hand",
+    "NAME": "手",
     "DESCRIPTION": [
-      "Dessicated hand harvested from a sneak-thief.",
-      "Damaging effects happen 2 times.",
-      "Damaging effects happen 2 times.",
-      "Damaging effects happen 2 times."
+      "偷东西？剁手！",
+      "造成伤害的效果会触发两次。",
+      "造成伤害的效果会触发两次。",
+      "造成伤害的效果会触发两次。"
     ]
   },
   "potionbrewer:Horn": {
-    "NAME": "Horn",
+    "NAME": "角",
     "DESCRIPTION": [
-      "Crooked horn harvested from a Gremlin Leader.",
-      "#yCatalyze: Gain 3 Strength.",
-      "potionbrewer:Catalyze: Gain 3 Strength.",
-      "potionbrewer:Catalyze: Gain 3 Strength."
+      "地精首领的弯角",
+      " #y催化: 获得 3 力量。",
+      " potionbrewer:催化: 获得 3 力量。",
+      " potionbrewer:催化: 获得 3 力量。"
     ]
   },
   "potionbrewer:Ichor": {
-    "NAME": "Ichor",
+    "NAME": "脓水",
     "DESCRIPTION": [
-      "Ichor harvested from a Darkling.",
-      "Gain 8 Temporary HP.",
-      "Gain 8 Temporary HP.",
-      "Gain 8 Temporary HP."
+      "一滩恶心的脓水",
+      "获得 8 临时生命。",
+      "获得 8 临时生命。",
+      "获得 8 临时生命。"
     ]
   },
   "potionbrewer:Ink": {
-    "NAME": "Ink",
+    "NAME": "墨",
     "DESCRIPTION": [
-      "Ink harvested from a Lagavulin.",
-      "Turns 1-3: 1 Damage. Turns 4+: 12 Damage.",
-      "Turns 1-3: 1 Damage. Turns 4+: 12 Damage.",
-      "Turn !potionbrewer:TURN_NUMBER! : Deal DD Damage."
+      "拉加维林的墨汁。",
+      "回合 1-3: 1 伤害。回合 4+: 12 伤害。",
+      "回合 1-3: 1 伤害。回合 4+: 12 伤害。",
+      "回合 !potionbrewer:TURN_NUMBER! : 造成 DD 伤害。"
     ]
   },
   "potionbrewer:Iodine": {
-    "NAME": "Iodine",
+    "NAME": "碘酒",
     "DESCRIPTION": [
-      "Noxious fluid found in any potion lab.",
-      "Draw 1 card.",
-      "Draw 1 card.",
-      "Draw 1 card."
+      "在药剂实验室里找到的化学流体。",
+      "抽取1张牌。",
+      "抽取1张牌。",
+      "抽取1张牌。"
     ]
   },
   "potionbrewer:Jaw": {
-    "NAME": "Jaw",
+    "NAME": "颚",
     "DESCRIPTION": [
-      "The jawbone of a giant monster.",
-      "Odd Turns: 5 block, Even Turns: 8 Damage.",
-      "Odd Turn: Gain BB Block.",
-      "Even Turn: Deal DD Damage."
+      "大怪物的颌骨。",
+      "奇数回合: 5 格挡，偶数回合: 8 伤害。",
+      "奇数回合: 获得 BB 格挡。",
+      "偶数回合: 造成 DD 伤害。"
     ]
   },
   "potionbrewer:LaserCore": {
-    "NAME": "Laser Core",
+    "NAME": "镭射核心",
     "DESCRIPTION": [
-      "Damaged core of a Sentry.",
-      "Odd turns: Deal 12 Damage, Even turns: Deal 0 Damage.",
-      "Odd turns: Deal 12 Damage, Even turns: Deal 0 Damage.",
-      "Deal DD Damage."
+      "哨兵的受损核心。",
+      "奇数回合: 造成 12 伤害，偶数回合: 造成 0 伤害。",
+      "奇数回合: 造成 12 伤害，偶数回合: 造成 0 伤害。",
+      "造成 DD 伤害。"
     ]
   },
   "potionbrewer:Lightning": {
-    "NAME": "Lightning",
+    "NAME": "电荷",
     "DESCRIPTION": [
-      "Electric charge from a repulsor's power core.",
-      "Targets all enemies.",
-      "Targets all enemies.",
-      "Targets all enemies."
+      "电能核心。",
+      "效果将作用于所有敌人。",
+      "效果将作用于所有敌人。",
+      "效果将作用于所有敌人。"
     ]
   },
   "potionbrewer:Mechanism": {
-    "NAME": "Mechanism",
+    "NAME": "机械装置",
     "DESCRIPTION": [
-      "The mechanical core of an Automaton.",
-      "Deal 20 Damage. Place a Void on top of your draw pile.",
-      "Deal 20 Damage. Place a Void on top of your draw pile.",
-      "Deal DD Damage. Place a Void on top of your draw pile."
+      "自动机械的机制核心。",
+      "造成 20 伤害。将一张诅咒牌 虚空 放到抽牌堆的顶层。",
+      "造成 20 伤害。将一张诅咒牌 虚空 放到抽牌堆的顶层。",
+      "造成 DD 伤害。将一张诅咒牌 虚空 放到抽牌堆的顶层。"
     ]
   },
   "potionbrewer:Meteorite": {
-    "NAME": "Meteorite",
+    "NAME": "陨石",
     "DESCRIPTION": [
-      "Piece of strange metal from another world.",
-      "#yCatalyze: Deal 25 Damage.",
-      "potionbrewer:Catalyze: Deal 25 Damage.",
-      "potionbrewer:Catalyze: Deal DD Damage."
+      "从外太空而来，蕴含奇怪的金属。",
+      " #y催化: 造成 25 伤害。",
+      " potionbrewer:催化: 造成 25 伤害。",
+      " potionbrewer:催化: 造成 DD 伤害。"
     ]
   },
   "potionbrewer:Needle": {
-    "NAME": "Needle",
+    "NAME": "针",
     "DESCRIPTION": [
-      "Sharp splinter of metal from a ghostly knife.",
-      "Damaging effects trigger Turn Number times.",
-      "Damaging effects trigger Turn Number times.",
-      "Damaging effects trigger !potionbrewer:TURN_NUMBER! times."
+      "幽灵之刃的锋利金属刺。",
+      "伤害效果将触发 !potionbrewer:TURN_NUMBER! 次。",
+      "伤害效果将触发 !potionbrewer:TURN_NUMBER! 次。",
+      "伤害效果将触发 !potionbrewer:TURN_NUMBER! 次。"
     ]
   },
   "potionbrewer:Nethershroud": {
-    "NAME": "Nethershroud",
+    "NAME": "幽冥雾幕",
     "DESCRIPTION": [
-      "The ghostly shroud of the Nemesis.",
-      "Become Intangible.",
-      "Become Intangible.",
-      "Become Intangible."
+      "萦绕在幽灵周围的迷雾。",
+      "给予 无实体 。",
+      "给予 无实体 。",
+      "给予 无实体 。"
     ]
   },
   "potionbrewer:Pebble": {
-    "NAME": "Pebble",
+    "NAME": "卵石",
     "DESCRIPTION": [
-      "Pebble found clutched in a Byrd's claw.",
-      "Gain 4 Block and apply 1 Weak.",
-      "Gain 4 Block and apply 1 Weak.",
-      "Gain BB Block and apply 1 Weak."
+      "怪物爪子里紧握的卵石。",
+      "获得 4 格挡 和 施加 1 虚弱。",
+      "获得 4 格挡 和 施加 1 虚弱。",
+      "获得 BB 格挡 和 施加 1 虚弱。"
     ]
   },
   "potionbrewer:PhilosopherShard": {
-    "NAME": "Philosopher's Shard",
+    "NAME": "哲学家碎片",
     "DESCRIPTION": [
-      "Shard of the legendary Philosopher's Stone.",
-      "Target all enemies 3 times.",
-      "Target all enemies 3 times.",
-      "Target all enemies 3 times."
+      "那尊传奇石头思考者的碎片。",
+      "效果作用于全体敌人，并触发3次。",
+      "效果作用于全体敌人，并触发3次。",
+      "效果作用于全体敌人，并触发3次。"
     ]
   },
   "potionbrewer:Pocketwatch": {
-    "NAME": "Pocketwatch",
+    "NAME": "怀表",
     "DESCRIPTION": [
-      "Timekeeping device taken from an Eldrich Horror.",
-      "Draw 3 cards.",
-      "Draw 3 cards.",
-      "Draw 3 cards."
+      "从一个远古者手中抢来的计时装置。",
+      "抽取3张牌。",
+      "抽取3张牌。",
+      "抽取3张牌。"
     ]
   },
   "potionbrewer:PureWater": {
-    "NAME": "Pure Water",
+    "NAME": "纯净水",
     "DESCRIPTION": [
-      "Purified water found in any potion lab.",
-      "Gain 3 Block when you play an attack this turn.",
-      "Gain 3 Block when you play an attack this turn.",
-      "Gain 3 Block when you play an attack this turn."
+      "药剂实验室里蒸馏来的。",
+      "当在此回合打出一张攻击牌，获得 3 格挡。",
+      "当在此回合打出一张攻击牌，获得 3 格挡。",
+      "当在此回合打出一张攻击牌，获得 3 格挡。"
     ]
   },
   "potionbrewer:Pyramid": {
-    "NAME": "Pyramid",
+    "NAME": "棱锥",
     "DESCRIPTION": [
-      "Bizarre object harvested from an anthropomorphic shape.",
-      "Damages and Blocks 2 times.",
-      "Damages and Blocks 2 times.",
-      "Damages and Blocks 2 times."
+      "从一个拟人机体身上取得。",
+      "伤害和格挡 2 times。",
+      "伤害和格挡 2 times。",
+      "伤害和格挡 2 times。"
     ]
   },
   "potionbrewer:Radiance": {
-    "NAME": "Radiance",
+    "NAME": "光辉之心",
     "DESCRIPTION": [
-      "The shining heart of an ascendant moth.",
-      "Your next attack deals 12 more Damage.",
-      "Your next attack deals 12 more Damage.",
-      "Your next attack deals 12 more Damage."
+      "飞升之蛾的闪亮心脏。",
+      "你的下一次攻击造成12点额外伤害。",
+      "你的下一次攻击造成12点额外伤害。",
+      "你的下一次攻击造成12点额外伤害。"
     ]
   },
   "potionbrewer:RitualJar": {
-    "NAME": "Ritual Jar",
+    "NAME": "仪式之罐",
     "DESCRIPTION": [
-      "Odd relic found near an Awakened Beast.",
-      "Gain 3 Strength.",
-      "Gain 3 Strength.",
-      "Gain 3 Strength."
+      "在觉醒之兽身边发现的奇怪遗物。",
+      "获得 3 力量。",
+      "获得 3 力量。",
+      "获得 3 力量。"
     ]
   },
   "potionbrewer:Root": {
-    "NAME": "Root",
+    "NAME": "根",
     "DESCRIPTION": [
-      "Root harvested from a carnivorous plant.",
-      "Gain 3 Temporary Dexterity whenever you play an Attack this turn.",
-      "Gain 3 Temporary Dexterity whenever you play an Attack this turn.",
-      "Gain 3 Temporary Dexterity whenever you play an Attack this turn."
+      "食肉植物的根。",
+      "此回合内，每打出一张攻击牌，获得 3 临时敏捷。",
+      "此回合内，每打出一张攻击牌，获得 3 临时敏捷。",
+      "此回合内，每打出一张攻击牌，获得 3 临时敏捷。"
     ]
   },
   "potionbrewer:RunicShape": {
-    "NAME": "Runic Shape",
+    "NAME": "符文塑像",
     "DESCRIPTION": [
-      "Twisted shape with runic writing.",
-      "Block effects happen 2 times.",
-      "Block effects happen 2 times.",
-      "Block effects happen 2 times."
+      "刻着符文的扭曲塑像。",
+      "格挡 效果触发 2 次。",
+      "格挡 效果触发 2 次。",
+      "格挡 效果触发 2 次。"
     ]
   },
   "potionbrewer:Saltpeter": {
-    "NAME": "Saltpeter",
+    "NAME": "硝石",
     "DESCRIPTION": [
-      "A staple ingredient in any potion lab.",
-      "Gain 3 Temporary Dexterity.",
-      "Gain 3 Temporary Dexterity.",
-      "Gain 3 Temporary Dexterity."
+      "在药剂实验室里随处可见。",
+      "获得 3 临时敏捷",
+      "获得 3 临时敏捷",
+      "获得 3 临时敏捷"
     ]
   },
   "potionbrewer:SerpentSkull": {
-    "NAME": "Serpent Skull",
+    "NAME": "蛇骨",
     "DESCRIPTION": [
-      "The skull of a giant serpent.",
-      "Deal 15 Damage.",
-      "Deal 15 Damage.",
-      "Deal DD Damage."
+      "大蛇的骨。",
+      "造成 15 伤害。",
+      "造成 15 伤害。",
+      "造成 DD 伤害。"
     ]
   },
   "potionbrewer:Silk": {
-    "NAME": "Silk",
+    "NAME": "丝",
     "DESCRIPTION": [
-      "Silk harvested from a louse.",
-      "Gain 6 Block.",
-      "Gain 6 Block.",
-      "Gain BB Block."
+      "从大虱子上拔走的丝。",
+      "获得 6 格挡。",
+      "获得 6 格挡。",
+      "获得 BB 格挡。"
     ]
   },
   "potionbrewer:Skull": {
-    "NAME": "Skull",
+    "NAME": "头盖骨",
     "DESCRIPTION": [
-      "Stained skull taken from a slaver.",
-      "Shuffle a #yReaction into your draw pile.",
-      "Shuffle a *Reaction into your draw pile.",
-      "Shuffle a *Reaction into your draw pile."
+      "可以拿来当酒碗使。",
+      "将一张 #y化学反应 卡牌洗进抽牌堆。",
+      "将一张 *化学反应 洗进抽牌堆。",
+      "将一张 *化学反应 洗进抽牌堆。"
     ]
   },
   "potionbrewer:Slime": {
-    "NAME": "Slime",
+    "NAME": "黏液",
     "DESCRIPTION": [
-      "Slime harvested from one of the Spire's pests.",
-      "Apply 2 #ySlimed. Your attacks against #ySlimed targets deal 1 more damage for each stack of #ySlimed.",
-      "Apply 2 potionbrewer:Slimed",
-      "Apply 2 potionbrewer:Slimed"
+      "一滩烂泥，不用说也知道是从哪来的。",
+      "施加 2 #y黏液 。你所攻击的目标每拥有一层 #y黏液 ，造成额外1点伤害。",
+      "施加 2 potionbrewer:黏液 ",
+      "施加 2 potionbrewer:黏液 "
     ]
   },
   "potionbrewer:Spore": {
-    "NAME": "Spore",
+    "NAME": "孢子",
     "DESCRIPTION": [
-      "A Spore harvested from a parasitic fungus.",
-      "Apply 1 Vulnerable.",
-      "Apply 1 Vulnerable.",
-      "Apply 1 Vulnerable."
+      "寄生菌上获取的孢子。",
+      "施加 1 易伤",
+      "施加 1 易伤",
+      "施加 1 易伤"
     ]
   },
   "potionbrewer:Storybook": {
-    "NAME": "Storybook",
+    "NAME": "故事书",
     "DESCRIPTION": [
-      "An enchanted storybook taken from an old crone.",
-      "Stun the target.",
-      "Stun the target.",
-      "Stun the target."
+      "从老巫婆那边抢来的魔法故事书。",
+      " 眩晕 目标。",
+      " 眩晕 目标。",
+      " 眩晕 目标。"
     ]
   },
   "potionbrewer:SuperSpore": {
-    "NAME": "Super Spore",
+    "NAME": "超级孢子",
     "DESCRIPTION": [
-      "An unusually aggressive Spore harvested from a giant fungus.",
-      "Remove 5 HP for each debuff on the target.",
-      "Remove 5 HP for each debuff on the target.",
-      "Remove 5 HP for each debuff on the target."
+      "这种超级孢子异常地具有侵略性的，从一个巨大的菌类中收集。",
+      "目标每有一层减益效果，流失 5 生命。",
+      "目标每有一层减益效果，流失 5 生命。",
+      "目标每有一层减益效果，流失 5 生命。"
     ]
   },
   "potionbrewer:Steel": {
-    "NAME": "Steel",
+    "NAME": "钢铁",
     "DESCRIPTION": [
-      "Steel harvested from a machine.",
-      "Catalyze: Gain 10 Block.",
-      "Catalyze: Gain 10 Block.",
-      "Catalyze: Gain BB Block."
+      "机械上拆卸下来的钢铁。",
+      "催化: 获得 10 格挡。",
+      "催化: 获得 10 格挡。",
+      "催化: 获得 BB 格挡。"
     ]
   },
   "potionbrewer:Sulphur": {
-    "NAME": "Sulphur",
+    "NAME": "硫磺",
     "DESCRIPTION": [
-      "Sulphur harvested from a strong man.",
-      "Gain 8 Block. Deal 8 Damage.",
-      "Gain 8 Block. Deal 8 Damage.",
-      "Gain BB Block. Deal DD Damage."
+      "从一个壮汉处得到。",
+      "获得 8 格挡. 造成 8 伤害。",
+      "获得 8 格挡. 造成 8 伤害。",
+      "获得 BB 格挡. 造成 DD 伤害。"
     ]
   },
   "potionbrewer:Tentacle": {
-    "NAME": "Tentacle",
+    "NAME": "触手",
     "DESCRIPTION": [
-      "Severed tentacle of one of the Spire's horrors.",
-      "Deal 5 Damage every turn.",
-      "Deal 5 Damage every turn.",
-      "Deal 5 Damage every turn."
+      "切断的触手。",
+      "每回合造成 5 伤害。",
+      "每回合造成 5 伤害。",
+      "每回合造成 5 伤害。"
     ]
   },
   "potionbrewer:TinyHat": {
-    "NAME": "Tiny Hat",
+    "NAME": "小小帽",
     "DESCRIPTION": [
-      "A stylish hat, taken from a giant slime.",
-      "#yCatalyze: Deal 24 Damage.",
-      "potionbrewer:Catalyze: Deal 24 Damage.",
-      "potionbrewer:Catalyze: Deal DD Damage."
+      "一顶时髦的小帽子，小得除了装饰外没有实际意义。",
+      " #y催化: 造成 24 伤害。",
+      " potionbrewer:催化: 造成 24 伤害。",
+      " potionbrewer:催化: 造成 DD 伤害。"
     ]
   },
   "potionbrewer:Tooth": {
-    "NAME": "Tooth",
+    "NAME": "牙齿",
     "DESCRIPTION": [
-      "Tooth harvested from a Jaw worm.",
-      "Deal 6 Damage.",
-      "Deal 6 Damage.",
-      "Deal DD Damage."
+      "大颌虫的牙齿。",
+      "造成 6 伤害。",
+      "造成 6 伤害。",
+      "造成 DD 伤害。"
     ]
   },
   "potionbrewer:TrainTicket": {
-    "NAME": "Train Ticket",
+    "NAME": "火车票",
     "DESCRIPTION": [
-      "Ticket for passage on an hellish train.",
-      "Deal Damage equal to the floor number.",
-      "Deal Damage equal to the floor number.",
-      "Deal DD Damage."
+      "登上一列通往地狱的火车。",
+      "造成等同于爬塔层数的伤害。",
+      "造成等同于爬塔层数的伤害。",
+      "造成 DD 伤害。"
     ]
   },
   "potionbrewer:TwistedRelic": {
-    "NAME": "Twisted Relic",
+    "NAME": "扭曲的遗物",
     "DESCRIPTION": [
-      "An otherworldly object.",
-      "Gain 13 Thorns.",
-      "Gain 13 Thorns.",
-      "Gain 13 Thorns."
+      "它属于另一个世界。",
+      "获得 13 荆棘。",
+      "获得 13 荆棘。",
+      "获得 13 荆棘。"
     ]
   },
   "potionbrewer:Wax": {
-    "NAME": "Wax",
+    "NAME": "蜡",
     "DESCRIPTION": [
-      "Sealing wax taken from a bandit leader.",
-      "Deal 5 Damage. Apply 1 Weak.",
-      "Deal 5 Damage. Apply 1 Weak.",
-      "Deal DD Damage. Apply 1 Weak."
+      "强盗头目身上带着的封蜡。",
+      "造成 5 伤害. 施加 1 虚弱。",
+      "造成 5 伤害. 施加 1 虚弱。",
+      "造成 DD 伤害. 施加 1 虚弱。"
     ]
   },
   "potionbrewer:DummyTonicReagent": {

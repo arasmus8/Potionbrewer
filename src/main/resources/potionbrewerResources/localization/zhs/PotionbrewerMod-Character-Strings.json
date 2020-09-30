@@ -1,13 +1,13 @@
 {
   "potionbrewer:Potionbrewer": {
     "NAMES": [
-      "Potionbrewer",
-      "Potionbrewer"
+      "炼药师",
+      "炼药师"
     ],
     "TEXT": [
-      "Keepin' the Spire stocked with potions ain't an easy job, ya know? NL I gotta risk my life out there collectin' ingredients to brew potions with.",
-      "NL You dig out your best potions.",
-      "Navigating an unlit street, you come across several hooded figures in the midst of some dark ritual. As you approach, they turn to you in eerie unison. The tallest among them bares fanged teeth and extends a long, pale hand towards you. NL ~\"Join~ ~us~ ~fat~ ~one,~ ~and~ ~feel~ ~the~ ~warmth~ ~of~ ~the~ ~Spire.\"~"
+      "让尖塔商店保持充足的药剂库存可不是容易的事情。 NL 炼药的素材都是药剂师冒着生命危险收集得来的。",
+      "NL 你得研制出你最棒的杰作。",
+      "在一条没有灯光的街道上穿行，你遇到了几个蒙面人，他们正在进行一些黑暗的仪式。当你走近时，他们阴森森地齐刷刷地向你走来。其中最高的一个露出獠牙，向你伸出一只苍白的长手。 NL ~\"J加入~ ~我们~ ~，~ ~感受~ ~尖塔~ ~的~ ~温暖~ ~。\"~"
     ]
   }
 }

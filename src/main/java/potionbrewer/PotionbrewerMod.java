@@ -431,9 +431,14 @@ public class PotionbrewerMod implements
     @Override
     public void receiveEditKeywords() {
 
+        String lang = "eng";
+
+        if (Settings.language == Settings.GameLanguage.ZHS) {
+            lang = "zhs";
+        }
 
         Gson gson = new Gson();
-        String json = Gdx.files.internal(getModID() + "Resources/localization/eng/PotionbrewerMod-Keyword-Strings.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        String json = Gdx.files.internal(getModID() + "Resources/localization/" + lang + "/PotionbrewerMod-Keyword-Strings.json").readString(String.valueOf(StandardCharsets.UTF_8));
         com.evacipated.cardcrawl.mod.stslib.Keyword[] keywords = gson.fromJson(json, com.evacipated.cardcrawl.mod.stslib.Keyword[].class);
 
         if (keywords != null) {

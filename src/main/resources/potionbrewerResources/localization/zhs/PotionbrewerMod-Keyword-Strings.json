@@ -1,56 +1,56 @@
 [
   {
-    "PROPER_NAME": "Catalyze",
+    "PROPER_NAME": "催化",
     "NAMES": [
-      "catalyze",
-      "catalyze:"
+      "催化",
+      "催化:"
     ],
-    "DESCRIPTION": "An additional effect that is triggered if you've played a potion this turn."
+    "DESCRIPTION": "如果你已在此回合使用过药剂，一项额外的效果会被触发。"
   },
   {
     "NAMES": [
-      "disease"
+      "疾病"
     ],
-    "DESCRIPTION": "Reduces Damage dealt by half, and spreads Infection to all enemies."
+    "DESCRIPTION": "造成的伤害减半，向所有敌人传播 感染 。"
   },
   {
     "NAMES": [
-      "infection"
+      "感染"
     ],
-    "DESCRIPTION": "Doubles each turn. When infection is 10 or higher, the enemy's Damage is reduced by half for a turn."
+    "DESCRIPTION": "每回合翻倍。当感染大于等于10层，施加 疾病 ，然后减少10层。"
   },
   {
     "NAMES": [
-      "tonic",
-      "tonics",
-      "tonic:",
-      "tonic."
+      "补剂",
+      "补剂，",
+      "补剂:",
+      "补剂。"
     ],
-    "DESCRIPTION": "A smaller version of a regular potion that can't be found in shops or rewards."
+    "DESCRIPTION": "一种小型、次级的药剂，不会在商店和奖励里获得。"
   },
   {
-    "PROPER_NAME": "Reagent",
+    "PROPER_NAME": "素材",
     "NAMES": [
-      "reagent",
-      "reagents",
-      "reagent:",
-      "reagent.",
-      "reagent,"
+      "素材",
+      "素材",
+      "素材:",
+      "素材。",
+      "素材，"
     ],
-    "DESCRIPTION": "A potent ingredient collected from one of the Spire's monsters. Can be brewed into a potion, or 3 can be combined into a unique card."
+    "DESCRIPTION": "从尖塔的怪物身上收集来的潜在原料。可以被炼制成药剂，也可以被组合成独特的卡牌。"
   },
   {
-    "PROPER_NAME": "Slimed",
+    "PROPER_NAME": "黏液",
     "NAMES": [
-      "slimed"
+      "黏液"
     ],
-    "DESCRIPTION": "Slimed enemies take 1 additional damage from each attack for each stack of Slimed."
+    "DESCRIPTION": "每被1层粘液覆盖，敌人被攻击时额外多受到1点伤害。"
   },
   {
-    "PROPER_NAME": "Toxic",
+    "PROPER_NAME": "毒性",
     "NAMES": [
-      "toxic"
+      "毒性"
     ],
-    "DESCRIPTION": "Lose 20% of current HP at the start of turn."
+    "DESCRIPTION": "在回合开始时，失去20%当前生命值。"
   }
 ]

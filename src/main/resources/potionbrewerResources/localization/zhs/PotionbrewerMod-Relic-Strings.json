@@ -1,138 +1,138 @@
 {
   "potionbrewer:AlchemistFlask": {
-    "NAME": "Alchemist's Flask",
-    "FLAVOR": "It's labeled 'Property of Nicholas Flamel'.",
+    "NAME": "炼金师的烧瓶",
+    "FLAVOR": "上面写着【尼古拉斯-弗拉梅的财产】。",
     "DESCRIPTIONS": [
-      "Every time you play #b",
-      " cards, choose 1 of 3 random potions to use."
+      "每当你打出 #b",
+      " 张牌，从3瓶随机药剂中选取1瓶使用。"
     ]
   },
   "potionbrewer:AlchemistKit": {
-    "NAME": "Alchemist Kit",
-    "FLAVOR": "Legendary tools of an Alchemist.",
+    "NAME": "炼金工具箱",
+    "FLAVOR": "炼金术士的豪华工具箱。",
     "DESCRIPTIONS": [
-      "Replaces Potion Kit. Obtain an additional copy of the first potion you use each combat."
+      "替换药剂工具箱。每场战斗第一次使用药剂时，获取一个该药剂的复制品。"
     ]
   },
   "potionbrewer:BhaskarasWheel": {
-    "NAME": "Bhaskara's Wheel",
-    "FLAVOR": "It just keeps turning forever and ever.",
+    "NAME": "婆什迦罗之轮",
+    "FLAVOR": "它只是不停地转动，永远，永远",
     "DESCRIPTIONS": [
-      "Every #b",
-      " turns, shuffle a #yReaction into your draw pile.",
-      "Reaction",
-      "An unplayable card that grants 1 energy and draws 2 cards when drawn."
+      "每过 #b",
+      " 回合，将一张 #y化学反应 洗进你的抽牌堆。",
+      "化学反应",
+      "无法打出。当抽取到时，获得1点能量并抽2张牌。"
     ]
   },
   "potionbrewer:BoosterPack": {
-    "NAME": "Booster Pack",
-    "FLAVOR": "Add some might to your deck! Guaranteed Rare card in every pack!",
+    "NAME": "扩充包",
+    "FLAVOR": "哇！金色传说！",
     "DESCRIPTIONS": [
-      "Add 3 common, 2 uncommon, and 1 rare card to your deck."
+      "添加3张灰卡、2张蓝卡、1张金卡到牌组。"
     ]
   },
   "potionbrewer:BottledElixir": {
-    "NAME": "Bottled Elixir",
-    "FLAVOR": "A strange fluid that attracts matter through time and space.",
+    "NAME": "妙灵引剂",
+    "FLAVOR": "一种奇异的流体，能越过时空牵引物质。",
     "DESCRIPTIONS": [
-      "Upon pickup, choose a card. The first time you use a potion, draw the chosen card.",
-      "When you use a potion, draw ",
-      ".",
-      "Select a card to bottle for "
+      "拾起时选择牌组中的一张牌。每场战斗首次使用药剂时，抽取选中的牌。",
+      "当你使用药剂，抽取 ",
+      "。",
+      "选择一张牌 "
     ]
   },
   "potionbrewer:BunsenBurner": {
-    "NAME": "Bunsen Burner",
-    "FLAVOR": "It's labeled 'Property of Citytown High'.",
+    "NAME": "煤气喷灯",
+    "FLAVOR": "标志上写着这是某某高校的财产。",
     "DESCRIPTIONS": [
-      "Brewing a potion takes 2 turns instead of 3."
+      "炼制药剂只需要2回合。"
     ]
   },
   "potionbrewer:DrinkingBird": {
-    "NAME": "Drinking Bird",
-    "FLAVOR": "An odd contraption that somehow keeps drinking forever.",
+    "NAME": "饮水鸟",
+    "FLAVOR": "一个奇怪的机械装置，一直在喝水，似乎会永远喝下去。",
     "DESCRIPTIONS": [
-      "At the start of each combat, begin brewing a random potion."
+      "每次战斗开始，开始炼制一瓶随机药剂。"
     ]
   },
   "potionbrewer:ElricsMonocle": {
-    "NAME": "Elric's Monocle",
-    "FLAVOR": "This curious lens is said to reveal Truth.",
+    "NAME": "埃里克的单片镜",
+    "FLAVOR": "据说这种奇特的镜片可以揭示真理。",
     "DESCRIPTIONS": [
-      "Right Click to use once per battle. NL Exhaust your hand and replace each card with an upgraded Colorless card."
+      "每场战斗限一次。右击启用。 NL 消耗你的手牌，取代以升级过的无色牌。"
     ]
   },
   "potionbrewer:Keyblade": {
-    "NAME": "Keyblade",
-    "FLAVOR": "A ridiculously impractical weapon.",
+    "NAME": "钥刃",
+    "FLAVOR": "一种花里胡哨、不切实际的武器。",
     "DESCRIPTIONS": [
-      "Gain 1 Strength for each key (Emerald, Ruby, and Sapphire) you have collected."
+      "每收集一把宝石钥匙（红蓝绿），获取 1 力量 。"
     ]
   },
   "potionbrewer:MortarAndPestle": {
-    "NAME": "Mortar and Pestle",
-    "FLAVOR": "One of the quintessential tools of an Alchemist.",
+    "NAME": "研与杵",
+    "FLAVOR": "炼金术士的典型工具之一。",
     "DESCRIPTIONS": [
-      "Whenever you discard a potion, heal 5 HP."
+      "每当丢弃一药剂，治疗5点生命。"
     ]
   },
   "potionbrewer:PaperSwan": {
-    "NAME": "Paper Swan",
-    "FLAVOR": "An elegant origami of a white bird.",
+    "NAME": "纸天鹅",
+    "FLAVOR": "优雅的白鸟折纸。",
     "DESCRIPTIONS": [
-      "Toxic removes 25% of current HP instead of 20%."
+      "毒性所致的现有生命流失量从20%上升到25%。"
     ]
   },
   "potionbrewer:PotionKit": {
-    "NAME": "Potion Kit",
-    "FLAVOR": "The essential tools of the Potion Brewer's trade.",
+    "NAME": "药剂工具箱",
+    "FLAVOR": "药剂师最重要的工具。",
     "DESCRIPTIONS": [
-      "Add an additional Potion slot. Each battle brew a #yTonic.",
-      "Tonic",
-      "A smaller version of a regular potion that can't be found in shops or rewards."
+      "增加一个额外的药剂槽位。每场战斗开始都会开始炼制一瓶 #y补剂 ",
+      "补剂",
+      "一种小型、次级的药剂，无法在商店和奖励中获得。"
     ]
   },
   "potionbrewer:RamsHorn": {
-    "NAME": "Ram's Horn",
-    "FLAVOR": "Once used by ancient heroes to call for aid.",
+    "NAME": "公羊角",
+    "FLAVOR": "曾被古代英雄用来呼叫救援。",
     "DESCRIPTIONS": [
-      "Potions of the same type now stack. All charges are used at once."
+      "同种的药剂可以堆叠，使用时会被一并使用掉。"
     ]
   },
   "potionbrewer:SalesContract": {
-    "NAME": "Sales Contract",
-    "FLAVOR": "Signed in blue ink.",
+    "NAME": "销售合同",
+    "FLAVOR": "用蓝色墨水签了字。",
     "DESCRIPTIONS": [
-      "Whenever you obtain a (non-tonic) potion, instead receive 20 gold."
+      "每当你将要获取一瓶非补剂的药剂时，取消药剂的获取，转为获得20金币。"
     ]
   },
   "potionbrewer:SlideRule": {
-    "NAME": "Slide Rule",
-    "FLAVOR": "An archaic device of unknown origin.",
+    "NAME": "计算尺",
+    "FLAVOR": "常见的计量工具。",
     "DESCRIPTIONS": [
-      "When you shuffle your draw pile, deal #b",
-      " damage to all enemies."
+      "每当重新洗牌，对所有敌人造成 #b",
+      " 伤害。"
     ]
   },
   "potionbrewer:Torch": {
-    "NAME": "Torch",
-    "FLAVOR": "Burns brightly. Goes great with pitchforks.",
+    "NAME": "火炬",
+    "FLAVOR": "火炬带来光明。",
     "DESCRIPTIONS": [
-      "Gain [E] on your second turn."
+      "在第二回合获得 [E] 。"
     ]
   },
   "potionbrewer:ToyAutogyro": {
-    "NAME": "Toy Autogyro",
+    "NAME": "玩具旋翼机",
     "FLAVOR": "Vrooom, zoom zoom zoom!",
     "DESCRIPTIONS": [
-      "Whenever you use a potion, gain 3 #yTemporary #yHP."
+      "每当使用药剂，获取 3 #y临时生命 "
     ]
   },
   "potionbrewer:WarMedal": {
-    "NAME": "War Medal",
-    "FLAVOR": "For service to King and Country.",
+    "NAME": "战争勋章",
+    "FLAVOR": "感谢对国王和国家的服务。",
     "DESCRIPTIONS": [
-      "Every time you play 10 cards, your next attack deals 5 bonus damage."
+      "每当打出了10张牌，下一次攻击造成5点额外伤害。"
     ]
   }
 }

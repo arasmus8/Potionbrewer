@@ -1,195 +1,195 @@
 {
   "potionbrewer:AcidPotion": {
-    "NAME": "Acid Potion",
+    "NAME": "酸液瓶",
     "DESCRIPTIONS": [
-      "Remove the target's Block and deal #b",
-      " damage."
+      "移除目标的格挡并造成 #b",
+      " 伤害。"
     ]
   },
   "potionbrewer:BlacksmithPotion": {
-    "NAME": "Blacksmith Potion",
+    "NAME": "铁匠合剂",
     "DESCRIPTIONS": [
-      "Permanently upgrade #b",
-      " random card. (Can only be used outside of combat)",
-      " random cards. (Can only be used outside of combat)"
+      "永久升级 #b",
+      " 随机卡牌。(只能在战斗外使用)",
+      " 随机卡牌。(只能在战斗外使用)"
     ]
   },
   "potionbrewer:BoundlessPotion": {
-    "NAME": "Boundless Potion",
+    "NAME": "无界药剂",
     "DESCRIPTIONS": [
-      "Double your Strength",
-      ".",
-      " times."
+      "加倍你的力量",
+      "。",
+      " 次。"
     ]
   },
   "potionbrewer:BarricadePotion": {
-    "NAME": "Barricade Potion",
+    "NAME": "堡垒药剂",
     "DESCRIPTIONS": [
-      "Double your Block",
-      ".",
-      " times."
+      "加倍你的格挡",
+      "。",
+      " 次。"
     ]
   },
   "potionbrewer:CleansingPotion": {
-    "NAME": "Cleansing Potion",
+    "NAME": "净化药剂",
     "DESCRIPTIONS": [
-      "Remove #b",
-      " debuffs from yourself."
+      "移除自身 #b",
+      " 减益效果。"
     ]
   },
   "potionbrewer:ColorlessPotion": {
-    "NAME": "Colorless Potion",
+    "NAME": "无色药剂",
     "DESCRIPTIONS": [
-      "Add a random colorless card to your hand. It costs 0 this turn.",
-      "Add two random colorless cards to your hand. They cost 0 this turn."
+      "添加一张随机无色卡到手牌，此卡本回合变成0耗费。",
+      "添加两张随机无色卡到手牌，这些卡本回合变成0耗费。"
     ]
   },
   "potionbrewer:DiscountPotion": {
-    "NAME": "Discount Potion",
+    "NAME": "零耗药剂",
     "DESCRIPTIONS": [
-      "A random card",
+      "一张随机",
       "#b",
-      " random cards",
-      " in your hand cost 0 this combat."
+      " 张随机",
+      " 手牌的耗费在此场战斗中变为0。"
     ]
   },
   "potionbrewer:EndurancePotion": {
-    "NAME": "Endurance Potion",
+    "NAME": "忍耐药剂",
     "DESCRIPTIONS": [
-      "Gain #b",
-      " Temporary HP"
+      "获得 #b",
+      " 临时生命"
     ]
   },
   "potionbrewer:FreezingPotion": {
-    "NAME": "Freezing Potion",
+    "NAME": "冻结合剂",
     "DESCRIPTIONS": [
-      "Apply #b",
-      " Slow to an Enemy."
+      "向一名敌人施加 #b",
+      " 缓慢。"
     ]
   },
   "potionbrewer:HastePotion": {
-    "NAME": "Haste Potion",
+    "NAME": "匆促药剂",
     "DESCRIPTIONS": [
-      "Discard your hand, refill your energy, draw #b",
-      " cards."
+      "弃掉手牌，填满能量，抽取 #b",
+      " 卡牌。"
     ]
   },
   "potionbrewer:InfectionPotion": {
-    "NAME": "Infection Potion",
+    "NAME": "感染毒剂",
     "DESCRIPTIONS": [
-      "Apply #b",
-      " Infection."
+      "施加 #b",
+      " 感染 。"
     ]
   },
   "potionbrewer:MidasPotion": {
-    "NAME": "Midas Potion",
+    "NAME": "点金合剂",
     "DESCRIPTIONS": [
-      "Deal #b",
-      " Damage, if this defeats a non-minion enemy, gain #b",
-      " gold."
+      "造成 #b",
+      " 伤害，如果杀死了一名非仆从敌人，获得 #b",
+      " 金币。"
     ]
   },
   "potionbrewer:NoxiousPotion": {
-    "NAME": "Noxious Potion",
+    "NAME": "恶害药剂",
     "DESCRIPTIONS": [
-      "Deal #b",
-      " Damage each time you play a card this turn."
+      "此回合内，你每打出一张牌，造成 #b",
+      " 伤害。"
     ]
   },
   "potionbrewer:QuicksilverPotion": {
-    "NAME": "Buffer in a Bottle",
+    "NAME": "缓冲药剂",
     "DESCRIPTIONS": [
-      "Prevent the next ",
-      "time",
+      "防止下 ",
+      "次",
       "#b",
-      " times",
-      " you would take damage."
+      " 次",
+      " 将受到的伤害。"
     ]
   },
   "potionbrewer:SplittingPotion": {
-    "NAME": "Splitting Potion",
+    "NAME": "分裂药剂",
     "DESCRIPTIONS": [
-      "Obtain #b",
-      " random potions."
+      "获得 #b",
+      " 随机药剂。"
     ]
   },
   "potionbrewer:StunPotion": {
-    "NAME": "Stun Potion",
+    "NAME": "眩晕药剂",
     "DESCRIPTIONS": [
-      "Stun an enemy for #b",
-      " turn.",
-      " turns."
+      "眩晕一名敌人 #b",
+      " 回合。",
+      " 回合。"
     ]
   },
   "potionbrewer:ToxicPotion": {
-    "NAME": "Toxic Potion",
+    "NAME": "毒性药剂",
     "DESCRIPTIONS": [
-      "Apply #b",
-      " Toxic to an enemy."
+      "向一名敌人施加 #b",
+      " 毒性。"
     ]
   },
   "potionbrewer:BlockTonic": {
-    "NAME": "Block Tonic",
+    "NAME": "格挡补剂",
     "DESCRIPTIONS": [
-      "Gain #b",
-      " Block."
+      "获得 #b",
+      " 格挡。"
     ]
   },
   "potionbrewer:EnergyTonic": {
-    "NAME": "Energy Tonic",
+    "NAME": "能量补剂",
     "DESCRIPTIONS": [
-      "Gain #b",
-      " energy."
+      "获得 #b",
+      " 能量。"
     ]
   },
   "potionbrewer:ExplosiveTonic": {
-    "NAME": "Explosive Tonic",
+    "NAME": "爆炸补剂",
     "DESCRIPTIONS": [
-      "Deal #b",
-      " Damage to all enemies."
+      "对所有敌人造成 #b",
+      " 伤害。"
     ]
   },
   "potionbrewer:FearTonic": {
-    "NAME": "Fear Tonic",
+    "NAME": "恐惧补剂",
     "DESCRIPTIONS": [
-      "Apply #b",
-      " Vulnerable to an enemy."
+      "向一名敌人施加 #b",
+      " 易伤 。"
     ]
   },
   "potionbrewer:FireTonic": {
-    "NAME": "Fire Tonic",
+    "NAME": "火焰补剂",
     "DESCRIPTIONS": [
-      "Deal #b",
-      " Damage to an enemy."
+      "向一名敌人造成 #b",
+      " 伤害。"
     ]
   },
   "potionbrewer:FlexTonic": {
-    "NAME": "Flex Tonic",
+    "NAME": "屈伸补剂",
     "DESCRIPTIONS": [
-      "Gain #b",
-      " Strength until the end of this turn."
+      "获得 #b",
+      " 力量直到此回合末。"
     ]
   },
   "potionbrewer:SpeedTonic": {
-    "NAME": "Speed Tonic",
+    "NAME": "速度补剂",
     "DESCRIPTIONS": [
-      "Gain #b",
-      " Dexterity until the end of this turn."
+      "获得 #b",
+      " 敏捷直到此回合末。"
     ]
   },
   "potionbrewer:SwiftTonic": {
-    "NAME": "Swift Tonic",
+    "NAME": "敏捷补剂",
     "DESCRIPTIONS": [
-      "Draw #b",
-      " card.",
-      " cards."
+      "抽取 #b",
+      " 张牌。",
+      " 张牌。"
     ]
   },
   "potionbrewer:WeakTonic": {
-    "NAME": "Weak Tonic",
+    "NAME": "虚弱补剂",
     "DESCRIPTIONS": [
-      "Apply #b",
-      " Weak to an enemy."
+      "向一名敌人施加 #b",
+      " 虚弱。"
     ]
   }
 }

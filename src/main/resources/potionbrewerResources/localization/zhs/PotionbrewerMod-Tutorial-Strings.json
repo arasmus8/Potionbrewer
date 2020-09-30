@@ -1,10 +1,10 @@
 {
   "potionbrewer:ReagentTip": {
     "LABEL": [
-      "Collecting and using Reagents"
+      "收集并使用素材"
     ],
     "TEXT": [
-      "Your collected Reagents are shown over your head. If you use a Distill card, you will brew a potion from the Reagent on the right. If you collect 3 reagents, you can create a card with all 3 card effects after the battle. You keep the Reagents you have collected between combats."
+      "你所收集的素材在人物上方显示。如果你使用了一张提取牌，则会将右方的素材炼制成一瓶药剂。如果你收集了3个素材，在战斗结束后，你会创造出一张包含3个素材所有效果的卡牌。只要没被调用，素材不会在战斗后清空。"
     ]
   }
 }

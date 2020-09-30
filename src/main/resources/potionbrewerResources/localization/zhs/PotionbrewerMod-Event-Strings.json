@@ -1,44 +1,44 @@
 {
   "potionbrewer:Lab": {
-    "NAME": "Potion Lab -- Override",
+    "NAME": "实验室",
     "DESCRIPTIONS": [
-      "You find yourself in your old ~Potion~ ~Laboratory.~ NL NL There are a few left over potions lying about, but you wonder if your prized possession is still secure. You check the seal on the door to its hidden compartment and verify that it's still secure."
+      "你发现自己在你的旧药水实验室。~ NL NL 有一些剩余的药水放置在那里，但你不知道你的珍贵财产是否仍然安全。你检查了它的暗格门上的封条，确认它仍然安全。"
     ],
     "OPTIONS": [
-      "[Open Secret Compartment] Lose all your potions, take your #gprized #gpossession."
+      "[打开秘密隔间] 丧失所有药剂，拿走你的 #g贵重财产 "
     ]
   },
   "potionbrewer:WomanInBlue": {
-    "NAME": "The Woman In Blue -- Override",
+    "NAME": "蓝衣女士",
     "DESCRIPTIONS": [
-      "From the darkness, an arm pulls you into a small shop. As your eyes adjust, you see a pale woman in sharp clothes gesturing towards a wall of potions. NL \"You!\" she exclaims. \"Never mind. Buy a potion. Now!\""
+      "从黑暗中，一只手臂把你拉进了一家小店。当你的眼睛适应后，你看到一个穿着利落的苍白女子在向一墙的药水指指点点。 NL \"你!\" 她大喊着 。 \"怎样也好，先买瓶药水再说，马上！\""
     ]
   },
   "potionbrewer:JunkPileEvent": {
-    "NAME": "Junk Pile",
+    "NAME": "垃圾堆",
     "DESCRIPTIONS": [
-      "Behind a collapsing tenement in ~The~ ~City,~ you come across an enormous pile of discarded #yjunk. NL NL It looks like garbage has been piled here for many years. You wonder if you could find any useful potion ingredients among the useless junk.",
-      "Digging through the ~Junk,~ you discover a few common ingredients, but you suspect that deeper in you will be able to find something rarer...",
-      "Deeper in the pile, you find some cast-off ~machine~ ~parts~ that could be useful, but you sense some powerful energy even deeper in...",
-      "At last, you find some rare ingredients - An #p~Enchanted~ #p~Book~ that could entrance an enemy, an old #r~Train~ #r~Ticket~ filled with dark energy, a #g~Treasure~ #g~Chest~ that uses gold against your foes, and a #y~Shining~ #y~Moth~ that empowers future attacks.",
-      "You turn around and leave with your find.",
-      "You turn around and leave."
+      "在城市中一座倒塌的公寓后面，你遇见一大堆废弃的 #y垃圾 。 NL NL 看来这里的垃圾已经堆了很多年了。不知道在这些无用的垃圾中，能不能找到有用的炼药材料。",
+      "在垃圾中，你发现了一些常见的药剂材料，但你怀疑在更深的地方，可以会发现一些更稀有的东西。",
+      "在这堆东西的深处，你发现了一些废弃的机器零件，这些零件可能是有用的，但你感觉到一些强大的能量，埋藏在更深的地方...",
+      "最终，你找到了些稀有的素材 - 一本能迷住敌人的 #p~附魔~ #p~书~ ， 一张充满黑暗能量的远古 #r~火车~ #r~票~ ， 一个象征着财富力量的 #g~珍宝~ #g~箱~ ， 和一只能增幅攻击的 #y~闪亮~ #y~飞蛾~ 。",
+      "你转身离开了你发现的宝藏地。",
+      "你转身离开。"
     ],
     "OPTIONS": [
-      "[Dig for Reagents]",
-      "[Collect a Feather]",
-      "[Collect Silk]",
-      "[Collect a Tooth]",
-      "[Dig Deeper] #rLose #r",
+      "[挖掘素材]",
+      "[收集羽毛]",
+      "[收集虫丝]",
+      "[收集牙齿]",
+      "[深入挖掘] #r损失 #r",
       " #rHP.",
-      "[Collect Steel]",
-      "[Collect Barb]",
-      "[Collect Bludgeon]",
-      "[Dig Deeper Still] #rLose #r",
-      "[Collect Storybook] Stuns Enemies.",
-      "[Collect Train Ticket] Damage based on floor number.",
-      "[Collect Treasure Chest] Damage foes based on gold.",
-      "[Collect Radiance] Stack additional damage on your next attack.",
+      "[收集钢铁]",
+      "[收集倒钩]",
+      "[收集棍棒]",
+      "[深入再挖掘] #r损失 #r",
+      "[收集故事书] 眩晕敌人。",
+      "[收集火车票] 根据爬塔层数造成伤害。",
+      "[收集宝箱] 根据金币数造成伤害。",
+      "[收集光辉之核] 为你的下一次攻击堆叠额外伤害。",
       "[Leave]"
     ]
   }
