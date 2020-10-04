@@ -333,7 +333,28 @@
   },
   "potionbrewer:Prototype": {
     "NAME": "原型药剂",
-    "DESCRIPTION": "根据所收集的 potionbrewer:素材 ，将有不同的效果。"
+    "DESCRIPTION": "根据所收集的 potionbrewer:素材 ，将有不同的效果。",
+    "EXTENDED_DESCRIPTION": [
+      " NL 消耗",
+      "强效",
+      "稳健",
+      "缓和",
+      "泡沫",
+      "烈性",
+      "稀释",
+      "凝结",
+      "泡腾",
+      "闪亮",
+      "化合物",
+      "溶液",
+      "精华液",
+      "流气",
+      "酏剂",
+      "酿造",
+      "酊剂",
+      "混合物",
+      "媚药"
+    ]
   },
   "potionbrewer:Reaction": {
     "NAME": "化学反应",

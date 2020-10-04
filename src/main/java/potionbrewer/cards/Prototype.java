@@ -20,6 +20,8 @@ import potionbrewer.orbs.Skull;
 import potionbrewer.patches.PotionTracker;
 import potionbrewer.powers.NoCatalyzePower;
 
+import java.util.Arrays;
+
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static potionbrewer.PotionbrewerMod.makeCardPath;
 
@@ -53,8 +55,10 @@ public class Prototype extends CustomCard implements CustomSavable<String[]> {
     // /STAT DECLARATION/
 
     private static String buildName(Reagent a, Reagent b, Reagent c) {
-        String[] adjs = {"Potent", "Robust", "Dull", "Bubbly", "Stiff", "Diluted", "Congealed", "Fizzy", "Shiny"};
-        String[] types = {"Compound", "Solution", "Serum", "Draught", "Elixir", "Brew", "Tincture", "Mixture", "Philter"};
+        String[] adjs = Arrays.copyOfRange(CARD_STRINGS.EXTENDED_DESCRIPTION, 1, 9);
+        // {"Potent", "Robust", "Dull", "Bubbly", "Stiff", "Diluted", "Congealed", "Fizzy", "Shiny"};
+        String[] types = Arrays.copyOfRange(CARD_STRINGS.EXTENDED_DESCRIPTION, 10, 18);
+        // {"Compound", "Solution", "Serum", "Draught", "Elixir", "Brew", "Tincture", "Mixture", "Philter"};
         String chosenAdj = adjs[(ReagentList.indexFromReagent(a) + ReagentList.indexFromReagent(b)) % adjs.length];
         String chosenType = types[(ReagentList.indexFromReagent(b) + ReagentList.indexFromReagent(c)) % types.length];
         String suffix = "#" + (ReagentList.indexFromReagent(a) + ReagentList.indexFromReagent(c));
@@ -72,7 +76,7 @@ public class Prototype extends CustomCard implements CustomSavable<String[]> {
         s.append(" NL ");
         s.append(c.getCardDescription(3));
         if (a.exhaust || b.exhaust || c.exhaust) {
-            s.append(" NL Exhaust.");
+            s.append(CARD_STRINGS.EXTENDED_DESCRIPTION[0]);
         }
         return s.toString();
     }
