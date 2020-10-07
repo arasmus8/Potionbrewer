@@ -2,6 +2,7 @@ package potionbrewer.orbs;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -30,7 +31,7 @@ public class Clay extends Reagent {
         if (AbstractDungeon.isPlayerInDungeon()
                 && AbstractDungeon.getCurrMapNode() != null
                 && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT
-                && PotionbrewerMod.turnNumber > 4
+                && GameActionManager.turn > 4
         ) {
             damage = 25;
         }
@@ -39,7 +40,7 @@ public class Clay extends Reagent {
     @Override
     public void applyPowers() {
         super.applyPowers();
-        if (PotionbrewerMod.turnNumber > 4) {
+        if (GameActionManager.turn > 4) {
             damage = 25;
         } else {
             damage = 1;

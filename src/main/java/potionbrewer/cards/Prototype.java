@@ -5,6 +5,7 @@ import basemod.abstracts.CustomSavable;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
+import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
@@ -157,7 +158,7 @@ public class Prototype extends CustomCard implements CustomSavable<String[]> {
     private int calcDamageTimes(Reagent r) {
         if (r.multiDamage) {
             if (r.damageTimes < 0) {
-                return PotionbrewerMod.turnNumber;
+                return GameActionManager.turn;
             }
             return r.damageTimes;
         }

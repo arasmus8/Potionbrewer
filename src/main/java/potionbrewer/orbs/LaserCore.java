@@ -3,6 +3,7 @@ package potionbrewer.orbs;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -30,12 +31,12 @@ public class LaserCore extends Reagent {
     public LaserCore() {
         super(ORB_ID, img, orbString.NAME, DESC);
         damages = true;
-        damage = (PotionbrewerMod.turnNumber % 2 == 0) ? 0 : 12;
+        damage = (GameActionManager.turn % 2 == 0) ? 0 : 12;
     }
 
     @Override
     public void applyPowers() {
-        damage = (PotionbrewerMod.turnNumber % 2 == 0) ? 0 : 12;
+        damage = (GameActionManager.turn % 2 == 0) ? 0 : 12;
     }
 
     @Override

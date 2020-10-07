@@ -6,45 +6,48 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 
 public class PotionbrewerEnergyOrb extends CustomEnergyOrb {
 
-    private static final float ORB_SCALE = 0.85F;
-    private Texture jar;
-    private Texture liquid;
-    private Texture liquidDark;
-    private Texture bubble1;
-    private Texture bubble1Dark;
-    private Texture bubble2;
-    private Texture bubble2Dark;
-    private Texture orbVfx;
+    private static final float ORB_SCALE = 0.85F * Settings.scale;
+    private final Texture jar;
+    private final Texture liquid;
+    private final Texture liquidDark;
+    private final Texture bubble1;
+    private final Texture bubble1Dark;
+    private final Texture bubble2;
+    private final Texture bubble2Dark;
+    private final Texture orbVfx;
 
-    private Bubble[] bubbles;
-    private Bubble[] doubleBubbles;
+    private final Bubble[] bubbles;
+    private final Bubble[] doubleBubbles;
+
+    private final TurnCounterPanel turnCounter;
 
     private static class Bubble {
-        private float velocity;
-        private float x;
+        private final float velocity;
+        private final float x;
         private float y;
         private float a;
-        private float scale;
-        private float origin;
-        private float size;
+        private final float scale;
+        private final float origin;
+        private final float size;
         protected boolean isDone = false;
 
         protected Bubble(final boolean lg) {
-            this.x = MathUtils.random(-55.0F, 5.0F);
-            this.y = MathUtils.random(-60.0F, -30.0F);
+            this.x = MathUtils.random(-55.0F, 5.0F) * Settings.scale;
+            this.y = MathUtils.random(-60.0F, -30.0F) * Settings.scale;
             this.a = 0.0F;
-            this.scale = MathUtils.random(0.3F, 1.0F);
-            this.velocity = MathUtils.random(1.0F, 8.0F);
+            this.scale = MathUtils.random(0.3F, 1.0F) * Settings.scale;
+            this.velocity = MathUtils.random(1.0F, 8.0F) * Settings.scale;
             if (lg) {
-                origin = 24.0F;
-                size = 48.0F;
+                origin = 24.0F * Settings.scale;
+                size = 48.0F * Settings.scale;
             } else {
-                origin = 16.0F;
-                size = 32.0F;
+                origin = 16.0F * Settings.scale;
+                size = 32.0F * Settings.scale;
             }
         }
 
@@ -93,6 +96,7 @@ public class PotionbrewerEnergyOrb extends CustomEnergyOrb {
 
     public PotionbrewerEnergyOrb() {
         super(null, null, null);
+        turnCounter = new TurnCounterPanel();
         jar = ImageMaster.loadImage("potionbrewerResources/images/char/potionbrewer/orb/new4.png");
         liquid = ImageMaster.loadImage("potionbrewerResources/images/char/potionbrewer/orb/liquid.png");
         liquidDark = ImageMaster.loadImage("potionbrewerResources/images/char/potionbrewer/orb/new1d.png");
@@ -200,6 +204,8 @@ public class PotionbrewerEnergyOrb extends CustomEnergyOrb {
                 false,
                 false);
 
+        turnCounter.setX(x - 64f * Settings.scale);
+        turnCounter.render(sb);
     }
 
     @Override
@@ -211,5 +217,6 @@ public class PotionbrewerEnergyOrb extends CustomEnergyOrb {
         for (Bubble doubleBubble : doubleBubbles) {
             doubleBubble.update(dt);
         }
+        turnCounter.update();
     }
 }

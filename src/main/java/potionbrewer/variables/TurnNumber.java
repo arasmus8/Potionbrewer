@@ -1,8 +1,8 @@
 package potionbrewer.variables;
 
 import basemod.abstracts.DynamicVariable;
+import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import potionbrewer.PotionbrewerMod;
 
 import static potionbrewer.PotionbrewerMod.makeID;
 
@@ -20,12 +20,12 @@ public class TurnNumber extends DynamicVariable {
 
     @Override
     public int value(AbstractCard card) {
-        return PotionbrewerMod.turnNumber;
+        return GameActionManager.turn;
     }
 
     @Override
     public int baseValue(AbstractCard card) {
-        return PotionbrewerMod.turnNumber;
+        return GameActionManager.turn;
     }
 
     @Override

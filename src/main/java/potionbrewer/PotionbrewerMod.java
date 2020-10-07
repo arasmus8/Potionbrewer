@@ -135,7 +135,6 @@ public class PotionbrewerMod implements
     }
 
     public static ArrayList<Reagent> reagents;
-    public static int turnNumber = 1;
     public static boolean potionIsFromCard = false;
     public static TonicLibrary tonicLibrary;
     public static PotionLibrary potionLibrary;
@@ -529,8 +528,6 @@ public class PotionbrewerMod implements
         PotionTracker.potionsUsedThisCombat.set(p, 0);
         PotionTracker.potionsUsedThisTurn.set(p, 0);
 
-        turnNumber = 1;
-
         lastPlayedCardCostZero = false;
         zeroCostCardsThisTurn = 0;
         zeroCostCardsThisCombat = 0;
@@ -546,7 +543,6 @@ public class PotionbrewerMod implements
         }
         PotionTracker.potionsUsedThisCombat.set(p, 0);
         PotionTracker.potionsUsedThisTurn.set(p, 0);
-        turnNumber = 1;
         lastPlayedCardCostZero = false;
         zeroCostCardsThisCombat = 0;
         zeroCostCardsThisTurn = 0;
@@ -593,7 +589,6 @@ public class PotionbrewerMod implements
 
     @Override
     public void receivePostEnergyRecharge() {
-        turnNumber += 1;
         PotionTracker.potionsUsedThisTurn.set(AbstractDungeon.player, 0);
         zeroCostCardsThisTurn = 0;
     }

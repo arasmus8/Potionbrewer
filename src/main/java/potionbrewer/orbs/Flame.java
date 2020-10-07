@@ -2,6 +2,7 @@ package potionbrewer.orbs;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -24,12 +25,12 @@ public class Flame extends Reagent {
     public Flame() {
         super(ORB_ID, img, orbString.NAME, DESC);
         damages = true;
-        damage = PotionbrewerMod.turnNumber * 3;
+        damage = GameActionManager.turn * 3;
     }
 
     @Override
     public void applyPowers() {
-        damage = PotionbrewerMod.turnNumber * 3;
+        damage = GameActionManager.turn * 3;
     }
 
     @Override

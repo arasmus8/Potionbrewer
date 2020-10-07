@@ -2,6 +2,7 @@ package potionbrewer.orbs;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -37,7 +38,7 @@ public class Jaw extends Reagent {
                 && AbstractDungeon.getCurrMapNode() != null
                 && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT
         ) {
-            if (PotionbrewerMod.turnNumber % 2 == 0) {
+            if (GameActionManager.turn % 2 == 0) {
                 damage = 8;
             } else {
                 block = 5;
@@ -47,7 +48,7 @@ public class Jaw extends Reagent {
 
     @Override
     public void applyPowers() {
-        if (PotionbrewerMod.turnNumber % 2 == 0) {
+        if (GameActionManager.turn % 2 == 0) {
             damage = 8;
             block = 0;
         } else {
@@ -64,7 +65,7 @@ public class Jaw extends Reagent {
                         AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT &&
                         !AbstractDungeon.getMonsters().areMonstersBasicallyDead()
         ) {
-            return getCardDescription(idx, PotionbrewerMod.turnNumber % 2 == 0 ? DESC[3] : DESC[2]);
+            return getCardDescription(idx, GameActionManager.turn % 2 == 0 ? DESC[3] : DESC[2]);
         } else {
             return descriptions[1];
         }

@@ -3,5 +3,11 @@
     "TEXT": [
       "Select a card to add to your deck:"
     ]
+  },
+  "potionbrewer:TurnCounterPanel": {
+    "TEXT": [
+      "Turn Counter",
+      "The current turn number."
+    ]
   }
 }

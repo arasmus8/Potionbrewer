@@ -2,6 +2,7 @@ package potionbrewer.orbs;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -31,7 +32,7 @@ public class Ink extends Reagent {
                 && AbstractDungeon.getCurrMapNode() != null
                 && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT
         ) {
-            if (PotionbrewerMod.turnNumber > 3) {
+            if (GameActionManager.turn > 3) {
                 damage = 12;
             }
         }
@@ -39,7 +40,7 @@ public class Ink extends Reagent {
 
     @Override
     public void applyPowers() {
-        if (PotionbrewerMod.turnNumber > 3) {
+        if (GameActionManager.turn > 3) {
             damage = 12;
         } else {
             damage = 1;

@@ -3,5 +3,11 @@
     "TEXT": [
       "选择一张牌添加进卡组:"
     ]
+  },
+  "potionbrewer:TurnCounterPanel": {
+    "TEXT": [
+      "回合 Counter",
+      "The current 回合 number."
+    ]
   }
 }
