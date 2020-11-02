@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.OrbStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.powers.RagePower;
@@ -22,6 +21,8 @@ public class PureWater extends Reagent {
     public PureWater() {
         super(ORB_ID, img, orbString.NAME, DESC);
         targeted = false;
+        blocks = true;
+        block = 3;
     }
 
     @Override
@@ -40,7 +41,7 @@ public class PureWater extends Reagent {
     }
 
     @Override
-    public void doEffects(AbstractPlayer p, AbstractMonster m) {
+    public void doBlock(AbstractPlayer p, int amount) {
         this.addToBot(new ApplyPowerAction(p, p, new RagePower(p, 3), 3));
     }
 
