@@ -1,29 +1,14 @@
 package potionbrewer.cards;
 
-import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import potionbrewer.PotionbrewerMod;
 import potionbrewer.characters.Potionbrewer;
 
-import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
-import static potionbrewer.PotionbrewerMod.makeCardPath;
-
-public class Fuel extends CustomCard {
-
-    // TEXT DECLARATION
-
+public class Fuel extends AbstractPotionbrewerCard {
     public static final String ID = PotionbrewerMod.makeID(Fuel.class.getSimpleName());
-    public static final String IMG = makeCardPath("Fuel.png");
-    public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
-    // Must have an image with the same NAME as the card in your image folder!
-
-    // /TEXT DECLARATION/
-
-    // STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
@@ -35,10 +20,8 @@ public class Fuel extends CustomCard {
     private static final int BLOCK = 3;
     private static final int UPGRADE_BLOCK = 2;
 
-    // /STAT DECLARATION/
-
     public Fuel() {
-        super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, COST, TYPE, RARITY, TARGET, COLOR, null);
         baseBlock = BLOCK;
         cardsToPreview = new Reaction();
     }

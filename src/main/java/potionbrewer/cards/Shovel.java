@@ -1,30 +1,16 @@
 package potionbrewer.cards;
 
-import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import potionbrewer.PotionbrewerMod;
 import potionbrewer.characters.Potionbrewer;
 
-import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
-import static potionbrewer.PotionbrewerMod.makeCardPath;
-
-public class Shovel extends CustomCard {
-    // TEXT DECLARATION
-
+public class Shovel extends AbstractPotionbrewerCard {
     public static final String ID = PotionbrewerMod.makeID(Shovel.class.getSimpleName());
-    public static final String IMG = makeCardPath("Shovel.png");
-    public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
-    // Must have an image with the same NAME as the card in your image folder!.
-
-    // /TEXT DECLARATION/
-
-    // STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -35,10 +21,9 @@ public class Shovel extends CustomCard {
 
     private static final int DAMAGE = 5;
     private static final int UPGRADE_PLUS_DMG = 3;
-    // /STAT DECLARATION/
 
     public Shovel() {
-        super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, COST, TYPE, RARITY, TARGET, COLOR, null);
         baseDamage = DAMAGE;
         cardsToPreview = new ReagentCard();
     }

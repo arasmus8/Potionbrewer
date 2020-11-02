@@ -1,23 +1,15 @@
 package potionbrewer.cards;
 
-import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import potionbrewer.PotionbrewerMod;
 import potionbrewer.characters.Potionbrewer;
 import potionbrewer.powers.PotentialEnergyPower;
 
-import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
-import static potionbrewer.PotionbrewerMod.makeCardPath;
-
-// Maybe change this to add 1 temp Str/Dex when you use a potion?
-public class PotentialEnergy extends CustomCard {
+public class PotentialEnergy extends AbstractPotionbrewerCard {
 
     public static final String ID = PotionbrewerMod.makeID(PotentialEnergy.class.getSimpleName());
-    public static final String IMG = makeCardPath("PotentialEnergy.png");
-    public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
 
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
@@ -29,7 +21,7 @@ public class PotentialEnergy extends CustomCard {
     private static final int MAGIC = 1;
 
     public PotentialEnergy() {
-        super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, COST, TYPE, RARITY, TARGET, COLOR, null);
         magicNumber = baseMagicNumber = MAGIC;
         isEthereal = true;
     }
@@ -44,7 +36,7 @@ public class PotentialEnergy extends CustomCard {
         if (!upgraded) {
             upgradeName();
             isEthereal = false;
-            rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

@@ -20,11 +20,6 @@ public class AnotherRoundPower extends AbstractPower implements CloneablePowerIn
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    /*
-    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("alchemy84.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("alchemy32.png"));
-    */
-
     public AnotherRoundPower() {
         name = NAME;
         ID = POWER_ID;

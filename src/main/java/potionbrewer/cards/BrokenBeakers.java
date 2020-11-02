@@ -1,6 +1,5 @@
 package potionbrewer.cards;
 
-import basemod.abstracts.CustomCard;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -9,27 +8,14 @@ import com.megacrit.cardcrawl.actions.common.ModifyDamageAction;
 import com.megacrit.cardcrawl.actions.utility.ShakeScreenAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.BorderLongFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.DieDieDieEffect;
 import potionbrewer.PotionbrewerMod;
 import potionbrewer.characters.Potionbrewer;
 
-import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
-import static potionbrewer.PotionbrewerMod.makeCardPath;
-
-public class BrokenBeakers extends CustomCard {
-    // TEXT DECLARATION
-
+public class BrokenBeakers extends AbstractPotionbrewerCard {
     public static final String ID = PotionbrewerMod.makeID(BrokenBeakers.class.getSimpleName());
-    public static final String IMG = makeCardPath("BrokenBeakers.png");
-    public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
-    // Must have an image with the same NAME as the card in your image folder!.
-
-    // /TEXT DECLARATION/
-
-    // STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
@@ -42,10 +28,9 @@ public class BrokenBeakers extends CustomCard {
     private static final int UPGRADE_PLUS_DMG = 4;
 
     private static final int MAGIC = 3;
-    // /STAT DECLARATION/
 
     public BrokenBeakers() {
-        super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, COST, TYPE, RARITY, TARGET, COLOR, null);
         baseDamage = DAMAGE;
         baseMagicNumber = MAGIC;
         magicNumber = baseMagicNumber;

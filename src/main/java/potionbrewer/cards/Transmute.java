@@ -1,28 +1,14 @@
 package potionbrewer.cards;
 
-import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import potionbrewer.PotionbrewerMod;
 import potionbrewer.actions.TransmuteAction;
 import potionbrewer.characters.Potionbrewer;
 
-import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
-import static potionbrewer.PotionbrewerMod.makeCardPath;
-
-public class Transmute extends CustomCard {
-// TEXT DECLARATION
-
+public class Transmute extends AbstractPotionbrewerCard {
     public static final String ID = PotionbrewerMod.makeID(Transmute.class.getSimpleName());
-    public static final String IMG = makeCardPath("Transmute.png");
-    public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
-// Must have an image with the same NAME as the card in your image folder!.
-
-// /TEXT DECLARATION/
-
-// STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -33,10 +19,9 @@ public class Transmute extends CustomCard {
 
     private static final int DAMAGE = 10;
     private static final int UPGRADE_PLUS_DMG = 4;
-// /STAT DECLARATION/
 
     public Transmute() {
-        super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, COST, TYPE, RARITY, TARGET, COLOR, null);
         baseDamage = DAMAGE;
         exhaust = true;
     }

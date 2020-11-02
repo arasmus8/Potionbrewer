@@ -2,8 +2,6 @@ package potionbrewer.powers;
 
 import basemod.BaseMod;
 import basemod.interfaces.CloneablePowerInterface;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -12,22 +10,16 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import potionbrewer.PotionbrewerMod;
 import potionbrewer.cards.option.ChoosePotion;
-import potionbrewer.util.TextureLoader;
 
 import java.util.stream.IntStream;
 
-import static potionbrewer.PotionbrewerMod.makePowerPath;
-
-public class PortableLabPower extends AbstractPower implements CloneablePowerInterface {
+public class PortableLabPower extends AbstractPotionbrewerPower implements CloneablePowerInterface {
     public static final String POWER_ID = PotionbrewerMod.makeID(PortableLabPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("portable_lab84.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("portable_lab32.png"));
-
-    private int threshold;
+    private final int threshold;
     private int cardCount = 1;
 
     public PortableLabPower(final int threshold) {
@@ -40,8 +32,7 @@ public class PortableLabPower extends AbstractPower implements CloneablePowerInt
         type = PowerType.BUFF;
         isTurnBased = false;
 
-        this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
-        this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
+        loadRegion("portable_lab");
 
         updateDescription();
     }

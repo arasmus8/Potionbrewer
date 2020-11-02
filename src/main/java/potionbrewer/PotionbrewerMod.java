@@ -1,8 +1,6 @@
 package potionbrewer;
 
-import basemod.BaseMod;
-import basemod.ModLabel;
-import basemod.ModPanel;
+import basemod.*;
 import basemod.abstracts.CustomSavable;
 import basemod.devcommands.ConsoleCommand;
 import basemod.helpers.RelicType;
@@ -11,6 +9,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
@@ -31,6 +30,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
+import potionbrewer.cards.AbstractPotionbrewerCard;
 import potionbrewer.cards.FollowupCard;
 import potionbrewer.cards.PotionTrackingCard;
 import potionbrewer.cards.option.ChoosePotion;
@@ -43,6 +43,7 @@ import potionbrewer.patches.PotionTracker;
 import potionbrewer.potions.*;
 import potionbrewer.powers.PotionTrackingPower;
 import potionbrewer.relics.*;
+import potionbrewer.util.AssetLoader;
 import potionbrewer.util.IDCheckDontTouchPls;
 import potionbrewer.util.TextureLoader;
 import potionbrewer.variables.*;
@@ -133,6 +134,12 @@ public class PotionbrewerMod implements
     public static String makeEventPath(String resourcePath) {
         return getModID() + "Resources/images/events/" + resourcePath;
     }
+
+    public static String assetPath(String path) {
+        return "potionbrewerAssets/" + path;
+    }
+
+    public static AssetLoader assets = new AssetLoader();
 
     public static ArrayList<Reagent> reagents;
     public static boolean potionIsFromCard = false;
@@ -368,6 +375,17 @@ public class PotionbrewerMod implements
 
         logger.info("Adding cards");
 
+        TextureAtlas cardAtlas = (TextureAtlas) ReflectionHacks.getPrivateStatic(AbstractCard.class, "cardAtlas");
+
+        TextureAtlas myCardAtlas = assets.loadAtlas(assetPath("images/cards/cards.atlas"));
+        for (TextureAtlas.AtlasRegion region : myCardAtlas.getRegions()) {
+            cardAtlas.addRegion(getModID() + "/" + region.name, region);
+        }
+
+        new AutoAdd(modID)
+                .packageFilter(AbstractPotionbrewerCard.class)
+                .setDefaultSeen(true)
+                .cards();
 
         for (AbstractCard c : CardList.allCards) {
             BaseMod.addCard(c);

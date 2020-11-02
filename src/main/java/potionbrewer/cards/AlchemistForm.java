@@ -1,11 +1,9 @@
 package potionbrewer.cards;
 
-import basemod.abstracts.CustomCard;
 import basemod.helpers.BaseModCardTags;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.MinionPower;
 import potionbrewer.PotionbrewerMod;
@@ -13,20 +11,19 @@ import potionbrewer.characters.Potionbrewer;
 import potionbrewer.powers.AlchemistFormEnemyPower;
 import potionbrewer.powers.AlchemistFormPower;
 
-import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
-import static potionbrewer.PotionbrewerMod.makeCardPath;
+import java.util.Collections;
+import java.util.List;
 
-public class AlchemistForm extends CustomCard {
+public class AlchemistForm extends AbstractPotionbrewerCard {
 
     public static final String ID = PotionbrewerMod.makeID(AlchemistForm.class.getSimpleName());
-    public static final String IMG = makeCardPath("AlchemistForm.png");
-    public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
-    
+
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = Potionbrewer.Enums.COLOR_CYAN;
-    
+    private static final List<CardTags> tagsList = Collections.singletonList(BaseModCardTags.FORM);
+
     private static final int COST = 3;
 
     public static final int ENEMY_GOLD = 15;
@@ -34,9 +31,8 @@ public class AlchemistForm extends CustomCard {
     private static final int UPGRADE_MAGIC = -5;
 
     public AlchemistForm() {
-        super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, COST, TYPE, RARITY, TARGET, COLOR, tagsList);
         magicNumber = baseMagicNumber = MAGIC;
-        tags.add(BaseModCardTags.FORM);
     }
     
     @Override

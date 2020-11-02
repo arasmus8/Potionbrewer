@@ -9,13 +9,13 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import potionbrewer.PotionbrewerMod;
 
-public class AccelerantPower extends AbstractPower implements CloneablePowerInterface {
+public class AccelerantPower extends AbstractPotionbrewerPower implements CloneablePowerInterface {
     public static final String POWER_ID = PotionbrewerMod.makeID(AccelerantPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private boolean upgraded;
+    private final boolean upgraded;
 
     public AccelerantPower(boolean upgraded) {
         name = NAME;

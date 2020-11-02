@@ -1,26 +1,23 @@
 package potionbrewer.cards;
 
-import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import potionbrewer.PotionbrewerMod;
 import potionbrewer.actions.BottomlessFlaskAction;
 import potionbrewer.characters.Potionbrewer;
 
-import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
-import static potionbrewer.PotionbrewerMod.makeCardPath;
+import java.util.Collections;
+import java.util.List;
 
-public class BottomlessFlask extends CustomCard {
+public class BottomlessFlask extends AbstractPotionbrewerCard {
 
     public static final String ID = PotionbrewerMod.makeID(BottomlessFlask.class.getSimpleName());
-    public static final String IMG = makeCardPath("BottomlessFlask.png");
-    public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
 
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = Potionbrewer.Enums.COLOR_CYAN;
+    private static final List<CardTags> tagsList = Collections.singletonList(CardTags.HEALING);
 
     private static final int COST = 1;
 
@@ -28,9 +25,8 @@ public class BottomlessFlask extends CustomCard {
     private static final int UPGRADE_MAGIC = 1;
 
     public BottomlessFlask() {
-        super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, COST, TYPE, RARITY, TARGET, COLOR, tagsList);
         magicNumber = baseMagicNumber = MAGIC;
-        tags.add(CardTags.HEALING); // Don't generate in combat via e.g. Dead Branch
     }
 
     @Override

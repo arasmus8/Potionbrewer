@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.potions.SmokeBomb;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import potionbrewer.PotionbrewerMod;
 
-public class TwoForOnePower extends AbstractPower implements PotionTrackingPower, CloneablePowerInterface {
+public class TwoForOnePower extends AbstractPotionbrewerPower implements PotionTrackingPower, CloneablePowerInterface {
     public static final String POWER_ID = PotionbrewerMod.makeID(TwoForOnePower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;

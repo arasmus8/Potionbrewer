@@ -5,26 +5,13 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.utility.DiscardToHandAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import potionbrewer.PotionbrewerMod;
 import potionbrewer.characters.Potionbrewer;
 
-import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
-import static potionbrewer.PotionbrewerMod.makeCardPath;
-
 public class EmptyBottle extends PotionTrackingCard {
-// TEXT DECLARATION
-
     public static final String ID = PotionbrewerMod.makeID(EmptyBottle.class.getSimpleName());
-    public static final String IMG = makeCardPath("EmptyBottle.png");
-    public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
-// Must have an image with the same NAME as the card in your image folder!.
-
-// /TEXT DECLARATION/
-
-// STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -35,10 +22,9 @@ public class EmptyBottle extends PotionTrackingCard {
 
     private static final int DAMAGE = 5;
     private static final int UPGRADE_PLUS_DMG = 2;
-// /STAT DECLARATION/
 
     public EmptyBottle() {
-        super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
     }
 

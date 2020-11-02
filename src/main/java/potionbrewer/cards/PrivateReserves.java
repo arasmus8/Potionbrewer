@@ -1,22 +1,15 @@
 package potionbrewer.cards;
 
-import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import potionbrewer.PotionbrewerMod;
 import potionbrewer.characters.Potionbrewer;
 import potionbrewer.powers.PrivateReservesPower;
 
-import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
-import static potionbrewer.PotionbrewerMod.makeCardPath;
-
-public class PrivateReserves extends CustomCard {
+public class PrivateReserves extends AbstractPotionbrewerCard {
 
     public static final String ID = PotionbrewerMod.makeID(PrivateReserves.class.getSimpleName());
-    public static final String IMG = makeCardPath("PrivateReserves.png");
-    public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
@@ -29,7 +22,7 @@ public class PrivateReserves extends CustomCard {
     private static final int UPGRADE_MAGIC = 2;
 
     public PrivateReserves() {
-        super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, COST, TYPE, RARITY, TARGET, COLOR, null);
         magicNumber = baseMagicNumber = MAGIC;
     }
 

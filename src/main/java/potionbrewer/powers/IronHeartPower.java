@@ -1,8 +1,6 @@
 package potionbrewer.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -10,21 +8,13 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.DexterityPower;
-import com.megacrit.cardcrawl.powers.LoseDexterityPower;
 import potionbrewer.PotionbrewerMod;
-import potionbrewer.util.TextureLoader;
 
-import static potionbrewer.PotionbrewerMod.makePowerPath;
-
-public class IronHeartPower extends AbstractPower implements CloneablePowerInterface {
+public class IronHeartPower extends AbstractPotionbrewerPower implements CloneablePowerInterface {
     public static final String POWER_ID = PotionbrewerMod.makeID(IronHeartPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-
-    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("iron_heart84.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("iron_heart32.png"));
 
     public IronHeartPower(AbstractCreature owner, final int amount) {
         name = NAME;
@@ -36,8 +26,7 @@ public class IronHeartPower extends AbstractPower implements CloneablePowerInter
         type = PowerType.BUFF;
         isTurnBased = false;
 
-        this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
-        this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
+        loadRegion("iron_heart");
 
         updateDescription();
     }
@@ -45,8 +34,7 @@ public class IronHeartPower extends AbstractPower implements CloneablePowerInter
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
         if (PotionbrewerMod.lastPlayedCardCostZero) {
-            addToBot(new ApplyPowerAction(owner, owner, new DexterityPower(owner, amount), amount));
-            addToBot(new ApplyPowerAction(owner, owner, new LoseDexterityPower(owner, amount), amount));
+            addToBot(new ApplyPowerAction(owner, owner, new TemporaryDexterity(owner, amount), amount));
         }
     }
 

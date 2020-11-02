@@ -1,26 +1,20 @@
 package potionbrewer.cards;
 
-import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import potionbrewer.PotionbrewerMod;
 
-public abstract class FollowupCard extends CustomCard {
-
-    private boolean lastWasFree = false;
+public abstract class FollowupCard extends AbstractPotionbrewerCard {
 
     public FollowupCard(final String id,
-                        final String name,
-                        final String img,
                         final int cost,
-                        final String rawDescription,
                         final CardType type,
                         final CardColor color,
                         final CardRarity rarity,
                         final CardTarget target) {
 
-        super(id, name, img, cost, rawDescription, type, color, rarity, target);
+        super(id, cost, type, rarity, target, color, null);
         isCostModified = false;
         isCostModifiedForTurn = false;
         isDamageModified = false;

@@ -1,29 +1,14 @@
 package potionbrewer.cards;
 
-import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import potionbrewer.PotionbrewerMod;
 import potionbrewer.characters.Potionbrewer;
 import potionbrewer.powers.TwoForOnePower;
 
-import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
-import static potionbrewer.PotionbrewerMod.makeCardPath;
-
-public class TwoForOne extends CustomCard {
-
-// TEXT DECLARATION
-
+public class TwoForOne extends AbstractPotionbrewerCard {
     public static final String ID = PotionbrewerMod.makeID(TwoForOne.class.getSimpleName());
-    public static final String IMG = makeCardPath("TwoForOne.png");
-    public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
-// Must have an image with the same NAME as the card in your image folder!
-
-// /TEXT DECLARATION/
-
-// STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
@@ -34,11 +19,9 @@ public class TwoForOne extends CustomCard {
     private static final int UPGRADED_COST = 0;
 
     private static final int MAGIC = 1;
-// /STAT DECLARATION/
-
 
     public TwoForOne() {
-        super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, COST, TYPE, RARITY, TARGET, COLOR, null);
         baseMagicNumber = MAGIC;
         magicNumber = baseMagicNumber;
         exhaust = true;

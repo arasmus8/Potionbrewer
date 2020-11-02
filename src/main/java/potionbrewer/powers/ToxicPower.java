@@ -2,8 +2,6 @@ package potionbrewer.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.HealthBarRenderPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -18,36 +16,28 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import potionbrewer.PotionbrewerMod;
 import potionbrewer.relics.PaperSwan;
-import potionbrewer.util.TextureLoader;
 
-import static potionbrewer.PotionbrewerMod.makePowerPath;
-
-public class ToxicPower extends AbstractPower implements CloneablePowerInterface, HealthBarRenderPower {
+public class ToxicPower extends AbstractPotionbrewerPower implements CloneablePowerInterface, HealthBarRenderPower {
     public AbstractCreature source;
-    
+
     public static final String POWER_ID = PotionbrewerMod.makeID(ToxicPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    
-    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("toxic_84.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("toxic_32.png"));
-    
+
     public ToxicPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         name = NAME;
         ID = POWER_ID;
-        
+
         this.owner = owner;
         this.amount = amount;
         this.source = source;
-        
+
         type = PowerType.DEBUFF;
         isTurnBased = true;
-        
-        
-        this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
-        this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
-        
+
+        loadRegion("toxic");
+
         updateDescription();
     }
 

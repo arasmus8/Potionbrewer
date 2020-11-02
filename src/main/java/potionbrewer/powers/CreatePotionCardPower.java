@@ -1,8 +1,6 @@
 package potionbrewer.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -12,18 +10,12 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import potionbrewer.PotionbrewerMod;
 import potionbrewer.cards.option.ChoosePotion;
-import potionbrewer.util.TextureLoader;
 
-import static potionbrewer.PotionbrewerMod.makePowerPath;
-
-public class CreatePotionCardPower extends AbstractPower implements CloneablePowerInterface {
+public class CreatePotionCardPower extends AbstractPotionbrewerPower implements CloneablePowerInterface {
     public static final String POWER_ID = PotionbrewerMod.makeID(CreatePotionCardPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-
-    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("create_potion_card84.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("create_potion_card32.png"));
 
     public CreatePotionCardPower(final int amount) {
         name = NAME;
@@ -35,8 +27,7 @@ public class CreatePotionCardPower extends AbstractPower implements CloneablePow
         type = PowerType.BUFF;
         isTurnBased = true;
 
-        this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
-        this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
+        loadRegion("create_potion_card");
 
         updateDescription();
     }

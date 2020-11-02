@@ -19,11 +19,6 @@ public class DamageNextTurnPower extends AbstractPower implements CloneablePower
 
     public final AbstractCreature source;
 
-    /*
-    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("disease_84.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("disease_32.png"));
-    */
-
     public DamageNextTurnPower(final AbstractCreature source, final AbstractCreature owner, final int amount) {
         this.name = NAME;
         this.ID = POWER_ID;

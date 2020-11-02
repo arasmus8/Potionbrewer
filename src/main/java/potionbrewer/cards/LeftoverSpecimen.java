@@ -1,10 +1,8 @@
 package potionbrewer.cards;
 
-import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import potionbrewer.PotionbrewerMod;
 import potionbrewer.actions.ChooseReagentAction;
@@ -12,21 +10,8 @@ import potionbrewer.characters.Potionbrewer;
 
 import java.util.ArrayList;
 
-import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
-import static potionbrewer.PotionbrewerMod.makeCardPath;
-
-public class LeftoverSpecimen extends CustomCard {
-
-    // TEXT DECLARATION
-
+public class LeftoverSpecimen extends AbstractPotionbrewerCard {
     public static final String ID = PotionbrewerMod.makeID(LeftoverSpecimen.class.getSimpleName());
-    public static final String IMG = makeCardPath("LeftoverSpecimen.png");
-    public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
-    // Must have an image with the same NAME as the card in your image folder!
-
-    // /TEXT DECLARATION/
-
-    // STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
@@ -36,11 +21,9 @@ public class LeftoverSpecimen extends CustomCard {
     private static final int BLOCK = 3;
     private static final int UPGRADE_BLOCK = 2;
     private static final int COST = 0;
-    // /STAT DECLARATION/
-
 
     public LeftoverSpecimen() {
-        super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, COST, TYPE, RARITY, TARGET, COLOR, null);
         baseBlock = BLOCK;
         exhaust = true;
     }
@@ -59,7 +42,7 @@ public class LeftoverSpecimen extends CustomCard {
             upgradeBlock(UPGRADE_BLOCK);
             exhaust = false;
             upgradeName();
-            rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

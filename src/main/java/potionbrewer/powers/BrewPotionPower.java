@@ -30,11 +30,6 @@ public class BrewPotionPower extends AbstractPower implements NonStackablePower,
     private final AbstractPotion potion;
     private final Reagent reagent;
 
-    /*
-    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("disease_84.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("disease_32.png"));
-    */
-
     public BrewPotionPower(final AbstractCreature owner, final int turns, final AbstractPotion potion, Reagent reagent) {
         this.name = NAME;
         this.ID = POWER_ID;

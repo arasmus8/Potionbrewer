@@ -1,29 +1,15 @@
 package potionbrewer.cards;
 
-import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.unique.SwordBoomerangAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import potionbrewer.PotionbrewerMod;
 import potionbrewer.characters.Potionbrewer;
 
-import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
-import static potionbrewer.PotionbrewerMod.makeCardPath;
-
-public class TheFinalStraw extends CustomCard {
-    // TEXT DECLARATION
-
+public class TheFinalStraw extends AbstractPotionbrewerCard {
     public static final String ID = PotionbrewerMod.makeID(TheFinalStraw.class.getSimpleName());
-    public static final String IMG = makeCardPath("TheFinalStraw.png");
-    public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
-    // Must have an image with the same NAME as the card in your image folder!.
-
-    // /TEXT DECLARATION/
-
-    // STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
@@ -31,12 +17,11 @@ public class TheFinalStraw extends CustomCard {
     public static final CardColor COLOR = Potionbrewer.Enums.COLOR_CYAN;
 
     private static final int COST = 3;
-    // /STAT DECLARATION/
 
     private static final int DAMAGE = 10;
 
     public TheFinalStraw() {
-        super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, COST, TYPE, RARITY, TARGET, COLOR, null);
         baseDamage = DAMAGE;
         magicNumber = baseMagicNumber = 0;
     }
@@ -44,9 +29,9 @@ public class TheFinalStraw extends CustomCard {
     private void resetDesc() {
         magicNumber = baseMagicNumber = 0;
         if (upgraded) {
-            rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
+            rawDescription = UPGRADE_DESCRIPTION;
         } else {
-            rawDescription = CARD_STRINGS.DESCRIPTION;
+            rawDescription = DESCRIPTION;
         }
         initializeDescription();
     }
@@ -56,10 +41,10 @@ public class TheFinalStraw extends CustomCard {
         super.applyPowers();
         if (upgraded) {
             magicNumber = PotionbrewerMod.zeroCostCardsThisCombat;
-            rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION + CARD_STRINGS.EXTENDED_DESCRIPTION[0];
+            rawDescription = UPGRADE_DESCRIPTION + EXTENDED_DESCRIPTION[0];
         } else {
             magicNumber = PotionbrewerMod.zeroCostCardsThisTurn;
-            rawDescription = CARD_STRINGS.DESCRIPTION + CARD_STRINGS.EXTENDED_DESCRIPTION[0];
+            rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0];
         }
         isMagicNumberModified = magicNumber > baseMagicNumber;
         initializeDescription();
@@ -88,7 +73,7 @@ public class TheFinalStraw extends CustomCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

@@ -11,20 +11,11 @@ import potionbrewer.PotionbrewerMod;
 import potionbrewer.characters.Potionbrewer;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
-import static potionbrewer.PotionbrewerMod.makeCardPath;
 
 public class AcidCloud extends FollowupCard {
 
-    // TEXT DECLARATION
-
     public static final String ID = PotionbrewerMod.makeID(AcidCloud.class.getSimpleName());
-    public static final String IMG = makeCardPath("AcidCloud.png");
     public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
-    // Must have an image with the same NAME as the card in your image folder!
-
-    // /TEXT DECLARATION/
-
-    // STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
@@ -38,11 +29,8 @@ public class AcidCloud extends FollowupCard {
     private static final int MAGIC = 1;
     private static final int UPGRADE_MAGIC_AMT = 1;
 
-    // /STAT DECLARATION/
-
-
     public AcidCloud() {
-        super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseBlock = BLOCK;
         this.baseMagicNumber = MAGIC;
         this.magicNumber = MAGIC;

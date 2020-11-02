@@ -1,8 +1,6 @@
 package potionbrewer.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -10,18 +8,12 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import potionbrewer.PotionbrewerMod;
-import potionbrewer.util.TextureLoader;
 
-import static potionbrewer.PotionbrewerMod.makePowerPath;
-
-public class TemporaryStrength extends AbstractPower implements CloneablePowerInterface {
+public class TemporaryStrength extends AbstractPotionbrewerPower implements CloneablePowerInterface {
     public static final String POWER_ID = PotionbrewerMod.makeID(TemporaryStrength.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-
-    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("temp_str84.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("temp_str32.png"));
 
     public TemporaryStrength(final AbstractCreature owner, final int amount) {
         name = NAME;
@@ -33,8 +25,7 @@ public class TemporaryStrength extends AbstractPower implements CloneablePowerIn
         type = PowerType.BUFF;
         isTurnBased = true;
 
-        this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
-        this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
+        loadRegion("temp_str");
 
         updateDescription();
     }

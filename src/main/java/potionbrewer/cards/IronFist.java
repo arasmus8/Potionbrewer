@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.combat.VerticalImpactEffect;
@@ -14,20 +13,8 @@ import potionbrewer.PotionbrewerMod;
 import potionbrewer.characters.Potionbrewer;
 import potionbrewer.patches.PotionTracker;
 
-import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
-import static potionbrewer.PotionbrewerMod.makeCardPath;
-
 public class IronFist extends CatalyzeCard {
-// TEXT DECLARATION
-
     public static final String ID = PotionbrewerMod.makeID(IronFist.class.getSimpleName());
-    public static final String IMG = makeCardPath("IronFist.png");
-    public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
-// Must have an image with the same NAME as the card in your image folder!.
-
-// /TEXT DECLARATION/
-
-// STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -41,10 +28,9 @@ public class IronFist extends CatalyzeCard {
 
     private static final int MAGIC = 2;
     private static final int UPGRADE_MAGIC_AMT = 2;
-// /STAT DECLARATION/
 
     public IronFist() {
-        super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
         baseMagicNumber = MAGIC;
         magicNumber = baseMagicNumber;
@@ -98,7 +84,7 @@ public class IronFist extends CatalyzeCard {
         if (!upgraded) {
             ++this.timesUpgraded;// 860
             upgraded = true;
-            name = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
+            name = EXTENDED_DESCRIPTION[0];
             initializeTitle();
             upgradeDamage(UPGRADE_PLUS_DMG);
             upgradeMagicNumber(UPGRADE_MAGIC_AMT);

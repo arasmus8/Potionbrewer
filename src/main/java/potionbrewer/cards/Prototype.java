@@ -1,6 +1,5 @@
 package potionbrewer.cards;
 
-import basemod.abstracts.CustomCard;
 import basemod.abstracts.CustomSavable;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -24,19 +23,10 @@ import potionbrewer.powers.NoCatalyzePower;
 import java.util.Arrays;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
-import static potionbrewer.PotionbrewerMod.makeCardPath;
 
-public class Prototype extends CustomCard implements CustomSavable<String[]> {
-    // TEXT DECLARATION
-
+public class Prototype extends AbstractPotionbrewerCard implements CustomSavable<String[]> {
     public static final String ID = PotionbrewerMod.makeID(Prototype.class.getSimpleName());
-    public static final String IMG = makeCardPath("Prototype.png");
-    // Must have an image with the same NAME as the card in your image folder!.
     public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
-
-    // /TEXT DECLARATION/
-
-    // STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -83,7 +73,9 @@ public class Prototype extends CustomCard implements CustomSavable<String[]> {
     }
 
     public Prototype(Reagent a, Reagent b, Reagent c) {
-        super(ID, CARD_STRINGS.NAME, IMG, COST, buildDescription(a, b, c), TYPE, COLOR, RARITY, TARGET);
+        super(ID, COST, TYPE, RARITY, TARGET, COLOR, null);
+        rawDescription = buildDescription(a, b, c);
+        initializeDescription();
         if (a != null && b != null && c != null) {
             reagentA = (Reagent) a.makeCopy();
             reagentB = (Reagent) b.makeCopy();

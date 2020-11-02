@@ -20,11 +20,6 @@ public class EquivalentExchangePower extends AbstractPower implements CloneableP
 
     private int cardsThisTurn;
 
-    /*
-    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("disease_84.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("disease_32.png"));
-    */
-
     public EquivalentExchangePower(AbstractCreature owner, int amount) {
         this.name = NAME;
         this.ID = POWER_ID;

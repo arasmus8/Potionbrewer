@@ -1,20 +1,16 @@
 package potionbrewer.cards;
 
-import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 
-public abstract class PotionTrackingCard extends CustomCard {
+public abstract class PotionTrackingCard extends AbstractPotionbrewerCard {
     public PotionTrackingCard(final String id,
-                              final String name,
-                              final String img,
                               final int cost,
-                              final String rawDescription,
                               final CardType type,
                               final CardColor color,
                               final CardRarity rarity,
                               final CardTarget target) {
 
-        super(id, name, img, cost, rawDescription, type, color, rarity, target);
+        super(id, cost, type, rarity, target, color, null);
         isCostModified = false;
         isCostModifiedForTurn = false;
         isDamageModified = false;

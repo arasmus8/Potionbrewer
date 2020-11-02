@@ -1,6 +1,5 @@
 package potionbrewer.cards;
 
-import basemod.abstracts.CustomCard;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
@@ -23,17 +22,15 @@ import potionbrewer.vfx.CollectEffect;
 
 import java.util.HashMap;
 
-import static potionbrewer.PotionbrewerMod.makeCardPath;
+import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static potionbrewer.PotionbrewerTipTracker.REAGENTS;
 
-public class Collect extends CustomCard {
+public class Collect extends AbstractPotionbrewerCard {
 
     public static final String ID = PotionbrewerMod.makeID(Collect.class.getSimpleName());
-    public static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
 
     public static final TutorialStrings TUTORIAL_STRINGS = CardCrawlGame.languagePack.getTutorialString(REAGENTS);
-
-    public static final String IMG = makeCardPath("Collect.png");
+    public static CardStrings CARD_STRINGS = languagePack.getCardStrings(ID);
 
     private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -45,7 +42,7 @@ public class Collect extends CustomCard {
     private static final HashMap<String, Class<? extends Reagent>> monsterReagents = new HashMap<>();
 
     public Collect() {
-        super(ID, CARD_STRINGS.NAME, IMG, COST, CARD_STRINGS.DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, COST, TYPE, RARITY, TARGET, COLOR, null);
         exhaust = true;
         cardsToPreview = new Distill();
     }
@@ -79,7 +76,7 @@ public class Collect extends CustomCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.isInnate = true;
-            this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }
     }
