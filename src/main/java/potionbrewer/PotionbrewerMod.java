@@ -402,6 +402,8 @@ public class PotionbrewerMod implements
 
         if (Settings.language == Settings.GameLanguage.ZHS) {
             lang = "zhs";
+        } else if (Settings.language == Settings.GameLanguage.RUS) {
+            lang = "rus";
         }
 
         BaseMod.loadCustomStringsFile(CardStrings.class,
@@ -447,6 +449,8 @@ public class PotionbrewerMod implements
 
         if (Settings.language == Settings.GameLanguage.ZHS) {
             lang = "zhs";
+        } else if (Settings.language == Settings.GameLanguage.RUS) {
+            lang = "rus";
         }
 
         Gson gson = new Gson();

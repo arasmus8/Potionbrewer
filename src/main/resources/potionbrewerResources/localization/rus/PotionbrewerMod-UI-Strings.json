@@ -1,0 +1,13 @@
+{
+  "potionbrewer:BottomlessFlaskAction": {
+    "TEXT": [
+      "Выберите карту для добавления в колоду:"
+    ]
+  },
+  "potionbrewer:TurnCounterPanel": {
+    "TEXT": [
+      "Счётчик ходов",
+      "Текущий номер хода."
+    ]
+  }
+}

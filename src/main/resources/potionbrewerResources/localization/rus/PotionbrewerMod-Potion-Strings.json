@@ -1,0 +1,195 @@
+{
+  "potionbrewer:AcidPotion": {
+    "NAME": "Кислотное зелье",
+    "DESCRIPTIONS": [
+      "Уберите защиту с цели и нанесите #b",
+      " урона."
+    ]
+  },
+  "potionbrewer:BlacksmithPotion": {
+    "NAME": "Зелье кузнеца",
+    "DESCRIPTIONS": [
+      "Навсегда улучшает #b",
+      " случайную карту. (Может быть использовано только вне боя)",
+      " случайные карты. (Может быть использовано только вне боя)"
+    ]
+  },
+  "potionbrewer:BoundlessPotion": {
+    "NAME": "Безграничное зелье",
+    "DESCRIPTIONS": [
+      "Удвойте свою Силу",
+      ".",
+      " раз."
+    ]
+  },
+  "potionbrewer:BarricadePotion": {
+    "NAME": "Зелье баррикады",
+    "DESCRIPTIONS": [
+      "Удвойте свою защиту",
+      ".",
+      " раз."
+    ]
+  },
+  "potionbrewer:CleansingPotion": {
+    "NAME": "Зелье очищения",
+    "DESCRIPTIONS": [
+      "Снимите с себя #b",
+      " отрицательных эффектов."
+    ]
+  },
+  "potionbrewer:ColorlessPotion": {
+    "NAME": "Бесцветное зелье",
+    "DESCRIPTIONS": [
+      "Добавьте случайную бесцветную карту в руку. В этот ход она стоит 0.",
+      "Добавьте две случайные бесцветные карты в руку. В этот ход они стоят 0."
+    ]
+  },
+  "potionbrewer:DiscountPotion": {
+    "NAME": "Сбавляющее зелье",
+    "DESCRIPTIONS": [
+      "Случайная карта",
+      "#b",
+      " случайные карты",
+      " в вашей руке стоят 0 в этом бою."
+    ]
+  },
+  "potionbrewer:EndurancePotion": {
+    "NAME": "Зелье выносливости",
+    "DESCRIPTIONS": [
+      "Даёт #b",
+      " временного здоровья"
+    ]
+  },
+  "potionbrewer:FreezingPotion": {
+    "NAME": "Замораживающее зелье",
+    "DESCRIPTIONS": [
+      "Накладывает #b",
+      " медлительности на врагов."
+    ]
+  },
+  "potionbrewer:HastePotion": {
+    "NAME": "Зелье ускорения",
+    "DESCRIPTIONS": [
+      "Сбросьте карты из руки, восполните энергию, возьмите #b",
+      " карт."
+    ]
+  },
+  "potionbrewer:InfectionPotion": {
+    "NAME": "Зелье инфекции",
+    "DESCRIPTIONS": [
+      "Накладывает #b",
+      " Инфекции."
+    ]
+  },
+  "potionbrewer:MidasPotion": {
+    "NAME": "Зелье Мидаса",
+    "DESCRIPTIONS": [
+      "Наносит #b",
+      " урона, если побеждён непризываемый враг, даёт #b",
+      " золота."
+    ]
+  },
+  "potionbrewer:NoxiousPotion": {
+    "NAME": "Пагубное зелье",
+    "DESCRIPTIONS": [
+      "Наносит #b",
+      " урона каждый раз когда вы разыгрываете карту в этом ходу."
+    ]
+  },
+  "potionbrewer:QuicksilverPotion": {
+    "NAME": "Буфер в бутылке",
+    "DESCRIPTIONS": [
+      "Предотвращает ",
+      "раз",
+      "#b",
+      " раз",
+      " получаемый урон."
+    ]
+  },
+  "potionbrewer:SplittingPotion": {
+    "NAME": "Зелье расщепления",
+    "DESCRIPTIONS": [
+      "Получите #b",
+      " случайных зелий."
+    ]
+  },
+  "potionbrewer:StunPotion": {
+    "NAME": "Зелье оглушения",
+    "DESCRIPTIONS": [
+      "Олушите врага на #b",
+      " ход.",
+      " ходов."
+    ]
+  },
+  "potionbrewer:ToxicPotion": {
+    "NAME": "Токсичное зелье",
+    "DESCRIPTIONS": [
+      "Накладывает #b",
+      " Токсина на врага."
+    ]
+  },
+  "potionbrewer:BlockTonic": {
+    "NAME": "Тоник защиты",
+    "DESCRIPTIONS": [
+      "Получить #b",
+      " Защиты."
+    ]
+  },
+  "potionbrewer:EnergyTonic": {
+    "NAME": "Энергетический тоник",
+    "DESCRIPTIONS": [
+      "Получите #b",
+      " энергии."
+    ]
+  },
+  "potionbrewer:ExplosiveTonic": {
+    "NAME": "Взрывной тоник",
+    "DESCRIPTIONS": [
+      "Наносит #b",
+      " урона всем врагам."
+    ]
+  },
+  "potionbrewer:FearTonic": {
+    "NAME": "Тоник страха",
+    "DESCRIPTIONS": [
+      "Накладывает #b",
+      " Уязвимости на врага."
+    ]
+  },
+  "potionbrewer:FireTonic": {
+    "NAME": "Огненный тоник",
+    "DESCRIPTIONS": [
+      "Наносит #b",
+      " урона врагу."
+    ]
+  },
+  "potionbrewer:FlexTonic": {
+    "NAME": "Тоник Игры мышцами",
+    "DESCRIPTIONS": [
+      "Даёт #b",
+      " Силы до конца этого хода."
+    ]
+  },
+  "potionbrewer:SpeedTonic": {
+    "NAME": "Тоник скорости",
+    "DESCRIPTIONS": [
+      "Даёт #b",
+      " Ловкости до конца этого хода."
+    ]
+  },
+  "potionbrewer:SwiftTonic": {
+    "NAME": "Тоник стремительности",
+    "DESCRIPTIONS": [
+      "Взять #b",
+      " карту.",
+      " карт."
+    ]
+  },
+  "potionbrewer:WeakTonic": {
+    "NAME": "Тоник слабости",
+    "DESCRIPTIONS": [
+      "Накладывает #b",
+      " Слабости на врага."
+    ]
+  }
+}

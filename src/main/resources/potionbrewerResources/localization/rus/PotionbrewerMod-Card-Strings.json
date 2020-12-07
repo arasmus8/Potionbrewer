@@ -1,0 +1,393 @@
+{
+  "potionbrewer:Accelerant": {
+    "NAME": "Ускоритель",
+    "DESCRIPTION": "Вы берёте карты, пока не наберёте полную руку. Все оставшиеся карты в руке сжигаются NL Сжигается",
+    "UPGRADE_DESCRIPTION": "Вы берёте карты, пока не наберёте полную руку. Половина оставшихся карт в руке сжигается NL Сжигается"
+  },
+  "potionbrewer:AcidCloud": {
+    "NAME": "Кислотное облако",
+    "DESCRIPTION": "Даёт !B! Защиты. Если последняя разыгранная карта стоила 0, Накладывает !M! Уязвимости на всех врагов.",
+    "EXTENDED_DESCRIPTION": [
+      "Кислотный туман"
+    ]
+  },
+  "potionbrewer:AlchemistForm": {
+    "NAME": "Облик Алхимика",
+    "DESCRIPTION": "Каждый ход преобразует !M! золота в случайное зелье, если имеется пустой слот для зелий. NL При победе над непризываемым врагом, вы получаете 15 золота."
+  },
+  "potionbrewer:AnotherRound": {
+    "NAME": "Ещё по одной",
+    "DESCRIPTION": "Каждый ход возвращает 1 карту стоимостью 0 в руку из стопки сброса.",
+    "UPGRADE_DESCRIPTION": "Начальная NL Каждый ход возвращает 1 карту стоимостью 0 в руку из стопки сброса."
+  },
+  "potionbrewer:Backhand": {
+    "NAME": "Наотмашь",
+    "DESCRIPTION": "Наносит !D! урона. Вы берёте !M! карты."
+  },
+  "potionbrewer:BalancedFormula": {
+    "NAME": "Сбалансированная формула",
+    "DESCRIPTION": "Наносит !D! урона. Переместите карту стоимостью 0 из стопки сброса и стопки добора."
+  },
+  "potionbrewer:BeatDown": {
+    "NAME": "Сбить",
+    "DESCRIPTION": "Наносит !D! урона. Поместите эту карту на верх стопки добора, если в руке остались карты."
+  },
+  "potionbrewer:Biohazard": {
+    "NAME": "Биологическая опасность",
+    "DESCRIPTION": "Накладывает !M! potionbrewer:Инфекции на врага."
+  },
+  "potionbrewer:BlindingMist": {
+    "NAME": "Ослепляющий туман",
+    "DESCRIPTION": "Даёт !B! Защиты за каждого противника в бою."
+  },
+  "potionbrewer:BlindingSpray": {
+    "NAME": "Ослепляющий спрей",
+    "DESCRIPTION": "Наносит !D! урона. Накладывает !M! Слабости."
+  },
+  "potionbrewer:BottomlessFlask": {
+    "NAME": "Бездонная склянка",
+    "DESCRIPTION": "Выберите !M! из 10 карт зелий. Навсегда замените выбранную карту."
+  },
+  "potionbrewer:Brandish": {
+    "NAME": "Взбалтывать",
+    "DESCRIPTION": "Вы берёте !M! карты. Если берутся навыки, они сбрасываются."
+  },
+  "potionbrewer:Bribery": {
+    "NAME": "Взятка",
+    "DESCRIPTION": "Каждый раз когда вы теряете ОЗ, заплатите 1 золота, что бы терять на !M! ОЗ меньше."
+  },
+  "potionbrewer:BrokenBeakers": {
+    "NAME": "Разбитые мензурки",
+    "DESCRIPTION": "Наносит !D! урона всем врагам. Урон, наносимый этой картой, снижается на !M! в этом бою."
+  },
+  "potionbrewer:Catalyze": {
+    "NAME": "Катализатор",
+    "DESCRIPTION": "Используйте Энергетический тоник и Тоник стремительности. NL Сжигается",
+    "UPGRADE_DESCRIPTION": "Используйте Зелье энергии и Тоник стремительности. NL Сжигается"
+  },
+  "potionbrewer:CausticBarrier": {
+    "NAME": "Едкий барьер",
+    "DESCRIPTION": "Даёт !B! Защиты. Добавляет карту *Дистиллировать в руку."
+  },
+  "potionbrewer:ChainReaction": {
+    "NAME": "Цепная реакция",
+    "DESCRIPTION": "Каждый ход замешивает карту *Реакция в вашу стопку добора.",
+    "UPGRADE_DESCRIPTION": "Начальная. NL Каждый ход замешивает карту *Реакция в вашу стопку добора."
+  },
+  "potionbrewer:ChemicalRage": {
+    "NAME": "Химическое бешенство",
+    "DESCRIPTION": "Каждый раз когда вы используете зелье, нанесите !M! урона всем врагам."
+  },
+  "potionbrewer:ChemicalShroud": {
+    "NAME": "Химшлем",
+    "DESCRIPTION": "Даёт !B! Защиты. Стоит на 1 меньше за каждое зелье использованное в этом бою."
+  },
+  "potionbrewer:ChemicalSpill": {
+    "NAME": "Утечка химикатов",
+    "DESCRIPTION": "Наносит !D! урона. NL potionbrewer:Катализатор: Даёт !B! Защиты."
+  },
+  "potionbrewer:ChemicalWeapons": {
+    "NAME": "Химическое оружие",
+    "DESCRIPTION": "Наносит !D! урона. Добавляет случайную карту *Тоника в вашу руку."
+  },
+  "potionbrewer:ChokingPowder": {
+    "NAME": "Удушающий порошок",
+    "DESCRIPTION": "Цель получает !M! урона каждый раз когда вы разыгрываете карту в этом ходу."
+  },
+  "potionbrewer:Collect": {
+    "NAME": "Собрать",
+    "DESCRIPTION": "Собрать potionbrewer:Реагент с врагов. Добавить карту *Дистиллировать в руку. NL Сжигается",
+    "UPGRADE_DESCRIPTION": "Начальная. NL Собрать potionbrewer:Реагент с врагов. Добавить  карту *Дистиллировать в руку. NL Сжигается",
+    "EXTENDED_DESCRIPTION": [
+      "Собрать: "
+    ]
+  },
+  "potionbrewer:Contingency": {
+    "NAME": "Инцидент",
+    "DESCRIPTION": "Наносит !D! урона. Выберите карту из стопки добора и поместите её на верх стопки добора."
+  },
+  "potionbrewer:CrossReference": {
+    "NAME": "Перекрёстная ссылка",
+    "DESCRIPTION": "Вы берёте X навыков из стопки добора. Они стоят 0 в этом ходу.",
+    "UPGRADE_DESCRIPTION": "Вы берёте  X + 1 навыков из стопки добора. Они стоят 0 в этом ходу."
+  },
+  "potionbrewer:DigDeep": {
+    "NAME": "Забуриться",
+    "DESCRIPTION": "Вы берёте !M! карты. Если стоимость последней карты была 0, даёт [E]",
+    "EXTENDED_DESCRIPTION": [
+      "Зарыться"
+    ]
+  },
+  "potionbrewer:Discombobulate": {
+    "NAME": "Сбить с толку",
+    "DESCRIPTION": "Наносит !D! урона. NL potionbrewer:Катализатор: Сжигает эту карту и снимает с цели !M! силы ."
+  },
+  "potionbrewer:EmptyBottle": {
+    "NAME": "Пустая бутылка",
+    "DESCRIPTION": "Наносит !D! урона. При использовании зелья, переместите эту карту из стопки сброса в руку."
+  },
+  "potionbrewer:EquivalentExchange": {
+    "NAME": "Эквивалентный обмен",
+    "DESCRIPTION": "Первые !M! карты разыгранные в этом ходу сжигаются и заменяются случайными картами."
+  },
+  "potionbrewer:ExothermicReaction": {
+    "NAME": "Экзотермическая реакция",
+    "DESCRIPTION": "Наносит !D! урона. Если последняя разыгранная карта стоила 0, стоимость другой карты становится 0 на этот ход."
+  },
+  "potionbrewer:Experimentation": {
+    "NAME": "Экспериментирование",
+    "DESCRIPTION": "Эфирная NL Переместите крайний правый potionbrewer:Реагент в крайнее левое положение. Если вы собрали 3 *Реагента, замешайте карту *Прототипа *зелья в вашу стопку добора."
+  },
+  "potionbrewer:ExplosiveReaction": {
+    "NAME": "Взрывная реакция",
+    "DESCRIPTION": "Наносит !D! урона. Пожертвуйте крайний правый potionbrewer:Реагент для двойного урона."
+  },
+  "potionbrewer:FlareUp": {
+    "NAME": "Бурление",
+    "DESCRIPTION": "Наносит !D! урона. Нанести на !M! больше урона за каждое использованное зелье в этом бою."
+  },
+  "potionbrewer:FlashPowder": {
+    "NAME": "Вспышка пороха",
+    "DESCRIPTION": "Наносит !D! урона всем врагам. NL potionbrewer:Катализатор: Вы берёте !M! карту.",
+    "EXTENDED_DESCRIPTION": [
+      "БУМ-порошок"
+    ]
+  },
+  "potionbrewer:FortifiedSerum": {
+    "NAME": "Обогащённая сыворотка",
+    "DESCRIPTION": "Даёт !B! Защиты."
+  },
+  "potionbrewer:Fuel": {
+    "NAME": "Топливо",
+    "DESCRIPTION": "Замешивает карту *Реакция в стопку добора. NL Даёт !B! Защиты."
+  },
+  "potionbrewer:FuelCell": {
+    "NAME": "Топливная ячейка",
+    "DESCRIPTION": "Даёт !B! Защиты. NL Даёт [E] [E] NL Уменьшает количество энергии, получаемой от этой карты, на 1 в этом бою."
+  },
+  "potionbrewer:HazardousMaterials": {
+    "NAME": "Опасные материалы",
+    "DESCRIPTION": "Накладывает X potionbrewer:Токсина. NL potionbrewer:Катализатор: и X potionbrewer:Инфекции. NL Сжигается",
+    "UPGRADE_DESCRIPTION": "Начальная. NL Накладывает X potionbrewer:Токсина. NL potionbrewer:Катализатор: и X potionbrewer:Инфекции. NL Сжигается"
+  },
+  "potionbrewer:HazardousWaste": {
+    "NAME": "Опасные отходы",
+    "DESCRIPTION": "Накладывает !M! potionbrewer:Покрыть слизью. NL potionbrewer:Катализатор: Сожгите эту карту и навсегда увеличьте potionbrewer:Покрыть слизью на 1.",
+    "UPGRADE_DESCRIPTION": "Начальная NL Накладывает !M! potionbrewer:Покрыть слизью. NL potionbrewer:Катализатор: Сожгите эту карту и навсегда увеличьте potionbrewer:Покрыть слизью на 1.",
+    "EXTENDED_DESCRIPTION": [
+      "Опасное месиво"
+    ]
+  },
+  "potionbrewer:Hoarder": {
+    "NAME": "Накопитель",
+    "DESCRIPTION": "Даёт !M! дополнительный слот для potionbrewer:Реагента. Каждый ход собирайте случайный *Реагент.",
+    "UPGRADE_DESCRIPTION": "Даёт !M! дополнительный слот для potionbrewer:Реагента. Каждый ход собирайте случайный *Реагент."
+  },
+  "potionbrewer:IronFist": {
+    "NAME": "Железный кулак",
+    "DESCRIPTION": "Наносит !D! урона. NL potionbrewer:Катализатор: Сила влияет на эту карту !M! раза.",
+    "EXTENDED_DESCRIPTION": [
+      "Стальной кулак"
+    ]
+  },
+  "potionbrewer:IronFlesh": {
+    "NAME": "Железная плоть",
+    "DESCRIPTION": "Даёт !B! Защиты. NL Даёт !B! Защиты на следующий ход.",
+    "EXTENDED_DESCRIPTION": [
+      "Стальная плоть"
+    ]
+  },
+  "potionbrewer:IronHeart": {
+    "NAME": "Железное сердце",
+    "DESCRIPTION": "Когда вы разыгрываете карту стоимостью в 0, даёт !M! временной Ловкости.",
+    "EXTENDED_DESCRIPTION": [
+      "Стальное сердце"
+    ]
+  },
+  "potionbrewer:LabAccident": {
+    "NAME": "Происшествие в лаборатории",
+    "DESCRIPTION": "potionbrewer:Катализатор: Наносит !D! урона."
+  },
+  "potionbrewer:LabJournal": {
+    "NAME": "Лабораторный журнал",
+    "DESCRIPTION": "Эфирная NL Ваши карты *Прототипа *зелья стоят 0 в этом ходу. NL Сжигается",
+    "UPGRADE_DESCRIPTION": "Ваши карты *Прототипа *зелья стоят 0 в этом ходу. NL Сжигается"
+  },
+  "potionbrewer:LeftoverSpecimen": {
+    "NAME": "Остаточный образец",
+    "DESCRIPTION": "Даёт !B! Защиты. NL Выберите 1 из 3 случайных potionbrewer:Реагентов. NL Сжигается",
+    "UPGRADE_DESCRIPTION": "Даёт !B! Защиты. NL Выберите 1 из 3 случайных potionbrewer:Реагентов."
+  },
+  "potionbrewer:MicrobeSpray": {
+    "NAME": "Микробный спрей",
+    "DESCRIPTION": "Накладывает !M! Слабости и !M! potionbrewer:Инфекции на всех врагов. NL Сжигается"
+  },
+  "potionbrewer:OneTwoPunch": {
+    "NAME": "Последовательный удар",
+    "DESCRIPTION": "Наносит !D! урона. Если последняя разыгранная карта стоила 0, то эта карта разыгрывается дважды."
+  },
+  "potionbrewer:PortableLab": {
+    "NAME": "Портативная лаборатория",
+    "DESCRIPTION": "Поглощает оставшуюся энергию после каждого хода. Когда расходуется !M! энергии, добавляет *Карту *Зелья в руку."
+  },
+  "potionbrewer:PotentialEnergy": {
+    "NAME": "Потенциальная энергия",
+    "DESCRIPTION": "Эфирная NL Каждый раз когда вы получаете Силу и Ловкость, вы получаете на !M! больше.",
+    "UPGRADE_DESCRIPTION": "Каждый раз когда вы получаете Силу и Ловкость, вы получаете на !M! больше."
+  },
+  "potionbrewer:PotionbrewerDefend": {
+    "NAME": "Защита",
+    "DESCRIPTION": "Даёт !B! Защиты."
+  },
+  "potionbrewer:PotionbrewerStrike": {
+    "NAME": "Удар",
+    "DESCRIPTION": "Наносит !D! урона."
+  },
+  "potionbrewer:PrivateReserves": {
+    "NAME": "Личные запасы",
+    "DESCRIPTION": "Каждый раз когда вы используете зелье, даёт !M! Защиты."
+  },
+  "potionbrewer:QuickStep": {
+    "NAME": "Быстрый шаг",
+    "DESCRIPTION": "Даёт !B! Защиты. Если вы играли меньше !M! карт в этом ходу, вы берёте  карту."
+  },
+  "potionbrewer:Refill": {
+    "NAME": "Пополнение",
+    "DESCRIPTION": "Даёт !B! Защиты. На следующий ход даёт [E]."
+  },
+  "potionbrewer:RefinedProcess": {
+    "NAME": "Очищающий процесс",
+    "DESCRIPTION": "Наносит !D! урона !M! раза. NL potionbrewer:Катализатор: Навсегда увеличивает Урон этой карты на 1 и сжигает её."
+  },
+  "potionbrewer:ResearchResults": {
+    "NAME": "Результаты исследований",
+    "DESCRIPTION": "На X ходов, добавьте карту *Случайное *Зелье в руку. NL Сжигается",
+    "UPGRADE_DESCRIPTION": "На X ходов, добавьте карту *Случайное *Зелье в руку."
+  },
+  "potionbrewer:Shovel": {
+    "NAME": "Лопата",
+    "DESCRIPTION": "Наносит !D! урона. Замешивает карту *Реагент в стопку добора."
+  },
+  "potionbrewer:Smack": {
+    "NAME": "Пощёчина",
+    "DESCRIPTION": "Наносит !D! урона. NL potionbrewer:Катализатор: Даёт !M! [E]."
+  },
+  "potionbrewer:Smokescreen": {
+    "NAME": "Дымовая завеса",
+    "DESCRIPTION": "Даёт !B! Защиты. NL potionbrewer:Катализатор: Вы берёте карту."
+  },
+  "potionbrewer:Spark": {
+    "NAME": "Искра",
+    "DESCRIPTION": "Наносит !D! урона. Вы берёте карту *Реакция."
+  },
+  "potionbrewer:SpecialFormula": {
+    "NAME": "Особая формула",
+    "DESCRIPTION": "Выбрать 1 из !M! случайных зелий для использования. NL Сжигается"
+  },
+  "potionbrewer:TestFormula": {
+    "NAME": "Пробная формула",
+    "DESCRIPTION": "Выбрать случайный potionbrewer:Тоник, 1 из !M!, для моментального использования."
+  },
+  "potionbrewer:TestSubject": {
+    "NAME": "Испытуемый",
+    "DESCRIPTION": "Наносит !D! урона. NL potionbrewer:Катализатор: Накладывает !M! potionbrewer:Инфекции. "
+  },
+  "potionbrewer:TheFinalStraw": {
+    "NAME": "Последняя капля",
+    "DESCRIPTION": "Наносит !D! урона случайному врагу за каждую разыгранную в этом ходу карту стоимостью в 0.",
+    "UPGRADE_DESCRIPTION": "Наносит !D! случайному врагу за каждую разыгранную в этом ходу карту стоимостью в 0.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Урон !M! раз)"
+    ]
+  },
+  "potionbrewer:TimeBomb": {
+    "NAME": "Часовая бомба",
+    "DESCRIPTION": "Наносит !D! урона на следующий ход."
+  },
+  "potionbrewer:Toxicity": {
+    "NAME": "Токсин",
+    "DESCRIPTION": "Накладывает !M! potionbrewer:Токсина на врага."
+  },
+  "potionbrewer:Transmute": {
+    "NAME": "Трансмутировать",
+    "DESCRIPTION": "Наносит !D! урона. NL При убийстве цели: Выберите и получите 1 из 3 случайных зелий . NL Сжигается"
+  },
+  "potionbrewer:TwoForOne": {
+    "NAME": "Два в одном",
+    "DESCRIPTION": "При использовании зелья вы получите его копию. NL Сжигается"
+  },
+  "potionbrewer:UnstableFormula": {
+    "NAME": "Нестабильная формула",
+    "DESCRIPTION": "Наносит !D! урона. NL На следующий ход, наносит !D! урона."
+  },
+  "potionbrewer:VolatileSolution": {
+    "NAME": "Летучий раствор",
+    "DESCRIPTION": "Наносит !D! урона. Карты не могут активировать эффект potionbrewer:Катализатор на этот ход."
+  },
+  "potionbrewer:WizBang": {
+    "NAME": "Свистящий залп",
+    "DESCRIPTION": "Наносит !D! урона 2 раза. NL potionbrewer:Катализатор: 3 раза.",
+    "EXTENDED_DESCRIPTION": [
+      "Вззззз-БУМ"
+    ]
+  },
+  "potionbrewer:Prototype": {
+    "NAME": "Прототип зелья",
+    "DESCRIPTION": "Имеет различные эффекты в зависимости от собранных реагентов.",
+    "EXTENDED_DESCRIPTION": [
+      " NL Сжигается",
+      "Мощный",
+      "Крепкий",
+      "Вялый",
+      "Пузырение",
+      "Жестокий",
+      "Разбавленный",
+      "Загустевший",
+      "Газированный",
+      "Блеск",
+      "Соединение",
+      "Раствор",
+      "Сыворотка",
+      "Проект",
+      "Эликсир",
+      "Варево",
+      "Настойка",
+      "Микстура",
+      "Снадобье"
+    ]
+  },
+  "potionbrewer:Reaction": {
+    "NAME": "Реакция",
+    "DESCRIPTION": "Неиграбельная. NL Когда берется даёт [E] и добирает !M! карт. NL Сжигается"
+  },
+  "potionbrewer:Distill": {
+    "NAME": "Дистиллировать",
+    "DESCRIPTION": "Эфирная. NL Сварить крайний правый potionbrewer:Реагент в зелье за 3 хода. NL Сжигается"
+  },
+  "potionbrewer:ChoosePotion": {
+    "NAME": "Зелье",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "Использовать ",
+      "Получить ",
+      "",
+      "",
+      "Случайное зелье",
+      "Случайный тоник",
+      "Неизвестное зелье",
+      "Я не могу использовать это сейчас."
+    ]
+  },
+  "potionbrewer:ChooseReagent": {
+    "NAME": "Реагент",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "Дистилляция: ",
+      " NL Эффект карты: "
+    ]
+  },
+  "potionbrewer:ReagentCard": {
+    "NAME": "Реагент",
+    "DESCRIPTION": "Выберите 1 из 3 случайных potionbrewer:Реагентов. NL Сжигается"
+  }
+}
