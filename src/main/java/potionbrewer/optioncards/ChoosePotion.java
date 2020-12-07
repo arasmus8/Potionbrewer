@@ -1,4 +1,4 @@
-package potionbrewer.cards.option;
+package potionbrewer.optioncards;
 
 import basemod.abstracts.CustomSavable;
 import com.badlogic.gdx.Gdx;

@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.random.Random;
-import potionbrewer.cards.option.ChoosePotion;
+import potionbrewer.optioncards.ChoosePotion;
 import potionbrewer.potions.tonics.*;
 
 import java.util.ArrayList;

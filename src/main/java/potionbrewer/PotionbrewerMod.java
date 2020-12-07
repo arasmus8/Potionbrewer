@@ -33,10 +33,10 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import potionbrewer.cards.AbstractPotionbrewerCard;
 import potionbrewer.cards.FollowupCard;
 import potionbrewer.cards.PotionTrackingCard;
-import potionbrewer.cards.option.ChoosePotion;
 import potionbrewer.characters.Invalid;
 import potionbrewer.characters.Potionbrewer;
 import potionbrewer.events.JunkPileEvent;
+import potionbrewer.optioncards.ChoosePotion;
 import potionbrewer.orbs.Reagent;
 import potionbrewer.orbs.ReagentList;
 import potionbrewer.patches.PotionTracker;
@@ -375,22 +375,17 @@ public class PotionbrewerMod implements
 
         logger.info("Adding cards");
 
-        TextureAtlas cardAtlas = (TextureAtlas) ReflectionHacks.getPrivateStatic(AbstractCard.class, "cardAtlas");
+        TextureAtlas cardAtlas = ReflectionHacks.getPrivateStatic(AbstractCard.class, "cardAtlas");
 
         TextureAtlas myCardAtlas = assets.loadAtlas(assetPath("images/cards/cards.atlas"));
         for (TextureAtlas.AtlasRegion region : myCardAtlas.getRegions()) {
             cardAtlas.addRegion(getModID() + "/" + region.name, region);
         }
 
-        new AutoAdd(modID)
+        new AutoAdd("Potionbrewer")
                 .packageFilter(AbstractPotionbrewerCard.class)
                 .setDefaultSeen(true)
                 .cards();
-
-        for (AbstractCard c : CardList.allCards) {
-            BaseMod.addCard(c);
-            UnlockTracker.unlockCard(c.cardID);
-        }
 
         BaseMod.addCard(new ChoosePotion());
         UnlockTracker.unlockCard(ChoosePotion.ID);

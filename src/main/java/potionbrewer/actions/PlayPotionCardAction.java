@@ -6,11 +6,11 @@ import com.megacrit.cardcrawl.cards.CardQueueItem;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import potionbrewer.cards.option.ChoosePotion;
+import potionbrewer.optioncards.ChoosePotion;
 
 public class PlayPotionCardAction extends AbstractGameAction {
 
-    private AbstractMonster target;
+    private final AbstractMonster target;
 
     public PlayPotionCardAction(AbstractMonster target) {
         duration = Settings.ACTION_DUR_MED;

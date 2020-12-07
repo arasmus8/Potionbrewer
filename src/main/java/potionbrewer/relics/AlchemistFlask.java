@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import potionbrewer.PotionbrewerMod;
-import potionbrewer.cards.option.ChoosePotion;
+import potionbrewer.optioncards.ChoosePotion;
 import potionbrewer.util.TextureLoader;
 
 import java.util.ArrayList;

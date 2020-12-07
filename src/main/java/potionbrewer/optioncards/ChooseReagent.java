@@ -1,4 +1,4 @@
-package potionbrewer.cards.option;
+package potionbrewer.optioncards;
 
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;

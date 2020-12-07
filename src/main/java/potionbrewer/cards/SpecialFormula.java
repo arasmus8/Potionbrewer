@@ -5,8 +5,8 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import potionbrewer.PotionbrewerMod;
-import potionbrewer.cards.option.ChoosePotion;
 import potionbrewer.characters.Potionbrewer;
+import potionbrewer.optioncards.ChoosePotion;
 
 import java.util.ArrayList;
 import java.util.stream.Collectors;

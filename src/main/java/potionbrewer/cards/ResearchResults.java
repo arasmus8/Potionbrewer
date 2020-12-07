@@ -4,8 +4,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import potionbrewer.PotionbrewerMod;
 import potionbrewer.actions.ResearchResultsAction;
-import potionbrewer.cards.option.ChoosePotion;
 import potionbrewer.characters.Potionbrewer;
+import potionbrewer.optioncards.ChoosePotion;
 
 public class ResearchResults extends AbstractPotionbrewerCard {
     public static final String ID = PotionbrewerMod.makeID(ResearchResults.class.getSimpleName());

@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import potionbrewer.PotionbrewerMod;
-import potionbrewer.cards.option.ChoosePotion;
+import potionbrewer.optioncards.ChoosePotion;
 
 public class CreatePotionCardPower extends AbstractPotionbrewerPower implements CloneablePowerInterface {
     public static final String POWER_ID = PotionbrewerMod.makeID(CreatePotionCardPower.class.getSimpleName());

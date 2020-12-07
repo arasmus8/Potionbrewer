@@ -9,15 +9,15 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import potionbrewer.PotionbrewerMod;
-import potionbrewer.cards.option.ChoosePotion;
+import potionbrewer.optioncards.ChoosePotion;
 
 import java.util.Optional;
 
 public class BottomlessFlaskAction extends AbstractGameAction {
-    private AbstractPlayer player;
-    private AbstractCard card;
-    private int selectCount;
-    private int groupSize;
+    private final AbstractPlayer player;
+    private final AbstractCard card;
+    private final int selectCount;
+    private final int groupSize;
     private static final String[] TEXT;
     public static final String ID = PotionbrewerMod.makeID(BottomlessFlaskAction.class.getSimpleName());
 

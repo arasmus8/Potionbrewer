@@ -7,8 +7,8 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import potionbrewer.PotionbrewerMod;
-import potionbrewer.cards.option.ChoosePotion;
 import potionbrewer.characters.Potionbrewer;
+import potionbrewer.optioncards.ChoosePotion;
 
 public class ChemicalWeapons extends AbstractPotionbrewerCard {
     public static final String ID = PotionbrewerMod.makeID(ChemicalWeapons.class.getSimpleName());

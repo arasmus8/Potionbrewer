@@ -5,7 +5,7 @@ import basemod.devcommands.ConsoleCommand;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import potionbrewer.cards.option.ChoosePotion;
+import potionbrewer.optioncards.ChoosePotion;
 
 import java.util.ArrayList;
 import java.util.Arrays;

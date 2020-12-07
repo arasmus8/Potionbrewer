@@ -4,8 +4,8 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import potionbrewer.PotionbrewerMod;
-import potionbrewer.cards.option.ChoosePotion;
 import potionbrewer.characters.Potionbrewer;
+import potionbrewer.optioncards.ChoosePotion;
 import potionbrewer.powers.PortableLabPower;
 
 public class PortableLab extends AbstractPotionbrewerCard {

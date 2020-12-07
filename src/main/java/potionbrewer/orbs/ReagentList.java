@@ -4,7 +4,7 @@ import basemod.abstracts.CustomSavable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.random.Random;
-import potionbrewer.cards.option.ChooseReagent;
+import potionbrewer.optioncards.ChooseReagent;
 
 import java.util.*;
 import java.util.stream.Collectors;
