@@ -68,13 +68,16 @@
     "NAME": "Midas Potion",
     "DESCRIPTIONS": [
       "Deal #b",
-      " Damage, if this defeats a non-minion enemy, gain #b",
+      " damage, if this defeats a non-minion enemy, gain #b",
       " gold."
     ]
   },
   "potionbrewer:NoxiousPotion": {
     "NAME": "Noxious Potion",
-    "DESCRIPTIONS": [ "Deal #b", " Damage each time you play a card this turn." ]
+    "DESCRIPTIONS": [
+      "Deal #b",
+      " damage each time you play a card this turn."
+    ]
   },
   "potionbrewer:QuicksilverPotion": {
     "NAME": "Buffer in a Bottle",
@@ -115,7 +118,10 @@
   },
   "potionbrewer:ExplosiveTonic": {
     "NAME": "Explosive Tonic",
-    "DESCRIPTIONS": [ "Deal #b", " Damage to all enemies." ]
+    "DESCRIPTIONS": [
+      "Deal #b",
+      " damage to ALL enemies."
+    ]
   },
   "potionbrewer:FearTonic": {
     "NAME": "Fear Tonic",
@@ -123,7 +129,10 @@
   },
   "potionbrewer:FireTonic": {
     "NAME": "Fire Tonic",
-    "DESCRIPTIONS": [ "Deal #b", " Damage to an enemy." ]
+    "DESCRIPTIONS": [
+      "Deal #b",
+      " damage to an enemy."
+    ]
   },
   "potionbrewer:FlexTonic": {
     "NAME": "Flex Tonic",

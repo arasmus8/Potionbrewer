@@ -10,9 +10,9 @@
     "NAME": "Barb",
     "DESCRIPTION": [
       "Metallic barb harvested from a Spiker.",
-      "Gain 5 Block. Deal 5 Damage.",
-      "Gain 5 Block. Deal 5 Damage.",
-      "Gain BB Block. Deal DD Damage."
+      "Gain 5 Block. Deal 5 damage.",
+      "Gain 5 Block. Deal 5 damage.",
+      "Gain BB Block. Deal DD damage."
     ]
   },
   "potionbrewer:Beak": {
@@ -37,9 +37,9 @@
     "NAME": "Bludgeon",
     "DESCRIPTION": [
       "Vintage weapon taken from a Knight.",
-      "Deal 8 Damage.",
-      "Deal 8 Damage.",
-      "Deal DD Damage."
+      "Deal 8 damage.",
+      "Deal 8 damage.",
+      "Deal DD damage."
     ]
   },
   "potionbrewer:Bone": {
@@ -64,36 +64,36 @@
     "NAME": "Chest",
     "DESCRIPTION": [
       "Treasure chest filled with gold.",
-      "Deal 1 Damage for every 10 gold.",
-      "Deal 1 Damage for every 10 gold.",
-      "Deal DD Damage."
+      "Deal 1 damage for every 10 gold.",
+      "Deal 1 damage for every 10 gold.",
+      "Deal DD damage."
     ]
   },
   "potionbrewer:CityCrest": {
     "NAME": "City Crest",
     "DESCRIPTION": [
       "Ancient seal to a forgotten city.",
-      "Deal 1 Damage for every HP you are missing.",
-      "Deal 1 Damage for every HP you are missing.",
-      "Deal DD Damage."
+      "Deal 1 damage for every HP you are missing.",
+      "Deal 1 damage for every HP you are missing.",
+      "Deal DD damage."
     ]
   },
   "potionbrewer:Clay": {
     "NAME": "Clay",
     "DESCRIPTION": [
       "Clay harvested from a Giant Head.",
-      "Turns 1-4: 3 Damage, Turn 5+: 25 Damage.",
-      "Turns 1-4: 3 Damage, Turn 5+: 25 Damage.",
-      "Deal DD Damage."
+      "Turns 1-4: 3 damage, Turn 5+: 25 damage.",
+      "Turns 1-4: 3 damage, Turn 5+: 25 damage.",
+      "Deal DD damage."
     ]
   },
   "potionbrewer:Crown": {
     "NAME": "Crown",
     "DESCRIPTION": [
       "The crown of a Champion.",
-      "Block 6 Damage each turn.",
-      "Block 6 Damage each turn.",
-      "Block 6 Damage each turn."
+      "Block 6 damage each turn.",
+      "Block 6 damage each turn.",
+      "Block 6 damage each turn."
     ]
   },
   "potionbrewer:Ether": {
@@ -145,9 +145,9 @@
     "NAME": "Flame",
     "DESCRIPTION": [
       "Flaming core of an odd machine.",
-      "Deals 3xTurn Number Damage.",
-      "Deals 3xTurn Number Damage.",
-      "Deals DD Damage."
+      "Deals 3xTurn Number damage.",
+      "Deals 3xTurn Number damage.",
+      "Deals DD damage."
     ]
   },
   "potionbrewer:Gold": {
@@ -208,9 +208,9 @@
     "NAME": "Ink",
     "DESCRIPTION": [
       "Ink harvested from a Lagavulin.",
-      "Turns 1-3: 1 Damage. Turns 4+: 12 Damage.",
-      "Turns 1-3: 1 Damage. Turns 4+: 12 Damage.",
-      "Turn !potionbrewer:TURN_NUMBER! : Deal DD Damage."
+      "Turns 1-3: 1 damage. Turns 4+: 12 damage.",
+      "Turns 1-3: 1 damage. Turns 4+: 12 damage.",
+      "Turn !potionbrewer:TURN_NUMBER! : Deal DD damage."
     ]
   },
   "potionbrewer:Iodine": {
@@ -226,18 +226,18 @@
     "NAME": "Jaw",
     "DESCRIPTION": [
       "The jawbone of a giant monster.",
-      "Odd Turns: 5 block, Even Turns: 8 Damage.",
+      "Odd Turns: 5 block, Even Turns: 8 damage.",
       "Odd Turn: Gain BB Block.",
-      "Even Turn: Deal DD Damage."
+      "Even Turn: Deal DD damage."
     ]
   },
   "potionbrewer:LaserCore": {
     "NAME": "Laser Core",
     "DESCRIPTION": [
       "Damaged core of a Sentry.",
-      "Odd turns: Deal 12 Damage, Even turns: Deal 0 Damage.",
-      "Odd turns: Deal 12 Damage, Even turns: Deal 0 Damage.",
-      "Deal DD Damage."
+      "Odd turns: Deal 12 damage, Even turns: Deal 0 damage.",
+      "Odd turns: Deal 12 damage, Even turns: Deal 0 damage.",
+      "Deal DD damage."
     ]
   },
   "potionbrewer:Lightning": {
@@ -253,18 +253,18 @@
     "NAME": "Mechanism",
     "DESCRIPTION": [
       "The mechanical core of an Automaton.",
-      "Deal 20 Damage. Place a Void on top of your draw pile.",
-      "Deal 20 Damage. Place a Void on top of your draw pile.",
-      "Deal DD Damage. Place a Void on top of your draw pile."
+      "Deal 20 damage. Place a Void on top of your draw pile.",
+      "Deal 20 damage. Place a Void on top of your draw pile.",
+      "Deal DD damage. Place a Void on top of your draw pile."
     ]
   },
   "potionbrewer:Meteorite": {
     "NAME": "Meteorite",
     "DESCRIPTION": [
       "Piece of strange metal from another world.",
-      "#yCatalyze: Deal 25 Damage.",
-      "potionbrewer:Catalyze: Deal 25 Damage.",
-      "potionbrewer:Catalyze: Deal DD Damage."
+      "#yCatalyze: Deal 25 damage.",
+      "potionbrewer:Catalyze: Deal 25 damage.",
+      "potionbrewer:Catalyze: Deal DD damage."
     ]
   },
   "potionbrewer:Needle": {
@@ -334,9 +334,9 @@
     "NAME": "Radiance",
     "DESCRIPTION": [
       "The shining heart of an ascendant moth.",
-      "Your next attack deals 12 more Damage.",
-      "Your next attack deals 12 more Damage.",
-      "Your next attack deals 12 more Damage."
+      "Your next attack deals 12 more damage.",
+      "Your next attack deals 12 more damage.",
+      "Your next attack deals 12 more damage."
     ]
   },
   "potionbrewer:RitualJar": {
@@ -379,9 +379,9 @@
     "NAME": "Serpent Skull",
     "DESCRIPTION": [
       "The skull of a giant serpent.",
-      "Deal 15 Damage.",
-      "Deal 15 Damage.",
-      "Deal DD Damage."
+      "Deal 15 damage.",
+      "Deal 15 damage.",
+      "Deal DD damage."
     ]
   },
   "potionbrewer:Silk": {
@@ -451,45 +451,45 @@
     "NAME": "Sulphur",
     "DESCRIPTION": [
       "Sulphur harvested from a strong man.",
-      "Gain 8 Block. Deal 8 Damage.",
-      "Gain 8 Block. Deal 8 Damage.",
-      "Gain BB Block. Deal DD Damage."
+      "Gain 8 Block. Deal 8 damage.",
+      "Gain 8 Block. Deal 8 damage.",
+      "Gain BB Block. Deal DD damage."
     ]
   },
   "potionbrewer:Tentacle": {
     "NAME": "Tentacle",
     "DESCRIPTION": [
       "Severed tentacle of one of the Spire's horrors.",
-      "Deal 5 Damage every turn.",
-      "Deal 5 Damage every turn.",
-      "Deal 5 Damage every turn."
+      "Deal 5 damage every turn.",
+      "Deal 5 damage every turn.",
+      "Deal 5 damage every turn."
     ]
   },
   "potionbrewer:TinyHat": {
     "NAME": "Tiny Hat",
     "DESCRIPTION": [
       "A stylish hat, taken from a giant slime.",
-      "#yCatalyze: Deal 24 Damage.",
-      "potionbrewer:Catalyze: Deal 24 Damage.",
-      "potionbrewer:Catalyze: Deal DD Damage."
+      "#yCatalyze: Deal 24 damage.",
+      "potionbrewer:Catalyze: Deal 24 damage.",
+      "potionbrewer:Catalyze: Deal DD damage."
     ]
   },
   "potionbrewer:Tooth": {
     "NAME": "Tooth",
     "DESCRIPTION": [
       "Tooth harvested from a Jaw worm.",
-      "Deal 6 Damage.",
-      "Deal 6 Damage.",
-      "Deal DD Damage."
+      "Deal 6 damage.",
+      "Deal 6 damage.",
+      "Deal DD damage."
     ]
   },
   "potionbrewer:TrainTicket": {
     "NAME": "Train Ticket",
     "DESCRIPTION": [
       "Ticket for passage on an hellish train.",
-      "Deal Damage equal to the floor number.",
-      "Deal Damage equal to the floor number.",
-      "Deal DD Damage."
+      "Deal damage equal to the floor number.",
+      "Deal damage equal to the floor number.",
+      "Deal DD damage."
     ]
   },
   "potionbrewer:TwistedRelic": {
@@ -505,9 +505,9 @@
     "NAME": "Wax",
     "DESCRIPTION": [
       "Sealing wax taken from a bandit leader.",
-      "Deal 5 Damage. Apply 1 Weak.",
-      "Deal 5 Damage. Apply 1 Weak.",
-      "Deal DD Damage. Apply 1 Weak."
+      "Deal 5 damage. Apply 1 Weak.",
+      "Deal 5 damage. Apply 1 Weak.",
+      "Deal DD damage. Apply 1 Weak."
     ]
   },
   "potionbrewer:DummyTonicReagent": {

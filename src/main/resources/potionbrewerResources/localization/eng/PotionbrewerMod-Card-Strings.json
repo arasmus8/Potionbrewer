@@ -6,7 +6,7 @@
   },
   "potionbrewer:AcidCloud": {
     "NAME": "Acid Cloud",
-    "DESCRIPTION": "Gain !B! Block. If the last card played cost 0, Apply !M! Vulnerable to all enemies.",
+    "DESCRIPTION": "Gain !B! Block. If the last card played cost 0, Apply !M! Vulnerable to ALL enemies.",
     "EXTENDED_DESCRIPTION": [
       "Acid Fog"
     ]
@@ -22,15 +22,15 @@
   },
   "potionbrewer:Backhand": {
     "NAME": "Backhand",
-    "DESCRIPTION": "Deal !D! Damage. Draw !M! cards."
+    "DESCRIPTION": "Deal !D! damage. Draw !M! cards."
   },
   "potionbrewer:BalancedFormula": {
     "NAME": "Balanced Formula",
-    "DESCRIPTION": "Deal !D! Damage. Move a 0 cost card from your draw pile and from your discard pile to your hand."
+    "DESCRIPTION": "Deal !D! damage. Move a 0 cost card from your draw pile and from your discard pile to your hand."
   },
   "potionbrewer:BeatDown": {
     "NAME": "Beat Down",
-    "DESCRIPTION": "Deal !D! Damage. Place this card on top of your draw pile if your hand is not empty."
+    "DESCRIPTION": "Deal !D! damage. Place this card on top of your draw pile if your hand is not empty."
   },
   "potionbrewer:Biohazard": {
     "NAME": "Bio-Hazard",
@@ -42,7 +42,7 @@
   },
   "potionbrewer:BlindingSpray": {
     "NAME": "Blinding Spray",
-    "DESCRIPTION": "Deal !D! Damage. Apply !M! Weak."
+    "DESCRIPTION": "Deal !D! damage. Apply !M! Weak."
   },
   "potionbrewer:BottomlessFlask": {
     "NAME": "Bottomless Flask",
@@ -58,7 +58,7 @@
   },
   "potionbrewer:BrokenBeakers": {
     "NAME": "Broken Beakers",
-    "DESCRIPTION": "Deal !D! Damage to all Enemies. Reduce this card's damage by !M! this combat."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. Reduce this card's damage by !M! this combat."
   },
   "potionbrewer:Catalyze": {
     "NAME": "Catalyze",
@@ -76,7 +76,7 @@
   },
   "potionbrewer:ChemicalRage": {
     "NAME": "Chemical Rage",
-    "DESCRIPTION": "Each time you use a Potion, deal !M! Damage to all enemies."
+    "DESCRIPTION": "Each time you use a Potion, deal !M! damage to ALL enemies."
   },
   "potionbrewer:ChemicalShroud": {
     "NAME": "Chemical Shroud",
@@ -84,11 +84,11 @@
   },
   "potionbrewer:ChemicalSpill": {
     "NAME": "Chemical Spill",
-    "DESCRIPTION": "Deal !D! Damage. NL potionbrewer:Catalyze: Gain !B! block."
+    "DESCRIPTION": "Deal !D! damage. NL potionbrewer:Catalyze: Gain !B! block."
   },
   "potionbrewer:ChemicalWeapons": {
     "NAME": "Chemical Weapons",
-    "DESCRIPTION": "Deal !D! Damage. Add a random *Tonic card to your hand."
+    "DESCRIPTION": "Deal !D! damage. Add a random *Tonic card to your hand."
   },
   "potionbrewer:ChokingPowder": {
     "NAME": "Choking Powder",
@@ -104,7 +104,7 @@
   },
   "potionbrewer:Contingency": {
     "NAME": "Contingency",
-    "DESCRIPTION": "Deal !D! Damage. Choose a card from your draw pile and move it to the top of your draw pile."
+    "DESCRIPTION": "Deal !D! damage. Choose a card from your draw pile and move it to the top of your draw pile."
   },
   "potionbrewer:CrossReference": {
     "NAME": "Cross-Reference",
@@ -120,11 +120,11 @@
   },
   "potionbrewer:Discombobulate": {
     "NAME": "Discombobulate",
-    "DESCRIPTION": "Deal !D! Damage. NL potionbrewer:Catalyze: Exhaust this card and remove !M! Strength from the target."
+    "DESCRIPTION": "Deal !D! damage. NL potionbrewer:Catalyze: Exhaust this card and remove !M! Strength from the target."
   },
   "potionbrewer:EmptyBottle": {
     "NAME": "Empty Bottle",
-    "DESCRIPTION": "Deal !D! Damage. When you use a potion, move this from the discard pile to your hand."
+    "DESCRIPTION": "Deal !D! damage. When you use a potion, move this from the discard pile to your hand."
   },
   "potionbrewer:EquivalentExchange": {
     "NAME": "Equivalent Exchange",
@@ -132,7 +132,7 @@
   },
   "potionbrewer:ExothermicReaction": {
     "NAME": "Exothermic Reaction",
-    "DESCRIPTION": "Deal !D! Damage. If the last card played cost 0, another card costs 0 this turn."
+    "DESCRIPTION": "Deal !D! damage. If the last card played cost 0, another card costs 0 this turn."
   },
   "potionbrewer:Experimentation": {
     "NAME": "Experimentation",
@@ -140,15 +140,15 @@
   },
   "potionbrewer:ExplosiveReaction": {
     "NAME": "Explosive Reaction",
-    "DESCRIPTION": "Deal !D! Damage. Sacrifice your rightmost potionbrewer:Reagent to do double damage."
+    "DESCRIPTION": "Deal !D! damage. Sacrifice your rightmost potionbrewer:Reagent to do double damage."
   },
   "potionbrewer:FlareUp": {
     "NAME": "Flare Up",
-    "DESCRIPTION": "Deal !D! Damage. Deal !M! more Damage for each potion played this combat."
+    "DESCRIPTION": "Deal !D! damage. Deal !M! more damage for each potion played this combat."
   },
   "potionbrewer:FlashPowder": {
     "NAME": "Flash Powder",
-    "DESCRIPTION": "Deal !D! Damage to all enemies. NL potionbrewer:Catalyze: Draw !M! card.",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL potionbrewer:Catalyze: Draw !M! card.",
     "EXTENDED_DESCRIPTION": [
       "Flash-Bang Powder"
     ]
@@ -185,7 +185,7 @@
   },
   "potionbrewer:IronFist": {
     "NAME": "Iron Fist",
-    "DESCRIPTION": "Deal !D! Damage. NL potionbrewer:Catalyze: Strength affects this !M! times.",
+    "DESCRIPTION": "Deal !D! damage. NL potionbrewer:Catalyze: Strength affects this !M! times.",
     "EXTENDED_DESCRIPTION": [
       "Steel Fist"
     ]
@@ -206,7 +206,7 @@
   },
   "potionbrewer:LabAccident": {
     "NAME": "Lab Accident",
-    "DESCRIPTION": "potionbrewer:Catalyze: Deal !D! Damage."
+    "DESCRIPTION": "potionbrewer:Catalyze: Deal !D! damage."
   },
   "potionbrewer:LabJournal": {
     "NAME": "Lab Journal",
@@ -220,11 +220,11 @@
   },
   "potionbrewer:MicrobeSpray": {
     "NAME": "Microbe Spray",
-    "DESCRIPTION": "Apply !M! Weak and !M! potionbrewer:Infection to all enemies. NL Exhaust"
+    "DESCRIPTION": "Apply !M! Weak and !M! potionbrewer:Infection to ALL enemies. NL Exhaust"
   },
   "potionbrewer:OneTwoPunch": {
     "NAME": "One-Two Punch",
-    "DESCRIPTION": "Deal !D! Damage. If the last card played cost 0, play this twice."
+    "DESCRIPTION": "Deal !D! damage. If the last card played cost 0, play this twice."
   },
   "potionbrewer:PortableLab": {
     "NAME": "Portable Lab",
@@ -241,7 +241,7 @@
   },
   "potionbrewer:PotionbrewerStrike": {
     "NAME": "Strike",
-    "DESCRIPTION": "Deal !D! Damage."
+    "DESCRIPTION": "Deal !D! damage."
   },
   "potionbrewer:PrivateReserves": {
     "NAME": "Private Reserves",
@@ -257,7 +257,7 @@
   },
   "potionbrewer:RefinedProcess": {
     "NAME": "Refined Process",
-    "DESCRIPTION": "Deal !D! Damage !M! times. NL potionbrewer:Catalyze: Permanently increase this card's damage by 1 and exhaust it."
+    "DESCRIPTION": "Deal !D! damage !M! times. NL potionbrewer:Catalyze: Permanently increase this card's damage by 1 and exhaust it."
   },
   "potionbrewer:ResearchResults": {
     "NAME": "Research Results",
@@ -266,11 +266,11 @@
   },
   "potionbrewer:Shovel": {
     "NAME": "Shovel",
-    "DESCRIPTION": "Deal !D! Damage. Shuffle a *Reagent card into your draw pile."
+    "DESCRIPTION": "Deal !D! damage. Shuffle a *Reagent card into your draw pile."
   },
   "potionbrewer:Smack": {
     "NAME": "Smack",
-    "DESCRIPTION": "Deal !D! Damage. NL potionbrewer:Catalyze: Gain !M! [E]."
+    "DESCRIPTION": "Deal !D! damage. NL potionbrewer:Catalyze: Gain !M! [E]."
   },
   "potionbrewer:Smokescreen": {
     "NAME": "Smokescreen",
@@ -278,7 +278,7 @@
   },
   "potionbrewer:Spark": {
     "NAME": "Spark",
-    "DESCRIPTION": "Deal !D! Damage. Draw a *Reaction."
+    "DESCRIPTION": "Deal !D! damage. Draw a *Reaction."
   },
   "potionbrewer:SpecialFormula": {
     "NAME": "Special Formula",
@@ -290,19 +290,19 @@
   },
   "potionbrewer:TestSubject": {
     "NAME": "Test Subject",
-    "DESCRIPTION": "Deal !D! Damage. NL potionbrewer:Catalyze: Apply !M! potionbrewer:Infection. "
+    "DESCRIPTION": "Deal !D! damage. NL potionbrewer:Catalyze: Apply !M! potionbrewer:Infection. "
   },
   "potionbrewer:TheFinalStraw": {
     "NAME": "The Final Straw",
-    "DESCRIPTION": "Deal !D! Damage to a random enemy for every 0-cost card used this turn.",
-    "UPGRADE_DESCRIPTION": "Deal !D! Damage to a random enemy for every 0-cost card used this combat.",
+    "DESCRIPTION": "Deal !D! damage to a random enemy for every 0-cost card used this turn.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage to a random enemy for every 0-cost card used this combat.",
     "EXTENDED_DESCRIPTION": [
       " NL (Damages !M! times)"
     ]
   },
   "potionbrewer:TimeBomb": {
     "NAME": "Time Bomb",
-    "DESCRIPTION": "Deal !D! Damage next turn."
+    "DESCRIPTION": "Deal !D! damage next turn."
   },
   "potionbrewer:Toxicity": {
     "NAME": "Toxicity",
@@ -310,7 +310,7 @@
   },
   "potionbrewer:Transmute": {
     "NAME": "Transmute",
-    "DESCRIPTION": "Deal !D! Damage. NL Fatal: Choose 1 of 3 random potions to obtain. NL Exhaust"
+    "DESCRIPTION": "Deal !D! damage. NL Fatal: Choose 1 of 3 random potions to obtain. NL Exhaust"
   },
   "potionbrewer:TwoForOne": {
     "NAME": "Two For One",
@@ -318,15 +318,15 @@
   },
   "potionbrewer:UnstableFormula": {
     "NAME": "Unstable Formula",
-    "DESCRIPTION": "Deal !D! Damage. NL Next turn, deal !D! Damage."
+    "DESCRIPTION": "Deal !D! damage. NL Next turn, deal !D! damage."
   },
   "potionbrewer:VolatileSolution": {
     "NAME": "Volatile Solution",
-    "DESCRIPTION": "Deal !D! Damage. No cards will trigger their potionbrewer:Catalyze effects this turn."
+    "DESCRIPTION": "Deal !D! damage. No cards will trigger their potionbrewer:Catalyze effects this turn."
   },
   "potionbrewer:WizBang": {
     "NAME": "Wiz Bang",
-    "DESCRIPTION": "Deal !D! Damage 2 times. NL potionbrewer:Catalyze: 3 times.",
+    "DESCRIPTION": "Deal !D! damage 2 times. NL potionbrewer:Catalyze: 3 times.",
     "EXTENDED_DESCRIPTION": [
       "Wiz Bang Boom"
     ]
