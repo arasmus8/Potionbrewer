@@ -28,7 +28,7 @@ public abstract class AbstractPotionbrewerCard extends CustomCard {
                                     final AbstractCard.CardTarget target,
                                     final AbstractCard.CardColor color,
                                     final List<AbstractCard.CardTags> tagsList) {
-        super(id, "FAKE TITLE", getRegionName(id), cost, "FAKE DESCRIPTION", type, color, rarity, target);
+        super(id, "", getRegionName(id), cost, "", type, color, rarity, target);
         cardStrings = CardCrawlGame.languagePack.getCardStrings(id);
         name = NAME = cardStrings.NAME;
         originalName = NAME;
@@ -52,7 +52,7 @@ public abstract class AbstractPotionbrewerCard extends CustomCard {
 
     @Override
     public void loadCardImage(String img) {
-        TextureAtlas cardAtlas = (TextureAtlas) ReflectionHacks.getPrivateStatic(AbstractCard.class, "cardAtlas");
+        TextureAtlas cardAtlas = ReflectionHacks.getPrivateStatic(AbstractCard.class, "cardAtlas");
         portrait = cardAtlas.findRegion(img);
     }
 

@@ -106,7 +106,7 @@
     "NAME": "Iron Heart",
     "DESCRIPTIONS": [
       "Gain #b",
-      " Temporary Dexterity when you play a card that costs 0."
+      " Block when you play a card that costs 0."
     ]
   },
   "potionbrewer:NoCatalyzePower": {

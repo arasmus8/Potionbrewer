@@ -1,7 +1,7 @@
 package potionbrewer.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -34,13 +34,8 @@ public class IronHeartPower extends AbstractPotionbrewerPower implements Cloneab
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
         if (PotionbrewerMod.lastPlayedCardCostZero) {
-            addToBot(new ApplyPowerAction(owner, owner, new TemporaryDexterity(owner, amount), amount));
+            addToBot(new GainBlockAction(owner, amount));
         }
-    }
-
-    @Override
-    public float modifyBlock(float blockAmount) {
-        return Math.max(blockAmount * (1.0F + ((float) amount / 100.0F)), 0F);
     }
 
     @Override
