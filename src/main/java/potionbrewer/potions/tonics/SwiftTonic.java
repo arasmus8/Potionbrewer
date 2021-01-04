@@ -30,9 +30,9 @@ public class SwiftTonic extends AbstractPotion {
     public void initializeData() {
         potency = getPotency();
         if(potency == 1) {
-            description = DESCRIPTIONS[0] + potency + DESCRIPTIONS[1];
+            description = String.format(DESCRIPTIONS[0], potency) + DESCRIPTIONS[1];
         } else {
-            description = DESCRIPTIONS[0] + potency + DESCRIPTIONS[2];
+            description = String.format(DESCRIPTIONS[0], potency) + DESCRIPTIONS[2];
         }
         tips.clear();
         tips.add(new PowerTip(name, description));

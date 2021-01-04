@@ -43,7 +43,7 @@ public class BarricadePotion extends AbstractPotion {
 
     @Override
     public void use(AbstractCreature target) {
-        IntStream.rangeClosed(1, getPotency())
+        IntStream.rangeClosed(1, potency)
                 .forEach(i -> addToBot(new DoubleYourBlockAction(AbstractDungeon.player)));
     }
 

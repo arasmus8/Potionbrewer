@@ -11,6 +11,8 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
+import com.evacipated.cardcrawl.mod.widepotions.WidePotionsMod;
+import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
@@ -282,6 +284,27 @@ public class PotionbrewerMod implements
 
         // Events
         BaseMod.addEvent(JunkPileEvent.ID, JunkPileEvent.class, TheCity.ID);
+
+        // WIDE Potions
+        if (Loader.isModLoaded("widepotions")) {
+            WidePotionsMod.whitelistSimplePotion(AcidPotion.POTION_ID);
+            WidePotionsMod.whitelistSimplePotion(BarricadePotion.POTION_ID);
+            WidePotionsMod.whitelistSimplePotion(BlacksmithPotion.POTION_ID);
+            WidePotionsMod.whitelistSimplePotion(BoundlessPotion.POTION_ID);
+            WidePotionsMod.whitelistSimplePotion(CleansingPotion.POTION_ID);
+            WidePotionsMod.whitelistSimplePotion(DiscountPotion.POTION_ID);
+            WidePotionsMod.whitelistSimplePotion(EndurancePotion.POTION_ID);
+            WidePotionsMod.whitelistSimplePotion(HastePotion.POTION_ID);
+            WidePotionsMod.whitelistSimplePotion(InfectionPotion.POTION_ID);
+            WidePotionsMod.whitelistSimplePotion(MidasPotion.POTION_ID);
+            WidePotionsMod.whitelistSimplePotion(NoxiousPotion.POTION_ID);
+            WidePotionsMod.whitelistSimplePotion(QuicksilverPotion.POTION_ID);
+            WidePotionsMod.whitelistSimplePotion(StunPotion.POTION_ID);
+            WidePotionsMod.whitelistSimplePotion(ToxicPotion.POTION_ID);
+
+            WidePotionsMod.whitelistComplexPotion(FreezingPotion.POTION_ID, new WideFreezingPotion());
+            WidePotionsMod.whitelistComplexPotion(SplittingPotion.POTION_ID, new WideSplittingPotion());
+        }
     }
 
     public void receiveEditPotions() {

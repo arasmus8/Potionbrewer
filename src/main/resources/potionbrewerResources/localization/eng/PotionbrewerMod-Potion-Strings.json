@@ -1,14 +1,16 @@
 {
   "potionbrewer:AcidPotion": {
     "NAME": "Acid Potion",
-    "DESCRIPTIONS": [ "Remove the target's Block and deal #b", " damage." ]
+    "DESCRIPTIONS": [
+      "Remove the target's Block and deal #b%1$d damage."
+    ]
   },
   "potionbrewer:BlacksmithPotion": {
     "NAME": "Blacksmith Potion",
     "DESCRIPTIONS": [
-      "Permanently upgrade #b",
-      " random card. (Can only be used outside of combat)",
-      " random cards. (Can only be used outside of combat)"
+      "Permanently upgrade #b%1$d random",
+      " card. (Can only be used outside of combat)",
+      " cards. (Can only be used outside of combat)"
     ]
   },
   "potionbrewer:BoundlessPotion": {
@@ -29,7 +31,9 @@
   },
   "potionbrewer:CleansingPotion": {
     "NAME": "Cleansing Potion",
-    "DESCRIPTIONS": [ "Remove #b", " debuffs from yourself." ]
+    "DESCRIPTIONS": [
+      "Remove #b%1$d debuffs from yourself."
+    ]
   },
   "potionbrewer:ColorlessPotion": {
     "NAME": "Colorless Potion",
@@ -40,43 +44,51 @@
   },
   "potionbrewer:DiscountPotion": {
     "NAME": "Discount Potion",
-    "DESCRIPTIONS": [ "A random card", "#b", " random cards", " in your hand cost 0 this combat." ]
+    "DESCRIPTIONS": [
+      "A random card",
+      "#b%1$d random cards",
+      " in your hand cost 0 this combat."
+    ]
   },
   "potionbrewer:EndurancePotion": {
     "NAME": "Endurance Potion",
     "DESCRIPTIONS": [
-      "Gain #b",
-      " Temporary HP"
+      "Gain #b%1$d Temporary HP"
     ]
   },
   "potionbrewer:FreezingPotion": {
     "NAME": "Freezing Potion",
-    "DESCRIPTIONS": [ "Apply #b", " Slow to an Enemy." ]
+    "DESCRIPTIONS": [
+      "Apply #b%1$d Slow to an Enemy."
+    ]
+  },
+  "widepotions:potionbrewer:FreezingPotion": {
+    "DESCRIPTIONS": [
+      "Apply #b%1$d Slow to ALL Enemies."
+    ]
   },
   "potionbrewer:HastePotion": {
     "NAME": "Haste Potion",
-    "DESCRIPTIONS": [ "Discard your hand, refill your energy, draw #b", " cards." ]
+    "DESCRIPTIONS": [
+      "Discard your hand, refill your energy, draw #b%1$d cards."
+    ]
   },
   "potionbrewer:InfectionPotion": {
     "NAME": "Infection Potion",
     "DESCRIPTIONS": [
-      "Apply #b",
-      " Infection."
+      "Apply #b%1$d Infection."
     ]
   },
   "potionbrewer:MidasPotion": {
     "NAME": "Midas Potion",
     "DESCRIPTIONS": [
-      "Deal #b",
-      " damage, if this defeats a non-minion enemy, gain #b",
-      " gold."
+      "Deal #b%1$d damage, if this defeats a non-minion enemy, gain #b%1$d gold."
     ]
   },
   "potionbrewer:NoxiousPotion": {
     "NAME": "Noxious Potion",
     "DESCRIPTIONS": [
-      "Deal #b",
-      " damage each time you play a card this turn."
+      "Deal #b%1$d damage each time you play a card this turn."
     ]
   },
   "potionbrewer:QuicksilverPotion": {
@@ -84,14 +96,22 @@
     "DESCRIPTIONS": [
       "Prevent the next ",
       "time",
-      "#b",
-      " times",
+      "#b%1$d times",
       " you would take damage."
     ]
   },
   "potionbrewer:SplittingPotion": {
     "NAME": "Splitting Potion",
-    "DESCRIPTIONS": [ "Obtain #b", " random potions." ]
+    "DESCRIPTIONS": [
+      "Obtain #b",
+      " random potions."
+    ]
+  },
+  "widepotions:potionbrewer:SplittingPotion": {
+    "NAME": "Splitting Wide Potion",
+    "DESCRIPTIONS": [
+      "Obtain #b%1$d random W I D E potions."
+    ]
   },
   "potionbrewer:StunPotion": {
     "NAME": "Stun Potion",
@@ -103,51 +123,64 @@
   },
   "potionbrewer:ToxicPotion": {
     "NAME": "Toxic Potion",
-    "DESCRIPTIONS": [ "Apply #b", " Toxic to an enemy." ]
+    "DESCRIPTIONS": [
+      "Apply #b%1$d Toxic to an enemy."
+    ]
   },
   "potionbrewer:BlockTonic": {
     "NAME": "Block Tonic",
-    "DESCRIPTIONS": [ "Gain #b", " Block." ]
+    "DESCRIPTIONS": [
+      "Gain #b%1$d Block."
+    ]
   },
   "potionbrewer:EnergyTonic": {
     "NAME": "Energy Tonic",
     "DESCRIPTIONS": [
-      "Gain #b",
-      " energy."
+      "Gain #b%1$d energy."
     ]
   },
   "potionbrewer:ExplosiveTonic": {
     "NAME": "Explosive Tonic",
     "DESCRIPTIONS": [
-      "Deal #b",
-      " damage to ALL enemies."
+      "Deal #b%1$d damage to ALL enemies."
     ]
   },
   "potionbrewer:FearTonic": {
     "NAME": "Fear Tonic",
-    "DESCRIPTIONS": [ "Apply #b", " Vulnerable to an enemy." ]
+    "DESCRIPTIONS": [
+      "Apply #b%1$d Vulnerable to an enemy."
+    ]
   },
   "potionbrewer:FireTonic": {
     "NAME": "Fire Tonic",
     "DESCRIPTIONS": [
-      "Deal #b",
-      " damage to an enemy."
+      "Deal #b%1$d damage to an enemy."
     ]
   },
   "potionbrewer:FlexTonic": {
     "NAME": "Flex Tonic",
-    "DESCRIPTIONS": [ "Gain #b", " Strength until the end of this turn." ]
+    "DESCRIPTIONS": [
+      "Gain #b%1$d Strength until the end of this turn."
+    ]
   },
   "potionbrewer:SpeedTonic": {
     "NAME": "Speed Tonic",
-    "DESCRIPTIONS": [ "Gain #b", " Dexterity until the end of this turn." ]
+    "DESCRIPTIONS": [
+      "Gain #b%1$d Dexterity until the end of this turn."
+    ]
   },
   "potionbrewer:SwiftTonic": {
     "NAME": "Swift Tonic",
-    "DESCRIPTIONS": [ "Draw #b", " card.", " cards." ]
+    "DESCRIPTIONS": [
+      "Draw #b%1$d",
+      " card.",
+      " cards."
+    ]
   },
   "potionbrewer:WeakTonic": {
     "NAME": "Weak Tonic",
-    "DESCRIPTIONS": [ "Apply #b", " Weak to an enemy." ]
+    "DESCRIPTIONS": [
+      "Apply #b%1$d Weak to an enemy."
+    ]
   }
 }

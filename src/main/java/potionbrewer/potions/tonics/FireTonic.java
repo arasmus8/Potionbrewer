@@ -35,7 +35,7 @@ public class FireTonic extends AbstractPotion {
     @Override
     public void initializeData() {
         potency = getPotency();
-        description = DESCRIPTIONS[0] + potency + DESCRIPTIONS[1];
+        description = String.format(DESCRIPTIONS[0], potency);
         tips.clear();
         tips.add(new PowerTip(name, description));
     }

@@ -33,9 +33,9 @@ public class DiscountPotion extends AbstractPotion {
     public void initializeData() {
         potency = getPotency();
         if (potency > 1) {
-            description = DESCRIPTIONS[1] + potency + DESCRIPTIONS[2] + DESCRIPTIONS[3];
+            description = String.format(DESCRIPTIONS[1], potency) + DESCRIPTIONS[2];
         } else {
-            description = DESCRIPTIONS[0] + DESCRIPTIONS[3];
+            description = DESCRIPTIONS[0] + DESCRIPTIONS[2];
         }
         tips.clear();
         tips.add(new PowerTip(name, description));

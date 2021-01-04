@@ -34,7 +34,7 @@ public class MidasPotion extends AbstractPotion {
     @Override
     public void initializeData() {
         potency = getPotency();
-        description = DESCRIPTIONS[0] + potency + DESCRIPTIONS[1] + potency + DESCRIPTIONS[2];
+        description = String.format(DESCRIPTIONS[0], potency);
         tips.clear();
         tips.add(new PowerTip(name, description));
     }

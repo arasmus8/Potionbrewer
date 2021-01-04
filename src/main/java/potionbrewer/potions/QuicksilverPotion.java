@@ -34,9 +34,9 @@ public class QuicksilverPotion extends AbstractPotion {
     public void initializeData() {
         potency = getPotency();
         if (potency > 1) {
-            description = DESCRIPTIONS[0] + DESCRIPTIONS[2] + potency + DESCRIPTIONS[3] + DESCRIPTIONS[4];
+            description = DESCRIPTIONS[0] + String.format(DESCRIPTIONS[2], potency) + DESCRIPTIONS[3];
         } else {
-            description = DESCRIPTIONS[0] + DESCRIPTIONS[1] + DESCRIPTIONS[4];
+            description = DESCRIPTIONS[0] + DESCRIPTIONS[1] + DESCRIPTIONS[3];
         }
         tips.clear();
         tips.add(new PowerTip(name, description));
