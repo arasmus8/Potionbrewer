@@ -11,7 +11,6 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
-import com.evacipated.cardcrawl.mod.widepotions.WidePotionsMod;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
@@ -48,6 +47,7 @@ import potionbrewer.relics.*;
 import potionbrewer.util.AssetLoader;
 import potionbrewer.util.IDCheckDontTouchPls;
 import potionbrewer.util.TextureLoader;
+import potionbrewer.util.WidePotionHelper;
 import potionbrewer.variables.*;
 
 import java.io.InputStream;
@@ -77,7 +77,6 @@ public class PotionbrewerMod implements
     private static String modID;
 
     private static final Logger logger = Logger.getLogger(PotionbrewerMod.class.getName());
-    public static final String ENABLE_PLACEHOLDER_SETTINGS = "enablePlaceholder";
     private static final String DELIM = ", ";
     public static SpireConfig config;
 
@@ -287,23 +286,7 @@ public class PotionbrewerMod implements
 
         // WIDE Potions
         if (Loader.isModLoaded("widepotions")) {
-            WidePotionsMod.whitelistSimplePotion(AcidPotion.POTION_ID);
-            WidePotionsMod.whitelistSimplePotion(BarricadePotion.POTION_ID);
-            WidePotionsMod.whitelistSimplePotion(BlacksmithPotion.POTION_ID);
-            WidePotionsMod.whitelistSimplePotion(BoundlessPotion.POTION_ID);
-            WidePotionsMod.whitelistSimplePotion(CleansingPotion.POTION_ID);
-            WidePotionsMod.whitelistSimplePotion(DiscountPotion.POTION_ID);
-            WidePotionsMod.whitelistSimplePotion(EndurancePotion.POTION_ID);
-            WidePotionsMod.whitelistSimplePotion(HastePotion.POTION_ID);
-            WidePotionsMod.whitelistSimplePotion(InfectionPotion.POTION_ID);
-            WidePotionsMod.whitelistSimplePotion(MidasPotion.POTION_ID);
-            WidePotionsMod.whitelistSimplePotion(NoxiousPotion.POTION_ID);
-            WidePotionsMod.whitelistSimplePotion(QuicksilverPotion.POTION_ID);
-            WidePotionsMod.whitelistSimplePotion(StunPotion.POTION_ID);
-            WidePotionsMod.whitelistSimplePotion(ToxicPotion.POTION_ID);
-
-            WidePotionsMod.whitelistComplexPotion(FreezingPotion.POTION_ID, new WideFreezingPotion());
-            WidePotionsMod.whitelistComplexPotion(SplittingPotion.POTION_ID, new WideSplittingPotion());
+            WidePotionHelper.setupWidePotions();
         }
     }
 
