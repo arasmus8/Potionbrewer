@@ -18,6 +18,9 @@ import potionbrewer.orbs.Reagent;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Render {
     @SpirePatch(
@@ -26,18 +29,18 @@ public class Render {
     )
     public static class RenderTipForCollect {
         @SpireInsertPatch(
-                rloc = 6
+                locator = Locator.class
         )
         public static void RenderTipForCollectOnHover(SpriteBatch sb) {
             if (AbstractDungeon.player != null) {
-                AbstractMonster m = (AbstractMonster) ReflectionHacks.getPrivate(AbstractDungeon.player, AbstractPlayer.class, "hoveredMonster");
+                AbstractMonster m = ReflectionHacks.getPrivate(AbstractDungeon.player, AbstractPlayer.class, "hoveredMonster");
                 AbstractCard c = AbstractDungeon.player.hoveredCard;
                 if (m != null && c instanceof Collect) {
                     Reagent r = (Reagent) Collect.getOrbForMonster(m);
                     String HEADER = Collect.CARD_STRINGS.EXTENDED_DESCRIPTION[0] + r.name;
                     String BODY = r.description;
-                    Float BODY_TEXT_WIDTH = (Float) ReflectionHacks.getPrivateStatic(TipHelper.class, "BODY_TEXT_WIDTH");
-                    Float TIP_DESC_LINE_SPACING = (Float) ReflectionHacks.getPrivateStatic(TipHelper.class, "TIP_DESC_LINE_SPACING");
+                    Float BODY_TEXT_WIDTH = ReflectionHacks.getPrivateStatic(TipHelper.class, "BODY_TEXT_WIDTH");
+                    Float TIP_DESC_LINE_SPACING = ReflectionHacks.getPrivateStatic(TipHelper.class, "TIP_DESC_LINE_SPACING");
                     float textHeight = -FontHelper.getSmartHeight(FontHelper.tipBodyFont, BODY, BODY_TEXT_WIDTH, TIP_DESC_LINE_SPACING) - 7.0F * Settings.scale;
                     ReflectionHacks.setPrivateStatic(TipHelper.class, "textHeight", textHeight);
 
@@ -57,7 +60,11 @@ public class Render {
             @Override
             public int[] Locate(CtBehavior ctMethodToPatch) throws Exception {
                 Matcher finalMatcher = new Matcher.FieldAccessMatcher(TipHelper.class, "renderedTipThisFrame");
-                return LineFinder.findInOrder(ctMethodToPatch, finalMatcher);
+                List<Matcher> matchers = IntStream.of(1)
+                        .mapToObj(i -> finalMatcher)
+                        .collect(Collectors.toList());
+
+                return LineFinder.findInOrder(ctMethodToPatch, matchers, finalMatcher);
             }
         }
     }
@@ -69,9 +76,9 @@ public class Render {
     public static class AddTipForMonster {
         @SpirePostfixPatch
         public static void AddTipForMonsterIfEmpty(AbstractMonster __instance, SpriteBatch sb) {
-            ArrayList<PowerTip> tips = (ArrayList<PowerTip>) ReflectionHacks.getPrivate(__instance, AbstractCreature.class, "tips");
+            ArrayList<PowerTip> tips = ReflectionHacks.getPrivate(__instance, AbstractCreature.class, "tips");
             if (tips.isEmpty()) {
-                AbstractMonster m = (AbstractMonster) ReflectionHacks.getPrivate(AbstractDungeon.player, AbstractPlayer.class, "hoveredMonster");
+                AbstractMonster m = ReflectionHacks.getPrivate(AbstractDungeon.player, AbstractPlayer.class, "hoveredMonster");
                 AbstractCard c = AbstractDungeon.player.hoveredCard;
                 if (m != null && c instanceof Collect) {
                     tips.add(new PowerTip("Collect", "Collect a Reagent."));
