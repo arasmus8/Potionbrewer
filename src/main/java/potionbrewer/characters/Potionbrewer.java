@@ -6,6 +6,7 @@ import basemod.animations.SpriterAnimation;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
@@ -16,13 +17,16 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.cutscenes.CutscenePanel;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
+import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.potions.PotionSlot;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
@@ -60,7 +64,7 @@ public class Potionbrewer extends CustomPlayer implements CustomSavable<int[]> {
     public static final int MAX_HP = 75;
     public static final int STARTING_GOLD = 99;
     public static final int CARD_DRAW = 5;
-    public static final int ORB_SLOTS = 3;
+    public static final int ORB_SLOTS = 0;
     
     private static final String ID = makeID("Potionbrewer");
     private static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString(ID);
@@ -258,6 +262,24 @@ public class Potionbrewer extends CustomPlayer implements CustomSavable<int[]> {
             if (ints[i] > 0) {
                 PotionStackField.stackCount.set(p, ints[i]);
             }
+        }
+    }
+
+    @Override
+    public void combatUpdate() {
+        super.combatUpdate();
+        reagents.forEach(AbstractOrb::update);
+        reagents.forEach(AbstractOrb::updateAnimation);
+    }
+
+    @Override
+    public void render(SpriteBatch sb) {
+        super.render(sb);
+        if (CardCrawlGame.isInARun() &&
+                AbstractDungeon.currMapNode != null &&
+                AbstractDungeon.getCurrRoom() != null &&
+                AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
+            reagents.forEach(reagent -> reagent.render(sb));
         }
     }
 }

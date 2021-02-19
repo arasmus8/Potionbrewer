@@ -2,7 +2,6 @@ package potionbrewer;
 
 import basemod.DevConsole;
 import basemod.devcommands.ConsoleCommand;
-import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import potionbrewer.orbs.Reagent;
 import potionbrewer.orbs.ReagentList;
@@ -33,7 +32,7 @@ public class ReagentConsoleCommand extends ConsoleCommand {
         } else {
             if (tokens.length == 2) {
                 Reagent reagent = ReagentList.fromId(tokens[1]);
-                AbstractDungeon.actionManager.addToBottom(new ChannelAction(reagent));
+                PotionbrewerMod.addReagent(reagent);
             } else {
                 errorMsg();
             }

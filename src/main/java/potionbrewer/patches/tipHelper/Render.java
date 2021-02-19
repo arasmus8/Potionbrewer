@@ -36,7 +36,7 @@ public class Render {
                 AbstractMonster m = ReflectionHacks.getPrivate(AbstractDungeon.player, AbstractPlayer.class, "hoveredMonster");
                 AbstractCard c = AbstractDungeon.player.hoveredCard;
                 if (m != null && c instanceof Collect) {
-                    Reagent r = (Reagent) Collect.getOrbForMonster(m);
+                    Reagent r = Collect.getReagentForMonster(m);
                     String HEADER = Collect.CARD_STRINGS.EXTENDED_DESCRIPTION[0] + r.name;
                     String BODY = r.description;
                     Float BODY_TEXT_WIDTH = ReflectionHacks.getPrivateStatic(TipHelper.class, "BODY_TEXT_WIDTH");

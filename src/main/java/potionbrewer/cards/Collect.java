@@ -3,7 +3,6 @@ package potionbrewer.cards;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
-import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -11,7 +10,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.TutorialStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.ui.FtueTip;
 import potionbrewer.PotionbrewerMod;
 import potionbrewer.PotionbrewerTipTracker;
@@ -47,7 +45,7 @@ public class Collect extends AbstractPotionbrewerCard {
         cardsToPreview = new Distill();
     }
 
-    public static AbstractOrb getOrbForMonster(AbstractMonster m) {
+    public static Reagent getReagentForMonster(AbstractMonster m) {
         if (monsterReagents.containsKey(m.id)) {
             try {
                 Class<? extends Reagent> clz = monsterReagents.get(m.id);
@@ -63,8 +61,8 @@ public class Collect extends AbstractPotionbrewerCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new VFXAction(new CollectEffect(p.hb.cX, p.hb.cY, m.hb.cX, m.hb.cY)));
         addToBot(new MakeTempCardInHandAction(new Distill()));
-        AbstractOrb orb = getOrbForMonster(m);
-        AbstractDungeon.actionManager.addToBottom(new ChannelAction(orb));
+        Reagent toAdd = getReagentForMonster(m);
+        PotionbrewerMod.addReagent(toAdd);
         if (!PotionbrewerTipTracker.hasShown(REAGENTS)) {
             PotionbrewerTipTracker.neverShowAgain(REAGENTS);
             AbstractDungeon.ftue = new FtueTip(TUTORIAL_STRINGS.LABEL[0], TUTORIAL_STRINGS.TEXT[0], (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F, FtueTip.TipType.COMBAT);
@@ -88,11 +86,6 @@ public class Collect extends AbstractPotionbrewerCard {
         // TheJungle
         if (Loader.isModLoaded("TheJungle")) {
             JungleReagentHelper.setupReagentsForCollect(monsterReagents);
-        }
-
-        // TheFactory
-        if (Loader.isModLoaded("TheFactory")) {
-            FactoryReagentHelper.setupReagentsForCollect(monsterReagents);
         }
 
         //ReplayTheSpire

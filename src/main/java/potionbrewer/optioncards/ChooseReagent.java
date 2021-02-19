@@ -1,6 +1,5 @@
 package potionbrewer.optioncards;
 
-import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -25,7 +24,6 @@ public class ChooseReagent extends AbstractCard {
         this.reagentId = id;
         Reagent r = fromId(reagentId);
         rawDescription = CARD_STRINGS.EXTENDED_DESCRIPTION[0] + r.getPotion().name + CARD_STRINGS.EXTENDED_DESCRIPTION[1] + r.getCardDescription();
-        // rawDescription = (isVowel(name.charAt(0)) ? CARD_STRINGS.EXTENDED_DESCRIPTION[1] : CARD_STRINGS.EXTENDED_DESCRIPTION[0]) + this.name;
         exhaust = true;
         initializeDescription();
     }
@@ -47,7 +45,7 @@ public class ChooseReagent extends AbstractCard {
     @Override
     public void onChoseThisOption() {
         Reagent r = fromId(reagentId);
-        this.addToBot(new ChannelAction(r));
+        PotionbrewerMod.addReagent(r);
     }
 
     @Override

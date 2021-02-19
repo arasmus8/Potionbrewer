@@ -5,14 +5,14 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.orbs.AbstractOrb;
-import com.megacrit.cardcrawl.orbs.EmptyOrbSlot;
+import potionbrewer.PotionbrewerMod;
 import potionbrewer.orbs.Reagent;
 import potionbrewer.powers.BrewPotionPower;
 import potionbrewer.relics.BunsenBurner;
 
 public class BrewPotionAction extends AbstractGameAction {
     private static final int TURNS = 3;
+    private boolean initialize = true;
 
     public BrewPotionAction() {
         duration = Settings.ACTION_DUR_FAST;
@@ -21,23 +21,16 @@ public class BrewPotionAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        if (this.duration == Settings.ACTION_DUR_FAST && !AbstractDungeon.player.orbs.isEmpty()) {
-            AbstractOrb orb = AbstractDungeon.player.orbs.get(0);
+        if (initialize && !PotionbrewerMod.reagents.isEmpty()) {
+            initialize = false;
+            isDone = true;
+            Reagent reagent = PotionbrewerMod.popReagent();
+            int turns = TURNS;
             AbstractPlayer p = AbstractDungeon.player;
-            if (orb instanceof EmptyOrbSlot) {
-                this.isDone = true;
-            } else if (orb instanceof Reagent) {
-                this.isDone = true;
-                Reagent reagent = (Reagent) orb;
-                p.evokeOrb();
-                int turns = TURNS;
-                if (p.hasRelic(BunsenBurner.ID)) {
-                    turns -= 1;
-                }
-                this.addToTop(new ApplyPowerAction(p, p, new BrewPotionPower(p, turns, reagent.getPotion(), (Reagent) reagent.makeCopy())));
+            if (p.hasRelic(BunsenBurner.ID)) {
+                turns -= 1;
             }
+            this.addToTop(new ApplyPowerAction(p, p, new BrewPotionPower(p, turns, reagent.getPotion(), (Reagent) reagent.makeCopy())));
         }
-
-        this.tickDuration();// 30
     }
 }

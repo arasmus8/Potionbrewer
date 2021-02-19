@@ -5,7 +5,6 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import potionbrewer.PotionbrewerMod;
 import potionbrewer.characters.Potionbrewer;
 import potionbrewer.orbs.Reagent;
@@ -32,9 +31,8 @@ public class ExplosiveReaction extends AbstractPotionbrewerCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         int d = damage;
-        AbstractOrb orb = p.orbs.get(0);
-        if (orb instanceof Reagent) {
-            p.evokeOrb();
+        Reagent r = PotionbrewerMod.popReagent();
+        if (r != null) {
             d *= 2;
         }
         this.addToBot(new DamageAction(m, new DamageInfo(p, d, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));

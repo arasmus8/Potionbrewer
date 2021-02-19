@@ -1,15 +1,11 @@
 package potionbrewer.cards;
 
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
-import com.megacrit.cardcrawl.actions.defect.RedoAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import potionbrewer.PotionbrewerMod;
 import potionbrewer.characters.Potionbrewer;
 import potionbrewer.orbs.Reagent;
-
-import java.util.ArrayList;
-import java.util.stream.Collectors;
 
 public class Experimentation extends AbstractPotionbrewerCard {
     public static final String ID = PotionbrewerMod.makeID(Experimentation.class.getSimpleName());
@@ -30,15 +26,16 @@ public class Experimentation extends AbstractPotionbrewerCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new RedoAction());
-        ArrayList<Reagent> collectedReagents = p.orbs.stream()
-                .filter(o -> o instanceof Reagent)
-                .map(o -> (Reagent) o)
-                .collect(Collectors.toCollection(ArrayList::new));
-        if (collectedReagents.size() >= 3) {
-            Prototype card = new Prototype(collectedReagents.get(0), collectedReagents.get(1), collectedReagents.get(2));
+        if (PotionbrewerMod.reagents.size() >= 3) {
+            Reagent r1 = PotionbrewerMod.popReagent();
+            Reagent r2 = PotionbrewerMod.popReagent();
+            Reagent r3 = PotionbrewerMod.popReagent();
+            Prototype card = new Prototype(r3, r2, r1);
             card.purgeOnUse = true;
             this.addToBot(new MakeTempCardInDrawPileAction(card, 1, true, true));
+            PotionbrewerMod.addReagent(r3);
+            PotionbrewerMod.addReagent(r2);
+            PotionbrewerMod.addReagent(r1);
         }
     }
 

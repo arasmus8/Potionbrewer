@@ -1,7 +1,6 @@
 package potionbrewer.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
-import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
@@ -14,12 +13,12 @@ public class HoarderPower extends AbstractPotionbrewerPower implements Cloneable
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    public HoarderPower() {
+    public HoarderPower(int amount) {
         name = NAME;
         ID = POWER_ID;
 
         this.owner = AbstractDungeon.player;
-        this.amount = -1;
+        this.amount = amount;
 
         type = PowerType.BUFF;
         isTurnBased = false;
@@ -30,14 +29,10 @@ public class HoarderPower extends AbstractPotionbrewerPower implements Cloneable
     }
 
     @Override
-    public void stackPower(int stackAmount) {
-    }
-
-    @Override
     public void atEndOfTurn(boolean isPlayer) {
         if (isPlayer) {
             this.flash();
-            this.addToBot(new ChannelAction(PotionbrewerMod.reagentList.randomReagent()));
+            PotionbrewerMod.addReagent(PotionbrewerMod.reagentList.randomReagent());
         }
     }
 
@@ -48,6 +43,6 @@ public class HoarderPower extends AbstractPotionbrewerPower implements Cloneable
 
     @Override
     public AbstractPower makeCopy() {
-        return new HoarderPower();
+        return new HoarderPower(amount);
     }
 }

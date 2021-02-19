@@ -17,7 +17,7 @@ import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.combat.DarkOrbActivateEffect;
-import com.megacrit.cardcrawl.vfx.combat.DarkOrbPassiveEffect;
+import potionbrewer.vfx.ReagentSparkleEffect;
 
 public abstract class Reagent extends AbstractOrb {
     public String[] descriptions;
@@ -61,6 +61,8 @@ public abstract class Reagent extends AbstractOrb {
         updateDescription();
         angle = MathUtils.random(360.0f);
         channelAnimTimer = 0.5f;
+        AbstractPlayer p = AbstractDungeon.player;
+        cY = tY = p.hb.y + p.hb.height * 1.4f;
     }
 
     @Override
@@ -94,13 +96,13 @@ public abstract class Reagent extends AbstractOrb {
         angle += Gdx.graphics.getDeltaTime() * 45.0f;
         vfxTimer -= Gdx.graphics.getDeltaTime();
         if (vfxTimer < 0.0f) {
-            AbstractDungeon.effectList.add(new DarkOrbPassiveEffect(cX, cY));
+            AbstractDungeon.effectList.add(new ReagentSparkleEffect(cX, cY));
             float vfxIntervalMin = 0.1f;
             float vfxIntervalMax = 0.4f;
             vfxTimer = MathUtils.random(vfxIntervalMin, vfxIntervalMax);
         }
     }
-    
+
     @Override
     public void render(SpriteBatch sb) {
         float size = 128.0F;

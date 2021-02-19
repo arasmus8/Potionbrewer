@@ -10,22 +10,22 @@ import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.math.Interpolation;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
-import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
-import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
@@ -42,6 +42,7 @@ import potionbrewer.orbs.Reagent;
 import potionbrewer.orbs.ReagentList;
 import potionbrewer.patches.PotionTracker;
 import potionbrewer.potions.*;
+import potionbrewer.powers.HoarderPower;
 import potionbrewer.powers.PotionTrackingPower;
 import potionbrewer.relics.*;
 import potionbrewer.util.AssetLoader;
@@ -56,6 +57,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 @SpireInitializer
 public class PotionbrewerMod implements
@@ -363,6 +365,7 @@ public class PotionbrewerMod implements
         logger.info("Done adding relics!");
     }
 
+    @SuppressWarnings("GDXJavaUnsafeIterator")
     @Override
     public void receiveEditCards() {
         logger.info("Adding variables");
@@ -542,11 +545,7 @@ public class PotionbrewerMod implements
             return;
         }
 
-        for (Reagent r : reagents) {
-            AbstractDungeon.actionManager.addToBottom(new ChannelAction(r));
-        }
-
-        reagents.clear();
+        positionReagents();
 
         PotionTracker.potionsUsedThisCombat.set(p, 0);
         PotionTracker.potionsUsedThisTurn.set(p, 0);
@@ -559,11 +558,6 @@ public class PotionbrewerMod implements
     @Override
     public void receivePostBattle(AbstractRoom abstractRoom) {
         AbstractPlayer p = AbstractDungeon.player;
-        for (AbstractOrb orb : p.orbs) {
-            if (orb instanceof Reagent) {
-                reagents.add((Reagent) orb);
-            }
-        }
         PotionTracker.potionsUsedThisCombat.set(p, 0);
         PotionTracker.potionsUsedThisTurn.set(p, 0);
         lastPlayedCardCostZero = false;
@@ -618,5 +612,51 @@ public class PotionbrewerMod implements
 
     public static String makeID(String idText) {
         return getModID() + ":" + idText;
+    }
+
+    public static void positionReagents() {
+        final float LEFT = 200f * Settings.xScale;
+        final float RIGHT = 550f * Settings.xScale;
+
+        IntStream.range(0, reagents.size())
+                .forEachOrdered(i -> {
+                    Reagent r = reagents.get(i);
+                    r.tX = Interpolation.linear.apply(RIGHT, LEFT, ((float) i) / reagents.size());
+                    r.hb.move(r.tX, r.tY);
+                });
+    }
+
+    public static void addReagent(Reagent toAdd) {
+        int max = 3;
+        if (CardCrawlGame.isInARun() &&
+                AbstractDungeon.currMapNode != null &&
+                AbstractDungeon.getCurrRoom() != null &&
+                AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
+            AbstractPower hoarderPower = AbstractDungeon.player.getPower(HoarderPower.POWER_ID);
+            if (hoarderPower != null) {
+                max += hoarderPower.amount;
+            }
+        }
+        while (reagents.size() >= max) {
+            reagents.remove(0);
+        }
+        reagents.add(toAdd);
+        positionReagents();
+    }
+
+    public static Reagent oldestReagent() {
+        if (reagents.size() > 0) {
+            return reagents.get(0);
+        }
+        return null;
+    }
+
+    public static Reagent popReagent() {
+        Reagent toRemove = oldestReagent();
+        if (toRemove != null) {
+            reagents.remove(toRemove);
+            positionReagents();
+        }
+        return toRemove;
     }
 }
