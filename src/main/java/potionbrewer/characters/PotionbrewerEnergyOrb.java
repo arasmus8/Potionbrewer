@@ -204,7 +204,6 @@ public class PotionbrewerEnergyOrb extends CustomEnergyOrb {
                 false,
                 false);
 
-        turnCounter.setX(x - 64f * Settings.scale);
         turnCounter.render(sb);
     }
 

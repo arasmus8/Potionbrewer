@@ -20,13 +20,16 @@ public class TurnCounterPanel extends ClickableUIElement {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(makeID(TurnCounterPanel.class.getSimpleName()));
     public static final String[] TEXT = uiStrings.TEXT;
 
+    private static final float WIDTH = 128f;
+    private static final float HEIGHT = 68f;
+
     public TurnCounterPanel() {
         super(
                 TextureLoader.getTexture("potionbrewerResources/images/ui/turnCounter.png"),
-                164f,
-                278f,
-                128f,
-                68f
+                Settings.WIDTH - (WIDTH * 1.125f) * Settings.xScale,
+                Settings.HEIGHT - (HEIGHT * 3f) * Settings.yScale,
+                WIDTH * Settings.xScale,
+                HEIGHT * Settings.yScale
         );
     }
 
@@ -44,17 +47,22 @@ public class TurnCounterPanel extends ClickableUIElement {
 
     @Override
     public void render(SpriteBatch sb) {
-        super.render(sb);
-        String msg = Integer.toString(GameActionManager.turn);
-        AbstractDungeon.player.getEnergyNumFont().getData().setScale(1f);
-        FontHelper.renderFontCentered(sb,
-                AbstractDungeon.player.getEnergyNumFont(),
-                msg,
-                hitbox.x + hitbox.width / 2f + 16f * Settings.scale,
-                hitbox.y + hitbox.height / 2f,
-                Color.CYAN);
-        if (hitbox.hovered && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.isScreenUp) {
-            TipHelper.renderGenericTip(hitbox.x + 0f * Settings.scale, hitbox.y + 128f * Settings.scale, TEXT[0], TEXT[1]);
+        if (CardCrawlGame.isInARun() &&
+                AbstractDungeon.currMapNode != null &&
+                AbstractDungeon.getCurrRoom() != null &&
+                AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
+            super.render(sb);
+            String msg = Integer.toString(GameActionManager.turn);
+            AbstractDungeon.player.getEnergyNumFont().getData().setScale(1f);
+            FontHelper.renderFontCentered(sb,
+                    AbstractDungeon.player.getEnergyNumFont(),
+                    msg,
+                    hitbox.x + hitbox.width / 2f + 16f * Settings.scale,
+                    hitbox.y + hitbox.height / 2f,
+                    Color.CYAN);
+            if (hitbox.hovered && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.isScreenUp) {
+                TipHelper.renderGenericTip(hitbox.x - WIDTH * 1.5f * Settings.xScale, hitbox.y - 40f * Settings.yScale, TEXT[0], TEXT[1]);
+            }
         }
     }
 }
