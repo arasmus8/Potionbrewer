@@ -37,8 +37,7 @@ public class PatchLabEvent {
         public static void Prefix(Lab __instance) {
             if (AbstractDungeon.player.chosenClass == Potionbrewer.Enums.POTIONBREWER) {
                 EventStrings eventStrings = CardCrawlGame.languagePack.getEventString("potionbrewer:Lab");
-                ReflectionHacks.setPrivateStatic(Lab.class, "DIALOG_1", eventStrings.DESCRIPTIONS[0]);
-                __instance.imageEventText.setDialogOption(eventStrings.OPTIONS[0]);
+                __instance.imageEventText.setDialogOption(eventStrings.OPTIONS[0], new ElricsMonocle());
             }
         }
     }

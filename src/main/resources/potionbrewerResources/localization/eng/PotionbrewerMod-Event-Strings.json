@@ -2,7 +2,7 @@
   "potionbrewer:Lab": {
     "NAME": "Potion Lab -- Override",
     "DESCRIPTIONS": [
-      "You find yourself in your old ~Potion~ ~Laboratory.~ NL NL There are a few left over potions lying about, but you wonder if your prized possession is still secure. You check the seal on the door to its hidden compartment and verify that it's still secure."
+      "You find yourself in your old ~Potion~ ~Laboratory.~ NL NL There are a few left over potions lying about, but you wonder if your prized possession is still secure. You check the door to its hidden compartment and verify that it's tightly sealed."
     ],
     "OPTIONS": [
       "[Open Secret Compartment] Lose all your potions, take your #gprized #gpossession."
