@@ -21,16 +21,18 @@ public class BrewPotionAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        if (initialize && !PotionbrewerMod.reagents.isEmpty()) {
+        if (initialize) {
             initialize = false;
             isDone = true;
-            Reagent reagent = PotionbrewerMod.popReagent();
-            int turns = TURNS;
-            AbstractPlayer p = AbstractDungeon.player;
-            if (p.hasRelic(BunsenBurner.ID)) {
-                turns -= 1;
+            if (!PotionbrewerMod.reagents.isEmpty()) {
+                Reagent reagent = PotionbrewerMod.popReagent();
+                int turns = TURNS;
+                AbstractPlayer p = AbstractDungeon.player;
+                if (p.hasRelic(BunsenBurner.ID)) {
+                    turns -= 1;
+                }
+                this.addToTop(new ApplyPowerAction(p, p, new BrewPotionPower(p, turns, reagent.getPotion(), (Reagent) reagent.makeCopy())));
             }
-            this.addToTop(new ApplyPowerAction(p, p, new BrewPotionPower(p, turns, reagent.getPotion(), (Reagent) reagent.makeCopy())));
         }
     }
 }
