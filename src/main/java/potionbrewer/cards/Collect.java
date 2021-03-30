@@ -1,5 +1,7 @@
 package potionbrewer.cards;
 
+import basemod.helpers.VfxBuilder;
+import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
@@ -7,6 +9,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.TutorialStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -16,7 +19,6 @@ import potionbrewer.PotionbrewerTipTracker;
 import potionbrewer.characters.Potionbrewer;
 import potionbrewer.orbs.Reagent;
 import potionbrewer.util.*;
-import potionbrewer.vfx.CollectEffect;
 
 import java.util.HashMap;
 
@@ -59,7 +61,12 @@ public class Collect extends AbstractPotionbrewerCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new VFXAction(new CollectEffect(p.hb.cX, p.hb.cY, m.hb.cX, m.hb.cY)));
+        addToBot(new VFXAction(new VfxBuilder(ImageMaster.ORB_PLASMA, m.hb.cX, m.hb.cY, 0.25f)
+                .useAdditiveBlending()
+                .scale(15f, 1f, VfxBuilder.Interpolations.EXP5IN)
+                .andThen(0.5f)
+                .arc(m.hb.cX, m.hb.cY, p.hb.cX, p.hb.cY, MathUtils.random(Settings.HEIGHT / 3f, 2f * Settings.HEIGHT / 3f))
+                .build()));
         addToBot(new MakeTempCardInHandAction(new Distill()));
         Reagent toAdd = getReagentForMonster(m);
         PotionbrewerMod.addReagent(toAdd);
