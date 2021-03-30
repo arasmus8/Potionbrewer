@@ -328,39 +328,38 @@ public class PotionbrewerMod implements
         BaseMod.addRelicToCustomPool(new BunsenBurner(), Potionbrewer.Enums.COLOR_CYAN);
         BaseMod.addRelicToCustomPool(new ElricsMonocle(), Potionbrewer.Enums.COLOR_CYAN);
         BaseMod.addRelicToCustomPool(new PaperSwan(), Potionbrewer.Enums.COLOR_CYAN);
+        BaseMod.addRelicToCustomPool(new DrinkingBird(), Potionbrewer.Enums.COLOR_CYAN);
+        BaseMod.addRelicToCustomPool(new RamsHorn(), Potionbrewer.Enums.COLOR_CYAN);
+        BaseMod.addRelicToCustomPool(new BottledElixir(), Potionbrewer.Enums.COLOR_CYAN);
+        BaseMod.addRelicToCustomPool(new BhaskarasWheel(), Potionbrewer.Enums.COLOR_CYAN);
+        BaseMod.addRelicToCustomPool(new AlchemistFlask(), Potionbrewer.Enums.COLOR_CYAN);
+        BaseMod.addRelicToCustomPool(new ToyAutogyro(), Potionbrewer.Enums.COLOR_CYAN);
+        BaseMod.addRelicToCustomPool(new MortarAndPestle(), Potionbrewer.Enums.COLOR_CYAN);
+        BaseMod.addRelicToCustomPool(new SalesContract(), Potionbrewer.Enums.COLOR_CYAN);
 
         UnlockTracker.markRelicAsSeen(AlchemistKit.ID);
         UnlockTracker.markRelicAsSeen(BunsenBurner.ID);
         UnlockTracker.markRelicAsSeen(ElricsMonocle.ID);
         UnlockTracker.markRelicAsSeen(PaperSwan.ID);
+        UnlockTracker.markRelicAsSeen(DrinkingBird.ID);
+        UnlockTracker.markRelicAsSeen(RamsHorn.ID);
+        UnlockTracker.markRelicAsSeen(BottledElixir.ID);
+        UnlockTracker.markRelicAsSeen(BhaskarasWheel.ID);
+        UnlockTracker.markRelicAsSeen(AlchemistFlask.ID);
+        UnlockTracker.markRelicAsSeen(ToyAutogyro.ID);
+        UnlockTracker.markRelicAsSeen(MortarAndPestle.ID);
+        UnlockTracker.markRelicAsSeen(SalesContract.ID);
 
-        BaseMod.addRelic(new AlchemistFlask(), RelicType.SHARED);
-        BaseMod.addRelic(new BhaskarasWheel(), RelicType.SHARED);
         BaseMod.addRelic(new BoosterPack(), RelicType.SHARED);
-        BaseMod.addRelic(new BottledElixir(), RelicType.SHARED);
-        BaseMod.addRelic(new DrinkingBird(), RelicType.SHARED);
         BaseMod.addRelic(new Keyblade(), RelicType.SHARED);
-        BaseMod.addRelic(new MortarAndPestle(), RelicType.SHARED);
-        BaseMod.addRelic(new RamsHorn(), RelicType.SHARED);
-        BaseMod.addRelic(new SalesContract(), RelicType.SHARED);
         BaseMod.addRelic(new SlideRule(), RelicType.SHARED);
         BaseMod.addRelic(new Torch(), RelicType.SHARED);
-        BaseMod.addRelic(new ToyAutogyro(), RelicType.SHARED);
         BaseMod.addRelic(new WarMedal(), RelicType.SHARED);
 
-        UnlockTracker.markRelicAsSeen(AlchemistFlask.ID);
-        UnlockTracker.markRelicAsSeen(BhaskarasWheel.ID);
         UnlockTracker.markRelicAsSeen(BoosterPack.ID);
-        UnlockTracker.markRelicAsSeen(BottledElixir.ID);
-        UnlockTracker.markRelicAsSeen(BunsenBurner.ID);
-        UnlockTracker.markRelicAsSeen(DrinkingBird.ID);
         UnlockTracker.markRelicAsSeen(Keyblade.ID);
-        UnlockTracker.markRelicAsSeen(MortarAndPestle.ID);
-        UnlockTracker.markRelicAsSeen(RamsHorn.ID);
-        UnlockTracker.markRelicAsSeen(SalesContract.ID);
         UnlockTracker.markRelicAsSeen(SlideRule.ID);
         UnlockTracker.markRelicAsSeen(Torch.ID);
-        UnlockTracker.markRelicAsSeen(ToyAutogyro.ID);
         UnlockTracker.markRelicAsSeen(WarMedal.ID);
         logger.info("Done adding relics!");
     }
