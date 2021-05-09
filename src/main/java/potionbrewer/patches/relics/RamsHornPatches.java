@@ -1,5 +1,6 @@
 package potionbrewer.patches.relics;
 
+import basemod.ReflectionHacks;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
@@ -61,7 +62,9 @@ public class RamsHornPatches {
         public static int Postfix(int result, AbstractPotion _instance) {
             int stackCount = PotionStackField.stackCount.get(_instance);
             if (stackCount > 1) {
-                return result * stackCount;
+                int adjusted = result * stackCount;
+                ReflectionHacks.setPrivate(_instance, AbstractPotion.class, "potency", adjusted);
+                return adjusted;
             }
             return result;
         }
