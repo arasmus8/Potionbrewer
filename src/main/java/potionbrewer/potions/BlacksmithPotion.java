@@ -1,6 +1,7 @@
 package potionbrewer.potions;
 
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -53,7 +54,10 @@ public class BlacksmithPotion extends AbstractPotion {
         card.upgrade();
         AbstractDungeon.player.bottledCardUpgradeCheck(card);
         AbstractDungeon.effectsQueue.add(new UpgradeShineEffect((float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
-        AbstractDungeon.topLevelEffectsQueue.add(new ShowCardBrieflyEffect(card.makeStatEquivalentCopy()));
+        AbstractDungeon.topLevelEffectsQueue.add(
+                new ShowCardBrieflyEffect((card).makeStatEquivalentCopy(),
+                        Settings.WIDTH / 2.0F + MathUtils.random(-250f, 250f) * Settings.scale,
+                        Settings.HEIGHT / 2.0F + MathUtils.random(-175f, 175) * Settings.scale));
         addToBot(new WaitAction(Settings.ACTION_DUR_MED));
     }
 
@@ -66,7 +70,7 @@ public class BlacksmithPotion extends AbstractPotion {
         if (!upgradeableCards.isEmpty()) {
             Collections.shuffle(upgradeableCards, AbstractDungeon.miscRng.random);
             upgradeableCards.stream()
-                    .limit(getPotency())
+                    .limit(potency)
                     .forEach(this::doUpgrade);
         }
     }
