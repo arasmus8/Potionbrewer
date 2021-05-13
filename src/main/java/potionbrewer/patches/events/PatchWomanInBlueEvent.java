@@ -11,14 +11,13 @@ import potionbrewer.characters.Potionbrewer;
 public class PatchWomanInBlueEvent {
     @SpirePatch(
             clz = WomanInBlue.class,
-            method = SpirePatch.STATICINITIALIZER
+            method = SpirePatch.CONSTRUCTOR
     )
-    public static class PatchStaticInitializer {
-
-        public static void Postfix() {
-            if (AbstractDungeon.player.chosenClass == Potionbrewer.Enums.POTIONBREWER) {
+    public static class PatchConstructor {
+        public static void Postfix(WomanInBlue __instance) {
+            if (CardCrawlGame.isInARun() && AbstractDungeon.player.chosenClass == Potionbrewer.Enums.POTIONBREWER) {
                 EventStrings eventStrings = CardCrawlGame.languagePack.getEventString("potionbrewer:WomanInBlue");
-                ReflectionHacks.setPrivateStaticFinal(WomanInBlue.class, "DIALOG_1", eventStrings.DESCRIPTIONS[0]);
+                ReflectionHacks.setPrivateInherited(__instance, WomanInBlue.class, "body", eventStrings.DESCRIPTIONS[0]);
             }
         }
     }
