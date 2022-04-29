@@ -300,11 +300,18 @@ public class Prototype extends AbstractPotionbrewerCard implements CustomSavable
 
     @Override
     public void onLoad(String[] ids) {
-        if (ids.length == 3) {
-            reagentA = ReagentList.fromId(ids[0]);
-            reagentB = ReagentList.fromId(ids[1]);
-            reagentC = ReagentList.fromId(ids[2]);
-            hydrate();
+        if (ids != null) {
+            if (ids.length == 3) {
+                reagentA = ReagentList.fromId(ids[0]);
+                reagentB = ReagentList.fromId(ids[1]);
+                reagentC = ReagentList.fromId(ids[2]);
+                hydrate();
+                return;
+            }
         }
+        reagentA = PotionbrewerMod.reagentList.randomReagent();
+        reagentB = PotionbrewerMod.reagentList.randomReagent();
+        reagentC = PotionbrewerMod.reagentList.randomReagent();
+        hydrate();
     }
 }
