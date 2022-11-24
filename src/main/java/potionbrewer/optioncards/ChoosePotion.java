@@ -148,12 +148,15 @@ public class ChoosePotion extends AbstractCard implements CustomSavable<String> 
     private static final String yCode = Settings.GOLD_COLOR.toString();
 
     private static String fixColors(final String orig) {
-        return orig
-                .replaceAll("#r(\\w+)", "[#" + rCode + "]$1[]")
-                .replaceAll("#g(\\w+)", "[#" + gCode + "]$1[]")
-                .replaceAll("#b(\\w+)", "[#" + bCode + "]$1[]")
-                .replaceAll("#y(\\w+)", "[#" + yCode + "]$1[]")
-                ;
+        if (orig != null) {
+            return orig
+                    .replaceAll("#r(\\w+)", "[#" + rCode + "]$1[]")
+                    .replaceAll("#g(\\w+)", "[#" + gCode + "]$1[]")
+                    .replaceAll("#b(\\w+)", "[#" + bCode + "]$1[]")
+                    .replaceAll("#y(\\w+)", "[#" + yCode + "]$1[]")
+                    ;
+        }
+        return "";
     }
 
     public static String potionDescription(final String id) {
